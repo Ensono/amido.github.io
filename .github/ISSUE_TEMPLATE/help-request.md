@@ -2,7 +2,7 @@
 name: Help request
 about: Ask for help
 title: 'Help: *what feature you need help with*'
-labels: ''
+labels: kind/help
 assignees: ''
 
 ---
