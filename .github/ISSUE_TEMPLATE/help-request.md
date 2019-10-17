@@ -7,4 +7,10 @@ assignees: ''
 
 ---
 
-Please describe with details what is your goal and the approaches attempted to sort this out.
+**Goal:**
+
+Please describe with details what is your goal
+
+**Attempted approaches:**
+
+Please describe the approaches you've attempted to get it sorted.
