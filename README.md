@@ -7,8 +7,8 @@ Use this repository ISSUES to:
 
 # Repositories
 
-https://github.com/amido/stacks-dotnet
-https://github.com/amido/stacks-pact-consumer
-https://github.com/amido/stacks-pipeline-templates
-https://github.com/amido/stacks-packages
-https://github.com/amido/stacks-infrastructure
+- https://github.com/amido/stacks-dotnet
+- https://github.com/amido/stacks-pact-consumer
+- https://github.com/amido/stacks-pipeline-templates
+- https://github.com/amido/stacks-packages
+- https://github.com/amido/stacks-infrastructure
