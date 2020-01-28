@@ -12,3 +12,4 @@ Use this repository ISSUES to:
 - https://github.com/amido/stacks-pipeline-templates
 - https://github.com/amido/stacks-packages
 - https://github.com/amido/stacks-infrastructure
+- https://github.com/amido/stacks-webapp-template
