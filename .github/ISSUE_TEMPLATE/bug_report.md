@@ -1,38 +1,30 @@
 ---
 name: Bug report
-about: Create a report to help us improve
-title: 'Bug: *name of bug here*'
-labels: kind/bug
+about: Create a report to help us improve Amido Stacks
+title: ''
+labels: ''
 assignees: ''
 
 ---
 
+**Repository the bug was found in**
+What repo did you find the issue in?
+
 **Describe the bug**
-A clear and concise description of what the bug is.
+A clear and concise description of what the bug is. Provide as much information as possible to help us address the issue.
 
 **To Reproduce**
-Steps to reproduce the behavior:
-1. Go to '...'
-2. Click on '....'
-3. Scroll down to '....'
-4. See error
+Steps to reproduce the behaviour (eg; Go to, click on, select this).
+Bonus points for including a test to reproduce.
 
-**Expected behavior**
+**Expected behaviour**
 A clear and concise description of what you expected to happen.
 
 **Screenshots**
 If applicable, add screenshots to help explain your problem.
 
-**Desktop (please complete the following information, remove if not applicable):**
- - OS: [e.g. iOS]
- - Browser [e.g. chrome, safari]
- - Version [e.g. 22]
-
-**Smartphone (please complete the following information, remove if not applicable):**
- - Device: [e.g. iPhone6]
- - OS: [e.g. iOS8.1]
- - Browser [e.g. stock browser, safari]
- - Version [e.g. 22]
+**Platform (please complete the following information):**
+PC or Mac
 
 **Additional context**
 Add any other context about the problem here.
