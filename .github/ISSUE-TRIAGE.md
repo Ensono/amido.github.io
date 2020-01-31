@@ -91,7 +91,7 @@ An issue can have one more [labels](https://github.com/amido/stacks/labels), inc
 
 
 ## Prioritising issues
-When an issue is raised, it should be [labeled](https://github.com/amido/stacks/labels?utf8=%E2%9C%93&q=priority) with the following labels to indicate the degree of priority (from more urgent to less urgent).
+When an issue is raised, it should be [labelled](https://github.com/amido/stacks/labels?utf8=%E2%9C%93&q=priority) with the following labels to indicate the degree of priority (from more urgent to less urgent).
 
 Please note that maintainers an contributors have the right to change the priority based on the issue description and supporting information therefore it's important to triage the issue appropriately. Any changes to priority will be transparent and communicated appropriately.
 
