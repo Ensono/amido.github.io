@@ -1,4 +1,5 @@
-# Stacks Project Portal
+Stacks Project Portal
+------------------
 
 Welcome to Amido Stacks! This repository is your gateway to explore our repositories. 
 
@@ -9,6 +10,9 @@ More importantly, it's a centralised location to raise ISSUES to:
 
 ## Contributions
 Thank you for considering contributing to [Amido](https://amido.com/) Stacks. Check out our [contribution guilelines](./CONTRIBUTING.md) for more information.
+
+## Issue triaging
+Check out our [issue triage guilelines](./ISSUE-TRIAGE.md) for more information.
 
 # Projects
 - https://github.com/amido/stacks-dotnet

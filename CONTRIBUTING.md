@@ -1,8 +1,9 @@
-# Welcome!
+Contributing
+------------------
 
 Thank you for considering contributing to [Amido](https://amido.com/) Stacks. It's people like you that continue to make Stacks the best it can be.
 
-Following these guidelines helps you communicate and partcipate with the developers maintaining and developing these open source projects. We will cover: 
+Following these guidelines helps you communicate and participate with the developers maintaining and developing these open source projects. We will cover: 
 * How to file issues
 * How to raise a PR
 * How to suggest a new feature
