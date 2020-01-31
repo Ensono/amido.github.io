@@ -2,7 +2,7 @@ Triaging of issues
 ------------------
 
 Triage provides an important way to contribute to an open source project. It can be difficult to keep up with issues and assess the validity of contributions.
-As a non-maintainer, or a contribution, you can help an open source project by triaging issues. 
+As a non-maintainer, or a contributor, you can help an open source project by triaging issues. 
 
 
 ## What is triaging?
