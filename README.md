@@ -11,9 +11,11 @@ More importantly, it's a centralised location to raise ISSUES to:
 ## Contributions
 Thank you for considering contributing to [Amido](https://amido.com/) Stacks. Check out our [contribution guilelines](./CONTRIBUTING.md) for more information.
 
+## Code of Conduct
+Please take the time to understand [Amido's core values](https://amido.com/about-us/), and our open-source [Code of Conduct](CODE_OF_CONDUCT.md). Remember, we are all human.
+
 ## Issue triaging
 Check out our [issue triage guilelines](./ISSUE-TRIAGE.md) for more information.
-
 
 # Projects
 ## Open source projects
