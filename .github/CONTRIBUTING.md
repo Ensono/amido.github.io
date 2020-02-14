@@ -55,11 +55,11 @@ We use Github for hosting and supporting our open source Stack projects. The Ami
 
 We actively welcome your pull requests:
 
-1. Fork the repo and create your branch from master.
+1. Fork the repo and create your branch from master
 2. If you've added code that should be tested, add tests.
 3. Update the documentation.
 4. Ensure the test suite passes.
-5. Issue the pull request using the repos PULL_REQUEST_TEMPLATE.md
+5. Issue the pull request using the repos PULL_REQUEST_TEMPLATE.md. It's important to link the [issue number](https://github.com/amido/stacks/issues) to ensure that the Issue is closed.
 
 ## How to report a bug
 ### Security first
