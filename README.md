@@ -1,3 +1,4 @@
+[![Board Status](https://amido-dev.visualstudio.com/73884c9a-a68f-4f67-b2b5-b588c2eb8492/81e26c3a-a64e-456b-a0d7-9b4fc2df8cb0/_apis/work/boardbadge/b9d014a2-2eb4-4b90-bc2f-700be97f9e00)](https://amido-dev.visualstudio.com/73884c9a-a68f-4f67-b2b5-b588c2eb8492/_boards/board/t/81e26c3a-a64e-456b-a0d7-9b4fc2df8cb0/Microsoft.RequirementCategory)
 Stacks Project Portal
 ------------------
 
