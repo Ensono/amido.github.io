@@ -21,6 +21,7 @@ Check out our [issue triage guilelines](./.github/ISSUE-TRIAGE.md) for more info
 
 # Projects
 ## Open source projects
+- https://github.com/amido/stacks-webapp-template
 - https://github.com/amido/stacks-pipeline-templates
 
 ## "Open source in progress" projects
