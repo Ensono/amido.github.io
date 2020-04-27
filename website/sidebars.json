@@ -1,0 +1,20 @@
+{
+  "docs": {
+    "Getting Started": [
+      "index",
+      "getting_started_demo",
+      "getting_started_dev",
+      "monorepo"
+    ],
+    "Guides": [
+      "deployment",
+      "publishing",
+      "publishing_nuget",
+      "pipeline_templates",
+      "infrastructure_code"
+    ],
+    "Testing": ["testing", "testing_static"],
+    "Packages": ["packages", "cli_process"],
+    "Supporting Docs": ["browser_support", "server_side_cache", "faq"]
+  }
+}

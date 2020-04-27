@@ -1,0 +1,18 @@
+# General
+*.iml
+.idea
+
+# Docusaurus
+!website/core/**/**.*
+!website/pages/**/**.*
+!website/siteConfig.js
+!website/sidebars.json
+!website/static
+!website/*.md
+!website/*.json
+!website/*.js
+website/build/
+website/i18n
+website/node_modules
+website/package-lock.json
+yarn.lock
