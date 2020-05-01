@@ -18,6 +18,14 @@ All infrastructure tooling is done with [Terraform](https://www.terraform.io/), 
 
 ## Terraform
 
+### Recommended Usage 
+
+workspaces... 
+
+Optionally create feature based environments by passing 
+
+
+
 ## Bootstrap the Azure tenant
 
 The first step is to create the Azure tenant and subscription by creating a SPN service account and a storage account for terraform state. This process only needs to be run once run once on an administrators workstation.
@@ -27,7 +35,7 @@ The administrator will need the following permissions:
 - Azure AD "Global Administrator" role for the Azure AD Tenant
 - IAM subscription owner
 
-With owner priviledges:
+With owner privileges:
 1. Create a [Blob Storage instance](https://azure.microsoft.com/en-gb/services/storage/blobs/)
 2. Take note of:
    1. storage account name
@@ -36,6 +44,17 @@ With owner priviledges:
    4. TenantID
    5. SubscriptionId
    6. ClientSecret
+
+### Security best practice recommendations
+
+#### Azure
+Terraform state - blob storage can be in a different subscription to your solution subscription - which is where your applications and their infra will live
+The terraform state subscription should be locked to normal users (developers).
+
+Users (AAD useres) should have only a read-only access to the solution subsciption dashboard.
+
+When initialising terraform's backend you will use the tf state subscription credentials and for the provider you will use the solution credentials - this will be an SPN account's (`client/tenant/subscription_id and client_secret)
+
 
 ### Resolving lock state
 

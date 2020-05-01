@@ -1,7 +1,7 @@
 ---
 id: getting_started_demo
-title: Demo - Using the scaffolding-cli to build an application
-sidebar_label: Demo - Using the scaffolding-cli to build an application
+title: Using the scaffolding-cli to build an application
+sidebar_label: Using the scaffolding-cli to build an application
 ---
 
 [![npm](https://img.shields.io/npm/dt/@amidostacks/scaffolding-cli)](https://www.npmjs.com/package/@amidostacks/scaffolding-cli)
@@ -10,20 +10,104 @@ Please refer to the [scaffolding-cli](https://github.com/amido/stacks-webapp-tem
 
 ## Scaffolding-cli
 
-Builds a Node.js with React Server Side Rendered Webapp Template, with
-accompanying infrastruce code. All from your CLI.
+Templates out a fully functional and deployable project in a variety of flavours. 
+Including tests (unit, integration), and infrastructure and deployment definitions. 
+All from your CLI.
 
 ## Getting Started
 
 We are using npx to execute and create the
-[template-cli](./packages/scaffolding-cli)
+[template-cli](https://www.npmjs.com/package/@amidostacks/scaffolding-cli)
 [npx](https://www.npmjs.com/package/npx).
 
 We are supporting and running [node@12](https://nodejs.org/en/about/releases/).
 Please ensure that your local environment has the correct version
 [installed](https://nodejs.org/en/download/).
 
-## Create a SSR webapp from template
+## Prerequisites
+Below are the pre-requisites to get off the ground
+
+### Public Cloud
+You will need a public cloud account with one of the following providers. 
+
+you can find more information around the infrastructure bootstrapping and requirements [here](./infrastructure_code.md).
+
+#### Azure 
+You will need to create, or ask your admin for Azure to create for you, an [SPN account](https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal) within a new or existing subscription, that will have the owner privileges. Optionally, you can create 2 to follow security best practice [here](./infrastructure_code.md####Azure).
+
+This SPN will be used throughout to create and manage resources within the cloud via terraform. You can find additional info on how to use these locally along with recommnded usage.
+
+#### GCP
+Coming soon
+
+
+#### AWS 
+Coming soon
+
+
+### CI/CD  Tooling
+You will need access to CI/CD tooling with YAML based input. 
+
+#### AzureDevOps
+You will require TFS library - MS speak for environment variables that are scoped to your jobs/stages within the pipeline as a bare minimum, instructions on how to create it can be found [here](https://docs.microsoft.com/en-us/azure/devops/pipelines/library/?view=azure-devops)
+
+You will use the credentials from your SPN created above to place the values here:
+
+![infra_vars](https://i.ibb.co/jT8Hf7q/image-4.png "Infra variables")
+
+In this instance it is important that they are named as per above: 
+ - azure_client_id
+ - azure_client_secret
+ - azure_subscription_id
+ - azure_tenant_id
+
+As these are used downstream in all interactions with the Azure API to create any kind of infrastructure using Terraform within both shared-services and application layer.
+
+You can name it whatever you choose, and ensure that your yaml definitions corresponds to it for all pipelines dealing with infrastructure - e.g. infra-pipeline and app/api-pipelines in the `Infra$Stage` jobs.
+
+Similarly you can/should create a set of variables for application level variables that will be used at pipeline runtime to configure your application. By default you will have all tests and anything requiring external tooling disabled.
+
+![app_vars](https://i.ibb.co/52KX3c2/image-5.png "App Vars")
+
+Please ensure these are scoped correctly you can find it in the YAML under 
+`  - group: REPLACE_ME_FOR_LIBRARY_NAME`
+
+where `REPLACE_ME_FOR_LIBRARY_NAME` in this example would correspond to `amido-stacks-demo-infra` || `amido-stacks-demo-app`
+
+
+#### Jenkins
+Coming soon
+
+#### Gitlab
+Coming soon
+
+### Variables and Secrets
+#### Stuff
+<!-- TODO -->
+
+## What you get
+At a high level each of the options within the CLI will roughly provide the same outcome, with tailored code for specific cloud platform and deployement tool combination.
+
+CSR being the only exception where the infrastructure doesn't cover 
+
+### Deployment template
+
+
+### Infrastructure template
+
+
+### Business Source code
+
+
+
+
+## Examples
+Below are some examples of how to use the CLI for specific outcomes. Please read the [advanced usage](###Advanced\ \Usage) section on how to apply the output in more complex scenarios.
+
+### Basic
+A generated outcome is a fully functioning folder that can be used as an entire repo on a SCM provider of your choice.
+
+#### Create a SSR webapp from template
 
 Creates an amidostacks template in your local directory much like
 express-generate with an addition of `build/, deploy/, docs/, src/` folders as
@@ -100,3 +184,134 @@ $ cd ${YOUR_GIT_STACKS_WEB_APP_PATH}/deploy/terraform/azure
 $ terraform init -backend-config=./backend.local.tfvars
 $ terraform plan
 ```
+
+<!-- MORE examples here Test only? Infra Only? -->
+
+
+### Advanced Usage
+Whilst the basic examples are fine for small projects and get you off the ground quickly to have a deployed application securly behind a domain of your choice. 
+
+#### Using Monorepo?
+When you work within a monorepo, you will have to do a few minor adjustments to the generated output. 
+
+Simply `cd` into the root directory of your monorepo and run  the cli as many times as you want to create the desired service components, e.g. a UI (using either CSR/SSR), some APIs and you may want a separate infrastructure and blackbox test directories - to end up with below sample.
+
+You will want to merge the .gitignore files from each component and place in the root - or if you have an existing one make sure it covers all your application types. 
+
+Since you will probably want to have a shared services type infrastructure controlled from a central place you can ignore or remove  `deploy/$cloud/infra` folders (ensure the yaml files are also not used within your pipeline tool). IT IS IMPORTANT HOWEVER TO understand within your project what infrastructure should live with the application - [Amido Infra libs](https://github.com/amido/stacks-webapp-template/tree/master/libs/orchestration) has a variety of OSS libraries you can use within your components e.g. CosmosDB, Blob, Qeueu, Topic managers for all 3 major clouds. You can also choose to use cloud's own provided templates, always better to opt for a library with a predefined interface  rather than building your definitions for application layer infra. it can be re-used by other components without copy/pasta.
+
+When a project gets big you will want to have an E2E type tests to ensure regressions aren't introduced and UX is preserved. whilst all components have their own tests that cover units/regressions/etc... a black box test is often (if not always) required in projects of distributed nature.
+
+<!-- TODO: this diagram needs cleaning up -->
+
+├── menu-api
+│   ├── aux_scripts
+│   ├── build
+│   │   └── azDevops
+│   │       └── azure
+│   ├── deploy
+│   │   ├── azure
+│   │   │   ├── app
+│   │   │   └── infra
+│   │   └── k8s
+│   │       └── app
+│   ├── docs
+│   ├── src
+│   │   ├── api
+│   │   │   ├── Company.Project.API
+│   │   │   ├── Company.Project.API.ComponentTests
+│   │   │   ├── Company.Project.API.ContractTests
+│   │   │   ├── Company.Project.API.Models
+│   │   │   ├── Company.Project.Application.CommandHandlers
+│   │   │   ├── Company.Project.Application.Integration
+│   │   │   ├── Company.Project.Application.QueryHandlers
+│   │   │   ├── Company.Project.CQRS
+│   │   │   ├── Company.Project.CQRS.UnitTests
+│   │   │   ├── Company.Project.Common
+│   │   │   ├── Company.Project.Common.UnitTests
+│   │   │   ├── Company.Project.Domain
+│   │   │   ├── Company.Project.Domain.UnitTests
+│   │   │   ├── Company.Project.Infrastructure
+│   │   │   └── Company.Project.Infrastructure.IntegrationTests
+│   │   ├── tests
+│   │   │   ├── Functional
+│   │   │   └── Performance
+│   │   └── ui
+│   └── test
+│       ├── Company.Project.E2E.Selenium
+│       │   ├── Api
+│       │   ├── Configuration
+│       │   ├── Selenium
+│       │   └── Tests
+│       └── testcafe
+│           ├── api
+│           ├── fixtures
+│           └── utils
+└── node-ssr
+    ├── aux_scripts
+    ├── build
+    │   └── azDevops
+    │       └── azure
+    ├── deploy
+    │   ├── azure
+    │   │   ├── app
+    │   │   └── infra
+    │   └── k8s
+    │       └── app
+    ├── docs
+    ├── src
+    │   ├── __mocks__
+    │   │   └── next
+    │   ├── __tests__
+    │   │   ├── axe
+    │   │   ├── cypress
+    │   │   ├── fixtures
+    │   │   └── pact
+    │   ├── components
+    │   │   ├── ApiPane
+    │   │   ├── CreateForm
+    │   │   ├── Header
+    │   │   ├── Layout
+    │   │   ├── Link
+    │   │   ├── Notifier
+    │   │   ├── RestaurantList
+    │   │   ├── RestaurantListItem
+    │   │   └── Search
+    │   ├── compositions
+    │   │   ├── create
+    │   │   └── home
+    │   ├── config
+    │   ├── constants
+    │   │   └── apis
+    │   ├── ducks
+    │   │   ├── add-menu
+    │   │   └── get-menus
+    │   ├── environment-configuration
+    │   ├── interfaces
+    │   ├── pages
+    │   ├── public
+    │   │   └── static
+    │   ├── server
+    │   │   ├── api
+    │   │   ├── core
+    │   │   └── middlewares
+    │   ├── services
+    │   │   └── menus
+    │   ├── state-management
+    │   └── utils
+    └── test
+        ├── testcafe
+        │   ├── api
+        │   ├── fixtures
+        │   └── utils
+        └── xxAMIDOxx.xxSTACKSxx.E2E.Selenium
+            ├── Api
+            ├── Configuration
+            ├── Selenium
+            └── Tests
+<!-- test_selenium -->
+<!-- infra only -->
+── node-ssr.bootstrap-config.json
+── menu-api.bootstrap-config.json
+
+
