@@ -88,10 +88,10 @@ Coming soon
 ## What you get
 At a high level each of the options within the CLI will roughly provide the same outcome, with tailored code for specific cloud platform and deployement tool combination.
 
-CSR being the only exception where the infrastructure doesn't cover 
+CSR being the only exception where the infrastructure doesn't cover K8s infrastructure as it is not required.
 
 ### Deployment template
-
+Includes a full SDLC for a chosen template app (API/UI/tests) on a specified deployment (CI/CD) platform.
 
 ### Infrastructure template
 
