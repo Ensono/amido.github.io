@@ -93,7 +93,7 @@ CSR being the only exception where the infrastructure doesn't cover K8s infrastr
 ### OOTB template
 Includes a full SDLC for a chosen template app (API/UI/tests) on a specified deployment (CI/CD) platform with the below conceptiual stages. However as the output is entirely modular it allows for easy extension by user in deploy steps of either k8s or terraform - user should be able to enrich the generated output with their specific needs.
 
-applications:
+Application Layer:
   - CI
     - Unit test
     - Tests...
@@ -103,16 +103,20 @@ applications:
         - If you are publishing to registries other than ACR/ECR/GCR
         - Enable vulnerability scans in the YAML
   - Stage (Dev/test/prod)
-    - [Infra](###Infrastructure\ \template)
+    - Infra
         - Terraform lib
-
+          - DNS record 
+          - separate ResourceGroup (optional)
+          - CosmosDB (optional)
+          - RedisCache (optional)
+          - metric alarms (optional)
         - Coming soon... Kubernetes operators
     - Deploy
         - kubectl apply || Blob update with React app
     - Smoke test
         - Lighthouse/selenium/testcafe
 
-infrastructure:
+Infrastructure Layer (Shared Services):
   - Stage (nonprod/prod - this is subjective to user preference, can be dev/test/prod)
       - infra:
           - K8s (AKS/GKE/EKS)
@@ -132,7 +136,6 @@ tests (in standalone mode):
 <!-- ### Infrastructure template
 
   - Sharedservices layer:
-   
 
   - Application layer: -->
 
