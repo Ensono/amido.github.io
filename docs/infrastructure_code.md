@@ -86,3 +86,51 @@ On success, exit code 0 to be retured.
 ## Azure Deveops Pipelines
 
 See [Pipeline Templates](./pipeline_templates.md) for more information about our open sourced steps.
+
+### Contributing
+
+
+#### Running Locally
+
+To test the deploy folder has been correctly provisioned prior to checking
+   you need to at this point in time copy over a sample backend-config and
+   terraform vars. Currently vars.tf and provider configuration is not
+   automatically updated. Future iterations will include this.
+
+The safest way to run and maintain this going forward is to rely on environment
+variables for credentials as that is the way the pipeline will trigger the
+executions of terraform.
+
+Sample export script with correct environment vars:
+
+```bash
+#WINDOWS: comment out the lines below
+$ export ARM_CLIENT_ID= \
+ARM_CLIENT_SECRET= \
+ARM_SUBSCRIPTION_ID= \
+ARM_TENANT_ID=
+##########################################################
+
+#WINDOWS: uncomment the following lines and fill in values
+# Set-Variable -Name "ARM_CLIENT_ID" -Value ""
+# Set-Variable -Name "ARM_CLIENT_SECRET" -Value ""
+# Set-Variable -Name "ARM_SUBSCRIPTION_ID" -Value ""
+# Set-Variable -Name "ARM_TENANT_ID" -Value ""
+##########################################################
+
+$ echo "
+vnet_id                 = \"amido-stacks-vnet-uks-dev\"
+rg_name                 = \"amido-stacks-rg-uks-dev\"
+resource_group_location = \"uksouth\"
+name_company            = \"amido\"
+name_project            = \"stacks\"
+name_component          = \"spa\"
+name_environment        = \"dev\"
+" > ${YOUR_GIT_STACKS_WEB_APP_PATH}/stacks-webapp-template/deploy/terraform/azure/backend.local.tfvars
+```
+
+```bash
+$ cd ${YOUR_GIT_STACKS_WEB_APP_PATH}/deploy/terraform/azure
+$ terraform init -backend-config=./backend.local.tfvars
+$ terraform plan
+```

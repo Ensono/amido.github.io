@@ -82,7 +82,7 @@ Coming soon
 Coming soon
 
 ### Variables and Secrets
-#### Stuff
+#### TODO
 <!-- TODO -->
 
 ## What you get
@@ -90,15 +90,71 @@ At a high level each of the options within the CLI will roughly provide the same
 
 CSR being the only exception where the infrastructure doesn't cover K8s infrastructure as it is not required.
 
-### Deployment template
-Includes a full SDLC for a chosen template app (API/UI/tests) on a specified deployment (CI/CD) platform.
+### OOTB template
+Includes a full SDLC for a chosen template app (API/UI/tests) on a specified deployment (CI/CD) platform with the below conceptiual stages. However as the output is entirely modular it allows for easy extension by user in deploy steps of either k8s or terraform - user should be able to enrich the generated output with their specific needs.
 
-### Infrastructure template
+applications:
+  - CI
+    - Unit test
+    - Tests...
+    - Build (Transpile/compile)
+    - Generate Docker Image (except for CSR)
+    - Publish Image (Largely relying on Cloud Registries Scanning capabilities)
+        - If you are publishing to registries other than ACR/ECR/GCR
+        - Enable vulnerability scans in the YAML
+  - Stage (Dev/test/prod)
+    - [Infra](###Infrastructure\ \template)
+        - Terraform lib
+
+        - Coming soon... Kubernetes operators
+    - Deploy
+        - kubectl apply || Blob update with React app
+    - Smoke test
+        - Lighthouse/selenium/testcafe
+
+infrastructure:
+  - Stage (nonprod/prod - this is subjective to user preference, can be dev/test/prod)
+      - infra:
+          - K8s (AKS/GKE/EKS)
+          - Network + subnets
+          - BLOB like storage (blob/S3)
+          - Vault solution
+          - SSL termination (AppGateway)
+          - DNS zone
+      - k8s configuration:
+          - ingress controller - with automatic IP binding and AppGateway intgeration
+          - pod level identity management (addpodidentity/fargate-profile)
+          - gatekeeper
+
+tests (in standalone mode):
+  - LOTS OF STUFF TO GO HERE
+
+<!-- ### Infrastructure template
+
+  - Sharedservices layer:
+   
+
+  - Application layer: -->
 
 
 ### Business Source code
 
+#### Azure
+An UI app in react (SSR/CSR flavour):
+  - SSR
+    - express mware for authentication using passport 
+    - routing set up within nextjs from client to server proxying out to defined endpoints (sample using the yumido sample )
+    - ...
+  - CSR:
+    - PKCE integration
+    - API integration
+    - ...
 
+An API in Java (springboot) and .netcore flavours with: 
+  - CosmosDB integration (deploy/infra/yaml)
+  - swagger generation
+
+Coming soon crednetialless auth within azure using podidentity
 
 
 ## Examples
@@ -142,51 +198,7 @@ $ npm run start
 
 Open Browser and hit [http://localhost:3000](http://localhost:3000)
 
-7. To test the deploy folder has been correctly provisioned prior to checking
-   you need to at this point in time copy over a sample backend-config and
-   terraform vars. Currently vars.tf and provider configuration is not
-   automatically updated. Future iterations will include this.
-
-The safest way to run and maintain this going forward is to rely on environment
-variables for credentials as that is the way the pipeline will trigger the
-executions of terraform.
-
-Sample export script with correct environment vars:
-
-```bash
-#WINDOWS: comment out the lines below
-$ export ARM_CLIENT_ID= \
-ARM_CLIENT_SECRET= \
-ARM_SUBSCRIPTION_ID= \
-ARM_TENANT_ID=
-##########################################################
-
-#WINDOWS: uncomment the following lines and fill in values
-# Set-Variable -Name "ARM_CLIENT_ID" -Value ""
-# Set-Variable -Name "ARM_CLIENT_SECRET" -Value ""
-# Set-Variable -Name "ARM_SUBSCRIPTION_ID" -Value ""
-# Set-Variable -Name "ARM_TENANT_ID" -Value ""
-##########################################################
-
-$ echo "
-vnet_id                 = \"amido-stacks-vnet-uks-dev\"
-rg_name                 = \"amido-stacks-rg-uks-dev\"
-resource_group_location = \"uksouth\"
-name_company            = \"amido\"
-name_project            = \"stacks\"
-name_component          = \"spa\"
-name_environment        = \"dev\"
-" > ${YOUR_GIT_STACKS_WEB_APP_PATH}/stacks-webapp-template/deploy/terraform/azure/backend.local.tfvars
-```
-
-```bash
-$ cd ${YOUR_GIT_STACKS_WEB_APP_PATH}/deploy/terraform/azure
-$ terraform init -backend-config=./backend.local.tfvars
-$ terraform plan
-```
-
 <!-- MORE examples here Test only? Infra Only? -->
-
 
 ### Advanced Usage
 Whilst the basic examples are fine for small projects and get you off the ground quickly to have a deployed application securly behind a domain of your choice. 
