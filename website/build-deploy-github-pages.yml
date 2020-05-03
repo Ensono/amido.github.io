@@ -1,3 +1,5 @@
+pr: none
+
 pool:
   vmImage: ubuntu-18.04
 
@@ -14,7 +16,7 @@ resources:
     - repository: templates
       type: github
       name: amido/stacks-pipeline-templates
-      ref: refs/tag/v1.2.0
+      ref: refs/tags/v1.2.0
       endpoint: amidostacks
 
 variables:
