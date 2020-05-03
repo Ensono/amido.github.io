@@ -1,0 +1,48 @@
+pool:
+  vmImage: ubuntu-18.04
+
+trigger:
+  branches:
+    include:
+      - '*'
+  paths:
+    include:
+      - '*'
+
+resources:
+  repositories:
+    - repository: templates
+      type: github
+      name: amido/stacks-pipeline-templates
+      ref: refs/tag/v1.2.0
+      endpoint: amidostacks
+
+variables:
+  - name: pool_vm_image
+    value: ubuntu-18.04
+  - name: version_spec
+    value: 12.x
+  - name: self_repo
+    value: stacks
+  - name: working_directory
+    value: '$(Agent.BuildDirectory)/s/$(self_repo)/website'
+  - group: amido-stacks-webapp
+
+
+steps:
+  - checkout: self
+    persistCredentials: true
+  - checkout: templates
+
+  # Install dependencies
+  - template: azDevOps/azure/templates/v2/steps/build-install-dependencies-node.yml@templates
+    parameters:
+      versionSpec: $(version_spec)
+      workingDirectory: $(working_directory)
+    
+  - bash: |
+      git config --global user.email $(GIT_USER_EMAIL)
+      git config --global user.name $(GIT_USER_NAME)      
+      GIT_USER="$(GIT_USER_NAME)" npm run publish-gh-pages
+    displayName: "Publish: GitHub Pages"
+    workingDirectory: $(working_directory)

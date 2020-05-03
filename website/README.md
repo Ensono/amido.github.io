@@ -49,7 +49,7 @@ $ npm start
 Your project file structure should look something like this
 
 ```
-stacks-webapp-template/
+stacks/
   docs/
     doc-1.md
     doc-2.md
