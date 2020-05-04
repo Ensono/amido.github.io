@@ -42,21 +42,13 @@ steps:
       versionSpec: $(version_spec)
       workingDirectory: $(working_directory)
 
-  # Publish the newly versioned packages to specified registries
-  - task: Npm@1
-    displayName: 'Publish: GitHub Pages'
-    inputs:
-      command: 'custom' # Options: install, publish, custom
-      customCommand: 'run publish'
-      workingDir: $(working_directory)
-      verbose: true
-
-  # - bash: |
-  #     git config --global user.email $(GIT_USER_EMAIL)
-  #     git config --global user.name $(GIT_USER_NAME)
-  #     USE_SSH=false
-  #     echo "Publishing with $(GIT_USER_NAME)"
-  #     echo "Token $(GITHUB_TOKEN)"
-  #     GIT_USER="$(GIT_USER_NAME)" npm run publish
-  #   displayName: "Publish: GitHub Pages"
-  #   workingDirectory: $(working_directory)
+  - bash: |
+      git config --global user.email $(GIT_USER_EMAIL)
+      git config --global user.name $(GIT_USER_NAME)
+      echo "Publishing with $(GIT_USER_NAME)"
+      echo "Token $(GITHUB_TOKEN)"
+      GIT_USER="$(GIT_USER_NAME)" npm run publish
+    displayName: "Publish: GitHub Pages"
+    workingDirectory: $(working_directory)
+    env:
+      SYSTEM_ACCESSTOKEN: $(system.accesstoken)
