@@ -53,7 +53,7 @@ You will require TFS library - MS speak for environment variables that are scope
 
 You will use the credentials from your SPN created above to place the values here:
 
-![infra_vars](https://i.ibb.co/jT8Hf7q/image-4.png "Infra variables")
+![infra_vars](https://amidostacksassets.blob.core.windows.net/docs/assets/image%20(4).png "Infra variables")
 
 In this instance it is important that they are named as per above: 
  - azure_client_id
@@ -67,7 +67,7 @@ You can name it whatever you choose, and ensure that your yaml definitions corre
 
 Similarly you can/should create a set of variables for application level variables that will be used at pipeline runtime to configure your application. By default you will have all tests and anything requiring external tooling disabled.
 
-![app_vars](https://i.ibb.co/52KX3c2/image-5.png "App Vars")
+![app_vars](https://amidostacksassets.blob.core.windows.net/docs/assets/image%20(5).png "App Vars")
 
 Please ensure these are scoped correctly you can find it in the YAML under 
 `  - group: REPLACE_ME_FOR_LIBRARY_NAME`
@@ -329,4 +329,5 @@ When a project gets big you will want to have an E2E type tests to ensure regres
 ── node-ssr.bootstrap-config.json
 ── menu-api.bootstrap-config.json
 
-
+##### Config file
+Each run of the CLI will generate a complete configuration object with values you have specified and a placehold for those you skipped (or weren't exposed by the CLI). You can re-run the cli pointing to the same folder as many times as you want with different variables. Equally, you can run it in different directory to create the same configuration templates with different project name, repo urls/names etc...
