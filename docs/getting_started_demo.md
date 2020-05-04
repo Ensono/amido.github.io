@@ -24,6 +24,17 @@ We are supporting and running [node@12](https://nodejs.org/en/about/releases/).
 Please ensure that your local environment has the correct version
 [installed](https://nodejs.org/en/download/).
 
+Additional tools you may want/need to test the outputs locally - this is not required as you could run directly in pipeline - are as follows:
+ - docker
+    - the only real dependencies for local testing as all pipelines are using a shared library of public CI images
+    - docs on the CI containers used can be found [here](https://github.com/amido/stacks-webapp-template/tree/master/libs/images) links to their public dockerhub pages below:
+      - [sonar-scanner](https://hub.docker.com/repository/docker/amidostacks/ci-sonarscanner)
+      - [terraform-deploy](https://hub.docker.com/repository/docker/amidostacks/ci-tf)
+      - [k8s-deploy](https://hub.docker.com/repository/docker/amidostacks/ci-k8s)
+ - dotnet/nodejs/chrome-webdriver/testcafe/sonar-scanner
+ - optionally (prefer to use the `docker run -v ...`):
+    - terraform - v0.12.24
+    - kubectl - 
 ## Prerequisites
 Below are the pre-requisites to get off the ground
 
@@ -35,23 +46,22 @@ you can find more information around the infrastructure bootstrapping and requir
 #### Azure 
 You will need to create, or ask your admin for Azure to create for you, an [SPN account](https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal) within a new or existing subscription, that will have the owner privileges. Optionally, you can create 2 to follow security best practice [here](./infrastructure_code.md####Azure).
 
-This SPN will be used throughout to create and manage resources within the cloud via terraform. You can find additional info on how to use these locally along with recommnded usage.
+This SPN (Service Principal Name) will be used throughout to create and manage resources within the cloud via terraform. You can find additional info on how to use these locally along with recommnded usage.
 
 #### GCP
 Coming soon
 
-
-#### AWS 
-Coming soon
+<!-- #### AWS 
+Coming soon -->
 
 
 ### CI/CD  Tooling
 You will need access to CI/CD tooling with YAML based input. 
 
 #### AzureDevOps
-You will require TFS library - MS speak for environment variables that are scoped to your jobs/stages within the pipeline as a bare minimum, instructions on how to create it can be found [here](https://docs.microsoft.com/en-us/azure/devops/pipelines/library/?view=azure-devops)
+You will require AzureDevops library - Microsoft speak for environment variables that are scoped to your jobs/stages within the pipeline as a bare minimum, instructions on how to create it can be found [here](https://docs.microsoft.com/en-us/azure/devops/pipelines/library/?view=azure-devops)
 
-You will use the credentials from your SPN created above to place the values here:
+You will use the credentials from your SPN (Service Principal Name) created above to place the values here:
 
 ![infra_vars](https://amidostacksassets.blob.core.windows.net/docs/assets/image%20(4).png "Infra variables")
 
@@ -75,11 +85,11 @@ Please ensure these are scoped correctly you can find it in the YAML under
 where `REPLACE_ME_FOR_LIBRARY_NAME` in this example would correspond to `amido-stacks-demo-infra` || `amido-stacks-demo-app`
 
 
-#### Jenkins
+<!-- #### Jenkins
 Coming soon
 
 #### Gitlab
-Coming soon
+Coming soon -->
 
 ### Variables and Secrets
 #### TODO
@@ -331,3 +341,65 @@ When a project gets big you will want to have an E2E type tests to ensure regres
 
 ##### Config file
 Each run of the CLI will generate a complete configuration object with values you have specified and a placehold for those you skipped (or weren't exposed by the CLI). You can re-run the cli pointing to the same folder as many times as you want with different variables. Equally, you can run it in different directory to create the same configuration templates with different project name, repo urls/names etc...
+
+##### Example:
+```bash
+cd mono_repo_root; \
+npx @amidostacks/scaffolding-cli@latest run -c menu-api.bootstrap-config.json
+```
+Where the generated config would look like this: 
+```JSON
+{
+  "project_name": "menu-api",
+  "project_type": "ssr",
+  "platform": "aks",
+  "deployment": "azdevops",
+  "advanced_config": true,
+  "create_config": false,
+  "cloud_region": "uksouth",
+  "cloud_resource_group": "string",
+  "business_company": "company",
+  "business_project": "project",
+  "business_domain": "api",
+  "business_component": "menu",
+  "source_control_repo_type": "github",
+  "source_control_repo_name": "Name-Of-Repo",
+  "source_control_repo_url": "https://github/sample.git",
+  "terraform_backend_storage": "replace_terraform_backend_storage",
+  "terraform_backend_storage_rg": "replace_terraform_backend_storage_rg",
+  "terraform_backend_storage_container": "replace_terraform_backend_storage_container"
+}
+```
+you can then re-run the cli in the same directory by pointing to a copy of the 
+generated file e.g. `billing-api`  which could look like this:
+
+```JSON
+{
+  "project_name": "billing-api",
+  "project_type": "ssr",
+  "platform": "aks",
+  "deployment": "azdevops",
+  "advanced_config": true,
+  "create_config": false,
+  "cloud_region": "uksouth",
+  "cloud_resource_group": "string",
+  "business_company": "company",
+  "business_project": "project",
+  "business_domain": "api",
+  "business_component": "billing",
+  "source_control_repo_type": "github",
+  "source_control_repo_name": "Name-Of-Repo",
+  "source_control_repo_url": "https://github/sample.git",
+  "terraform_backend_storage": "replace_terraform_backend_storage",
+  "terraform_backend_storage_rg": "replace_terraform_backend_storage_rg",
+  "terraform_backend_storage_container": "replace_terraform_backend_storage_container"
+}
+```
+
+NB: 
+ - path to config can an absolute path that is accessible to the CLI (any network or local drive path) e.g. `npx @amidostacks/scaffolding-cli@latest run -c /var/api/conf/definitions/menu-api.bootstrap-config.json` 
+ - path to a config can also be a relative, from the location of where the CLI is run from e.g. `npx @amidostacks/scaffolding-cli@latest run -c ../conf/definitions/menu-api.bootstrap-config.json`
+
+
+
+
