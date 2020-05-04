@@ -46,9 +46,14 @@ steps:
       git config --global user.email $(GIT_USER_EMAIL)
       git config --global user.name $(GIT_USER_NAME)
       echo "Publishing with $(GIT_USER_NAME)"
-      echo "Token $(GITHUB_TOKEN)"
+      echo "Token $(SECRET_SYSTEM_ACCESSTOKEN)"
+      echo "Token $(SYSTEM_ACCESSTOKEN)"
+      echo "Connection $(ENDPOINT_AUTH_SYSTEMVSSCONNECTION)"
+      echo "machine github.com login <GITHUB_USERNAME> password $(GIT_USER_EMAIL)" > ~/.netrc
       GIT_USER="$(GIT_USER_NAME)" npm run publish
     displayName: "Publish: GitHub Pages"
     workingDirectory: $(working_directory)
     env:
-      SYSTEM_ACCESSTOKEN: $(system.accesstoken)
+      SYSTEM_ACCESSTOKEN: $(System.AccessToken)
+
+ 
