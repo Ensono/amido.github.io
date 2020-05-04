@@ -91,4 +91,109 @@ push up the results for analysis.</p>
 <pre><code class="hljs css language-bash">npm run <span class="hljs-built_in">test</span>
 docker run -e SONAR_HOST_URL=https://sonarcloud.io -e SONAR_TOKEN=<span class="hljs-variable">$SONAR_TOKEN</span> -e SONAR_PROJECT_KEY=<span class="hljs-variable">$SONAR_PROJECT_KEY</span> -e SONAR_ORGANIZATION=<span class="hljs-variable">$SONAR_ORGANIZATION</span> -e BUILD_NUMBER=1.2.3 -v $(<span class="hljs-built_in">pwd</span>):/usr/src --rm -it amidostacks/ci-sonarscanner /bin/bash -c <span class="hljs-string">'cd /usr/src &amp;&amp; sonar-scanner'</span>
 </code></pre>
-</span></div></article></div><div class="docLastUpdate"><em>Last updated on 4/27/2020 by estherthetesteramido</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/stacks/docs/infrastructure_code"><span class="arrow-prev">← </span><span>Infrastructure</span></a><a class="docs-next button" href="/stacks/docs/testing_static"><span>Static Code Analysis</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#overview">Overview</a><ul class="toc-headings"><li><a href="#pre-commit-tests">Pre-commit Tests</a></li><li><a href="#pre-deployment-tests">Pre-deployment Tests</a></li><li><a href="#post-deployment-tests">Post-deployment Tests</a></li></ul></li><li><a href="#quality-gates">Quality Gates</a></li><li><a href="#cypress">Cypress</a><ul class="toc-headings"><li><a href="#dubugging-axe-failures">Dubugging Axe Failures</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/stacks/" class="nav-home"><img src="/stacks/img/thumbnail_stacks.png" alt="Amido Stacks" width="66" height="58"/></a><div><h5>Docs</h5><a href="/stacks/docs/en/index">Getting Started</a></div><div><h5>Community</h5><a href="https://amido.com/">Amido</a></div><div><h5>More</h5><a href="https://github.com/">GitHub</a></div></section><a href="https://github.com/amido/stacks" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/stacks/img/logo.png" alt="stacks" width="170" height="45"/></a><section class="copyright">Copyright © 2020 Amido Ltd</section></footer></div><script src="http://localhost:undefined/livereload.js"></script></body></html>
+<h2><a class="anchor" aria-hidden="true" id="consumer-driven-contract-testing-with-pact"></a><a href="#consumer-driven-contract-testing-with-pact" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Consumer Driven Contract Testing with Pact</h2>
+<p>Consumer Driven Contract (CDC) Testing is a pattern that allows a consumer (i.e:
+a client) and a provider (i.e. an API provider) to communicate using an agreed
+contract (a pact).</p>
+<p>The following documentation is an overview of the Pact implementation as part of the templated SSR webapp. See <a href="/stacks/docs/packages">packages</a> for a link to the source code.</p>
+<p><em>Note: The <code>beforeAll</code> and <code>afterAll</code> hooks in Jest is not before all tests but
+before each file.</em></p>
+<h3><a class="anchor" aria-hidden="true" id="utilsutils"></a><a href="#utilsutils" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="./utils">Utils</a></h3>
+<p>These are reusable components that can be used for any Javascript consumer setup with pact-js.</p>
+<p>We are using Jest to wrap pact-js in order to create the interactions and
+generate the Pacts for the webapp as a consumer. Following the examples on
+<a href="https://github.com/pact-foundation/pact-js">pact-js</a>.</p>
+<p>There is full documentation for how contract testing works available on the
+<a href="https://docs.pact.io/how_pact_works">Pact website</a>.</p>
+<p>A global 'provider' variable is setup in the <a href="./utils/pactSetup.ts">pactSetup.ts</a>
+file. Then the <a href="./utils/pactTestWrapper.ts">pactTestWrapper.ts</a> ensures each test
+file will have the provider setup for them.</p>
+<p>The <code>pactFileWriteMode</code> option been set to <code>update</code> in the provider that the
+pacts append to. Please see
+<a href="https://docs.pact.io/implementation_guides/ruby/configuration#pactfile_write_mode">pactFileWriteMode</a></p>
+<pre><code class="hljs css language-bash"><span class="hljs-comment"># Export the Consumer and Provider names when running locally, or define in Azure Pipelines Library</span>
+<span class="hljs-built_in">export</span> PACT_CONSUMER= \
+<span class="hljs-built_in">export</span> PACT_PROVIDER=
+</code></pre>
+<pre><code class="hljs css language-bash"><span class="hljs-comment"># Generate and verify pacts against mock</span>
+npm run <span class="hljs-built_in">test</span>:pact
+</code></pre>
+<p>Due to the afterAll hooks in Jest not invoking after all tests, but before each
+file, there is a <a href="./utils/pactPublish.ts">pactPublish</a> script to publish the
+pacts to the configured broker.</p>
+<pre><code class="hljs css language-bash"><span class="hljs-comment"># Export broker credentials for running locally, or define in Azure Pipelines Library</span>
+<span class="hljs-built_in">export</span> PACT_BROKER= \
+<span class="hljs-built_in">export</span> PACT_BEARER_TOKEN= \
+</code></pre>
+<pre><code class="hljs css language-bash"><span class="hljs-comment"># Publish the pacts to the configured broker</span>
+npm run <span class="hljs-built_in">test</span>:pact-publish
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="pact-stub-service"></a><a href="#pact-stub-service" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Pact Stub Service</h3>
+<p>Pact contracts are easily turned into locally running API stubs. They are great
+for using as a simple service to run integration tests against, whether with
+Jest, or with Cypress. This ensures that you can test your application without
+hitting the actual endpoint, and ensures the same response everytime, without
+duplicating mock definitions.</p>
+<p>If gives the consumer confidence that if the contract tests are passing with the
+provider, then the mocks should suffice to test parts of their application
+against.</p>
+<p>No more updating stub responses that go out of date. Hooray!</p>
+<p>The Pact files (.json) are generated when the Pact tests are run
+(<code>npm run tests:pact</code>), and are published to the broker on succeeding. In order
+to get the latest pact file to generate the stub service from, you can either:</p>
+<ol>
+<li>Run the tests, which will output the Pact .json files to
+<a href="./__tests__/pacts"><strong>tests</strong>/pacts</a></li>
+<li>Pull down the latest passing contracts from the broker
+(<code>https://PACT_BROKER/pacts/provider/PROVIDER/consumer/CONSUMER/latest</code>)</li>
+</ol>
+<p>Once the files are sourced, it's as simple as starting the stub service either
+from the npm script in CI, or by calling the
+<a href="./pact/packStubServer.ts">pactStubServer.ts</a> from your test.</p>
+<pre><code class="hljs css language-bash"><span class="hljs-comment"># To start the Pact stub server</span>
+npm run <span class="hljs-built_in">test</span>:pact-start-stub
+</code></pre>
+<p>To test the server:</p>
+<pre><code class="hljs css language-bash"><span class="hljs-comment"># To test that the service is running and returning expected responses:</span>
+curl -v localhost:8389/v1/menu/e98583ad-0feb-4e48-9d4f-b20b09cb2633 -H <span class="hljs-string">"Accept: application/json"</span>
+</code></pre>
+<p>Please remember to always stop your server once done testing.</p>
+<h3><a class="anchor" aria-hidden="true" id="can-i-deploy"></a><a href="#can-i-deploy" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Can I Deploy?</h3>
+<p>The <a href="https://docs.pact.io/pact_broker/can_i_deploy">Can I Deploy</a> tool ensures you are safe to deploy your application. Before deploying to a new environment, you need to know if the version is compatible with the provider version. Instead of checking the broker, we can poll the broker and check programmatically with the latest versions.</p>
+<pre><code class="hljs css language-bash"><span class="hljs-comment"># Run can I deploy using the pact-js SDK</span>
+<span class="hljs-comment"># This is called in the pipeline</span>
+npm run <span class="hljs-built_in">test</span>:pact-can-i-deploy-ci
+</code></pre>
+<pre><code class="hljs css language-bash"><span class="hljs-comment"># Run can I deploy using the pact CLI</span>
+npm run <span class="hljs-built_in">test</span>:pact-can-i-deploy-cli
+</code></pre>
+<p><em>Example output:</em>
+This demonstrates that the consumer is safe to deploy, and will return exit code 0 (this means yes!).</p>
+<pre><code class="hljs"><span class="hljs-attribute">INFO</span>: Asking broker at <span class="hljs-attribute">https</span>:<span class="hljs-comment">//amido-stacks.pact.dius.com.au if it is possible to deploy</span>
+<span class="hljs-attribute">INFO</span>: pact-node<span class="hljs-variable">@10</span>.<span class="hljs-number">5.0</span>/<span class="hljs-number">10589</span> on AML0160.<span class="hljs-attribute">local</span>: 
+    Computer says yes \o/ 
+    
+    CONSUMER            | C.VERSION           | PROVIDER | P.VERSION      | SUCCESS?
+    --------------------|---------------------|----------|----------------|---------
+    GenericMenuConsumer | <span class="hljs-number">0.0</span>.<span class="hljs-number">213</span>-test-report | MenuAPI  | <span class="hljs-number">1.5</span>.<span class="hljs-number">190</span>-master | true    
+    
+    All required verification results are published and successful
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="pact-working-example"></a><a href="#pact-working-example" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Pact working Example</h3>
+<p>We have included a Pact test which will deploy to a PactFlow broker, and verify against the MenuAPI .NET API. This is to ensure that there is an example working test that can be used as reference.</p>
+<p>Example ENV_VARS:</p>
+<pre><code class="hljs css language-bash"><span class="hljs-built_in">export</span> PACT_BEARER_TOKEN=
+<span class="hljs-built_in">export</span> PACT_BROKER=https://amido-stacks.pact.dius.com.au
+<span class="hljs-built_in">export</span> PACT_CONSUMER=GenericMenuConsumer
+<span class="hljs-built_in">export</span> PACT_PROVIDER=MenuAPI
+</code></pre>
+<p>Maintainers and contributers may obtain the <code>PACT_BEARER_TOKEN</code> if they request access to the PactFlow instance. Else, this will be run in the Azure Devops Pipeline.</p>
+<h4><a class="anchor" aria-hidden="true" id="tests"></a><a href="#tests" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Tests</h4>
+<p><a href="./get-menu-by-id.test.pact.ts">get-menu-by-id.test.pact.ts</a> is an example test. This calls the <a href="./mocks/menuService.ts">menuServive</a> Menu API when running locally.</p>
+<p>When the tests pass, the contract will be written to <a href="./pacts/genericmenuconsumer-menuapi.json">pacts</a>, following the naming convention: <code>&lt;PACT_CONSUMER&gt;-&lt;PACT_PROVIDER&gt;</code>.</p>
+<p>Some good practices:
+✅ Use Pact Matchers to ensure we account for state change, e.g. no hardcoded values for menus in the database, see <a href="https://docs.pact.io/getting_started/matching">https://docs.pact.io/getting_started/matching</a> for more information.
+✅ Ensure that the provider state has been configured by the Provider</p>
+<p>It's important to get the <code>PACT_CONSUMER</code> and <code>PACT_PROVIDER</code> names correct, as these form the key for verfiy.</p>
+<p>⚠️ /pacts: these are checked in for reference only. Please do not changed the outputted .json files. They are created on successful test runs by Pact. These will be published to the broker upon successful run in the pipeline, with the corresponding version tags.</p>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 4/28/2020 by estherthetesteramido</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/stacks/docs/infrastructure_code"><span class="arrow-prev">← </span><span>Infrastructure</span></a><a class="docs-next button" href="/stacks/docs/testing_static"><span>Static Code Analysis</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#overview">Overview</a><ul class="toc-headings"><li><a href="#pre-commit-tests">Pre-commit Tests</a></li><li><a href="#pre-deployment-tests">Pre-deployment Tests</a></li><li><a href="#post-deployment-tests">Post-deployment Tests</a></li></ul></li><li><a href="#quality-gates">Quality Gates</a></li><li><a href="#cypress">Cypress</a><ul class="toc-headings"><li><a href="#dubugging-axe-failures">Dubugging Axe Failures</a></li></ul></li><li><a href="#consumer-driven-contract-testing-with-pact">Consumer Driven Contract Testing with Pact</a><ul class="toc-headings"><li><a href="#utilsutils"><a href="./utils">Utils</a></a></li><li><a href="#pact-stub-service">Pact Stub Service</a></li><li><a href="#can-i-deploy">Can I Deploy?</a></li><li><a href="#pact-working-example">Pact working Example</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/stacks/" class="nav-home"><img src="/stacks/img/thumbnail_stacks.png" alt="Amido Stacks" width="66" height="58"/></a><div><h5>Docs</h5><a href="/stacks/docs/en/index">Getting Started</a></div><div><h5>Community</h5><a href="https://amido.com/">Amido</a></div><div><h5>More</h5><a href="https://github.com/">GitHub</a></div></section><a href="https://github.com/amido/stacks" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/stacks/img/logo.png" alt="stacks" width="170" height="45"/></a><section class="copyright">Copyright © 2020 Amido Ltd</section></footer></div><script src="http://localhost:undefined/livereload.js"></script></body></html>
