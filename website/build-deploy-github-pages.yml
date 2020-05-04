@@ -33,7 +33,6 @@ variables:
 
 steps:
   - checkout: self
-    persistCredentials: true
   - checkout: templates
 
   # Install dependencies
