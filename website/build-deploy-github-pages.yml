@@ -44,7 +44,8 @@ steps:
     
   - bash: |
       git config --global user.email $(GIT_USER_EMAIL)
-      git config --global user.name $(GIT_USER_NAME)      
-      GIT_USER="$(GIT_USER_NAME)" npm run publish-gh-pages
+      git config --global user.name $(GIT_USER_NAME)
+      git config --global url."git@github.com:".insteadOf "https://github.com/"
+      GIT_USER="$(GIT_USER_NAME)" npm run publish
     displayName: "Publish: GitHub Pages"
     workingDirectory: $(working_directory)
