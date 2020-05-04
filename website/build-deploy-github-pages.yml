@@ -33,8 +33,8 @@ variables:
 
 steps:
   - checkout: self
-  - checkout: templates
     persistCredentials: true
+  - checkout: templates
 
   # Install dependencies
   - template: azDevOps/azure/templates/v2/steps/build-install-dependencies-node.yml@templates
@@ -45,15 +45,10 @@ steps:
   - bash: |
       git config --global user.email $(GIT_USER_EMAIL)
       git config --global user.name $(GIT_USER_NAME)
-      echo "Publishing with $(GIT_USER_NAME)"
-      echo "Token $(SECRET_SYSTEM_ACCESSTOKEN)"
-      echo "Token $(SYSTEM_ACCESSTOKEN)"
-      echo "Connection $(ENDPOINT_AUTH_SYSTEMVSSCONNECTION)"
-      echo "machine github.com login <GITHUB_USERNAME> password $(GIT_USER_EMAIL)" > ~/.netrc
+      echo "machine github.com login $(GIT_USER_NAME) password $(GITHUB_TOKEN)" > ~/.netrc
       GIT_USER="$(GIT_USER_NAME)" npm run publish
     displayName: "Publish: GitHub Pages"
     workingDirectory: $(working_directory)
-    env:
-      SYSTEM_ACCESSTOKEN: $(System.AccessToken)
+
 
  
