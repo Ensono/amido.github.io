@@ -34,7 +34,7 @@ variables:
 steps:
   - checkout: self
   - checkout: templates
-  - persistCredentials: true
+    persistCredentials: true
 
   # Install dependencies
   - template: azDevOps/azure/templates/v2/steps/build-install-dependencies-node.yml@templates
