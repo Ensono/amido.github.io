@@ -18,6 +18,14 @@ All infrastructure tooling is done with [Terraform](https://www.terraform.io/), 
 
 ## Terraform
 
+### Recommended Usage 
+
+workspaces... 
+
+Optionally create feature based environments by passing 
+
+
+
 ## Bootstrap the Azure tenant
 
 The first step is to create the Azure tenant and subscription by creating a SPN service account and a storage account for terraform state. This process only needs to be run once run once on an administrators workstation.
@@ -27,7 +35,7 @@ The administrator will need the following permissions:
 - Azure AD "Global Administrator" role for the Azure AD Tenant
 - IAM subscription owner
 
-With owner priviledges:
+With owner privileges:
 1. Create a [Blob Storage instance](https://azure.microsoft.com/en-gb/services/storage/blobs/)
 2. Take note of:
    1. storage account name
@@ -36,6 +44,17 @@ With owner priviledges:
    4. TenantID
    5. SubscriptionId
    6. ClientSecret
+
+### Security best practice recommendations
+
+#### Azure
+Terraform state - blob storage can be in a different subscription to your solution subscription - which is where your applications and their infra will live
+The terraform state subscription should be locked to normal users (developers).
+
+Users (AAD useres) should have only a read-only access to the solution subsciption dashboard.
+
+When initialising terraform's backend you will use the tf state subscription credentials and for the provider you will use the solution credentials - this will be an SPN account's (`client/tenant/subscription_id and client_secret)
+
 
 ### Resolving lock state
 
@@ -67,3 +86,51 @@ On success, exit code 0 to be retured.
 ## Azure Deveops Pipelines
 
 See [Pipeline Templates](./pipeline_templates.md) for more information about our open sourced steps.
+
+### Contributing
+
+
+#### Running Locally
+
+To test the deploy folder has been correctly provisioned prior to checking
+   you need to at this point in time copy over a sample backend-config and
+   terraform vars. Currently vars.tf and provider configuration is not
+   automatically updated. Future iterations will include this.
+
+The safest way to run and maintain this going forward is to rely on environment
+variables for credentials as that is the way the pipeline will trigger the
+executions of terraform.
+
+Sample export script with correct environment vars:
+
+```bash
+#WINDOWS: comment out the lines below
+$ export ARM_CLIENT_ID= \
+ARM_CLIENT_SECRET= \
+ARM_SUBSCRIPTION_ID= \
+ARM_TENANT_ID=
+##########################################################
+
+#WINDOWS: uncomment the following lines and fill in values
+# Set-Variable -Name "ARM_CLIENT_ID" -Value ""
+# Set-Variable -Name "ARM_CLIENT_SECRET" -Value ""
+# Set-Variable -Name "ARM_SUBSCRIPTION_ID" -Value ""
+# Set-Variable -Name "ARM_TENANT_ID" -Value ""
+##########################################################
+
+$ echo "
+vnet_id                 = \"amido-stacks-vnet-uks-dev\"
+rg_name                 = \"amido-stacks-rg-uks-dev\"
+resource_group_location = \"uksouth\"
+name_company            = \"amido\"
+name_project            = \"stacks\"
+name_component          = \"spa\"
+name_environment        = \"dev\"
+" > ${YOUR_GIT_STACKS_WEB_APP_PATH}/stacks-webapp-template/deploy/terraform/azure/backend.local.tfvars
+```
+
+```bash
+$ cd ${YOUR_GIT_STACKS_WEB_APP_PATH}/deploy/terraform/azure
+$ terraform init -backend-config=./backend.local.tfvars
+$ terraform plan
+```
