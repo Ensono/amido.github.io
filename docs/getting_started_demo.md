@@ -141,7 +141,7 @@ Infrastructure Layer (Shared Services):
           - gatekeeper
 
 tests (in standalone mode):
-  - LOTS OF STUFF TO GO HERE
+  - lots more info can be found in the testing section [overview](./testing.md##Overview)
 
 <!-- ### Infrastructure template
 
