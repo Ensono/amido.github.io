@@ -13,7 +13,7 @@
       "pipeline_templates",
       "infrastructure_code"
     ],
-    "Testing": ["testing", "testing_static"],
+    "Testing": ["testing", "testing_static", "testing_selenium"],
     "Packages": ["packages", "cli_process"],
     "Supporting Docs": ["browser_support", "server_side_cache", "faq"]
   }
