@@ -6,6 +6,10 @@
       "getting_started_dev",
       "monorepo"
     ],
+    "scaffolding-cli": [
+      "scaffolding_cli",
+      "cli_testing_frameworks"
+    ],
     "Guides": [
       "deployment",
       "publishing",
@@ -13,7 +17,7 @@
       "pipeline_templates",
       "infrastructure_code"
     ],
-    "Testing": ["testing", "testing_static", "testing_selenium"],
+    "Testing": ["testing", "cli_testing_frameworks", "testing_static", "testing_selenium"],
     "Packages": ["packages", "cli_process"],
     "Supporting Docs": ["browser_support", "server_side_cache", "faq"]
   }
