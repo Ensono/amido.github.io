@@ -350,24 +350,24 @@ npx @amidostacks/scaffolding-cli@latest run -c menu-api.bootstrap-config.json
 Where the generated config would look like this: 
 ```JSON
 {
-  "project_name": "menu-api",
-  "project_type": "ssr",
+  "projectName": "menu-api",
+  "projectType": "ssr",
   "platform": "aks",
   "deployment": "azdevops",
-  "advanced_config": true,
-  "create_config": false,
-  "cloud_region": "uksouth",
-  "cloud_resource_group": "string",
-  "business_company": "company",
-  "business_project": "project",
-  "business_domain": "api",
-  "business_component": "menu",
-  "source_control_repo_type": "github",
-  "source_control_repo_name": "Name-Of-Repo",
-  "source_control_repo_url": "https://github/sample.git",
-  "terraform_backend_storage": "replace_terraform_backend_storage",
-  "terraform_backend_storage_rg": "replace_terraform_backend_storage_rg",
-  "terraform_backend_storage_container": "replace_terraform_backend_storage_container"
+  "advancedConfig": true,
+  "createConfig": false,
+  "cloudRegion": "uksouth",
+  "cloudResourceGroup": "string",
+  "businessCompany": "company",
+  "businessProject": "project",
+  "businessDomain": "api",
+  "businessComponent": "menu",
+  "sourceControlRepoType": "github",
+  "sourceControlRepoName": "Name-Of-Repo",
+  "sourceControlRepoUrl": "https://github/sample.git",
+  "terraformBackendStorage": "replace_terraform_backend_storage",
+  "terraformBackendDtorageRg": "replace_terraform_backend_storage_rg",
+  "terraformBackendStorageContainer": "replace_terraform_backend_storage_container"
 }
 ```
 you can then re-run the cli in the same directory by pointing to a copy of the 
@@ -375,24 +375,24 @@ generated file e.g. `billing-api`  which could look like this:
 
 ```JSON
 {
-  "project_name": "billing-api",
-  "project_type": "ssr",
+  "projectName": "billing-api",
+  "projectType": "infra",
   "platform": "aks",
   "deployment": "azdevops",
-  "advanced_config": true,
-  "create_config": false,
-  "cloud_region": "uksouth",
-  "cloud_resource_group": "string",
-  "business_company": "company",
-  "business_project": "project",
-  "business_domain": "api",
-  "business_component": "billing",
-  "source_control_repo_type": "github",
-  "source_control_repo_name": "Name-Of-Repo",
-  "source_control_repo_url": "https://github/sample.git",
-  "terraform_backend_storage": "replace_terraform_backend_storage",
-  "terraform_backend_storage_rg": "replace_terraform_backend_storage_rg",
-  "terraform_backend_storage_container": "replace_terraform_backend_storage_container"
+  "advancedConfig": true,
+  "createConfig": false,
+  "cloudRegion": "uksouth",
+  "cloudResourceGroup": "string",
+  "businessCompany": "company",
+  "businessProject": "project",
+  "businessDomain": "api",
+  "businessComponent": "menu",
+  "sourceControlRepoType": "github",
+  "sourceControlRepoName": "Name-Of-Repo",
+  "sourceControlRepoUrl": "https://github/sample.git",
+  "terraformBackendStorage": "replace_terraform_backend_storage",
+  "terraformBackendDtorageRg": "replace_terraform_backend_storage_rg",
+  "terraformBackendStorageContainer": "replace_terraform_backend_storage_container"
 }
 ```
 

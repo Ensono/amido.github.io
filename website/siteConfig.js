@@ -31,7 +31,6 @@ const siteConfig = {
     url: "https://amido.github.io", // Org github.io custom URL
     baseUrl: "/stacks/", // Base URL for project repo
     projectBaseUrl: "/stacks",
-    editUrl: "/edit/master/docs/", //Append to the repo URL for editing docs
 
     // Used for publishing and more
     projectName: "stacks",
