@@ -18,7 +18,7 @@ Shared ESLint config to guide a consistent code style across front end developme
 
 ### `scaffolding-cli`
 
-Builds a Node.js with React Server Side Rendered Webapp Template, with accompanying infrastructure code. All from your CLI.
+Builds opinionated boilerplate project types (CSR, SSR, .NET API, Test Frameworks...) with accompanying infrastructure code. All from your CLI.
 
 📖 [Read the Docs](https://github.com/amido/stacks-webapp-template/blob/master/packages/scaffolding-cli/README.md)
 
