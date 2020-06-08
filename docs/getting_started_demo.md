@@ -49,7 +49,11 @@ You will need to create, or ask your admin for Azure to create for you, an [SPN 
 This SPN (Service Principal Name) will be used throughout to create and manage resources within the cloud via terraform. You can find additional info on how to use these locally along with recommnded usage.
 
 #### GCP
-Coming soon
+You will need to create a project - preferably 2 one for Terraform state and one for the solution - which you may choose to create 2 of if you want your production cluster to be completely separate.
+
+You will need to create a service account (or 2 if your state is in a different account) - you will need to take note of the JSON credentials file and store in an environment variable for use in pipelines. 
+
+`GOOGLE_CREDENTIALS` will be a json key with a service account credentials.
 
 <!-- #### AWS 
 Coming soon -->
@@ -85,9 +89,20 @@ Please ensure these are scoped correctly you can find it in the YAML under
 where `REPLACE_ME_FOR_LIBRARY_NAME` in this example would correspond to `amido-stacks-demo-infra` || `amido-stacks-demo-app`
 
 
-<!-- #### Jenkins
-Coming soon
+#### Jenkins
 
+##### Credentials 
+You will need to create Credentials objects in Jenkins that the pipeline will use to bootstrap various resources in either GCP or Azure. 
+
+For GCP credentials you will want to create a file secret with your service account json key. 
+NB: if you name something other than `GCP_KEY` please update the pipeline definitions as well (simply search and replace)
+
+Similarly as with AzureDevops all the global vars are declared at the global scope and picked up in various stages with a few exceptions which will need to be set at a stage level, e.g. `cluster_name` | `dns_pointer_record` | `stage` | `environment`
+
+Similarly as with AzureDevops all jobs are running in publicly available CI containers and include all the dependencies for various tooling used. 
+
+
+<!--
 #### Gitlab
 Coming soon -->
 
