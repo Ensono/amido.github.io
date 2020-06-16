@@ -243,7 +243,7 @@ Since you will probably want to have a shared services type infrastructure contr
 When a project gets big you will want to have an E2E type tests to ensure regressions aren't introduced and UX is preserved. whilst all components have their own tests that cover units/regressions/etc... a black box test is often (if not always) required in projects of distributed nature.
 
 <!-- TODO: this diagram needs cleaning up -->
-
+```
 ├── menu-api
 │   ├── aux_scripts
 │   ├── build
@@ -353,6 +353,8 @@ When a project gets big you will want to have an E2E type tests to ensure regres
 <!-- infra only -->
 ── node-ssr.bootstrap-config.json
 ── menu-api.bootstrap-config.json
+```
+
 
 ##### Config file
 Each run of the CLI will generate a complete configuration object with values you have specified and a placehold for those you skipped (or weren't exposed by the CLI). You can re-run the cli pointing to the same folder as many times as you want with different variables. Equally, you can run it in different directory to create the same configuration templates with different project name, repo urls/names etc...
