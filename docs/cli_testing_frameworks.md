@@ -14,7 +14,7 @@ Get testing.
 
 The best way to get started, is boostrap the framework using the scaffolding-cli from Amido Stacks. By using it in interactive mode, you can simply answered 5 questions to get a bespoke framework, ready to go with an example test.
 
-`npx @amidostacks/scaffoldling-cli test -i`
+`npx @amidostacks/scaffolding-cli test -i`
 
 ### Interactive questions
 
