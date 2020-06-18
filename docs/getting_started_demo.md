@@ -243,7 +243,8 @@ Since you will probably want to have a shared services type infrastructure contr
 When a project gets big you will want to have an E2E type tests to ensure regressions aren't introduced and UX is preserved. whilst all components have their own tests that cover units/regressions/etc... a black box test is often (if not always) required in projects of distributed nature.
 
 <!-- TODO: this diagram needs cleaning up -->
-```
+
+```bash
 ├── menu-api
 │   ├── aux_scripts
 │   ├── build
@@ -416,7 +417,3 @@ generated file e.g. `billing-api`  which could look like this:
 NB: 
  - path to config can an absolute path that is accessible to the CLI (any network or local drive path) e.g. `npx @amidostacks/scaffolding-cli@latest run -c /var/api/conf/definitions/menu-api.bootstrap-config.json` 
  - path to a config can also be a relative, from the location of where the CLI is run from e.g. `npx @amidostacks/scaffolding-cli@latest run -c ../conf/definitions/menu-api.bootstrap-config.json`
-
-
-
-
