@@ -43,6 +43,11 @@ steps:
       workingDirectory: $(working_directory)
 
   - bash: |
+      npm run lint
+    displayName: 'Lint: Run markdown lint'
+    workingDirectory: ${{ parameters.workingDirectory }}
+      
+  - bash: |
       git config --global user.email $(GIT_USER_EMAIL)
       git config --global user.name $(GIT_USER_NAME)
       echo "machine github.com login $(GIT_USER_NAME) password $(GITHUB_TOKEN)" > ~/.netrc
