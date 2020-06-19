@@ -68,26 +68,23 @@
 ✔ Select Pipeline<span class="hljs-built_in"> Tool
 </span></code></pre>
 <h3><a class="anchor" aria-hidden="true" id="framework-types"></a><a href="#framework-types" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Framework types</h3>
-<table>
-<thead>
-<tr><th></th><th><strong>cypress</strong>*</th><th><strong>TestCafe framework with Typescript</strong></th><th><strong>Selenium framework with .NET</strong></th><th><strong>jest-sonar</strong>*</th></tr>
-</thead>
-<tbody>
-<tr><td>Framework Type</td><td>Acceptance<br/>Functional E2E<br/>Functional API<br/>Component<br/>Accessibility<br/>Visual Regression</td><td>Acceptance<br/>Functional E2E<br/>Accessibility</td><td>Acceptance<br/>Functional E2E<br/>Functional API</td><td>Unit<br/>Component<br/>Integration</td></tr>
-<tr><td>Language</td><td>Typescript<br/>Optional: Javascript</td><td>Typescript<br/>Optional: Javascript</td><td>C#</td><td>Typescript<br/>Optional: Javascript</td></tr>
-<tr><td>Framework</td><td>Cypress</td><td>TestCafe</td><td>Bespoke</td><td>Jest</td></tr>
-<tr><td>Libraries and Tools</td><td>Mocha<br/>Chai<br/>Chai-jQuery<br/>Sinon.JS<br/>Sinon-Chai<br/>Lodash<br/>Minimatch<br/>Moment<br/>Blob<br/>Promise</td><td>Axios<br/>TestCafe Assertions<br/>TestCafe API</td><td>Microsoft Test SDK<br/>Selenium WebDriver<br/>WebDriver ChromeDriver<br/>Shouldly<br/>BDDfy<br/>xUnit</td><td>Jest Snapshot<br/>@testing-library/react</td></tr>
-<tr><td>Integrations</td><td>Axe<br/>Applitools</td><td>Axe<br/>LambdaTest</td><td></td><td>Sonar Scanner</td></tr>
-<tr><td>Report(s)</td><td>jUnit/xUnit<br/>xunit-viewer (single page HTML)<br/>Mochawesome (rich HTML results with screenshots)</td><td>xUnit</td><td>BDDfy<br/>xUnit</td><td>jUnit/xUnit<br/>Cobertura, lcov (code coverage)<br/>Sonar reporter</td></tr>
-<tr><td>Browsers</td><td>Used:<br/>Google Chrome<br/><br/>Supported:<br/>Mozilla Firefox<br/>Microsoft Edge<br/>Electron<br/>Brave</td><td>Used:<br/>LambdaTest<br/>Google Chrome<br/><br/>Supports:<br/>Internet Explorer (11+)<br/>Microsoft Edge (legacy and Chromium-based)<br/>Mozilla Firefox<br/>Safari</td><td>Used:<br/>Google Chrome<br/><br/>Supports:<br/>LambdaTest<br/>Internet Explorer (11+)<br/>Microsoft Edge (legacy and Chromium-based)<br/>Mozilla Firefox<br/>Safari</td><td>N/A</td></tr>
-<tr><td>Pipeline</td><td></td><td>AzureDevops</td><td>AzureDevops</td><td></td></tr>
-<tr><td>Example Test(s)</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td></tr>
-<tr><td>Example Data Teardown</td><td>N/A (stubbed request)</td><td>Yes</td><td>Yes</td><td>N/A</td></tr>
-<tr><td>BDD</td><td>Mocha</td><td></td><td>BDDfy</td><td>Jasmine</td></tr>
-<tr><td>Features</td><td>Automatic waiting<br/>In browser<br/>Element selector tool<br/>Spies, stubs , clocks<br/>Real time reloads<br/>Can use the same environment variables as the webapp</td><td>Cross browser<br/>Script injection</td><td>WebDriver</td><td>Render</td></tr>
-<tr><td>Screenshots +/- Videos</td><td>Yes</td><td>Yes</td><td>Yes</td><td>No</td></tr>
-</tbody>
-</table>
+<!-- markdownlint-disable -->
+|   | **cypress*** | **TestCafe framework with Typescript** | **Selenium framework with .NET** | **jest-sonar*** |
+| --- | --- | --- | --- | --- |
+|  Framework Type | Acceptance<br/>Functional E2E<br/>Functional API<br/>Component<br/>Accessibility<br/>Visual Regression | Acceptance<br/>Functional E2E<br/>Accessibility | Acceptance<br/>Functional E2E<br/>Functional API | Unit<br/>Component<br/>Integration |
+|  Language | Typescript<br/>Optional: Javascript | Typescript<br/>Optional: Javascript | C# | Typescript<br/>Optional: Javascript |
+|  Framework | Cypress | TestCafe | Bespoke | Jest |
+|  Libraries and Tools | Mocha<br/>Chai<br/>Chai-jQuery<br/>Sinon.JS<br/>Sinon-Chai<br/>Lodash<br/>Minimatch<br/>Moment<br/>Blob<br/>Promise | Axios<br/>TestCafe Assertions<br/>TestCafe API | Microsoft Test SDK<br/>Selenium WebDriver<br/>WebDriver ChromeDriver<br/>Shouldly<br/>BDDfy<br/>xUnit | Jest Snapshot<br/>@testing-library/react |
+|  Integrations | Axe<br/>Applitools | Axe<br/>LambdaTest |  | Sonar Scanner |
+|  Report(s) | jUnit/xUnit<br/>xunit-viewer (single page HTML)<br/>Mochawesome (rich HTML results with screenshots) | xUnit | BDDfy<br/>xUnit | jUnit/xUnit<br/>Cobertura, lcov (code coverage)<br/>Sonar reporter |
+|  Browsers | Used:<br/>Google Chrome<br/><br/>Supported:<br/>Mozilla Firefox<br/>Microsoft Edge<br/>Electron<br/>Brave | Used:<br/>LambdaTest<br/>Google Chrome<br/><br/>Supports:<br/>Internet Explorer (11+)<br/>Microsoft Edge (legacy and Chromium-based)<br/>Mozilla Firefox<br/>Safari | Used:<br/>Google Chrome<br/><br/>Supports:<br/>LambdaTest<br/>Internet Explorer (11+)<br/>Microsoft Edge (legacy and Chromium-based)<br/>Mozilla Firefox<br/>Safari | N/A |
+|  Pipeline |  | AzureDevops | AzureDevops |  |
+|  Example Test(s) | Yes | Yes | Yes | Yes |
+|  Example Data Teardown | N/A (stubbed request) | Yes | Yes | N/A |
+|  BDD | Mocha |  | BDDfy | Jasmine |
+|  Features | Automatic waiting<br/>In browser<br/>Element selector tool<br/>Spies, stubs , clocks<br/>Real time reloads<br/>Can use the same environment variables as the webapp | Cross browser<br/>Script injection | WebDriver | Render |
+|  Screenshots +/- Videos | Yes | Yes | Yes | No |
+<!-- markdownlint-restore -->
 <p><em>* Currently cannot be bootstrapped from <a href="https://www.npmjs.com/package/@amidostacks/scaffolding-cli">@amidostacks/scaffolding-cli</a>, but is available to clone from the <a href="https://github.com/amido/stacks-webapp-template">amido/stacks-webapp-template</a> respository.</em></p>
 <h3><a class="anchor" aria-hidden="true" id="get-testing-in-just-five-questions"></a><a href="#get-testing-in-just-five-questions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Get testing in just five questions</h3>
 <p><a href="https://asciinema.org/a/mpqq9MGhE2TsSXtLDhmjZfaDq"><img src="https://asciinema.org/a/mpqq9MGhE2TsSXtLDhmjZfaDq.svg?t=7" alt="asciicast"></a></p>
@@ -101,35 +98,35 @@
 <li>environment variables</li>
 <li>and information to start testing immediately</li>
 </ul>
-<pre><code class="hljs">├── Api
+<pre><code class="hljs css language-bash">├── Api
 │   └── Builders
 │       └── Http
-│           ├── <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">HttpRequestBuilder</span>.</span></span>cs
-│           └── <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">HttpRequestFactory</span>.</span></span>cs
-├── <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Company</span>.</span><span class="hljs-module"><span class="hljs-identifier">Project</span>.</span><span class="hljs-module"><span class="hljs-identifier">E2E</span>.</span><span class="hljs-module"><span class="hljs-identifier">Selenium</span>.</span></span>csproj
-├── <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Company</span>.</span><span class="hljs-module"><span class="hljs-identifier">Project</span>.</span><span class="hljs-module"><span class="hljs-identifier">E2E</span>.</span><span class="hljs-module"><span class="hljs-identifier">Selenium</span>.</span></span>sln
+│           ├── HttpRequestBuilder.cs
+│           └── HttpRequestFactory.cs
+├── Company.Project.E2E.Selenium.csproj
+├── Company.Project.E2E.Selenium.sln
 ├── Configuration
-│   ├── <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">ConfigAccessor</span>.</span></span>cs
-│   └── <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">ConfigModel</span>.</span></span>cs
-├── <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">README</span>.</span></span>md
+│   ├── ConfigAccessor.cs
+│   └── ConfigModel.cs
+├── README.md
 ├── Selenium
 │   ├── Components
-│   │   ├── <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">CreateForm</span>.</span></span>cs
-│   │   ├── <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Header</span>.</span></span>cs
-│   │   ├── <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">MenuList</span>.</span></span>cs
-│   │   └── <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Notifier</span>.</span></span>cs
+│   │   ├── CreateForm.cs
+│   │   ├── Header.cs
+│   │   ├── MenuList.cs
+│   │   └── Notifier.cs
 │   ├── Factory
-│   │   └── <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">WebDriverFactory</span>.</span></span>cs
+│   │   └── WebDriverFactory.cs
 │   ├── Pages
-│   │   └── <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">PageObject</span>.</span></span>cs
-│   └── <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">SeleniumWrapper</span>.</span></span>cs
+│   │   └── PageObject.cs
+│   └── SeleniumWrapper.cs
 ├── Tests
 │   ├── Fixtures
-│   │   └── <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">BaseSetup</span>.</span></span>cs
+│   │   └── BaseSetup.cs
 │   ├── Steps
-│   │   └── <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">CreateMenu</span>.</span></span>cs
+│   │   └── CreateMenu.cs
 │   └── Stories
-│       └── <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">GetMenuExampleTests</span>.</span></span>cs
+│       └── GetMenuExampleTests.cs
 └── appsettings.json
 </code></pre>
 <p><em><a href="/stacks/docs/testing_selenium#folder-structure">Above: Example output from bSelenium framework with .NET output folder structure</a></em></p>
