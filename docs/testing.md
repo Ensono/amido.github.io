@@ -60,7 +60,7 @@ as possible. The key features of Cypress:
 - Great documentation
 - Best implementation of Live Reloading
 
-### Why is Cypress categorised in the pre-deployed tests?
+### Why is Cypress categorised in the pre-deployed tests
 
 The Cypress tests, if structured correctly, can be run BEFORE the app client is deployed to an environment. This is to ensure that we get the fastest feedback we can. If you are following branching strategies such as GitFlow, then you are able to run these tests on your branch before merging to master.
 
@@ -70,7 +70,7 @@ The Cypress tests, if structured correctly, can be run BEFORE the app client is 
 | faster feedback |  |
 | run core tests before the branch is merged to master, smoke tests post merge and deployment |  |
 
-### How is Cypress run in Continuous Integration (CI) pipelines?
+### How is Cypress run in Continuous Integration (CI) pipelines
 
 Glad you asked. You'll see an npm script in the `package.json` which uses [start-server-and-test](https://github.com/bahmutov/start-server-and-test). This package starts the Node.js Express server, waits for the app URL (localhost in this case), then runs test command; when the tests end, it shuts down the server instance.
 
@@ -82,13 +82,13 @@ _package.json script_:
 "test:cypress": "env CI=true node_modules/.bin/start-server-and-test start $APP_BASE_URL:$PORT test:cypress:run"
 ```
 
-### How do I use Cypress?
+### How do I use Cypress
 
 Please read
 [Cypress - Best Practices](https://docs.cypress.io/guides/references/best-practices.html)
 for how to get the most out of Cypress.
 
-### How can I use Cypress while I develop?
+### How can I use Cypress while I develop
 
 #### Server Side Rendered (SSR) Apps
 
@@ -104,7 +104,7 @@ To open and run Cypress locally with live reload, after installing dependencies:
    `npm run test:cypress`. When writing tests: Open Cypress with live-reloading
    and selector playground `npm run test:cypress:open`
 
-### How do I run all the tests without keeping the server running?
+### How do I run all the tests without keeping the server running
 
 #### Server Side Rendered (SSR) Apps
 
@@ -114,7 +114,7 @@ _Script_:
 
 `npm run test:cypress`. This is the same script as mentioned for running in [CI pipelines](#how-is-cypress-run-in-continuous-integration-ci-pipelines)
 
-### Where should tests be located?
+### Where should tests be located
 
 We suggest co-locating the `*.cy.ts` tests with the page compositions (a composition is a number of components that may come together to form a page). for high level tests, and for component tests with the components themselves.
 
@@ -135,7 +135,7 @@ compositions
     ├── index.test.tsx
     └── index.tsx
 
-### How to you configure the environments?
+### How to you configure the environments
 
 We suggest tightly coupling Cypress with the app under test. This means sharing environment configuration files. This ensures that in your deployment pipelines, and quality gating process, you are confident that the app under test is being tested correctly.
 
@@ -155,7 +155,7 @@ aXe tests are performed on two levels:
 1. first by rendering the React component and testing with Jest.
 2. second with Next rendering the entire page and tessting with Cypress.
 
-Both examples are in the scaffolded webapp tempalates: https://github.com/amido/stacks-webapp-template/tree/master/packages/scaffolding-cli/templates/src/ssr
+Both examples are in the scaffolded webapp tempalates: <https://github.com/amido/stacks-webapp-template/tree/master/packages/scaffolding-cli/templates/src/ssr>
 
 ### Cypress: Dubugging Axe Failures
 
@@ -186,12 +186,12 @@ Please follow the incredible [Cypress Tutorial](https://applitools.com/tutorials
 
 `export APPLITOOLS_API_KEY=`
 
-### How can I run the tests locally?
+### How can I run the tests locally
 
 To spin up the server locally, running Cypress headless, use:
 `npm run test:cypress:eyes`. This is the same for running in CI pipelines.
 
-### Where should tests be located?
+### Where should tests be located
 
 The `*.test.eyes.cy.ts` tests are located with the page compositions (a composition is a number of components that may come together to form a page). 
 
@@ -321,7 +321,7 @@ curl -v localhost:8389/v1/menu/e98583ad-0feb-4e48-9d4f-b20b09cb2633 -H "Accept: 
 
 Please remember to always stop your server once done testing.
 
-### Can I Deploy?
+### Can I Deploy
 
 The [Can I Deploy](https://docs.pact.io/pact_broker/can_i_deploy) tool ensures you are safe to deploy your application. Before deploying to a new environment, you need to know if the version is compatible with the provider version. Instead of checking the broker, we can poll the broker and check programmatically with the latest versions.
 
@@ -373,7 +373,7 @@ Maintainers and contributers may obtain the `PACT_BEARER_TOKEN` if they request 
 When the tests pass, the contract will be written to [pacts](./pacts/genericmenuconsumer-menuapi.json), following the naming convention: `<PACT_CONSUMER>-<PACT_PROVIDER>`.
 
 Some good practices:
-✅ Use Pact Matchers to ensure we account for state change, e.g. no hardcoded values for menus in the database, see https://docs.pact.io/getting_started/matching for more information.
+✅ Use Pact Matchers to ensure we account for state change, e.g. no hardcoded values for menus in the database, see <https://docs.pact.io/getting_started/matching> for more information.
 ✅ Ensure that the provider state has been configured by the Provider
 
 It's important to get the `PACT_CONSUMER` and `PACT_PROVIDER` names correct, as these form the key for verfiy.

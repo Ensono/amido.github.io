@@ -10,15 +10,15 @@ sidebar_label: Publishing NuGet Packages
 
 We have an opensource listed organsisation with multiple packages.
 
-### What do we publish?
+### What do we publish
 
 We have a number of NuGet packages that we publish openly. The source code may not be published, but the packages are free to consume.
 
-### Where are the packages published?
+### Where are the packages published
 
-We are publishing them to: https://www.nuget.org/profiles/amidostacks
+We are publishing them to: <https://www.nuget.org/profiles/amidostacks>
 
-### How do we publish?
+### How do we publish
 
 Once the committed code passes through the quality gates in the pipeline, then the packages will be published automatically. It's up to the consumer to adopt the latest versions.
 

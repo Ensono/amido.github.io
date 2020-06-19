@@ -25,30 +25,36 @@ Please ensure that your local environment has the correct version
 [installed](https://nodejs.org/en/download/).
 
 Additional tools you may want/need to test the outputs locally - this is not required as you could run directly in pipeline - are as follows:
- - docker
+
+- docker
     - the only real dependencies for local testing as all pipelines are using a shared library of public CI images
     - docs on the CI containers used can be found [here](https://github.com/amido/stacks-webapp-template/tree/master/libs/images) links to their public dockerhub pages below:
-      - [sonar-scanner](https://hub.docker.com/repository/docker/amidostacks/ci-sonarscanner)
-      - [terraform-deploy](https://hub.docker.com/repository/docker/amidostacks/ci-tf)
-      - [k8s-deploy](https://hub.docker.com/repository/docker/amidostacks/ci-k8s)
- - dotnet/nodejs/chrome-webdriver/testcafe/sonar-scanner
- - optionally (prefer to use the `docker run -v ...`):
+        - [sonar-scanner](https://hub.docker.com/repository/docker/amidostacks/ci-sonarscanner)
+        - [terraform-deploy](https://hub.docker.com/repository/docker/amidostacks/ci-tf)
+        - [k8s-deploy](https://hub.docker.com/repository/docker/amidostacks/ci-k8s)
+- dotnet/nodejs/chrome-webdriver/testcafe/sonar-scanner
+- optionally (prefer to use the `docker run -v ...`):
     - terraform - v0.12.24
     - kubectl - 
+
 ## Prerequisites
+
 Below are the pre-requisites to get off the ground
 
 ### Public Cloud
+
 You will need a public cloud account with one of the following providers. 
 
 you can find more information around the infrastructure bootstrapping and requirements [here](./infrastructure_code.md).
 
 #### Azure 
+
 You will need to create, or ask your admin for Azure to create for you, an [SPN account](https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal) within a new or existing subscription, that will have the owner privileges. Optionally, you can create 2 to follow security best practice [here](./infrastructure_code.md####Azure).
 
 This SPN (Service Principal Name) will be used throughout to create and manage resources within the cloud via terraform. You can find additional info on how to use these locally along with recommnded usage.
 
 #### GCP
+
 You will need to create a project - preferably 2 one for Terraform state and one for the solution - which you may choose to create 2 of if you want your production cluster to be completely separate.
 
 You will need to create a service account (or 2 if your state is in a different account) - you will need to take note of the JSON credentials file and store in an environment variable for use in pipelines. 
@@ -60,9 +66,11 @@ Coming soon -->
 
 
 ### CI/CD  Tooling
+
 You will need access to CI/CD tooling with YAML based input. 
 
 #### AzureDevOps
+
 You will require AzureDevops library - Microsoft speak for environment variables that are scoped to your jobs/stages within the pipeline as a bare minimum, instructions on how to create it can be found [here](https://docs.microsoft.com/en-us/azure/devops/pipelines/library/?view=azure-devops)
 
 You will use the credentials from your SPN (Service Principal Name) created above to place the values here:
@@ -70,10 +78,11 @@ You will use the credentials from your SPN (Service Principal Name) created abov
 ![infra_vars](https://amidostacksassets.blob.core.windows.net/docs/assets/image%20(4).png "Infra variables")
 
 In this instance it is important that they are named as per above: 
- - azure_client_id
- - azure_client_secret
- - azure_subscription_id
- - azure_tenant_id
+
+- azure_client_id
+- azure_client_secret
+- azure_subscription_id
+- azure_tenant_id
 
 As these are used downstream in all interactions with the Azure API to create any kind of infrastructure using Terraform within both shared-services and application layer.
 
@@ -92,6 +101,7 @@ where `REPLACE_ME_FOR_LIBRARY_NAME` in this example would correspond to `amido-s
 #### Jenkins
 
 ##### Credentials 
+
 You will need to create Credentials objects in Jenkins that the pipeline will use to bootstrap various resources in either GCP or Azure. 
 
 For GCP credentials you will want to create a file secret with your service account json key. 
@@ -107,19 +117,23 @@ Similarly as with AzureDevops all jobs are running in publicly available CI cont
 Coming soon -->
 
 ### Variables and Secrets
+
 #### TODO
 <!-- TODO -->
 
 ## What you get
+
 At a high level each of the options within the CLI will roughly provide the same outcome, with tailored code for specific cloud platform and deployement tool combination.
 
 CSR being the only exception where the infrastructure doesn't cover K8s infrastructure as it is not required.
 
 ### OOTB template
+
 Includes a full SDLC for a chosen template app (API/UI/tests) on a specified deployment (CI/CD) platform with the below conceptiual stages. However as the output is entirely modular it allows for easy extension by user in deploy steps of either k8s or terraform - user should be able to enrich the generated output with their specific needs.
 
 Application Layer:
-  - CI
+
+- CI
     - Unit test
     - Tests...
     - Build (Transpile/compile)
@@ -127,14 +141,14 @@ Application Layer:
     - Publish Image (Largely relying on Cloud Registries Scanning capabilities)
         - If you are publishing to registries other than ACR/ECR/GCR
         - Enable vulnerability scans in the YAML
-  - Stage (Dev/test/prod)
+- Stage (Dev/test/prod)
     - Infra
         - Terraform lib
-          - DNS record 
-          - separate ResourceGroup (optional)
-          - CosmosDB (optional)
-          - RedisCache (optional)
-          - metric alarms (optional)
+            - DNS record 
+            - separate ResourceGroup (optional)
+            - CosmosDB (optional)
+            - RedisCache (optional)
+            - metric alarms (optional)
         - Coming soon... Kubernetes operators
     - Deploy
         - kubectl apply || Blob update with React app
@@ -142,21 +156,23 @@ Application Layer:
         - Lighthouse/selenium/testcafe
 
 Infrastructure Layer (Shared Services):
-  - Stage (nonprod/prod - this is subjective to user preference, can be dev/test/prod)
-      - infra:
-          - K8s (AKS/GKE/EKS)
-          - Network + subnets
-          - BLOB like storage (blob/S3)
-          - Vault solution
-          - SSL termination (AppGateway)
-          - DNS zone
-      - k8s configuration:
-          - ingress controller - with automatic IP binding and AppGateway intgeration
-          - pod level identity management (addpodidentity/fargate-profile)
-          - gatekeeper
+
+- Stage (nonprod/prod - this is subjective to user preference, can be dev/test/prod)
+    - infra:
+        - K8s (AKS/GKE/EKS)
+        - Network + subnets
+        - BLOB like storage (blob/S3)
+        - Vault solution
+        - SSL termination (AppGateway)
+        - DNS zone
+    - k8s configuration:
+        - ingress controller - with automatic IP binding and AppGateway intgeration
+        - pod level identity management (addpodidentity/fargate-profile)
+        - gatekeeper
 
 tests (in standalone mode):
-  - lots more info can be found in the testing section [overview](./testing.md##Overview)
+
+- lots more info can be found in the testing section [overview](./testing.md##Overview)
 
 <!-- ### Infrastructure template
 
@@ -168,27 +184,32 @@ tests (in standalone mode):
 ### Business Source code
 
 #### Azure
+
 An UI app in react (SSR/CSR flavour):
-  - SSR
+
+- SSR
     - express mware for authentication using passport 
     - routing set up within nextjs from client to server proxying out to defined endpoints (sample using the yumido sample )
     - ...
-  - CSR:
+- CSR:
     - PKCE integration
     - API integration
     - ...
 
 An API in Java (springboot) and .netcore flavours with: 
-  - CosmosDB integration (deploy/infra/yaml)
-  - swagger generation
+
+- CosmosDB integration (deploy/infra/yaml)
+- swagger generation
 
 Coming soon crednetialless auth within azure using podidentity
 
 
 ## Examples
+
 Below are some examples of how to use the CLI for specific outcomes. Please read the [advanced usage](###Advanced\ \Usage) section on how to apply the output in more complex scenarios.
 
 ### Basic
+
 A generated outcome is a fully functioning folder that can be used as an entire repo on a SCM provider of your choice.
 
 #### Create a SSR webapp from template
@@ -213,15 +234,15 @@ npx @amidostacks/scaffolding-cli@latest run -i
    e.g. ${SELECTED_DIR}/$PROJECT_NAME
 
 ```bash
-$ cd ${SELECTED_DIR}/$PROJECT_NAME/src/
-$ npm install
+cd ${SELECTED_DIR}/$PROJECT_NAME/src/
+npm install
 ```
 
 6. Build and run the app:
 
 ```bash
-$ npm run build
-$ npm run start
+npm run build
+npm run start
 ```
 
 Open Browser and hit [http://localhost:3000](http://localhost:3000)
@@ -229,9 +250,11 @@ Open Browser and hit [http://localhost:3000](http://localhost:3000)
 <!-- MORE examples here Test only? Infra Only? -->
 
 ### Advanced Usage
+
 Whilst the basic examples are fine for small projects and get you off the ground quickly to have a deployed application securly behind a domain of your choice. 
 
-#### Using Monorepo?
+#### Using Monorepo
+
 When you work within a monorepo, you will have to do a few minor adjustments to the generated output. 
 
 Simply `cd` into the root directory of your monorepo and run  the cli as many times as you want to create the desired service components, e.g. a UI (using either CSR/SSR), some APIs and you may want a separate infrastructure and blackbox test directories - to end up with below sample.
@@ -358,14 +381,18 @@ When a project gets big you will want to have an E2E type tests to ensure regres
 
 
 ##### Config file
+
 Each run of the CLI will generate a complete configuration object with values you have specified and a placehold for those you skipped (or weren't exposed by the CLI). You can re-run the cli pointing to the same folder as many times as you want with different variables. Equally, you can run it in different directory to create the same configuration templates with different project name, repo urls/names etc...
 
-##### Example:
+##### Example
+
 ```bash
 cd mono_repo_root; \
 npx @amidostacks/scaffolding-cli@latest run -c menu-api.bootstrap-config.json
 ```
+
 Where the generated config would look like this: 
+
 ```JSON
 {
   "projectName": "menu-api",
@@ -388,6 +415,7 @@ Where the generated config would look like this:
   "terraformBackendStorageContainer": "replace_terraform_backend_storage_container"
 }
 ```
+
 you can then re-run the cli in the same directory by pointing to a copy of the 
 generated file e.g. `billing-api`  which could look like this:
 
@@ -415,5 +443,6 @@ generated file e.g. `billing-api`  which could look like this:
 ```
 
 NB: 
- - path to config can an absolute path that is accessible to the CLI (any network or local drive path) e.g. `npx @amidostacks/scaffolding-cli@latest run -c /var/api/conf/definitions/menu-api.bootstrap-config.json` 
- - path to a config can also be a relative, from the location of where the CLI is run from e.g. `npx @amidostacks/scaffolding-cli@latest run -c ../conf/definitions/menu-api.bootstrap-config.json`
+
+- path to config can an absolute path that is accessible to the CLI (any network or local drive path) e.g. `npx @amidostacks/scaffolding-cli@latest run -c /var/api/conf/definitions/menu-api.bootstrap-config.json` 
+- path to a config can also be a relative, from the location of where the CLI is run from e.g. `npx @amidostacks/scaffolding-cli@latest run -c ../conf/definitions/menu-api.bootstrap-config.json`

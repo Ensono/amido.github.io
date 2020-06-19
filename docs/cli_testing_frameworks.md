@@ -4,7 +4,7 @@ title: Project Types - Testing
 sidebar_label: Project Types - Testing
 ---
 
-Testing frameworks require a lof of boilerplate. It's also hard to know how to get started without examples. We have a range of Javascript Front End focused opinionated boilerplate testing fraemworks that can be boostrapped and tailored to your current project with just one command.
+Testing frameworks require a lof of boilerplate. It's also hard to know how to get started without examples. We have a range of Javascript Front End focused opinionated boilerplate testing frameworks that can be boostrapped and tailored to your current project with just one command.
 
 By default, Amido Stacks build a range of testing solutions into the projects. But we understand that users require tests to be seperate from the code. For more testing options and examples, see the other [project types](./scaffolding_cli.md).
 

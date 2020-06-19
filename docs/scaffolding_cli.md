@@ -19,6 +19,6 @@ Amido Stacks provides a range of opinionated boilerplate projects. These include
 
 _Requirements: Node.js > 12.x_
 
-The scaffolding-cli is available as a npm package, and Noede executable. See [npm](https://www.npmjs.com/package/@amidostacks/scaffolding-cli) for more information.
+The scaffolding-cli is available as a npm package, and Node executable. See [npm](https://www.npmjs.com/package/@amidostacks/scaffolding-cli) for more information.
 
 [![scaffolding-cli](https://app.lucidchart.com/publicSegments/view/2b78cd98-ab02-4bcf-9a1b-5cc941959351/image.png)](https://app.lucidchart.com/publicSegments/view/2b78cd98-ab02-4bcf-9a1b-5cc941959351/image.png)

@@ -6,7 +6,7 @@ sidebar_label: E2E Selenium .NET
 
 ## Installing the template
 
-To create a templatated solution we can use the https://www.npmjs.com/package/@amidostacks/scaffolding-cli npm package.
+To create a templatated solution we can use the <https://www.npmjs.com/package/@amidostacks/scaffolding-cli> npm package.
 
 `npx @amidostacks/scaffolding-cli run -i`
 
@@ -24,7 +24,7 @@ Please ensure your environment has:
 
 It is recommended to use Visual Studio. Alternatively, VSCode has some custom plugins that can be configured to make debugging your tests easier.
 
-For all downloads, see https://visualstudio.microsoft.com/
+For all downloads, see <https://visualstudio.microsoft.com/>
 
 ### Suggested VSCode Extensions
 
@@ -36,7 +36,7 @@ For all downloads, see https://visualstudio.microsoft.com/
 
 Visual Studio will automagically attach to the Selenium process, using the XUnit Runner. Visual Studio also automagically discovers the Xunit tests for the project and displays them in the Test Explorer.
 
-For more information on running and debugging in Visual Studio see: https://docs.microsoft.com/en-us/visualstudio/test/run-unit-tests-with-test-explorer?view=vs-2019
+For more information on running and debugging in Visual Studio see: <https://docs.microsoft.com/en-us/visualstudio/test/run-unit-tests-with-test-explorer?view=vs-2019>
 
 It's as simple as following these steps:
 
@@ -84,9 +84,9 @@ _Documentation: <https://www.selenium.dev/>_
 4. **Selenium Webdriver** allows for the interaction of the Selenium C# Framework with the web browser. Before you can make use of Selenium WebDriver commands in C#, the development environment should be setup i.e. Selenium WebDriver for the corresponding web browser should be installed on the machine.
 _Documentation: <https://www.selenium.dev/projects/>_
 5. **Selenium WebDriver ChromeDriver** installs Chrome Driver (Win32, macOS, Linux64) for Selenium WebDriver. The chromedriver executable is not in the solution, but is copied into the output folder on the build process. This allows you to use Chrome as a default browser without having to install locally or in the pipeline, or commit a driver into the test repository.
-_Documentation: https://github.com/jsakamoto/nupkg-selenium-webdriver-chromedriver/_
+_Documentation: <https://github.com/jsakamoto/nupkg-selenium-webdriver-chromedriver/>_
 5. **Shouldly** is an assertion library. Think of it as the bit that enforces (and tests) the `Then` statement.
-_Documentation: https://shouldly.readthedocs.io/en/latest/_
+_Documentation: <https://shouldly.readthedocs.io/en/latest/>_
 6. **Microsoft Extensions Configuration** is a provider used to build key/value based configuration settings for use in an application. In this instance, builds the app with configured `appsettings.json`.
 _Documentation: <https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration/?view=aspnetcore-3.1>_
 
@@ -96,11 +96,11 @@ If you wish to use a local instance of Selenium Webdriver, be sure to download t
 
 | BROWSER	| DOWNLOAD LOCATION 											|
 | -------	| -----------------												|
-| Opera		| https://github.com/operasoftware/operachromiumdriver/releases	|
-| Firefox	| https://github.com/mozilla/geckodriver/releases				|
-| Chrome	| http://chromedriver.chromium.org/downloads					|
-| Internet Explorer	| https://github.com/SeleniumHQ/selenium/wiki/InternetExplorerDriver |
-| Microsoft Edge	| https://blogs.windows.com/msedgedev/2015/07/23/bringing-automated-testing-to-microsoft-edge-through-webdriver/	|
+| Opera		| <https://github.com/operasoftware/operachromiumdriver/releases>	|
+| Firefox	| <https://github.com/mozilla/geckodriver/releases>				|
+| Chrome	| <http://chromedriver.chromium.org/downloads>					|
+| Internet Explorer	| <https://github.com/SeleniumHQ/selenium/wiki/InternetExplorerDriver> |
+| Microsoft Edge	| <https://blogs.windows.com/msedgedev/2015/07/23/bringing-automated-testing-to-microsoft-edge-through-webdriver/>	|
 
 ## Folder Structure
 
@@ -152,7 +152,7 @@ For information on tools and tips on how to best use locators, the following art
 
 Please be aware, that that the `Selenium PageFactory` uses the `FindBy` method. Jim Evans whom is the main contributor to Selenium states why this might not be the best approach for C# implementation.
 
- More information: http://jimevansmusic.blogspot.com/2018/03/deprecating-parts-of-seleniums-net.html
+ More information: <http://jimevansmusic.blogspot.com/2018/03/deprecating-parts-of-seleniums-net.html>
 
 
 ### Element Locator Tools
@@ -200,7 +200,7 @@ Here is a simple example:
 
 Fixtures contains xUnit class fixtures. These class fixtures are used to create test context for the tests. The fixture is where you can put fixture setup (via constructor) and teardown (Via `Dispose()`).
 
-See xUnit documentation for information on different fixtures and how to use them: https://xunit.net/docs/shared-context
+See xUnit documentation for information on different fixtures and how to use them: <https://xunit.net/docs/shared-context>
 
 ##### Stories
 
@@ -216,11 +216,11 @@ This is where all the step definitions are created.
 
 ## Other Testing Tools
 
-https://github.com/thangchung/awesome-dotnet-core
+<https://github.com/thangchung/awesome-dotnet-core>
 
 ## C# Coding Standards and Naming Conventions
 
-See https://github.com/ktaranov/naming-convention/blob/master/C%23%20Coding%20Standards%20and%20Naming%20Conventions.md for best practices.
+See <https://github.com/ktaranov/naming-convention/blob/master/C%23%20Coding%20Standards%20and%20Naming%20Conventions.md> for best practices.
 
 ## Contributing
 

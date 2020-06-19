@@ -16,10 +16,10 @@ For local execution:
   2. run the following commands in the following order
    
   ```bash
-  $ npm install
-  $ npm run build
-  $ npm run build:watch
-  $ npm npm run start
+  npm install
+  npm run build
+  npm run build:watch
+  npm npm run start
   ```
 
 All of our packages, including the `@amidostacks/scaffolding-api` are available on [npm](https://www.npmjs.com/package/@amidostacks/scaffolding-cli).

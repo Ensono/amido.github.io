@@ -11,7 +11,7 @@ sidebar_label: Publishing Packages
 repository. Please do not version packages manually in their package
 directories.
 
-## How do I bump the version on a package and publish?
+## How do I bump the version on a package and publish
 
 1. Make changes and commit them to origin/branch
 2. Ensure your `git status` is porcelian
@@ -21,12 +21,12 @@ directories.
 5. Raise a PR to origin/master
 6. The CI pipeline will then publish the changes for you
 
-## What registry are we using?
+## What registry are we using
 
 All of our packages are opensource and can be found under the @amidostacks
 organisation on [npm](https://www.npmjs.com/settings/amidostacks/packages).
 
-## Do I need access to the registry to be able to publish?
+## Do I need access to the registry to be able to publish
 
 No, the CI pipeline will publish for you. If you have maintainer access to the
 Github repo then you can commit your changes with the version bump, and let the
@@ -48,7 +48,7 @@ packages/
 ## Package Registry
 
 All our packages are publically available from `npm`:
-https://www.npmjs.com/org/amidostacks
+<https://www.npmjs.com/org/amidostacks>
 
 ## Package Management
 
@@ -78,12 +78,12 @@ This automates the following process:
    version and the registrry
 5. if changes are found the packages are published to the configured registry
 
-### Why do version bumps require manual commit?
+### Why do version bumps require manual commit
 
 Because we think it's up the the deveopers to ensure that they want to bump the
 version, based on their commit history.
 
-### Why have we automated publishing?
+### Why have we automated publishing
 
 We think it's good practice to test changes before publishing it to our
 [public npm registry](https://www.npmjs.com/settings/amidostacks/packages). so
@@ -97,7 +97,7 @@ history.
 
 From root, run: `npm run version`
 
-### What does `version` do?
+### What does `version` do
 
 1. Identifies packages that have been updated since the previous tagged release.
 2. Bumps the version based on the Conventional Commits Specification
@@ -105,14 +105,14 @@ From root, run: `npm run version`
 
 The changes are then ready to be commited to the remote.
 
-### Why do we use `lerna version --conventional-commits`?
+### Why do we use `lerna version --conventional-commits`
 
 > When run with this flag, lerna version will use the Conventional Commits
 > Specification to determine the version bump and generate CHANGELOG.md files.
 > [2][2]:
-> https://github.com/lerna/lerna/tree/master/commands/version#--conventional-commits
+> <https://github.com/lerna/lerna/tree/master/commands/version#--conventional-commits>
 
-### Why do we use `lerna publish from-package`?
+### Why do we use `lerna publish from-package`
 
 1. We reduce risk of Git conflicts;
 2. The versioning can occur idependently;
@@ -120,14 +120,14 @@ The changes are then ready to be commited to the remote.
    package;
 4. If a publish fails, then it will try again.
 
-### Why do we use `--no-git-tag-version`?
+### Why do we use `--no-git-tag-version`
 
 By default, lerna version will commit changes to package.json files and tag the
 release. Since we are publishing `from-package` and doing so in the pipeline, we
 would rather suggest creating a seperate Github release task that would run on
 successful Lerna publishing to the registry.
 
-### Why do we use `--no-push`?
+### Why do we use `--no-push`
 
 By default, lerna version will push the committed and tagged changes to the
 configured git remote. We disable this to ensure that the changelog and vrsion
@@ -140,12 +140,12 @@ We generate our CHANGELOGS.md automagically based on the `git commit`. The
 commit itself communicates the **WHAT**, whereas commit message communicates the
 **WHY**.
 
-### What is a commit?
+### What is a commit
 
 [`git commit`](https://git-scm.com/docs/git-commit) is a git command that is
 used to record your changes to the local repository.
 
-### Why are we using Conventional Commits?
+### Why are we using Conventional Commits
 
 - Automatically generating CHANGELOGs.
 - Automatically determining a semantic version bump (based on the types of
@@ -157,20 +157,21 @@ used to record your changes to the local repository.
   to explore a more structured commit history.
 
 _Source:
-https://www.conventionalcommits.org/en/v1.0.0/#why-use-conventional-commits_
+<https://www.conventionalcommits.org/en/v1.0.0/#why-use-conventional-commits>_
 
-### How do we enforce Conventional Commits?
+### How do we enforce Conventional Commits
 
 We use precommit hooks with [Husky](https://github.com/typicode/husky) and
 [commitlint](https://github.com/conventional-changelog/commitlint).
 
-### What are the commit conventions format?
+### What are the commit conventions format
 
 `type(scope?): subject`
 
 Where:
 
 - [`'type'=`](https://github.com/conventional-changelog/commitlint/tree/master/%40commitlint/config-conventional#type-enum)
+
   ```js
   ;[
     'build',
@@ -186,6 +187,7 @@ Where:
     'test',
   ]
   ```
+
 - `scope?=` optional, addresses the specific area of change, or feature
 - `subject=` why you are making the commit in the first place
 
@@ -199,7 +201,7 @@ Examples: `chore: to run tests on travis ci`
 
 From root, run: `npm run publish`
 
-### What does `publish` do?
+### What does `publish` do
 
 1. explicitly publish packages where the latest version is not present in the
    registry (from-package).
@@ -207,12 +209,12 @@ From root, run: `npm run publish`
 _Lerna will never publish packages which are marked as private ("private": true
 in the package.json)._
 
-### What happens in CI?
+### What happens in CI
 
 We check if the package version is up to date with the registry. If it's a head,
 then we publish the changes.
 
-### Why do we use `lerna publish from-package`?
+### Why do we use `lerna publish from-package`
 
 > keyword except the list of packages to publish is determined by inspecting
 > each `package.json` and determining if any package version is not present in
@@ -229,7 +231,7 @@ We have encountered a lot of issues while using Lerna for versioning and
 publishing in a pipeline. Namely the following:
 
 1. Lerna expects master to be un protected and able to push to it -
-   https://github.com/lerna/lerna/issues/1957
+   <https://github.com/lerna/lerna/issues/1957>
 2. When using `from-package` the GitHead SHA needs to be commited POST
    publishing to a registry. This requires the publish task in the pipeline to
    commit this to master.
