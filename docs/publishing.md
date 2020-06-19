@@ -39,7 +39,7 @@ into independent sub-packages.
 
 These packages can be found in the packages/ directory:
 
-```
+```bash
 packages/
   elint-config/
   template-cli/
@@ -111,14 +111,6 @@ The changes are then ready to be commited to the remote.
 > Specification to determine the version bump and generate CHANGELOG.md files.
 > [2][2]:
 > <https://github.com/lerna/lerna/tree/master/commands/version#--conventional-commits>
-
-### Why do we use `lerna publish from-package`
-
-1. We reduce risk of Git conflicts;
-2. The versioning can occur idependently;
-3. Lerna will need to commiting the `gitHead` SHA to the package.json of the
-   package;
-4. If a publish fails, then it will try again.
 
 ### Why do we use `--no-git-tag-version`
 

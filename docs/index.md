@@ -46,16 +46,6 @@ More details around the internal layout and how to contribute and extend the CLI
 ### Deployment Concepts
 
 The deployment principles of build ones and deploy to multiple stages has been applied as best practice for the generated pipeline template.
-Templated out pipeline will encompass the build, deploy dev, deploy prod stages. Each stage is comprised of tasks that the user can either enable or disable depending on their setup and currently available tooling such as SonarCloud or vulnerability scanning. 
+Templated out pipeline will encompass the build, deploy dev, deploy prod stages. Each stage is comprised of tasks that the user can either enable or disable depending on their setup and currently available tooling such as SonarCloud or vulnerability scanning.
 
 To read and understand more about testing your contributed changes please go to *[deployment](./deployment.md)*.
-
-### Infrastructure concepts
-
-All infrastructure tooling is done with Terraform, and uses workspaces as the main mechanism of segragating states:
-
-Current limitations:
-
-- SSR Only
-- AKS Only
-

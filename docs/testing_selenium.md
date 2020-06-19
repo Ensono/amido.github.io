@@ -85,9 +85,9 @@ _Documentation: <https://www.selenium.dev/>_
 _Documentation: <https://www.selenium.dev/projects/>_
 5. **Selenium WebDriver ChromeDriver** installs Chrome Driver (Win32, macOS, Linux64) for Selenium WebDriver. The chromedriver executable is not in the solution, but is copied into the output folder on the build process. This allows you to use Chrome as a default browser without having to install locally or in the pipeline, or commit a driver into the test repository.
 _Documentation: <https://github.com/jsakamoto/nupkg-selenium-webdriver-chromedriver/>_
-5. **Shouldly** is an assertion library. Think of it as the bit that enforces (and tests) the `Then` statement.
+6. **Shouldly** is an assertion library. Think of it as the bit that enforces (and tests) the `Then` statement.
 _Documentation: <https://shouldly.readthedocs.io/en/latest/>_
-6. **Microsoft Extensions Configuration** is a provider used to build key/value based configuration settings for use in an application. In this instance, builds the app with configured `appsettings.json`.
+7. **Microsoft Extensions Configuration** is a provider used to build key/value based configuration settings for use in an application. In this instance, builds the app with configured `appsettings.json`.
 _Documentation: <https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration/?view=aspnetcore-3.1>_
 
 ### Selenium WebDriver Downloads
@@ -104,7 +104,7 @@ If you wish to use a local instance of Selenium Webdriver, be sure to download t
 
 ## Folder Structure
 
-```
+```bash
 ├── Configuration
 ├── Selenium
 └── Tests
@@ -118,8 +118,8 @@ If you wish to use a local instance of Selenium Webdriver, be sure to download t
 
 This contains classes used to manage the configuration for the tests.
 
-- `ConfigModel.cs` is a POCO representation of the json in `appsettings.json`
-- `ConfigAccessor.cs` contains the logic required to obtain the JSON from `appsettings.json` and bind it to the `ConfigModel.cs` object. This allows the configuration to be used as a simple object.
+* `ConfigModel.cs` is a POCO representation of the json in `appsettings.json`
+* `ConfigAccessor.cs` contains the logic required to obtain the JSON from `appsettings.json` and bind it to the `ConfigModel.cs` object. This allows the configuration to be used as a simple object.
 
 The ConfigAccessor will automatically replace any configuration setting values with the values set in the Environment Variables on the machine running the tests.
 
@@ -186,7 +186,7 @@ public By menus = By.CssSelector("[data-cy='editMenuItem']");
 
 This is the parent folder for all test code.
 
-##### Fixtures
+#### Fixtures
 
 `BaseSetup.cs` contains methods for setting up the seleniumWrapper and webDriver instances, and will boot the webapp using the configured baseUrl.
 

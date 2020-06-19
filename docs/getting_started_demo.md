@@ -118,9 +118,6 @@ Coming soon -->
 
 ### Variables and Secrets
 
-#### TODO
-<!-- TODO -->
-
 ## What you get
 
 At a high level each of the options within the CLI will roughly provide the same outcome, with tailored code for specific cloud platform and deployement tool combination.
@@ -133,7 +130,7 @@ Includes a full SDLC for a chosen template app (API/UI/tests) on a specified dep
 
 Application Layer:
 
-- CI
+    - CI
     - Unit test
     - Tests...
     - Build (Transpile/compile)
@@ -141,34 +138,34 @@ Application Layer:
     - Publish Image (Largely relying on Cloud Registries Scanning capabilities)
         - If you are publishing to registries other than ACR/ECR/GCR
         - Enable vulnerability scans in the YAML
-- Stage (Dev/test/prod)
-    - Infra
-        - Terraform lib
-            - DNS record 
-            - separate ResourceGroup (optional)
-            - CosmosDB (optional)
-            - RedisCache (optional)
-            - metric alarms (optional)
-        - Coming soon... Kubernetes operators
-    - Deploy
-        - kubectl apply || Blob update with React app
-    - Smoke test
-        - Lighthouse/selenium/testcafe
+    - Stage (Dev/test/prod)
+        - Infra
+            - Terraform lib
+                - DNS record 
+                - separate ResourceGroup (optional)
+                - CosmosDB (optional)
+                - RedisCache (optional)
+                - metric alarms (optional)
+            - Coming soon... Kubernetes operators
+        - Deploy
+            - kubectl apply || Blob update with React app
+        - Smoke test
+            - Lighthouse/selenium/testcafe
 
 Infrastructure Layer (Shared Services):
 
-- Stage (nonprod/prod - this is subjective to user preference, can be dev/test/prod)
-    - infra:
-        - K8s (AKS/GKE/EKS)
-        - Network + subnets
-        - BLOB like storage (blob/S3)
-        - Vault solution
-        - SSL termination (AppGateway)
-        - DNS zone
-    - k8s configuration:
-        - ingress controller - with automatic IP binding and AppGateway intgeration
-        - pod level identity management (addpodidentity/fargate-profile)
-        - gatekeeper
+    - Stage (nonprod/prod - this is subjective to user preference, can be dev/test/prod)
+        - infra:
+            - K8s (AKS/GKE/EKS)
+            - Network + subnets
+            - BLOB like storage (blob/S3)
+            - Vault solution
+            - SSL termination (AppGateway)
+            - DNS zone
+        - k8s configuration:
+            - ingress controller - with automatic IP binding and AppGateway intgeration
+            - pod level identity management (addpodidentity/fargate-profile)
+            - gatekeeper
 
 tests (in standalone mode):
 
@@ -180,21 +177,20 @@ tests (in standalone mode):
 
   - Application layer: -->
 
-
 ### Business Source code
 
-#### Azure
+#### On Azure
 
-An UI app in react (SSR/CSR flavour):
+An UI app in React (SSR/CSR flavour):
 
-- SSR
-    - express mware for authentication using passport 
-    - routing set up within nextjs from client to server proxying out to defined endpoints (sample using the yumido sample )
-    - ...
-- CSR:
-    - PKCE integration
-    - API integration
-    - ...
+    - SSR
+        - express mware for authentication using passport 
+        - routing set up within nextjs from client to server proxying out to defined endpoints (sample using the yumido sample )
+        - ...
+    - CSR:
+        - PKCE integration
+        - API integration
+        - ...
 
 An API in Java (springboot) and .netcore flavours with: 
 
@@ -202,7 +198,6 @@ An API in Java (springboot) and .netcore flavours with:
 - swagger generation
 
 Coming soon crednetialless auth within azure using podidentity
-
 
 ## Examples
 
@@ -218,9 +213,7 @@ Creates an amidostacks template in your local directory much like
 express-generate with an addition of `build/, deploy/, docs/, src/` folders as
 per the Amido Stacks standards.
 
-```bash
-npx @amidostacks/scaffolding-cli@latest run -i
-```
+`npx @amidostacks/scaffolding-cli@latest run -i`
 
 1. Follow the CLI prompts to create a templated app with user defined
    configuration: ssr this is why t - Project Name: _default_: current directory
@@ -233,17 +226,17 @@ npx @amidostacks/scaffolding-cli@latest run -i
 2. Navigate to the created project directory to install template dependencies:
    e.g. ${SELECTED_DIR}/$PROJECT_NAME
 
-```bash
-cd ${SELECTED_DIR}/$PROJECT_NAME/src/
-npm install
-```
+        ```bash
+        cd ${SELECTED_DIR}/$PROJECT_NAME/src/
+        npm install
+        ```
 
-6. Build and run the app:
+3. Build and run the app:
 
-```bash
-npm run build
-npm run start
-```
+        ```bash
+        npm run build
+        npm run start
+        ```
 
 Open Browser and hit [http://localhost:3000](http://localhost:3000)
 
@@ -251,7 +244,7 @@ Open Browser and hit [http://localhost:3000](http://localhost:3000)
 
 ### Advanced Usage
 
-Whilst the basic examples are fine for small projects and get you off the ground quickly to have a deployed application securly behind a domain of your choice. 
+Whilst the basic examples are fine for small projects and get you off the ground quickly to have a deployed application securly behind a domain of your choice.
 
 #### Using Monorepo
 
@@ -259,7 +252,7 @@ When you work within a monorepo, you will have to do a few minor adjustments to 
 
 Simply `cd` into the root directory of your monorepo and run  the cli as many times as you want to create the desired service components, e.g. a UI (using either CSR/SSR), some APIs and you may want a separate infrastructure and blackbox test directories - to end up with below sample.
 
-You will want to merge the .gitignore files from each component and place in the root - or if you have an existing one make sure it covers all your application types. 
+You will want to merge the .gitignore files from each component and place in the root - or if you have an existing one make sure it covers all your application types.
 
 Since you will probably want to have a shared services type infrastructure controlled from a central place you can ignore or remove  `deploy/$cloud/infra` folders (ensure the yaml files are also not used within your pipeline tool). IT IS IMPORTANT HOWEVER TO understand within your project what infrastructure should live with the application - [Amido Infra libs](https://github.com/amido/stacks-webapp-template/tree/master/libs/orchestration) has a variety of OSS libraries you can use within your components e.g. CosmosDB, Blob, Qeueu, Topic managers for all 3 major clouds. You can also choose to use cloud's own provided templates, always better to opt for a library with a predefined interface  rather than building your definitions for application layer infra. it can be re-used by other components without copy/pasta.
 
@@ -267,118 +260,117 @@ When a project gets big you will want to have an E2E type tests to ensure regres
 
 <!-- TODO: this diagram needs cleaning up -->
 
-```bash
-├── menu-api
-│   ├── aux_scripts
-│   ├── build
-│   │   └── azDevops
-│   │       └── azure
-│   ├── deploy
-│   │   ├── azure
-│   │   │   ├── app
-│   │   │   └── infra
-│   │   └── k8s
-│   │       └── app
-│   ├── docs
-│   ├── src
-│   │   ├── api
-│   │   │   ├── Company.Project.API
-│   │   │   ├── Company.Project.API.ComponentTests
-│   │   │   ├── Company.Project.API.ContractTests
-│   │   │   ├── Company.Project.API.Models
-│   │   │   ├── Company.Project.Application.CommandHandlers
-│   │   │   ├── Company.Project.Application.Integration
-│   │   │   ├── Company.Project.Application.QueryHandlers
-│   │   │   ├── Company.Project.CQRS
-│   │   │   ├── Company.Project.CQRS.UnitTests
-│   │   │   ├── Company.Project.Common
-│   │   │   ├── Company.Project.Common.UnitTests
-│   │   │   ├── Company.Project.Domain
-│   │   │   ├── Company.Project.Domain.UnitTests
-│   │   │   ├── Company.Project.Infrastructure
-│   │   │   └── Company.Project.Infrastructure.IntegrationTests
-│   │   ├── tests
-│   │   │   ├── Functional
-│   │   │   └── Performance
-│   │   └── ui
-│   └── test
-│       ├── Company.Project.E2E.Selenium
-│       │   ├── Api
-│       │   ├── Configuration
-│       │   ├── Selenium
-│       │   └── Tests
-│       └── testcafe
-│           ├── api
-│           ├── fixtures
-│           └── utils
-└── node-ssr
-    ├── aux_scripts
-    ├── build
-    │   └── azDevops
-    │       └── azure
-    ├── deploy
-    │   ├── azure
-    │   │   ├── app
-    │   │   └── infra
-    │   └── k8s
-    │       └── app
-    ├── docs
-    ├── src
-    │   ├── __mocks__
-    │   │   └── next
-    │   ├── __tests__
-    │   │   ├── axe
-    │   │   ├── cypress
-    │   │   ├── fixtures
-    │   │   └── pact
-    │   ├── components
-    │   │   ├── ApiPane
-    │   │   ├── CreateForm
-    │   │   ├── Header
-    │   │   ├── Layout
-    │   │   ├── Link
-    │   │   ├── Notifier
-    │   │   ├── RestaurantList
-    │   │   ├── RestaurantListItem
-    │   │   └── Search
-    │   ├── compositions
-    │   │   ├── create
-    │   │   └── home
-    │   ├── config
-    │   ├── constants
-    │   │   └── apis
-    │   ├── ducks
-    │   │   ├── add-menu
-    │   │   └── get-menus
-    │   ├── environment-configuration
-    │   ├── interfaces
-    │   ├── pages
-    │   ├── public
-    │   │   └── static
-    │   ├── server
+    ```bash
+    ├── menu-api
+    │   ├── aux_scripts
+    │   ├── build
+    │   │   └── azDevops
+    │   │       └── azure
+    │   ├── deploy
+    │   │   ├── azure
+    │   │   │   ├── app
+    │   │   │   └── infra
+    │   │   └── k8s
+    │   │       └── app
+    │   ├── docs
+    │   ├── src
     │   │   ├── api
-    │   │   ├── core
-    │   │   └── middlewares
-    │   ├── services
-    │   │   └── menus
-    │   ├── state-management
-    │   └── utils
-    └── test
-        ├── testcafe
-        │   ├── api
-        │   ├── fixtures
+    │   │   │   ├── Company.Project.API
+    │   │   │   ├── Company.Project.API.ComponentTests
+    │   │   │   ├── Company.Project.API.ContractTests
+    │   │   │   ├── Company.Project.API.Models
+    │   │   │   ├── Company.Project.Application.CommandHandlers
+    │   │   │   ├── Company.Project.Application.Integration
+    │   │   │   ├── Company.Project.Application.QueryHandlers
+    │   │   │   ├── Company.Project.CQRS
+    │   │   │   ├── Company.Project.CQRS.UnitTests
+    │   │   │   ├── Company.Project.Common
+    │   │   │   ├── Company.Project.Common.UnitTests
+    │   │   │   ├── Company.Project.Domain
+    │   │   │   ├── Company.Project.Domain.UnitTests
+    │   │   │   ├── Company.Project.Infrastructure
+    │   │   │   └── Company.Project.Infrastructure.IntegrationTests
+    │   │   ├── tests
+    │   │   │   ├── Functional
+    │   │   │   └── Performance
+    │   │   └── ui
+    │   └── test
+    │       ├── Company.Project.E2E.Selenium
+    │       │   ├── Api
+    │       │   ├── Configuration
+    │       │   ├── Selenium
+    │       │   └── Tests
+    │       └── testcafe
+    │           ├── api
+    │           ├── fixtures
+    │           └── utils
+    └── node-ssr
+        ├── aux_scripts
+        ├── build
+        │   └── azDevops
+        │       └── azure
+        ├── deploy
+        │   ├── azure
+        │   │   ├── app
+        │   │   └── infra
+        │   └── k8s
+        │       └── app
+        ├── docs
+        ├── src
+        │   ├── __mocks__
+        │   │   └── next
+        │   ├── __tests__
+        │   │   ├── axe
+        │   │   ├── cypress
+        │   │   ├── fixtures
+        │   │   └── pact
+        │   ├── components
+        │   │   ├── ApiPane
+        │   │   ├── CreateForm
+        │   │   ├── Header
+        │   │   ├── Layout
+        │   │   ├── Link
+        │   │   ├── Notifier
+        │   │   ├── RestaurantList
+        │   │   ├── RestaurantListItem
+        │   │   └── Search
+        │   ├── compositions
+        │   │   ├── create
+        │   │   └── home
+        │   ├── config
+        │   ├── constants
+        │   │   └── apis
+        │   ├── ducks
+        │   │   ├── add-menu
+        │   │   └── get-menus
+        │   ├── environment-configuration
+        │   ├── interfaces
+        │   ├── pages
+        │   ├── public
+        │   │   └── static
+        │   ├── server
+        │   │   ├── api
+        │   │   ├── core
+        │   │   └── middlewares
+        │   ├── services
+        │   │   └── menus
+        │   ├── state-management
         │   └── utils
-        └── xxAMIDOxx.xxSTACKSxx.E2E.Selenium
-            ├── Api
-            ├── Configuration
-            ├── Selenium
-            └── Tests
-<!-- test_selenium -->
-<!-- infra only -->
-── node-ssr.bootstrap-config.json
-── menu-api.bootstrap-config.json
-```
-
+        └── test
+            ├── testcafe
+            │   ├── api
+            │   ├── fixtures
+            │   └── utils
+            └── xxAMIDOxx.xxSTACKSxx.E2E.Selenium
+                ├── Api
+                ├── Configuration
+                ├── Selenium
+                └── Tests
+    <!-- test_selenium -->
+    <!-- infra only -->
+    ── node-ssr.bootstrap-config.json
+    ── menu-api.bootstrap-config.json
+    ```
 
 ##### Config file
 
@@ -386,61 +378,60 @@ Each run of the CLI will generate a complete configuration object with values yo
 
 ##### Example
 
-```bash
-cd mono_repo_root; \
-npx @amidostacks/scaffolding-cli@latest run -c menu-api.bootstrap-config.json
-```
+    ```bash
+    cd mono_repo_root; \
+    npx @amidostacks/scaffolding-cli@latest run -c menu-api.bootstrap-config.json
+    ```
 
 Where the generated config would look like this: 
 
-```JSON
-{
-  "projectName": "menu-api",
-  "projectType": "ssr",
-  "platform": "aks",
-  "deployment": "azdevops",
-  "advancedConfig": true,
-  "createConfig": false,
-  "cloudRegion": "uksouth",
-  "cloudResourceGroup": "string",
-  "businessCompany": "company",
-  "businessProject": "project",
-  "businessDomain": "api",
-  "businessComponent": "menu",
-  "sourceControlRepoType": "github",
-  "sourceControlRepoName": "Name-Of-Repo",
-  "sourceControlRepoUrl": "https://github/sample.git",
-  "terraformBackendStorage": "replace_terraform_backend_storage",
-  "terraformBackendDtorageRg": "replace_terraform_backend_storage_rg",
-  "terraformBackendStorageContainer": "replace_terraform_backend_storage_container"
-}
-```
+    ```JSON
+    {
+    "projectName": "menu-api",
+    "projectType": "ssr",
+    "platform": "aks",
+    "deployment": "azdevops",
+    "advancedConfig": true,
+    "createConfig": false,
+    "cloudRegion": "uksouth",
+    "cloudResourceGroup": "string",
+    "businessCompany": "company",
+    "businessProject": "project",
+    "businessDomain": "api",
+    "businessComponent": "menu",
+    "sourceControlRepoType": "github",
+    "sourceControlRepoName": "Name-Of-Repo",
+    "sourceControlRepoUrl": "https://github/sample.git",
+    "terraformBackendStorage": "replace_terraform_backend_storage",
+    "terraformBackendDtorageRg": "replace_terraform_backend_storage_rg",
+    "terraformBackendStorageContainer": "replace_terraform_backend_storage_container"
+    }
+    ```
 
-you can then re-run the cli in the same directory by pointing to a copy of the 
-generated file e.g. `billing-api`  which could look like this:
+you can then re-run the cli in the same directory by pointing to a copy of the generated file e.g. `billing-api`  which could look like this:
 
-```JSON
-{
-  "projectName": "billing-api",
-  "projectType": "infra",
-  "platform": "aks",
-  "deployment": "azdevops",
-  "advancedConfig": true,
-  "createConfig": false,
-  "cloudRegion": "uksouth",
-  "cloudResourceGroup": "string",
-  "businessCompany": "company",
-  "businessProject": "project",
-  "businessDomain": "api",
-  "businessComponent": "menu",
-  "sourceControlRepoType": "github",
-  "sourceControlRepoName": "Name-Of-Repo",
-  "sourceControlRepoUrl": "https://github/sample.git",
-  "terraformBackendStorage": "replace_terraform_backend_storage",
-  "terraformBackendDtorageRg": "replace_terraform_backend_storage_rg",
-  "terraformBackendStorageContainer": "replace_terraform_backend_storage_container"
-}
-```
+    ```JSON
+    {
+    "projectName": "billing-api",
+    "projectType": "infra",
+    "platform": "aks",
+    "deployment": "azdevops",
+    "advancedConfig": true,
+    "createConfig": false,
+    "cloudRegion": "uksouth",
+    "cloudResourceGroup": "string",
+    "businessCompany": "company",
+    "businessProject": "project",
+    "businessDomain": "api",
+    "businessComponent": "menu",
+    "sourceControlRepoType": "github",
+    "sourceControlRepoName": "Name-Of-Repo",
+    "sourceControlRepoUrl": "https://github/sample.git",
+    "terraformBackendStorage": "replace_terraform_backend_storage",
+    "terraformBackendDtorageRg": "replace_terraform_backend_storage_rg",
+    "terraformBackendStorageContainer": "replace_terraform_backend_storage_container"
+    }
+    ```
 
 NB: 
 

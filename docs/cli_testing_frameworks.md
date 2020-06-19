@@ -28,6 +28,7 @@ The best way to get started, is boostrap the framework using the scaffolding-cli
 
 ### Framework types
 
+<!-- markdownlint-disable -->
 |   | **cypress*** | **TestCafe framework with Typescript** | **Selenium framework with .NET** | **jest-sonar*** |
 | --- | --- | --- | --- | --- |
 |  Framework Type | Acceptance<br/>Functional E2E<br/>Functional API<br/>Component<br/>Accessibility<br/>Visual Regression | Acceptance<br/>Functional E2E<br/>Accessibility | Acceptance<br/>Functional E2E<br/>Functional API | Unit<br/>Component<br/>Integration |
@@ -43,6 +44,7 @@ The best way to get started, is boostrap the framework using the scaffolding-cli
 |  BDD | Mocha |  | BDDfy | Jasmine |
 |  Features | Automatic waiting<br/>In browser<br/>Element selector tool<br/>Spies, stubs , clocks<br/>Real time reloads<br/>Can use the same environment variables as the webapp | Cross browser<br/>Script injection | WebDriver | Render |
 |  Screenshots +/- Videos | Yes | Yes | Yes | No |
+<!-- markdownlint-restore -->
 
 _\* Currently cannot be bootstrapped from [@amidostacks/scaffolding-cli](https://www.npmjs.com/package/@amidostacks/scaffolding-cli), but is available to clone from the [amido/stacks-webapp-template](https://github.com/amido/stacks-webapp-template) respository._
 
@@ -62,7 +64,7 @@ At the end of boostrapping your example framework, you will have an output that 
 * environment variables
 * and information to start testing immediately
 
-```
+```bash
 ├── Api
 │   └── Builders
 │       └── Http

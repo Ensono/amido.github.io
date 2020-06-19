@@ -49,7 +49,7 @@ Snapshots are to be checked in and are found in
 
 ## Cypress: Functional Tests
 
-_Keywords: Functional automation, End to End, E2E_
+> Keywords: Functional automation, End to End, E2E
 
 We are using [Cypress](https://docs.cypress.io/) for functional testing as much
 as possible. The key features of Cypress:
@@ -106,7 +106,7 @@ To open and run Cypress locally with live reload, after installing dependencies:
 
 ### How do I run all the tests without keeping the server running
 
-#### Server Side Rendered (SSR) Apps
+#### Server Side Rendered (SSR) Applications
 
 To spin up the server automatically, then run Cypress in headless Chrome, use:
 
@@ -166,7 +166,7 @@ For information on how to fix the failure, follow the HelpUrl printed to the con
 
 ## Applitools: Visual Tests
 
-_Keywords: visual regression testing, browser support, cross browser_
+> Keywords: visual regression testing, browser support, cross browser
 
 We are using the [Applitools](https://applitools.com/) with Cypress for visual testing. For
 the purposes of Stacks, we are just using the free tier. But we suggest discussing your requirements and what this means for your team. The free teir only gives:
@@ -191,7 +191,7 @@ Please follow the incredible [Cypress Tutorial](https://applitools.com/tutorials
 To spin up the server locally, running Cypress headless, use:
 `npm run test:cypress:eyes`. This is the same for running in CI pipelines.
 
-### Where should tests be located
+### Where should Applitools tests be located
 
 The `*.test.eyes.cy.ts` tests are located with the page compositions (a composition is a number of components that may come together to form a page). 
 
@@ -339,7 +339,7 @@ npm run test:pact-can-i-deploy-cli
 *Example output:*
 This demonstrates that the consumer is safe to deploy, and will return exit code 0 (this means yes!).
 
-```
+```bash
 INFO: Asking broker at https://amido-stacks.pact.dius.com.au if it is possible to deploy
 INFO: pact-node@10.5.0/10589 on AML0160.local: 
     Computer says yes \o/ 
