@@ -79,7 +79,7 @@ We can run this with Amido Stacks custom container, supports running Sonar Scann
 
 See [amidostacks/ci-sonarscanner](https://hub.docker.com/repository/docker/amidostacks/ci-sonarscanner) for the open source image.
 
-## StaticCloud Quality Gates
+## Static Quality Gates
 
 To ensure that all code is meeting the quality standards (i.e. code coverage, bugs, security) then we can implement Quality gate checks from the results of the SonarScanner analysis.
 

@@ -55,7 +55,7 @@ We are using [Cypress](https://docs.cypress.io/) for functional testing as much
 as possible. The key features of Cypress:
 
 - Integration testing with API testing support (Node.js)
-- Easy debugabillity (DOM snapshotting)
+- Easy debugability (DOM snapshotting)
 - Selector playground
 - Great documentation
 - Best implementation of Live Reloading
@@ -146,7 +146,7 @@ For example, if an API URL changes, you will only have a single place to change 
 
 ## Axe: Accessibility Testing
 
-From the Deque famility of products, we are using
+From the Deque family of products, we are using
 [aXe](https://www.deque.com/axe/) for accessibility testing. When developing, we
 expect to support WCAG 2.1 Level AA ["wcag21aa"] at a minimum.
 
