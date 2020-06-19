@@ -1,5 +1,7 @@
 {
   "scripts": {
+    "lint": "node_modules/.bin/markdownlint ../docs",
+    "validate": "node_modules/.bin/markdownlint ../docs --fix",
     "start": "docusaurus-start",
     "build": "docusaurus-build",
     "publish": "docusaurus-publish",
@@ -7,6 +9,7 @@
     "rename-version": "docusaurus-rename-version"
   },
   "devDependencies": {
-    "docusaurus": "^1.14.4"
+    "docusaurus": "^1.14.4",
+    "markdownlint-cli": "^0.23.1"
   }
 }
