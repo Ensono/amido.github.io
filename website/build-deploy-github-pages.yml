@@ -45,7 +45,7 @@ steps:
   - bash: |
       npm run lint
     displayName: 'Lint: Run markdown lint'
-    workingDirectory: ${{ parameters.workingDirectory }}
+    workingDirectory: $(working_directory)
       
   - bash: |
       git config --global user.email $(GIT_USER_EMAIL)
