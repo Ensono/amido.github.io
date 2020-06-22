@@ -1,8 +1,9 @@
 {
   "scripts": {
     "lint": "node_modules/.bin/markdownlint ../docs",
+    "lint:spell:it": "node_modules/.bin/mdspell ../docs/*.md --ignore-numbers --ignore-acronyms --en-gb",
     "lint:spell": "node_modules/.bin/mdspell --report --en-gb --ignore-numbers --ignore-acronyms --no-suggestions ../docs/*.md",
-    "validate": "node_modules/.bin/markdownlint ../docs --fix && mdspell -r **/*.md",
+    "validate": "node_modules/.bin/markdownlint ../docs --fix",
     "start": "docusaurus-start",
     "build": "docusaurus-build",
     "publish": "docusaurus-publish",

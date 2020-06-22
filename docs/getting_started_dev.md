@@ -6,13 +6,13 @@ sidebar_label: Dev - Using the repo to build an application
 
 ## Getting started
 
-## Templating a webapp
+## Templating a web app
 
 As a general rule the steps to get one of our npm environments up and running are
 
 For local execution:
 
-  1. Clone the project and navigate to the relavent path.
+  1. Clone the project and navigate to the relevant path.
   2. run the following commands in the following order
    
   ```bash
@@ -26,4 +26,4 @@ All of our packages, including the `@amidostacks/scaffolding-api` are available 
 
 See the README for more information on generating the templates from the CLI: [packages/scaffolding-cli/README.md](https://github.com/amido/stacks-webapp-template/blob/master/packages/scaffolding-cli/README.md)
 
-Once built, when starting the server and webapp, Aa browser window should open up and automatically navigate you to the local instance, but if not the default URLS is `http://localhost:3000`.
+Once built, when starting the server and webapp, a browser window should open up and automatically navigate you to the local instance, but if not the default URLS is `http://localhost:3000`.

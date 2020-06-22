@@ -51,7 +51,7 @@ you can find more information around the infrastructure bootstrapping and requir
 
 You will need to create, or ask your admin for Azure to create for you, an [SPN account](https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal) within a new or existing subscription, that will have the owner privileges. Optionally, you can create 2 to follow security best practice [here](./infrastructure_code.md####Azure).
 
-This SPN (Service Principal Name) will be used throughout to create and manage resources within the cloud via terraform. You can find additional info on how to use these locally along with recommnded usage.
+This SPN (Service Principal Name) will be used throughout to create and manage resources within the cloud via terraform. You can find additional info on how to use these locally along with recommended usage.
 
 #### GCP
 
@@ -69,7 +69,7 @@ Coming soon -->
 
 You will need access to CI/CD tooling with YAML based input. 
 
-#### AzureDevOps
+#### Azure DevOps
 
 You will require AzureDevops library - Microsoft speak for environment variables that are scoped to your jobs/stages within the pipeline as a bare minimum, instructions on how to create it can be found [here](https://docs.microsoft.com/en-us/azure/devops/pipelines/library/?view=azure-devops)
 
@@ -120,13 +120,13 @@ Coming soon -->
 
 ## What you get
 
-At a high level each of the options within the CLI will roughly provide the same outcome, with tailored code for specific cloud platform and deployement tool combination.
+At a high level each of the options within the CLI will roughly provide the same outcome, with tailored code for specific cloud platform and deployment tool combination.
 
 CSR being the only exception where the infrastructure doesn't cover K8s infrastructure as it is not required.
 
 ### OOTB template
 
-Includes a full SDLC for a chosen template app (API/UI/tests) on a specified deployment (CI/CD) platform with the below conceptiual stages. However as the output is entirely modular it allows for easy extension by user in deploy steps of either k8s or terraform - user should be able to enrich the generated output with their specific needs.
+Includes a full SDLC for a chosen template app (API/UI/tests) on a specified deployment (CI/CD) platform with the below conceptual stages. However as the output is entirely modular it allows for easy extension by user in deploy steps of either k8s or terraform - user should be able to enrich the generated output with their specific needs.
 
 Application Layer:
 
@@ -197,7 +197,7 @@ An API in Java (springboot) and .netcore flavours with:
 - CosmosDB integration (deploy/infra/yaml)
 - swagger generation
 
-Coming soon crednetialless auth within azure using podidentity
+Coming soon credential-less auth within azure using pod identity
 
 ## Examples
 
@@ -221,7 +221,7 @@ per the Amido Stacks standards.
 
    - Project Type: _default_: SSR (server side rendering)
    - Platform: _default_: AKS (Azure Kubernetes Service)
-   - CI/CD Tooling: _default_: AzureDevOps
+   - CI/CD Tooling: _default_: Azure DevOps
 
 2. Navigate to the created project directory to install template dependencies:
    e.g. ${SELECTED_DIR}/$PROJECT_NAME
@@ -244,7 +244,7 @@ Open Browser and hit [http://localhost:3000](http://localhost:3000)
 
 ### Advanced Usage
 
-Whilst the basic examples are fine for small projects and get you off the ground quickly to have a deployed application securly behind a domain of your choice.
+Whilst the basic examples are fine for small projects and get you off the ground quickly to have a deployed application securely behind a domain of your choice.
 
 #### Using Monorepo
 
@@ -254,7 +254,7 @@ Simply `cd` into the root directory of your monorepo and run  the cli as many ti
 
 You will want to merge the .gitignore files from each component and place in the root - or if you have an existing one make sure it covers all your application types.
 
-Since you will probably want to have a shared services type infrastructure controlled from a central place you can ignore or remove  `deploy/$cloud/infra` folders (ensure the yaml files are also not used within your pipeline tool). IT IS IMPORTANT HOWEVER TO understand within your project what infrastructure should live with the application - [Amido Infra libs](https://github.com/amido/stacks-webapp-template/tree/master/libs/orchestration) has a variety of OSS libraries you can use within your components e.g. CosmosDB, Blob, Qeueu, Topic managers for all 3 major clouds. You can also choose to use cloud's own provided templates, always better to opt for a library with a predefined interface  rather than building your definitions for application layer infra. it can be re-used by other components without copy/pasta.
+Since you will probably want to have a shared services type infrastructure controlled from a central place you can ignore or remove  `deploy/$cloud/infra` folders (ensure the yaml files are also not used within your pipeline tool). IT IS IMPORTANT HOWEVER TO understand within your project what infrastructure should live with the application - [Amido Infra libs](https://github.com/amido/stacks-webapp-template/tree/master/libs/orchestration) has a variety of OSS libraries you can use within your components e.g. CosmosDB, Blob, Queue, Topic managers for all 3 major clouds. You can also choose to use cloud's own provided templates, always better to opt for a library with a predefined interface  rather than building your definitions for application layer infra. it can be re-used by other components without copy/pasta.
 
 When a project gets big you will want to have an E2E type tests to ensure regressions aren't introduced and UX is preserved. whilst all components have their own tests that cover units/regressions/etc... a black box test is often (if not always) required in projects of distributed nature.
 
@@ -374,7 +374,7 @@ When a project gets big you will want to have an E2E type tests to ensure regres
 
 ##### Config file
 
-Each run of the CLI will generate a complete configuration object with values you have specified and a placehold for those you skipped (or weren't exposed by the CLI). You can re-run the cli pointing to the same folder as many times as you want with different variables. Equally, you can run it in different directory to create the same configuration templates with different project name, repo urls/names etc...
+Each run of the CLI will generate a complete configuration object with values you have specified and a placeholder for those you skipped (or weren't exposed by the CLI). You can re-run the cli pointing to the same folder as many times as you want with different variables. Equally, you can run it in different directory to create the same configuration templates with different project name, repo urls/names etc...
 
 ##### Example
 

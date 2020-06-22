@@ -19,7 +19,7 @@ We have four key values in which we stand by:
 
 Stacks enables teams to gain momentum on digital transformation.
 Stacks helps de-risk project delivery.
-Stacks enables project teams to focus on solving business challanges rather than technical overheads. 
+Stacks enables project teams to focus on solving business challenges rather than technical overheads. 
 
 ## What is Stacks
 

@@ -8,7 +8,7 @@ sidebar_label: Publishing NuGet Packages
 
 ## NuGet
 
-We have an opensource listed organsisation with multiple packages.
+We have an open-source listed organisation with multiple packages.
 
 ### What do we publish
 
@@ -34,4 +34,4 @@ See [dotnet nuget push](https://docs.microsoft.com/en-us/dotnet/core/tools/dotne
 When attempting to publish, we will get the following response:
 `error: File does not exist (**/*.snupkg).`
 
-In order to remedy this, we set the `--no-symbols` option. The symbols will then need to be published seperately.
+In order to remedy this, we set the `--no-symbols` option. The symbols will then need to be published separately.

@@ -23,7 +23,7 @@ directories.
 
 ## What registry are we using
 
-All of our packages are opensource and can be found under the @amidostacks
+All of our packages are open-source and can be found under the @amidostacks
 organisation on [npm](https://www.npmjs.com/settings/amidostacks/packages).
 
 ## Do I need access to the registry to be able to publish
@@ -47,7 +47,7 @@ packages/
 
 ## Package Registry
 
-All our packages are publically available from `npm`:
+All our packages are publicly available from `npm`:
 <https://www.npmjs.com/org/amidostacks>
 
 ## Package Management
@@ -67,7 +67,7 @@ consumers of the packages to update their versions as needed.
 Lerna is embedded as a step in the [monorepo](./monorepo.md) pipeline. Check out
 the pipeline step
 [publish-packages-lerna.yml](./build/azDevOps/azure/templates/steps/publish-packages-lerna.yml)
-for more informatiion on how this is done.
+for more information on how this is done.
 
 This automates the following process:
 
@@ -75,12 +75,12 @@ This automates the following process:
 2. `package.json` version is changed
 3. the changes are to be merged to master (CHANGELOG.md, version in packages)
 4. in the pipeline, this triggers lerna to look for difference in package
-   version and the registrry
+   version and the registry
 5. if changes are found the packages are published to the configured registry
 
 ### Why do version bumps require manual commit
 
-Because we think it's up the the deveopers to ensure that they want to bump the
+Because we think it's up the the developers to ensure that they want to bump the
 version, based on their commit history.
 
 ### Why have we automated publishing
@@ -91,7 +91,7 @@ you know it's free of errors. We only publish from master in the pipeline.
 
 ## Versioning
 
-We are versioning as a seperate script in order to support publishing from a CI
+We are versioning as a separate script in order to support publishing from a CI
 pipeline, and to automate the creation of changelogs based on the commit
 history.
 
@@ -103,7 +103,7 @@ From root, run: `npm run version`
 2. Bumps the version based on the Conventional Commits Specification
 3. Updates CHANGELOG.md and updates the package.json if needed
 
-The changes are then ready to be commited to the remote.
+The changes are then ready to be committed to the remote.
 
 ### Why do we use `lerna version --conventional-commits`
 
@@ -116,19 +116,19 @@ The changes are then ready to be commited to the remote.
 
 By default, lerna version will commit changes to package.json files and tag the
 release. Since we are publishing `from-package` and doing so in the pipeline, we
-would rather suggest creating a seperate Github release task that would run on
+would rather suggest creating a separate Github release task that would run on
 successful Lerna publishing to the registry.
 
 ### Why do we use `--no-push`
 
 By default, lerna version will push the committed and tagged changes to the
-configured git remote. We disable this to ensure that the changelog and vrsion
+configured git remote. We disable this to ensure that the changelog and version
 bumps are obvious on local, and it's up to the develop to commit them to their
 working branch.
 
 ## Conventional Commits
 
-We generate our CHANGELOGS.md automagically based on the `git commit`. The
+We generate our CHANGELOG.md automagically based on the `git commit`. The
 commit itself communicates the **WHAT**, whereas commit message communicates the
 **WHY**.
 
@@ -153,7 +153,7 @@ _Source:
 
 ### How do we enforce Conventional Commits
 
-We use precommit hooks with [Husky](https://github.com/typicode/husky) and
+We use pre-commit hooks with [Husky](https://github.com/typicode/husky) and
 [commitlint](https://github.com/conventional-changelog/commitlint).
 
 ### What are the commit conventions format
@@ -222,12 +222,12 @@ then we publish the changes.
 We have encountered a lot of issues while using Lerna for versioning and
 publishing in a pipeline. Namely the following:
 
-1. Lerna expects master to be un protected and able to push to it -
+1. Lerna expects master to be unprotected protected and able to push to it -
    <https://github.com/lerna/lerna/issues/1957>
-2. When using `from-package` the GitHead SHA needs to be commited POST
+2. When using `from-package` the GitHead SHA needs to be committed POST
    publishing to a registry. This requires the publish task in the pipeline to
    commit this to master.
-3. When using `from-package` the Git Tag needs to be commited POST publishing to
+3. When using `from-package` the Git Tag needs to be committed POST publishing to
    registry. This requires custom tasks for tagging releases.
 4. Lerna cannot version or publish in a detached HEAD state, making pipeline
    versioning and publishing really hard.
@@ -243,7 +243,7 @@ lerna ERR! EUNCOMMIT Working tree has uncommitted changes, please commit or remo
 lerna ERR! EUNCOMMIT  M package-lock.json
 ```
 
-This could mean that that the monorepo root `package.json` and `package-lock.json` are out of sync on `master` branch. Try deleting the `package-lock.json` and re-installing depedencies, and test then the new lock file.
+This could mean that that the monorepo root `package.json` and `package-lock.json` are out of sync on `master` branch. Try deleting the `package-lock.json` and re-installing dependencies, and test then the new lock file.
 
 ```bash
 stacks-webapp-template $ rm package-lock.json

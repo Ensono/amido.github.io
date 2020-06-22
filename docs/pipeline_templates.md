@@ -4,7 +4,7 @@ title: Pipeline Templates
 sidebar_label: Pipeline Templates
 ---
 
-Where possible, we are creating reusable steps that can be pulled into any base pipeline. Resuable steps can inlude tasks to deploy, build, test and more.
+Where possible, we are creating reusable steps that can be pulled into any base pipeline. Reusable steps can include tasks to deploy, build, test and more.
 
 ## Azure DevOps: Pipelines
 

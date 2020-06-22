@@ -13,7 +13,7 @@ of modern browsers.
 Next.js supports IE11 and all modern browsers out of the box using
 `@babel/preset-env`.
 
-## polyfills support
+## Polyfills support
 
 In cases where your own code or any external NPM dependencies you are using
 requires features not supported by your target browsers you will need to

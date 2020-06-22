@@ -4,15 +4,15 @@ title: Project Types - Testing
 sidebar_label: Project Types - Testing
 ---
 
-Testing frameworks require a lof of boilerplate. It's also hard to know how to get started without examples. We have a range of Javascript Front End focused opinionated boilerplate testing frameworks that can be boostrapped and tailored to your current project with just one command.
+Testing frameworks require a lot of boilerplate. It's also hard to know how to get started without examples. We have a range of Javascript Front End focused opinionated boilerplate testing frameworks that can be bootstrapped and tailored to your current project with just one command.
 
-By default, Amido Stacks build a range of testing solutions into the projects. But we understand that users require tests to be seperate from the code. For more testing options and examples, see the other [project types](./scaffolding_cli.md).
+By default, Amido Stacks build a range of testing solutions into the projects. But we understand that users require tests to be separate from the code. For more testing options and examples, see the other [project types](./scaffolding_cli.md).
 
 Get testing.
 
-## Boostrap your framework
+## Bootstrap your framework
 
-The best way to get started, is boostrap the framework using the scaffolding-cli from Amido Stacks. By using it in interactive mode, you can simply answered 5 questions to get a bespoke framework, ready to go with an example test.
+The best way to get started, is bootstrap the framework using the scaffolding-cli from Amido Stacks. By using it in interactive mode, you can simply answered 5 questions to get a bespoke framework, ready to go with an example test.
 
 `npx @amidostacks/scaffolding-cli test -i`
 
@@ -46,7 +46,7 @@ The best way to get started, is boostrap the framework using the scaffolding-cli
 |  Screenshots +/- Videos | Yes | Yes | Yes | No |
 <!-- markdownlint-restore -->
 
-_\* Currently cannot be bootstrapped from [@amidostacks/scaffolding-cli](https://www.npmjs.com/package/@amidostacks/scaffolding-cli), but is available to clone from the [amido/stacks-webapp-template](https://github.com/amido/stacks-webapp-template) respository._
+_\* Currently cannot be bootstrapped from [@amidostacks/scaffolding-cli](https://www.npmjs.com/package/@amidostacks/scaffolding-cli), but is available to clone from the [amido/stacks-webapp-template](https://github.com/amido/stacks-webapp-template) repository._
 
 ### Get testing in just five questions
 
@@ -55,7 +55,7 @@ _\* Currently cannot be bootstrapped from [@amidostacks/scaffolding-cli](https:/
 
 ## Get testing
 
-At the end of boostrapping your example framework, you will have an output that will contain all the:
+At the end of bootstrapping your example framework, you will have an output that will contain all the:
 
 * dependencies
 * scripts
@@ -97,13 +97,13 @@ At the end of boostrapping your example framework, you will have an output that 
 └── appsettings.json
 ```
 
-_[Above: Example output from bSelenium framework with .NET output folder structure](./testing_selenium.md#folder-structure)_
+bs[Above: Example output from Selenium framework with .NET output folder structure](./testing_selenium.md#folder-structure)_
 
 You are ready to follow the frameworks README.md and run your first test!
 
 ## Customising
 
-Since the frameworks providereal examples on deployed applications, we recommend using these as examples and then replacing them with your own applications under test.
+Since the frameworks provide real examples on deployed applications, we recommend using these as examples and then replacing them with your own applications under test.
 
 ## Feedback
 

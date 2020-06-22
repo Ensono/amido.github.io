@@ -14,7 +14,7 @@ Ensure we put in lots of information about our Infrastructure. Including:
 ** Client only
 -->
 
-All infrastructure tooling is done with [Terraform](https://www.terraform.io/), as a method for implementing our infrastructure as code. Terraform uses workspaces as the main mechanism of segragating states.
+All infrastructure tooling is done with [Terraform](https://www.terraform.io/), as a method for implementing our infrastructure as code. Terraform uses workspaces as the main mechanism of segregating states.
 
 ## Terraform
 
@@ -53,7 +53,7 @@ With owner privileges:
 Terraform state - blob storage can be in a different subscription to your solution subscription - which is where your applications and their infra will live
 The terraform state subscription should be locked to normal users (developers).
 
-Users (AAD useres) should have only a read-only access to the solution subsciption dashboard.
+Users (AAD users) should have only a read-only access to the solution subscription dashboard.
 
 When initialising terraform's backend you will use the tf state subscription credentials and for the provider you will use the solution credentials - this will be an SPN account's (`client/tenant/subscription_id and client_secret)
 
@@ -83,9 +83,9 @@ We recommend resolving this through the CLI rather than the Portal interface.
     --account-name $STORAGE_ACC_NAME --account-key $STORAGE_ACC_KEY
   ```
 
-On success, exit code 0 to be retured.
+On success, exit code 0 to be returned.
 
-## Azure Deveops Pipelines
+## Azure Devops Pipelines
 
 See [Pipeline Templates](./pipeline_templates.md) for more information about our open sourced steps.
 
