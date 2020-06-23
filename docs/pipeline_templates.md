@@ -4,7 +4,7 @@ title: Pipeline Templates
 sidebar_label: Pipeline Templates
 ---
 
-Where possible, we are creating reusable steps that can be pulled into any base pipeline. Resuable steps can inlude tasks to deploy, build, test and more.
+Where possible, we are creating reusable steps that can be pulled into any base pipeline. Reusable steps can include tasks to deploy, build, test and more.
 
 ## Azure DevOps: Pipelines
 
@@ -13,6 +13,7 @@ The [stacks-pipeline-templates](https://github.com/amido/stacks-pipeline-templat
 ### Service Connections
 
 Assuming that you will be consuming the templates from the public [repo](https://github.com/amido/stacks-pipeline-templates), a service connection will need to be configured to ensure we can pull in the source code. The service connection will need a [Github Personal Access Token](https://github.com/settings/tokens) (or credentials) to pull in the code. At a minimum, the access token will need to include:
+
 *  read:repo
 
  Once a token is generated, the service connection can be configured for the project. Instructions can be found at [Manage Service Connections](https://docs.microsoft.com/en-us/azure/devops/pipelines/library/service-endpoints?view=azure-devops&tabs=yaml#create-a-service-connection).
@@ -56,6 +57,7 @@ steps:
 ```
 
 This is an example of a step template being used, but with parameters passed in:
+
 ```yaml
   # Functional tests running on locally built and hosted (undeployed)
   - ${{ if eq(parameters.cypress_e2e_test, true) }}:

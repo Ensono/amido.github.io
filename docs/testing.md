@@ -17,7 +17,7 @@ To be run on the local active develop branch, before commit. Before committing c
 ### Pre-deployment Tests
 
 To be run on the active development branch.
-After which, we have two different processes, one for pre-deployment tests (unit, snapshot, integration), and another for post-deployment (functional tests).  Pre-deployment tests can run on the fly whilst coding. This is enabled by using a ‘watch-mode’ which will check for code changes, compile/trans-compile, and run the tests against the webapp.
+After which, we have two different processes, one for pre-deployment tests (unit, snapshot, integration), and another for post-deployment (functional tests).  Pre-deployment tests can run on the fly whilst coding. This is enabled by using a ‘watch-mode’ which will check for code changes, compile/trans-compile, and run the tests against the web app.
 
 ### Post-deployment Tests
 
@@ -25,7 +25,7 @@ To be run on master once the pull request (PR) has been approved and passed all 
 
 ## Quality Gates
 
-The following demonstrates the series of quality gates that the webapp must pass through in order to successfully be deployed to a user facing environment (production).
+The following demonstrates the series of quality gates that the web app must pass through in order to successfully be deployed to a user facing environment (production).
 
 ![alt text](https://www.lucidchart.com/publicSegments/view/2094f5d4-eaca-417c-a51e-36bf79853373/image.png "Quality Gates")
 
@@ -49,28 +49,28 @@ Snapshots are to be checked in and are found in
 
 ## Cypress: Functional Tests
 
-_Keywords: Functional automation, End to End, E2E_
+> Keywords: Functional automation, End to End, E2E
 
 We are using [Cypress](https://docs.cypress.io/) for functional testing as much
 as possible. The key features of Cypress:
 
 - Integration testing with API testing support (Node.js)
-- Easy debugabillity (DOM snapshotting)
+- Easy debugability (DOM snapshotting)
 - Selector playground
 - Great documentation
 - Best implementation of Live Reloading
 
-### Why is Cypress categorised in the pre-deployed tests?
+### Why is Cypress categorised in the pre-deployed tests
 
-The Cypress tests, if structured correctly, can be run BEFORE the app client is deployed to an environment. This is to ensure that we get the fastest feedback we can. If you are following branching strategies such as GitFlow, then you are able to run these tests on your branch before merging to master.
+The Cypress tests, if structured correctly, can be run BEFORE the app client is deployed to an environment. This is to ensure that we get the fastest feedback we can. If you are following branching strategies such as GitFlow, then you can run these tests on your branch before merging to master.
 
 | BENEFITS  | DOWNSIDES |
 | ---       |  ---      |
 | deployment independent | not full integration tests as not running on deployed infrastructure|
 | faster feedback |  |
-| run core tests before the branch is merged to master, smoke tests post merge and deployment |  |
+| run core tests before the branch is merged to master, smoke tests post-merge and deployment |  |
 
-### How is Cypress run in Continuous Integration (CI) pipelines?
+### How is Cypress run in Continuous Integration (CI) pipelines
 
 Glad you asked. You'll see an npm script in the `package.json` which uses [start-server-and-test](https://github.com/bahmutov/start-server-and-test). This package starts the Node.js Express server, waits for the app URL (localhost in this case), then runs test command; when the tests end, it shuts down the server instance.
 
@@ -82,31 +82,31 @@ _package.json script_:
 "test:cypress": "env CI=true node_modules/.bin/start-server-and-test start $APP_BASE_URL:$PORT test:cypress:run"
 ```
 
-### How do I use Cypress?
+### How do I use Cypress
 
 Please read
 [Cypress - Best Practices](https://docs.cypress.io/guides/references/best-practices.html)
 for how to get the most out of Cypress.
 
-### How can I use Cypress while I develop?
+### How can I use Cypress while I develop
 
 #### Server Side Rendered (SSR) Apps
 
-Say if you are following Test Driven Development (TDD) cycles, or if you wish to write a failing test for a known bug, and fix the app and check ensure that the test passes, you may wish you watch the tests and the code together.
+Say if you are following Test Driven Development (TDD) cycles, or if you wish to write a failing test for a known bug, and fix the app and check to ensure that the test passes, you may wish you watch the tests and the code together.
 
 To open and run Cypress locally with live reload, after installing dependencies:
 
 1. Install app dependencies `npm install`
-2. Build the webapp `npm run build`
+2. Build the web app `npm run build`
 3. Compile the `*.cy.ts` Cypress test files `npm run test:cypress:compile`
    (optional: pass `--watch` through to watch for changes)
 4. Start the server, run the tests headless, tear down the server:
    `npm run test:cypress`. When writing tests: Open Cypress with live-reloading
    and selector playground `npm run test:cypress:open`
 
-### How do I run all the tests without keeping the server running?
+### How do I run all the tests without keeping the server running
 
-#### Server Side Rendered (SSR) Apps
+#### Server Side Rendered (SSR) Applications
 
 To spin up the server automatically, then run Cypress in headless Chrome, use:
 
@@ -114,9 +114,9 @@ _Script_:
 
 `npm run test:cypress`. This is the same script as mentioned for running in [CI pipelines](#how-is-cypress-run-in-continuous-integration-ci-pipelines)
 
-### Where should tests be located?
+### Where should tests be located
 
-We suggest co-locating the `*.cy.ts` tests with the page compositions (a composition is a number of components that may come together to form a page). for high level tests, and for component tests with the components themselves.
+We suggest co-locating the `*.cy.ts` tests with the page compositions (a composition is several components that may come together to form a page). for high-level tests, and component tests with the components themselves.
 
 e.g.
 
@@ -135,7 +135,7 @@ compositions
     ├── index.test.tsx
     └── index.tsx
 
-### How to you configure the environments?
+### How to configure the environments
 
 We suggest tightly coupling Cypress with the app under test. This means sharing environment configuration files. This ensures that in your deployment pipelines, and quality gating process, you are confident that the app under test is being tested correctly.
 
@@ -146,18 +146,18 @@ For example, if an API URL changes, you will only have a single place to change 
 
 ## Axe: Accessibility Testing
 
-From the Deque famility of products, we are using
+From the Deque family of products, we are using
 [aXe](https://www.deque.com/axe/) for accessibility testing. When developing, we
 expect to support WCAG 2.1 Level AA ["wcag21aa"] at a minimum.
 
 aXe tests are performed on two levels:
 
 1. first by rendering the React component and testing with Jest.
-2. second with Next rendering the entire page and tessting with Cypress.
+2. second with Next rendering the entire page and testing with Cypress.
 
-Both examples are in the scaffolded webapp tempalates: https://github.com/amido/stacks-webapp-template/tree/master/packages/scaffolding-cli/templates/src/ssr
+Both examples are in the scaffolded web app templates: <https://github.com/amido/stacks-webapp-template/tree/master/packages/scaffolding-cli/templates/src/ssr>
 
-### Cypress: Dubugging Axe Failures
+### Cypress: Debugging Axe Failures
 
 > When accessibility violations are detected, your test will fail and an entry titled "A11Y ERROR!" will be added to the command log for each type of violation found (they will be above the failed assertion). Clicking on those will reveal more specifics about the error in the DevTools console.
 Source: [cypress-axe#standard-output](https://github.com/avanslaars/cypress-axe#standard-output)
@@ -166,10 +166,9 @@ For information on how to fix the failure, follow the HelpUrl printed to the con
 
 ## Applitools: Visual Tests
 
-_Keywords: visual regression testing, browser support, cross browser_
+> Keywords: visual regression testing, browser support, cross-browser
 
-We are using the [Applitools](https://applitools.com/) with Cypress for visual testing. For
-the purposes of Stacks, we are just using the free tier. But we suggest discussing your requirements and what this means for your team. The free teir only gives:
+We are using the [Applitools](https://applitools.com/) with Cypress for visual testing. For Stacks, we are just using the free tier. But we suggest discussing your requirements and what this means for your team. The free tier only gives:
 
 - 1 user (normally the pipeline)
 - 100 checkpoints per month
@@ -186,14 +185,14 @@ Please follow the incredible [Cypress Tutorial](https://applitools.com/tutorials
 
 `export APPLITOOLS_API_KEY=`
 
-### How can I run the tests locally?
+### How can I run the tests locally
 
 To spin up the server locally, running Cypress headless, use:
 `npm run test:cypress:eyes`. This is the same for running in CI pipelines.
 
-### Where should tests be located?
+### Where should Applitools tests be located
 
-The `*.test.eyes.cy.ts` tests are located with the page compositions (a composition is a number of components that may come together to form a page). 
+The `*.test.eyes.cy.ts` tests are located with the page compositions (a composition is several components that may come together to form a page). 
 
 ## Static Analysis
 
@@ -203,7 +202,7 @@ We can run this with Amido Stacks custom container, supports running Sonar Scann
 
 This container make running static code analysis a breeze in the pipelines.
 
-In order to run, the export the followings environment variables for the
+To run, the export the followings environment variables for the
 SonarCloud Project:
 
 ```bash
@@ -224,13 +223,13 @@ npm run test
 docker run -e SONAR_HOST_URL=https://sonarcloud.io -e SONAR_TOKEN=$SONAR_TOKEN -e SONAR_PROJECT_KEY=$SONAR_PROJECT_KEY -e SONAR_ORGANIZATION=$SONAR_ORGANIZATION -e BUILD_NUMBER=1.2.3 -v $(pwd):/usr/src --rm -it amidostacks/ci-sonarscanner /bin/bash -c 'cd /usr/src && sonar-scanner'
 ```
 
-## Consumer Driven Contract Testing with Pact
+## Consumer-Driven Contract Testing with Pact
 
-Consumer Driven Contract (CDC) Testing is a pattern that allows a consumer (i.e:
+Consumer-Driven Contract (CDC) Testing is a pattern that allows a consumer (i.e:
 a client) and a provider (i.e. an API provider) to communicate using an agreed
 contract (a pact).
 
-The following documentation is an overview of the Pact implementation as part of the templated SSR webapp. See [packages](./packages.md) for a link to the source code.
+The following documentation is an overview of the Pact implementation as part of the templated SSR web app. See [packages](./packages.md) for a link to the source code.
 
 _Note: The `beforeAll` and `afterAll` hooks in Jest is not before all tests but
 before each file._
@@ -239,14 +238,14 @@ before each file._
 
 These are reusable components that can be used for any Javascript consumer setup with pact-js.
 
-We are using Jest to wrap pact-js in order to create the interactions and
-generate the Pacts for the webapp as a consumer. Following the examples on
+We are using Jest to wrap pact-js to create the interactions and
+generate the Pacts for the web app as a consumer. Following the examples on
 [pact-js](https://github.com/pact-foundation/pact-js).
 
 There is full documentation for how contract testing works available on the
 [Pact website](https://docs.pact.io/how_pact_works).
 
-A global 'provider' variable is setup in the [pactSetup.ts](./utils/pactSetup.ts)
+A global 'provider' variable is set up in the [pactSetup.ts](./utils/pactSetup.ts)
 file. Then the [pactTestWrapper.ts](./utils/pactTestWrapper.ts) ensures each test
 file will have the provider setup for them.
 
@@ -283,9 +282,9 @@ npm run test:pact-publish
 ### Pact Stub Service
 
 Pact contracts are easily turned into locally running API stubs. They are great
-for using as a simple service to run integration tests against, whether with
+for use as a simple service to run integration tests against, whether with
 Jest, or with Cypress. This ensures that you can test your application without
-hitting the actual endpoint, and ensures the same response everytime, without
+hitting the actual endpoint, and ensures the same response every time, without
 duplicating mock definitions.
 
 If gives the consumer confidence that if the contract tests are passing with the
@@ -295,8 +294,7 @@ against.
 No more updating stub responses that go out of date. Hooray!
 
 The Pact files (.json) are generated when the Pact tests are run
-(`npm run tests:pact`), and are published to the broker on succeeding. In order
-to get the latest pact file to generate the stub service from, you can either:
+(`npm run tests:pact`), and are published to the broker on succeeding. To get the latest pact file to generate the stub service from, you can either:
 
 1. Run the tests, which will output the Pact .json files to
    [**tests**/pacts](./__tests__/pacts)
@@ -321,7 +319,7 @@ curl -v localhost:8389/v1/menu/e98583ad-0feb-4e48-9d4f-b20b09cb2633 -H "Accept: 
 
 Please remember to always stop your server once done testing.
 
-### Can I Deploy?
+### Can I Deploy
 
 The [Can I Deploy](https://docs.pact.io/pact_broker/can_i_deploy) tool ensures you are safe to deploy your application. Before deploying to a new environment, you need to know if the version is compatible with the provider version. Instead of checking the broker, we can poll the broker and check programmatically with the latest versions.
 
@@ -339,7 +337,7 @@ npm run test:pact-can-i-deploy-cli
 *Example output:*
 This demonstrates that the consumer is safe to deploy, and will return exit code 0 (this means yes!).
 
-```
+```bash
 INFO: Asking broker at https://amido-stacks.pact.dius.com.au if it is possible to deploy
 INFO: pact-node@10.5.0/10589 on AML0160.local: 
     Computer says yes \o/ 
@@ -353,7 +351,7 @@ INFO: pact-node@10.5.0/10589 on AML0160.local:
 
 ### Pact working Example
 
-We have included a Pact test which will deploy to a PactFlow broker, and verify against the MenuAPI .NET API. This is to ensure that there is an example working test that can be used as reference.
+We have included a Pact test which will deploy to a PactFlow broker, and verify against the MenuAPI .NET API. This is to ensure that there is an example working test that can be used as a reference.
 
 Example ENV_VARS:
 
@@ -364,7 +362,7 @@ export PACT_CONSUMER=GenericMenuConsumer
 export PACT_PROVIDER=MenuAPI
 ```
 
-Maintainers and contributers may obtain the `PACT_BEARER_TOKEN` if they request access to the PactFlow instance. Else, this will be run in the Azure Devops Pipeline.
+Maintainers and contributors may obtain the `PACT_BEARER_TOKEN` if they request access to the PactFlow instance. Else, this will be run in the Azure DevOps Pipeline.
 
 #### Tests
 
@@ -373,9 +371,9 @@ Maintainers and contributers may obtain the `PACT_BEARER_TOKEN` if they request 
 When the tests pass, the contract will be written to [pacts](./pacts/genericmenuconsumer-menuapi.json), following the naming convention: `<PACT_CONSUMER>-<PACT_PROVIDER>`.
 
 Some good practices:
-✅ Use Pact Matchers to ensure we account for state change, e.g. no hardcoded values for menus in the database, see https://docs.pact.io/getting_started/matching for more information.
+✅ Use Pact Matchers to ensure we account for state change, e.g. no hardcoded values for menus in the database, see <https://docs.pact.io/getting_started/matching> for more information.
 ✅ Ensure that the provider state has been configured by the Provider
 
-It's important to get the `PACT_CONSUMER` and `PACT_PROVIDER` names correct, as these form the key for verfiy.
+It's important to get the `PACT_CONSUMER` and `PACT_PROVIDER` names correct, as these form the key for verify.
 
-⚠️ /pacts: these are checked in for reference only. Please do not changed the outputted .json files. They are created on successful test runs by Pact. These will be published to the broker upon successful run in the pipeline, with the corresponding version tags.
+⚠️ /pacts: these are checked in for reference only. Please do not change the outputted .json files. They are created on successful test runs by Pact. These will be published to the broker upon successful run in the pipeline, with the corresponding version tags.

@@ -8,17 +8,17 @@ sidebar_label: Publishing NuGet Packages
 
 ## NuGet
 
-We have an opensource listed organsisation with multiple packages.
+We have an open-source listed organisation with multiple packages.
 
-### What do we publish?
+### What do we publish
 
 We have a number of NuGet packages that we publish openly. The source code may not be published, but the packages are free to consume.
 
-### Where are the packages published?
+### Where are the packages published
 
-We are publishing them to: https://www.nuget.org/profiles/amidostacks
+We are publishing them to: <https://www.nuget.org/profiles/amidostacks>
 
-### How do we publish?
+### How do we publish
 
 Once the committed code passes through the quality gates in the pipeline, then the packages will be published automatically. It's up to the consumer to adopt the latest versions.
 
@@ -34,4 +34,4 @@ See [dotnet nuget push](https://docs.microsoft.com/en-us/dotnet/core/tools/dotne
 When attempting to publish, we will get the following response:
 `error: File does not exist (**/*.snupkg).`
 
-In order to remedy this, we set the `--no-symbols` option. The symbols will then need to be published seperately.
+In order to remedy this, we set the `--no-symbols` option. The symbols will then need to be published separately.

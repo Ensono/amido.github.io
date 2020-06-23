@@ -13,7 +13,7 @@ of modern browsers.
 Next.js supports IE11 and all modern browsers out of the box using
 `@babel/preset-env`.
 
-## polyfills support
+## Polyfills support
 
 In cases where your own code or any external NPM dependencies you are using
 requires features not supported by your target browsers you will need to
@@ -27,12 +27,12 @@ example demonstrates the recommended approach to implement polyfills._
 
 - [Browserslist](https://github.com/browserslist/browserslist) -
   `.browserslistrc` contains the list of supported browsers.
-  - [Examples](https://github.com/browserslist/browserslist-example) - to update
+- [Examples](https://github.com/browserslist/browserslist-example) - to update
     this list
 - [eslint-plugin-compat](https://www.npmjs.com/package/eslint-plugin-compat) -
   enforces the browser support across stacks.
 
-#### To find out the list of supported browsers.
+### To find out the list of supported browsers
 
 ```bash
 # run the following on the root level

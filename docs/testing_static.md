@@ -4,7 +4,7 @@ title: Testing - Static Code Analysis
 sidebar_label: Static Code Analysis
 ---
 
-We are using [SonarQube](https://docs.sonarqube.org/) for static analysis. To enable integrations with GitHub and for use in Azure Devops CI, the results are then hosted and viewable on [SonarCloud](https://sonarcloud.io/).
+We are using [SonarQube](https://docs.sonarqube.org/) for static analysis. To enable integrations with GitHub and for use in Azure DevOps CI, the results are then hosted and viewable on [SonarCloud](https://sonarcloud.io/).
 
 SonarCloud offers quality gates that ensure that your standards are adhered to before deploying.
 
@@ -15,7 +15,7 @@ SonarCloud supports most languages.
 
 ## Getting Started
 
-Sign up with GitHub to [Sonarcloud](https://sonarcloud.io) for the Organisation under test. Review the documentation and setup on how to puglin to GitHub.
+Sign up with GitHub to [Sonarcloud](https://sonarcloud.io) for the Organisation under test. Review the documentation and setup on how to plugin to GitHub.
 
 ## Using Jest with SonarCloud
 
@@ -55,9 +55,9 @@ The coverage directory will be where the `lcov` reports are generated.
 
 ## Configuring SonarCloud
 
-At the root of the package, a `sonar-project.properties` configuration file can be created, to pull in the required SonarCloud environment variaables, including SonarCloud token, project name, where to collect the code coverage report from, and what files should be exluded from analysis.
+At the root of the package, a `sonar-project.properties` configuration file can be created, to pull in the required SonarCloud environment variables, including SonarCloud token, project name, where to collect the code coverage report from, and what files should be excluded from analysis.
 
-For all configration options see [SonarCloud Analysis Parameters](https://sonarcloud.io/documentation/analysis/analysis-parameters/).
+For all configuration options see [SonarCloud Analysis Parameters](https://sonarcloud.io/documentation/analysis/analysis-parameters/).
 
 To pull in the Jest generated code coverage reports, outputted in the SonarCloud supported `lcov.info` report, the report path can be set in the `sonar-project.properties` file:
 
@@ -79,7 +79,7 @@ We can run this with Amido Stacks custom container, supports running Sonar Scann
 
 See [amidostacks/ci-sonarscanner](https://hub.docker.com/repository/docker/amidostacks/ci-sonarscanner) for the open source image.
 
-## StaticCloud Quality Gates
+## Static Quality Gates
 
 To ensure that all code is meeting the quality standards (i.e. code coverage, bugs, security) then we can implement Quality gate checks from the results of the SonarScanner analysis.
 
@@ -88,15 +88,15 @@ To ensure that all code is meeting the quality standards (i.e. code coverage, bu
 ⚠️ IMPORTANT: The `amidostacks/ci-sonarscanner` does not fail the pipeline if the quality gate is not passed on SonarCloud. We recommend following one of these implementations:
 
 * [SonarScanner for Azure Devops](https://docs.sonarqube.org/latest/analysis/scan/sonarscanner-for-azure-devops/) or your current pipeline
-  * Example usage in the open source [build-dotnet.yml](https://github.com/amido/stacks-pipeline-templates/blob/831c46811abfeff30833ccb003305692cb7ad2af/azDevOps/azure/templates/jobs/build-dotnet.yml) template step
+    * Example usage in the open-source [build-dotnet.yml](https://github.com/amido/stacks-pipeline-templates/blob/831c46811abfeff30833ccb003305692cb7ad2af/azDevOps/azure/templates/jobs/build-dotnet.yml) template step
 
 * Using [SonarLint as an IDE extension](https://www.sonarlint.org) that helps you detect and fix quality issues as you write code.
-  * See [example workspace settings](../.vscode/settings.json)
+    * See [example workspace settings](../.vscode/settings.json)
 
 * Using [amidostacks/ci-sonarscanner](https://hub.docker.com/repository/docker/amidostacks/ci-sonarscanner)
 * [Github Actions with SonarCloud](https://github.com/SonarSource/sonarcloud-github-action) to automatically run analysis triggered by Github
 
-Another option is to have the a task running using the container, making static code analysis a breeze in the pipelines and easy to run locally. For an example on how to use the container to run you static code analysis, see [amido/stacks-pipeline-templates](https://github.com/amido/stacks-pipeline-templates/blob/feature/cycle2/azDevOps/azure/templates/v2/steps/test-static-code-sonar.yml)
+Another option is to have a task running using the container, making static code analysis a breeze in the pipelines and easy to run locally. For an example on how to use the container to run you static code analysis, see [amido/stacks-pipeline-templates](https://github.com/amido/stacks-pipeline-templates/blob/feature/cycle2/azDevOps/azure/templates/v2/steps/test-static-code-sonar.yml)
 
 ```yaml
 steps:
