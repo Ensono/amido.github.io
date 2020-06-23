@@ -14,7 +14,7 @@ For local execution:
 
   1. Clone the project and navigate to the relevant path.
   2. run the following commands in the following order
-   
+  
   ```bash
   npm install
   npm run build
@@ -22,7 +22,7 @@ For local execution:
   npm npm run start
   ```
 
-All of our packages, including the `@amidostacks/scaffolding-api` are available on [npm](https://www.npmjs.com/package/@amidostacks/scaffolding-cli).
+All of our packages, including the `@amidostacks/scaffolding-cli` are available on [npm](https://www.npmjs.com/package/@amidostacks/scaffolding-cli).
 
 See the README for more information on generating the templates from the CLI: [packages/scaffolding-cli/README.md](https://github.com/amido/stacks-webapp-template/blob/master/packages/scaffolding-cli/README.md)
 
