@@ -95,7 +95,7 @@ class Index extends React.Component {
             {
               content:
                 'Stacks enables us to gain momentum on digital transformation. Stacks de-risks project delivery. Stacks enables project teams to focus on solving client challenges rather than technical overheads.',
-              image: `${baseUrl}img/logo.png`,
+              image: ``,
               imageAlign: "bottom",
               title: 'Welcome to Stacks',
             },

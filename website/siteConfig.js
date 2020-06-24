@@ -56,6 +56,10 @@ const siteConfig = {
     secondaryColor: "#FECB07",
   },
 
+  highlight: {
+    theme: 'default'
+  },
+
   /* Custom fonts for website */
   fonts: {
     myFont: ["Work sans"],

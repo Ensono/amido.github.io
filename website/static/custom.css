@@ -1,0 +1,10 @@
+/* Reset */
+
+a {
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #fecb0a;
+    text-decoration: underline;
+    }

@@ -97,7 +97,7 @@ At the end of bootstrapping your example framework, you will have an output that
 └── appsettings.json
 ```
 
-bs[Above: Example output from Selenium framework with .NET output folder structure](./testing_selenium.md#folder-structure)_
+_[Above: Example output from Selenium framework with .NET output folder structure](./testing_selenium.md#folder-structure)_
 
 You are ready to follow the frameworks README.md and run your first test!
 
