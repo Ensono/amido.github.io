@@ -1,24 +1,40 @@
 {
   "docs": {
-    "Getting Started": [
+    "Getting started": [
       "index",
-      "getting_started_demo",
-      "getting_started_dev",
-      "monorepo"
+      "getting_started_demo"
     ],
-    "scaffolding-cli": [
+    "Building your web app": [
       "scaffolding_cli",
-      "cli_testing_frameworks"
+      "cli_webapp_frameworks",
+      "server_side_cache"
     ],
-    "Guides": [
+    "Building your API": [
+      "scaffolding_cli"
+    ],
+    "Testing": [
+      "testing",
+      "cli_testing_frameworks",
+      "testing_static",
+      "testing_selenium",
+      "browser_support"
+    ],
+    "Contributors: Deployment and publishing": [
+      "getting_started_dev",
       "deployment",
       "publishing",
       "publishing_nuget",
       "pipeline_templates",
-      "infrastructure_code"
+      "infrastructure_code",
+      "monorepo"
     ],
-    "Testing": ["testing", "cli_testing_frameworks", "testing_static", "testing_selenium"],
-    "Packages": ["packages", "cli_process"],
-    "Supporting Docs": ["browser_support", "server_side_cache", "faq"]
+    "Packages": [
+      "packages",
+      "scaffolding_cli",
+      "cli_process"
+    ],
+    "Support": [
+      "faq"
+    ]
   }
 }
