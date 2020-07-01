@@ -27,7 +27,7 @@ const siteConfig = {
   noIndex: true,
 
   title: "Amido Stacks", // Title for your website.
-  tagline: "Amido Stacks",
+  tagline: "Helping projects gain momentum on digital transformation, with opinionated and modular boilerplate solutions",
   url: "https://amido.github.io", // Org github.io custom URL
   baseUrl: "/stacks/", // Base URL for project repo
   projectBaseUrl: "/stacks",
