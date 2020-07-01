@@ -8,3 +8,11 @@ a:hover {
     color: #fecb0a;
     text-decoration: underline;
     }
+
+.toc .toggleNav ul li a {
+    text-decoration: none;
+    }
+
+.fixedHeaderContainer a {
+    text-decoration: none;
+}

@@ -125,8 +125,7 @@ class Index extends React.Component {
         {[
           {
             content:
-              "Amido Stacks let you focus on the problem, not the tools or setup. To start creating your project run this command to interactively guide you:",
-            code: `npx @amidostacks/scaffolding-cli run -i`,
+              "Amido Stacks let you focus on the problem, not the tools or setup. To start creating your project run this command to interactively guide: npx @amidostacks/scaffolding-cli run -i",
             image:
               "https://amidostacksassets.blob.core.windows.net/docs/assets/npx_amidostacks_scaffolding_cli_run_i.gif",
             imageAlign: "right",
@@ -136,20 +135,9 @@ class Index extends React.Component {
       </Block>
     );
 
-    // const Showcase = () => {
-    //   return (
-    //     <div className="gridBlock" background="dark">
-    //       <h2>Who is Using This?</h2>
-    //       <p>This project is used by all these people</p>
-    //       <CodeBlock className="language-sh">
-    //         npx create-react-app my-app
-    //       </CodeBlock>
-    //     </div>
-    //   );
-    // };
-
     const Features = () => (
       <Block layout="fourColumn">
+        
         {[
           {
             content: `${features[0].content}`,
