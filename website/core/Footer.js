@@ -37,12 +37,12 @@ class Footer extends React.Component {
           </a>
           <div>
             <h5>Docs</h5>
-            <a href={this.docUrl('index', this.props.language)}>
+            <a href={this.docUrl('index')}>
               Getting Started
             </a>
           </div>
           <div>
-            <h5>Community</h5>
+            <h5>About Us</h5>
             <a href="https://amido.com/">Amido</a>
           </div>
           <div>
@@ -56,12 +56,13 @@ class Footer extends React.Component {
           target="_blank"
           rel="noreferrer noopener"
           className="fbOpenSource">
-          <img
+          {/* Todo: Awaiting assets */}
+          {/* <img
             src={`${this.props.config.baseUrl}img/logo.png`}
             alt={`${this.props.config.projectName}`}
             width="170"
             height="45"
-          />
+          /> */}
         </a>
         <section className="copyright">{this.props.config.copyright}</section>
       </footer>
