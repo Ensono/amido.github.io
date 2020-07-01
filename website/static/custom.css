@@ -16,3 +16,11 @@ a:hover {
 .fixedHeaderContainer a {
     text-decoration: none;
 }
+
+.onPageNav a {
+    text-decoration: none;
+}
+
+.darkBackground code {
+    background: inherit;
+  }

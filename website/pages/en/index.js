@@ -69,7 +69,7 @@ class HomeSplash extends React.Component {
 
     const Button = (props) => (
       <div className="pluginWrapper buttonWrapper">
-        <a className="button" href={props.href} target={props.target} rel="noreferrer noopener" target="_blank">
+        <a className="button" href={props.href} target={props.target}>
           {props.children}
         </a>
       </div>
@@ -108,28 +108,33 @@ class Index extends React.Component {
         background={props.background}
       >
         <GridBlock
-          align="center"
+          align={props.align}
           contents={props.children}
           layout={props.layout}
+        >
+        <CodeBlock
+          code={props.code}
         />
-        <CodeBlock 
-          align="center"
-          code={props.code} 
-          layout={props.layout}
-        />
+        </GridBlock>
       </Container>
     );
 
     const TryOut = () => (
-      <Block id="try" background="dark" code="npx @amidostacks/scaffolding-cli run -i">
+      <Block id="try" background="dark" align="left">
         {[
           {
             content:
-              "Amido Stacks let you focus on the problem, not the tools or setup. To start creating your project run this command to interactively guide: npx @amidostacks/scaffolding-cli run -i",
+              `Amido Stacks let you focus on the problem, not the tools or setup. To start creating your project run this command to interactively guide:
+              <br />
+              <pre>
+                <code class="hljs plaintext">
+                    npx @amidostacks/scaffolding-cli run -i
+                </code>
+              </pre>`,
             image:
               "https://amidostacksassets.blob.core.windows.net/docs/assets/npx_amidostacks_scaffolding_cli_run_i.gif",
             imageAlign: "right",
-            title: "Get started in as little as 5 commands",
+            title: "Get started in as little as 5 commands"
           },
         ]}
       </Block>
