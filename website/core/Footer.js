@@ -5,20 +5,20 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-const React = require('react');
+const React = require("react");
 
 class Footer extends React.Component {
   docUrl(doc, language) {
     const baseUrl = this.props.config.baseUrl;
     const docsUrl = this.props.config.docsUrl;
-    const docsPart = `${docsUrl ? `${docsUrl}/` : ''}`;
-    const langPart = `${language ? `${language}/` : ''}`;
+    const docsPart = `${docsUrl ? `${docsUrl}/` : ""}`;
+    const langPart = `${language ? `${language}/` : ""}`;
     return `${baseUrl}${docsPart}${langPart}${doc}`;
   }
 
   pageUrl(doc, language) {
     const baseUrl = this.props.config.baseUrl;
-    return baseUrl + (language ? `${language}/` : '') + doc;
+    return baseUrl + (language ? `${language}/` : "") + doc;
   }
 
   render() {
@@ -37,17 +37,17 @@ class Footer extends React.Component {
           </a>
           <div>
             <h5>Docs</h5>
-            <a href={this.docUrl('index')}>
-              Getting Started
-            </a>
+            <a href={this.docUrl("index")}>Getting Started</a>
           </div>
           <div>
             <h5>About Us</h5>
             <a href="https://amido.com/">Amido</a>
           </div>
           <div>
-            <h5>More</h5>
-            <a href="https://github.com/">GitHub</a>
+            <h5>Open Source</h5>
+            <a href="https://github.com/amido/stacks" rel="noreferrer noopener" target="_blank">
+              GitHub
+            </a>
           </div>
         </section>
 
@@ -55,7 +55,8 @@ class Footer extends React.Component {
           href={`${this.props.config.baseRepoUrl}`}
           target="_blank"
           rel="noreferrer noopener"
-          className="fbOpenSource">
+          className="fbOpenSource"
+        >
           {/* Todo: Awaiting assets */}
           {/* <img
             src={`${this.props.config.baseUrl}img/logo.png`}
