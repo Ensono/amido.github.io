@@ -29,13 +29,13 @@ Additional tools you may want/need to test the outputs locally - this is not req
 - docker
     - the only real dependencies for local testing as all pipelines are using a shared library of public CI images
     - docs on the CI containers used can be found [here](https://github.com/amido/stacks-webapp-template/tree/master/libs/images) links to their public dockerhub pages below:
-        - [sonar-scanner](https://hub.docker.com/repository/docker/amidostacks/ci-sonarscanner)
-        - [terraform-deploy](https://hub.docker.com/repository/docker/amidostacks/ci-tf)
-        - [k8s-deploy](https://hub.docker.com/repository/docker/amidostacks/ci-k8s)
+        - [Sonar-scanner](https://hub.docker.com/repository/docker/amidostacks/ci-sonarscanner)
+        - [Terraform-deploy](https://hub.docker.com/repository/docker/amidostacks/ci-tf)
+        - [K8s-deploy](https://hub.docker.com/repository/docker/amidostacks/ci-k8s)
 - dotnet/nodejs/chrome-webdriver/testcafe/sonar-scanner
 - optionally (prefer to use the `docker run -v ...`):
-    - terraform - v0.12.24
-    - kubectl - 
+    - Terraform - v0.12.24
+    - Kubectl - 
 
 ## Prerequisites
 
@@ -45,7 +45,7 @@ Below are the pre-requisites to get off the ground
 
 You will need a public cloud account with one of the following providers. 
 
-you can find more information around the infrastructure bootstrapping and requirements [here](./infrastructure_code.md).
+More information around the infrastructure bootstrapping and requirements can be found [here](./infrastructure_code.md).
 
 #### Azure 
 
@@ -105,7 +105,7 @@ where `REPLACE_ME_FOR_LIBRARY_NAME` in this example would correspond to `amido-s
 You will need to create Credentials objects in Jenkins that the pipeline will use to bootstrap various resources in either GCP or Azure. 
 
 For GCP credentials you will want to create a file secret with your service account json key. 
-NB: if you name something other than `GCP_KEY` please update the pipeline definitions as well (simply search and replace)
+NB: If you name something other than `GCP_KEY` please update the pipeline definitions as well (simply search and replace)
 
 Similarly as with AzureDevops all the global vars are declared at the global scope and picked up in various stages with a few exceptions which will need to be set at a stage level, e.g. `cluster_name` | `dns_pointer_record` | `stage` | `environment`
 
@@ -126,7 +126,7 @@ CSR being the only exception where the infrastructure doesn't cover K8s infrastr
 
 ### OOTB template
 
-Includes a full SDLC for a chosen template app (API/UI/tests) on a specified deployment (CI/CD) platform with the below conceptual stages. However as the output is entirely modular it allows for easy extension by user in deploy steps of either k8s or terraform - user should be able to enrich the generated output with their specific needs.
+Includes a full Software Development Life Cycle (SDLC) for a chosen template app (API/UI/tests) on a specified deployment (CI/CD) platform with the below conceptual stages. However as the output is entirely modular it allows for easy extension by user in deploy steps of either k8s or terraform - user should be able to enrich the generated output with their specific needs.
 
 Application Layer:
 
