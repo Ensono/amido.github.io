@@ -4,13 +4,13 @@ title: About Amido Stacks
 sidebar_label: About Amido Stacks
 ---
 
-## Why Stacks
+## Why we are developing Stacks
 
 Stacks enables teams to gain momentum on digital transformation.
 Stacks helps de-risk project delivery.
 Stacks enables project teams to focus on solving business challenges rather than technical overheads.
 
-## What is Stacks
+## What Stacks is
 
 It’s like a show home, built given what we know now,  our skills and abilities, and the resources and tools available.
 
@@ -20,7 +20,7 @@ The project might not need a roof.
 
 Now the team can decorate and customise for their client.
 
-## How have we produced Stacks
+## How we have approached Stacks
 
 * Open source first
 * Re-usable and configurable boilerplates
