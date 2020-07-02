@@ -39,8 +39,8 @@ With owner privileges:
 
 1. Create a [Blob Storage instance](https://azure.microsoft.com/en-gb/services/storage/blobs/)
 2. Take note of:
-   1. storage account name
-   2. blob name
+   1. Storage account name
+   2. Blob name
    3. ClientID
    4. TenantID
    5. SubscriptionId
