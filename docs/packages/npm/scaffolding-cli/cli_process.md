@@ -21,11 +21,11 @@ Based on the answers/config the process goes through a certain selection process
 }
 ```
 
-initial version of the options above, the mapping is created by taking the below params
+Initial version of the options above, the mapping is created by taking the below params
 
 `let determinedChoice = ${selection.projectType}_${selection.platform}_${selection.deployment}`
 
-the prompt class handles all this and simply hands over to the workers which dynamically select the flow.
+The prompt class handles all this and simply hands over to the workers which dynamically select the flow.
 
 The FlowSelector class is where users need to implement extensions for their own implementation, you do this by creating a static method and also needs to be added `WorkflowOptions` inside the models/workflow.ts
 
