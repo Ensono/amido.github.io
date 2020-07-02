@@ -6,7 +6,7 @@ sidebar_label: Dev - Using the repo to build an application
 
 ## Getting started
 
-## Templating a web app
+## Bootstrapping a WebApp
 
 As a general rule the steps to get one of our npm environments up and running are
 

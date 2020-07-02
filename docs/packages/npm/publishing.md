@@ -34,7 +34,7 @@ pipeline do the rest (if it passes all the tests that is).
 
 ## Our Packages
 
-`stacks-webapp-template` is a [monorepo](./monorepo.md), meaning it is divided
+`stacks-webapp-template` is a [monorepo](../../workloads/frontend/monorepo.md), meaning it is divided
 into independent sub-packages.
 
 These packages can be found in the packages/ directory:
@@ -43,6 +43,7 @@ These packages can be found in the packages/ directory:
 packages/
   elint-config/
   template-cli/
+  pact-config
 ```
 
 ## Package Registry
@@ -64,7 +65,7 @@ consumers of the packages to update their versions as needed.
 
 ## Automated Package Publishing
 
-Lerna is embedded as a step in the [monorepo](./monorepo.md) pipeline. Check out
+Lerna is embedded as a step in the [monorepo](../../workloads/frontend/monorepo.md) pipeline. Check out
 the pipeline step
 [publish-packages-lerna.yml](./build/azDevOps/azure/templates/steps/publish-packages-lerna.yml)
 for more information on how this is done.

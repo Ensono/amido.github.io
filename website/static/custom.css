@@ -1,0 +1,26 @@
+/* Reset */
+
+a {
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #fecb0a;
+    text-decoration: underline;
+    }
+
+.toc .toggleNav ul li a {
+    text-decoration: none;
+    }
+
+.fixedHeaderContainer a {
+    text-decoration: none;
+}
+
+.onPageNav a {
+    text-decoration: none;
+}
+
+.darkBackground code {
+    background: inherit;
+  }

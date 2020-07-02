@@ -45,11 +45,11 @@ Below are the pre-requisites to get off the ground
 
 You will need a public cloud account with one of the following providers. 
 
-you can find more information around the infrastructure bootstrapping and requirements [here](./infrastructure_code.md).
+you can find more information around the infrastructure bootstrapping and requirements [here](./infrastructure/azure/infrastructure_code.md).
 
 #### Azure 
 
-You will need to create, or ask your admin for Azure to create for you, an [SPN account](https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal) within a new or existing subscription, that will have the owner privileges. Optionally, you can create 2 to follow security best practice [here](./infrastructure_code.md####Azure).
+You will need to create, or ask your admin for Azure to create for you, an [SPN account](https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal) within a new or existing subscription, that will have the owner privileges. Optionally, you can create 2 to follow security best practice [here](./infrastructure/azure/infrastructure_code.md####Azure).
 
 This SPN (Service Principal Name) will be used throughout to create and manage resources within the cloud via terraform. You can find additional info on how to use these locally along with recommended usage.
 
@@ -57,7 +57,7 @@ This SPN (Service Principal Name) will be used throughout to create and manage r
 
 You will need to create a project - preferably 2 one for Terraform state and one for the solution - which you may choose to create 2 of if you want your production cluster to be completely separate.
 
-You will need to create a service account (or 2 if your state is in a different account) - you will need to take note of the JSON credentials file and store in an environment variable for use in pipelines. 
+You will need to create a service account (or 2 if your state is in a different account) - you will need to take note of the JSON credentials file and store in an environment variable for use in pipelines.
 
 `GOOGLE_CREDENTIALS` will be a json key with a service account credentials.
 
@@ -163,13 +163,13 @@ Infrastructure Layer (Shared Services):
             - SSL termination (AppGateway)
             - DNS zone
         - k8s configuration:
-            - ingress controller - with automatic IP binding and AppGateway intgeration
+            - ingress controller - with automatic IP binding and AppGateway integration
             - pod level identity management (addpodidentity/fargate-profile)
             - gatekeeper
 
 tests (in standalone mode):
 
-- lots more info can be found in the testing section [overview](./testing.md##Overview)
+- lots more info can be found in the testing section [overview](./testing/testing.md##Overview)
 
 <!-- ### Infrastructure template
 
@@ -192,7 +192,7 @@ An UI app in React (SSR/CSR flavour):
         - API integration
         - ...
 
-An API in Java (springboot) and .netcore flavours with: 
+An API in Java (springboot) and .netcore flavours with:
 
 - CosmosDB integration (deploy/infra/yaml)
 - swagger generation

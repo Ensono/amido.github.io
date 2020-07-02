@@ -52,7 +52,6 @@ _\* Currently cannot be bootstrapped from [@amidostacks/scaffolding-cli](https:/
 
 [![asciicast](https://asciinema.org/a/mpqq9MGhE2TsSXtLDhmjZfaDq.svg?t=7)](https://asciinema.org/a/mpqq9MGhE2TsSXtLDhmjZfaDq)
 
-
 ## Get testing
 
 At the end of bootstrapping your example framework, you will have an output that will contain all the:
@@ -97,7 +96,7 @@ At the end of bootstrapping your example framework, you will have an output that
 └── appsettings.json
 ```
 
-bs[Above: Example output from Selenium framework with .NET output folder structure](./testing_selenium.md#folder-structure)_
+_[Above: Example output from Selenium framework with .NET output folder structure](./testing_selenium.md#folder-structure)_
 
 You are ready to follow the frameworks README.md and run your first test!
 
