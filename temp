@@ -1,0 +1,103 @@
+Stacks enables us to gain momentum on digital transformation.Engineering
+- Branching Strategy
+- Project Repository Layout
+- CI/CD tool
+- Aggregated Versioning
+- Versioning Pattern
+- Pull Request gating
+- Pull Request template
+- Tagging container images and code
+- Build step templates
+- Variable substitution
+- Application Deployment Strategy
+- Application-specific Resource Provisioning
+- Release Notes Information
+
+Security
+- Container Vulnerability Scanning
+- Use of Long-term Support Versions
+- Baseline Security for HTTPS Endpoints
+
+Infrastructure
+- Infrastructure Templating
+- Kubernetes
+- Select Container Registry
+- Kubernetes resource templating
+- Service mesh tooling
+- Deployment tool
+- Kubernetes Policy Enforcement
+- Kubernetes Network Policies
+
+Application - Front End
+- Node JS Runtime
+- Build & package tools
+- React state management
+- Static Code Analysis
+- Shared Asset Infrastructure
+- UI library
+- NPM Package Management
+- Monorepo structure
+- Logging framework and associated middlewares
+- Internationalisation/Localisation
+- Javascript development language
+- Authorization & Session Management
+- DATA FETCHING AND PRE-RENDERING
+
+Application - .NET API
+- NuGet Template Release Strategy
+- NuGet Package Publishing
+- Secret Management
+
+Testing
+- Performance Testing tools
+- Security testing tools
+- Contract testing tools
+- Tools and Libraries used for unit tests
+- Static code analysis coverage/tools
+- BDD tool in automated tests
+- Hosted or SaaS Contract Broker
+- Functional Automation Test Framework
+- Unit Testing Framework
+- Integration, Component, and Snapshot Testing Framework
+- Browser Support with Visual Regression Testing
+- Automated Accessibility Testing
+- Supported Browsers
+- Testing localisation and internationalisation
+- Web app quality profiling with SEO tests
+- A/B Testing through Multivariant Testing - Experimentation Platform
+- Testing Strategy
+- Consumer Driven Contract Testing
+- Testing Infrastructure
+- WebApp Automated Security Testing
+- Test artefact publishing
+
+Observability
+- Logging Methodology
+- Dashboarding
+- React and Node.js Monitoring, Logging and Alerting
+
+Open Source
+- Contribution Model
+- Contribution and maintenance approach
+- GitHub Pull Request CI Triggers
+- OpenSource Developer Documentation
+- Content Management Systems
+
+Application - Java
+- JDK Version
+- Container Image
+- Web Framework
+- Build and Package Management
+- Data Access Layer
+- Security
+- API Documentation
+- Logging
+- Monitoring
+- Testing Libraries & Frameworks
+- Code Coverage and Quality
+- Message Bus & Streaming Integration
+- Developer IDE
+- Secrets and Configuration
+- Template Scaffolding
+- REST, CQRS, PubSub, Streaming
+- Docker Containers for Builds

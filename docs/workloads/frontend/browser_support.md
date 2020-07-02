@@ -4,7 +4,7 @@ title: Browser Support
 sidebar_label: Browser Support
 ---
 
-Given we are building a WebApp template designing for accessibility, we would
+Given we provide boilerplate WebApps designing for accessibility, we would
 like to have optionality to support broad range of browsers. We look to
 following the standards set by Government Digital Services (GDS) on designing
 our WebApp and testing for compatibility. Amido's stacks supports latest version

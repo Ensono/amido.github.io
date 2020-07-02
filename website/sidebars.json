@@ -1,24 +1,74 @@
 {
   "docs": {
-    "Getting Started": [
+    "Getting started": [
       "index",
       "getting_started_demo",
-      "getting_started_dev",
-      "monorepo"
+      "getting_started_dev"
     ],
-    "scaffolding-cli": [
-      "scaffolding_cli",
-      "cli_testing_frameworks"
+    "Workloads": [
+      "workloads/workloads",
+      {
+        "type": "subcategory",
+        "label": "Backend Services",
+        "ids": [
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Frontend Web Applications",
+        "ids": [
+          "workloads/frontend/browser_support",
+          "workloads/frontend/cli_webapp_frameworks",
+          "workloads/frontend/monorepo",
+          "workloads/frontend/server_side_cache"
+        ]
+      }
     ],
-    "Guides": [
-      "deployment",
-      "publishing",
-      "publishing_nuget",
-      "pipeline_templates",
-      "infrastructure_code"
+    "Infrastructure": [
+      "docs/infrastructure/deployment",
+      {
+        "type": "subcategory",
+        "label": "Azure",
+        "ids": [
+          "infrastructure/azure/infrastructure_code",
+          "infrastructure/azure/pipeline_templates"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Google Cloud Platform",
+        "ids": [
+        ]
+      }
     ],
-    "Testing": ["testing", "cli_testing_frameworks", "testing_static", "testing_selenium"],
-    "Packages": ["packages", "cli_process"],
-    "Supporting Docs": ["browser_support", "server_side_cache", "faq"]
+    "Testing": [
+      "testing/testing",
+      "testing/cli_testing_frameworks",
+      "testing/cli_testing_selenium",
+      "testing/testing_static"
+    ],
+    "Packages": [
+      "packages/packages",
+      {
+        "type": "subcategory",
+        "label": "npm",
+        "ids": [
+          "packages/npm/publishing",
+          "packages/npm/scaffolding-cli/cli_process",
+          "packages/npm/scaffolding-cli/scaffolding_cli"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "nuget",
+        "ids": [
+          "packages/nuget/publishing_nuget"
+        ]
+      }
+    ],
+    "Support": [
+      "support/faq"
+    ]
   }
 }
+
