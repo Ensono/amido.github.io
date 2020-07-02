@@ -15,13 +15,13 @@ We have four key values in which we stand by:
 3. **People-first**: As a people business, we place your customers and employees at the centre of any digital project or transformation. People are at the heart of everything we design and deliver.
 4. **Pragmatic**: All technology has its strengths but also its limitations. We focus on delivering solutions that work and on creating technology ecosystems that make the most of the technologies within them. We are honest about the value that can be delivered now but also work to ensure our solutions have the agility and scalability built in to meet the challenges of tomorrow.
 
-## Why Stacks
+## Why Stacks?
 
 Stacks enables teams to gain momentum on digital transformation.
 Stacks helps de-risk project delivery.
 Stacks enables project teams to focus on solving business challenges rather than technical overheads. 
 
-## What is Stacks
+## What is Stacks?
 
 It’s like a show home, built given what we know now,  our skills and abilities, and the resources and tools available.
 
@@ -31,7 +31,7 @@ The project might not need a roof.
 
 Now the team can decorate and customise for their client.
 
-## How have we produced Stacks
+## How have we produced Stacks?
 
 * Open source first
 * Re-usable and configurable boilerplates
@@ -39,7 +39,7 @@ Now the team can decorate and customise for their client.
 
 ### Amido Stacks Webapp
 
-The entire project is built around the generation of a completely useable scaffolding to get project teams started, quicker. The showcase of a react app, either SSR or CSR being deployed into an existing or brand new K8s cluster - depending on the choices that were made during the bootstrap CLI process.
+The entire project is built around the generation of a completely useable scaffolding to get project teams started, quicker. The showcase of a react app, either SSR or CSR being deployed into an existing or brand new Kubernetes cluster - depending on the choices that were made during the bootstrap CLI process.
 
 More details around the internal layout and how to contribute and extend the CLI process can be found at *[monorepo](./monorepo.md)*.
 
