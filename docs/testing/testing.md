@@ -229,7 +229,7 @@ Consumer-Driven Contract (CDC) Testing is a pattern that allows a consumer (i.e:
 a client) and a provider (i.e. an API provider) to communicate using an agreed
 contract (a pact).
 
-The following documentation is an overview of the Pact implementation as part of the templated SSR web app. See [packages](./packages.md) for a link to the source code.
+The following documentation is an overview of the Pact implementation as part of the templated SSR web app. See [packages](../packages/packages.md) for a link to the source code.
 
 _Note: The `beforeAll` and `afterAll` hooks in Jest is not before all tests but
 before each file._
