@@ -10,7 +10,7 @@ Where possible, we are creating reusable steps that can be pulled into any base 
 
 The [stacks-pipeline-templates](https://github.com/amido/stacks-pipeline-templates) are provided as a base standard process for deploying stacks infrastructure, see `stacks-infrastructure` and `stacks-dotnet` pipeline files under the `./build/AzDevOps/` folders for their specific usage.
 
-### Service Connections
+### Service connections
 
 Assuming that you will be consuming the templates from the public [repo](https://github.com/amido/stacks-pipeline-templates), a service connection will need to be configured to ensure we can pull in the source code. The service connection will need a [Github Personal Access Token](https://github.com/settings/tokens) (or credentials) to pull in the code. At a minimum, the access token will need to include:
 
@@ -30,7 +30,7 @@ resources:
     endpoint: amidostacks # Name of the service account created for the connection to GitHub from Azure DevOps
 ```
 
-### Example Usage
+### Example usage
 
 The below shows an example of how to reference the resource, and pull in the step template.
 
