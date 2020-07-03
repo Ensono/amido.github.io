@@ -22,7 +22,7 @@ All infrastructure tooling is done with [Terraform](https://www.terraform.io/), 
 
 workspaces... 
 
-Optionally create feature based environments by passing 
+Optionally create feature based environments by passing...
 
 
 
