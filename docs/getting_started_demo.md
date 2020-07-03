@@ -14,7 +14,7 @@ Templates out a fully functional and deployable project in a variety of flavours
 Including tests (unit, integration), and infrastructure and deployment definitions. 
 All from your CLI.
 
-## Getting Started
+## Getting started
 
 We are using npx to execute and create the
 [template-cli](https://www.npmjs.com/package/@amidostacks/scaffolding-cli)
@@ -41,7 +41,7 @@ Additional tools you may want/need to test the outputs locally - this is not req
 
 Below are the pre-requisites to get off the ground
 
-### Public Cloud
+### Public cloud
 
 You will need a public cloud account with one of the following providers. 
 
@@ -65,7 +65,7 @@ You will need to create a service account (or 2 if your state is in a different 
 Coming soon -->
 
 
-### CI/CD  Tooling
+### CI/CD tooling
 
 You will need access to CI/CD tooling with YAML based input. 
 
@@ -116,7 +116,7 @@ Similarly as with AzureDevops all jobs are running in publicly available CI cont
 #### Gitlab
 Coming soon -->
 
-### Variables and Secrets
+### Variables and secrets
 
 ## What you get
 
@@ -177,7 +177,7 @@ tests (in standalone mode):
 
   - Application layer: -->
 
-### Business Source code
+### Business source code
 
 #### On Azure
 
@@ -242,7 +242,7 @@ Open Browser and hit [http://localhost:3000](http://localhost:3000)
 
 <!-- MORE examples here Test only? Infra Only? -->
 
-### Advanced Usage
+### Advanced usage
 
 Whilst the basic examples are fine for small projects and get you off the ground quickly to have a deployed application securely behind a domain of your choice.
 
