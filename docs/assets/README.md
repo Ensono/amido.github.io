@@ -14,7 +14,7 @@ These are then available via URL to insert into the documentation as markdown as
 
 Please upload and host the static assets from a secure location and reference it in the documentation.
 
-## Exammple: Embedding images in markdown
+## Example: Embedding images in markdown
 
 Inline-style:
 ![example gif](https://amidostacksassets.blob.core.windows.net/docs/assets/axe_cypress_good_quality.gif "Example gif")
