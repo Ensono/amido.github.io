@@ -26,7 +26,7 @@ It is recommended to use Visual Studio. Alternatively, VSCode has some custom pl
 
 For all downloads, see <https://visualstudio.microsoft.com/>
 
-### Suggested VSCode Extensions
+### Suggested VSCode extensions
 
 * C# for Visual Studio Code (powered by OmniSharp)
 * Cucumber (Gherkin) Full Support Extension for VSCode
@@ -47,7 +47,7 @@ It's as simple as following these steps:
 4. Set a breakpoint and start stepping through your code!
 ![vs_debug_step](https://amidostacksassets.blob.core.windows.net/docs/assets/debug_visual_studio_breakpoint.gif)
 
-## Building the Solution
+## Building the solution
 
 Please ensure you have the [.NET Core 3.1 SDK installed.](https://dotnet.microsoft.com/download) 
 
@@ -55,7 +55,7 @@ _MacOS/Linux: For [Homebrew](https://formulae.brew.sh/) users, `brew cask instal
 
 Please install [Visual Studio Code](https://code.visualstudio.com/) and ensure the extension [C# for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp) (powered by OmniSharp) is installed.
 
-### Restore the Solution
+### Restore the solution
 
 In root (*.sln) directory, restore the dependencies the solution using: ) the solution:
 
@@ -63,7 +63,7 @@ In root (*.sln) directory, restore the dependencies the solution using: ) the so
 dotnet restore
 ```
 
-### Run the Tests
+### Run the tests
 
 In root (*.sln) directory, build the solution using: ) the solution:
 
@@ -102,7 +102,7 @@ If you wish to use a local instance of Selenium Webdriver, be sure to download t
 | Internet Explorer | <https://github.com/SeleniumHQ/selenium/wiki/InternetExplorerDriver> |
 | Microsoft Edge    | <https://blogs.windows.com/msedgedev/2015/07/23/bringing-automated-testing-to-microsoft-edge-through-webdriver/>  |
 
-## Folder Structure
+## Folder structure
 
 ```bash
 ├── Configuration
@@ -129,7 +129,7 @@ E.g. in `appsettings.json` we are using the configuration setting (key-value pai
 
 This is the base of how Selenium will interact with your web app.
 
-## Page Object Model
+## Page Object model
 
 We are using as a base the Page Object model, with a strong flavour and inclination towards Page Component-based models.
 
@@ -155,14 +155,14 @@ Please be aware, that that the `Selenium PageFactory` uses the `FindBy` method. 
  More information: <http://jimevansmusic.blogspot.com/2018/03/deprecating-parts-of-seleniums-net.html>
 
 
-### Element Locator Tools
+### Element Locator tools
 
 One of the best methods to test your locator is working is by trying it in the browser first.
 
 1. [Debugging with Developer Console](https://www.lambdatest.com/blog/debugging-javascript-using-the-browsers-developer-console/)
 2. [Interacting with the DOM with jQuery](https://api.jquery.com/jQuery/)
 
-### Element Recommendations
+### Element recommendations
 
 [Data attributes](https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes) can help identify the elements under test. 
 
@@ -214,11 +214,11 @@ The solution tags (or annotates) tests as smoke tests using xUnit `Traits`. I.e.
 
 This is where all the step definitions are created.
 
-## Other Testing Tools
+## Other testing tools
 
 <https://github.com/thangchung/awesome-dotnet-core>
 
-## C# Coding Standards and Naming Conventions
+## C# coding standards and naming conventions
 
 See <https://github.com/ktaranov/naming-convention/blob/master/C%23%20Coding%20Standards%20and%20Naming%20Conventions.md> for best practices.
 
