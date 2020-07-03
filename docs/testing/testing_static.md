@@ -13,7 +13,7 @@ SonarCloud offers quality gates that ensure that your standards are adhered to b
 
 SonarCloud supports most languages.
 
-## Getting Started
+## Getting started
 
 Sign up with GitHub to [Sonarcloud](https://sonarcloud.io) for the Organisation under test. Review the documentation and setup on how to plugin to GitHub.
 
@@ -79,11 +79,11 @@ We can run this with Amido Stacks custom container, supports running Sonar Scann
 
 See [amidostacks/ci-sonarscanner](https://hub.docker.com/repository/docker/amidostacks/ci-sonarscanner) for the open source image.
 
-## Static Quality Gates
+## Static quality gates
 
 To ensure that all code is meeting the quality standards (i.e. code coverage, bugs, security) then we can implement Quality gate checks from the results of the SonarScanner analysis.
 
-### Azure Pipelines
+### Azure pipelines
 
 ⚠️ IMPORTANT: The `amidostacks/ci-sonarscanner` does not fail the pipeline if the quality gate is not passed on SonarCloud. We recommend following one of these implementations:
 
