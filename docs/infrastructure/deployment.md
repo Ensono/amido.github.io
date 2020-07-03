@@ -4,7 +4,7 @@ title: Deployment
 sidebar_label: Deployment
 ---
 
-## Templated Pipelines
+## Templated pipelines
 
 Whilst there is a full CI/CD process for contributed changes to ensure existing functionality doesn't break if you want to ensure your PR passes, please follow the steps in the [templated-cli](../packages/packages.md) docs to create a templated out app with and *-pipeline.yml and point to your own CI/CD tooling.
 
@@ -14,16 +14,16 @@ Azure Devops (TFS) ONLY:
 
 - The generated pipeline yaml is only comprised of steps and jobs templated out from other repo 
 
-### Basic Guide 
+### Basic guide 
 
 <!-- Add more steps. -->
 
-1. See [publishing](../packages/npm/publishing.md) for how to publishing changes to packages
+1. See [publishing](../packages/npm/publishing.md) for how to publish changes to packages
 
 
 ### Build container definitions
 
-All build containers used by the pipelines are stored and managed from `libs/images/*`, should you need to change or create an additional one please follow the existing structure and create a folder for your specific use case.
+All build containers used by the pipelines are stored and managed from `libs/images/*`, should you need to change or create an additional one, please follow the existing structure and create a folder for your specific use case.
 
 These are meant to be used for public consumption and should not include any secrets or keys left in the container.
 
