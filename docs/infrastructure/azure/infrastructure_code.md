@@ -18,6 +18,8 @@ All infrastructure tooling is done with [Terraform](https://www.terraform.io/), 
 
 ## Terraform
 
+All the modules used by stacks are documented and maintained [here](https://github.com/amido/stacks-terraform)
+
 ### Recommended Usage 
 
 workspaces... 
