@@ -24,7 +24,7 @@ All the modules used by stacks are documented and maintained [here](https://gith
 
 workspaces... 
 
-Optionally create feature based environments by passing 
+Optionally create feature based environments by passing...
 
 
 
