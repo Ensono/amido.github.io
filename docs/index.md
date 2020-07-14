@@ -7,18 +7,17 @@ sidebar_label: About Amido Stacks
 ## Why we are developing Stacks
 
 Stacks enables teams to gain momentum on digital transformation.
-Stacks helps de-risk project delivery.
-Stacks enables project teams to focus on solving business challenges rather than technical overheads.
+It helps de-risk project delivery, and enables project teams to focus on solving business challenges, rather than technical overheads.
 
 ## What Stacks is
 
-It’s like a show home, built given what we know now,  our skills and abilities, and the resources and tools available.
+It’s like a show house, built given what we know now, our skills, abilities, resources and tools available.
 
-The internal layout might change.
+The internal layout of the house might change.
 The house might move location.
-The project might not need a roof.
+It might not even need a roof!
 
-Now the team can decorate and customise for their client.
+With the solid foundations and structure built, the team can decorate and customise the house for their client.
 
 ## How we have approached Stacks
 
@@ -40,7 +39,7 @@ The following list is a snapshot of all the records that have been taken into ac
 
 *Engineering:*
 
-* Branching Strategy
+* Branching strategy
 * Project Repository Layout
 * CI/CD tool
 * Aggregated Versioning
@@ -150,7 +149,7 @@ The following list is a snapshot of all the records that have been taken into ac
 * REST, CQRS, PubSub, Streaming
 * Docker Containers for Builds
 
-### Deployment Concepts
+### Deployment concepts
 
 The deployment principles of build once then deploy to multiple stages has been applied as best practice for the generated pipeline template.
 Templated out pipeline will encompass the build, deploy dev, deploy prod stages. Each stage is comprised of tasks that the user can either enable or disable depending on their setup and currently available tooling such as SonarCloud or vulnerability scanning.
