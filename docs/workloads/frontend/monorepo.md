@@ -14,7 +14,7 @@ At the moment, the project is comprised of:
 - [Webapp](`packages/webapp`) - SSR React, Node.js
 - [UI_Library](`packages/UILib`) - TBC
 
-## Sample Project Directory Structure
+## Sample project directory structure
 
   ```bash
   ├── .gitignore
