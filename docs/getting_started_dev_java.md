@@ -12,6 +12,9 @@ sidebar_label: Dev Java - Using the repo to build Java application locally
 1) Check out java project to your local machine : [Java Repository](https://github.com/amido/stacks-java)
 
 2) Configure below required environment variables
+
+   Note : For local environments use Cosmos DB emulator(CosmosDB Emulator has a known fixed key)
+          For AppInsights change the app to not crash if it can't get to AI, and just log to terminal instead).
    ```
    AZURE_COSMOSDB_KEY
    AZURE_APPLICATION_INSIGHTS_INSTRUMENTATION_KEY
