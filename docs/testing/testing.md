@@ -41,6 +41,34 @@ type-check the tests as they are run we use
 To help that encourage good testing practices for React DOM testing, we are
 leveraging a helper library [react-testing-library](https://jestjs.io/).
 
+
+### Java Application: Unit, functional and smoke testing
+
+[Mockito](https://javadoc.io/doc/org.mockito/mockito-core/latest/org/mockito/Mockito.html) is been used to run Unit tests 
+which enables mock creation, verification and stubbing.
+
+Unit-tests are mainly performed on controllers, services and DTO classes.Unit test code coverage by packages are done using
+JaCoCo plugin and Unit test reports are published using Surefire plugin.
+
+Cucumber framework is used in functional and smoke tests.Below steps needs to be followed to run the tests locally.
+```
+Ensure that the application is running on local: ./mvnw spring-boot:run
+
+Open the 'stacks-java/api-tests' path in the terminal
+Execute tests by run one of the following commands:
+
+a. Run all tests: mvn clean verify
+b. Run Smoke tests only: mvn clean verify -Dcucumber.options="--tags @Smoke"
+c. Run Functional tests only: mvn clean verify -Dcucumber.options="--tags @Functional"
+d. Run tests by other tags and ignore tests that contain @Ignore tags: mvn clean verify verify -Dcucumber.options="--tags ~@Ignore --tags @YourTag"
+
+Check the output report
+Please use this path to find the generated test report:
+
+stacks-java/api-tests/target/site/serenity/index.html
+
+```
+
 ### Scripts
 
 `npm run test`: To run all unit tests. This will also run any snapshot tests.
@@ -377,3 +405,25 @@ Some good practices:
 It's important to get the `PACT_CONSUMER` and `PACT_PROVIDER` names correct, as these form the key for verify.
 
 ⚠️ /pacts: these are checked in for reference only. Please do not change the outputted .json files. They are created on successful test runs by Pact. These will be published to the broker upon successful run in the pipeline, with the corresponding version tags.
+
+
+#### Running "PACT" for Java Application
+
+**Prerequisite:**
+Please provide the Pact_Broker_URL and Pact_Broker_Token to the provider's pom
+```
+    <pactBrokerUrl>Pact_Broker_URL</pactBrokerUrl>
+    <pactBrokerToken>Pact_Broker_Token</pactBrokerToken>
+```
+
+**Steps:**
+```
+- Consumer: Creating the contract
+  Run the 'GenericMenuConsumer.java' class from the following path: api-tests/src/test/java/com/xxAMIDOxx/xxSTACKSxx/api/pact/GenericMenuConsumer.java
+
+  Note: this step can be skipped in case the pact file already exists in .pact/pacts directory.
+- Execute mvn pact:publish from 'api-tests' directory to publish the consumer pact to broker.
+- Execute mvn pact:verify from the provider (java directory).
+- Execute mvn pact:publish from 'java' directory to publish this pact to broker.
+- Execute mvn pact:can-i-deploy -Dpacticipant=YOUR_CONSUMER_NAME -DpacticipantVersion=CONSUMER_VERSION -Dto=ENV_TO_DEPLOY from 'java' directory including this variables: to check if the versions of consumer and provider are compatible.
+```
