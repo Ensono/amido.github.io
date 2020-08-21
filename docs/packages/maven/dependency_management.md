@@ -41,4 +41,5 @@ Reporting plugins will be executed during the site generation, and it is configu
 i) Surefire (Unit test reports) - reports created in appropriate directory - target/surefire-reports
 
 **Maven build lifecycle :**
-Execute maven build life cycle locally to validate the compilation.
+Execute maven build life cycle locally when new dependencies are added to make sure project deployment, project cleaning
+and documentations are fine.
