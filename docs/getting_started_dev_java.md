@@ -19,12 +19,21 @@ sidebar_label: Dev Java - Using the repo to build Java application locally
    AZURE_COSMOSDB_KEY
    AZURE_APPLICATION_INSIGHTS_INSTRUMENTATION_KEY
    ```
+   
 3. Execute the following command to build and run the application
    ```
     ./mvnw spring-boot:run
    ```
 
 4. Verify if the application has started - [localhost](http://localhost:9000/v1/menu)
+   Note : All Api end-points are protected with Auth0 and client needs to pass the Bearer token
+          in the request header.
+          
+   Auth0 Configuration properties : Auth0 console will have Application and API configuration.
+   ```
+   1) auth0.issuer=https://amidostacks.eu.auth0.com/
+   2) auth0.apiAudience=https://amidostacks.eu.auth0.com/api/v2/
+   ```
 
 #### PLUGINS USED IN POM XML :
 ```
