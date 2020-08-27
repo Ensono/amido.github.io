@@ -1,10 +1,4 @@
-# Introduction
-
-`markdownlint` is a [Node.js](https://nodejs.org/) style checker and lint tool for [Markdown](https://en.wikipedia.org/wiki/Markdown)/[CommonMark](https://commonmark.org/) files to automatically validate content, prevent rendering problems, and promote consistency.
-This page offers an easy way to try it out interactively!
-
-## Instructions
-
+---
 Type or paste `Markdown` content in the u---
 id: testing_serenity_bdd
 title: Testing - End to End Automation with Serenity BDD Java
