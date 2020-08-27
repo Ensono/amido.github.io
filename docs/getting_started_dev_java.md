@@ -6,38 +6,39 @@ sidebar_label: Dev Java - Using the repo to build Java application locally
 
 ## GETTING STARTED WITH JAVA AND SPRINGBOOT APPLICATION
 
-
 **STEPS TO RUN APPLICATION LOCALLY :**
- 
-1) Check out java project to your local machine : [Java Repository](https://github.com/amido/stacks-java)
 
+1) Check out java project to your local machine : [Java Repository](https://github.com/amido/stacks-java)
 2) Configure below required environment variables
 
    Note : For local environments use Cosmos DB emulator(CosmosDB Emulator has a known fixed key)
           For AppInsights change the app to not crash if it can't get to AI, and just log to terminal instead).
-   ```
+
+   ```text
    AZURE_COSMOSDB_KEY
    AZURE_APPLICATION_INSIGHTS_INSTRUMENTATION_KEY
    ```
-   
-3. Execute the following command to build and run the application
-   ```
-    ./mvnw spring-boot:run
+  
+3. Execute the following command to build and run the application - ./mvnw spring-boot:run
+
+   ```text
+   ./mvnw spring-boot:run
    ```
 
 4. Verify if the application has started - [localhost](http://localhost:9000/v1/menu)
-   Note : All Api end-points are protected with Auth0 and client needs to pass the Bearer token
-          in the request header.
-          
+  
+   All Api end-points are protected with Auth0 and client needs to pass the Bearer token.  
    Auth0 Configuration properties : Auth0 console will have Application and API configuration.
-   ```
-   1) auth0.issuer=https://amidostacks.eu.auth0.com/
-   2) auth0.apiAudience=https://amidostacks.eu.auth0.com/api/v2/
+
+   ```text
+    auth0.issuer=https://amidostacks.eu.auth0.com/
+    auth0.apiAudience=https://amidostacks.eu.auth0.com/api/v2/
    ```
 
-#### PLUGINS USED IN POM XML :
-```
-- Lombok - To write cleaner code and to avoid boiler plate code 
+### PLUGINS USED IN POM XML
+
+```text
+- Lombok - To write cleaner code and to avoid boiler plate code
   (For EX: Getter, Setter, RequiredArgsConstructor, ToString, EqualsAndHashCode) in Java classes.
   
 - JaCoCo - Free Java code test coverage Library.
@@ -48,8 +49,10 @@ sidebar_label: Dev Java - Using the repo to build Java application locally
 ```
 
 #### IDE GUIDELINES
+
 Install below plugins
-```
+
+```text
   Google-java-format
   Lombok
   SonarLint
@@ -57,7 +60,8 @@ Install below plugins
   CheckStyle
 
 ```
-#### REPORT - Test Report :
+
+#### REPORT - Test Report
 
 Creates test report from the test package in Java using Surefire Plugin.
 File (format can be XML or HTML) is generated for each of the test class can be found under target/surefire-reports.
@@ -66,7 +70,7 @@ File (format can be XML or HTML) is generated for each of the test class can be 
 Serenity Report - mvn clean verify
 Report can be viewed under - ..stacks-java/api-tests/target/site/serenity/index.html
 
-#### REPORT - Code Coverage && dependency check :
+#### REPORT - Code Coverage && dependency check
 
 - Run following command - ./mvnw jacoco:report
 Generated report can be viewed under – target/site/jacoco/index.html
@@ -74,22 +78,25 @@ Generated report can be viewed under – target/site/jacoco/index.html
 - Dependency Checker Report - mvn clean install -Powasp-dependency-check
 Generated report can be viewed under – target/dependency-check.html
 
-
 #### USING DOCKER IMAGE
+
 - Builds docker image using below command.
-```
+
+```text
 docker build -t image-tag
 ```
+
 If you have an `.m2` directory in the `java/` folder the Docker build will attempt to copy the files inside the container and use the cached versions.
 
 #### SWAGGER/OAS
+
 - Automatically generated. Go to: [Swagger Index](http://localhost:9000/swagger/index.html)
 - Swagger Json : [Swagger Json](http://localhost:9000/swagger/oas.json)
 
 #### HEALTH CHECK
+
 - Available at: [health check](http://localhost:9000/health)
 (This can also be configured to run on another port)
-
 
 ## USING THE SCAFFOLDING CLI TO CREATE JAVA SPRINGBOOT PROJECT TEMPLATE
 
@@ -107,3 +114,4 @@ Please ensure that your local environment has the correct version
 You will be asked number of question and based on the answers your ready to build project template is produced.
 
 [![asciicast](https://asciinema.org/a/AEc79FLh2yTrqPD5vnLbmPLsL.svg)](https://asciinema.org/a/AEc79FLh2yTrqPD5vnLbmPLsL)
+
