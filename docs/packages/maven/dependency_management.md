@@ -32,6 +32,7 @@ Build plugins will be executed during the build time, and it is configured in th
 ```
 i) fmt-maven-plugin.
 ii) Owasp-dependency-check-plugin.
+iii) Spotbug plugin
 ```
 
 **Reporting Plugins :**

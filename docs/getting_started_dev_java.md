@@ -90,3 +90,20 @@ If you have an `.m2` directory in the `java/` folder the Docker build will attem
 - Available at: [health check](http://localhost:9000/health)
 (This can also be configured to run on another port)
 
+
+
+## USING THE SCAFFOLDING CLI TO CREATE JAVA SPRINGBOOT PROJECT TEMPLATE
+
+Templates out a fully functional and deployable project in a variety of flavours. Including tests (unit, integration), and infrastructure and deployment definitions.
+All from your CLI.
+
+We are using npx to execute and create the
+[template-cli](https://www.npmjs.com/package/@amidostacks/scaffolding-cli)
+[npx](https://www.npmjs.com/package/npx).
+
+We are supporting and running [node@12](https://nodejs.org/en/about/releases/).
+Please ensure that your local environment has the correct version
+[installed](https://nodejs.org/en/download/).
+
+You will be asked number of question and based on the answers your ready to build project template is produced.
+
