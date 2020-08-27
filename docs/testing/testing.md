@@ -29,7 +29,6 @@ The following demonstrates the series of quality gates that the web app must pas
 
 ![alt text](https://www.lucidchart.com/publicSegments/view/2094f5d4-eaca-417c-a51e-36bf79853373/image.png "Quality Gates")
 
-
 ### Jest: Unit, component and snapshot testing
 
 We are using [Jest](https://jestjs.io/) for running all unit, component,
@@ -40,6 +39,34 @@ type-check the tests as they are run we use
 
 To help that encourage good testing practices for React DOM testing, we are
 leveraging a helper library [react-testing-library](https://jestjs.io/).
+
+### Java Application: Unit, functional and smoke testing
+
+[Mockito](https://javadoc.io/doc/org.mockito/mockito-core/latest/org/mockito/Mockito.html) is been used to run Unit tests
+which enables mock creation, verification and stubbing.
+
+Unit-tests are mainly performed on controllers, services and DTO classes.Unit test code coverage by packages are done using
+JaCoCo plugin and Unit test reports are published using Surefire plugin.
+
+Cucumber framework is used in functional and smoke tests.Below steps needs to be followed to run the tests locally.
+
+```text
+Ensure that the application is running on local: ./mvnw spring-boot:run
+
+Open the 'stacks-java/api-tests' path in the terminal
+Execute tests by run one of the following commands:
+
+a. Run all tests: mvn clean verify
+b. Run Smoke tests only: mvn clean verify -Dcucumber.options="--tags @Smoke"
+c. Run Functional tests only: mvn clean verify -Dcucumber.options="--tags @Functional"
+d. Run tests by other tags and ignore tests that contain @Ignore tags: mvn clean verify verify -Dcucumber.options="--tags ~@Ignore --tags @YourTag"
+
+Check the output report
+Please use this path to find the generated test report:
+
+stacks-java/api-tests/target/site/serenity/index.html
+
+```
 
 ### Scripts
 
@@ -78,8 +105,8 @@ Key benefits means we never have to explicitly wait for the server to be ready b
 
 _package.json script_:
 
-```json
-"test:cypress": "env CI=true node_modules/.bin/start-server-and-test start $APP_BASE_URL:$PORT test:cypress:run"
+```text
+"test:cypress" : "env CI=true node_modules/.bin/start-server-and-test start $APP_BASE_URL:$PORT test:cypress:run"
 ```
 
 ### How to use Cypress
@@ -192,12 +219,14 @@ To spin up the server locally, running Cypress headless, use:
 
 ### Where Applitools tests should be located
 
-The `*.test.eyes.cy.ts` tests are located with the page compositions (a composition is several components that may come together to form a page). 
+The `*.test.eyes.cy.ts` tests are located with the page compositions (a composition is several components that may come together to form a page).
 
 ## Static analysis
 
 There is support with [SonarCloud](https://sonarcloud.io/) for static analysis.
-We can run this with Amido Stacks custom container, supports running Sonar Scanner for .NET and NPM projects. 
+
+We can run this with Amido Stacks custom container, supports running Sonar Scanner for .NET and NPM projects.
+
 [amidostacks/ci-sonarscanner](https://hub.docker.com/repository/docker/amidostacks/ci-sonarscanner).
 
 This container make running static code analysis a breeze in the pipelines.
@@ -339,14 +368,6 @@ This demonstrates that the consumer is safe to deploy, and will return exit code
 
 ```bash
 INFO: Asking broker at https://amido-stacks.pact.dius.com.au if it is possible to deploy
-INFO: pact-node@10.5.0/10589 on AML0160.local: 
-    Computer says yes \o/ 
-    
-    CONSUMER            | C.VERSION           | PROVIDER | P.VERSION      | SUCCESS?
-    --------------------|---------------------|----------|----------------|---------
-    GenericMenuConsumer | 0.0.213-test-report | MenuAPI  | 1.5.190-master | true    
-    
-    All required verification results are published and successful
 ```
 
 ### Pact working example
@@ -377,3 +398,26 @@ Some good practices:
 It's important to get the `PACT_CONSUMER` and `PACT_PROVIDER` names correct, as these form the key for verify.
 
 ⚠️ /pacts: these are checked in for reference only. Please do not change the outputted .json files. They are created on successful test runs by Pact. These will be published to the broker upon successful run in the pipeline, with the corresponding version tags.
+
+#### Running "PACT" for Java Application
+
+**Prerequisite:**
+Please provide the Pact_Broker_URL and Pact_Broker_Token to the provider's pom
+
+```text
+    <pactBrokerUrl>Pact_Broker_URL</pactBrokerUrl>
+    <pactBrokerToken>Pact_Broker_Token</pactBrokerToken>
+```
+
+**Steps:**
+
+```text
+- Consumer: Creating the contract
+  Run the 'GenericMenuConsumer.java' class from the following path: api-tests/src/test/java/com/xxAMIDOxx/xxSTACKSxx/api/pact/GenericMenuConsumer.java
+
+  Note: this step can be skipped in case the pact file already exists in .pact/pacts directory.
+- Execute mvn pact:publish from 'api-tests' directory to publish the consumer pact to broker.
+- Execute mvn pact:verify from the provider (java directory).
+- Execute mvn pact:publish from 'java' directory to publish this pact to broker.
+- Execute mvn pact:can-i-deploy -Dpacticipant=YOUR_CONSUMER_NAME -DpacticipantVersion=CONSUMER_VERSION -Dto=ENV_TO_DEPLOY from 'java' directory including this variables: to check if the versions of consumer and provider are compatible.
+```
