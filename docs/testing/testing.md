@@ -106,7 +106,7 @@ Key benefits means we never have to explicitly wait for the server to be ready b
 
 _package.json script_:
 
-```
+```text
 "test:cypress" : "env CI=true node_modules/.bin/start-server-and-test start $APP_BASE_URL:$PORT test:cypress:run"
 ```
 
@@ -411,13 +411,13 @@ It's important to get the `PACT_CONSUMER` and `PACT_PROVIDER` names correct, as 
 
 **Prerequisite:**
 Please provide the Pact_Broker_URL and Pact_Broker_Token to the provider's pom
-```
+```text
     <pactBrokerUrl>Pact_Broker_URL</pactBrokerUrl>
     <pactBrokerToken>Pact_Broker_Token</pactBrokerToken>
 ```
 
 **Steps:**
-```
+```text
 - Consumer: Creating the contract
   Run the 'GenericMenuConsumer.java' class from the following path: api-tests/src/test/java/com/xxAMIDOxx/xxSTACKSxx/api/pact/GenericMenuConsumer.java
 
@@ -427,3 +427,4 @@ Please provide the Pact_Broker_URL and Pact_Broker_Token to the provider's pom
 - Execute mvn pact:publish from 'java' directory to publish this pact to broker.
 - Execute mvn pact:can-i-deploy -Dpacticipant=YOUR_CONSUMER_NAME -DpacticipantVersion=CONSUMER_VERSION -Dto=ENV_TO_DEPLOY from 'java' directory including this variables: to check if the versions of consumer and provider are compatible.
 ```
+
