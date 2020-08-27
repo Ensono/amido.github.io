@@ -46,7 +46,7 @@
       "testing/testing",
       "testing/cli_testing_frameworks",
       "testing/cli_testing_selenium",
-      "testing_serenity_bdd",
+      "testing/testing_serenity_bdd",
       "testing/testing_static"
     ],
     "Packages": [
