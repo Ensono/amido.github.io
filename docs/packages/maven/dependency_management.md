@@ -1,5 +1,5 @@
 ---
-id: Java Dependency Management
+id: dependency_management
 title: Dependencies and Version Management
 sidebar_label: Dependencies and Version Management
 ---

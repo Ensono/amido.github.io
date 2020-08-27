@@ -1,5 +1,5 @@
 ---
-id: getting_started_dev
+id: getting_started_dev_java
 title: Dev Java - Using the repo to build Java application locally
 sidebar_label: Dev Java - Using the repo to build Java application locally
 ---

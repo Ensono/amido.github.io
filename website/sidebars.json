@@ -3,7 +3,8 @@
     "Getting started": [
       "index",
       "getting_started_demo",
-      "getting_started_dev"
+      "getting_started_dev",
+      "getting_started_dev_java"
     ],
     "Workloads": [
       "workloads/workloads",
@@ -45,6 +46,7 @@
       "testing/testing",
       "testing/cli_testing_frameworks",
       "testing/cli_testing_selenium",
+      "testing_serenity_bdd",
       "testing/testing_static"
     ],
     "Packages": [
@@ -63,6 +65,13 @@
         "label": "nuget",
         "ids": [
           "packages/nuget/publishing_nuget"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "maven",
+        "ids": [
+          "packages/maven/dependency_management"
         ]
       }
     ],
