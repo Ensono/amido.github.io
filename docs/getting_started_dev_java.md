@@ -19,13 +19,13 @@ sidebar_label: Dev Java - Using the repo to build Java application locally
    AZURE_APPLICATION_INSIGHTS_INSTRUMENTATION_KEY
    ```
   
-3. Execute the following command to build and run the application - ./mvnw spring-boot:run
+3) Execute the following command to build and run the application - ./mvnw spring-boot:run
 
    ```text
    ./mvnw spring-boot:run
    ```
 
-4. Verify if the application has started - [localhost](http://localhost:9000/v1/menu)
+4) Verify if the application has started - [localhost](http://localhost:9000/v1/menu)
   
    All Api end-points are protected with Auth0 and client needs to pass the Bearer token.  
    Auth0 Configuration properties : Auth0 console will have Application and API configuration.
@@ -114,4 +114,3 @@ Please ensure that your local environment has the correct version
 You will be asked number of question and based on the answers your ready to build project template is produced.
 
 [![asciicast](https://asciinema.org/a/AEc79FLh2yTrqPD5vnLbmPLsL.svg)](https://asciinema.org/a/AEc79FLh2yTrqPD5vnLbmPLsL)
-
