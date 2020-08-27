@@ -91,7 +91,6 @@ If you have an `.m2` directory in the `java/` folder the Docker build will attem
 (This can also be configured to run on another port)
 
 
-
 ## USING THE SCAFFOLDING CLI TO CREATE JAVA SPRINGBOOT PROJECT TEMPLATE
 
 Templates out a fully functional and deployable project in a variety of flavours. Including tests (unit, integration), and infrastructure and deployment definitions.
@@ -107,3 +106,4 @@ Please ensure that your local environment has the correct version
 
 You will be asked number of question and based on the answers your ready to build project template is produced.
 
+[![asciicast](https://asciinema.org/a/AEc79FLh2yTrqPD5vnLbmPLsL.svg)](https://asciinema.org/a/AEc79FLh2yTrqPD5vnLbmPLsL)
