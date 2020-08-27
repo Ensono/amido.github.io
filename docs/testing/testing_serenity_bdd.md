@@ -18,7 +18,7 @@ In particular, Serenity manages the driver lifecycle for you (so you don’t nee
 Serenity can also be configured to automatically take screenshots throughout the tests, creating rich documentation of how each test played out.
 When you write your tests in a fluent, readable manner, these screenshots become part of the "living documentation" of your application.
 
-**Configurations**
+### Configurations
 
 The serenity.conf file need to be configured [Serenity conf](https://github.com/amido/stacks-webapp-template/blob/master/packages/scaffolding-cli/templates/test/xxAMIDOxx.xxSTACKSxx.E2E.Serenity/src/test/resources/serenity.conf)
 
@@ -32,7 +32,7 @@ The following properties for different environments are required in the src/test
    from the links mentioned below:
 ```
 
-**Browser Download Location**
+### Browser Download Location
 
 ```text
 1) [Opera](https://github.com/operasoftware/operachromiumdriver/releases)
@@ -75,7 +75,7 @@ As a result of the test execution - serenity-maven-plugin will automatically gen
 Test Report Location is: ..target/site/serenity/index.html
 ```
 
-**Manual Aggregation of the Test Report**
+#### Manual Aggregation of the Test Report
 
 ```bash
 - Open the ../E2E/Serenity path in the terminal
