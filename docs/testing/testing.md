@@ -106,8 +106,8 @@ Key benefits means we never have to explicitly wait for the server to be ready b
 
 _package.json script_:
 
-```json
-"test:cypress": "env CI=true node_modules/.bin/start-server-and-test start $APP_BASE_URL:$PORT test:cypress:run"
+```
+"test:cypress" : "env CI=true node_modules/.bin/start-server-and-test start $APP_BASE_URL:$PORT test:cypress:run"
 ```
 
 ### How to use Cypress
