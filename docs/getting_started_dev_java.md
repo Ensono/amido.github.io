@@ -113,4 +113,4 @@ Please ensure that your local environment has the correct version
 
 You will be asked number of question and based on the answers your ready to build project template is produced.
 
-[![asciicast](https://asciinema.org/a/AEc79FLh2yTrqPD5vnLbmPLsL.svg)](https://asciinema.org/a/AEc79FLh2yTrqPD5vnLbmPLsL)
+[![asciicast](https://asciinema.org/a/358208.svg)](https://asciinema.org/a/358208)
