@@ -6,6 +6,19 @@ sidebar_label: Dev Java - Using the repo to build Java application locally
 
 ## GETTING STARTED WITH JAVA AND SPRINGBOOT APPLICATION
 
+### IDE GUIDELINES
+
+Install below plugins
+
+```text
+  Google-java-format
+  Lombok
+  SonarLint
+  Spring Assistant
+  CheckStyle
+
+```
+
 **STEPS TO RUN APPLICATION LOCALLY :**
 
 1) Check out java project to your local machine : [Java Repository](https://github.com/amido/stacks-java)
@@ -45,19 +58,6 @@ sidebar_label: Dev Java - Using the repo to build Java application locally
 - Surefire - Used for Reporting purpose (create reports based on tests in the java test package).
 - fmt-maven-plugin - Format the java code based on rules in java-google-style.xml.
 - Spotbugs - Perform a static analysis of the java code to check for bugs.
-
-```
-
-#### IDE GUIDELINES
-
-Install below plugins
-
-```text
-  Google-java-format
-  Lombok
-  SonarLint
-  Spring Assistant
-  CheckStyle
 
 ```
 
