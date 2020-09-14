@@ -27,7 +27,7 @@ We recommend that you install the below plugins
    AZURE_COSMOSDB_KEY
    AZURE_APPLICATION_INSIGHTS_INSTRUMENTATION_KEY
    ```
-   
+
    These are responsible for connecting to Azure's CosmosDB, which stores the application data, and to ApplicationInsights,
    which is used for logging purposes.
 
