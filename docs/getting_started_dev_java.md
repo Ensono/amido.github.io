@@ -8,7 +8,7 @@ sidebar_label: Dev Java - Using the repo to build Java application locally
 
 ### IDE GUIDELINES
 
-Install below plugins
+We recommend that you install the below plugins
 
 ```text
   Google-java-format
@@ -16,32 +16,34 @@ Install below plugins
   SonarLint
   Spring Assistant
   CheckStyle
-
 ```
 
-**STEPS TO RUN APPLICATION LOCALLY :**
+**STEPS TO RUN THE APPLICATION LOCALLY:**
 
-1) Check out java project to your local machine : [Java Repository](https://github.com/amido/stacks-java)
-2) Configure below required environment variables
-
-   Note : For local environments use Cosmos DB emulator(CosmosDB Emulator has a known fixed key)
-          For AppInsights change the app to not crash if it can't get to AI, and just log to terminal instead).
+1) Clone the Java project to your local machine from here: [Java Repository](https://github.com/amido/stacks-java)
+2) Configure the required environment variables below:
 
    ```text
    AZURE_COSMOSDB_KEY
    AZURE_APPLICATION_INSIGHTS_INSTRUMENTATION_KEY
    ```
+   These are responsible for connecting to Azure's CosmosDB, which stores the application data, and to ApplicationInsights, 
+   which is used for logging purposes.
+
+   Note: For local environments use the Cosmos DB emulator (CosmosDB Emulator has a known fixed key)
+        For ApplicationInsights, modify the application so that it doesn't fail to startup if it can't access AI, 
+        and simply log to the terminal instead).
   
-3) Execute the following command to build and run the application - ./mvnw spring-boot:run
+3) Execute the following command to build and run the application:
 
    ```text
    ./mvnw spring-boot:run
    ```
 
-4) Verify if the application has started - [localhost](http://localhost:9000/v1/menu)
+4) Verify that the application has started by browsing to [http://localhost:9000v1/menu](http://localhost:9000/v1/menu)
   
-   All Api end-points are protected with Auth0 and client needs to pass the Bearer token.  
-   Auth0 Configuration properties : Auth0 console will have Application and API configuration.
+   All API end-points are protected with Auth0. Clients need to pass the Bearer token for authentication.  
+   Auth0 Configuration properties: Auth0 console will have Application and API configuration.
 
    ```text
     auth0.issuer=https://amidostacks.eu.auth0.com/
@@ -50,16 +52,12 @@ Install below plugins
 
 ### PLUGINS USED IN POM XML
 
-```text
-- Lombok - To write cleaner code and to avoid boiler plate code
-  (For EX: Getter, Setter, RequiredArgsConstructor, ToString, EqualsAndHashCode) in Java classes.
-  
-- JaCoCo - Free Java code test coverage Library.
-- Surefire - Used for Reporting purpose (create reports based on tests in the java test package).
-- fmt-maven-plugin - Format the java code based on rules in java-google-style.xml.
-- Spotbugs - Perform a static analysis of the java code to check for bugs.
-
-```
+- Lombok - To write cleaner code and to avoid having to write boiler plate code
+  (for example: Getter, Setter, RequiredArgsConstructor, ToString, EqualsAndHashCode) in Java classes.
+- JaCoCo - A free Java code test coverage library.
+- Surefire - Used for reporting purposes (creates reports based on tests in the Java test package).
+- fmt-maven-plugin - Formats the java code based on rules in java-google-style.xml.
+- Spotbugs - Performs a static analysis of the Java code to check for bugs.
 
 #### REPORT - Test Report
 
@@ -80,7 +78,7 @@ Generated report can be viewed under – target/dependency-check.html
 
 #### USING DOCKER IMAGE
 
-- Builds docker image using below command.
+Build a Docker image using the command below:
 
 ```text
 docker build -t image-tag
@@ -100,10 +98,10 @@ If you have an `.m2` directory in the `java/` folder the Docker build will attem
 
 ## USING THE SCAFFOLDING CLI TO CREATE JAVA SPRINGBOOT PROJECT TEMPLATE
 
-Templates out a fully functional and deployable project in a variety of flavours. Including tests (unit, integration), and infrastructure and deployment definitions.
+This templates out a fully-functional and deployable project, in a variety of flavours. It includes tests (unit, integration), and infrastructure and deployment definitions.
 All from your CLI.
 
-We are using npx to execute and create the
+We use npx to execute and create the
 [template-cli](https://www.npmjs.com/package/@amidostacks/scaffolding-cli)
 [npx](https://www.npmjs.com/package/npx).
 
@@ -111,6 +109,6 @@ We are supporting and running [node@12](https://nodejs.org/en/about/releases/).
 Please ensure that your local environment has the correct version
 [installed](https://nodejs.org/en/download/).
 
-You will be asked number of question and based on the answers your ready to build project template is produced.
+You will be asked a number of questions. Based on the answers, your ready-to-build project template will be produced.
 
 [![asciicast](https://asciinema.org/a/358208.svg)](https://asciinema.org/a/358208)
