@@ -56,43 +56,44 @@
             });
         </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Dev Java - Using the repo to build Java application locally</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="getting-started-with-java-and-springboot-application"></a><a href="#getting-started-with-java-and-springboot-application" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>GETTING STARTED WITH JAVA AND SPRINGBOOT APPLICATION</h2>
 <h3><a class="anchor" aria-hidden="true" id="ide-guidelines"></a><a href="#ide-guidelines" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>IDE GUIDELINES</h3>
-<p>Install below plugins</p>
+<p>We recommend that you install the below plugins</p>
 <pre><code class="hljs css language-text">  Google-java-format
   Lombok
   SonarLint
   Spring Assistant
   CheckStyle
-
 </code></pre>
-<p><strong>STEPS TO RUN APPLICATION LOCALLY :</strong></p>
+<p><strong>STEPS TO RUN THE APPLICATION LOCALLY:</strong></p>
 <ol>
-<li><p>Check out java project to your local machine : <a href="https://github.com/amido/stacks-java">Java Repository</a></p></li>
-<li><p>Configure below required environment variables</p>
-<p>Note : For local environments use Cosmos DB emulator(CosmosDB Emulator has a known fixed key)
-For AppInsights change the app to not crash if it can't get to AI, and just log to terminal instead).</p>
+<li><p>Clone the Java project to your local machine from here: <a href="https://github.com/amido/stacks-java">Java Repository</a></p></li>
+<li><p>Configure the required environment variables below:</p>
 <pre><code class="hljs css language-text">AZURE_COSMOSDB_KEY
 AZURE_APPLICATION_INSIGHTS_INSTRUMENTATION_KEY
-</code></pre></li>
-<li><p>Execute the following command to build and run the application - ./mvnw spring-boot:run</p>
+</code></pre>
+<p>These are responsible for connecting to Azure's CosmosDB, which stores the application data, and to ApplicationInsights,
+which is used for logging purposes.</p>
+<p>Note: For local environments use the Cosmos DB emulator (CosmosDB Emulator has a known fixed key)
+For ApplicationInsights, modify the application so that it doesn't fail to startup if it can't access AI,
+and simply log to the terminal instead).</p></li>
+<li><p>Execute the following command to build and run the application:</p>
 <pre><code class="hljs css language-text">./mvnw spring-boot:run
 </code></pre></li>
-<li><p>Verify if the application has started - <a href="http://localhost:9000/v1/menu">localhost</a></p>
-<p>All Api end-points are protected with Auth0 and client needs to pass the Bearer token.<br>
-Auth0 Configuration properties : Auth0 console will have Application and API configuration.</p>
+<li><p>Verify that the application has started by browsing to <a href="http://localhost:9000/v1/menu">http://localhost:9000v1/menu</a></p>
+<p>All API end-points are protected with Auth0. Clients need to pass the Bearer token for authentication.<br>
+Auth0 Configuration properties: Auth0 console will have Application and API configuration.</p>
 <pre><code class="hljs css language-text"> auth0.issuer=https://amidostacks.eu.auth0.com/
  auth0.apiAudience=https://amidostacks.eu.auth0.com/api/v2/
 </code></pre></li>
 </ol>
 <h3><a class="anchor" aria-hidden="true" id="plugins-used-in-pom-xml"></a><a href="#plugins-used-in-pom-xml" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>PLUGINS USED IN POM XML</h3>
-<pre><code class="hljs css language-text">- Lombok - To write cleaner code and to avoid boiler plate code
-  (For EX: Getter, Setter, RequiredArgsConstructor, ToString, EqualsAndHashCode) in Java classes.
-  
-- JaCoCo - Free Java code test coverage Library.
-- Surefire - Used for Reporting purpose (create reports based on tests in the java test package).
-- fmt-maven-plugin - Format the java code based on rules in java-google-style.xml.
-- Spotbugs - Perform a static analysis of the java code to check for bugs.
-
-</code></pre>
+<ul>
+<li>Lombok - To write cleaner code and to avoid having to write boiler plate code
+(for example: Getter, Setter, RequiredArgsConstructor, ToString, EqualsAndHashCode) in Java classes.</li>
+<li>JaCoCo - A free Java code test coverage library.</li>
+<li>Surefire - Used for reporting purposes (creates reports based on tests in the Java test package).</li>
+<li>fmt-maven-plugin - Formats the java code based on rules in java-google-style.xml.</li>
+<li>Spotbugs - Performs a static analysis of the Java code to check for bugs.</li>
+</ul>
 <h4><a class="anchor" aria-hidden="true" id="report---test-report"></a><a href="#report---test-report" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>REPORT - Test Report</h4>
 <p>Creates test report from the test package in Java using Surefire Plugin.
 File (format can be XML or HTML) is generated for each of the test class can be found under target/surefire-reports.</p>
@@ -109,9 +110,7 @@ Generated report can be viewed under – target/site/jacoco/index.html</p></li>
 Generated report can be viewed under – target/dependency-check.html</p></li>
 </ul>
 <h4><a class="anchor" aria-hidden="true" id="using-docker-image"></a><a href="#using-docker-image" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>USING DOCKER IMAGE</h4>
-<ul>
-<li>Builds docker image using below command.</li>
-</ul>
+<p>Build a Docker image using the command below:</p>
 <pre><code class="hljs css language-text">docker build -t image-tag
 </code></pre>
 <p>If you have an <code>.m2</code> directory in the <code>java/</code> folder the Docker build will attempt to copy the files inside the container and use the cached versions.</p>
@@ -126,14 +125,14 @@ Generated report can be viewed under – target/dependency-check.html</p></li>
 (This can also be configured to run on another port)</li>
 </ul>
 <h2><a class="anchor" aria-hidden="true" id="using-the-scaffolding-cli-to-create-java-springboot-project-template"></a><a href="#using-the-scaffolding-cli-to-create-java-springboot-project-template" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>USING THE SCAFFOLDING CLI TO CREATE JAVA SPRINGBOOT PROJECT TEMPLATE</h2>
-<p>Templates out a fully functional and deployable project in a variety of flavours. Including tests (unit, integration), and infrastructure and deployment definitions.
+<p>This templates out a fully-functional and deployable project, in a variety of flavours. It includes tests (unit, integration), and infrastructure and deployment definitions.
 All from your CLI.</p>
-<p>We are using npx to execute and create the
+<p>We use npx to execute and create the
 <a href="https://www.npmjs.com/package/@amidostacks/scaffolding-cli">template-cli</a>
 <a href="https://www.npmjs.com/package/npx">npx</a>.</p>
 <p>We are supporting and running <a href="https://nodejs.org/en/about/releases/">node@12</a>.
 Please ensure that your local environment has the correct version
 <a href="https://nodejs.org/en/download/">installed</a>.</p>
-<p>You will be asked number of question and based on the answers your ready to build project template is produced.</p>
+<p>You will be asked a number of questions. Based on the answers, your ready-to-build project template will be produced.</p>
 <p><a href="https://asciinema.org/a/358208"><img src="https://asciinema.org/a/358208.svg" alt="asciicast"></a></p>
-</span></div></article></div><div class="docLastUpdate"><em>Last updated on 9/10/2020 by Suresh Krishnan</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/stacks/docs/getting_started_dev"><span class="arrow-prev">← </span><span>Dev - Using the repo to build an application</span></a><a class="docs-next button" href="/stacks/docs/workloads/workloads"><span>Workloads</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#getting-started-with-java-and-springboot-application">GETTING STARTED WITH JAVA AND SPRINGBOOT APPLICATION</a><ul class="toc-headings"><li><a href="#ide-guidelines">IDE GUIDELINES</a></li><li><a href="#plugins-used-in-pom-xml">PLUGINS USED IN POM XML</a></li></ul></li><li><a href="#using-the-scaffolding-cli-to-create-java-springboot-project-template">USING THE SCAFFOLDING CLI TO CREATE JAVA SPRINGBOOT PROJECT TEMPLATE</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/stacks/" class="nav-home"></a><div><h5>Docs</h5><a href="/stacks/docs/index">Getting Started</a></div><div><h5>About Us</h5><a href="https://amido.com/">Amido</a></div><div><h5>Open Source</h5><a href="https://github.com/amido/stacks" rel="noreferrer noopener" target="_blank">GitHub</a></div></section><a href="https://github.com/amido/stacks" target="_blank" rel="noreferrer noopener" class="fbOpenSource"></a><section class="copyright">Copyright © 2020 Amido Ltd</section></footer></div></body></html>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 9/14/2020 by Steve Clewer</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/stacks/docs/getting_started_dev"><span class="arrow-prev">← </span><span>Dev - Using the repo to build an application</span></a><a class="docs-next button" href="/stacks/docs/workloads/workloads"><span>Workloads</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#getting-started-with-java-and-springboot-application">GETTING STARTED WITH JAVA AND SPRINGBOOT APPLICATION</a><ul class="toc-headings"><li><a href="#ide-guidelines">IDE GUIDELINES</a></li><li><a href="#plugins-used-in-pom-xml">PLUGINS USED IN POM XML</a></li></ul></li><li><a href="#using-the-scaffolding-cli-to-create-java-springboot-project-template">USING THE SCAFFOLDING CLI TO CREATE JAVA SPRINGBOOT PROJECT TEMPLATE</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/stacks/" class="nav-home"></a><div><h5>Docs</h5><a href="/stacks/docs/index">Getting Started</a></div><div><h5>About Us</h5><a href="https://amido.com/">Amido</a></div><div><h5>Open Source</h5><a href="https://github.com/amido/stacks" rel="noreferrer noopener" target="_blank">GitHub</a></div></section><a href="https://github.com/amido/stacks" target="_blank" rel="noreferrer noopener" class="fbOpenSource"></a><section class="copyright">Copyright © 2020 Amido Ltd</section></footer></div></body></html>
