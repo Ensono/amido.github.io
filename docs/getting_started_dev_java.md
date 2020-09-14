@@ -27,11 +27,12 @@ We recommend that you install the below plugins
    AZURE_COSMOSDB_KEY
    AZURE_APPLICATION_INSIGHTS_INSTRUMENTATION_KEY
    ```
-   These are responsible for connecting to Azure's CosmosDB, which stores the application data, and to ApplicationInsights, 
+   
+   These are responsible for connecting to Azure's CosmosDB, which stores the application data, and to ApplicationInsights,
    which is used for logging purposes.
 
    Note: For local environments use the Cosmos DB emulator (CosmosDB Emulator has a known fixed key)
-        For ApplicationInsights, modify the application so that it doesn't fail to startup if it can't access AI, 
+        For ApplicationInsights, modify the application so that it doesn't fail to startup if it can't access AI,
         and simply log to the terminal instead).
   
 3) Execute the following command to build and run the application:
