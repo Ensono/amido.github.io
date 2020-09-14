@@ -41,7 +41,7 @@ We recommend that you install the below plugins
    ./mvnw spring-boot:run
    ```
 
-4) Verify that the application has started by browsing to [http://localhost:9000v1/menu](http://localhost:9000/v1/menu)
+4) Verify that the application has started by browsing to [http://localhost:9000/v1/menu](http://localhost:9000/v1/menu)
   
    All API end-points are protected with Auth0. Clients need to pass the Bearer token for authentication.  
    Auth0 Configuration properties: Auth0 console will have Application and API configuration.
