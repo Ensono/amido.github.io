@@ -135,7 +135,7 @@ The generated report can be viewed under `<PROJECT-NAME>/target/dependency-check
 Build a Docker image using the command below:
 
    ```text
-   docker build -t <image-tag>
+   docker build -t image-tag
    ```
 
 If you have an `.m2` directory in the `java/` folder, the Docker build will attempt to copy the files inside the container and use the cached versions.
