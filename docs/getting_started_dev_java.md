@@ -58,17 +58,20 @@ If the following property within this file is set:
    auth.isEnabled=true
    ```
 
-   then clients will need to pass an `Authorization` header containing the Bearer token as part of the endpoint request. If the value
+   then clients will need to pass an `Authorization` header containing the Bearer token generated from Auth0 as part of the endpoint request. If the value
    is set to `false` then no authorization is required.
 
 #### AUTH0 CONFIGURATION PROPERTIES
 
-   Auth0 console will have Application and API configuration.
+   If using Auth0 for authorization, Auth0 itself will need to be configured with both an API definition and an associated Application.
+   There are corresponding configuration values required for the Stacks application, within the `auth.properties` file, e.g.
 
    ```text
     auth0.issuer=https://amidostacks.eu.auth0.com/
     auth0.apiAudience=https://amidostacks.eu.auth0.com/api/v2/
    ```
+
+   These parameters are used to verify that the JWT supplied in the Authorization header of a request is valid.
 
 ### IDE GUIDELINES
 
