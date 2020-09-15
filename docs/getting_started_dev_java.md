@@ -6,30 +6,23 @@ sidebar_label: Dev [Java] - Using the repo to build the Java application locally
 
 ## GETTING STARTED WITH JAVA AND SPRINGBOOT APPLICATION
 
-### IDE GUIDELINES
+### TO RUN THE APPLICATION LOCALLY
 
-We recommend that you install the below plugins
-
-```text
-  Google-java-format
-  Lombok
-  SonarLint
-  Spring Assistant
-  CheckStyle
-```
-
-#### STEPS TO RUN THE APPLICATION LOCALLY
-
-1) Clone the Java project to your local machine from here: [Java Repository](https://github.com/amido/stacks-java)
-2) Configure the required environment variables below:
+1) Clone the Java project to your local machine from here: [stacks-java repository](https://github.com/amido/stacks-java)
+2) Configure these required environment variables:
 
    ```text
    AZURE_COSMOSDB_KEY
    AZURE_APPLICATION_INSIGHTS_INSTRUMENTATION_KEY
    ```
 
-   These are responsible for connecting to Azure's CosmosDB, which stores the application data, and to ApplicationInsights,
-   which is used for logging purposes.
+   For Unix systems, set them as additional variables within e.g. `~/.profile` or `/etc/profile`.
+
+   For Windows, open System Properties then select the Advanced tab, then click on the Environment Variables button and add the new parameters.
+
+   The first of these is responsible for connecting to Azure **CosmosDB**, which stores the application data.
+
+   The second is for Azure **ApplicationInsights**, which is used for logging purposes.
 
    Note: For local environments use the Cosmos DB emulator (CosmosDB Emulator has a known fixed key)
         For ApplicationInsights, modify the application so that it doesn't fail to startup if it can't access AI,
@@ -37,19 +30,45 @@ We recommend that you install the below plugins
   
 3) Execute the following command to build and run the application:
 
+   Move to the `<PROJECT-NAME>/java` folder, then
+
+   Unix:
+
    ```text
    ./mvnw spring-boot:run
    ```
 
-4) Verify that the application has started by browsing to [http://localhost:9000/v1/menu](http://localhost:9000/v1/menu)
+   Windows:
+
+   ```text
+   TODO
+   ```
+
+4) Verify that the application has started by browsing to [http://localhost:9000/v1/menu](http://localhost:9000/v1/menu). This should return a valid JSON response.
+
+   The application configuration uses Swagger/OAS3 to represent the API endpoints. The Swagger UI can be viewed by directing your browser to
+  [http://localhost:9000/swagger/index.html](http://localhost:9000/swagger/index.html).
   
-   All API end-points are protected with Auth0. Clients need to pass the Bearer token for authentication.  
+   All API endpoints are protected using Auth0. Clients will need to pass the Bearer token as part of the request for authentication.
+
    Auth0 Configuration properties: Auth0 console will have Application and API configuration.
 
    ```text
     auth0.issuer=https://amidostacks.eu.auth0.com/
     auth0.apiAudience=https://amidostacks.eu.auth0.com/api/v2/
    ```
+
+### IDE GUIDELINES
+
+We recommend that you install the following plugins
+
+```text
+  google-java-format
+  Lombok
+  SonarLint
+  Spring Assistant
+  CheckStyle
+```
 
 ### PLUGINS USED IN POM XML
 
@@ -60,37 +79,59 @@ We recommend that you install the below plugins
 - fmt-maven-plugin - Formats the java code based on rules in java-google-style.xml.
 - Spotbugs - Performs a static analysis of the Java code to check for bugs.
 
-#### REPORT - Test Report
+### REPORTS
 
-Creates test report from the test package in Java using Surefire Plugin.
-File (format can be XML or HTML) is generated for each of the test class can be found under target/surefire-reports.
+#### TEST REPORTS
 
-- Run following command - ./mvnw surefire:test
-Serenity Report - mvn clean verify
-Report can be viewed under - ..stacks-java/api-tests/target/site/serenity/index.html
+A test report may be created from the `test` package in Java using the Surefire Plugin.
+The report file (as either XML or HTML) generated for each of the test classes can be found under `target/surefire-reports`.
 
-#### REPORT - Code Coverage && dependency check
+Run the following command to create the report:
 
-- Run following command - ./mvnw jacoco:report
-Generated report can be viewed under – target/site/jacoco/index.html
+  ```text
+  ./mvnw surefire:test
+  ```
 
-- Dependency Checker Report - mvn clean install -Powasp-dependency-check
-Generated report can be viewed under – target/dependency-check.html
+To generate the Serenity report:
 
-#### USING DOCKER IMAGE
+  ```text
+  mvn clean verify
+  ```
+
+The report can be viewed under `<PROJECT-NAME>/api-tests/target/site/serenity/index.html`.
+
+#### CODE COVERAGE & DEPENDENCY CHECK REPORTS
+
+Run the following command:
+
+   ```text
+   ./mvnw jacoco:report
+   ```
+
+The generated report can be viewed under `<PROJECT-NAME>/target/site/jacoco/index.html`.
+
+For the dependency checker report, run:
+
+   ```text
+   mvn clean install -Powasp-dependency-check
+   ```
+
+The generated report can be viewed under `<PROJECT-NAME>/target/dependency-check.html`.
+
+### USING A DOCKER IMAGE
 
 Build a Docker image using the command below:
 
-```text
-docker build -t image-tag
-```
+   ```text
+   docker build -t <image-tag>
+   ```
 
-If you have an `.m2` directory in the `java/` folder the Docker build will attempt to copy the files inside the container and use the cached versions.
+If you have an `.m2` directory in the `java/` folder, the Docker build will attempt to copy the files inside the container and use the cached versions.
 
 #### SWAGGER/OAS
 
-- Automatically generated. Go to: [Swagger Index](http://localhost:9000/swagger/index.html)
-- Swagger Json : [Swagger Json](http://localhost:9000/swagger/oas.json)
+- Automatically generated for the project. Go to: [Swagger Index](http://localhost:9000/swagger/index.html)
+- Swagger Json: [Swagger Json](http://localhost:9000/swagger/oas.json)
 
 #### HEALTH CHECK
 
@@ -99,8 +140,8 @@ If you have an `.m2` directory in the `java/` folder the Docker build will attem
 
 ## USING THE SCAFFOLDING CLI TO CREATE JAVA SPRINGBOOT PROJECT TEMPLATE
 
-This templates out a fully-functional and deployable project, in a variety of flavours. It includes tests (unit, integration), and infrastructure and deployment definitions.
-All from your CLI.
+This will template out a fully-functional and deployable project, in a variety of flavours. It includes tests (unit, integration), together with infrastructure and deployment definitions.
+All by running from your CLI.
 
 We use npx to execute and create the
 [template-cli](https://www.npmjs.com/package/@amidostacks/scaffolding-cli)
