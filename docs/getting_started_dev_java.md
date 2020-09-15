@@ -49,7 +49,7 @@ sidebar_label: Dev [Java] - Using the repo to build the Java application locally
    The application configuration uses Swagger/OAS3 to represent the API endpoints. The Swagger UI can be viewed by directing your browser to
   [http://localhost:9000/swagger/index.html](http://localhost:9000/swagger/index.html).
   
-### Authorization
+### AUTHORIZATION
 
 All API endpoints are (optionally) protected using **Auth0**. There is an `auth.properties` file within the project codebase.
 If the following property within this file is set:
@@ -61,7 +61,7 @@ If the following property within this file is set:
    then clients will need to pass an `Authorization` header containing the Bearer token as part of the endpoint request. If the value
    is set to `false` then no authorization is required.
 
-#### Auth0 Configuration properties
+#### AUTH0 CONFIGURATION PROPERTIES
 
    Auth0 console will have Application and API configuration.
 
