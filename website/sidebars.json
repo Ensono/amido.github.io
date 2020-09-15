@@ -2,9 +2,15 @@
   "docs": {
     "Getting started": [
       "index",
-      "getting_started_demo",
-      "getting_started_dev",
-      "getting_started_dev_java"
+      {
+        "type": "subcategory",
+        "label": "Build the application",
+        "ids": [
+          "getting_started_demo",
+          "getting_started_dev",
+          "getting_started_dev_java"
+        ]
+      }
     ],
     "Workloads": [
       "workloads/workloads",

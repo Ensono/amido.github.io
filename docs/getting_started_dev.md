@@ -1,7 +1,7 @@
 ---
 id: getting_started_dev
-title: Dev - Using the repo to build an application
-sidebar_label: Dev - Using the repo to build an application
+title: Dev [Node.js] - Using the repo to build the Node.js application
+sidebar_label: Dev [Node.js]- Using the repo to build the Node.js application
 ---
 
 ## Getting started

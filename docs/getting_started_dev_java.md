@@ -1,7 +1,7 @@
 ---
 id: getting_started_dev_java
-title: Dev Java - Using the repo to build Java application locally
-sidebar_label: Dev Java - Using the repo to build Java application locally
+title: Dev [Java] - Using the repo to build the Java application locally
+sidebar_label: Dev [Java] - Using the repo to build the Java application locally
 ---
 
 ## GETTING STARTED WITH JAVA AND SPRINGBOOT APPLICATION
@@ -18,7 +18,7 @@ We recommend that you install the below plugins
   CheckStyle
 ```
 
-**STEPS TO RUN THE APPLICATION LOCALLY:**
+#### STEPS TO RUN THE APPLICATION LOCALLY
 
 1) Clone the Java project to your local machine from here: [Java Repository](https://github.com/amido/stacks-java)
 2) Configure the required environment variables below:
