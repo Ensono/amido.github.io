@@ -1,10 +1,10 @@
 ---
 id: getting_started_dev_java
-title: Dev [Java] - Using the repo to build the Java application locally
+title: Using the repo to build the Java application locally
 sidebar_label: Dev [Java] - Using the repo to build the Java application locally
 ---
 
-## GETTING STARTED WITH JAVA AND SPRINGBOOT APPLICATION
+## GETTING STARTED WITH THE JAVA SPRINGBOOT APPLICATION
 
 ### TO RUN THE APPLICATION LOCALLY
 
@@ -24,7 +24,7 @@ sidebar_label: Dev [Java] - Using the repo to build the Java application locally
 
    The second is for Azure **ApplicationInsights**, which is used for logging purposes.
 
-   Note: For local environments use the Cosmos DB emulator (CosmosDB Emulator has a known fixed key)
+   Note: For local environments you can use the [Cosmos DB emulator](https://docs.microsoft.com/en-us/azure/cosmos-db/local-emulator?tabs=ssl-netstd21) (CosmosDB Emulator has a known fixed key).
         For ApplicationInsights, modify the application so that it doesn't fail to startup if it can't access AI,
         and simply log to the terminal instead).
   
