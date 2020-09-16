@@ -110,7 +110,7 @@ Run the following command to create the report:
 To generate the Serenity report:
 
   ```text
-  mvn clean verify
+  ./mvnw clean verify
   ```
 
 The report can be viewed under `<PROJECT-NAME>/api-tests/target/site/serenity/index.html`.
@@ -128,7 +128,7 @@ The generated report can be viewed under `<PROJECT-NAME>/target/site/jacoco/inde
 For the dependency checker report, run:
 
    ```text
-   mvn clean install -Powasp-dependency-check
+   ./mvnw clean install -Powasp-dependency-check
    ```
 
 The generated report can be viewed under `<PROJECT-NAME>/target/dependency-check.html`.
