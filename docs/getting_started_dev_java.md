@@ -135,25 +135,35 @@ The generated report can be viewed under `<PROJECT-NAME>/target/dependency-check
 
 ### USING A DOCKER IMAGE
 
-Build a Docker image using the command below:
+From the `<PROJECT-NAME>/java` folder, build a Docker image using e.g. the command below:
 
    ```text
-   docker build -t image-tag
+   docker build --tag stacks:1.0 .
    ```
+
+This uses the `Dockerfile` in this folder to generate the Docker image.
 
 If you have an `.m2` directory in the `java/` folder, the Docker build will attempt to copy the files inside the container and use the cached versions.
 
+Once the Docker image is created, you can then run a Docker container based on this image using e.g.
+
+   ```text
+   docker run -p 9000:9000 -e AZURE_APPLICATION_INSIGHTS_INSTRUMENTATION_KEY -e AZURE_COSMOSDB_KEY stacks:1.0
+   ````
+
+which passes in the two required environment variables from your own environment.
+
 #### SWAGGER/OAS
 
-- Automatically generated for the project. Go to: [Swagger Index](http://localhost:9000/swagger/index.html)
-- Swagger Json: [Swagger Json](http://localhost:9000/swagger/oas.json)
+- Automatically generated for the project. Go to [Swagger Index](http://localhost:9000/swagger/index.html) to view.
+- Swagger Json is here: [Swagger Json](http://localhost:9000/swagger/oas.json)
 
 #### HEALTH CHECK
 
 - Available at: [health check](http://localhost:9000/health)
 (This can also be configured to run on another port)
 
-## USING THE SCAFFOLDING CLI TO CREATE JAVA SPRINGBOOT PROJECT TEMPLATE
+## USING THE SCAFFOLDING CLI TO CREATE A JAVA SPRINGBOOT PROJECT TEMPLATE
 
 This will template out a fully-functional and deployable project, in a variety of flavours. It includes tests (unit, integration), together with infrastructure and deployment definitions.
 All by running from your CLI.
