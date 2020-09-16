@@ -41,7 +41,7 @@ sidebar_label: Dev [Java] - Using the repo to build the Java application locally
    Windows:
 
    ```text
-   TODO
+   mvnw.cmd spring-boot:run
    ```
 
 4) Verify that the application has started by browsing to [http://localhost:9000/v1/menu](http://localhost:9000/v1/menu). This should return a valid JSON response.
