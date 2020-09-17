@@ -168,20 +168,16 @@ which passes in the two required environment variables from your own environment
 
 ## USING THE SCAFFOLDING CLI TO CREATE A JAVA SPRINGBOOT PROJECT TEMPLATE
 
-This will template out a fully-functional and deployable project, in a variety of flavours. It includes tests (unit, integration), together with infrastructure and deployment definitions.
-All by running from your CLI.
+The Amido Stacks Scaffolding CLI can be used to create a fully-functional and deployable project from a template, in a variety of flavours.
+It includes tests (unit, integration), together with infrastructure and deployment definitions. All by running from your CLI.
 
 We use npx to execute and create the
 [template-cli](https://www.npmjs.com/package/@amidostacks/scaffolding-cli)
 [npx](https://www.npmjs.com/package/npx).
 
 We are supporting and running [node@12](https://nodejs.org/en/about/releases/).
-Please ensure that your local environment has the correct version
-[installed](https://nodejs.org/en/download/).
+Please ensure that your local environment has the correct version [installed](https://nodejs.org/en/download/).
 
 You will be asked a number of questions. Based on the answers, your ready-to-build project template will be produced.
 
 [![asciicast](https://asciinema.org/a/358208.svg)](https://asciinema.org/a/358208)
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM2MTAzMzc5XX0=
--->
