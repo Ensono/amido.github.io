@@ -6,83 +6,86 @@ sidebar_label: Dev [Java] - Using the repo to build the Java application locally
 
 ## GETTING STARTED WITH THE JAVA SPRINGBOOT APPLICATION
 
-### TO RUN THE APPLICATION LOCALLY
+### RUNNING THE APPLICATION LOCALLY
 
-1) Clone the Java project to your local machine from here: [stacks-java repository](https://github.com/amido/stacks-java)
-2) Configure these required environment variables:
+1. Clone the Java project to your local machine from here: [stacks-java repository](https://github.com/amido/stacks-java)
+2. Configure required environment variables
 
-   ```text
-   AZURE_COSMOSDB_KEY
-   AZURE_APPLICATION_INSIGHTS_INSTRUMENTATION_KEY
-   ```
+    The application is currently configured to work with the Azure environment.
 
-   For Unix systems, set them as additional variables within e.g. `~/.profile` or `/etc/profile`.
+    It uses an Azure **CosmosDB** database to store the example application data. In addition, Azure **ApplicationInsights** is used for logging purposes.
+    There are two corresponding environment variables that need to be set to interact with these systems:
 
-   For Windows, open System Properties then select the Advanced tab, then click on the Environment Variables button and add the new parameters.
+    ```text
+    AZURE_COSMOSDB_KEY
+    AZURE_APPLICATION_INSIGHTS_INSTRUMENTATION_KEY
+    ```
 
-   The first of these is responsible for connecting to Azure **CosmosDB**, which stores the application data.
+    For Unix systems, set them as additional variables within e.g. `~/.profile` or `/etc/profile`.
 
-   The second is for Azure **ApplicationInsights**, which is used for logging purposes.
+    For Windows, open System Properties then select the Advanced tab, then click on the Environment Variables button and add the new parameters.
 
-   Note: For local environments you can use the [Cosmos DB emulator](https://docs.microsoft.com/en-us/azure/cosmos-db/local-emulator?tabs=ssl-netstd21) (CosmosDB Emulator has a known fixed key).
-        For ApplicationInsights, modify the application so that it doesn't fail to startup if it can't access AI,
-        and simply log to the terminal instead).
-  
-3) Execute the following command to build and run the application:
+    Note: For running on local environments, you can use the [Cosmos DB emulator](https://docs.microsoft.com/en-us/azure/cosmos-db/local-emulator?tabs=ssl-netstd21) (CosmosDB Emulator has a known fixed key).
+    For ApplicationInsights, modify the application so that it doesn't fail to startup if it can't access ApplicationInsights,
+    and simply log to the terminal instead.
 
-   Move to the `<PROJECT-NAME>/java` folder, then
+3. Build and run the application
 
-   Unix:
+    Move to the `<PROJECT-NAME>/java` folder, then
 
-   ```text
-   ./mvnw spring-boot:run
-   ```
+    Unix:
 
-   Windows:
+    ```text
+    ./mvnw spring-boot:run
+    ```
 
-   ```text
-   mvnw.cmd spring-boot:run
-   ```
+    Windows:
 
-4) Verify that the application has started by browsing to [http://localhost:9000/v1/menu](http://localhost:9000/v1/menu). This should return a valid JSON response.
+    ```text
+    mvnw.cmd spring-boot:run
+    ```
 
-   The application configuration uses Swagger/OAS3 to represent the API endpoints. The Swagger UI can be viewed by directing your browser to
-  [http://localhost:9000/swagger/index.html](http://localhost:9000/swagger/index.html).
+4. Verify that the application has started
+
+    Browse to [http://localhost:9000/v1/menu](http://localhost:9000/v1/menu). This should return a valid JSON response.
+
+    The application configuration uses Swagger/OAS3 to represent the API endpoints. The Swagger UI can be viewed by directing your
+    browser to [http://localhost:9000/swagger/index.html](http://localhost:9000/swagger/index.html).
   
 ### AUTHORIZATION
 
 All API endpoints are (optionally) protected using **Auth0**. There is an `auth.properties` file within the project codebase.
 If the following property within this file is set:
 
-   ```text
-   auth.isEnabled=true
-   ```
+```text
+auth.isEnabled=true
+```
 
-   then clients will need to pass an `Authorization` header containing the Bearer token generated from Auth0 as part of the endpoint request. If the value
-   is set to `false` then no authorization is required.
+then clients will need to pass an `Authorization` header containing the Bearer token generated from Auth0 as part of the endpoint request. If the value
+is set to `false` then no authorization is required.
 
 #### AUTH0 CONFIGURATION PROPERTIES
 
-   If using Auth0 for authorization, Auth0 itself will need to be configured with both an API definition and an associated Application.
-   There are corresponding configuration values required for the Stacks application, within the `auth.properties` file, e.g.
+If using Auth0 for authorization, Auth0 itself will need to be configured with both an API definition and an associated Application.
+There are corresponding configuration values required for the Stacks application, within the `auth.properties` file, e.g.
 
-   ```text
-    auth0.issuer=https://amidostacks.eu.auth0.com/
-    auth0.apiAudience=https://amidostacks.eu.auth0.com/api/v2/
-   ```
+```text
+auth0.issuer=https://amidostacks.eu.auth0.com/
+auth0.apiAudience=https://amidostacks.eu.auth0.com/api/v2/
+```
 
-   These parameters are used to verify that the JWT supplied in the Authorization header of a request is valid.
+These parameters are used to verify that the JWT supplied in the Authorization header of a request is valid.
 
 ### IDE GUIDELINES
 
 We recommend that you install the following plugins
 
 ```text
-  google-java-format
-  Lombok
-  SonarLint
-  Spring Assistant
-  CheckStyle
+google-java-format
+Lombok
+SonarLint
+Spring Assistant
+CheckStyle
 ```
 
 ### PLUGINS USED IN POM XML
@@ -103,15 +106,15 @@ The report file (as either XML or HTML) generated for each of the test classes c
 
 Run the following command to create the report:
 
-  ```text
-  ./mvnw surefire:test
-  ```
+```text
+./mvnw surefire:test
+```
 
 To generate the Serenity report:
 
-  ```text
-  ./mvnw clean verify
-  ```
+```text
+./mvnw clean verify
+```
 
 The report can be viewed under `<PROJECT-NAME>/api-tests/target/site/serenity/index.html`.
 
@@ -119,17 +122,17 @@ The report can be viewed under `<PROJECT-NAME>/api-tests/target/site/serenity/in
 
 Run the following command:
 
-   ```text
-   ./mvnw jacoco:report
-   ```
+```text
+./mvnw jacoco:report
+```
 
 The generated report can be viewed under `<PROJECT-NAME>/target/site/jacoco/index.html`.
 
 For the dependency checker report, run:
 
-   ```text
-   ./mvnw clean install -Powasp-dependency-check
-   ```
+```text
+./mvnw clean install -Powasp-dependency-check
+```
 
 The generated report can be viewed under `<PROJECT-NAME>/target/dependency-check.html`.
 
