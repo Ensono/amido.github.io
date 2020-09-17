@@ -181,6 +181,3 @@ Please ensure that your local environment has the correct version [installed](ht
 You will be asked a number of questions. Based on the answers, your ready-to-build project template will be produced.
 
 [![asciicast](https://asciinema.org/a/358208.svg)](https://asciinema.org/a/358208)
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbMjQxNDIzMjQyXX0=
--->
