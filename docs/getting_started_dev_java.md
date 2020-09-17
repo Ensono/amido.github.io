@@ -9,7 +9,7 @@ sidebar_label: Dev [Java] - Using the repo to build the Java application locally
 ### RUNNING THE APPLICATION LOCALLY
 
 1. Clone the Java project to your local machine from here: [stacks-java repository](https://github.com/amido/stacks-java)
-2. Configure required environment variables
+2. Configure the required environment variables
 
     The application is currently configured to work with the Azure environment.
 
@@ -51,7 +51,7 @@ sidebar_label: Dev [Java] - Using the repo to build the Java application locally
 
     The application configuration uses Swagger/OAS3 to represent the API endpoints. The Swagger UI can be viewed by directing your
     browser to [http://localhost:9000/swagger/index.html](http://localhost:9000/swagger/index.html).
-  
+
 ### AUTHORIZATION
 
 All API endpoints are (optionally) protected using **Auth0**. There is an `auth.properties` file within the project codebase.
