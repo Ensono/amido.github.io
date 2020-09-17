@@ -9,7 +9,7 @@ sidebar_label: Dev [Java] - Using the repo to build the Java application locally
 ### RUNNING THE APPLICATION LOCALLY
 
 1. Clone the Java project to your local machine from here: [stacks-java repository](https://github.com/amido/stacks-java)
-2. Configure required environment variables
+2. Configure the required environment variables
 
     The application is currently configured to work with the Azure environment.
 
@@ -182,3 +182,6 @@ Please ensure that your local environment has the correct version
 You will be asked a number of questions. Based on the answers, your ready-to-build project template will be produced.
 
 [![asciicast](https://asciinema.org/a/358208.svg)](https://asciinema.org/a/358208)
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbLTM2MTAzMzc5XX0=
+-->
