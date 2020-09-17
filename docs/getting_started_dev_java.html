@@ -55,21 +55,22 @@
               }
             });
         </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Using the repo to build the Java application locally</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="getting-started-with-the-java-springboot-application"></a><a href="#getting-started-with-the-java-springboot-application" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>GETTING STARTED WITH THE JAVA SPRINGBOOT APPLICATION</h2>
-<h3><a class="anchor" aria-hidden="true" id="to-run-the-application-locally"></a><a href="#to-run-the-application-locally" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>TO RUN THE APPLICATION LOCALLY</h3>
+<h3><a class="anchor" aria-hidden="true" id="running-the-application-locally"></a><a href="#running-the-application-locally" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>RUNNING THE APPLICATION LOCALLY</h3>
 <ol>
 <li><p>Clone the Java project to your local machine from here: <a href="https://github.com/amido/stacks-java">stacks-java repository</a></p></li>
-<li><p>Configure these required environment variables:</p>
+<li><p>Configure required environment variables</p>
+<p>The application is currently configured to work with the Azure environment.</p>
+<p>It uses an Azure <strong>CosmosDB</strong> database to store the example application data. In addition, Azure <strong>ApplicationInsights</strong> is used for logging purposes.
+There are two corresponding environment variables that need to be set to interact with these systems:</p>
 <pre><code class="hljs css language-text">AZURE_COSMOSDB_KEY
 AZURE_APPLICATION_INSIGHTS_INSTRUMENTATION_KEY
 </code></pre>
 <p>For Unix systems, set them as additional variables within e.g. <code>~/.profile</code> or <code>/etc/profile</code>.</p>
 <p>For Windows, open System Properties then select the Advanced tab, then click on the Environment Variables button and add the new parameters.</p>
-<p>The first of these is responsible for connecting to Azure <strong>CosmosDB</strong>, which stores the application data.</p>
-<p>The second is for Azure <strong>ApplicationInsights</strong>, which is used for logging purposes.</p>
-<p>Note: For local environments you can use the <a href="https://docs.microsoft.com/en-us/azure/cosmos-db/local-emulator?tabs=ssl-netstd21">Cosmos DB emulator</a> (CosmosDB Emulator has a known fixed key).
-For ApplicationInsights, modify the application so that it doesn't fail to startup if it can't access AI,
-and simply log to the terminal instead).</p></li>
-<li><p>Execute the following command to build and run the application:</p>
+<p>Note: For running on local environments, you can use the <a href="https://docs.microsoft.com/en-us/azure/cosmos-db/local-emulator?tabs=ssl-netstd21">Cosmos DB emulator</a> (CosmosDB Emulator has a known fixed key).
+For ApplicationInsights, modify the application so that it doesn't fail to startup if it can't access ApplicationInsights,
+and simply log to the terminal instead.</p></li>
+<li><p>Build and run the application</p>
 <p>Move to the <code>&lt;PROJECT-NAME&gt;/java</code> folder, then</p>
 <p>Unix:</p>
 <pre><code class="hljs css language-text">./mvnw spring-boot:run
@@ -77,9 +78,10 @@ and simply log to the terminal instead).</p></li>
 <p>Windows:</p>
 <pre><code class="hljs css language-text">mvnw.cmd spring-boot:run
 </code></pre></li>
-<li><p>Verify that the application has started by browsing to <a href="http://localhost:9000/v1/menu">http://localhost:9000/v1/menu</a>. This should return a valid JSON response.</p>
-<p>The application configuration uses Swagger/OAS3 to represent the API endpoints. The Swagger UI can be viewed by directing your browser to
-<a href="http://localhost:9000/swagger/index.html">http://localhost:9000/swagger/index.html</a>.</p></li>
+<li><p>Verify that the application has started</p>
+<p>Browse to <a href="http://localhost:9000/v1/menu">http://localhost:9000/v1/menu</a>. This should return a valid JSON response.</p>
+<p>The application configuration uses Swagger/OAS3 to represent the API endpoints. The Swagger UI can be viewed by directing your
+browser to <a href="http://localhost:9000/swagger/index.html">http://localhost:9000/swagger/index.html</a>.</p></li>
 </ol>
 <h3><a class="anchor" aria-hidden="true" id="authorization"></a><a href="#authorization" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>AUTHORIZATION</h3>
 <p>All API endpoints are (optionally) protected using <strong>Auth0</strong>. There is an <code>auth.properties</code> file within the project codebase.
@@ -91,17 +93,17 @@ is set to <code>false</code> then no authorization is required.</p>
 <h4><a class="anchor" aria-hidden="true" id="auth0-configuration-properties"></a><a href="#auth0-configuration-properties" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>AUTH0 CONFIGURATION PROPERTIES</h4>
 <p>If using Auth0 for authorization, Auth0 itself will need to be configured with both an API definition and an associated Application.
 There are corresponding configuration values required for the Stacks application, within the <code>auth.properties</code> file, e.g.</p>
-<pre><code class="hljs css language-text"> auth0.issuer=https://amidostacks.eu.auth0.com/
- auth0.apiAudience=https://amidostacks.eu.auth0.com/api/v2/
+<pre><code class="hljs css language-text">auth0.issuer=https://amidostacks.eu.auth0.com/
+auth0.apiAudience=https://amidostacks.eu.auth0.com/api/v2/
 </code></pre>
 <p>These parameters are used to verify that the JWT supplied in the Authorization header of a request is valid.</p>
 <h3><a class="anchor" aria-hidden="true" id="ide-guidelines"></a><a href="#ide-guidelines" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>IDE GUIDELINES</h3>
 <p>We recommend that you install the following plugins</p>
-<pre><code class="hljs css language-text">  google-java-format
-  Lombok
-  SonarLint
-  Spring Assistant
-  CheckStyle
+<pre><code class="hljs css language-text">google-java-format
+Lombok
+SonarLint
+Spring Assistant
+CheckStyle
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="plugins-used-in-pom-xml"></a><a href="#plugins-used-in-pom-xml" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>PLUGINS USED IN POM XML</h3>
 <ul>
@@ -163,4 +165,4 @@ Please ensure that your local environment has the correct version
 <a href="https://nodejs.org/en/download/">installed</a>.</p>
 <p>You will be asked a number of questions. Based on the answers, your ready-to-build project template will be produced.</p>
 <p><a href="https://asciinema.org/a/358208"><img src="https://asciinema.org/a/358208.svg" alt="asciicast"></a></p>
-</span></div></article></div><div class="docLastUpdate"><em>Last updated on 9/16/2020 by Steve Clewer</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/stacks/docs/getting_started_dev"><span class="arrow-prev">← </span><span>Dev [Node.js]- Using the repo to build the Node.js application</span></a><a class="docs-next button" href="/stacks/docs/workloads/workloads"><span>Workloads</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#getting-started-with-the-java-springboot-application">GETTING STARTED WITH THE JAVA SPRINGBOOT APPLICATION</a><ul class="toc-headings"><li><a href="#to-run-the-application-locally">TO RUN THE APPLICATION LOCALLY</a></li><li><a href="#authorization">AUTHORIZATION</a></li><li><a href="#ide-guidelines">IDE GUIDELINES</a></li><li><a href="#plugins-used-in-pom-xml">PLUGINS USED IN POM XML</a></li><li><a href="#reports">REPORTS</a></li><li><a href="#using-a-docker-image">USING A DOCKER IMAGE</a></li></ul></li><li><a href="#using-the-scaffolding-cli-to-create-a-java-springboot-project-template">USING THE SCAFFOLDING CLI TO CREATE A JAVA SPRINGBOOT PROJECT TEMPLATE</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/stacks/" class="nav-home"></a><div><h5>Docs</h5><a href="/stacks/docs/index">Getting Started</a></div><div><h5>About Us</h5><a href="https://amido.com/">Amido</a></div><div><h5>Open Source</h5><a href="https://github.com/amido/stacks" rel="noreferrer noopener" target="_blank">GitHub</a></div></section><a href="https://github.com/amido/stacks" target="_blank" rel="noreferrer noopener" class="fbOpenSource"></a><section class="copyright">Copyright © 2020 Amido Ltd</section></footer></div></body></html>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 9/17/2020 by Steve Clewer</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/stacks/docs/getting_started_dev"><span class="arrow-prev">← </span><span>Dev [Node.js]- Using the repo to build the Node.js application</span></a><a class="docs-next button" href="/stacks/docs/workloads/workloads"><span>Workloads</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#getting-started-with-the-java-springboot-application">GETTING STARTED WITH THE JAVA SPRINGBOOT APPLICATION</a><ul class="toc-headings"><li><a href="#running-the-application-locally">RUNNING THE APPLICATION LOCALLY</a></li><li><a href="#authorization">AUTHORIZATION</a></li><li><a href="#ide-guidelines">IDE GUIDELINES</a></li><li><a href="#plugins-used-in-pom-xml">PLUGINS USED IN POM XML</a></li><li><a href="#reports">REPORTS</a></li><li><a href="#using-a-docker-image">USING A DOCKER IMAGE</a></li></ul></li><li><a href="#using-the-scaffolding-cli-to-create-a-java-springboot-project-template">USING THE SCAFFOLDING CLI TO CREATE A JAVA SPRINGBOOT PROJECT TEMPLATE</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/stacks/" class="nav-home"></a><div><h5>Docs</h5><a href="/stacks/docs/index">Getting Started</a></div><div><h5>About Us</h5><a href="https://amido.com/">Amido</a></div><div><h5>Open Source</h5><a href="https://github.com/amido/stacks" rel="noreferrer noopener" target="_blank">GitHub</a></div></section><a href="https://github.com/amido/stacks" target="_blank" rel="noreferrer noopener" class="fbOpenSource"></a><section class="copyright">Copyright © 2020 Amido Ltd</section></footer></div></body></html>
