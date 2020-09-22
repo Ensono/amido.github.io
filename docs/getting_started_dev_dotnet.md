@@ -8,7 +8,7 @@ sidebar_label: Dev [Dotnet] - Using the repo to build the Dotnet application loc
 
 ### RUNNING THE APPLICATION LOCALLY
 
-1. Clone the Dotnet project to your local machine from here: [stacks-dotnet repository](https://github.com/amido/stacks-dotet)
+1. Clone the Dotnet project to your local machine from here: [stacks-dotnet repository](https://github.com/amido/stacks-dotnet)
 2. Configure required environment variables
 
     The application is currently configured to work with the Azure environment.
