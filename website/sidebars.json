@@ -8,7 +8,8 @@
         "ids": [
           "getting_started_demo",
           "getting_started_dev",
-          "getting_started_dev_java"
+          "getting_started_dev_java",
+          "getting_started_dev_dotnet"
         ]
       }
     ],
@@ -86,4 +87,3 @@
     ]
   }
 }
-
