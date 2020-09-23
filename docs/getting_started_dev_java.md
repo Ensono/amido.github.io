@@ -13,7 +13,10 @@ sidebar_label: Dev [Java] - Using the repo to build the Java application locally
 
     The application is currently configured to work with the Azure environment.
 
-    It uses an Azure **CosmosDB** database to store the example application data. In addition, Azure **ApplicationInsights** is used for logging purposes.
+    It uses an Azure **CosmosDB** database to store the example application data. So you should have access to an instance to use with the application. Note: For running on local environments, you can use the [Cosmos DB emulator](https://docs.microsoft.com/en-us/azure/cosmos-db/local-emulator?tabs=ssl-netstd21) (CosmosDB Emulator has a known fixed key).
+
+    In addition, Azure **ApplicationInsights** is used for logging purposes. If this is unavailable, modify the application so that it doesn't fail to startup if it can't access ApplicationInsights, and simply log to the terminal instead.
+
     There are two corresponding environment variables that need to be set to interact with these systems:
 
     ```text
@@ -25,11 +28,9 @@ sidebar_label: Dev [Java] - Using the repo to build the Java application locally
 
     For Windows, open System Properties then select the Advanced tab, then click on the Environment Variables button and add the new parameters.
 
-    Note: For running on local environments, you can use the [Cosmos DB emulator](https://docs.microsoft.com/en-us/azure/cosmos-db/local-emulator?tabs=ssl-netstd21) (CosmosDB Emulator has a known fixed key).
-    For ApplicationInsights, modify the application so that it doesn't fail to startup if it can't access ApplicationInsights,
-    and simply log to the terminal instead.
-
 3. Build and run the application
+
+   Note that at a minimum Java 11 should be installed.
 
     Move to the `<PROJECT-NAME>/java` folder, then
 
