@@ -152,7 +152,7 @@ Once the Docker image is created, you can then run a Docker container based on t
 
    ```text
    docker run -p 9000:9000 -e AZURE_APPLICATION_INSIGHTS_INSTRUMENTATION_KEY -e AZURE_COSMOSDB_KEY stacks:1.0
-   ````
+   ```
 
 which passes in the two required environment variables from your own environment.
 
@@ -178,6 +178,14 @@ We use npx to execute and create the
 We are supporting and running [node@12](https://nodejs.org/en/about/releases/).
 Please ensure that your local environment has the correct version [installed](https://nodejs.org/en/download/).
 
+To run the Scaffolding CLI, use the following commands
+
+```text
+npx @amidostacks/scaffolding-cli@latest run -i  
+```
+
 You will be asked a number of questions. Based on the answers, your ready-to-build project template will be produced.
+
+An example is shown in the video below.
 
 [![asciicast](https://asciinema.org/a/358208.svg)](https://asciinema.org/a/358208)
