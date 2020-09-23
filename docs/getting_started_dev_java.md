@@ -97,12 +97,28 @@ CheckStyle
 - fmt-maven-plugin - Formats the java code based on rules in java-google-style.xml.
 - Spotbugs - Performs a static analysis of the Java code to check for bugs.
 
+### RUNNING TESTS
+
+Tests within the code are grouped using Tag annotations. There are three groups: 'Unit', 'Component' and 'Integration'. To just run the unit tests, for example, type:
+
+```text
+./mvnw test -Dgroups="Unit"
+```
+
+Similarly, for the Component tests, you should use:
+
+```text
+./mvnw test -Dgroups="Component"
+```
+
+and the equivalent for running the Integration tests.
+
 ### REPORTS
 
 #### TEST REPORTS
 
 A test report may be created from the `test` package in Java using the Surefire Plugin.
-The report file (as either XML or HTML) generated for each of the test classes can be found under `target/surefire-reports`.
+The report file (as either XML or HTML) generated for each of the test classes can be found under `<PROJECT-NAME>/target/surefire-reports`.
 
 Run the following command to create the report:
 
