@@ -26,6 +26,13 @@ sidebar_label: Dev [Dotnet] - Using the repo to build the Dotnet application loc
 
     Note: For running on local environments, you can use the [Cosmos DB emulator](https://docs.microsoft.com/en-us/azure/cosmos-db/local-emulator?tabs=ssl-netstd21) (CosmosDB Emulator has a known fixed key).
 
+    If not running locally, you additionally need to set the CosmosDB URI parameter `DatabaseAccountUri` within the
+    file `<PROJECT-NAME>/src/api/xxAMIDOxx.xxSTACKSxx.API/appsettings.json`:
+
+    ```text
+    "DatabaseAccountUri": "https://REPLACE-ME-WITH-COSMOSDB.documents.azure.com:443/"
+   ```
+
 3. Build and run the application
 
     Move to the `<PROJECT-NAME>/src/api` folder, then
@@ -59,8 +66,7 @@ sidebar_label: Dev [Dotnet] - Using the repo to build the Dotnet application loc
 From the `<PROJECT-NAME>/src/api` folder, build a Docker image using e.g. the command below:
 
    ```text
-   docker build --build-arg nuget_url=${STACKS_NUGET} \
-   --build-arg nuget_token=${STACKS_NUGET_TOKEN} -t dotnet-api .
+   docker build -t dotnet-api .
    ```
 
 This uses the `Dockerfile` in this folder to generate the Docker image.
@@ -68,8 +74,11 @@ This uses the `Dockerfile` in this folder to generate the Docker image.
 Once the Docker image is created, you can then run a Docker container based on this image using e.g.
 
    ```text
-   docker run -p 5000:80 dotnet-api:latest
+   docker run -p 5000:80 --mount type=bind,source=/path/to/PROJECT-NAME/src/api/xxAMIDOxx.xxSTACKSxx.API/appsettings.json,target=/app/config/appsettings.json -e COSMOSDB_KEY=your-key dotnet-api:latest
    ````
+
+where the `COSMOSDB_KEY` is the value as described above. Note that the `appsettings.json` value is mounted here for running locally,
+but not if the full project is deployed to Azure, where the build process will perform the substitution.
 
 #### SWAGGER/OAS
 
