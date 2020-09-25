@@ -148,7 +148,7 @@ The collection partition key by default uses the ID (`/id`).
 
 You should also ensure that the `Company.Project.API/Properties/launchSettings.json` file has the correct `COSMOSDB_KEY` value set.
 
-Once these are configured correctly, load the project into VisualStudio and press `F5` to start a debug process.
+Once these are configured correctly, load the project into Visual Studio and press `F5` to start a debug process.
 The browser will open, and you should be presented with a Swagger UI page showing the default api endpoints with their
 CRUD operations.
 
@@ -162,7 +162,18 @@ dotnet build
 dotnet run --project Company.Project.API/Company.Project.API.csproj
 ````
 
-The deployment pipeline should be configured with the DevOps team in order to setup the right dependencies.
+The deployment pipeline should be configured with the DevOps team in order to set up the right dependencies.
+
+#### CAVEATS
+
+- The ContractTests project has a limitation due to a Windows path length size. When the project is running on Windows
+ from a long path length, the build will fail. If this is the case, you may need to move the project into a
+ folder where the path is shorter.
+- All secrets are loaded from environment variables. Due to a bug in Visual Studio, the environment variables for a test
+project are not set when running the tests. For integration tests, ensure you set these environment variables
+before you open Visual Studio.
+- The current template requires dotnet core SDK 3.1. Ensure that it is installed before running the application.
+To check the installed version run the command `dotnet --version`
 
 ## USING THE SCAFFOLDING CLI TO CREATE A DOTNET PROJECT
 
