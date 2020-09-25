@@ -104,13 +104,62 @@ but not if the full project is deployed to Azure, where the build process will p
 <li>Automatically generated for the project. Go to <a href="http://localhost:5000/swagger/index.html">Swagger Index</a> to view.</li>
 <li>Swagger Json is here: <a href="http://localhost:5000/swagger/oas.json">Swagger Json</a></li>
 </ul>
-<h2><a class="anchor" aria-hidden="true" id="using-the-scaffolding-cli-to-create-a-dotnet-project-template"></a><a href="#using-the-scaffolding-cli-to-create-a-dotnet-project-template" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>USING THE SCAFFOLDING CLI TO CREATE A DOTNET PROJECT TEMPLATE</h2>
+<h2><a class="anchor" aria-hidden="true" id="using-the-stacks-dotnet-template"></a><a href="#using-the-stacks-dotnet-template" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>USING THE STACKS DOTNET TEMPLATE</h2>
+<p>The Stacks template is a template for the <code>dotnet new</code> command, and used to create a new application repository based on the Stacks structure.</p>
+<p>The Amido Stacks structure uses a naming convention for many folders in order to make the process simple and intuitive.
+For that reason, you are advised to create the whole application structure and then remove the parts that are not needed.</p>
+<h3><a class="anchor" aria-hidden="true" id="installing-the-template"></a><a href="#installing-the-template" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>INSTALLING THE TEMPLATE</h3>
+<p>If you have installed the Stacks template before, it is recommended that you remove older versions before installing the new one.
+To remove it, run the following command:</p>
+<pre><code class="hljs css language-text">dotnet new -u stacks-app-template
+</code></pre>
+<p>Note: if you don't have a previous installed, the command will fail, you can skip to the next step.</p>
+<p>Download the <a href="https://github.com/amido/stacks-dotnet/releases/tag/1.0.0">stacks-app-template.1.0.0.nupkg template package</a>
+(.Net Core 3.1, current LTS release) to a temporary folder.</p>
+<p>Install this package:</p>
+<pre><code class="hljs css language-text">dotnet new -i /path/to/stacks-app-template.1.0.0.nupkg
+</code></pre>
+<p>Once this has completed, a list of available templates will be displayed on the screen.
+Check to ensure that the template <strong>Amido Stacks Application Repository</strong> is present in the list.</p>
+<h3><a class="anchor" aria-hidden="true" id="create-a-new-application-using-the-template"></a><a href="#create-a-new-application-using-the-template" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>CREATE A NEW APPLICATION USING THE TEMPLATE</h3>
+<pre><code class="hljs css language-text">dotnet new stacks-app -n Company.Project -d DomainName
+</code></pre>
+<p>The above command will create a folder and a repository called <code>Company.Project</code>.</p>
+<p>If you omit the parameter <code>-n</code>, the CLI will create the project using the name of the folder the command is being run from
+(e.g. <code>c:\demo\amido-sample&gt; dotnet new stacks-app</code> will generate a project called <code>amido-sample</code>).
+To prevent the creation of a new folder you can pass the parameter <code>-o</code> with a path name
+e.g. <code>dotnet new stacks-app -o ./foldername</code>).</p>
+<p>The parameter <code>-d</code> is a short name for <code>--Domain</code>. Domain is the name used by the aggregate root object and referenced in multiple place in the project.</p>
+<h3><a class="anchor" aria-hidden="true" id="running-the-application"></a><a href="#running-the-application" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>RUNNING THE APPLICATION</h3>
+<p>The template does not set up the application configuration required to run. Before you attempt to start the
+application make sure it is configured properly.</p>
+<p>Assuming you have already installed all dependencies required (i.e. CosmosDB emulator, or you have a conection to a CosmosDB instance)
+you will need to configure the application to connect to the database. Ensure that the <code>DatabaseAccountUri</code> value is set
+(as per the instructions above for running the application locally).</p>
+<p>By default, on a developer machine, the template is configured to connect to a local CosmosDB emulator - make sure you
+create a database (default is <code>Stacks</code>) and a collection within it (default: same as domain name supplied).
+The collection partition key by default uses the ID (<code>/id</code>).</p>
+<p>You should also ensure that the <code>Company.Project.API/Properties/launchSettings.json</code> file has the correct `COSMOSDB_KEY value set.</p>
+<p>Once these are set, load the project into VisualStudio and press <code>F5</code> to start debugging. The browser will open,
+and you should be presented with a Swagger UI page showing the default api endpoints with their CRUD operations.</p>
+<p>Alternatively, you can run these steps from the command line:</p>
+<pre><code class="hljs css language-text">dotnet restore
+dotnet clean
+dotnet build
+
+dotnet run --project Company.Project.API/Company.Project.API.csproj
+</code></pre>
+<p>The deployment pipeline should be configured with the DevOps team in order to setup the right dependencies.</p>
+<h2><a class="anchor" aria-hidden="true" id="using-the-scaffolding-cli-to-create-a-dotnet-project"></a><a href="#using-the-scaffolding-cli-to-create-a-dotnet-project" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>USING THE SCAFFOLDING CLI TO CREATE A DOTNET PROJECT</h2>
 <p>The Amido Stacks Scaffolding CLI can be used to create a fully-functional and deployable project from a template, in a variety of flavours.
 It includes tests (unit, integration), together with infrastructure and deployment definitions. All by running from your CLI.</p>
-<p>We use npx to execute and create the
+<p>We use <code>npx</code> to execute and create the
 <a href="https://www.npmjs.com/package/@amidostacks/scaffolding-cli">template-cli</a>
 <a href="https://www.npmjs.com/package/npx">npx</a>.</p>
 <p>We are supporting and running <a href="https://nodejs.org/en/about/releases/">node@12</a>.
 Please ensure that your local environment has the correct version <a href="https://nodejs.org/en/download/">installed</a>.</p>
+<p>To run the Scaffolding CLI, use the following commands</p>
+<pre><code class="hljs css language-text">npx @amidostacks/scaffolding-cli@latest run -i
+</code></pre>
 <p>You will be asked a number of questions. Based on the answers, your ready-to-build project template will be produced.</p>
-</span></div></article></div><div class="docLastUpdate"><em>Last updated on 9/24/2020 by Steve Clewer</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/stacks/docs/getting_started_dev_java"><span class="arrow-prev">← </span><span>Dev [Java] - Using the repo to build the Java application locally</span></a><a class="docs-next button" href="/stacks/docs/workloads/workloads"><span>Workloads</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#getting-started-with-the-dotnet-application">GETTING STARTED WITH THE DOTNET APPLICATION</a><ul class="toc-headings"><li><a href="#running-the-application-locally">RUNNING THE APPLICATION LOCALLY</a></li><li><a href="#using-a-docker-image">USING A DOCKER IMAGE</a></li></ul></li><li><a href="#using-the-scaffolding-cli-to-create-a-dotnet-project-template">USING THE SCAFFOLDING CLI TO CREATE A DOTNET PROJECT TEMPLATE</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/stacks/" class="nav-home"></a><div><h5>Docs</h5><a href="/stacks/docs/index">Getting Started</a></div><div><h5>About Us</h5><a href="https://amido.com/">Amido</a></div><div><h5>Open Source</h5><a href="https://github.com/amido/stacks" rel="noreferrer noopener" target="_blank">GitHub</a></div></section><a href="https://github.com/amido/stacks" target="_blank" rel="noreferrer noopener" class="fbOpenSource"></a><section class="copyright">Copyright © 2020 Amido Ltd</section></footer></div></body></html>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 9/25/2020 by Steve Clewer</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/stacks/docs/getting_started_dev_java"><span class="arrow-prev">← </span><span>Dev [Java] - Using the repo to build the Java application locally</span></a><a class="docs-next button" href="/stacks/docs/workloads/workloads"><span>Workloads</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#getting-started-with-the-dotnet-application">GETTING STARTED WITH THE DOTNET APPLICATION</a><ul class="toc-headings"><li><a href="#running-the-application-locally">RUNNING THE APPLICATION LOCALLY</a></li><li><a href="#using-a-docker-image">USING A DOCKER IMAGE</a></li></ul></li><li><a href="#using-the-stacks-dotnet-template">USING THE STACKS DOTNET TEMPLATE</a><ul class="toc-headings"><li><a href="#installing-the-template">INSTALLING THE TEMPLATE</a></li><li><a href="#create-a-new-application-using-the-template">CREATE A NEW APPLICATION USING THE TEMPLATE</a></li><li><a href="#running-the-application">RUNNING THE APPLICATION</a></li></ul></li><li><a href="#using-the-scaffolding-cli-to-create-a-dotnet-project">USING THE SCAFFOLDING CLI TO CREATE A DOTNET PROJECT</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/stacks/" class="nav-home"></a><div><h5>Docs</h5><a href="/stacks/docs/index">Getting Started</a></div><div><h5>About Us</h5><a href="https://amido.com/">Amido</a></div><div><h5>Open Source</h5><a href="https://github.com/amido/stacks" rel="noreferrer noopener" target="_blank">GitHub</a></div></section><a href="https://github.com/amido/stacks" target="_blank" rel="noreferrer noopener" class="fbOpenSource"></a><section class="copyright">Copyright © 2020 Amido Ltd</section></footer></div></body></html>
