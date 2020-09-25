@@ -142,7 +142,7 @@ create a database (default is <code>Stacks</code>) and a collection within it (t
 is the <code>DomainName</code> value supplied when creating the application).</p>
 <p>The collection partition key by default uses the ID (<code>/id</code>).</p>
 <p>You should also ensure that the <code>Company.Project.API/Properties/launchSettings.json</code> file has the correct <code>COSMOSDB_KEY</code> value set.</p>
-<p>Once these are configured correctly, load the project into VisualStudio and press <code>F5</code> to start a debug process.
+<p>Once these are configured correctly, load the project into Visual Studio and press <code>F5</code> to start a debug process.
 The browser will open, and you should be presented with a Swagger UI page showing the default api endpoints with their
 CRUD operations.</p>
 <p>Alternatively, you can run these steps from the command line:</p>
@@ -152,7 +152,18 @@ dotnet build
 
 dotnet run --project Company.Project.API/Company.Project.API.csproj
 </code></pre>
-<p>The deployment pipeline should be configured with the DevOps team in order to setup the right dependencies.</p>
+<p>The deployment pipeline should be configured with the DevOps team in order to set up the right dependencies.</p>
+<h4><a class="anchor" aria-hidden="true" id="caveats"></a><a href="#caveats" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>CAVEATS</h4>
+<ul>
+<li>The ContractTests project has a limitation due to a Windows path length size. When the project is running on Windows
+from a long path length, the build will fail. If this is the case, you may need to move the project into a
+folder where the path is shorter.</li>
+<li>All secrets are loaded from environment variables. Due to a bug in Visual Studio, the environment variables for a test
+project are not set when running the tests. For integration tests, ensure you set these environment variables
+before you open Visual Studio.</li>
+<li>The current template requires dotnet core SDK 3.1. Ensure that it is installed before running the application.
+To check the installed version run the command <code>dotnet --version</code></li>
+</ul>
 <h2><a class="anchor" aria-hidden="true" id="using-the-scaffolding-cli-to-create-a-dotnet-project"></a><a href="#using-the-scaffolding-cli-to-create-a-dotnet-project" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>USING THE SCAFFOLDING CLI TO CREATE A DOTNET PROJECT</h2>
 <p>The Amido Stacks Scaffolding CLI can be used to create a fully-functional and deployable project from a template, in a variety of flavours.
 It includes tests (unit, integration), together with infrastructure and deployment definitions. All by running from your CLI.</p>
