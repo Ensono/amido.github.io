@@ -128,25 +128,29 @@ If you omit the parameter `-n`, the CLI will create the project using the name o
 To prevent the creation of a new folder you can pass the parameter `-o` with a path name
 e.g. `dotnet new stacks-app -o ./foldername`).
 
-The parameter `-d` is a short name for `--Domain`. Domain is the name used by the aggregate root object and referenced in multiple place in the project.
+The parameter `-d` is a short name for `--Domain`. Domain is the name used by the aggregate root object,
+and referenced in multiple place in the project. It is used as the name of the collection within the CosmosDB instance.
 
 ### RUNNING THE APPLICATION
 
 The template does not set up the application configuration required to run. Before you attempt to start the
 application make sure it is configured properly.
 
-Assuming you have already installed all dependencies required (i.e. CosmosDB emulator, or you have a conection to a CosmosDB instance)
+Assuming you have already installed all dependencies required (i.e. CosmosDB emulator, or you have access to a CosmosDB instance)
 you will need to configure the application to connect to the database. Ensure that the `DatabaseAccountUri` value is set
 (as per the instructions above for running the application locally).
 
 By default, on a developer machine, the template is configured to connect to a local CosmosDB emulator - make sure you
-create a database (default is `Stacks`) and a collection within it (default: same as domain name supplied).
+create a database (default is `Stacks`) and a collection within it (the default collection expected
+is the `DomainName` value supplied when creating the application).
+
 The collection partition key by default uses the ID (`/id`).
 
-You should also ensure that the `Company.Project.API/Properties/launchSettings.json` file has the correct `COSMOSDB_KEY value set.
+You should also ensure that the `Company.Project.API/Properties/launchSettings.json` file has the correct `COSMOSDB_KEY` value set.
 
-Once these are set, load the project into VisualStudio and press `F5` to start debugging. The browser will open,
-and you should be presented with a Swagger UI page showing the default api endpoints with their CRUD operations.
+Once these are configured correctly, load the project into VisualStudio and press `F5` to start a debug process.
+The browser will open, and you should be presented with a Swagger UI page showing the default api endpoints with their
+CRUD operations.
 
 Alternatively, you can run these steps from the command line:
 
