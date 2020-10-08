@@ -30,6 +30,18 @@
           "workloads/frontend/monorepo",
           "workloads/frontend/server_side_cache"
         ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Java Spring Boot REST API Application",
+        "ids": [
+          "workloads/java/intro_java",
+          "workloads/java/quickstart_java",
+          "workloads/java/scaffolding_java",
+          "workloads/java/ide_java",
+          "workloads/java/structure_java",
+          "workloads/java/testing_java"
+        ]
       }
     ],
     "Infrastructure": [
