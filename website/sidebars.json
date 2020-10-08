@@ -40,7 +40,8 @@
           "workloads/java/scaffolding_java",
           "workloads/java/ide_java",
           "workloads/java/structure_java",
-          "workloads/java/testing_java"
+          "workloads/java/testing_java",
+          "workloads/java/end_to_end_testing_java"
         ]
       }
     ],
