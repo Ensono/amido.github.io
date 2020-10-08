@@ -14,7 +14,7 @@ and Cosmos DB is used for cloud persistence.
 
 ### VERSIONING
 
-This is version 1.0.0 of the `java-stacks` project.
+This is version `1.0.0` of the `java-stacks` project.
 
 ### RUNNING THE APPLICATION LOCALLY
 
@@ -229,13 +229,13 @@ From project path `<>PROJECT-NAME>/api-tests` to run all tests, use
 To run the Smoke tests independently, use
 
 ```text
-mvn clean verify -Dcucumber.options=“ --tags @Smoke”
+mvn clean verify -Dcucumber.options="--tags @Smoke"
 ```
 
 and to run the Functional tests independently, use
 
 ```text
-mvn clean verify -Dcucumber.options=“ --tags @Functional”
+mvn clean verify -Dcucumber.options="--tags @Functional"
 ```
 
 ### USING A DOCKER IMAGE
