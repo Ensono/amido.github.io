@@ -4,7 +4,7 @@ title: Using the Scaffolding CLI to create the Java Rest API project template
 sidebar_label: Using the Scaffolding CLI to create the Java Rest API project template
 ---
 
-## Using the Stacks Scaffolding CLI to create a Java REST API project template
+## Create a custom Java REST API project template from the command line
 
 The Amido Stacks Scaffolding CLI can be used to create a fully-functional and deployable project from a template, in a variety of flavours.
 It includes tests (unit, integration), together with infrastructure and deployment definitions. All by running from your CLI.

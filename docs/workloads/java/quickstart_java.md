@@ -4,7 +4,7 @@ title: Getting started with the Java Rest API application
 sidebar_label: Getting started with the Java Rest API application
 ---
 
-## Getting started with the Java Spring Boot Rest API application
+## Using the repository to build the Java Spring Boot Rest API application
 
 ### Versioning
 

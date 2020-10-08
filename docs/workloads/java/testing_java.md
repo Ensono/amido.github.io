@@ -4,7 +4,7 @@ title: Testing the Java Rest API
 sidebar_label: Testing the Java Rest API
 ---
 
-## Testing the Java Rest API
+## Testing the application
 
 ### Running Tests
 
