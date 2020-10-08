@@ -6,6 +6,16 @@ sidebar_label: Dev [Java] - Using the repo to build the Java application locally
 
 ## GETTING STARTED WITH THE JAVA SPRINGBOOT APPLICATION
 
+### OVERVIEW
+
+This is a sample Java application showcasing best coding practices and integrating with Azure
+and scaffolding for Amido Stacks. This application implements Application Insights for performance management,
+and Cosmos DB is used for cloud persistence.
+
+### VERSIONING
+
+This is version 1.0.0 of the `java-stacks` project.
+
 ### RUNNING THE APPLICATION LOCALLY
 
 1. Clone the Java project to your local machine from here: [stacks-java repository](https://github.com/amido/stacks-java)
@@ -13,7 +23,8 @@ sidebar_label: Dev [Java] - Using the repo to build the Java application locally
 
     The application is currently configured to work with the Azure environment.
 
-    It uses an Azure **CosmosDB** database to store the example application data. So you should have access to an instance to use with the application. Note: For running on local environments, you can use the [Cosmos DB emulator](https://docs.microsoft.com/en-us/azure/cosmos-db/local-emulator?tabs=ssl-netstd21) (CosmosDB Emulator has a known fixed key).
+    It uses an Azure **CosmosDB** database to store the example application data. So you should have access to an instance to use with the application.
+    Note: For running on a local Windows environment you can use the [Cosmos DB emulator](https://docs.microsoft.com/en-us/azure/cosmos-db/local-emulator?tabs=ssl-netstd21) (CosmosDB Emulator has a known fixed key).
 
     In addition, Azure **ApplicationInsights** is used for logging purposes. If this is unavailable, modify the application so that it doesn't fail to startup if it can't access ApplicationInsights, and simply log to the terminal instead.
 
@@ -81,22 +92,62 @@ These parameters are used to verify that the JWT supplied in the Authorization h
 
 We recommend that you install the following plugins
 
-```text
-google-java-format
-Lombok
-SonarLint
-Spring Assistant
-CheckStyle
-```
+- Lombok - To reduce the amount of boiler-plate code that needs to be written
+- SonarLint - Fix and detect code quality issues (<https://www.sonarlint.org/>)
+- Spring Assistant - An IntelliJ plugin for aiding Spring development projects (<https://plugins.jetbrains.com/plugin/10229-spring-assistant>)
+- Spring Tools - Adds Spring support for IDEs (<https://spring.io/tools>)
+- CheckStyle - Flags up issues with coding style (<https://checkstyle.sourceforge.io/>)
+- google-java-format Formatter - Formats code according to configuration (<https://github.com/amido/stacks-java/blob/master/tools/formatter/intellij-java-google-style.xml>)
 
 ### PLUGINS USED IN POM XML
 
-- Lombok - To write cleaner code and to avoid having to write boiler plate code
-  (for example: Getter, Setter, RequiredArgsConstructor, ToString, EqualsAndHashCode) in Java classes.
+- Lombok - Avoids need to write e.g. Getter, Setter, RequiredArgsConstructor, ToString, EqualsAndHashCode) in Java classes.
 - JaCoCo - A free Java code test coverage library.
 - Surefire - Used for reporting purposes (creates reports based on tests in the Java test package).
 - fmt-maven-plugin - Formats the java code based on rules in java-google-style.xml.
 - Spotbugs - Performs a static analysis of the Java code to check for bugs.
+
+### CODE QUALITY
+
+#### FORMATTER
+
+Install the `intellij-java-google-style.xml` formatter configuration file into the IDE from [here](https://github.com/amido/stacks-java/blob/master/tools/formatter/intellij-java-google-style.xml).
+
+The Java source code will automatically be reformatted to comply with the [Google Java Style](https://google.github.io/styleguide/javaguide.html).
+
+You can override the settings locally in the codebase by adding, for example:
+
+```text
+//@formatter:off
+manually formatted code
+///@formatter:on
+```
+
+##### VALIDATING AND APPLYING FORMATTING
+
+From the `<PROJECT-NAME>/java` folder run
+
+```text
+./mvnw com.coveo:fmt-maven-plugin:check
+```
+
+to validate the current formatting. You can then run
+
+```text
+./mvnw com.coveo:fmt-maven-plugin:format
+```
+
+to apply formatting to the source code.
+
+##### VERIFYING COMMON PROGRAMMING FLAWS
+
+From the `<PROJECT-NAME>/java` folder run
+
+```text
+./mvnw spotbugs:check
+```
+
+## TESTING
 
 ### RUNNING TESTS
 
@@ -152,6 +203,40 @@ For the dependency checker report, run:
 ```
 
 The generated report can be viewed under `<PROJECT-NAME>/target/dependency-check.html`.
+
+#### MUTATION TESTING
+
+PIT mutation testing is used to generate mutation tests (see <https://pitest.org/> for details).
+The mutation coverage goal analyses all classes in the codebase that match the target tests and target class filters.
+To run it:
+
+```text
+./mvnw org.pitest:pitest-maven:mutationCoverage
+```
+
+The generated report can be viewed under – `<PROJECT-NAME>/target/pit-reports/YYYYMMDDHHMI`
+
+### RUNNING API TESTS
+
+Set an environment variable `BASE_URL` (e.g. if testing locally set it to <http://localhost:9000>)
+
+From project path `<>PROJECT-NAME>/api-tests` to run all tests, use
+
+```text
+./mvnw clean verify
+```
+
+To run the Smoke tests independently, use
+
+```text
+mvn clean verify -Dcucumber.options=“ --tags @Smoke”
+```
+
+and to run the Functional tests independently, use
+
+```text
+mvn clean verify -Dcucumber.options=“ --tags @Functional”
+```
 
 ### USING A DOCKER IMAGE
 
