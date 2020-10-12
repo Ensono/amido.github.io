@@ -91,7 +91,7 @@ To ensure that all code is meeting the quality standards (i.e. code coverage, bu
     * Example usage in the open-source [build-dotnet.yml](https://github.com/amido/stacks-pipeline-templates/blob/831c46811abfeff30833ccb003305692cb7ad2af/azDevOps/azure/templates/jobs/build-dotnet.yml) template step
 
 * Using [SonarLint as an IDE extension](https://www.sonarlint.org) that helps you detect and fix quality issues as you write code.
-    * See [example workspace settings](../.vscode/settings.json)
+    * See `[example workspace settings](../.vscode/settings.json)`
 
 * Using [amidostacks/ci-sonarscanner](https://hub.docker.com/repository/docker/amidostacks/ci-sonarscanner)
 * [Github Actions with SonarCloud](https://github.com/SonarSource/sonarcloud-github-action) to automatically run analysis triggered by Github

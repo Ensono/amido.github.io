@@ -72,3 +72,4 @@ cli
 FlowSelector
 workflow.ts
 AzureDevops
+scaffolding-cli
