@@ -6,7 +6,7 @@ sidebar_label: Project Types - Testing
 
 Testing frameworks require a lot of boilerplates. It's also hard to know how to get started without examples. We have a range of Javascript Front End focused, opinionated, boilerplate testing frameworks that can be bootstrapped and tailored to your current project with just one command.
 
-By default, Amido Stacks build a range of testing solutions into the projects. However, we understand that users require tests to be separate from the code. For more testing options and examples, see the other [project types](./scaffolding_cli.md).
+By default, Amido Stacks build a range of testing solutions into the projects. However, we understand that users require tests to be separate from the code. For more testing options and examples, see the other `[project types](./scaffolding_cli.md)`.
 
 Get testing!
 
@@ -14,7 +14,7 @@ Get testing!
 
 The best way to get started, is bootstrap the framework using the scaffolding-cli from Amido Stacks. By using it in interactive mode, you can simply answer 5 questions to get a bespoke framework, ready to go with an example test.
 
-`npx @amidostacks/scaffolding-cli test -i`
+```npx @amidostacks/scaffolding-cli test -i```
 
 ### Interactive questions
 
@@ -96,7 +96,7 @@ At the end of bootstrapping your example framework, you will have an output that
 └── appsettings.json
 ```
 
-_[Above: Example output from Selenium framework with .NET output folder structure](./testing_selenium.md#folder-structure)_
+`_[Above: Example output from Selenium framework with .NET output folder structure](./testing_selenium.md#folder-structure)_`
 
 You are ready to follow the frameworks README.md and run your first test!
 

@@ -2,6 +2,7 @@
 id: index
 title: About Amido Stacks
 sidebar_label: About Amido Stacks
+slug: /
 ---
 
 ## Why we are developing Stacks

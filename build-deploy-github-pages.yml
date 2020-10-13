@@ -27,7 +27,7 @@ variables:
   - name: self_repo
     value: stacks
   - name: working_directory
-    value: '$(Agent.BuildDirectory)/s/$(self_repo)/website'
+    value: '$(Agent.BuildDirectory)/s/$(self_repo)'
   - group: amido-stacks-webapp
 
 

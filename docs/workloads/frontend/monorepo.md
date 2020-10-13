@@ -11,8 +11,8 @@ The Amido stacks webapp template is a monorepo managed with
 
 At the moment, the project is comprised of:
 
-- [Webapp](`packages/webapp`) - SSR React, Node.js
-- [UI_Library](`packages/UILib`) - TBC
+- `[Webapp](`packages/webapp`)` - SSR React, Node.js
+- `[UI_Library](`packages/UILib`)` - TBC
 
 ## Sample project directory structure
 
