@@ -1,9 +1,46 @@
 ---
 id: build_project_netcore
-title: Build the project
-sidebar_label: Build
+title: Build & Run
+sidebar_label: Build & Run
 ---
 
 
-## Build the application
+### Build locally
 
+Move to the `<PROJECT-NAME>/src/api` folder, then
+
+Unix:
+
+```text
+export COSMOSDB_KEY=${COSMOSDB_KEY}
+
+dotnet restore
+dotnet clean
+dotnet build
+dotnet run --project xxAMIDOxx.xxSTACKSxx.API/xxAMIDOxx.xxSTACKSxx.API.csproj
+```
+
+Windows:
+
+```text
+TODO
+    ```
+
+### Build using docker container
+
+From the `<PROJECT-NAME>/src/api` folder, build a Docker image using e.g. the command below:
+
+   ```text
+   docker build -t dotnet-api .
+   ```
+
+This uses the `Dockerfile` in this folder to generate the Docker image.
+
+Once the Docker image is created, you can then run a Docker container based on this image using e.g.
+
+   ```text
+   docker run -p 5000:80 --mount type=bind,source=/path/to/PROJECT-NAME/src/api/xxAMIDOxx.xxSTACKSxx.API/appsettings.json,target=/app/config/appsettings.json -e COSMOSDB_KEY=your-key dotnet-api:latest
+   ````
+
+where the `COSMOSDB_KEY` is the value as described above. Note that the `appsettings.json` value is mounted here for running locally,
+but not if the full project is deployed to Azure, where the build process will perform the substitution.

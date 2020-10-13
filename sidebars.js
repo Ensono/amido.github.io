@@ -53,11 +53,32 @@ module.exports = {
             type: 'category',
             label: 'Getting started',
             items: [
-              'workloads/netcore/quickstart/create_project_netcore',
-              'workloads/netcore/quickstart/build_project_netcore',
               'workloads/netcore/quickstart/development_requirements_netcore',
+              'workloads/netcore/quickstart/create_project_netcore',
+              {
+                type: 'category',
+                label: 'Configuration',
+                items: [
+                  'workloads/netcore/quickstart/configuration/configure_cosmosdb_netcore',
+                  'workloads/netcore/quickstart/configuration/configure_swagger_netcore',
+                  'workloads/netcore/quickstart/configuration/configure_swagger_ui_netcore',
+                ]
+              },
+              'workloads/netcore/quickstart/build_project_netcore',
+              'workloads/netcore/quickstart/test_project_netcore',
+              'workloads/netcore/quickstart/deploy_project_netcore',
             ]
           },
+          {
+            type: 'category',
+            label: 'Overview',
+            items: [
+              'workloads/netcore/architecture_overview_netcore',
+              'workloads/netcore/repository_overview_netcore',
+              'workloads/netcore/solution_overview_netcore'
+            ]
+          }
+          
         ]
       }
     ],
