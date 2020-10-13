@@ -69,6 +69,8 @@ module.exports = {
               'workloads/netcore/quickstart/deploy_project_netcore',
             ]
           },
+          'workloads/netcore/logging_netcore',
+          'workloads/netcore/security_netcore',
           {
             type: 'category',
             label: 'Overview',

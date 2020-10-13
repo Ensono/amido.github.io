@@ -1,7 +1,7 @@
 ---
 id: test_project_netcore
 title: Testing the application
-sidebar_label: Test
+sidebar_label: Testing
 ---
 
 # xxAMIDOxx.xxSTACKSxx.Gatling.Tests

@@ -1,7 +1,7 @@
 ---
 id: create_project_netcore
 title: Create the project
-sidebar_label: Create
+sidebar_label: Create the project
 ---
 
 ### Create the project by cloning GitHub repository

@@ -1,7 +1,7 @@
 ---
 id: build_project_netcore
 title: Build & Run
-sidebar_label: Build & Run
+sidebar_label: Build & Run the Project
 ---
 
 

@@ -1,7 +1,7 @@
 ---
 id: deploy_project_netcore
 title: Deploying the application
-sidebar_label: Deploy
+sidebar_label: Deployment
 ---
 
 This solution has two build pipelines files one each for Azure DevOps and Jenkins, located under `./build/azDevOps/azure` and `./build/Jenkins/` respectively. To deploy this application, fork it into your desired source control system and point your Jenkins or Azure DevOps instance at those pipeline files. There are a number of prerequisite variables (such as credentials) and various paths that must be populated, all of which are listed at the head of the file (if global) or in the relevant environment section (if per-environment). Please refer to the `stacks-infrastructure` repository for more information around the provisioning of the underlying infrastructure.
