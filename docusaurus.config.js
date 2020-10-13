@@ -1,3 +1,6 @@
+const remarkImages = require('remark-images');
+const rehypeTruncate = require('rehype-truncate');
+
 module.exports = {
   title: 'Amido Stacks',
   tagline: 'Helping projects gain momentum on digital transformation, with opinionated and modular boilerplate solutions',
@@ -67,10 +70,13 @@ module.exports = {
       '@docusaurus/preset-classic',
       {
         docs: {
-          sidebarPath: require.resolve('./sidebars.js'),
+          sidebarPath: require.resolve('./sidebars.js'),         
           // Please change this to your repo.
           editUrl:
             'https://github.com/amido/stacks',
+
+          remarkPlugins: [remarkImages],
+          rehypePlugins: [rehypeTruncate],
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),

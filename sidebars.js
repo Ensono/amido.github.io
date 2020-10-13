@@ -43,6 +43,22 @@ module.exports = {
           'workloads/java/testing_java',
           'workloads/java/end_to_end_testing_java'
         ]
+      },
+      {
+        type: 'category',
+        label: '.NetCore REST Application',
+        items: [
+          'workloads/netcore/introduction_netcore',
+          {
+            type: 'category',
+            label: 'Getting started',
+            items: [
+              'workloads/netcore/quickstart/create_project_netcore',
+              'workloads/netcore/quickstart/build_project_netcore',
+              'workloads/netcore/quickstart/development_requirements_netcore',
+            ]
+          },
+        ]
       }
     ],
     'Infrastructure': [
