@@ -4,8 +4,6 @@ title: Dev [Node.js] - Using the repo to build the Node.js application
 sidebar_label: Dev [Node.js]- Using the repo to build the Node.js application
 ---
 
-# Getting Started
-
 ## Initializing a project  *SSR / CSR* project
 
 The Amido Stacks Scaffolding CLI can be used to create a fully-functional and deployable project from a template, in a variety of flavours.
@@ -50,6 +48,7 @@ Before you can start hacking away, you need to setup some environment variables.
 
 ```
 
+### Development
 
 For local development execution:
 
@@ -57,6 +56,8 @@ For local development execution:
 npm install
 npm  run dev
 ```
+
+### Production 
 
 For local production execution:
 
