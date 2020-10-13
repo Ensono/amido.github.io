@@ -14,7 +14,7 @@ Get testing!
 
 The best way to get started, is bootstrap the framework using the scaffolding-cli from Amido Stacks. By using it in interactive mode, you can simply answer 5 questions to get a bespoke framework, ready to go with an example test.
 
-```jsx npx @amidostacks/scaffolding-cli test -i```
+```npx @amidostacks/scaffolding-cli test -i```
 
 ### Interactive questions
 
