@@ -61,4 +61,5 @@ public class Startup
     }
 }
 ```
+
 The snippet above demonstrates the usage of .AddSwaggerGen() to register the document generation. The output of this snipped will generate a document found on the following path `/swagger/v1/swagger.json`

@@ -46,7 +46,7 @@ module.exports = {
       },
       {
         type: 'category',
-        label: '.NetCore REST Application',
+        label: '.NetCore REST API Application',
         items: [
           'workloads/netcore/introduction_netcore',
           {

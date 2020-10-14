@@ -76,5 +76,5 @@ import TabItem from "@theme/TabItem";
 </Tabs>
 
 :::note
-The current version of Amido Stacks does not support .net core 3.0, there is a template for .Net Core 2.2 (Obsolete) and .Net Core 3.1 (Current LTS, recommended). Upgrate from 2.2 to 3.1 is being tracker in the following github issue.
+The current version of Amido Stacks does not support .net core 3.0, there is a template for .Net Core 2.2 (Obsolete) and .Net Core 3.1 (Current LTS, recommended). Upgrade from 2.2 to 3.1 is being tracker in the following github issue.
 :::

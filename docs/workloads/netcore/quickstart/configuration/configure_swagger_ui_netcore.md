@@ -31,6 +31,7 @@ public class Startup
     }
 }
 ```
+
 The above snippet register the v1/swagger.json in the UI, once the UI is loaded, it will try to load the documents registered by SwaggerEndpoint();
 
 For registering multiple spec versions, simply register multiple document generations by calling the .AddSwaggerGen(c => ...) multiple times, changing just the document filter from /v1 to the version desired. ie:
@@ -44,6 +45,7 @@ To:
 SwaggerDoc("v2", new Info());
 c.DocumentFilter<VersionPathFilter>("/v2");
 ```
+
 And register the new endpoint in the UI like below:
 
 
@@ -76,7 +78,7 @@ By default, Swagger doc generation creates a tag using the controller name, this
 
 The problem with this approach is that makes it harder to group endpoints if they are located on different controllers, to avoid this problem, we can configure swagger to group the endpoints by ApiGroup.
 
-ApiGroup is a concept introduced in aspnetcore, we decorate the controller with the attribute ApiExplorerSettingsAttribute, and set the GroupName to the Tag expected in swagger. i.e:
+ApiGroup is a concept introduced in ASP.NET Core, we decorate the controller with the attribute ApiExplorerSettingsAttribute, and set the GroupName to the Tag expected in swagger. i.e:
 
 ```jsx title="Controller decorated with Api Group"
 [ApiExplorerSettings(GroupName = "Category")]

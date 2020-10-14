@@ -5,14 +5,21 @@ sidebar_label: Security
 ---
 
 ## Overview
+
 The .NET Core Stacks API template contains code which can easily be configured to integrate with any Identity provider via the standard OAuth 2.0 protocol.
 
+
+
 ## Authentication (Verification of JWT access tokens)
-To verify the JWT bearer tokens we use the standard .NET Core JWT bearer middleware (https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication.JwtBearer).
+
+To verify the JWT bearer tokens we use the standard [.NET Core JWT bearer middleware](https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication.JwtBearer).
 
 By default this functionality is disabled but can easily be enabled by changing the configuration settings.
 
+
+
 ### Configuration
+
 JWT bearer authentication on API endpoints can be configured by changing settings in JwtBearerAuthentication section of the application configuration file appsettings.json.
 
 This is the default section:
@@ -65,14 +72,17 @@ By setting the Enabled, Audience and Authority settings this will be enough to s
 
 There are however some additional configuration settings and steps available to enable JWT authentication in Open API (Swagger documentation) and to allow component testing of the API endpoints using static test bearer tokens. These will be covered in the following sections.
 
+
+
 ## Authenticating via Open API (Swagger) documentation
+
 To enable API users to authenticate on the Swagger documentation page via the Authorization Code with PKCE (recommended) and Implicit OAuth 2.0 flows the following settings need to be configured:
 
 <pre>
 <table>
 <thead>
   <tr>
-    <th>Settinngs</th>
+    <th>Settings</th>
     <th>Description</th>
     <th>Example</th>
   </tr>
@@ -105,10 +115,13 @@ Alternatively, if you already have a JWT bearer token you can use the "bearer (a
 
 Once authenticated, any calls made to API endpoints from within the Swagger UI will pass a JWT bearer token for your user in the Authorization header of the request.
 
+
+
 ### Component testing secured API endpoints
+
 JWT bearer authentication configuration of the API when being component tested can be found in class CustomAutoDataAttribute. 
 
-```
+```C#
 // TODO - Set JWT authentication config settings if enabled
 var jwtBearerAuthenticationConfiguration = new JwtBearerAuthenticationConfiguration
 {
@@ -122,7 +135,7 @@ var jwtBearerAuthenticationConfiguration = new JwtBearerAuthenticationConfigurat
         ClientId = "<TODO>",
         TokenUrl = "<TODO>"
     },
-    UseStubbedBackchannelHandler = true
+    UseStubbedBackChannelHandler = true
 };
 ```
 
@@ -134,32 +147,42 @@ The OpenApi settings are optional. It is up to you whether you want to set those
 
 There are some additional configuration settings available for component testing:
 
-<pre>
+
 <table>
-<thead>
-  <tr>
-    <th>Settings</th>
-    <th>Description</th>
-    <th>Example</th>
-  </tr>
-</thead>
-<tbody>
-  <tr>
-    <td>AllowExpiredTokens</td>
-    <td>Allows expired tokens to be used when authenticating against the API endpoints.<br></br>When set to true, this allows us to use static bearer tokens in the tests.</td>
-    <td>true</td>
-  </tr>
-  <tr>
-    <td>UseStubbedBackchannelHandler</td>
-    <td>Allows us to use a handler in the tests to stub the calls to the OAuth 2.0 identity provider to retrieve the public key used to sign the JWT tokens.<br></br>When set to true, the stubbed responses from the identity provider must be placed in the corresponding methods in file StubJwtBearerAuthenticationHttpMessageHandler.cs. The public key in the stubbed handler must match the key used to sign the test bearer tokens.<br></br>When set to false, the JWT tokens will be verified as normal (i.e. the public key used to verify the token will be retrieved using the OAuth 2.0 identity providers .well-known endpoints). <br></br>The benefits of using a stubbed handler to retrieve the public key are:<br></br>1. Component tests are more robust as they don't depend on OAuth 2.0 provider endpoints being available.<br></br>2. Component tests are faster.<br></br>3. When OAuth 2.0 provider public keys are rotated we don't need to regenerate the static bearer tokens we are using in component tests.</td>
-    <td>true</td>
-  </tr>
-</tbody>
+    <thead>
+        <tr>
+            <th>Settings</th>
+            <th>Description</th>
+            <th>Example</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>AllowExpiredTokens</td>
+            <td>Allows expired tokens to be used when authenticating against the API endpoints.<br></br>When set to
+                true, this allows us to use static bearer tokens in the tests.</td>
+            <td>true</td>
+        </tr>
+        <tr>
+            <td>UseStubbedBackChannelHandler</td>
+            <td>Allows us to use a handler in the tests to stub the calls to the OAuth 2.0 identity provider to retrieve
+                the public key used to sign the JWT tokens.<br></br>When set to true, the stubbed responses from the
+                identity provider must be placed in the corresponding methods in file
+                StubJwtBearerAuthenticationHttpMessageHandler.cs. The public key in the stubbed handler must match the
+                key used to sign the test bearer tokens.<br></br>When set to false, the JWT tokens will be verified as
+                normal (i.e. the public key used to verify the token will be retrieved using the OAuth 2.0 identity
+                providers .well-known endpoints). <br></br>The benefits of using a stubbed handler to retrieve the
+                public key are:<br></br>1. Component tests are more robust as they don't depend on OAuth 2.0 provider
+                endpoints being available.<br></br>2. Component tests are faster.<br></br>3. When OAuth 2.0 provider
+                public keys are rotated we don't need to regenerate the static bearer tokens we are using in component
+                tests.</td>
+            <td>true</td>
+        </tr>
+    </tbody>
 </table>
-</pre>
 
 
-The AuthTokenFixture.cs class has been provided for storing the static JWT bearer tokens used for component testing.
+The `AuthTokenFixture.cs` class has been provided for storing the static JWT bearer tokens used for component testing.
 
 Authorization
 The Stacks template does not provide any functionality for complex authorization scenarios although this is simple enough to implement using .NET Core Authorization Policies and JWT token claims.
