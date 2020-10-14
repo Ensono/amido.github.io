@@ -1,5 +1,5 @@
 ---
-id: development_requirements_netcore
+id: requirements_netcore
 title: Requirements
 sidebar_label: Requirements
 ---

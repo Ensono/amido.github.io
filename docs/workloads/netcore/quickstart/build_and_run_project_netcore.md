@@ -1,10 +1,10 @@
 ---
-id: build_project_netcore
+id: build_and_run_project_netcore
 title: Build & Run
 sidebar_label: Build & Run the Project
 ---
 
-### Build locally
+## Build locally
 
 Move to the `<PROJECT-NAME>/src/api` folder, then
 
@@ -36,22 +36,27 @@ import TabItem from "@theme/TabItem";
   </TabItem>
 </Tabs>
 
+### Verify that the application has started
 
-### Build using docker container
+Browse to [http://localhost:5000/v1/menu](http://localhost:5000/v1/menu). This should return a valid JSON response.
+
+The application configuration uses Swagger/OAS3 to represent the API endpoints. The Swagger UI can be viewed by directing your
+browser to [http://localhost:5000/swagger/index.html](http://localhost:5000/swagger/index.html).
+
+
+## Build using docker container
 
 From the `<PROJECT-NAME>/src/api` folder, build a Docker image using e.g. the command below:
 
-   ```text
-   docker build -t dotnet-api .
-   ```
+```text
+docker build -t dotnet-api .
+```
 
 This uses the `Dockerfile` in this folder to generate the Docker image.
 
 Once the Docker image is created, you can then run a Docker container based on this image using e.g.
 
-   ```text
-   docker run -p 5000:80 --mount type=bind,source=/path/to/PROJECT-NAME/src/api/xxAMIDOxx.xxSTACKSxx.API/appsettings.json,target=/app/config/appsettings.json -e COSMOSDB_KEY=your-key dotnet-api:latest
-   ````
+`docker run -p 5000:80 --mount type=bind,source=/path/to/PROJECT-NAME/src/api/xxAMIDOxx.xxSTACKSxx.API/appsettings.json,target=/app/config/appsettings.json -e COSMOSDB_KEY=your-key dotnet-api:latest`
 
 where the `COSMOSDB_KEY` is the value as described above. Note that the `appsettings.json` value is mounted here for running locally,
 but not if the full project is deployed to Azure, where the build process will perform the substitution.

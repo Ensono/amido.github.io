@@ -6,37 +6,54 @@ sidebar_label: Create the project
 
 ### Create the project by cloning GitHub repository
 
-1. Clone the Dotnet project to your local machine from here: [stacks-dotnet repository](https://github.com/amido/stacks-dotnet)
-2. Configure required environment variables
+- Clone the Dotnet project to your local machine from here: [stacks-dotnet repository](https://github.com/amido/stacks-dotnet)
+- Configure required environment variables
 
-    The application is currently configured to work with the Azure environment.
+The application is currently configured to work with the Azure environment.
 
-    It uses an Azure **CosmosDB** database to store the example application data.
-    There is a corresponding environment variable that needs to be set to interact with CosmosDB:
+It uses an Azure **CosmosDB** database to store the example application data.
+There is a corresponding environment variable that needs to be set to interact with CosmosDB:
 
-    ```text
-    COSMOSDB_KEY
-    ```
+```text
+COSMOSDB_KEY
+```
 
-    For Unix systems, set as additional variable within e.g. `~/.profile` or `/etc/profile`.
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
 
-    For Windows, open System Properties then select the Advanced tab, then click on the Environment Variables button and add the new parameter.
+<Tabs
+    defaultValue="windows"
+    values={[
+    {label: 'Windows', value: 'windows'},
+    {label: 'Unix', value: 'unix'}
+    ]}>
+    <TabItem value="windows">
+        Open System Properties then select the Advanced tab, then click on the Environment Variables button and add the new parameter.
+    </TabItem>
+    <TabItem value="unix">
+        Set as additional variable within e.g. <code>~/.profile</code> or <code>/etc/profile</code>.
+    </TabItem>
+</Tabs>
+<br />
 
-    Note: For running on local environments, you can use the [Cosmos DB emulator](https://docs.microsoft.com/en-us/azure/cosmos-db/local-emulator?tabs=ssl-netstd21) (CosmosDB Emulator has a known fixed key).
+:::note
+For running on local environments, you can use the [Cosmos DB emulator](https://docs.microsoft.com/en-us/azure/cosmos-db/local-emulator?tabs=ssl-netstd21) (CosmosDB Emulator has a known fixed key).
+:::
 
-    If not running locally, you additionally need to set the CosmosDB URI parameter `DatabaseAccountUri` within the
-    file `<PROJECT-NAME>/src/api/xxAMIDOxx.xxSTACKSxx.API/appsettings.json`:
 
-    ```text
-    "DatabaseAccountUri": "https://REPLACE-ME-WITH-COSMOSDB.documents.azure.com:443/"
-   ```
+If not running locally, you additionally need to set the CosmosDB URI parameter `DatabaseAccountUri` within the
+file `<PROJECT-NAME>/src/api/xxAMIDOxx.xxSTACKSxx.API/appsettings.json`:
+
+```text
+"DatabaseAccountUri": "https://REPLACE-ME-WITH-COSMOSDB.documents.azure.com:443/"
+```
 
 
 ### Create the project using the template
 
-````text
+```text
 dotnet new stacks-app -n Company.Project -d DomainName
-````
+```
 
 The above command will create a folder and a repository called `Company.Project`.
 

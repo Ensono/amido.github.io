@@ -1,12 +1,32 @@
 ---
-id: solution_overview_netcore
-title: Solution overview
-sidebar_label: Solution
+id: project_structure_netcore
+title: Project Structure
+sidebar_label: Project Structure
 ---
 ## Projects in the solution
 
-![Projects in solution](/img/projects_in_solution.png)
-
+```text
+Solution 'xxAMIDOxx.xxSTACKSss.API'
+├── API
+│      ├── xxAMIDOxx.xxSTACKSxx.API
+│      ├── xxAMIDOxx.xxSTACKSxx.API.Models
+│      └── xxAMIDOxx.xxSTACKSxx.API.ContractTests
+├── Application
+│      ├── xxAMIDOxx.xxSTACKSxx.Application.CommandHandlers
+│      ├── xxAMIDOxx.xxSTACKSxx.Application.Integration
+│      ├── xxAMIDOxx.xxSTACKSxx.Application.QueryHandlers
+├── Domain
+│      ├── xxAMIDOxx.xxSTACKSxx.Domain
+│      └── External
+├── Shared
+│      ├── xxAMIDOxx.xxSTACKSxx.Common
+│      └── xxAMIDOxx.xxSTACKSxx.CQRS
+└── Tests
+       ├── xxAMIDOxx.xxSTACKSxx.API.ComponentTests
+       ├── xxAMIDOxx.xxSTACKSxx.Common.UnitTests
+       ├── xxAMIDOxx.xxSTACKSxx.Domain.UnitTests
+       └── xxAMIDOxx.xxSTACKSxx.Infrastructure.IntegrationTests
+```
 
 
 ## API

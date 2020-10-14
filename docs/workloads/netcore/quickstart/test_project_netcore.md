@@ -45,19 +45,19 @@ Example:
 
 ## Folder Structure
 
-<div>
-    <div>└──&nbsp;src</div>
-    <div>&nbsp;&nbsp;&nbsp;&nbsp;├──&nbsp;resources</div>
-    <div>&nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├──&nbsp;bodies</div>
-    <div>&nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;└──&nbsp;data</div>
-    <div>&nbsp;&nbsp;&nbsp;&nbsp;└──&nbsp;scala</div>
-    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└──&nbsp;xxAMIDOxx.xxSTACKSxx.Gatling.Tests</div>
-    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├──&nbsp;config</div>
-    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├──&nbsp;requests</div>
-    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├──&nbsp;scenarios</div>
-    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└──&nbsp;simulations</div>
-</div>
-<br></br>
+```text
+└── src
+   ├── resources
+   │  ├── bodies
+   │  └── data
+   └── scala
+      └── xxAMIDOxx.xxSTACKSxx.Gatling.Tests
+         ├── config
+         ├── requests
+         ├── scenarios
+         └── simulations
+```
+
 
 This folder structure and the contents of each folder follows the guideline outlined in the blog post on [Testing Excellence](https://devqa.io/gatling-maven-performance-test-framework/). It is recommended that users of this framework refer back to this blog post, as it contains all required details.
 
