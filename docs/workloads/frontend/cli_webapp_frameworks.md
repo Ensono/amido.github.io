@@ -33,7 +33,7 @@ At the end of bootstrapping your example framework, you will have an output that
 * and information to start testing immediately
 
 
-#### Development 
+### Development 
 
 ```bash
 npm install
@@ -42,7 +42,7 @@ npm  run dev
 
 This offers live reload of both server side  - *when using ssr* - and client side code.
 
-#### Production 
+### Production 
 
 ```bash
 npm install
