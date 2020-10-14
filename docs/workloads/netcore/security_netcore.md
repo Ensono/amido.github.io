@@ -119,7 +119,7 @@ Once authenticated, any calls made to API endpoints from within the Swagger UI w
 
 ### Component testing secured API endpoints
 
-JWT bearer authentication configuration of the API when being component tested can be found in class CustomAutoDataAttribute. 
+JWT bearer authentication configuration of the API when being component tested can be found in class CustomAutoDataAttribute.
 
 ```C#
 // TODO - Set JWT authentication config settings if enabled
@@ -184,5 +184,9 @@ There are some additional configuration settings available for component testing
 
 The `AuthTokenFixture.cs` class has been provided for storing the static JWT bearer tokens used for component testing.
 
-Authorization
+
+
+
+### Authorization
+
 The Stacks template does not provide any functionality for complex authorization scenarios although this is simple enough to implement using .NET Core Authorization Policies and JWT token claims.

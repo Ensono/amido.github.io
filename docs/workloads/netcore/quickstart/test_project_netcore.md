@@ -57,8 +57,10 @@ Example:
     <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├──&nbsp;scenarios</div>
     <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└──&nbsp;simulations</div>
 </div>
-
+<br></br>
 
 This folder structure and the contents of each folder follows the guideline outlined in the blog post on [Testing Excellence](https://devqa.io/gatling-maven-performance-test-framework/). It is recommended that users of this framework refer back to this blog post, as it contains all required details.
 
-NB: Testing Excellence was written using Gatling 2.3.0, whereas this project is using the current latest version 3.0.3. Contrary to what the blog post says, to run the tests you should use mvn clean gatling:test rather than mvn clean gatling:execute. More details [here](https://gatling.io/docs/current/migration_guides/2.3-to-3.0)
+:::tip
+Testing Excellence was written using Gatling 2.3.0, whereas this project is using the current latest version 3.0.3. Contrary to what the blog post says, to run the tests you should use `mvn clean gatling:test` rather than `mvn clean gatling:execute`. More details [here](https://gatling.io/docs/current/migration_guides/2.3-to-3.0)
+:::

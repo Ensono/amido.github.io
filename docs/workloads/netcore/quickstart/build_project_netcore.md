@@ -4,27 +4,38 @@ title: Build & Run
 sidebar_label: Build & Run the Project
 ---
 
-
 ### Build locally
 
 Move to the `<PROJECT-NAME>/src/api` folder, then
 
-Unix:
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
 
-```text
-export COSMOSDB_KEY=${COSMOSDB_KEY}
+<Tabs
+  groupId="operating-systems"
+  defaultValue="windows"
+  values={[
+  {label: 'Windows', value: 'windows'},
+  {label: 'Linux', value: 'linux'},
+  ]}>
+  <TabItem value="windows">
+   TODO
+  </TabItem>
 
-dotnet restore
-dotnet clean
-dotnet build
-dotnet run --project xxAMIDOxx.xxSTACKSxx.API/xxAMIDOxx.xxSTACKSxx.API.csproj
-```
+  <TabItem value="linux">
+      export COSMOSDB_KEY=&#36;&#123;COSMOSDB_KEY&#125;
+      <br></br>
+      <br></br>
+      dotnet restore
+      <br></br>
+      dotnet clean
+      <br></br>
+      dotnet build
+      <br></br>
+      dotnet run --project xxAMIDOxx.xxSTACKSxx.API/xxAMIDOxx.xxSTACKSxx.API.csproj
+  </TabItem>
+</Tabs>
 
-Windows:
-
-```text
-TODO
-    ```
 
 ### Build using docker container
 

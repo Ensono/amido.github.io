@@ -15,20 +15,20 @@ public class Startup
 {
     public IConfiguration Configuration { get; }
     private readonly IHostingEnvironment _hostingEnv;
- 
+
     public Startup(IHostingEnvironment env, IConfiguration configuration)
     {
         _hostingEnv = env;
         Configuration = configuration;
     }
- 
+
     public void ConfigureServices(IServiceCollection services)
     {
         services
             .AddMvcCore()
             .AddApiExplorer()
             ... Omit for brevity ...;
- 
+
         services
             .AddSwaggerGen(c =>
             {
@@ -39,20 +39,20 @@ public class Startup
                     Title = "API",
                     Description = "APIs endpoints"
                 });
- 
+
                 //will generate models containing only the class name, ignoring the namespace
                 c.CustomSchemaIds(type => type.FriendlyId(false));
-                 
+
                 //Enum will be generated as strings
                 c.DescribeAllEnumsAsStrings();
-                 
+
                 //Will load the comments provided in the code using / / / , the build will generate the xml file in the output folder.
                 // Make sure the project file contains the attribute <GenerateDocumentationFile>true</GenerateDocumentationFile>
                 c.IncludeXmlComments($"{AppContext.BaseDirectory}{Path.DirectorySeparatorChar}{_hostingEnv.ApplicationName}.xml");
- 
+
                 // Show only operations where route starts with v1
                 c.DocumentFilter<VersionPathFilter>("/v1");
- 
+
                 // Include DataAnnotation attributes on Controller Action parameters as Swagger validation rules (e.g required, pattern, ..)
                 // Enforce parameters provided in the path to be required
                 // Use [ValidateModelState] on Actions to actually validate it in C# as well!
