@@ -3,7 +3,7 @@ module.exports = {
   tagline: 'Helping projects gain momentum on digital transformation, with opinionated and modular boilerplate solutions',
   url: 'https://amido.github.io',
   baseUrl: '/stacks/',
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   favicon: 'img/thumbnail_stacks.png',
   organizationName: 'Amido', // Usually your GitHub org/user name.
   projectName: 'Stacks', // Usually your repo name.
