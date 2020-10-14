@@ -4,11 +4,11 @@ title: Intro
 sidebar_label: Intro 
 ---
 
-## What?
+## What
 
 The frontend consists of either CSR or SSR React application, showcasing best coding practices and tooling to develop a fast, scalable frontend application.
 
-## Why?
+## Why
 
 Every new project exists to solve a unique challenge but requires common
 building blocks to get up and running.
