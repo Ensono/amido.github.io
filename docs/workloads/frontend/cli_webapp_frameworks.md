@@ -1,7 +1,7 @@
 ---
 id: cli_webapp_frameworks
-title: Project Types - Web applications
-sidebar_label: Project Types - Web applications
+title: Getting Started
+sidebar_label: Getting Started
 ---
 
 Web applications require a lot of boilerplate. It's also hard to know how to get started without examples. We offer both server side rendered (SSR) and client side rendered (CSR) solutions that can be bootstrapped and tailored to your current project with just one command.
@@ -20,6 +20,7 @@ The best way to get started, is bootstrap the framework using the scaffolding-cl
 
 [![asciicast](https://asciinema.org/a/znvqsWhks970mYkUjGkwFoTKS.svg)](https://asciinema.org/a/znvqsWhks970mYkUjGkwFoTKS)
 
+
 ## Get developing
 
 At the end of bootstrapping your example framework, you will have an output that will contain all the:
@@ -31,7 +32,25 @@ At the end of bootstrapping your example framework, you will have an output that
 * environment variables
 * and information to start testing immediately
 
-You are ready to follow the frameworks README.md and run your app!
+
+### Development 
+
+```bash
+npm install
+npm  run dev
+```
+
+This offers live reload of both server side  - *when using ssr* - and client side code.
+
+### Production 
+
+```bash
+npm install
+npm run build
+npm run start
+```
+
+This will start the app in production mode, so you can see how it would behave deployed!
 
 ## Customising
 
