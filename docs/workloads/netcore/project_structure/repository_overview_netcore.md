@@ -5,7 +5,7 @@ sidebar_label: Repository
 ---
 
 
-```
+```text
 ├── build
 │   ├── azDevOps: stores configuration, build steps and scripts used by azure dev ops only
 │   ├── jenkins: stores configuration, build steps and scripts used by jenkins only

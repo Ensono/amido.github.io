@@ -265,4 +265,6 @@ Nuget Packages
 
 Dependencies
 
-    opt for Adapter or Facade instead of Services
+```text
+opt for Adapter or Facade instead of Services
+```
