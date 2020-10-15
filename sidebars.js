@@ -57,9 +57,17 @@ module.exports = {
             items: [
               'workloads/netcore/quickstart/requirements_netcore',
               'workloads/netcore/quickstart/create_project_netcore',
+              'workloads/netcore/quickstart/configure_project_netcore',
               'workloads/netcore/quickstart/build_and_run_project_netcore',
+              {
+                type: 'category',
+                label: 'Test',
+                items: [
+                  'workloads/netcore/quickstart/testing/functional_testing_netcore',
+                  'workloads/netcore/quickstart/testing/performance_testing_netcore',
+                ]
+              },
               'workloads/netcore/quickstart/deploy_project_netcore',
-              'workloads/netcore/quickstart/test_project_netcore',
               {
                 type: 'category',
                 label: 'Swagger Configuration',

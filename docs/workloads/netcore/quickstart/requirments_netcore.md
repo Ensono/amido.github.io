@@ -34,8 +34,8 @@ values={[
         </li>
         <li>kubectl v1.14+ (provided with docker 2.1.0.1)
             <ul>
-                <li>Also <a
-                        href="https://kubernetes.io/docs/tasks/tools/install-kubectl/#install-kubectl-on-windows">downloaded from k8s.io</a>
+                <li>
+                    Also <a href="https://kubernetes.io/docs/tasks/tools/install-kubectl/#install-kubectl-on-windows">downloaded from k8s.io</a>
                 </li>
             </ul>
         </li>
@@ -52,8 +52,8 @@ values={[
         <li>homebrew</li>
         <li>azure-cli: brew install azure-cli</li>
         <li>.NET Core SDKs 3.1.* or superior: brew cask install dotnet-sdk</li>
-        <li><a
-                href="https://aka.ms/cosmosdb-emulator">CosmosDB Emulator 2.4.5+</a>: Currently the Cosmos emulator can only be run on Windows. If you have an Azure subscription, you are able to use the Azure version instead
+        <li>
+            <a href="https://aka.ms/cosmosdb-emulator">CosmosDB Emulator 2.4.5+</a>: Currently the Cosmos emulator can only be run on Windows. If you have an Azure subscription, you are able to use the Azure version instead
         </li>
         <li>Docker</li>
         <li>kubectl: docker run --name kubectl bitnami/kubectl:latest</li>
@@ -62,5 +62,5 @@ values={[
 </Tabs>
 
 :::note
-The current version of Amido Stacks does not support .net core 3.0, there is a template for .Net Core 2.2 (Obsolete) and .Net Core 3.1 (Current LTS, recommended). Upgrade from 2.2 to 3.1 is being tracker in the following github issue.
+The current version of Amido Stacks does support only .Net Core 3.1.
 :::

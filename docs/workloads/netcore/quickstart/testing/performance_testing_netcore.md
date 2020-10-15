@@ -1,7 +1,7 @@
 ---
-id: test_project_netcore
-title: Testing the application
-sidebar_label: Testing
+id: performance_testing_netcore
+title: Performance testing
+sidebar_label: Performance testing
 ---
 
 ## xxAMIDOxx.xxSTACKSxx.Gatling.Tests
@@ -16,7 +16,7 @@ The project contains a small framework and a couple of tests that can be used to
 
 [Gatling docs](https://gatling.io/docs/current)
 
-Blog post by Amir Gharai which was used to set up the framework - Performance Testing Framework with Gatling and Maven
+Blog post by Amir Gharai which was used to set up the framework - [Performance Testing Framework with Gatling and Maven](https://devqa.io/gatling-maven-performance-test-framework/)
 
 
 
@@ -32,16 +32,18 @@ Blog post by Amir Gharai which was used to set up the framework - Performance Te
 
 Once the project has been cloned locally, tests can be run using the following command:
 
-`mvn clean gatling:test`
+```text
+mvn clean gatling:test
+```
 
 By default, this will run a load test against the GET menu api with 1 user with a ramp up duration of 1 second. There are optional parameters that can be added to change the load test:
 
-`-Dusers=X` - This allows you to set the number of users that will be simulated in the tests
-`-Drampup=X` - This sets the amount of seconds the test will ramp the test load from 0 users to X users in the test
+- `-Dusers=X` - allows to set the number of users that will be simulated in the tests
+- `-Drampup=X` - sets the amount of seconds the test will ramp the test load from 0 users to X users in the test
 
-Example:
-
-`mvn clean gatling:test -Dusers=100 -Drampup=5`
+```text title="Example"
+mvn clean gatling:test -Dusers=100 -Drampup=5`
+```
 
 ## Folder Structure
 

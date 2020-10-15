@@ -19,22 +19,31 @@ import TabItem from "@theme/TabItem";
   {label: 'Linux', value: 'linux'},
   ]}>
   <TabItem value="windows">
-   TODO
+      dotnet restore
+      <br />
+      dotnet clean
+      <br />
+      dotnet build
+      <br />
+      dotnet run --project xxAMIDOxx.xxSTACKSxx.API/xxAMIDOxx.xxSTACKSxx.API.csproj
   </TabItem>
 
   <TabItem value="linux">
       export COSMOSDB_KEY=&#36;&#123;COSMOSDB_KEY&#125;
-      <br></br>
-      <br></br>
+      <br />
+      <br />
       dotnet restore
-      <br></br>
+      <br />
       dotnet clean
-      <br></br>
+      <br />
       dotnet build
-      <br></br>
+      <br />
       dotnet run --project xxAMIDOxx.xxSTACKSxx.API/xxAMIDOxx.xxSTACKSxx.API.csproj
   </TabItem>
 </Tabs>
+
+<br />
+<br />
 
 ### Verify that the application has started
 
@@ -48,7 +57,7 @@ browser to [http://localhost:5000/swagger/index.html](http://localhost:5000/swag
 
 From the `<PROJECT-NAME>/src/api` folder, build a Docker image using e.g. the command below:
 
-```text
+```text title="Build docker image command"
 docker build -t dotnet-api .
 ```
 
@@ -56,7 +65,9 @@ This uses the `Dockerfile` in this folder to generate the Docker image.
 
 Once the Docker image is created, you can then run a Docker container based on this image using e.g.
 
-`docker run -p 5000:80 --mount type=bind,source=/path/to/PROJECT-NAME/src/api/xxAMIDOxx.xxSTACKSxx.API/appsettings.json,target=/app/config/appsettings.json -e COSMOSDB_KEY=your-key dotnet-api:latest`
+```text title="Run docker container command"
+docker run -p 5000:80 --mount type=bind,source=/path/to/PROJECT-NAME/src/api/xxAMIDOxx.xxSTACKSxx.API/appsettings.json,target=/app/config/appsettings.json -e COSMOSDB_KEY=your-key dotnet-api:latest`
+```
 
 where the `COSMOSDB_KEY` is the value as described above. Note that the `appsettings.json` value is mounted here for running locally,
 but not if the full project is deployed to Azure, where the build process will perform the substitution.
