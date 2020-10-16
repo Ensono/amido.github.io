@@ -58,6 +58,6 @@ steps:
       GIT_USER="$(GIT_USER_NAME)" npm run publish
     displayName: "Publish: GitHub Pages"
     workingDirectory: $(working_directory)
-    condition: and(succeeded(), contains($(branch_name), $(master_branch)))
+    condition: and(contains(variables['build.sourceBranch'], 'refs/heads/master'), succeeded())
 
 
