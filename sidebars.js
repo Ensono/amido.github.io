@@ -67,6 +67,12 @@ module.exports = {
       "testing/cli_testing_frameworks",
       "testing/testing_serenity_bdd",
       "testing/testing_static",
+      "testing/visual_analysis",
+      "testing/accessibility_testing",
+      "testing/contract_testing_pact",
+      "testing/testing_selenium",
+      "testing/performance_testing_gatling",
+      "testing/static_analysis",
     ],
     Packages: [
       "packages/packages",
