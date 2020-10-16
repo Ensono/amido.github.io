@@ -29,10 +29,6 @@ variables:
   - name: working_directory
     value: '$(Agent.BuildDirectory)/s/$(self_repo)'
   - group: amido-stacks-webapp
-  - name: branch_name
-    value: variables['build.sourceBranch']
-  - name: master_branch
-    value: 'refs/heads/master'
 
 
 steps:
