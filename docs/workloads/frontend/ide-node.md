@@ -13,3 +13,4 @@ These extentions are not required, but they provide features that we find helpfu
 - [EsLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) - To lint the code according to be practises
 - [Pretier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) - To Format the code in a standerized way
 - [Eslint-Prettier](https://marketplace.visualstudio.com/items?itemName=rvest.vs-code-prettier-eslint) - Allows eslint to be aware of prettier rules
+

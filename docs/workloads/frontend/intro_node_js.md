@@ -1,8 +1,10 @@
 ---
 id: intro_node_js
-title: Intro 
-sidebar_label: Intro 
+title: Intro
+sidebar_label: Intro
 ---
+
+
 
 ## What
 
@@ -19,7 +21,3 @@ solution.
 
 Amido Stacks brings 10 years of client expertise to every project, providing
 fast, flexible, bespoke value in an accelerated environment.
-
-## CSR vs SSR
-
-Picking on wether to go CSR and SSR will depend on the project at hand, usually if SEO is of high priority (Ecommerce for example) using SSR is the recomended aproach.

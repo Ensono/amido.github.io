@@ -29,8 +29,17 @@ module.exports = {
           "workloads/frontend/environment_variables_nodejs",
           "workloads/frontend/cli_webapp_frameworks",
           "workloads/frontend/monorepo",
+          "workloads/frontend/cms",
+          "workloads/frontend/identity",
+          "workloads/frontend/api_definition",
+          "workloads/frontend/logging_node_js",
+
+          "workloads/frontend/state-management",
+
           "workloads/frontend/browser_support",
           "workloads/frontend/server_side_cache",
+          "workloads/frontend/deployment_node_js",
+
         ],
       },
       {
