@@ -1,9 +1,8 @@
 ---
 id: identity
-title: Auth0
+title: Identity using Auth0
 sidebar_label: Identity using Auth0
 ---
-# Identity
 
 - [Auth0](https://auth0.com/) is the Identity-as-a-Service (IDaaS) used in the
   stacks demo.
@@ -30,6 +29,8 @@ AUTH0_CLIENT_SECRET=<AUTH0_CLIENT_SECRET> \
 
 ## Redis Cache [Optional]
 
+<!-- markdownlint-disable MD033  MD007 MD029-->
+
 <details>
   <summary>More details</summary>
 
@@ -37,13 +38,12 @@ AUTH0_CLIENT_SECRET=<AUTH0_CLIENT_SECRET> \
   [ioredis](https://github.com/luin/ioredis) is the redis client used due to its
   robust and performance-focus.
 
-### Implementation
+### Implementation of Redis Cache
 
 1. Download Redis to local machine (Follow instruction
    [here](https://redis.io/topics/quickstart))
 
 - It is a good idea to copy both the Redis server and the command line interface
-  into
 
 2. Redis-cli is useful tool to query the local redis server
 
@@ -58,7 +58,7 @@ PONG \\response from server
 
 4. Build and start the Yumido application.
 
-### Environmental variables
+### Environmental variables for Redis
 
 ```bash
 npx cross-env \
@@ -74,7 +74,11 @@ REDIS_ENABLED=true \
 
 </details>
 
+
 ## Reference
 
 - [Auth0 Passport blog](https://auth0.com/blog/next-js-authentication-tutorial/)
 - [Redis quick start](https://redis.io/topics/quickstart)
+
+
+<!-- markdownlint-enable MD033 -->

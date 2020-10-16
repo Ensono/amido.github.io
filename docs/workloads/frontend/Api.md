@@ -108,8 +108,8 @@ Sample implementation from a page can be seen in
 Key things to note:
 
 - `import api from "constants/apis/menu";`
-  - multiple APIs from constants can be instatiated
-  - e.g. `import menuApi from "constants/apis/menu";`
+- multiple APIs from constants can be instatiated
+- e.g. `import menuApi from "constants/apis/menu";`
     `import categoryApi from "constants/apis/menu";`
 
 ```javascript

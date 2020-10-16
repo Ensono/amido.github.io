@@ -125,7 +125,7 @@ NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN=<ACCESS_TOKEN> \
 NEXT_PUBLIC_CONTENTFUL_PREVIEW_ACCESS_TOKEN=<PREVIEW_TOKEN> \
 ```
 
-## ⚠️ Important 👷‍♀️🚧
+## ⚠️ Important 👷‍♀️
 
 > Locale switcher strictly relies on the route. For example the route has to
 > always start with `/blog/posts` and should following slug should always start

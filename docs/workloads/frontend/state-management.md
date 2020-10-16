@@ -4,7 +4,7 @@ title: State Management
 sidebar_label: State Management Patterns
 ---
 
-## Tools used:
+## Tools used
 
 - [React-redux](https://react-redux.js.org/)
 - [Redux-saga](https://github.com/redux-saga/redux-saga)

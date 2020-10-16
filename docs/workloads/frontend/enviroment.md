@@ -20,7 +20,7 @@ This values will be automatically picked up and used by the underlying server an
  APP_BASE_PATH=""
 
 ```
-
+<!-- markdownlint-disable MD033 -->
 <Tabs
 defaultValue="linux"
 values={[
@@ -60,3 +60,5 @@ export NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN= ### <br/>
   </TabItem>
 
 </Tabs>
+
+<!-- markdownlint-enable MD033  -->

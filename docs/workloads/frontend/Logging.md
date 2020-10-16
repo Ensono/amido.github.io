@@ -14,4 +14,5 @@ variables.
 
 AppInsights collects the console logs provided by the Winston.
 AppInsights on Client side is implemented using a React HOC(Higher order
-component) to the Next's `_app.ts`. 
+component) to the Next's `_app.ts`.
+ 
