@@ -22,11 +22,10 @@ To get started with performance testing, first clone the [Amido Stacks Performan
 
 ## Useful Documentation
 
-Gatling docs - https://gatling.io/docs/current
+Gatling docs - <https://gatling.io/docs/current>
 
-Blog post by Amir Gharai which was used to set up the framework - 
+Blog post by Amir Gharai which was used to set up the framework -
 [Performance Testing Framework with Gatling and Maven](https://www.testingexcellence.com/gatling-maven-performance-test-framework/)
-
 
 ## Quick run
 
@@ -55,7 +54,7 @@ For example: `mvn clean gatling:test -Denv=test`
 
 Each environment variable will programmatically point to its respective properties files.
 
-For example: 
+For example:
 
 - **local - local.application.properties**
 

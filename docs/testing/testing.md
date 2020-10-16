@@ -170,4 +170,3 @@ For example, if an API URL changes, you will only have a single place to change 
 
  Note that the environment variables are required on the hosting platform, e.g.
 `export NODE_ENV=dev`
-
