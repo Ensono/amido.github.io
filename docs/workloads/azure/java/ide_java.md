@@ -1,7 +1,7 @@
 ---
 id: ide_java
 title: IDE guidelines for the Java Rest API
-sidebar_label: IDE guidelines for the Java Rest API
+sidebar_label: IDE guidelines
 ---
 
 ## IDE guidelines for the Java Spring Boot Rest API

@@ -34,7 +34,7 @@ pipeline do the rest (if it passes all the tests that is).
 
 ## Our packages
 
-`stacks-webapp-template` is a [monorepo](../../workloads/frontend/monorepo.md), meaning it is divided
+`stacks-webapp-template` is a [monorepo](../../workloads/azure/frontend/monorepo.md), meaning it is divided
 into independent sub-packages.
 
 These packages can be found in the packages/ directory:
@@ -65,7 +65,7 @@ consumers of the packages to update their versions as needed.
 
 ## Automated package publishing
 
-Lerna is embedded as a step in the [monorepo](../../workloads/frontend/monorepo.md) pipeline. Check out
+Lerna is embedded as a step in the [monorepo](../../workloads/azure/frontend/monorepo.md) pipeline. Check out
 the pipeline step
 `[publish-packages-lerna.yml](./build/azDevOps/azure/templates/steps/publish-packages-lerna.yml)`
 for more information on how this is done.

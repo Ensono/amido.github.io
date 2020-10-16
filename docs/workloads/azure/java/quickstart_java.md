@@ -1,7 +1,7 @@
 ---
 id: quickstart_java
 title: Getting started with the Java Rest API application
-sidebar_label: Getting started with the Java Rest API application
+sidebar_label: Getting started
 ---
 
 ## Using the repository to build the Java Spring Boot Rest API application
