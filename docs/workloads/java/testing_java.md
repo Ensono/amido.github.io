@@ -1,7 +1,7 @@
 ---
 id: testing_java
 title: Testing the Java Rest API
-sidebar_label: Testing the Java Rest API
+sidebar_label: Testing the application
 ---
 
 ## Testing the application
