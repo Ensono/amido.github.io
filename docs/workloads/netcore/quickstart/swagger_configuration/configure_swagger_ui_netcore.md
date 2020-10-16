@@ -1,13 +1,20 @@
 ---
 id: configure_swagger_ui_netcore
 title: Configure Swagger UI
+hide_title: true
 sidebar_label: Swagger UI
+hide_table_of_contents: true
 ---
 
-Configure the Swagger U.Interface to consume the generated documents
-Once we get a OpenAPI spec, we need to configure swagger UI to load the spec generated in the step above, the process achievable simply by using the extension UseSwaggerUI() passing the spec path to the method SwaggerEndpoint().
+## Configure Swagger UI
 
-```jsx title="Startup.cs (Configure UI to load spec)"
+<br />
+
+### Configure the Swagger U.Interface to consume the generated documents
+
+To configure the Swagger UI, spec path along with the name of the spec must be passed in the `SwaggerEndpoint()` method within the `UseSwaggerUI()` extension.
+
+```C# {19} title="Startup.cs"
 public class Startup
 {
     public Startup(IHostingEnvironment env, IConfiguration configuration){... Omit for brevity ...}
@@ -32,9 +39,11 @@ public class Startup
 }
 ```
 
-The above snippet register the v1/swagger.json in the UI, once the UI is loaded, it will try to load the documents registered by SwaggerEndpoint();
+The above snippet registers the `v1/swagger.json` in the UI. Once the UI is loaded,  the documents registered by `SwaggerEndpoint()` will be loaded.
 
-For registering multiple spec versions, simply register multiple document generations by calling the .AddSwaggerGen(c => ...) multiple times, changing just the document filter from /v1 to the version desired. ie:
+<br />
+
+For registering multiple spec versions, simply register multiple document generations by calling the `.AddSwaggerGen(c => ...)` multiple times, changing just the document filter from `/v1` to the version desired.
 
 ```jsx title="Swagger multiple doc spec"
 From:
@@ -49,7 +58,7 @@ c.DocumentFilter<VersionPathFilter>("/v2");
 And register the new endpoint in the UI like below:
 
 
-```jsx title="Swagger UI registration"
+```C# title="Swagger UI registration"
 app
     .UseMvc()
     .UseSwagger()
@@ -66,33 +75,33 @@ app
 
 When multiple versions are available, might be useful to register a general spec with all endpoints
 
-```jsx title="Swagger default spec with all endpoints"
+```C# title="Swagger default spec with all endpoints"
 SwaggerDoc("all", new Info());
 //c.DocumentFilter<VersionPathFilter>("/v2"); //Remove the filter
 ```
 
-Annotate controllers with endpoint details to group in the right spec
+Annotate controllers with endpoint details to group in the right spec.
 OpenAPI uses the concept of tags to group endpoints related to the same resource type, each tag will represent a group in the swagger ui.
 
-By default, Swagger doc generation creates a tag using the controller name, this way, multiple actions(endpoints) found inside the same controller will be grouped in the same tag.
+By default, Swagger doc generation creates a tag using the controller name. This way, multiple actions(endpoints) found inside the same controller will be grouped in the same tag.
 
-The problem with this approach is that makes it harder to group endpoints if they are located on different controllers, to avoid this problem, we can configure swagger to group the endpoints by ApiGroup.
+The problem with this approach is that makes it harder to group endpoints if they are located on different controllers. To avoid this problem, Swagger can be configured to group the endpoints by ApiGroup.
 
-ApiGroup is a concept introduced in ASP.NET Core, we decorate the controller with the attribute ApiExplorerSettingsAttribute, and set the GroupName to the Tag expected in swagger. i.e:
+ApiGroup is a concept introduced in ASP.NET Core. It requires the controller to be decorated with the attribute ApiExplorerSettingsAttribute, the GroupName  to be set to the Tag expected in swagger as below.
 
-```jsx title="Controller decorated with Api Group"
+```C# title="Controller decorated with Api Group"
 [ApiExplorerSettings(GroupName = "Category")]
 public class AddMenuCategoryController : ControllerBase { ... actions ... }
 ```
 
-The trick details is, when we group api endpoints by something other than the default group, we have to change the c.DocInclusionPredicate() filter that uses the default group, otherwise the endpoints won't be included in the docs.
+To group api endpoints by something other than the default group, change the `c.DocInclusionPredicate()` filter used in the default group, otherwise the endpoints won't be included in the docs.
 
-We also have to tell swagger how to group endpoints by passing the group predicate to the method c.TagActionsBy(),
+To group endpoints pass the group predicate to the method `c.TagActionsBy()`.
 
-Once we configure the endpoints with the group names, we add the following code to the swagger doc generation:
+The following code has to be added to the swagger doc generation:
 
 
-```jsx title="Swagger configuration for ApiGroup"
+```C# title="Swagger configuration for ApiGroup"
 services.AddSwaggerGen(c => {
 
     //By Default, all endpoints are grouped by the controller name
@@ -105,5 +114,6 @@ services.AddSwaggerGen(c => {
 ```
 
 
-Once you configure all steps above, you should have a swagger ui like below:
+The swagger configuration is complete and the swagger ui should be available as below.
+
 ![Swagger UI](/img/swagger-ui-info.png)

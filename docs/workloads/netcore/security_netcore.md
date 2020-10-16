@@ -14,17 +14,18 @@ The .NET Core Stacks API template contains code which can easily be configured t
 
 To verify the JWT bearer tokens we use the standard [.NET Core JWT bearer middleware](https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication.JwtBearer).
 
-By default this functionality is disabled but can easily be enabled by changing the configuration settings.
+By default this functionality is disabled but it can easily be enabled by changing the configuration settings.
 
 
 
 ### Configuration
 
-JWT bearer authentication on API endpoints can be configured by changing settings in JwtBearerAuthentication section of the application configuration file appsettings.json.
+JWT bearer authentication on API endpoints can be configured by changing settings in `JwtBearerAuthentication` section of the application configuration file `appsettings.json`.
 
 This is the default section:
 
-```"JwtBearerAuthentication": {
+```json title="JWT Bearer Authentication Configuration settings"
+"JwtBearerAuthentication": {
     "Audience": "<TODO>",
     "Authority": "<TODO>",
     "Enabled": false,
@@ -35,11 +36,10 @@ This is the default section:
     }
 ```
 
-By default the Enabled flag in the configuration section is set to false which means that all API endpoints can be consumed without any authentication (even if the endpoint has an `[Authorize]` attribute on it).
+By default the `Enabled` flag in the configuration section is set to false which means that all API endpoints can be consumed without any authentication (even if the endpoint has an `[Authorize]` attribute on it).
 
-To enable authentication on all endpoints with an `[Authorize]` attribute set the Enabled flag to true and set the Audience and Authority values based on the values from your identity provider.
+To enable authentication on all endpoints with an `[Authorize]` attribute set the Enabled flag to true and set the `Audience` and `Authority` values based on the values from your identity provider.
 
-<pre>
 <table>
     <thead>
         <tr>
@@ -59,16 +59,15 @@ To enable authentication on all endpoints with an `[Authorize]` attribute set th
         <tr>
             <td>Authority</td>
             <td>The expected value of the iss (issuer) claim in the JWT bearer token. This is usually the domain of the
-                OAuth 2.0 authorization server from your identity provider. <br></br>This is also used by the JWT bearer
+                OAuth 2.0 authorization server from your identity provider. <br /><br />This is also used by the JWT bearer
                 middleware to retrieve the public key from the identity provider (via standard OAuth 2.0 .well-known
                 endpoints) which was used to sign the token to check it was signed by the correct authority.</td>
             <td><a href="https://stacks-amido.eu.auth0.com/">https://stacks-amido.eu.auth0.com/</a></td>
         </tr>
     </tbody>
 </table>
-</pre>
 
-By setting the Enabled, Audience and Authority settings this will be enough to secure your API endpoints.
+By setting the `Enabled`, `Audience` and `Authority` settings this will be enough to secure your API endpoints.
 
 There are however some additional configuration settings and steps available to enable JWT authentication in Open API (Swagger documentation) and to allow component testing of the API endpoints using static test bearer tokens. These will be covered in the following sections.
 
@@ -78,7 +77,6 @@ There are however some additional configuration settings and steps available to 
 
 To enable API users to authenticate on the Swagger documentation page via the Authorization Code with PKCE (recommended) and Implicit OAuth 2.0 flows the following settings need to be configured:
 
-<pre>
 <table>
 <thead>
   <tr>
@@ -90,7 +88,7 @@ To enable API users to authenticate on the Swagger documentation page via the Au
 <tbody>
   <tr>
     <td>OpenApi.AuthorizationUrl</td>
-    <td>This url is used to authenticate the user to the authorization server.<br></br>The user is redirected to this url where they login and are redirected back to the Swagger page.<br></br>This is used for both the Authorization Code with PKCE and Implicit flows.<br></br>For Authorization Code with PKCE flow a code is returned.<br></br>For Implicit flow a token is returned.</td>
+    <td>This url is used to authenticate the user to the authorization server.<br /><br />The user is redirected to this url where they login and are redirected back to the Swagger page.<br /><br />This is used for both the Authorization Code with PKCE and Implicit flows.<br /><br />For Authorization Code with PKCE flow a code is returned.<br /><br />For Implicit flow a token is returned.</td>
     <td>https://stacks-amido.eu.auth0.com/authorize?audience=https://api.stacks.com</td>
   </tr>
   <tr>
@@ -100,12 +98,11 @@ To enable API users to authenticate on the Swagger documentation page via the Au
   </tr>
   <tr>
     <td>OpenApi.TokenUrl</td>
-    <td>This url is used to retrieve a JWT access token for the user using the code returned from the AuthorizationUrl.<br></br>This is used for the Authorization Code with PKCE flow only.</td>
+    <td>This url is used to retrieve a JWT access token for the user using the code returned from the AuthorizationUrl.<br /><br />This is used for the Authorization Code with PKCE flow only.</td>
     <td>https://stacks-amido.eu.auth0.com/oauth/token</td>
   </tr>
 </tbody>
 </table>
-</pre>
 
 Once set, a padlock will appear on the Swagger UI next to any API endpoint secured with an [Authorize] attribute.
 
@@ -115,13 +112,13 @@ Alternatively, if you already have a JWT bearer token you can use the "bearer (a
 
 Once authenticated, any calls made to API endpoints from within the Swagger UI will pass a JWT bearer token for your user in the Authorization header of the request.
 
-
+<br />
 
 ### Component testing secured API endpoints
 
-JWT bearer authentication configuration of the API when being component tested can be found in class CustomAutoDataAttribute.
+JWT bearer authentication configuration of the API when being component tested can be found in class `CustomAutoDataAttribute`.
 
-```C#
+```C# title="CustomAutoDataAttribute.cs"
 // TODO - Set JWT authentication config settings if enabled
 var jwtBearerAuthenticationConfiguration = new JwtBearerAuthenticationConfiguration
 {
@@ -159,21 +156,21 @@ There are some additional configuration settings available for component testing
     <tbody>
         <tr>
             <td>AllowExpiredTokens</td>
-            <td>Allows expired tokens to be used when authenticating against the API endpoints.<br></br>When set to
+            <td>Allows expired tokens to be used when authenticating against the API endpoints.<br /><br />When set to
                 true, this allows us to use static bearer tokens in the tests.</td>
             <td>true</td>
         </tr>
         <tr>
             <td>UseStubbedBackChannelHandler</td>
             <td>Allows us to use a handler in the tests to stub the calls to the OAuth 2.0 identity provider to retrieve
-                the public key used to sign the JWT tokens.<br></br>When set to true, the stubbed responses from the
+                the public key used to sign the JWT tokens.<br /><br />When set to true, the stubbed responses from the
                 identity provider must be placed in the corresponding methods in file
                 StubJwtBearerAuthenticationHttpMessageHandler.cs. The public key in the stubbed handler must match the
-                key used to sign the test bearer tokens.<br></br>When set to false, the JWT tokens will be verified as
+                key used to sign the test bearer tokens.<br /><br />When set to false, the JWT tokens will be verified as
                 normal (i.e. the public key used to verify the token will be retrieved using the OAuth 2.0 identity
-                providers .well-known endpoints). <br></br>The benefits of using a stubbed handler to retrieve the
-                public key are:<br></br>1. Component tests are more robust as they don't depend on OAuth 2.0 provider
-                endpoints being available.<br></br>2. Component tests are faster.<br></br>3. When OAuth 2.0 provider
+                providers .well-known endpoints). <br /><br />The benefits of using a stubbed handler to retrieve the
+                public key are:<br />1. Component tests are more robust as they don't depend on OAuth 2.0 provider
+                endpoints being available.<br />2. Component tests are faster.<br />3. When OAuth 2.0 provider
                 public keys are rotated we don't need to regenerate the static bearer tokens we are using in component
                 tests.</td>
             <td>true</td>
@@ -185,7 +182,7 @@ There are some additional configuration settings available for component testing
 The `AuthTokenFixture.cs` class has been provided for storing the static JWT bearer tokens used for component testing.
 
 
-
+<br />
 
 ### Authorization
 

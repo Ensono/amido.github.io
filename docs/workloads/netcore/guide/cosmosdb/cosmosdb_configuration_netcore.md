@@ -3,7 +3,7 @@ id: cosmosdb_configuration_netcore
 title: CosmosDB Configuration
 ---
 
-# Configure Cosmos DB Collection for Stacks in Cosmos Db Emulator
+## Configure Cosmos DB Collection for Stacks in Cosmos Db Emulator
 
 <br />
 

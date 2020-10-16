@@ -2,8 +2,11 @@
 id: functional_testing_netcore
 title: Functional testing
 sidebar_label: Functional testing
+hide_title: true
+hide_table_of_contents: false
 ---
 
+# Functional testing
 
 The Automated Functional Tests is a sample project demonstrating functional testing created using BDDfy and XUnit.
 
