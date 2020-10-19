@@ -2,7 +2,7 @@
 id: consummer_driven_contract_testing_netcore
 title: Consumer Driven Contract Testing
 hide_title: true
-hide_table_of_contents: true
+hide_table_of_contents: false
 ---
 
 ## Consumer Driven Contract Testing

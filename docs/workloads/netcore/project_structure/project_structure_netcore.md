@@ -13,24 +13,24 @@ hide_table_of_contents: true
 ```text
 Solution 'xxAMIDOxx.xxSTACKSss.API'
 ├── API
-│      ├── xxAMIDOxx.xxSTACKSxx.API
-│      ├── xxAMIDOxx.xxSTACKSxx.API.Models
-│      └── xxAMIDOxx.xxSTACKSxx.API.ContractTests
+│  ├── xxAMIDOxx.xxSTACKSxx.API
+│  ├── xxAMIDOxx.xxSTACKSxx.API.Models
+│  └── xxAMIDOxx.xxSTACKSxx.API.ContractTests
 ├── Application
-│      ├── xxAMIDOxx.xxSTACKSxx.Application.CommandHandlers
-│      ├── xxAMIDOxx.xxSTACKSxx.Application.Integration
-│      ├── xxAMIDOxx.xxSTACKSxx.Application.QueryHandlers
+│  ├── xxAMIDOxx.xxSTACKSxx.Application.CommandHandlers
+│  ├── xxAMIDOxx.xxSTACKSxx.Application.Integration
+│  ├── xxAMIDOxx.xxSTACKSxx.Application.QueryHandlers
 ├── Domain
-│      ├── xxAMIDOxx.xxSTACKSxx.Domain
-│      └── External
+│  ├── xxAMIDOxx.xxSTACKSxx.Domain
+│  └── External
 ├── Shared
-│      ├── xxAMIDOxx.xxSTACKSxx.Common
-│      └── xxAMIDOxx.xxSTACKSxx.CQRS
+│  ├── xxAMIDOxx.xxSTACKSxx.Common
+│  └── xxAMIDOxx.xxSTACKSxx.CQRS
 └── Tests
-       ├── xxAMIDOxx.xxSTACKSxx.API.ComponentTests
-       ├── xxAMIDOxx.xxSTACKSxx.Common.UnitTests
-       ├── xxAMIDOxx.xxSTACKSxx.Domain.UnitTests
-       └── xxAMIDOxx.xxSTACKSxx.Infrastructure.IntegrationTests
+   ├── xxAMIDOxx.xxSTACKSxx.API.ComponentTests
+   ├── xxAMIDOxx.xxSTACKSxx.Common.UnitTests
+   ├── xxAMIDOxx.xxSTACKSxx.Domain.UnitTests
+   └── xxAMIDOxx.xxSTACKSxx.Infrastructure.IntegrationTests
 ```
 
 import Tabs from "@theme/Tabs";
@@ -69,6 +69,7 @@ import TabItem from "@theme/TabItem";
             Having the constructor depending on abstractions also makes the API flexible for Contract Testing, where the interfaces can me mocked
             and don't require a dependency to the Application.
         </p>
+        <br />
         <h3>Company.Project.Models</h3>
         <p>
             The <strong>Models</strong> exposed by the API have been pulled out of the API project to make them reusable. The
@@ -131,6 +132,7 @@ import TabItem from "@theme/TabItem";
                 queries on their respective services and forward the calls from the APIs.
             </li>
         </ul>
+        <br />
         <h3>Company.Project.Application.CommandHandlers</h3>
         <p>The <strong>CommandHandlers</strong> contain implementations of <code>ICommandHandler</code> interface. Each handler expect it's
             own command type and handles it's own logic.
@@ -277,6 +279,7 @@ import TabItem from "@theme/TabItem";
         <p>
             Each set of tests will have a level of coverage and different level of details.
         </p>
+        <br />
         <h3>Company.Project.API.ComponentTests</h3>
         <p>
             The <strong>ComponentTests</strong> covers the overall service from edge to edge without external
@@ -313,6 +316,7 @@ import TabItem from "@theme/TabItem";
         <p>
             Unit tests for x.y.Domain project. For unit tests details please refer to Test Definitions
         </p>
+        <br />
         <h3>Company.Project.Infrastructure.IntegrationTests</h3>
         <p>
             Integration tests is a level of test focused on testing the interaction of two or more components and identify if
@@ -354,11 +358,12 @@ import TabItem from "@theme/TabItem";
                 header, url path, and so one.</li>
             <li>Check if a value is cached correctly when retrieved from an external storage.</li>
         </ul>
+        <br />
         <h3>Company.Project.API.ContractTests</h3>
         <p>Contract tests cover testing of the API contracts between the provider of an API service and the consumer of the API
             service. Documentation for contract testing can be found within the following documentation:</p>
-        <p>Testing Scope</p>
-        <p>Consumer-Driven Contract Testing</p>
+        <p><a href="/docs/workloads/netcore/project_structure/testing/testing_scope_netcore">Testing Scope</a></p>
+        <p><a href="/docs/workloads/netcore/project_structure/testing/consummer_driven_contract_testing_netcore">Consumer-Driven Contract Testing</a></p>
         <p>What Is: Consumer Driven Contract Testing&nbsp;[Draft]</p>
     </TabItem>
 </Tabs>
