@@ -1,7 +1,7 @@
 ---
 id: intro_node_js
-title: Intro 
-sidebar_label: Intro 
+title: Introduction
+sidebar_label: Introduction
 ---
 
 ## What
