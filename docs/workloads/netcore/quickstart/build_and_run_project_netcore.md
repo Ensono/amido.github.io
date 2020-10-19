@@ -73,5 +73,5 @@ docker run -p 5000:80 --mount type=bind,source=/path/to/PROJECT-NAME/src/api/xxA
 The **COSMOSDB_KEY** described in the command above has to be passed when running the container. Note that the **appsettings.json** value is mounted here for running locally,
 but not if the full project is deployed to Azure, where the build process will perform the substitution.
 
-
 :::
+
