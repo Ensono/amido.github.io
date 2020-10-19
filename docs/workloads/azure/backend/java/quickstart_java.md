@@ -15,7 +15,7 @@ This is version `1.0.0` of the `java-stacks` project.
 
 ### Running the application locally
 
-1. Clone the Java project to your local machine from here: [stacks-java repository](https://github.com/amido/stacks-java)
+1. Clone the Java project to your local machine from here: [stacks-java repository](https://github.com/amido/stacks-java/tree/api-with-no-cqrs)
 2. Configure required environment variables
 
     The application is currently configured to work with the Azure environment.
