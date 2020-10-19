@@ -22,75 +22,95 @@ module.exports = {
       },
       {
         type: "category",
-        label: "Frontend Web Applications",
+        label: "Azure",
         items: [
-          "workloads/frontend/intro_node_js",
-          "workloads/frontend/ide_node_js",
-          "workloads/frontend/environment_variables_nodejs",
-          "workloads/frontend/cli_webapp_frameworks",
-          "workloads/frontend/monorepo",
-          "workloads/frontend/browser_support",
-          "workloads/frontend/server_side_cache",
+          {
+            type: "category",
+            label: "Frontend Web Applications",
+            items: [
+              "workloads/azure/frontend/intro_node_js",
+              "workloads/azure/frontend/ide_node_js",
+              "workloads/azure/frontend/environment_variables_nodejs",
+              "workloads/azure/frontend/cli_webapp_frameworks",
+              "workloads/azure/frontend/monorepo",
+              "workloads/azure/frontend/browser_support",
+              "workloads/azure/frontend/server_side_cache",
+            ],
+          },
+          {
+            type: "category",
+            label: "Java Spring Boot REST API Application",
+            items: [
+              'workloads/azure/java/intro_java',
+              'workloads/azure/java/quickstart_java',
+              'workloads/azure/java/scaffolding_java',
+              'workloads/azure/java/ide_java',
+              'workloads/azure/java/structure_java',
+              'workloads/azure/java/testing_java',
+              'workloads/azure/java/end_to_end_testing_java'
+            ],
+          },
+          {
+            type: 'category',
+            label: '.NET Core REST API Application',
+            items: [
+              'workloads/azure/netcore/introduction_netcore',
+              {
+                type: 'category',
+                label: 'Getting started',
+                items: [
+                  'workloads/azure/netcore/quickstart/requirements_netcore',
+                  'workloads/azure/netcore/quickstart/create_project_netcore',
+                  'workloads/azure/netcore/quickstart/configure_project_netcore',
+                  'workloads/azure/netcore/quickstart/build_and_run_project_netcore',
+                  {
+                    type: 'category',
+                    label: 'Test',
+                    items: [
+                      'workloads/azure/netcore/quickstart/testing/functional_testing_netcore',
+                      'workloads/azure/netcore/quickstart/testing/performance_testing_netcore',
+                    ]
+                  },
+                  'workloads/azure/netcore/quickstart/deploy_project_netcore',
+                  {
+                    type: 'category',
+                    label: 'Swagger Configuration',
+                    items: [
+                      'workloads/azure/netcore/quickstart/swagger_configuration/configure_swagger_netcore',
+                      'workloads/azure/netcore/quickstart/swagger_configuration/configure_swagger_ui_netcore',
+                    ]
+                  },
+                ]
+              },
+              'workloads/azure/netcore/logging_netcore',
+              'workloads/azure/netcore/security_netcore',
+              {
+                type: 'category',
+                label: 'Architecture',
+                items: [
+                  'workloads/azure/netcore/project_structure/architecture_overview_netcore',
+                  'workloads/azure/netcore/project_structure/repository_overview_netcore',
+                  'workloads/azure/netcore/project_structure/project_structure_netcore'
+                ]
+              }
+            ]
+          }
         ],
       },
       {
         type: "category",
-        label: "Java Spring Boot REST API Application",
+        label: "Google Cloud Platform",
         items: [
-          'workloads/java/intro_java',
-          'workloads/java/quickstart_java',
-          'workloads/java/scaffolding_java',
-          'workloads/java/ide_java',
-          'workloads/java/structure_java',
-          'workloads/java/testing_java',
-          'workloads/java/end_to_end_testing_java'
-        ]
+          "workloads/gcp/workloads_gcp_readme",
+        ],
       },
       {
-        type: 'category',
-        label: '.NET Core REST API Application',
+        type: "category",
+        label: "Amazon Web Services",
         items: [
-          'workloads/netcore/introduction_netcore',
-          {
-            type: 'category',
-            label: 'Getting started',
-            items: [
-              'workloads/netcore/quickstart/requirements_netcore',
-              'workloads/netcore/quickstart/create_project_netcore',
-              'workloads/netcore/quickstart/configure_project_netcore',
-              'workloads/netcore/quickstart/build_and_run_project_netcore',
-              {
-                type: 'category',
-                label: 'Test',
-                items: [
-                  'workloads/netcore/quickstart/testing/functional_testing_netcore',
-                  'workloads/netcore/quickstart/testing/performance_testing_netcore',
-                ]
-              },
-              'workloads/netcore/quickstart/deploy_project_netcore',
-              {
-                type: 'category',
-                label: 'Swagger Configuration',
-                items: [
-                  'workloads/netcore/quickstart/swagger_configuration/configure_swagger_netcore',
-                  'workloads/netcore/quickstart/swagger_configuration/configure_swagger_ui_netcore',
-                ]
-              },
-            ]
-          },
-          'workloads/netcore/logging_netcore',
-          'workloads/netcore/security_netcore',
-          {
-            type: 'category',
-            label: 'Architecture',
-            items: [
-              'workloads/netcore/project_structure/architecture_overview_netcore',
-              'workloads/netcore/project_structure/repository_overview_netcore',
-              'workloads/netcore/project_structure/project_structure_netcore'
-            ]
-          }
-        ]
-      }
+          "workloads/aws/workloads_aws_readme",
+        ],
+      },
     ],
     'Infrastructure': [
       {

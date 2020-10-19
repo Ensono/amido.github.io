@@ -1,7 +1,7 @@
 ---
 id: intro_java
 title: Introduction to the Java REST API application
-sidebar_label: Introduction to the Java REST API application
+sidebar_label: Introduction
 ---
 
 ## Stacks Java Spring Boot REST API Application
