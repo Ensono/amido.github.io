@@ -23,6 +23,18 @@ Clone the Dotnet project to your local machine from here: [stacks-dotnet reposit
 
 ### Create the project using the template
 
+1. Install the package
+
+Download the [stacks-app-template.1.0.0.nupkg template package](https://github.com/amido/stacks-dotnet/releases/tag/1.0.0)
+(.Net Core 3.1, current LTS release) to a temporary folder.
+
+
+```text
+dotnet new -i /path/to/stacks-app-template.1.0.0.nupkg
+```
+
+2. Create the project
+
 ```cmd title="Template command to create the project"
 dotnet new stacks-app -n Company.Project -d DomainName
 ```
