@@ -53,7 +53,7 @@ This is version `1.0.0` of the `java-stacks` project.
     Note that at a minimum Java 11 should be installed.
 
     Move to the `<PROJECT-NAME>/java` folder, then
-    
+
     <Tabs
       groupId="operating-systems"
       defaultValue="unix"
@@ -70,11 +70,11 @@ This is version `1.0.0` of the `java-stacks` project.
 
     </TabItem>
     <TabItem value="windows">
-   
+
    ```text
    mvnw.cmd spring-boot:run
    ```
-   
+
    </TabItem>
    </Tabs>
 
