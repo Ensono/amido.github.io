@@ -1,8 +1,11 @@
 ---
-id: quickstart_java
+id: quickstart_java_cqrs
 title: Getting started with the Java Rest API application
 sidebar_label: Getting started
 ---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 ## Using the repository to build the Java Spring Boot Rest API application
 
@@ -29,27 +32,51 @@ This is version `1.0.0` of the `java-stacks` project.
     AZURE_APPLICATION_INSIGHTS_INSTRUMENTATION_KEY
     ```
 
-    For Unix systems, set them as additional variables within e.g. `~/.profile` or `/etc/profile`.
-
-    For Windows, open System Properties then select the Advanced tab, then click on the Environment Variables button and add the new parameters.
+    <Tabs
+      groupId="operating-systems"
+      defaultValue="unix"
+      values={[
+        {label: 'Unix', value: 'unix'},
+        {label: 'Windows', value: 'windows'},
+      ]}>
+      <TabItem value="unix">
+      Set the two environment variables as additional variables within e.g. ~/.profile or /etc/profile.
+      </TabItem>
+      <TabItem value="windows">
+      Open the System Properties then select the Advanced tab, then click on the Environment Variables
+      button and add the new parameters.
+      </TabItem>
+    </Tabs>
 
 3. Build and run the application
 
-   Note that at a minimum Java 11 should be installed.
+    Note that at a minimum Java 11 should be installed.
 
     Move to the `<PROJECT-NAME>/java` folder, then
-
-    Unix:
+    
+    <Tabs
+      groupId="operating-systems"
+      defaultValue="unix"
+      values={[
+        { label: 'Unix', value: 'unix', },
+        { label: 'Windows', value: 'windows', },
+      ]
+    }>
+    <TabItem value="unix">
 
     ```text
     ./mvnw spring-boot:run
     ```
 
-    Windows:
-
-    ```text
-    mvnw.cmd spring-boot:run
-    ```
+    </TabItem>
+    <TabItem value="windows">
+   
+   ```text
+   mvnw.cmd spring-boot:run
+   ```
+   
+   </TabItem>
+   </Tabs>
 
 4. Verify that the application has started
 

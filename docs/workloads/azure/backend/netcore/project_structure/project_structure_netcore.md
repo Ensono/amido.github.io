@@ -31,7 +31,7 @@ Solution 'xxAMIDOxx.xxSTACKSss.API'
 
 ## API
 
-The API scope contains the components that are exposed publicly, like the APIs and it's Models.
+The API scope contains the components that are exposed publicly, like the APIs and its models.
 
 It also contains infrastructure components that is responsible to arrange all dependencies within the solution.
 
@@ -100,7 +100,7 @@ Publish related application events(not domain events) to the event hub (i.e: Kaf
 
 Call external dependencies if needed, like dependent services using a gateway.
 
-Handle non business logic, like:
+Handle non-business logic, like:
 
 Ensure an object exists before executing the operations
 
