@@ -2,6 +2,7 @@
 id: scaffolding_java
 title: Using the Scaffolding CLI to create the Java Rest API project template
 sidebar_label: Using the Scaffolding CLI
+hide_table_of_contents: true
 ---
 
 ## Create a custom Java REST API project template from the command line
