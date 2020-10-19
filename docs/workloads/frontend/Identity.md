@@ -31,9 +31,6 @@ AUTH0_CLIENT_SECRET=<AUTH0_CLIENT_SECRET> \
 
 <!-- markdownlint-disable MD033  MD007 MD029-->
 
-<details>
-  <summary>More details</summary>
-
 - Redis is used as a preferred DB to maintain the user state.
   [ioredis](https://github.com/luin/ioredis) is the redis client used due to its
   robust and performance-focus.
@@ -72,13 +69,9 @@ REDIS_ENABLED=true \
 
 > Please note Redis is disabled for running in CI
 
-</details>
-
-
 ## Reference
 
 - [Auth0 Passport blog](https://auth0.com/blog/next-js-authentication-tutorial/)
 - [Redis quick start](https://redis.io/topics/quickstart)
-
 
 <!-- markdownlint-enable MD033 -->

@@ -13,8 +13,8 @@ module.exports = {
   projectName: "Stacks", // Usually your repo name.
   themeConfig: {
     algolia: {
-      apiKey: "25626fae796133dc1e734c6bcaaeac3c",
-      indexName: "docsearch",
+      apiKey: "56a3097b6350cd2363a8746a98c6c278",
+      indexName: "amido_stacks",
 
       // Optional: see doc section bellow
       contextualSearch: true,

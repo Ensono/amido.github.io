@@ -24,7 +24,7 @@ next-redux-saga uses the redux store created by next-redux-wrapper
 [Ducks](https://github.com/erikras/ducks-modular-redux) pattern is used to
 simplify the creation and managing the boilerplate associated with reducers,
 action creators bundles with sagas. With Ducks pattern, rather than splitting up
-all related code, I can package it into redux modules. This gives us clarity
+all related code, It can be packaged into redux modules. This gives us clarity
 about which piece of Redux is handling which functionality.
 
 ## Usage

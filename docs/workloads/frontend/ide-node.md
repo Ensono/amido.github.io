@@ -4,9 +4,9 @@ title: IDE Setup
 sidebar_label: IDE Setup
 ---
 
-We recommend using VSCode as IDE, although feel free to use any other you may wish.
+We recommend using Visual Studio Code as IDE, although feel free to use any other you may wish.
 
-## Extension Recomendations
+## Extension Recommendations
 
 These extentions are not required, but they provide features that we find helpfull while developing
 

@@ -24,84 +24,99 @@ module.exports = {
         type: "category",
         label: "Frontend Web Applications",
         items: [
-          "workloads/frontend/intro_node_js",
           "workloads/frontend/ide_node_js",
-          "workloads/frontend/environment_variables_nodejs",
           "workloads/frontend/cli_webapp_frameworks",
-          "workloads/frontend/monorepo",
-          "workloads/frontend/cms",
-          "workloads/frontend/identity",
-          "workloads/frontend/api_definition",
-          "workloads/frontend/logging_node_js",
 
-          "workloads/frontend/state-management",
-
+          {
+            type: "category",
+            label: "Client Side Rendering",
+            items: [
+              "workloads/frontend/environment_variables_nodejs",
+              "workloads/frontend/monorepo",
+              "workloads/frontend/cms",
+              "workloads/frontend/api_definition",
+              "workloads/frontend/logging_node_js",
+              "workloads/frontend/state-management",
+            ],
+          },
+          {
+            type: "category",
+            label: "Server  Side Rendering",
+            items: [
+              "workloads/frontend/environment_variables_nodejs",
+              "workloads/frontend/monorepo",
+              "workloads/frontend/cms",
+              "workloads/frontend/identity",
+              "workloads/frontend/api_definition",
+              "workloads/frontend/logging_node_js",
+              "workloads/frontend/state-management",
+              "workloads/frontend/server_side_cache",
+            ],
+          },
           "workloads/frontend/browser_support",
-          "workloads/frontend/server_side_cache",
           "workloads/frontend/deployment_node_js",
-
         ],
       },
       {
         type: "category",
         label: "Java Spring Boot REST API Application",
         items: [
-          'workloads/java/intro_java',
-          'workloads/java/quickstart_java',
-          'workloads/java/scaffolding_java',
-          'workloads/java/ide_java',
-          'workloads/java/structure_java',
-          'workloads/java/testing_java',
-          'workloads/java/end_to_end_testing_java'
-        ]
+          "workloads/java/intro_java",
+          "workloads/java/quickstart_java",
+          "workloads/java/scaffolding_java",
+          "workloads/java/ide_java",
+          "workloads/java/structure_java",
+          "workloads/java/testing_java",
+          "workloads/java/end_to_end_testing_java",
+        ],
       },
       {
-        type: 'category',
-        label: '.NET Core REST API Application',
+        type: "category",
+        label: ".NET Core REST API Application",
         items: [
-          'workloads/netcore/introduction_netcore',
+          "workloads/netcore/introduction_netcore",
           {
-            type: 'category',
-            label: 'Getting started',
+            type: "category",
+            label: "Getting started",
             items: [
-              'workloads/netcore/quickstart/requirements_netcore',
-              'workloads/netcore/quickstart/create_project_netcore',
-              'workloads/netcore/quickstart/configure_project_netcore',
-              'workloads/netcore/quickstart/build_and_run_project_netcore',
+              "workloads/netcore/quickstart/requirements_netcore",
+              "workloads/netcore/quickstart/create_project_netcore",
+              "workloads/netcore/quickstart/configure_project_netcore",
+              "workloads/netcore/quickstart/build_and_run_project_netcore",
               {
-                type: 'category',
-                label: 'Test',
+                type: "category",
+                label: "Test",
                 items: [
-                  'workloads/netcore/quickstart/testing/functional_testing_netcore',
-                  'workloads/netcore/quickstart/testing/performance_testing_netcore',
-                ]
+                  "workloads/netcore/quickstart/testing/functional_testing_netcore",
+                  "workloads/netcore/quickstart/testing/performance_testing_netcore",
+                ],
               },
-              'workloads/netcore/quickstart/deploy_project_netcore',
+              "workloads/netcore/quickstart/deploy_project_netcore",
               {
-                type: 'category',
-                label: 'Swagger Configuration',
+                type: "category",
+                label: "Swagger Configuration",
                 items: [
-                  'workloads/netcore/quickstart/swagger_configuration/configure_swagger_netcore',
-                  'workloads/netcore/quickstart/swagger_configuration/configure_swagger_ui_netcore',
-                ]
+                  "workloads/netcore/quickstart/swagger_configuration/configure_swagger_netcore",
+                  "workloads/netcore/quickstart/swagger_configuration/configure_swagger_ui_netcore",
+                ],
               },
-            ]
+            ],
           },
-          'workloads/netcore/logging_netcore',
-          'workloads/netcore/security_netcore',
+          "workloads/netcore/logging_netcore",
+          "workloads/netcore/security_netcore",
           {
-            type: 'category',
-            label: 'Architecture',
+            type: "category",
+            label: "Architecture",
             items: [
-              'workloads/netcore/project_structure/architecture_overview_netcore',
-              'workloads/netcore/project_structure/repository_overview_netcore',
-              'workloads/netcore/project_structure/project_structure_netcore'
-            ]
-          }
-        ]
-      }
+              "workloads/netcore/project_structure/architecture_overview_netcore",
+              "workloads/netcore/project_structure/repository_overview_netcore",
+              "workloads/netcore/project_structure/project_structure_netcore",
+            ],
+          },
+        ],
+      },
     ],
-    'Infrastructure': [
+    Infrastructure: [
       {
         type: "category",
         label: "Azure",
