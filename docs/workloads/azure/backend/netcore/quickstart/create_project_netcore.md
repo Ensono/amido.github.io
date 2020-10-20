@@ -1,6 +1,7 @@
 ---
 id: create_project_netcore
 title: Create the project
+hide_title: true
 sidebar_label: Create the project
 ---
 
@@ -8,34 +9,50 @@ sidebar_label: Create the project
 
 To create the project there are three different options available.
 
-* Cloning the repository
-* Using the dotnet template
-* Using the npx Scaffolding CLI
+* [Cloning the repository](#create-the-project-by-cloning-github-repository)
+* [Using the dotnet template](#create-the-project-using-the-template)
+* [Using the npx Scaffolding CLI](#create-the-project-using-the-scaffolding-cli)
+
+<br />
 
 ### Create the project by cloning GitHub repository
 
 Clone the Dotnet project to your local machine from here: [stacks-dotnet repository](https://github.com/amido/stacks-dotnet)
 
+<br />
 
 ### Create the project using the template
 
-```cmd
+1. Install the package
+
+    Download the [stacks-app-template.1.0.0.nupkg template package](https://github.com/amido/stacks-dotnet/releases/tag/1.0.0)
+    (.Net Core 3.1, current LTS release) to a temporary folder.
+
+
+    ```text
+    dotnet new -i /path/to/stacks-app-template.1.0.0.nupkg
+    ```
+
+2. Create the project
+
+```cmd title="Template command to create the project"
 dotnet new stacks-app -n Company.Project -d DomainName
 ```
 
 The above command will create a folder and a repository called `Company.Project`.
 
-:::info 
-
-When omitting the **-n** parameter, the CLI will create the project using the name of the folder the command is being run from.
-(e.g. `c:\demo\amido-sample> dotnet new stacks-app` will generate a project called `amido-sample`).
-To prevent the creation of a new folder you can pass the parameter `-o` with a path name
-e.g. `dotnet new stacks-app -o ./foldername`).
-
-The parameter `-d` is a short name for `--Domain`. Domain is the name used by the aggregate root object,
-and referenced in multiple place in the project. It is used as the name of the collection within the CosmosDB instance.
-
+:::note Template parameter details
+    - **-n**
+        - Sets the project name
+        - Omitting it will result in the project name being the same as the folder where the command has been ran from
+    - **-o**
+        - Sets the path to where the project is added
+        - Omitting the parameter will result in the creation of a new folder
+    - **-d**, **-Domain**
+        - Sets the name of the aggregate root object. It is also the name of the collection within CosmosDB instance.
 :::
+
+<br />
 
 ### Create the project using the Scaffolding CLI
 
@@ -44,23 +61,14 @@ It includes tests (unit, integration), together with infrastructure and deployme
 
 We use [npx](https://www.npmjs.com/package/npx) to execute the [scaffolding-cli](https://www.npmjs.com/package/@amidostacks/scaffolding-cli).
 
-:::note
-To install **npx** run the following command
-
-```cli
-
+```text title="npx install command"
 npm install -g npx
-
 ```
-
-:::
 
 We are supporting and running [node@12](https://nodejs.org/en/about/releases/).
 Please ensure that your local environment has the correct version [installed](https://nodejs.org/en/download/).
 
-To run the Scaffolding CLI, use the following commands
-
-```cli
+```cli title="Scaffolding-CLI command to create the project"
 npx @amidostacks/scaffolding-cli@latest run -i
 ```
 

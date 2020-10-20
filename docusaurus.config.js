@@ -70,14 +70,7 @@ module.exports = {
       '@docusaurus/preset-classic',
       {
         docs: {
-          sidebarPath: require.resolve('./sidebars.js'),     
-          
-          docLayoutComponent: '@theme/DocPage',
-          docItemComponent: '@theme/DocItem',
-          
-          // Please change this to your repo.
-          editUrl:
-            'https://github.com/amido/stacks',
+          sidebarPath: require.resolve('./sidebars.js'),
 
           remarkPlugins: [remarkImages],
           rehypePlugins: [rehypeTruncate],

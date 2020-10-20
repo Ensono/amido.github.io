@@ -2,13 +2,19 @@
 id: configure_swagger_netcore
 title: Configure Swagger
 sidebar_label: Swagger
+hide_title: true
+hide_table_of_contents: true
 ---
 
-The document generation configuration is done in the Startup class of your API, within the ConfigureServices(IServiceCollection services) method, we need to make a call to the extension method `AddSwaggerGen(Action<SwaggerGenOptions> setupAction)` passing an action to generate the documentation options.
+## Configure Swagger
 
-Each call to AddSwaggerGen() will generate a new document, the parameters passed to it will be used to configure the rules for document generation, the output of a document generation is a simple JSON file, by default the file(spec) will be available on `/swagger/versionName/swagger.json.`
+<br />
 
-Example:
+The document generation configuration is done in the Startup class of your API, within the ConfigureServices(IServiceCollection services) method. A call to the extension method `AddSwaggerGen(Action<SwaggerGenOptions> setupAction)` is made passing an action to generate the documentation options.
+
+Each call to `AddSwaggerGen()` will generate a new document. The parameters passed will be used to configure the rules for document generation. The output of a document generation process is a simple JSON file. By default the file(spec) will be available on `/swagger/versionName/swagger.json.`
+
+**Example:**
 
 ```jsx title="Startup.cs (Register doc generation)"
 public class Startup
@@ -62,4 +68,4 @@ public class Startup
 }
 ```
 
-The snippet above demonstrates the usage of .AddSwaggerGen() to register the document generation. The output of this snipped will generate a document found on the following path `/swagger/v1/swagger.json`
+The snippet above demonstrates the usage of `.AddSwaggerGen()` to register the document generation. The output of this snipped will generate a document found on the path `/swagger/v1/swagger.json`.

@@ -2,33 +2,39 @@
 id: performance_testing_netcore
 title: Performance testing
 sidebar_label: Performance testing
+hide_title: true
+hide_table_of_contents: false
 ---
 
-## xxAMIDOxx.xxSTACKSxx.Gatling.Tests
+## Performance testing
+
+<br />
+
+### xxAMIDOxx.xxSTACKSxx.Gatling.Tests
 
 xxAMIDOxx.xxSTACKSxx.Gatling.Tests is a sample project demonstrating performance testing (Load testing) using the tool Gatling.
 
 The project contains a small framework and a couple of tests that can be used to build specific load tests on projects using the Amido Stack.
 
+<br />
 
-
-## Useful Documentation
+### Useful Documentation
 
 [Gatling docs](https://gatling.io/docs/current)
 
 Blog post by Amir Gharai which was used to set up the framework - [Performance Testing Framework with Gatling and Maven](https://devqa.io/gatling-maven-performance-test-framework/)
 
+<br />
 
-
-## Dependencies
+### Dependencies
 
 - Java SDK 8
 - Maven
 - IDE for Scala development. I.e. IntelliJ IDEA
 
+<br />
 
-
-## Quick start
+### Quick start
 
 Once the project has been cloned locally, tests can be run using the following command:
 
@@ -45,7 +51,9 @@ By default, this will run a load test against the GET menu api with 1 user with 
 mvn clean gatling:test -Dusers=100 -Drampup=5`
 ```
 
-## Folder Structure
+<br />
+
+### Folder Structure
 
 ```text
 └── src

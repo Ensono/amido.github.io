@@ -1,8 +1,12 @@
 ---
 id: configure_project_netcore
 title: Configure the project
+hide_title: true
 sidebar_label: Configure the project
+hide_table_of_contents: false
 ---
+
+## Configure the project
 
 It uses an Azure **CosmosDB** database to store the example application data.
 There is a corresponding environment variable that needs to be set to interact with CosmosDB.
@@ -28,7 +32,6 @@ import TabItem from "@theme/TabItem";
     </TabItem>
 </Tabs>
 
-<br />
 <br />
 
 ### Set the variable specific to Visual Studio
@@ -60,13 +63,11 @@ The variable is referenced in `appsettings.json`.
 
 :::
 
-<br />
 
 The value for `COSMOSDB_KEY` can be found within the emulator. See Primary Key:
 
 ![CosmosDB](/img/cosmosdb_emulator_3.png)
 
-<br />
 <br />
 
 ### Using the Cosmos DB Emulator to run the database locally
@@ -74,7 +75,6 @@ The value for `COSMOSDB_KEY` can be found within the emulator. See Primary Key:
 For running on local environments, you can use the [Cosmos DB emulator](https://docs.microsoft.com/en-us/azure/cosmos-db/local-emulator?tabs=ssl-netstd21).
 
 
-<br />
 <br />
 
 ### Not using the Cosmos DB Emulator
@@ -91,13 +91,12 @@ Set the CosmosDB URI parameter `DatabaseAccountUri`
 ```
 
 <br />
-<br />
 
 ### Create the Cosmos DB structure
 
 Based on the template the Cosmos DB has to contain a fixed structure.
 
-Create a collection `Stacks` with a container id `menu` having the partition key `/id`. For detailed steps follow the [guide]((/guide/netcore/cosmosdb_configuration_netcore)).
+Create a collection `Stacks` with a container id `menu` and the partition key `/id`. For detailed steps follow the [guide](/docs/workloads/netcore/guide/cosmosdb/cosmosdb_configuration_netcore).
 
 
 

@@ -2,6 +2,8 @@
 id: functional_testing_netcore
 title: Functional testing
 sidebar_label: Functional testing
+hide_title: false
+hide_table_of_contents: false
 ---
 
 
