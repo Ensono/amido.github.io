@@ -4,7 +4,7 @@ title: IDE guidelines for the Java Rest API
 sidebar_label: IDE guidelines
 ---
 
-## IDE guidelines for the Java Spring Boot Rest API
+## IDE guidelines
 
 We recommend that you install the following plugins:
 
