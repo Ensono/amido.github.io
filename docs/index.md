@@ -1,7 +1,7 @@
 ---
 id: index
-title: About Amido Stacks
-sidebar_label: About Amido Stacks
+title: Our approach
+sidebar_label: Our approach
 slug: /
 ---
 
@@ -155,4 +155,3 @@ The following list is a snapshot of all the records that have been taken into ac
 The deployment principles of build once then deploy to multiple stages has been applied as best practice for the generated pipeline template.
 Templated out pipeline will encompass the build, deploy dev, deploy prod stages. Each stage is comprised of tasks that the user can either enable or disable depending on their setup and currently available tooling such as SonarCloud or vulnerability scanning.
 
-To read and understand more about testing your contributed changes please go to *[deployment](./infrastructure/deployment.md)*.
