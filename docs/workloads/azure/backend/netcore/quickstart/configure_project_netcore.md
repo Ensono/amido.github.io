@@ -96,7 +96,7 @@ Set the CosmosDB URI parameter `DatabaseAccountUri`
 
 Based on the template the Cosmos DB has to contain a fixed structure.
 
-Create a collection `Stacks` with a container id `menu` and the partition key `/id`. For detailed steps follow the [guide](/docs/workloads/netcore/guide/cosmosdb/cosmosdb_configuration_netcore).
+Create a collection `Stacks` with a container id `menu` and the partition key `/id`. For detailed steps follow the [guide](/docs/workloads/azure/backend/netcore/guide/cosmosdb/cosmosdb_configuration_netcore).
 
 
 

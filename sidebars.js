@@ -121,9 +121,9 @@ module.exports = {
                     type: 'category',
                     label: 'Architecture',
                     items: [
-                      'workloads/azure/backend/netcore/project_structure/architecture_overview_netcore',
-                      'workloads/azure/backend/netcore/project_structure/repository_overview_netcore',
-                      'workloads/azure/backend/netcore/project_structure/project_structure_netcore'
+                      'workloads/azure/backend/netcore/architecture/architecture_overview_netcore',
+                      'workloads/azure/backend/netcore/architecture/repository_overview_netcore',
+                      'workloads/azure/backend/netcore/architecture/project_structure_netcore'
                     ]
                   }
                 ]
