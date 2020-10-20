@@ -1,12 +1,12 @@
 ---
 id: testing_java_cqrs
-title: Testing the Java Rest API
-sidebar_label: Testing the application
+title: Testing the application
+sidebar_label: Testing the API
 ---
 
-## Testing the application
+## Testing the API
 
-### Running Tests
+### Running the tests
 
 Tests within the code are grouped using Tag annotations. There are three groups: 'Unit', 'Component' and 'Integration'. To just run the unit tests, for example, type:
 

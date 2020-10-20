@@ -1,7 +1,9 @@
 module.exports = {
   docs: {
-    "Getting started": [
+    "Learn about Stacks": [
       "index",
+      "roadmap",
+      "glossary",
       {
         type: "category",
         label: "Build the application",
@@ -41,7 +43,6 @@ module.exports = {
                   'workloads/azure/backend/java/quickstart_java',
                   'workloads/azure/backend/java/scaffolding_java',
                   'workloads/azure/backend/java/ide_java',
-                  'workloads/azure/backend/java/testing_java',
                   {
                     type: "category",
                     label: "Architecture",
@@ -50,6 +51,9 @@ module.exports = {
                       'workloads/azure/backend/java/structure_java',
                     ],
                   },
+                  'workloads/azure/backend/java/infrastructure_java',
+                  'workloads/azure/backend/java/pipeline_java',
+                  'workloads/azure/backend/java/testing_java',
                 ],
               },
               {
@@ -60,7 +64,6 @@ module.exports = {
                   'workloads/azure/backend/java_cqrs/quickstart_java_cqrs',
                   'workloads/azure/backend/java_cqrs/scaffolding_java_cqrs',
                   'workloads/azure/backend/java_cqrs/ide_java_cqrs',
-                  'workloads/azure/backend/java_cqrs/testing_java_cqrs',
                   {
                     type: "category",
                     label: "Architecture",
@@ -69,6 +72,9 @@ module.exports = {
                       'workloads/azure/backend/java_cqrs/structure_java_cqrs',
                     ],
                   },
+                  'workloads/azure/backend/java_cqrs/infrastructure_java_cqrs',
+                  'workloads/azure/backend/java_cqrs/pipeline_java_cqrs',
+                  'workloads/azure/backend/java_cqrs/testing_java_cqrs',
                 ],
               },
               {
