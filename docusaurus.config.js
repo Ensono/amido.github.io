@@ -2,63 +2,76 @@ const remarkImages = require('remark-images');
 const rehypeTruncate = require('rehype-truncate');
 
 module.exports = {
-  title: 'Amido Stacks',
-  tagline: 'Helping projects gain momentum on digital transformation, with opinionated and modular boilerplate solutions',
-  url: 'https://amido.github.io',
-  baseUrl: '/stacks/',
-  onBrokenLinks: 'warn',
-  favicon: 'img/thumbnail_stacks.png',
-  organizationName: 'Amido', // Usually your GitHub org/user name.
-  projectName: 'Stacks', // Usually your repo name.
+  title: "Amido Stacks",
+  tagline:
+    "Helping projects gain momentum on digital transformation, with opinionated and modular boilerplate solutions",
+  url: "https://amido.github.io",
+  baseUrl: "/stacks/",
+  onBrokenLinks: "warn",
+  favicon: "img/thumbnail_stacks.png",
+  organizationName: "Amido", // Usually your GitHub org/user name.
+  projectName: "Stacks", // Usually your repo name.
   themeConfig: {
+    algolia: {
+      apiKey: "56a3097b6350cd2363a8746a98c6c278",
+      indexName: "amido_stacks",
+
+      // Optional: see doc section bellow
+      contextualSearch: true,
+
+      // Optional: Algolia search parameters
+      searchParameters: {},
+
+      //... other Algolia params
+    },
     navbar: {
-      title: 'Amido Stacks',
+      title: "Amido Stacks",
       logo: {
-        alt: 'Amido Stacks Logo',
-        src: 'img/logo.svg'
+        alt: "Amido Stacks Logo",
+        src: "img/logo.svg",
       },
       items: [
         {
-          to: 'docs/',
-          activeBasePath: 'docs',
-          label: 'Docs',
-          position: 'right',
+          to: "docs/",
+          activeBasePath: "docs",
+          label: "Docs",
+          position: "right",
         },
         {
-          href: 'https://github.com/amido/stacks',
-          label: 'GitHub',
-          position: 'right',
+          href: "https://github.com/amido/stacks",
+          label: "GitHub",
+          position: "right",
         },
       ],
     },
     footer: {
-      style: 'dark',
+      style: "dark",
       links: [
         {
-          title: 'Docs',
+          title: "Docs",
           items: [
             {
-              label: 'Getting Started',
-              to: 'docs/',
-            }
-          ]
-        },
-        {
-          title: 'About Us',
-          items: [
-            {
-              label: 'Amido',
-              href: 'https://amido.com/',
-            }
+              label: "Getting Started",
+              to: "docs/",
+            },
           ],
         },
         {
-          title: 'Open Source',
+          title: "About Us",
           items: [
             {
-              label: 'GitHub',
-              to: 'https://github.com/amido/stacks',
-            }
+              label: "Amido",
+              href: "https://amido.com/",
+            },
+          ],
+        },
+        {
+          title: "Open Source",
+          items: [
+            {
+              label: "GitHub",
+              to: "https://github.com/amido/stacks",
+            },
           ],
         },
       ],
@@ -67,7 +80,7 @@ module.exports = {
   },
   presets: [
     [
-      '@docusaurus/preset-classic',
+      "@docusaurus/preset-classic",
       {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
@@ -76,7 +89,7 @@ module.exports = {
           rehypePlugins: [rehypeTruncate],
         },
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
+          customCss: require.resolve("./src/css/custom.css"),
         },
       },
     ],

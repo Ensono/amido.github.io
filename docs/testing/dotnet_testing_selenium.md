@@ -1,7 +1,7 @@
 ---
-id: testing_selenium
-title: Testing - End to End Automation with Selenium and .NET
-sidebar_label: E2E Selenium .NET
+id: testing_dotnet_selenium
+title: UI Browser Automation with Selenium and .NET
+sidebar_label: C# - Selenium .Net
 ---
 
 ## Installing the template
@@ -228,4 +228,4 @@ See our contribution guidelines at [www.github/amido/stacks](https://github.com/
 
 ### Publishing
 
-This project is publically available.
+This project is publicly available.
