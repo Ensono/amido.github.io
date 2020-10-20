@@ -8,7 +8,6 @@ module.exports = {
         type: "category",
         label: "Build the application",
         items: [
-          "getting_started_demo",
         ],
       },
     ],
