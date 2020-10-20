@@ -1,7 +1,7 @@
 ---
 id: workloads
-title: Workloads
-sidebar_label: Workloads
+title: Introduction to workloads
+sidebar_label: Introduction
 ---
 
 Workload Options cover all the supported options around what type of cloud infrastructure to provision for a project.
