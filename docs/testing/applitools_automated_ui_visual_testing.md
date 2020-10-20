@@ -6,8 +6,6 @@ sidebar_label: Automated UI Visual Testing
 
 ## Applitools: Visual tests
 
-> Keywords: visual regression testing, browser support, cross-browser
-
 We are using the [Applitools](https://applitools.com/) with Cypress for visual testing. For Stacks, we are just using the free tier. But we suggest discussing your requirements and what this means for your team. The free tier only gives:
 
 - 1 user (normally the pipeline)

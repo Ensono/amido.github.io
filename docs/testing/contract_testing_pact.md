@@ -1,7 +1,7 @@
 ---
 id: contract_testing_pact
-title: Contract Testing - Pact
-sidebar_label: Contract Testing Pact
+title: API Contract Testing With Pact
+sidebar_label: API Contract Testing With Pact
 ---
 
 ## Consumer-Driven contract testing with Pact

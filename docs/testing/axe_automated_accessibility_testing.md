@@ -1,7 +1,7 @@
 ---
 id: accessibility_testing
 title: Automated Accessibility Testing With Axe
-sidebar_label: Automated accessibility Testing
+sidebar_label: Automated Accessibility Testing
 ---
 
 ## Axe: Accessibility testing

@@ -4,7 +4,9 @@ title: Testing - Static Code Analysis
 sidebar_label: Static Code Analysis
 ---
 
-We are using [SonarQube](https://docs.sonarqube.org/) for static analysis. To enable integrations with GitHub and for use in Azure DevOps CI, the results are then hosted and viewable on [SonarCloud](https://sonarcloud.io/).
+Amido Stacks projects use [SonarQube](https://docs.sonarqube.org/) for static analysis. 
+
+To enable integrations with GitHub and for use in Azure DevOps CI, the results are then hosted and viewable on [SonarCloud](https://sonarcloud.io/).
 
 SonarCloud offers quality gates that ensure that your standards are adhered to before deploying.
 
