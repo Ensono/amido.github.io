@@ -25,7 +25,6 @@ module.exports = {
               "workloads/azure/frontend/cli_webapp_frameworks",
               "workloads/azure/frontend/monorepo",
               "workloads/azure/frontend/state-management",
-    
               {
                 type: "category",
                 label: "Client Side Rendering",
