@@ -242,4 +242,3 @@ the application is up and running locally.
 
 - Click on the `Authorise` button on the Swagger UI page and paste the token.
 - Endpoints should now work _only_ with a valid token.
-
