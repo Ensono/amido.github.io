@@ -17,7 +17,7 @@ variables.
 
  Awesome!
 
- ## Utility Functions
+## Utility Functions
 
  There is also a set of utility functions to handle custom telemetry:
 

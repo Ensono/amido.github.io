@@ -29,10 +29,13 @@ export const fetchMenus = () =>
         route: "/menu", // Todo: Point to deployed example API
     })
 
+
 ```
+
 The specific saga implementation is [menu api](../src/state/ducks/get-menus/saga)
 
 ```javascript
+
 
 import {all, call, fork, put, takeEvery} from "redux-saga/effects"
 import {
@@ -71,6 +74,5 @@ export default function* postSaga() {
 }
 
 ```
-
 
 Feel free to modify the example code for your own API endpoints!
