@@ -104,7 +104,15 @@ function Picker() {
 
   return (
     <div className="container">
-      <div className="col col--6" style={{ color: "black" }}>
+      <div
+        className="col col--6"
+        style={{
+          color: "black",
+          display: "flex",
+          flexDirection: "column",
+          gap: "20px",
+        }}
+      >
         <Select
           value={firstOption}
           onChange={(selected) => {
