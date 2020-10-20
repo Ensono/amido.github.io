@@ -129,6 +129,13 @@ module.exports = {
                       },
                     ]
                   },
+                  {
+                    type: 'category',
+                    label: 'Infrastructure',
+                    items: [
+                      'workloads/azure/backend/netcore/infrastructure/pipeline_netcore',
+                    ]
+                  },
                   'workloads/azure/backend/netcore/logging_netcore',
                   'workloads/azure/backend/netcore/security_netcore',
                   {
