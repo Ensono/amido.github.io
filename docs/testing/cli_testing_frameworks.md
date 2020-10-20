@@ -1,10 +1,12 @@
 ---
 id: cli_testing_frameworks
-title: Project Types - Testing
-sidebar_label: Project Types - Testing
+title: Stacks Testing Frameworks
+sidebar_label: Stacks Testing Frameworks
 ---
 
-Testing frameworks require a lot of boilerplates. It's also hard to know how to get started without examples. We have a range of Javascript Front End focused, opinionated, boilerplate testing frameworks that can be bootstrapped and tailored to your current project with just one command.
+Building a testing frameworks from scratch requires a lot of boilerplate code. It is also hard to know how to get started without examples.
+
+As part of Amido Stacks projects, we have developed a range of Javascript Front End focused, opinionated, boilerplate testing frameworks that can be bootstrapped and tailored to your current project with just one command.
 
 By default, Amido Stacks build a range of testing solutions into the projects. However, we understand that users require tests to be separate from the code. For more testing options and examples, see the other `[project types](./scaffolding_cli.md)`.
 

@@ -1,7 +1,7 @@
 ---
-id: testing_serenity_bdd
-title: Testing - End to End Automation with Serenity BDD Java
-sidebar_label: E2E Serenity BDD Java
+id: testing_java_serenity_bdd
+title: UI Browser Automation with Serenity BDD and Java
+sidebar_label: Java - Serenity BDD
 ---
 
 ## Getting started
