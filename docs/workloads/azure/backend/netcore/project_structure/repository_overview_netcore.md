@@ -12,22 +12,25 @@ sidebar_label: Repository
 │   └── scripts: stores scripts used by build steps that can be reused by multiple
 |                tools without changes. ie: Docker script for Container Image creation
 ├── deploy
-|   ├── k8s: stores yaml files for k8s deployments. i.e: deployments, services,
-|   |   |     configMap and related dependencies for each service in an application
-|   |   ├── ui: stores yaml for ui service
-|   |   └── api: stores yaml for the api service and configuration files
-│   │       ├── base: store raw yaml used by k8s
-│   │       ├── kustomization: store kustomize files(for kubectl apply -k)
-│   │       │   ├── dev: configuration files for dev environment
-│   │       │   └── test: configuration files for test environment
-│   │       └── helm-chart: store helm chart files(if helm used)
-│   │           └── templates
-|   ├── serviceFabric: scripts used to deploy applications on serviceFabric
-|   ├── terraform: terraform scripts used to provision dependencies only needed by this application
-|   └── scripts: deployment scripts shared by multiple tools. ie: Variable substitution
-├── contracts: stores swagger specs, ui mocks and other documents describing the overall solution
+|  ├── k8s: stores yaml files for k8s deployments. i.e: deployments, services,
+|  |  |    configMap and related dependencies for each service in an application
+|  |  ├── ui: stores yaml for ui service
+|  |  └── api: stores yaml for the api service and configuration files
+│  │     ├── base: store raw yaml used by k8s
+│  │     ├── kustomization: store kustomize files(for kubectl apply -k)
+│  │     │   ├── dev: configuration files for dev environment
+│  │     │   └── test: configuration files for test environment
+│  │     └── helm-chart: store helm chart files(if helm used)
+│  │         └── templates
+|  ├── serviceFabric: scripts used to deploy applications on serviceFabric
+|  ├── terraform: terraform scripts used to provision dependencies
+|  |              only needed by this application
+|  └── scripts: deployment scripts shared by multiple tools. ie: Variable substitution
+├── contracts: stores swagger specs, ui mocks and other documents describing
+|              the overall solution
 └── src
-    ├── services (i.e: apis, queue listener, scheduled jobs)
-    ├── tests: stores tests not built in other services solutions(functional tests, performance, etc)
-    └── ui: stores the front end service and components
+   ├── services (i.e: apis, queue listener, scheduled jobs)
+   ├── tests: stores tests not built in other services solutions (functional tests,
+   |          performance, etc)
+   └── ui: stores the front end service and components
 ```

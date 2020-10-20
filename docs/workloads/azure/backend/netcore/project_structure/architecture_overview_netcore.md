@@ -6,9 +6,11 @@ hide_title: true
 hide_table_of_contents: false
 ---
 
-![Solution Diagram](/img/cqrs_diagram.png)
 
 ## DDD Architecture Overview
+
+![Solution Diagram](/img/cqrs_diagram.png)
+
 
 ### Bounded Context
 
@@ -18,12 +20,11 @@ When their relationships are identified we have to identify the smallest cohesiv
 
 A domain object might belong to multiple bounded context, but on each of them will have a different set of attributes that are only relevant to the context they are within.
 
-In some cases, a domain object might change it's name to make more sense within the context it is located. i.e:
+In some cases, a domain object might change it's name to make more sense within the context it is located.
 
-- A property management business might have a person as a customer for the business, but when the person is in the context of a rental department, you are a tenant on their respective, even though you are a customer in other context of the business.
-For more information see:
-
-- [Bounded Context, by Martin Fowler](https://martinfowler.com/bliki/BoundedContext.html)
+**Example:**
+A property management business might have a person as a customer for the business, but when the person is in the context of a rental department, you are a tenant on their respective, even though you are a customer in other context of the business.
+For more information see [Bounded Context, by Martin Fowler](https://martinfowler.com/bliki/BoundedContext.html)
 
 <br />
 
@@ -33,11 +34,14 @@ An entity is a domain object that represents a thread of continuity, it is a bus
 
 Because entities are not defined by it's attributes, all the attributes might change, but the identity keeps the same.
 
-i.e:
-
+**Example:**
 Two people with same name (John Smith) and born on same day may have the same attributes but in respect to the system they are independent domain objects.
 When a person get married, they might change their names, but the identity stay the same.
-Value Objects
+
+<br />
+
+### Value Objects
+
 Value Objects are domain objects that does not have a conceptual identity within the context, they are just needed for it's attributes and two object with same attributes should be considered the same.
 
 In some scenarios, we might have value objects representing entities in other contexts, these value objects will likely have ids as attributes, even though they have unique ids they should still be values objects because they are not a primary object within the bounded context and are just representing external dependencies.
@@ -66,8 +70,9 @@ Also, AggregateRoot is the persistence boundary used to track changes and state 
 
 ### Domain Events
 
-Domain events are an indicator that something happened inside an object in the domain and should broadcasted to other objects to react on it's occurence. i.e:
+Domain events are an indicator that something happened inside an object in the domain and should broadcasted to other objects to react on it's occurrence.
 
+**Example:**
 A checkout cart can have products the customer want to buy, when product is added to the cart the total should be updated.
 
 In simple terms we could just make call to recalculate the total and it is all done. With this approach, we have a coupling between the operation add item and Calculate totals
@@ -82,8 +87,9 @@ Another usage for events is EventSourcing, where we gather these events to ident
 
 ### Domain Exceptions
 
-Domain exceptions, sometimes called business rule violation, are exceptions raised within the domain when an operation or object fail to meet business rules. i.e:
+Domain exceptions, sometimes called business rule violation, are exceptions raised within the domain when an operation or object fail to meet business rules.
 
+**Example:**
 When an employee raises a purchase order, if the purchase order value is above a certain limit, the domain will raise an exception telling that the operation can't be completed, this exception will interrupt the processing and tell the application about the error.
 
 Because domain exceptions does not know about the environment it's running in, the Application have to handle these exceptions and wrap it with an exception containing the environment context details like: Which operation raised the exception, who triggered the exception, correlation-id of the trigger and so on.

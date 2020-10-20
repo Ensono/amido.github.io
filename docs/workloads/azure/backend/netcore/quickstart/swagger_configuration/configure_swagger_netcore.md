@@ -12,7 +12,7 @@ hide_table_of_contents: true
 
 The document generation configuration is done in the Startup class of your API, within the ConfigureServices(IServiceCollection services) method. A call to the extension method `AddSwaggerGen(Action<SwaggerGenOptions> setupAction)` is made passing an action to generate the documentation options.
 
-Each call to `AddSwaggerGen()` will generate a new document. The parameters passed will be used to configure the rules for document generation. The output of a document generation process is a simple JSON file. By default the file(spec) will be available on `/swagger/versionName/swagger.json.`
+Each call to `AddSwaggerGen()` will generate a new document. The parameters passed will be used to configure the rules for document generation. The output of a document generation process is a simple JSON file. By default the file(spec) will be available on `/swagger/versionName/swagger.json`.
 
 **Example:**
 
