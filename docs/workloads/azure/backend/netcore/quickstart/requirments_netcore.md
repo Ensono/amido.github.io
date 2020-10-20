@@ -62,5 +62,5 @@ values={[
 </Tabs>
 
 :::note
-The current version of Amido Stacks does support only .Net Core 3.1.
+The current version of Amido Stacks is a template for .Net Core 3.1 (Current LTS, recommended).
 :::
