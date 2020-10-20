@@ -23,7 +23,7 @@ The project contains the framework for testing API's and a number of test cases 
 
 ```text
 ├── Builders
-|   ├── Http
+|   └── Http
 ├── Configuration
 ├── Models
 └── Tests
@@ -73,7 +73,7 @@ This is the parent folder for all test code
 
 Fixtures contains xUnit class fixtures. These class fixtures are used to create test context for the tests. The fixture is where you can put fixture setup (via constructor) and teardown (Via `Dispose()`)
 
-See xUnit documentation for information on different fixtures and how to use them: [https://xunit.net/docs/shared-context](https://xunit.net/docs/shared-context)
+See [xUnit documentation](https://xunit.net/docs/shared-context) for information on different fixtures and how to use them.
 
 `AuthFixture.cs` contains methods for getting authentication tokens required in the test cases.
 
