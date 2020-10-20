@@ -79,8 +79,8 @@ function Picker() {
   const OptionMapper = {
     Azure: {
       "Frontend Web App": {
-        SSR: "workloads/frontend/cli_webapp_frameworks",
-        CSR: "workloads/frontend/cli_webapp_frameworks",
+        SSR: "workloads/azure/frontend/cli_webapp_frameworks",
+        CSR: "workloads/azure/frontend/cli_webapp_frameworks",
       },
     },
   };
