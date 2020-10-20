@@ -26,17 +26,16 @@ module.exports = {
         items: [
           "workloads/frontend/ide_node_js",
           "workloads/frontend/cli_webapp_frameworks",
+          "workloads/frontend/monorepo",
+          "workloads/frontend/state-management",
 
           {
             type: "category",
             label: "Client Side Rendering",
             items: [
-              "workloads/frontend/environment_variables_nodejs",
-              "workloads/frontend/monorepo",
-              "workloads/frontend/cms",
-              "workloads/frontend/api_definition",
-              "workloads/frontend/logging_node_js",
-              "workloads/frontend/state-management",
+              "workloads/frontend/environment_variables_nodejs_crs",
+              "workloads/frontend/api_definition_crs",
+              "workloads/frontend/logging_node_js_crs",
             ],
           },
           {
@@ -44,12 +43,10 @@ module.exports = {
             label: "Server  Side Rendering",
             items: [
               "workloads/frontend/environment_variables_nodejs",
-              "workloads/frontend/monorepo",
               "workloads/frontend/cms",
               "workloads/frontend/identity",
               "workloads/frontend/api_definition",
               "workloads/frontend/logging_node_js",
-              "workloads/frontend/state-management",
               "workloads/frontend/server_side_cache",
             ],
           },
