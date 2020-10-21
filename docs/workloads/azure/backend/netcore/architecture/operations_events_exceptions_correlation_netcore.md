@@ -137,6 +137,6 @@ Another scenario is linking exceptions and events to operations that triggered t
 
 To simplify these complexities, we will add unique ids and codes to exceptions, events and operations in order to uniquely identify them. These ids will be attached to all log entries for:
 
-* link events and exceptions to operations that triggered then. Simplifying reporting, monitoring and alerting processes.
-* reduce the size of log entries from a long name, to an integer.
+* Link events and exceptions to operations that triggered then. Simplifying reporting, monitoring and alerting processes.
+* Reduce the size of log entries from a long name, to an integer.
 
