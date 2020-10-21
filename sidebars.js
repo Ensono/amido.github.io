@@ -2,7 +2,6 @@ module.exports = {
   docs: {
     "Learn about Stacks": [
       "index",
-      "roadmap",
       "glossary",
       {
         type: "category",
