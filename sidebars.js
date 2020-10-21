@@ -25,7 +25,6 @@ module.exports = {
               "workloads/azure/frontend/cli_webapp_frameworks",
               "workloads/azure/frontend/monorepo",
               "workloads/azure/frontend/state-management",
-    
               {
                 type: "category",
                 label: "Client Side Rendering",
@@ -129,13 +128,8 @@ module.exports = {
                       },
                     ]
                   },
-                  {
-                    type: 'category',
-                    label: 'Infrastructure',
-                    items: [
-                      'workloads/azure/backend/netcore/infrastructure/pipeline_netcore',
-                    ]
-                  },
+                  'workloads/azure/backend/netcore/infrastructure_netcore',
+                  'workloads/azure/backend/netcore/pipeline_netcore',
                   'workloads/azure/backend/netcore/logging_netcore',
                   'workloads/azure/backend/netcore/security_netcore',
                   {
@@ -144,7 +138,9 @@ module.exports = {
                     items: [
                       'workloads/azure/backend/netcore/architecture/architecture_overview_netcore',
                       'workloads/azure/backend/netcore/architecture/repository_overview_netcore',
-                      'workloads/azure/backend/netcore/architecture/project_structure_netcore'
+                      'workloads/azure/backend/netcore/architecture/project_structure_netcore',
+                      'workloads/azure/backend/netcore/architecture/data_storage_cosmosdb_netcore',
+                      'workloads/azure/backend/netcore/architecture/operations_events_exceptions_correlation_netcore',
                     ]
                   }
                 ]
