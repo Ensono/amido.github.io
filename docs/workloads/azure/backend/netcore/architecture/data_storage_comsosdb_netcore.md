@@ -54,14 +54,14 @@ Package **Amido.Stacks.Data.Documents** contains the interface contracts for dat
 
 The contracts are defined by two interfaces IDocumentStorage and IDocumentSearch, as below, method signatures were removed for simplicity:
 
-```C# title="IDocumentStorage"
+```csharp title="IDocumentStorage"
 IDocumentStorage<TEntity, in TEntityIdentityType>
         Task<OperationResult<TEntity>> SaveAsync(TEntityIdentityType identifier, string partitionKey, TEntity document, string eTag);
         Task<OperationResult<TEntity>> GetByIdAsync(TEntityIdentityType identifier, string partitionKey);
         Task<OperationResult> DeleteAsync(TEntityIdentityType identifier, string partitionKey);
 ```
 
-```C# title="IDocumentSearch"
+```csharp title="IDocumentSearch"
 IDocumentSearch<TEntity> Task<OperationResult<IEnumerable<TResult>>> Search<TResult, TOrderKey>(
     Expression<Func<TResult, bool>> searchPredicate,
     Expression<Func<TResult, TOrderKey>> orderPredicate = null,
@@ -121,7 +121,7 @@ A few details you should be aware when using the CosmosDB package from Stacks:
 **Usage:**
 When the package is used in the data access layer, as example a repository implementation, the package will make the data access logic simple and clean, off loading all the data access logic to the implemented storage.
 
-```C# title="MenuRepository"
+```csharp title="MenuRepository"
 public class MenuRepository : IMenuRepository
 {
     IDocumentStorage<Menu, Guid> documentStorage;
@@ -161,7 +161,7 @@ Because document stores require a partition key to persist the data, it is requi
 
 In order to use the right implementation, we need to inject the dependencies in the IoC container before the application starts, the CosmosDB implementation provides an extension method called **AddCosmosDB()** from the namespace **Amido.Stacks.Data.Documents.CosmosDB.Extensions**, to use it, you just have to make a call to the extension in the dependency registration method of your application, like below:
 
-```C#
+```csharp
 public virtual void ConfigureServices(IServiceCollection services)
 {
     services.Configure<CosmosDbConfiguration>(context.Configuration.GetSection("CosmosDB"));

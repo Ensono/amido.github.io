@@ -24,6 +24,11 @@ module.exports = {
 
       //... other Algolia params
     },
+    prism: {
+      theme: require('prism-react-renderer/themes/github'),
+      darkTheme: require('prism-react-renderer/themes/vsDark'),
+      additionalLanguages: ['csharp', 'docker', 'powershell', 'java'],
+    },
     navbar: {
       title: "Amido Stacks",
       logo: {
@@ -89,9 +94,9 @@ module.exports = {
           rehypePlugins: [rehypeTruncate],
         },
         theme: {
-          customCss: require.resolve("./src/css/custom.css"),
+          customCss: require.resolve("./src/css/custom.css")
         },
-      },
-    ],
+      }
+    ]
   ]
 };

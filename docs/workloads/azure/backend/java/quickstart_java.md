@@ -123,7 +123,7 @@ These parameters are used to verify that the JWT supplied in the Authorization h
 
 From the `<PROJECT-NAME>/java` folder, build a Docker image using e.g. the command below:
 
-   ```text
+   ```docker
    docker build --tag stacks:1.0 .
    ```
 
@@ -133,7 +133,7 @@ If you have an `.m2` directory in the `java/` folder, the Docker build will atte
 
 Once the Docker image is created, you can then run a Docker container based on this image using e.g.
 
-   ```text
+   ```docker
    docker run -p 9000:9000 -e AZURE_APPLICATION_INSIGHTS_INSTRUMENTATION_KEY -e AZURE_COSMOSDB_KEY stacks:1.0
    ```
 

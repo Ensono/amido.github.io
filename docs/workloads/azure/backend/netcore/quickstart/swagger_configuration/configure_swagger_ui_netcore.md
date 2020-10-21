@@ -14,7 +14,7 @@ hide_table_of_contents: true
 
 To configure the Swagger UI, spec path along with the name of the spec must be passed in the `SwaggerEndpoint()` method within the `UseSwaggerUI()` extension.
 
-```C# {19} title="Startup.cs"
+```csharp {19} title="Startup.cs"
 public class Startup
 {
     public Startup(IHostingEnvironment env, IConfiguration configuration){... Omit for brevity ...}
@@ -58,7 +58,7 @@ c.DocumentFilter<VersionPathFilter>("/v2");
 And register the new endpoint in the UI like below:
 
 
-```C# title="Swagger UI registration"
+```csharp title="Swagger UI registration"
 app
     .UseMvc()
     .UseSwagger()
@@ -75,7 +75,7 @@ app
 
 When multiple versions are available, might be useful to register a general spec with all endpoints
 
-```C# title="Swagger default spec with all endpoints"
+```csharp title="Swagger default spec with all endpoints"
 SwaggerDoc("all", new Info());
 //c.DocumentFilter<VersionPathFilter>("/v2"); //Remove the filter
 ```
@@ -89,7 +89,7 @@ The problem with this approach is that makes it harder to group endpoints if the
 
 ApiGroup is a concept introduced in ASP.NET Core. It requires the controller to be decorated with the attribute ApiExplorerSettingsAttribute, the GroupName  to be set to the Tag expected in swagger as below.
 
-```C# title="Controller decorated with Api Group"
+```csharp title="Controller decorated with Api Group"
 [ApiExplorerSettings(GroupName = "Category")]
 public class AddMenuCategoryController : ControllerBase { ... actions ... }
 ```
@@ -101,7 +101,7 @@ To group endpoints pass the group predicate to the method `c.TagActionsBy()`.
 The following code has to be added to the swagger doc generation:
 
 
-```C# title="Swagger configuration for ApiGroup"
+```csharp title="Swagger configuration for ApiGroup"
 services.AddSwaggerGen(c => {
 
     //By Default, all endpoints are grouped by the controller name
