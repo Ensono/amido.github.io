@@ -178,7 +178,7 @@ In this example, we show how the edit icon can be referenced by using the data a
 
 We can interact with this by using the following:
 
-```c#
+```csharp
 public By menus = By.CssSelector("[data-cy='editMenuItem']");
 ```
 

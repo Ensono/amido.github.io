@@ -16,7 +16,7 @@ Each call to `AddSwaggerGen()` will generate a new document. The parameters pass
 
 **Example:**
 
-```jsx title="Startup.cs (Register doc generation)"
+```csharp title="Startup.cs (Register doc generation)"
 public class Startup
 {
     public IConfiguration Configuration { get; }
