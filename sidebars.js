@@ -179,18 +179,16 @@ module.exports = {
         items: [],
       },
     ],
-    Testing: [
-      "testing/testing",
+    "Quality Assurance": [
       "testing/cli_testing_frameworks",
       "testing/testing_java_serenity_bdd",
       "testing/testing_dotnet_selenium",
       "testing/cypress_functional_testing",
+      "testing/testing_static_analysis",
       "testing/visual_analysis",
       "testing/contract_testing_pact",
       "testing/accessibility_testing",
-      "testing/performance_testing_gatling",
-      "testing/testing_static",
-      "testing/static_analysis",
+      "testing/performance_testing_gatling"
     ],
   },
 };

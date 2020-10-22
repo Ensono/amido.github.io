@@ -8,10 +8,6 @@ Building a testing frameworks from scratch requires a lot of boilerplate code. I
 
 As part of Amido Stacks projects, we have developed a range of Javascript Front End focused, opinionated, boilerplate testing frameworks that can be bootstrapped and tailored to your current project with just one command.
 
-By default, Amido Stacks build a range of testing solutions into the projects. However, we understand that users require tests to be separate from the code. For more testing options and examples, see the other `[project types](./scaffolding_cli.md)`.
-
-Get testing!
-
 ## Bootstrap your framework
 
 The best way to get started, is bootstrap the framework using the scaffolding-cli from Amido Stacks. By using it in interactive mode, you can simply answer 5 questions to get a bespoke framework, ready to go with an example test.
@@ -31,21 +27,21 @@ The best way to get started, is bootstrap the framework using the scaffolding-cl
 ### Framework types
 
 <!-- markdownlint-disable -->
-|   | **cypress*** | **TestCafe framework with Typescript** | **Selenium framework with .NET** | **jest-sonar*** |
-| --- | --- | --- | --- | --- |
-|  Framework Type | Acceptance<br/>Functional E2E<br/>Functional API<br/>Component<br/>Accessibility<br/>Visual Regression | Acceptance<br/>Functional E2E<br/>Accessibility | Acceptance<br/>Functional E2E<br/>Functional API | Unit<br/>Component<br/>Integration |
-|  Language | Typescript<br/>Optional: Javascript | Typescript<br/>Optional: Javascript | C# | Typescript<br/>Optional: Javascript |
-|  Framework | Cypress | TestCafe | Bespoke | Jest |
-|  Libraries and Tools | Mocha<br/>Chai<br/>Chai-jQuery<br/>Sinon.JS<br/>Sinon-Chai<br/>Lodash<br/>Minimatch<br/>Moment<br/>Blob<br/>Promise | Axios<br/>TestCafe Assertions<br/>TestCafe API | Microsoft Test SDK<br/>Selenium WebDriver<br/>WebDriver ChromeDriver<br/>Shouldly<br/>BDDfy<br/>xUnit | Jest Snapshot<br/>@testing-library/react |
-|  Integrations | Axe<br/>Applitools | Axe<br/>LambdaTest |  | Sonar Scanner |
-|  Report(s) | jUnit/xUnit<br/>xunit-viewer (single page HTML)<br/>Mochawesome (rich HTML results with screenshots) | xUnit | BDDfy<br/>xUnit | jUnit/xUnit<br/>Cobertura, lcov (code coverage)<br/>Sonar reporter |
-|  Browsers | Used:<br/>Google Chrome<br/><br/>Supported:<br/>Mozilla Firefox<br/>Microsoft Edge<br/>Electron<br/>Brave | Used:<br/>LambdaTest<br/>Google Chrome<br/><br/>Supports:<br/>Internet Explorer (11+)<br/>Microsoft Edge (legacy and Chromium-based)<br/>Mozilla Firefox<br/>Safari | Used:<br/>Google Chrome<br/><br/>Supports:<br/>LambdaTest<br/>Internet Explorer (11+)<br/>Microsoft Edge (legacy and Chromium-based)<br/>Mozilla Firefox<br/>Safari | N/A |
-|  Pipeline |  | AzureDevops | AzureDevops |  |
-|  Example Test(s) | Yes | Yes | Yes | Yes |
-|  Example Data Teardown | N/A (stubbed request) | Yes | Yes | N/A |
-|  BDD | Mocha |  | BDDfy | Jasmine |
-|  Features | Automatic waiting<br/>In browser<br/>Element selector tool<br/>Spies, stubs , clocks<br/>Real time reloads<br/>Can use the same environment variables as the webapp | Cross browser<br/>Script injection | WebDriver | Render |
-|  Screenshots +/- Videos | Yes | Yes | Yes | No |
+|  | cypress* | Typescript - TestCafe | C# - Selenium | Java - Serenity | jest-sonar* |
+|:-:|:-:|:-:|:-:|:-:|:-:|
+| Framework Type | Acceptance Functional E2E Functional API Component Accessibility Visual Regression | Acceptance Functional E2E Accessibility | Acceptance Functional E2E | Acceptance Functional E2E | Unit  Component  Integration |
+| Language | Typescript Optional: Javascript | Typescript Optional: Javascript | C# | Java | Typescript  Optional: Javascript |
+| Framework | Cypress | TestCafe | Bespoke | Serenity | Jest |
+| Libraries and Tools | Mocha Chai Chai-jQuery Sinon.JS Sinon-Chai Lodash Minimatch Moment Blob Promise | Axios TestCafe Assertions TestCafe API | Microsoft Test SDK Selenium WebDriver WebDriver ChromeDriver Shouldly BDDfy xUnit | Java SDK Selenium WebDriver WebDriver ChromeDriver Serenity JUnit | Jest Snapshot  @testing-library/react |
+| Integrations | Axe Applitools | Axe LambdaTest |  |  | Sonar Scanner |
+| Report(s) | jUnit/xUnit xunit-viewer (single page HTML) Mochawesome (rich HTML results with screenshots) | xUnit | BDDfy xUnit | Serenity reports | jUnit/xUnit  Cobertura, lcov (code coverage)  Sonar reporter |
+| Browsers | Used: Google Chrome  Supported: Mozilla Firefox Microsoft Edge Electron Brave | Used: LambdaTest Google Chrome  Supports: Internet Explorer (11+) Microsoft Edge (legacy and Chromium-based) Mozilla Firefox Safari | Used: Google Chrome  Supports: LambdaTest Internet Explorer (11+) Microsoft Edge (legacy and Chromium-based) Mozilla Firefox Safari | Used: Google Chrome  Supports: Internet Explorer (11+) Microsoft Edge (legacy and Chromium-based) Mozilla Firefox | N/A |
+| Pipeline |  | AzureDevops | AzureDevops | AzureDevops |  |
+| Example Test(s) | Yes | Yes | Yes | Yes | Yes |
+| Example Data Teardown | N/A (stubbed request) | Yes | Yes | Yes | N/A |
+| BDD | Mocha |  | BDDfy | Serenity | Jasmine |
+| Features | Automatic waiting In browser Element selector tool Spies, stubs , clocks Real time reloads Can use the same environment variables as the webapp | Cross browser Script injection | WebDriver | WebDriver Multi-thread test execution Enhanced reporting | Render |
+| Screenshots +/- Videos | Yes | Yes | Yes | Yes | No |
 <!-- markdownlint-restore -->
 
 _\* Currently cannot be bootstrapped from [@amidostacks/scaffolding-cli](https://www.npmjs.com/package/@amidostacks/scaffolding-cli), but is available to clone from the [amido/stacks-webapp-template](https://github.com/amido/stacks-webapp-template) repository._
