@@ -1,5 +1,5 @@
 ---
-id: environment_variables_nodejs_crs
+id: environment_variables_nodejs
 title: Environment Variables
 sidebar_label: Environment Variables
 ---

@@ -1,5 +1,5 @@
 ---
-id: logging_node_js_crs
+id: logging_node_js
 title: Logging and Instrumentation
 sidebar_label: Logging and Instrumentation
 ---
