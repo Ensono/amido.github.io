@@ -118,7 +118,7 @@ Once authenticated, any calls made to API endpoints from within the Swagger UI w
 
 JWT bearer authentication configuration of the API when being component tested can be found in class `CustomAutoDataAttribute`.
 
-```C# title="CustomAutoDataAttribute.cs"
+```csharp title="CustomAutoDataAttribute.cs"
 // TODO - Set JWT authentication config settings if enabled
 var jwtBearerAuthenticationConfiguration = new JwtBearerAuthenticationConfiguration
 {

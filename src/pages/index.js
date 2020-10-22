@@ -82,6 +82,11 @@ function Picker() {
         SSR: "workloads/azure/frontend/cli_webapp_frameworks",
         CSR: "workloads/azure/frontend/cli_webapp_frameworks",
       },
+      "Backend Services": {
+        "Java Spring Boot REST API": "workloads/azure/backend/java/intro_java",
+        "Java Spring Boot REST API with CQRS": "workloads/azure/backend/java_cqrs/intro_java_cqrs",
+        ".NET Core REST API with CQRS": "workloads/azure/backend/netcore/introduction_netcore"
+      }
     },
   };
 

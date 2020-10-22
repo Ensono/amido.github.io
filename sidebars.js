@@ -108,14 +108,6 @@ module.exports = {
                       'workloads/azure/backend/netcore/quickstart/create_project_netcore',
                       'workloads/azure/backend/netcore/quickstart/configure_project_netcore',
                       'workloads/azure/backend/netcore/quickstart/build_and_run_project_netcore',
-                      {
-                        type: 'category',
-                        label: 'Test',
-                        items: [
-                          'workloads/azure/backend/netcore/quickstart/testing/functional_testing_netcore',
-                          'workloads/azure/backend/netcore/quickstart/testing/performance_testing_netcore',
-                        ]
-                      },
                       'workloads/azure/backend/netcore/quickstart/deploy_project_netcore',
                       {
                         type: 'category',
@@ -129,20 +121,26 @@ module.exports = {
                   },
                   {
                     type: 'category',
-                    label: 'Infrastructure',
+                    label: 'Testing',
                     items: [
-                      'workloads/azure/backend/netcore/infrastructure/pipeline_netcore',
+                      'workloads/azure/backend/netcore/testing/testing_the_api_netcore',
+                      'workloads/azure/backend/netcore/testing/functional_testing_netcore',
+                      'workloads/azure/backend/netcore/testing/performance_testing_netcore',
                     ]
                   },
+                  'workloads/azure/backend/netcore/infrastructure_netcore',
+                  'workloads/azure/backend/netcore/pipeline_netcore',
                   'workloads/azure/backend/netcore/logging_netcore',
                   'workloads/azure/backend/netcore/security_netcore',
                   {
                     type: 'category',
                     label: 'Architecture',
                     items: [
-                      'workloads/azure/backend/netcore/project_structure/architecture_overview_netcore',
-                      'workloads/azure/backend/netcore/project_structure/repository_overview_netcore',
-                      'workloads/azure/backend/netcore/project_structure/project_structure_netcore'
+                      'workloads/azure/backend/netcore/architecture/architecture_overview_netcore',
+                      'workloads/azure/backend/netcore/architecture/repository_overview_netcore',
+                      'workloads/azure/backend/netcore/architecture/project_structure_netcore',
+                      'workloads/azure/backend/netcore/architecture/data_storage_cosmosdb_netcore',
+                      'workloads/azure/backend/netcore/architecture/operations_events_exceptions_correlation_netcore',
                     ]
                   }
                 ]
@@ -181,18 +179,16 @@ module.exports = {
         items: [],
       },
     ],
-    Testing: [
-      "testing/testing",
+    "Quality Assurance": [
       "testing/cli_testing_frameworks",
       "testing/testing_java_serenity_bdd",
       "testing/testing_dotnet_selenium",
       "testing/cypress_functional_testing",
+      "testing/testing_static_analysis",
       "testing/visual_analysis",
       "testing/contract_testing_pact",
       "testing/accessibility_testing",
-      "testing/performance_testing_gatling",
-      "testing/testing_static",
-      "testing/static_analysis",
+      "testing/performance_testing_gatling"
     ],
   },
 };

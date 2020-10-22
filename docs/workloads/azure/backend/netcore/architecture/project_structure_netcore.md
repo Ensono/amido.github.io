@@ -362,9 +362,8 @@ import TabItem from "@theme/TabItem";
         <h3>Company.Project.API.ContractTests</h3>
         <p>Contract tests cover testing of the API contracts between the provider of an API service and the consumer of the API
             service. Documentation for contract testing can be found within the following documentation:</p>
-        <p><a href="/docs/workloads/azure/netcore/project_structure/testing/testing_scope_netcore">Testing Scope</a></p>
-        <p><a href="/docs/workloads/azure/netcore/project_structure/testing/consummer_driven_contract_testing_netcore">Consumer-Driven Contract Testing</a></p>
-        <p>What Is: Consumer Driven Contract Testing&nbsp;[Draft]</p>
+        <p><a href="/docs/workloads/azure/backend/netcore/architecture/testing/testing_scope_netcore">Testing Scope</a></p>
+        <p><a href="/docs/workloads/azure/backend/netcore/architecture/testing/consummer_driven_contract_testing_netcore">Consumer-Driven Contract Testing</a></p>
     </TabItem>
 </Tabs>
 

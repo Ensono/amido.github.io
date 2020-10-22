@@ -29,16 +29,17 @@ Clone the Dotnet project to your local machine from here: [stacks-dotnet reposit
     Download the [stacks-app-template.1.0.0.nupkg template package](https://github.com/amido/stacks-dotnet/releases/tag/1.0.0)
     (.Net Core 3.1, current LTS release) to a temporary folder.
 
-
+    ```bash
     dotnet new -i /path/to/stacks-app-template.1.0.0.nupkg
+    ```
 
 2. Create the project
 
-```cmd title="Template command to create the project"
-dotnet new stacks-app -n Company.Project -d DomainName
-```
+    ```bash title="Template command to create the project"
+    dotnet new stacks-app -n Company.Project -d DomainName
+    ```
 
-The above command will create a folder and a repository called `Company.Project`.
+    The above command will create a folder and a repository called `Company.Project`.
 
 :::note Template parameter details
 
@@ -61,14 +62,14 @@ It includes tests (unit, integration), together with infrastructure and deployme
 
 We use [npx](https://www.npmjs.com/package/npx) to execute the [scaffolding-cli](https://www.npmjs.com/package/@amidostacks/scaffolding-cli).
 
-```text title="npx install command"
+```bash title="npx install command"
 npm install -g npx
 ```
 
 We are supporting and running [node@12](https://nodejs.org/en/about/releases/).
 Please ensure that your local environment has the correct version [installed](https://nodejs.org/en/download/).
 
-```cli title="Scaffolding-CLI command to create the project"
+```bash title="Scaffolding-CLI command to create the project"
 npx @amidostacks/scaffolding-cli@latest run -i
 ```
 
