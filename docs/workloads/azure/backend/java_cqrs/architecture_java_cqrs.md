@@ -20,7 +20,7 @@ sending of the associated event details. Queries, which do not change the data s
 a query service.
 
 Upon successful execution of a command (database update), the microservice publishes one or more events
-describing how the persistence state has changed e.g. If a “Create Category” event is successful,
+describing how the persistence state has changed e.g. if a “Create Category” event is successful,
 then a “Menu Updated” event and a “Category Created” event will be published.
 
 Application Events contain the following basic information:

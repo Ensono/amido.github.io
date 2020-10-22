@@ -370,22 +370,3 @@ import TabItem from "@theme/TabItem";
 
 <br />
 
-## Dependencies
-
-Amido Stacks Packages
-
-**TODO**: List shared packages in the project and their role
-
-Nuget Packages
-
-**TODO**: List main NuGet packages used in the project and their role
-
-<br />
-
-## Things to Avoid
-
-Dependencies
-
-```text
-opt for Adapter or Facade instead of Services
-```

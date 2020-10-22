@@ -1,12 +1,12 @@
 module.exports = {
   docs: {
-    "Getting started": [
+    "Learn about Stacks": [
       "index",
+      "glossary",
       {
         type: "category",
         label: "Build the application",
         items: [
-          "getting_started_demo",
         ],
       },
     ],
@@ -20,13 +20,33 @@ module.exports = {
             type: "category",
             label: "Frontend Web Applications",
             items: [
-              "workloads/azure/frontend/intro_node_js",
               "workloads/azure/frontend/ide_node_js",
-              "workloads/azure/frontend/environment_variables_nodejs",
               "workloads/azure/frontend/cli_webapp_frameworks",
               "workloads/azure/frontend/monorepo",
+              "workloads/azure/frontend/state-management",
+              {
+                type: "category",
+                label: "Client Side Rendering",
+                items: [
+                  "workloads/azure/frontend/environment_variables_nodejs_crs",
+                  "workloads/azure/frontend/api_definition_crs",
+                  "workloads/azure/frontend/logging_node_js_crs",
+                ],
+              },
+              {
+                type: "category",
+                label: "Server  Side Rendering",
+                items: [
+                  "workloads/azure/frontend/environment_variables_nodejs",
+                  "workloads/azure/frontend/cms",
+                  "workloads/azure/frontend/identity",
+                  "workloads/azure/frontend/api_definition",
+                  "workloads/azure/frontend/logging_node_js",
+                  "workloads/azure/frontend/server_side_cache",
+                ],
+              },
               "workloads/azure/frontend/browser_support",
-              "workloads/azure/frontend/server_side_cache",
+              "workloads/azure/frontend/deployment_node_js",
             ],
           },
           {
@@ -41,7 +61,6 @@ module.exports = {
                   'workloads/azure/backend/java/quickstart_java',
                   'workloads/azure/backend/java/scaffolding_java',
                   'workloads/azure/backend/java/ide_java',
-                  'workloads/azure/backend/java/testing_java',
                   {
                     type: "category",
                     label: "Architecture",
@@ -50,6 +69,9 @@ module.exports = {
                       'workloads/azure/backend/java/structure_java',
                     ],
                   },
+                  'workloads/azure/backend/java/infrastructure_java',
+                  'workloads/azure/backend/java/pipeline_java',
+                  'workloads/azure/backend/java/testing_java',
                 ],
               },
               {
@@ -60,7 +82,6 @@ module.exports = {
                   'workloads/azure/backend/java_cqrs/quickstart_java_cqrs',
                   'workloads/azure/backend/java_cqrs/scaffolding_java_cqrs',
                   'workloads/azure/backend/java_cqrs/ide_java_cqrs',
-                  'workloads/azure/backend/java_cqrs/testing_java_cqrs',
                   {
                     type: "category",
                     label: "Architecture",
@@ -69,6 +90,9 @@ module.exports = {
                       'workloads/azure/backend/java_cqrs/structure_java_cqrs',
                     ],
                   },
+                  'workloads/azure/backend/java_cqrs/infrastructure_java_cqrs',
+                  'workloads/azure/backend/java_cqrs/pipeline_java_cqrs',
+                  'workloads/azure/backend/java_cqrs/testing_java_cqrs',
                 ],
               },
               {
@@ -103,6 +127,13 @@ module.exports = {
                       },
                     ]
                   },
+                  {
+                    type: 'category',
+                    label: 'Infrastructure',
+                    items: [
+                      'workloads/azure/backend/netcore/infrastructure/pipeline_netcore',
+                    ]
+                  },
                   'workloads/azure/backend/netcore/logging_netcore',
                   'workloads/azure/backend/netcore/security_netcore',
                   {
@@ -135,7 +166,7 @@ module.exports = {
         ],
       },
     ],
-    'Infrastructure': [
+    Infrastructure: [
       {
         type: "category",
         label: "Azure",
@@ -160,6 +191,11 @@ module.exports = {
       "testing/contract_testing_pact",
       "testing/accessibility_testing",
       "testing/performance_testing_gatling",
+<<<<<<< HEAD
+=======
+      "testing/testing_static",
+      "testing/static_analysis",
+>>>>>>> master
     ],
   },
 };

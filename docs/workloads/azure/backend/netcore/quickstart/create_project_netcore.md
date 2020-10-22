@@ -3,6 +3,7 @@ id: create_project_netcore
 title: Create the project
 hide_title: true
 sidebar_label: Create the project
+hide_table_of_contents: true
 ---
 
 ## Create the project
@@ -29,9 +30,7 @@ Clone the Dotnet project to your local machine from here: [stacks-dotnet reposit
     (.Net Core 3.1, current LTS release) to a temporary folder.
 
 
-    ```text
     dotnet new -i /path/to/stacks-app-template.1.0.0.nupkg
-    ```
 
 2. Create the project
 
@@ -42,14 +41,15 @@ dotnet new stacks-app -n Company.Project -d DomainName
 The above command will create a folder and a repository called `Company.Project`.
 
 :::note Template parameter details
-    - **-n**
-        - Sets the project name
-        - Omitting it will result in the project name being the same as the folder where the command has been ran from
-    - **-o**
-        - Sets the path to where the project is added
-        - Omitting the parameter will result in the creation of a new folder
-    - **-d**, **-Domain**
-        - Sets the name of the aggregate root object. It is also the name of the collection within CosmosDB instance.
+
+* **-n**
+    * Sets the project name
+    * Omitting it will result in the project name being the same as the folder where the command has been ran from
+* **-o**
+    * Sets the path to where the project is added
+    * Omitting the parameter will result in the creation of a new folder
+* **-d**, **-Domain**
+    * Sets the name of the aggregate root object. It is also the name of the collection within CosmosDB instance.
 :::
 
 <br />
