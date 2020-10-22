@@ -45,7 +45,7 @@ The above snippet registers the `v1/swagger.json` in the UI. Once the UI is load
 
 For registering multiple spec versions, simply register multiple document generations by calling the `.AddSwaggerGen(c => ...)` multiple times, changing just the document filter from `/v1` to the version desired.
 
-```jsx title="Swagger multiple doc spec"
+```csharp title="Swagger multiple doc spec"
 From:
 SwaggerDoc("v1", new Info());
 c.DocumentFilter<VersionPathFilter>("/v1");

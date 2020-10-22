@@ -27,7 +27,7 @@ module.exports = {
     prism: {
       theme: require('prism-react-renderer/themes/github'),
       darkTheme: require('prism-react-renderer/themes/vsDark'),
-      additionalLanguages: ['csharp', 'docker', 'powershell', 'java'],
+      additionalLanguages: ['csharp', 'docker', 'powershell', 'java', 'bash', 'json'],
     },
     navbar: {
       title: "Amido Stacks",

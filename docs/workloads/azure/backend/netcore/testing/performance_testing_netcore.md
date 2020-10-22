@@ -38,7 +38,7 @@ Blog post by Amir Gharai which was used to set up the framework - [Performance T
 
 Once the project has been cloned locally, tests can be run using the following command:
 
-```text
+```bash
 mvn clean gatling:test
 ```
 
@@ -47,7 +47,7 @@ By default, this will run a load test against the GET menu api with 1 user with 
 - `-Dusers=X` - allows to set the number of users that will be simulated in the tests
 - `-Drampup=X` - sets the amount of seconds the test will ramp the test load from 0 users to X users in the test
 
-```text title="Example"
+```bash title="Example"
 mvn clean gatling:test -Dusers=100 -Drampup=5`
 ```
 

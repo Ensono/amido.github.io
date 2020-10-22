@@ -108,14 +108,6 @@ module.exports = {
                       'workloads/azure/backend/netcore/quickstart/create_project_netcore',
                       'workloads/azure/backend/netcore/quickstart/configure_project_netcore',
                       'workloads/azure/backend/netcore/quickstart/build_and_run_project_netcore',
-                      {
-                        type: 'category',
-                        label: 'Test',
-                        items: [
-                          'workloads/azure/backend/netcore/quickstart/testing/functional_testing_netcore',
-                          'workloads/azure/backend/netcore/quickstart/testing/performance_testing_netcore',
-                        ]
-                      },
                       'workloads/azure/backend/netcore/quickstart/deploy_project_netcore',
                       {
                         type: 'category',
@@ -125,6 +117,15 @@ module.exports = {
                           'workloads/azure/backend/netcore/quickstart/swagger_configuration/configure_swagger_ui_netcore',
                         ]
                       },
+                    ]
+                  },
+                  {
+                    type: 'category',
+                    label: 'Testing',
+                    items: [
+                      'workloads/azure/backend/netcore/testing/testing_the_api_netcore',
+                      'workloads/azure/backend/netcore/testing/functional_testing_netcore',
+                      'workloads/azure/backend/netcore/testing/performance_testing_netcore',
                     ]
                   },
                   'workloads/azure/backend/netcore/infrastructure_netcore',
