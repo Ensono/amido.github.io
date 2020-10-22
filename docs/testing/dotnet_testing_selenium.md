@@ -4,7 +4,11 @@ title: UI Browser Automation with Selenium and .NET
 sidebar_label: C# - Selenium .Net
 ---
 
-## Installing the template
+## Getting Started
+
+This page explains how to setup a UI testing framework built with C# and Selenium.
+
+### Installing the template
 
 To create a templated solution we can use the <https://www.npmjs.com/package/@amidostacks/scaffolding-cli> npm package.
 
@@ -14,13 +18,11 @@ To create a templated solution we can use the <https://www.npmjs.com/package/@am
 
 We are using [npx](https://www.npmjs.com/package/npx) (Node Package Executor) to run the [@amidostacks/scaffolding-cli](https://www.npmjs.com/package/@amidostacks/scaffolding-cli).
 
-Please ensure your environment has:
+Please ensure your environment has: [node@12](https://nodejs.org/en/about/releases/).
 
-* [node@12](https://nodejs.org/en/about/releases/). To download the supported version see [nodejs.org](https://nodejs.org/en/download/).
+To download the supported version see [nodejs.org](https://nodejs.org/en/download/).
 
-## Using the template
-
-## Editors (IDE's)
+## Using the template on VSCode
 
 It is recommended to use Visual Studio. Alternatively, VSCode has some custom plugins that can be configured to make debugging your tests easier.
 
@@ -34,7 +36,7 @@ For all downloads, see <https://visualstudio.microsoft.com/>
 
 ### Debugging in Visual Studio
 
-Visual Studio will automagically attach to the Selenium process, using the XUnit Runner. Visual Studio also automagically discovers the Xunit tests for the project and displays them in the Test Explorer.
+Visual Studio will automatically attach to the Selenium process, using the XUnit Runner. Visual Studio also automatically discovers the Xunit tests for the project and displays them in the Test Explorer.
 
 For more information on running and debugging in Visual Studio see: <https://docs.microsoft.com/en-us/visualstudio/test/run-unit-tests-with-test-explorer?view=vs-2019>
 
@@ -71,7 +73,9 @@ In root (*.sln) directory, build the solution using: ) the solution:
 dotnet test
 ```
 
-_Note: you don't need to run `dotnet restore` because it's run implicitly by all commands that require a restore to occur, such as dotnet new, dotnet build and dotnet run._
+:::info
+You don't need to run `dotnet restore` because it's run implicitly by all commands that require a restore to occur, such as dotnet new, dotnet build and dotnet run._
+:::
 
 ### Dependencies
 
@@ -94,13 +98,11 @@ _Documentation: <https://docs.microsoft.com/en-us/aspnet/core/fundamentals/confi
 
 If you wish to use a local instance of Selenium Webdriver, be sure to download the Selenium WebDriver file for the browsers with which you wish to perform cross-browser testing from the links mentioned below:
 
-| BROWSER   | DOWNLOAD LOCATION                                             |
-| -------   | -----------------                                             |
-| Opera     | <https://github.com/operasoftware/operachromiumdriver/releases>   |
-| Firefox   | <https://github.com/mozilla/geckodriver/releases>             |
-| Chrome    | <http://chromedriver.chromium.org/downloads>                  |
-| Internet Explorer | <https://github.com/SeleniumHQ/selenium/wiki/InternetExplorerDriver> |
-| Microsoft Edge    | <https://blogs.windows.com/msedgedev/2015/07/23/bringing-automated-testing-to-microsoft-edge-through-webdriver/>  |
+* [Opera](https://github.com/operasoftware/operachromiumdriver/releases)
+* [Firefox](https://github.com/mozilla/geckodriver/releases)
+* [Chrome](http://chromedriver.chromium.org/downloads)
+* [Internet Explorer](https://github.com/SeleniumHQ/selenium/wiki/InternetExplorerDriver)
+* [Microsoft Edge](https://blogs.windows.com/msedgedev/2015/07/23/bringing-automated-testing-to-microsoft-edge-through-webdriver/)
 
 ## Folder structure
 
@@ -129,64 +131,11 @@ E.g. in `appsettings.json` we are using the configuration setting (key-value pai
 
 This is the base of how Selenium will interact with your web app.
 
-## Page Object model
-
-We are using as a base the Page Object model, with a strong flavour and inclination towards Page Component-based models.
-
-> Instead, you can use the concept of Page Components. A Page Component represents a specific part of the page that helps the user perform a specific task. A login form, a navigation hierarchy, a search result list, or the details about the current user: all of these would make great Page Components.
-
-This aligns with our Front End implementation approach with React components, and how other testing frameworks are structured (with Cypress, TestCafe).
-
-Documentation: [Page Objects that Suck Less – Tips for writing more maintainable Page Objects](https://johnfergusonsmart.com/page-objects-that-suck-less-tips-for-writing-more-maintainable-page-objects/)
-
-## Locators
-
-We strongly recommend using data attributes for selecting elements. See [Element Recommendations](#element-recommendations) for more information.
-
-ID, ClassName, Name, linkText, XPath and CSS are the six locators which selenium supports to identify the locators on the web page.
-
-For information on tools and tips on how to best use locators, the following articles are very handy:
-
-* [Locators In Selenium WebDriver With Examples](https://www.lambdatest.com/blog/locators-in-selenium-webdriver-with-examples)
-* [Locator techniques and tools in selenium](https://medium.com/chaya-thilakumara/locator-techniques-and-tools-in-selenium-eef98d0a45a6)
-
-Please be aware, that that the `Selenium PageFactory` uses the `FindBy` method. Jim Evans who is the main contributor to Selenium states why this might not be the best approach for C# implementation.
-
- More information: <http://jimevansmusic.blogspot.com/2018/03/deprecating-parts-of-seleniums-net.html>
-
-
-### Element Locator tools
-
-One of the best methods to test your locator is working is by trying it in the browser first.
-
-1. [Debugging with Developer Console](https://www.lambdatest.com/blog/debugging-javascript-using-the-browsers-developer-console/)
-2. [Interacting with the DOM with jQuery](https://api.jquery.com/jQuery/)
-
-### Element recommendations
-
-[Data attributes](https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes) can help identify the elements under test. 
-
-#### Example
-
-In this example, we show how the edit icon can be referenced by using the data attribute. The data attribute in this instance was created for use with Cypress functional tests. We can easily use this again in Selenium. This way we are using common selectors.
-
-![edit_button](https://amidostacksassets.blob.core.windows.net/docs/assets/data_attribute.png)
-
-```html
-<button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary Mui-disabled MuiIconButton-edgeEnd Mui-disabled" tabindex="-1" type="button" disabled="" aria-label="edit" data-cy="editMenuItem"><span class="MuiIconButton-label"><svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="presentation"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"></path></svg></span></button>
-```
-
-We can interact with this by using the following:
-
-```c#
-public By menus = By.CssSelector("[data-cy='editMenuItem']");
-```
-
 ### Tests
 
 This is the parent folder for all test code.
 
-#### Fixtures
+### Fixtures
 
 `BaseSetup.cs` contains methods for setting up the seleniumWrapper and webdriver instances, and will boot the web app using the configured baseUrl.
 
@@ -202,7 +151,7 @@ Fixtures contains xUnit class fixtures. These class fixtures are used to create 
 
 See xUnit documentation for information on different fixtures and how to use them: <https://xunit.net/docs/shared-context>
 
-##### Stories
+### Stories
 
 The Stories folder contains all the test cases (I.e. the BDDfy stories). Each class should represent a new test story, and within each class/story, there will be several test cases which test a specific feature.
 
@@ -210,22 +159,59 @@ Test cases within a story are defined using xUnit `Facts`. BDDfy is used to desc
 
 The solution tags (or annotates) tests as smoke tests using xUnit `Traits`. I.e. `[Trait("Category", "SmokeTest")]`
 
-##### Steps
+### Steps
 
 This is where all the step definitions are created.
 
-## Other testing tools
+## Page Object model
 
-<https://github.com/thangchung/awesome-dotnet-core>
+We are using as a base the Page Object model, with a strong flavour and inclination towards Page Component-based models.
 
-## C# coding standards and naming conventions
+> Instead, you can use the concept of Page Components. A Page Component represents a specific part of the page that helps the user perform a specific task. A login form, a navigation hierarchy, a search result list, or the details about the current user: all of these would make great Page Components.
 
-See <https://github.com/ktaranov/naming-convention/blob/master/C%23%20Coding%20Standards%20and%20Naming%20Conventions.md> for best practices.
+This aligns with our Front End implementation approach with React components, and how other testing frameworks are structured (with Cypress, TestCafe).
 
-## Contributing
+Documentation: [Page Objects that Suck Less – Tips for writing more maintainable Page Objects](https://johnfergusonsmart.com/page-objects-that-suck-less-tips-for-writing-more-maintainable-page-objects/)
 
-See our contribution guidelines at [www.github/amido/stacks](https://github.com/amido/stacks) for more information!
+### Locators
 
-### Publishing
+We strongly recommend using data attributes for selecting elements. See [Element Recommendations](#element-recommendations) for more information.
 
-This project is publicly available.
+ID, ClassName, Name, linkText, XPath and CSS are the six locators which selenium supports to identify the locators on the web page.
+
+For information on tools and tips on how to best use locators, the following articles are very handy:
+
+* [Locators In Selenium WebDriver With Examples](https://www.lambdatest.com/blog/locators-in-selenium-webdriver-with-examples)
+* [Locator techniques and tools in selenium](https://medium.com/chaya-thilakumara/locator-techniques-and-tools-in-selenium-eef98d0a45a6)
+
+Please be aware, that that the `Selenium PageFactory` uses the `FindBy` method. Jim Evans who is the main contributor to Selenium states why this might not be the best approach for C# implementation.
+
+ More information: <http://jimevansmusic.blogspot.com/2018/03/deprecating-parts-of-seleniums-net.html>
+
+### Element Locator tools
+
+One of the best methods to test your locator is working is by trying it in the browser first.
+
+1. [Debugging with Developer Console](https://www.lambdatest.com/blog/debugging-javascript-using-the-browsers-developer-console/)
+2. [Interacting with the DOM with jQuery](https://api.jquery.com/jQuery/)
+
+### Element recommendations
+
+[Data attributes](https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes) can help identify the elements under test. 
+
+### Example
+
+In this example, we show how the edit icon can be referenced by using the data attribute. The data attribute in this instance was created for use with Cypress functional tests. We can easily use this again in Selenium. This way we are using common selectors.
+
+![edit_button](https://amidostacksassets.blob.core.windows.net/docs/assets/data_attribute.png)
+
+```html
+<button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary Mui-disabled MuiIconButton-edgeEnd Mui-disabled" tabindex="-1" type="button" disabled="" aria-label="edit" data-cy="editMenuItem"><span class="MuiIconButton-label"><svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="presentation"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"></path></svg></span></button>
+```
+
+We can interact with this by using the following:
+
+```c#
+public By menus = By.CssSelector("[data-cy='editMenuItem']");
+```
+

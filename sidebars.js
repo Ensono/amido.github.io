@@ -160,8 +160,6 @@ module.exports = {
       "testing/contract_testing_pact",
       "testing/accessibility_testing",
       "testing/performance_testing_gatling",
-      "testing/testing_static",
-      "testing/static_analysis",
     ],
   },
 };
