@@ -78,16 +78,23 @@ function Picker() {
   const baseUrl = useBaseUrl("docs/");
   const OptionMapper = {
     Azure: {
-      "Frontend Web App": {
-        SSR: "workloads/azure/frontend/cli_webapp_frameworks",
-        CSR: "workloads/azure/frontend/cli_webapp_frameworks",
+      "Server Side Rendered Web Application": {
+        "Node JS / React": "workloads/azure/frontend/cli_webapp_frameworks"
       },
-      "Backend Services": {
-        "Java Spring Boot REST API": "workloads/azure/backend/java/intro_java",
-        "Java Spring Boot REST API with CQRS": "workloads/azure/backend/java_cqrs/intro_java_cqrs",
-        ".NET Core REST API with CQRS": "workloads/azure/backend/netcore/introduction_netcore"
+      "Client Side Rendered Web Application": {
+        "Node JS / React": "workloads/azure/frontend/cli_webapp_frameworks"
+      },
+      "REST Web API": {
+        "Java Spring Boot": "workloads/azure/backend/java/intro_java"
+      },
+      "REST Web API with CQRS":
+      {
+        "Java Spring Boot": "workloads/azure/backend/java_cqrs/intro_java_cqrs",
+        "C# / .NET Core": "workloads/azure/backend/netcore/introduction_netcore"
       }
     },
+    GCP: "workloads/gcp/workloads_gcp_readme",
+    AWS: "workloads/aws/workloads_aws_readme"
   };
 
   const cloudProviders = Object.keys(OptionMapper).map((key) => ({
@@ -95,13 +102,14 @@ function Picker() {
     label: key,
   }));
 
-  const languages = firstOption
+
+  const applications = firstOption
     ? Object.keys(firstOption.value).map((option) => {
         return { value: firstOption.value[option], label: option };
       })
     : [];
 
-  const option3 = secondOption
+  const languages = secondOption
     ? Object.keys(secondOption.value).map((key) => {
         return { value: secondOption.value[key], label: key };
       })
@@ -119,44 +127,47 @@ function Picker() {
         }}
       >
         <Select
+          placeholder="Select Cloud Provider"
           value={firstOption}
           onChange={(selected) => {
             setFirstOption(selected);
           }}
           options={cloudProviders}
         />
-        {firstOption && (
+        {firstOption && typeof firstOption.value === 'object' && (
           <>
             <Select
+              placeholder="Select Solution Architecture"
               value={secondOption}
               onChange={(selected) => {
                 setSecondOption(selected);
+              }}
+              options={applications}
+            />
+          </>
+        )}
+
+        {secondOption && typeof secondOption.value === 'object' && (
+          <>
+            <Select
+              placeholder="Select Language/Framework"
+              value={thirdOption}
+              onChange={(selected) => {
+                setThirdOption(selected);
               }}
               options={languages}
             />
           </>
         )}
 
-        {secondOption && (
-          <>
-            <Select
-              value={thirdOption}
-              onChange={(selected) => {
-                setThirdOption(selected);
-              }}
-              options={option3}
-            />
-          </>
-        )}
-
-        {thirdOption && (
+        {((firstOption && typeof firstOption.value === 'string') || thirdOption ) && (
           <div className={styles.buttons} style={{ marginTop: 20 }}>
             <Link
               className={clsx(
                 "button button--outline button--secondary button--lg",
                 styles.getStarted
               )}
-              to={baseUrl + thirdOption.value}
+              to={baseUrl + (thirdOption ? thirdOption.value : firstOption.value)}
             >
               Lets Go!
             </Link>
