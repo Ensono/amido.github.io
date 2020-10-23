@@ -1,7 +1,7 @@
 ---
-id: pipeline_templates
-title: Pipeline Templates
-sidebar_label: Pipeline Templates
+id: azure_devops
+title: Azure DevOps Pipeline
+sidebar_label: Azure DevOps
 ---
 
 Where possible, we are creating reusable steps that can be pulled into any base pipeline. Reusable steps can include tasks to deploy, build, test and more.
