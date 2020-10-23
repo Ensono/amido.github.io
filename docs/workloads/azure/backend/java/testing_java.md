@@ -4,21 +4,64 @@ title: Testing the application
 sidebar_label: Testing the API
 ---
 
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
 ## Testing the API
 
 ### Running the tests
 
 Tests within the code are grouped using Tag annotations. There are three groups: 'Unit', 'Component' and 'Integration'. To just run the unit tests, for example, type:
 
-```text
-./mvnw test -Dgroups="Unit"
-```
+ <Tabs
+   groupId="operating-systems"
+   defaultValue="unix"
+   values={[
+     { label: 'Unix', value: 'unix', },
+     { label: 'Windows', value: 'windows', },
+   ]
+ }>
+  <TabItem value="unix">
+
+  ```bash
+  ./mvnw test -Dgroups="Unit"
+  ```
+
+  </TabItem>
+  <TabItem value="windows">
+
+  ```bash
+  mvnw.cmd test -Dgroups="Unit"
+  ```
+
+  </TabItem>
+ </Tabs>
 
 Similarly, for the Component tests, you should use:
 
-```text
-./mvnw test -Dgroups="Component"
-```
+ <Tabs
+   groupId="operating-systems"
+   defaultValue="unix"
+   values={[
+     { label: 'Unix', value: 'unix', },
+     { label: 'Windows', value: 'windows', },
+   ]
+ }>
+  <TabItem value="unix">
+
+  ```bash
+  ./mvnw test -Dgroups="Component"
+  ```
+
+  </TabItem>
+  <TabItem value="windows">
+
+  ```bash
+  mvnw.cmd test -Dgroups="Component"
+  ```
+
+  </TabItem>
+ </Tabs>
 
 and the equivalent for running the Integration tests.
 
@@ -31,33 +74,113 @@ The report file (as either XML or HTML) generated for each of the test classes c
 
 Run the following command to create the report:
 
-```text
-./mvnw surefire:test
-```
+ <Tabs
+   groupId="operating-systems"
+   defaultValue="unix"
+   values={[
+     { label: 'Unix', value: 'unix', },
+     { label: 'Windows', value: 'windows', },
+   ]
+ }>
+  <TabItem value="unix">
+
+  ```bash
+  ./mvnw surefire:test"
+  ```
+
+  </TabItem>
+  <TabItem value="windows">
+
+  ```bash
+  mvnw.cmd surefire:test"
+  ```
+
+  </TabItem>
+ </Tabs>
 
 To generate the Serenity report:
 
-```text
-./mvnw clean verify
-```
+ <Tabs
+   groupId="operating-systems"
+   defaultValue="unix"
+   values={[
+     { label: 'Unix', value: 'unix', },
+     { label: 'Windows', value: 'windows', },
+   ]
+ }>
+  <TabItem value="unix">
+
+  ```bash
+  ./mvnw clean verify"
+  ```
+
+  </TabItem>
+  <TabItem value="windows">
+
+  ```bash
+  mvnw.cmd clean verify"
+  ```
+
+  </TabItem>
+ </Tabs>
 
 The report can be viewed under `<PROJECT-NAME>/api-tests/target/site/serenity/index.html`.
 
-#### Code coverage and dependency check reports
+#### Code coverage
 
 Run the following command:
 
-```text
-./mvnw jacoco:report
-```
+ <Tabs
+   groupId="operating-systems"
+   defaultValue="unix"
+   values={[
+     { label: 'Unix', value: 'unix', },
+     { label: 'Windows', value: 'windows', },
+   ]
+ }>
+  <TabItem value="unix">
+
+  ```bash
+  ./mvnw jacoco:report"
+  ```
+
+  </TabItem>
+  <TabItem value="windows">
+
+  ```bash
+  mvnw.cmd jacoco:report"
+  ```
+
+  </TabItem>
+ </Tabs>
 
 The generated report can be viewed under `<PROJECT-NAME>/target/site/jacoco/index.html`.
 
-For the dependency checker report, run:
+#### Dependency checker report
 
-```text
-./mvnw clean install -Powasp-dependency-check
-```
+ <Tabs
+   groupId="operating-systems"
+   defaultValue="unix"
+   values={[
+     { label: 'Unix', value: 'unix', },
+     { label: 'Windows', value: 'windows', },
+   ]
+ }>
+  <TabItem value="unix">
+
+  ```bash
+  ./mvnw clean install -Powasp-dependency-check"
+  ```
+
+  </TabItem>
+  <TabItem value="windows">
+
+  ```bash
+  mvnw.cmd clean install -Powasp-dependency-check"
+  ```
+
+  </TabItem>
+ </Tabs>
 
 The generated report can be viewed under `<PROJECT-NAME>/target/dependency-check.html`.
 
@@ -67,9 +190,29 @@ PIT mutation testing is used to generate mutation tests (see <https://pitest.org
 The mutation coverage goal analyses all classes in the codebase that match the target tests and target class filters.
 To run it:
 
-```text
-./mvnw org.pitest:pitest-maven:mutationCoverage
-```
+ <Tabs
+   groupId="operating-systems"
+   defaultValue="unix"
+   values={[
+     { label: 'Unix', value: 'unix', },
+     { label: 'Windows', value: 'windows', },
+   ]
+ }>
+  <TabItem value="unix">
+
+  ```bash
+  ./mvnw org.pitest:pitest-maven:mutationCoverage"
+  ```
+
+  </TabItem>
+  <TabItem value="windows">
+
+  ```bash
+  mvnw.cmd org.pitest:pitest-maven:mutationCoverage"
+  ```
+
+  </TabItem>
+ </Tabs>
 
 The generated report can be viewed under – `<PROJECT-NAME>/target/pit-reports/YYYYMMDDHHMI`
 
@@ -79,18 +222,78 @@ Set an environment variable `BASE_URL` (e.g. if testing locally set it to <http:
 
 From project path `<>PROJECT-NAME>/api-tests` to run all tests, use
 
-```text
-./mvnw clean verify
-```
+ <Tabs
+   groupId="operating-systems"
+   defaultValue="unix"
+   values={[
+     { label: 'Unix', value: 'unix', },
+     { label: 'Windows', value: 'windows', },
+   ]
+ }>
+  <TabItem value="unix">
+
+  ```bash
+  ./mvnw clean verify"
+  ```
+
+  </TabItem>
+  <TabItem value="windows">
+
+  ```bash
+  mvnw.cmd clean verify"
+  ```
+
+  </TabItem>
+ </Tabs>
 
 To run the Smoke tests independently, use
 
-```text
-mvn clean verify -Dcucumber.options="--tags @Smoke"
-```
+ <Tabs
+   groupId="operating-systems"
+   defaultValue="unix"
+   values={[
+     { label: 'Unix', value: 'unix', },
+     { label: 'Windows', value: 'windows', },
+   ]
+ }>
+  <TabItem value="unix">
+
+  ```bash
+  ./mvnw clean verify -Dcucumber.options="--tags @Smoke"
+  ```
+
+  </TabItem>
+  <TabItem value="windows">
+
+  ```bash
+  mvnw.cmd clean verify -Dcucumber.options="--tags @Smoke"
+  ```
+
+  </TabItem>
+ </Tabs>
 
 and to run the Functional tests independently, use
 
-```text
-mvn clean verify -Dcucumber.options="--tags @Functional"
-```
+ <Tabs
+   groupId="operating-systems"
+   defaultValue="unix"
+   values={[
+     { label: 'Unix', value: 'unix', },
+     { label: 'Windows', value: 'windows', },
+   ]
+ }>
+  <TabItem value="unix">
+
+  ```bash
+  ./mvnw clean verify -Dcucumber.options="--tags @Functional"
+  ```
+
+  </TabItem>
+  <TabItem value="windows">
+
+  ```bash
+  mvnw.cmd clean verify -Dcucumber.options="--tags @Functional"
+  ```
+
+  </TabItem>
+ </Tabs>

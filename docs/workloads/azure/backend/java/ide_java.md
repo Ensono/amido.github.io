@@ -4,6 +4,9 @@ title: IDE guidelines for the Java Rest API
 sidebar_label: IDE guidelines
 ---
 
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
 ## IDE guidelines
 
 We recommend that you install the following plugins:
@@ -43,22 +46,82 @@ manually formatted code
 
 From the `<PROJECT-NAME>/java` folder run
 
-```text
-./mvnw com.coveo:fmt-maven-plugin:check
-```
+ <Tabs
+   groupId="operating-systems"
+   defaultValue="unix"
+   values={[
+     { label: 'Unix', value: 'unix', },
+     { label: 'Windows', value: 'windows', },
+   ]
+ }>
+  <TabItem value="unix">
 
-to validate the current formatting. You can then run
+  ```bash
+  ./mvnw com.coveo:fmt-maven-plugin:check
+  ```
 
-```text
-./mvnw com.coveo:fmt-maven-plugin:format
-```
+  </TabItem>
+  <TabItem value="windows">
 
-to apply formatting to the source code.
+  ```bash
+  mvnw.cmd com.coveo:fmt-maven-plugin:check
+  ```
+
+  </TabItem>
+ </Tabs>
+
+To validate the current formatting. You can then run the below code to apply formatting to the
+source code.
+
+ <Tabs
+   groupId="operating-systems"
+   defaultValue="unix"
+   values={[
+     { label: 'Unix', value: 'unix', },
+     { label: 'Windows', value: 'windows', },
+   ]
+ }>
+  <TabItem value="unix">
+
+  ```bash
+  ./mvnw com.coveo:fmt-maven-plugin:format
+  ```
+
+  </TabItem>
+  <TabItem value="windows">
+
+  ```bash
+  mvnw.cmd com.coveo:fmt-maven-plugin:format
+  ```
+
+  </TabItem>
+ </Tabs>
 
 #### Verifying common programming flaws
 
 From the `<PROJECT-NAME>/java` folder run
 
-```text
-./mvnw spotbugs:check
-```
+ <Tabs
+   groupId="operating-systems"
+   defaultValue="unix"
+   values={[
+     { label: 'Unix', value: 'unix', },
+     { label: 'Windows', value: 'windows', },
+   ]
+ }>
+  <TabItem value="unix">
+
+  ```bash
+  ./mvnw spotbugs:check
+  ```
+
+  </TabItem>
+
+  <TabItem value="windows">
+
+  ```bash
+  mvnw.cmd spotbugs:check
+  ```
+
+  </TabItem>
+ </Tabs>
