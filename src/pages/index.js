@@ -115,9 +115,6 @@ function Picker() {
       })
     : [];
 
-  let goToPath = undefined;
-
-
   return (
     <div className="container">
       <div
