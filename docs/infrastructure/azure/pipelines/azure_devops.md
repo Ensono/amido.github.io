@@ -4,21 +4,27 @@ title: Azure DevOps Pipeline
 sidebar_label: Azure DevOps
 ---
 
-Where possible, we are creating reusable steps that can be pulled into any base pipeline. Reusable steps can include tasks to deploy, build, test and more.
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-## Azure DevOps: Pipelines
+The pipeline will automate provisioning and updating the core infrastructure in Azure. This page assumes you have already completed the steps on the [core infrastructure page](../core_infrastructure.md).
 
-The [stacks-pipeline-templates](https://github.com/amido/stacks-pipeline-templates) are provided as a base standard process for deploying stacks infrastructure, see `stacks-infrastructure` and `stacks-dotnet` pipeline files under the `./build/AzDevOps/` folders for their specific usage.
+Where possible, we are creating reusable steps ([stacks-pipeline-templates](https://github.com/amido/stacks-pipeline-templates)) that can be pulled into any base pipeline. Reusable steps can include tasks to deploy, build, test and more.
 
-### Service connections
+## Pipeline Diagram
 
-Assuming that you will be consuming the templates from the public [repo](https://github.com/amido/stacks-pipeline-templates), a service connection will need to be configured to ensure we can pull in the source code. The service connection will need a [Github Personal Access Token](https://github.com/settings/tokens) (or credentials) to pull in the code. At a minimum, the access token will need to include:
+<img alt="Azure Core - Azure DevOps Pipeline" src={useBaseUrl('img/azure_core_azure_devops_pipeline.png')} />
 
-*  read:repo
+## Setting up Azure DevOps
 
- Once a token is generated, the service connection can be configured for the project. Instructions can be found at [Manage Service Connections](https://docs.microsoft.com/en-us/azure/devops/pipelines/library/service-endpoints?view=azure-devops&tabs=yaml#create-a-service-connection).
+### Service connection
 
- ![service_connections](https://amidostacksassets.blob.core.windows.net/docs/assets/service_connection_adding.gif)
+A service connection will need to be configured to ensure you can pull in pipeline templates form the public repo. The service connection will need a [Github Personal Access Token](https://github.com/settings/tokens) (or credentials) to pull in the code. At a minimum, the access token will need to include:
+
+* read:repo
+
+Once a token is generated, the service connection can be configured for the project. Instructions can be found [here](https://docs.microsoft.com/en-us/azure/devops/pipelines/library/service-endpoints?view=azure-devops&tabs=yaml#create-a-service-connection).
+
+Finally, the repository resource endpoint value will need to be updated in the `build/azDevops/azure/infra-pipeline.yml` file.
 
 ```yaml
 resources:
@@ -30,39 +36,34 @@ resources:
     endpoint: amidostacks # Name of the service account created for the connection to GitHub from Azure DevOps
 ```
 
-### Example usage
+### Variable group
 
-The below shows an example of how to reference the resource, and pull in the step template.
+A variable group will need creating for storing Azure Credentials to be used with the pipeline. Instructions for  can be found [here](https://docs.microsoft.com/en-us/azure/devops/pipelines/library/variable-groups?view=azure-devops&tabs=classic#create-a-variable-group). Give the variable group a name and description and make sure the **Allow access to all pipelines** option is checked.
 
-```yaml
-pool:
-  vmImage: windows-2019
+Add the following variables using the Service Connection details from [bootstrapping the Azure tenant](../core_infrastructure.md#bootstrap-the-azure-tenant):
 
-resources:
-  repositories:
-    - repository: templates
-      type: github
-      name: amido/stacks-pipeline-templates
-      ref: refs/tags/v1.1.0
-      endpoint: 'GitHub Service Connection'
+* azure_tenant_id
+* azure_subscription_id
+* azure_client_id
+* azure_client_secret
 
-steps:
-  # Functional tests running on deployed webapp
-  - template: azDevOps/azure/templates/v2/steps/test-functional-testcafe.yml@templates
-    parameters:
-      env_vars:
-        APP_BASE_URL: "https://www.google.com"
-      workingDirectory: './src/'
-      testcafe_browser_list: "chrome,firefox,ie,edge"
-```
+<img alt="Azure Core Variable Group" src={useBaseUrl('img/azure_core_variable_group.png')} />
 
-This is an example of a step template being used, but with parameters passed in:
+### Update pipeline template placeholders
 
-```yaml
-  # Functional tests running on locally built and hosted (undeployed)
-  - ${{ if eq(parameters.cypress_e2e_test, true) }}:
-      - template: azDevOps/azure/templates/v2/steps/test-functional-cypress.yml@templates
-        parameters:
-          env_vars: ${{ parameters.cypress_e2e_env_vars}}
-          workingDirectory: ${{ parameters.project_root_dir }}
-```
+Where possible, the scaffolding CLI will have populated the correct values in the pipeline template file `build/azDevops/azure/infra-pipeline.yml`. The values that need to be manually configured, such as the variable group name setup previously, will have placeholders using the prefix `%REPLACE_ME_FOR`. We very much recommend that you go through the whole template to make sure that values are correct for you project. Once you are happy with the template, commit the changes to your repository.
+
+### Create the pipeline
+
+Follow the steps below to create the pipeline and trigger the initial run. 
+
+*Please note that pipeline will create DNS zones for both nonprod and prod (by default, `nonprod.${BASE_DOMAIN}` and `prod.${BASE_DOMAIN}`). These will need NS records adding to the base domain and will cause the pipeline to fail on the initial run.*
+
+1. In the pipelines section of Azure DevOps, select **New Pipeline**.
+2. Select your repository.
+3. Select the **Existing Azure Pipelines YAML files** option and enter the path `build/azDevops/azure/infra-pipeline.yml`
+4. Click run and wait for the pipeline to run. The `Terraform: Apply` step is expected to fail with an error containing: `One or more domains had a problem`.
+5. In the Azure Portal, located the DNS zone created and make note of the NS values.
+6. Add an NS record set to the base domain DNS using the same name as the newly created DNS zone and the NS values noted.
+7. Re-run the pipeline in Azure DevOps.
+8. Repeat steps 5, 6 & 7 for the prod DNS zone.
