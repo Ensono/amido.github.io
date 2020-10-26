@@ -6,40 +6,9 @@ sidebar_label: Core Infrastructure
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-## Bootstrap the Azure tenant
+The core infrastructure is the foundation for all other Stacks Workloads. As, in most cases, this will be the first part of Stacks that you deploy we will also cover bootstrapping your Azure tenant.
 
-The first step is to create the Azure tenant and subscription. This process only needs to be run once run once on an administrators workstation.
-
-The administrator will need the following permissions:
-
-- Azure AD "Global Administrator" role for the Azure AD Tenant
-- IAM subscription owner
-
-With owner privileges:
-
-1. Create an [Azure Service Principal](https://www.terraform.io/docs/providers/azurerm/guides/service_principal_client_secret.html) for use with terraform.
-   - Make note of the TenantID, SubscriptionID, ClientID and ClientSecret
-2. Create a [Blob Storage instance](https://docs.microsoft.com/en-us/azure/storage/common/storage-account-create) and [container](https://docs.microsoft.com/en-us/cli/azure/storage/container?view=azure-cli-latest#az_storage_container_create) for storing terraform state.
-   - Take note of the storage account and container name.
-
-## Using the Scaffolding CLI
-
-The [Amido Stacks Scaffolding CLI](https://www.npmjs.com/package/@amidostacks/scaffolding-cli) can be used to create a project consisting of the core infrastructure as code scripts and the deployment pipeline.
-
-We are supporting and running [node@12](https://nodejs.org/en/about/releases/).
-Please ensure that your local environment has the correct version [installed](https://nodejs.org/en/download/).
-
-To run the Scaffolding CLI, use the following commands
-
-```bash
-npx @amidostacks/scaffolding-cli@latest run -i
-```
-
-You will asked a number of questions. Make sure to select `Azure` and `Cloud platform shared services`.
-
-<!-- TODO: Example video here -->
-
-## Infrastructure
+## Resources Provisioned
 
 ### Diagram
 
@@ -68,13 +37,48 @@ You will asked a number of questions. Make sure to select `Azure` and `Cloud pla
 | ACR                       | Azure Container Registry                                             |
 | Key Vault                 | Cryptographic keys and secrets management service                    |
 
-## Pipelines
+## Deploying
 
-The following pipelines are supported:
+### Bootstrap the Azure tenant
+
+The first step is to create the Azure tenant and subscription. This process only needs to be run once run once on an administrators workstation.
+
+The administrator will need the following permissions:
+
+- Azure AD "Global Administrator" role for the Azure AD Tenant
+- IAM subscription owner
+
+With owner privileges:
+
+1. Create an [Azure Service Principal](https://www.terraform.io/docs/providers/azurerm/guides/service_principal_client_secret.html) for use with terraform.
+   - Make note of the TenantID, SubscriptionID, ClientID and ClientSecret
+2. Create a [Blob Storage instance](https://docs.microsoft.com/en-us/azure/storage/common/storage-account-create) and [container](https://docs.microsoft.com/en-us/cli/azure/storage/container?view=azure-cli-latest#az_storage_container_create) for storing terraform state.
+   - Take note of the storage account and container name.
+
+### Using the Scaffolding CLI
+
+The [Amido Stacks Scaffolding CLI](https://www.npmjs.com/package/@amidostacks/scaffolding-cli) can be used to create a project consisting of the core infrastructure as code scripts and the deployment pipeline.
+
+We are supporting and running [node@12](https://nodejs.org/en/about/releases/).
+Please ensure that your local environment has the correct version [installed](https://nodejs.org/en/download/).
+
+To run the Scaffolding CLI, use the following commands
+
+```bash
+npx @amidostacks/scaffolding-cli@latest run -i
+```
+
+You will asked a number of questions. Make sure to select `Azure` and `Cloud platform shared services`.
+
+<!-- TODO: Example video here -->
+
+### Pipelines
+
+The following pipelines are currently supported for automating the deployment:
 
 - [Azure DevOps](./pipelines/azure_devops.md)
 
-## Running Locally
+### Running Locally
 
 Currently vars.tf and provider configuration is not
 automatically updated. Future iterations will include this.
