@@ -31,7 +31,7 @@ Please ensure that your local environment has the correct version [installed](ht
 
 To run the Scaffolding CLI, use the following commands
 
-```
+```bash
 npx @amidostacks/scaffolding-cli@latest run -i
 ```
 
@@ -42,6 +42,7 @@ You will asked a number of questions. Make sure to select `Azure` and `Cloud pla
 ## Infrastructure
 
 ### Diagram
+
 <img alt="Azure Core Infrastructure" src={useBaseUrl('img/azure_core_infrastructure.png')} />
 
 ### Resource List
@@ -70,7 +71,8 @@ You will asked a number of questions. Make sure to select `Azure` and `Cloud pla
 ## Pipelines
 
 The following pipelines are supported:
- - [Azure DevOps](./pipelines/azure_devops.md)
+
+- [Azure DevOps](./pipelines/azure_devops.md)
 
 ## Running Locally
 
