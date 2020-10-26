@@ -45,11 +45,11 @@ Below are the pre-requisites to get off the ground
 
 You will need a public cloud account with one of the following providers. 
 
-you can find more information around the infrastructure bootstrapping and requirements [here](./infrastructure/azure/infrastructure_code.md).
+you can find more information around the infrastructure bootstrapping and requirements [here](./infrastructure/azure/core_infrastructure.md).
 
 #### Azure 
 
-You will need to create, or ask your admin for Azure to create for you, an [SPN account](https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal) within a new or existing subscription, that will have the owner privileges. Optionally, you can create 2 to follow security best practice [here](./infrastructure/azure/infrastructure_code.md####Azure).
+You will need to create, or ask your admin for Azure to create for you, an [SPN account](https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal) within a new or existing subscription, that will have the owner privileges. Optionally, you can create 2 to follow security best practice [here](./infrastructure/azure/core_infrastructure.md####Azure).
 
 This SPN (Service Principal Name) will be used throughout to create and manage resources within the cloud via terraform. You can find additional info on how to use these locally along with recommended usage.
 
