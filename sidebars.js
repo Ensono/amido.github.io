@@ -6,8 +6,7 @@ module.exports = {
       {
         type: "category",
         label: "Build the application",
-        items: [
-        ],
+        items: [],
       },
     ],
     Workloads: [
@@ -57,96 +56,96 @@ module.exports = {
                 type: "category",
                 label: "Java Spring Boot REST API",
                 items: [
-                  'workloads/azure/backend/java/intro_java',
-                  'workloads/azure/backend/java/quickstart_java',
-                  'workloads/azure/backend/java/scaffolding_java',
-                  'workloads/azure/backend/java/ide_java',
-                  'workloads/azure/backend/java/setting_up_cosmos_db_locally',
+                  "workloads/azure/backend/java/intro_java",
+                  "workloads/azure/backend/java/quickstart_java",
+                  "workloads/azure/backend/java/scaffolding_java",
+                  "workloads/azure/backend/java/ide_java",
+                  "workloads/azure/backend/java/setting_up_cosmos_db_locally",
                   {
                     type: "category",
                     label: "Architecture",
                     items: [
-                      'workloads/azure/backend/java/architecture_java',
-                      'workloads/azure/backend/java/structure_java',
+                      "workloads/azure/backend/java/architecture_java",
+                      "workloads/azure/backend/java/structure_java",
                     ],
                   },
-                  'workloads/azure/backend/java/infrastructure_java',
-                  'workloads/azure/backend/java/pipeline_java',
-                  'workloads/azure/backend/java/testing_java',
+                  "workloads/azure/backend/java/infrastructure_java",
+                  "workloads/azure/backend/java/pipeline_java",
+                  "workloads/azure/backend/java/testing_java",
                 ],
               },
               {
                 type: "category",
                 label: "Java Spring Boot REST API with CQRS",
                 items: [
-                  'workloads/azure/backend/java_cqrs/intro_java_cqrs',
-                  'workloads/azure/backend/java_cqrs/quickstart_java_cqrs',
-                  'workloads/azure/backend/java_cqrs/scaffolding_java_cqrs',
-                  'workloads/azure/backend/java_cqrs/ide_java_cqrs',
-                  'workloads/azure/backend/java_cqrs/setting_up_cosmos_db_locally_cqrs',
+                  "workloads/azure/backend/java_cqrs/intro_java_cqrs",
+                  "workloads/azure/backend/java_cqrs/quickstart_java_cqrs",
+                  "workloads/azure/backend/java_cqrs/scaffolding_java_cqrs",
+                  "workloads/azure/backend/java_cqrs/ide_java_cqrs",
+                  "workloads/azure/backend/java_cqrs/setting_up_cosmos_db_locally_cqrs",
                   {
                     type: "category",
                     label: "Architecture",
                     items: [
-                      'workloads/azure/backend/java_cqrs/architecture_java_cqrs',
-                      'workloads/azure/backend/java_cqrs/structure_java_cqrs',
+                      "workloads/azure/backend/java_cqrs/architecture_java_cqrs",
+                      "workloads/azure/backend/java_cqrs/structure_java_cqrs",
                     ],
                   },
-                  'workloads/azure/backend/java_cqrs/infrastructure_java_cqrs',
-                  'workloads/azure/backend/java_cqrs/pipeline_java_cqrs',
-                  'workloads/azure/backend/java_cqrs/testing_java_cqrs',
+                  "workloads/azure/backend/java_cqrs/infrastructure_java_cqrs",
+                  "workloads/azure/backend/java_cqrs/pipeline_java_cqrs",
+                  "workloads/azure/backend/java_cqrs/testing_java_cqrs",
                 ],
               },
               {
-                type: 'category',
-                label: '.NET Core REST API with CQRS',
+                type: "category",
+                label: ".NET Core REST API with CQRS",
                 items: [
-                  'workloads/azure/backend/netcore/introduction_netcore',
+                  "workloads/azure/backend/netcore/introduction_netcore",
                   {
-                    type: 'category',
-                    label: 'Getting started',
+                    type: "category",
+                    label: "Getting started",
                     items: [
-                      'workloads/azure/backend/netcore/quickstart/requirements_netcore',
-                      'workloads/azure/backend/netcore/quickstart/create_project_netcore',
-                      'workloads/azure/backend/netcore/quickstart/configure_project_netcore',
-                      'workloads/azure/backend/netcore/quickstart/build_and_run_project_netcore',
-                      'workloads/azure/backend/netcore/quickstart/deploy_project_netcore',
+                      "workloads/azure/backend/netcore/quickstart/requirements_netcore",
+                      "workloads/azure/backend/netcore/quickstart/create_project_netcore",
+                      "workloads/azure/backend/netcore/quickstart/configure_project_netcore",
+                      "workloads/azure/backend/netcore/quickstart/build_and_run_project_netcore",
+                      "workloads/azure/backend/netcore/quickstart/deploy_project_netcore",
                       {
-                        type: 'category',
-                        label: 'Swagger Configuration',
+                        type: "category",
+                        label: "Swagger Configuration",
                         items: [
-                          'workloads/azure/backend/netcore/quickstart/swagger_configuration/configure_swagger_netcore',
-                          'workloads/azure/backend/netcore/quickstart/swagger_configuration/configure_swagger_ui_netcore',
-                        ]
+                          "workloads/azure/backend/netcore/quickstart/swagger_configuration/configure_swagger_netcore",
+                          "workloads/azure/backend/netcore/quickstart/swagger_configuration/configure_swagger_ui_netcore",
+                        ],
                       },
-                    ]
+                    ],
                   },
                   {
-                    type: 'category',
-                    label: 'Testing',
+                    type: "category",
+                    label: "Testing",
                     items: [
-                      'workloads/azure/backend/netcore/testing/testing_the_api_netcore',
-                      'workloads/azure/backend/netcore/testing/functional_testing_netcore',
-                      'workloads/azure/backend/netcore/testing/performance_testing_netcore',
-                    ]
+                      "workloads/azure/backend/netcore/testing/testing_the_api_netcore",
+                      "workloads/azure/backend/netcore/testing/functional_testing_netcore",
+                      "workloads/azure/backend/netcore/testing/performance_testing_netcore",
+                    ],
                   },
-                  'workloads/azure/backend/netcore/infrastructure_netcore',
-                  'workloads/azure/backend/netcore/pipeline_netcore',
-                  'workloads/azure/backend/netcore/logging_netcore',
-                  'workloads/azure/backend/netcore/security_netcore',
+                  "workloads/azure/backend/netcore/infrastructure_netcore",
+                  "workloads/azure/backend/netcore/pipeline_netcore",
+                  "workloads/azure/backend/netcore/logging_netcore",
+                  "workloads/azure/backend/netcore/security_netcore",
                   {
-                    type: 'category',
-                    label: 'Architecture',
+                    type: "category",
+                    label: "Architecture",
                     items: [
-                      'workloads/azure/backend/netcore/architecture/architecture_overview_netcore',
-                      'workloads/azure/backend/netcore/architecture/repository_overview_netcore',
-                      'workloads/azure/backend/netcore/architecture/project_structure_netcore',
-                      'workloads/azure/backend/netcore/architecture/data_storage_cosmosdb_netcore',
-                      'workloads/azure/backend/netcore/architecture/operations_events_exceptions_correlation_netcore',
-                    ]
-                  }
-                ]
-              }
+                      "workloads/azure/backend/netcore/architecture/architecture_overview_netcore",
+                      "workloads/azure/backend/netcore/architecture/repository_overview_netcore",
+                      "workloads/azure/backend/netcore/architecture/project_structure_netcore",
+                      "workloads/azure/backend/netcore/architecture/data_storage_cosmosdb_netcore",
+                      "workloads/azure/backend/netcore/architecture/operations_events_exceptions_correlation_netcore",
+                    ],
+                  },
+                ],
+              },
             ],
           },
         ],
@@ -154,25 +153,28 @@ module.exports = {
       {
         type: "category",
         label: "Google Cloud Platform",
-        items: [
-          "workloads/gcp/workloads_gcp_readme",
-        ],
+        items: ["workloads/gcp/workloads_gcp_readme"],
       },
       {
         type: "category",
         label: "Amazon Web Services",
-        items: [
-          "workloads/aws/workloads_aws_readme",
-        ],
+        items: ["workloads/aws/workloads_aws_readme"],
       },
     ],
     Infrastructure: [
+      "infrastructure/introduction",
       {
         type: "category",
         label: "Azure",
         items: [
-          "infrastructure/azure/infrastructure_code",
-          "infrastructure/azure/pipeline_templates",
+          "infrastructure/azure/core_infrastructure",
+          {
+            type: "category",
+            label: "Pipelines",
+            items: [
+              "infrastructure/azure/pipelines/azure_devops",
+            ],
+          },
         ],
       },
       {
@@ -190,7 +192,7 @@ module.exports = {
       "testing/visual_analysis",
       "testing/contract_testing_pact",
       "testing/accessibility_testing",
-      "testing/performance_testing_gatling"
+      "testing/performance_testing_gatling",
     ],
   },
 };
