@@ -9,6 +9,8 @@ module.exports = {
         items: [
         ],
       },
+      "contributions",
+      "code_of_conduct"
     ],
     Workloads: [
       "workloads/workloads",

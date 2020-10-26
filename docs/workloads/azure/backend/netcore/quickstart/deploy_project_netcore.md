@@ -16,7 +16,7 @@ This solution has two build pipelines files one each for Azure DevOps and Jenkin
 
 When deployed to a kubernetes cluster, ensure the following requirements are satisfied:
 
-The yaml files for the resources are created in the folder `/deploy/k8s/api/base`
-The yaml files for kustomization are created for each environment. i.e: `/deploy/k8s/api/kustomization/dev`
-The kustomization files apply the changes required to the environment
-The required secrets are deployed to the cluster (do not check in secrets or certificates to the repository)
+* The yaml files for the resources are created in the folder `/deploy/k8s/api/base`
+* The yaml files for kustomization are created for each environment. i.e: `/deploy/k8s/api/kustomization/dev`
+* The kustomization files apply the changes required to the environment
+* The required secrets are deployed to the cluster (do not check in secrets or certificates to the repository)
