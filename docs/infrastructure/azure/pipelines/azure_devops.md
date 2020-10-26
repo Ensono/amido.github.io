@@ -51,7 +51,7 @@ Add the following variables using the Service Connection details from [bootstrap
 
 ### Update pipeline template placeholders
 
-Where possible, the scaffolding CLI will have populated the correct values in the pipeline template file `build/azDevops/azure/infra-pipeline.yml`. The values that need to be manually configured, such as the variable group name setup previously, will have placeholders using the prefix `%REPLACE_ME_FOR`. We very much recommend that you go through the whole template to make sure that values are correct for you project. Once you are happy with the template, commit the changes to your repository.
+Where possible, the scaffolding CLI will have populated the correct values in the pipeline template file `build/azDevops/azure/infra-pipeline.yml`. The values that need to be manually configured, such as the variable group name setup previously, will have placeholders using the prefix `%REPLACE_ME_FOR`. We very much recommend that you go through the whole template to make sure that values are correct for your project. Once you are happy with the template, commit the changes to your repository.
 
 ### Create the pipeline
 

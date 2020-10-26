@@ -41,7 +41,7 @@ The core infrastructure is the foundation for all other Stacks Workloads. As, in
 
 ### Bootstrap the Azure tenant
 
-The first step is to create the Azure tenant and subscription. This process only needs to be run once run once on an administrators workstation.
+The first step is to create the Azure tenant and subscription. This process only needs to be run once on an administrators workstation.
 
 The administrator will need the following permissions:
 
@@ -50,9 +50,9 @@ The administrator will need the following permissions:
 
 With owner privileges:
 
-1. Create an [Azure Service Principal](https://www.terraform.io/docs/providers/azurerm/guides/service_principal_client_secret.html) for use with terraform.
+1. Create an [Azure Service Principal](https://www.terraform.io/docs/providers/azurerm/guides/service_principal_client_secret.html) for use with Terraform.
    - Make note of the TenantID, SubscriptionID, ClientID and ClientSecret
-2. Create a [Blob Storage instance](https://docs.microsoft.com/en-us/azure/storage/common/storage-account-create) and [container](https://docs.microsoft.com/en-us/cli/azure/storage/container?view=azure-cli-latest#az_storage_container_create) for storing terraform state.
+2. Create a [Blob Storage instance](https://docs.microsoft.com/en-us/azure/storage/common/storage-account-create) and [container](https://docs.microsoft.com/en-us/cli/azure/storage/container?view=azure-cli-latest#az_storage_container_create) for storing Terraform state.
    - Take note of the storage account and container name.
 
 ### Using the Scaffolding CLI
@@ -62,13 +62,13 @@ The [Amido Stacks Scaffolding CLI](https://www.npmjs.com/package/@amidostacks/sc
 We are supporting and running [node@12](https://nodejs.org/en/about/releases/).
 Please ensure that your local environment has the correct version [installed](https://nodejs.org/en/download/).
 
-To run the Scaffolding CLI, use the following commands
+To run the Scaffolding CLI, use the following command:
 
 ```bash
 npx @amidostacks/scaffolding-cli@latest run -i
 ```
 
-You will asked a number of questions. Make sure to select `Azure` and `Cloud platform shared services`.
+You will be asked a number of questions. Make sure to select `Azure` and `Cloud platform shared services`.
 
 <!-- TODO: Example video here -->
 
@@ -80,12 +80,12 @@ The following pipelines are currently supported for automating the deployment:
 
 ### Running Locally
 
-Currently vars.tf and provider configuration is not
+Currently, vars.tf and provider configuration is not
 automatically updated. Future iterations will include this.
 
 The safest way to run and maintain this locally is to rely on Docker and environment
 variables as that is the way the pipeline will trigger the
-executions of terraform.
+executions of Terraform.
 
 Sample commands with example environment vars:
 
