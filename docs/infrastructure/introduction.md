@@ -2,6 +2,7 @@
 id: introduction
 title: Infrastructure Introduction
 sidebar_label: Introduction
+hide_table_of_contents: true
 ---
 
 All Stacks workloads require initial configuration of the cloud provider and some core infrastructure.
