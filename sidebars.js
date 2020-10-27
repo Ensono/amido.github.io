@@ -8,6 +8,8 @@ module.exports = {
         label: "Build the application",
         items: [],
       },
+      "contributions",
+      "code_of_conduct"
     ],
     Workloads: [
       "workloads/workloads",
