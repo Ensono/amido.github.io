@@ -5,17 +5,17 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="generator" content="Docusaurus v2.0.0-alpha.65">
 <link rel="search" type="application/opensearchdescription+xml" title="Amido Stacks" href="/stacks/opensearch.xml"><title data-react-helmet="true">Consumer Driven Contract Testing | Amido Stacks</title><meta data-react-helmet="true" name="docsearch:version" content="current,latest"><meta data-react-helmet="true" name="twitter:card" content="summary_large_image"><meta data-react-helmet="true" property="og:title" content="Consumer Driven Contract Testing | Amido Stacks"><meta data-react-helmet="true" name="description" content="Consumer Driven Contract Testing"><meta data-react-helmet="true" property="og:description" content="Consumer Driven Contract Testing"><meta data-react-helmet="true" property="og:url" content="https://amido.github.io/stacks/docs/workloads/azure/backend/netcore/architecture/testing/consummer_driven_contract_testing_netcore"><link data-react-helmet="true" rel="shortcut icon" href="/stacks/img/thumbnail_stacks.png"><link data-react-helmet="true" rel="preconnect" href="https://BH4D9OD16A-dsn.algolia.net" crossorigin="anonymous"><link data-react-helmet="true" rel="canonical" href="https://amido.github.io/stacks/docs/workloads/azure/backend/netcore/architecture/testing/consummer_driven_contract_testing_netcore"><link rel="stylesheet" href="/stacks/styles.c68427e0.css">
-<link rel="preload" href="/stacks/styles.7f35e48d.js" as="script">
-<link rel="preload" href="/stacks/runtime~main.6cfae7b5.js" as="script">
-<link rel="preload" href="/stacks/main.692c8365.js" as="script">
-<link rel="preload" href="/stacks/1.d3b9f428.js" as="script">
-<link rel="preload" href="/stacks/2.7fd4f3af.js" as="script">
-<link rel="preload" href="/stacks/3.187cd63f.js" as="script">
-<link rel="preload" href="/stacks/1be78505.5635a621.js" as="script">
-<link rel="preload" href="/stacks/108.f51b6f74.js" as="script">
-<link rel="preload" href="/stacks/935f2afb.f3f5ef5e.js" as="script">
-<link rel="preload" href="/stacks/17896441.27613d6f.js" as="script">
-<link rel="preload" href="/stacks/f07767a5.40ecaa50.js" as="script">
+<link rel="preload" href="/stacks/styles.e54a1f62.js" as="script">
+<link rel="preload" href="/stacks/runtime~main.43c87d45.js" as="script">
+<link rel="preload" href="/stacks/main.12e3cf20.js" as="script">
+<link rel="preload" href="/stacks/1.9ed87864.js" as="script">
+<link rel="preload" href="/stacks/2.3c81c855.js" as="script">
+<link rel="preload" href="/stacks/3.cfacf03a.js" as="script">
+<link rel="preload" href="/stacks/1be78505.43bc9556.js" as="script">
+<link rel="preload" href="/stacks/110.c130fb12.js" as="script">
+<link rel="preload" href="/stacks/935f2afb.0fd190f0.js" as="script">
+<link rel="preload" href="/stacks/17896441.e3babd14.js" as="script">
+<link rel="preload" href="/stacks/f07767a5.7c604836.js" as="script">
 </head>
 <body>
 <script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){var t=null;try{t=localStorage.getItem("theme")}catch(t){}return t}();t(null!==e?e:"light")}()</script><div id="__docusaurus">
@@ -27,16 +27,16 @@ A major advantage of this pattern is that only parts of the communication that a
 The consumer does not communicate with the real service at the time of the tests execution.
 The tests describe what expects from the provider and nothing else that the provide may expose.</p><h3><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_2cZh" id="provider-testing"></a>Provider testing<a aria-hidden="true" tabindex="-1" class="hash-link" href="#provider-testing" title="Direct link to heading">#</a></h3><p>Regarding provider testing, the provider mock verifier will load the interactions shared by the consumers and submits these to the actual provider and the actual response it generates is compared with the minimal expected response, as described in the interaction.
 If the generated response is valid, then the provider tests pass.</p><h3><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_2cZh" id="pact-broker"></a>Pact Broker<a aria-hidden="true" tabindex="-1" class="hash-link" href="#pact-broker" title="Direct link to heading">#</a></h3><p>When sharing pact files, it&#x27;s better to use a pact broker that can also integrate with the CI/CD tooling in order to verify the test results and allow both consumer&#x27;s and provider&#x27;s pipelines to verify the results and decide when to merge the changes and deploy them.</p><p><img alt="PACT Testing" src="/stacks/assets/images/pact_testing-7326969b4745759814856bb866c5acba.png"></p></div></article><div class="margin-vert--lg"><nav class="pagination-nav" aria-label="Blog list page navigation"><div class="pagination-nav__item"></div><div class="pagination-nav__item pagination-nav__item--next"></div></nav></div></div></div><div class="col col--3"><div class="tableOfContents_3SO_"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#consumer-driven-contract-testing" class="table-of-contents__link">Consumer Driven Contract Testing</a><ul><li><a href="#how-pact-works" class="table-of-contents__link">How Pact works</a></li><li><a href="#consumer-testing" class="table-of-contents__link">Consumer testing</a></li><li><a href="#provider-testing" class="table-of-contents__link">Provider testing</a></li><li><a href="#pact-broker" class="table-of-contents__link">Pact Broker</a></li></ul></li></ul></div></div></div></div></main></div></div><footer class="footer footer--dark"><div class="container"><div class="row footer__links"><div class="col footer__col"><h4 class="footer__title">Docs</h4><ul class="footer__items"><li class="footer__item"><a class="footer__link-item" href="/stacks/docs/">Getting Started</a></li></ul></div><div class="col footer__col"><h4 class="footer__title">About Us</h4><ul class="footer__items"><li class="footer__item"><a href="https://amido.com/" target="_blank" rel="noopener noreferrer" class="footer__link-item">Amido</a></li></ul></div><div class="col footer__col"><h4 class="footer__title">Open Source</h4><ul class="footer__items"><li class="footer__item"><a href="https://github.com/amido/stacks" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub</a></li></ul></div></div><div class="text--center"><div>Copyright © 2020 Amido Ltd</div></div></div></footer></div>
-<script src="/stacks/styles.7f35e48d.js"></script>
-<script src="/stacks/runtime~main.6cfae7b5.js"></script>
-<script src="/stacks/main.692c8365.js"></script>
-<script src="/stacks/1.d3b9f428.js"></script>
-<script src="/stacks/2.7fd4f3af.js"></script>
-<script src="/stacks/3.187cd63f.js"></script>
-<script src="/stacks/1be78505.5635a621.js"></script>
-<script src="/stacks/108.f51b6f74.js"></script>
-<script src="/stacks/935f2afb.f3f5ef5e.js"></script>
-<script src="/stacks/17896441.27613d6f.js"></script>
-<script src="/stacks/f07767a5.40ecaa50.js"></script>
+<script src="/stacks/styles.e54a1f62.js"></script>
+<script src="/stacks/runtime~main.43c87d45.js"></script>
+<script src="/stacks/main.12e3cf20.js"></script>
+<script src="/stacks/1.9ed87864.js"></script>
+<script src="/stacks/2.3c81c855.js"></script>
+<script src="/stacks/3.cfacf03a.js"></script>
+<script src="/stacks/1be78505.43bc9556.js"></script>
+<script src="/stacks/110.c130fb12.js"></script>
+<script src="/stacks/935f2afb.0fd190f0.js"></script>
+<script src="/stacks/17896441.e3babd14.js"></script>
+<script src="/stacks/f07767a5.7c604836.js"></script>
 </body>
 </html>
