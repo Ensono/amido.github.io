@@ -30,7 +30,7 @@ However, we have a few baselines worth noting:
 
 Please, don't use the issue tracker if your problem is not strictly Amido Stacks specific. Stack Overflow or other sources are worth considering.
 
-### First...
+### Quick advice
 
 Please read our [Code of Conduct](./code_of_conduct).
 The basis of all is to remember to do good humaning. Everyone is on their own path of challenge and discovery, so please treat others the way you would want to be treated. If you can’t offer praise, offer help instead.
@@ -51,7 +51,7 @@ Unsure where to being? Start by looking through the following [issues](https://g
 
 Sorting the issues by number of comments generally gives a reasonable proxy for the impact the change will have. More comments, more vested interest.
 
-#### Never contributed to open source before?
+#### Contributing for the first time to an open source project
 
 No problem! You can learn how from this *free* series, [How to Contribute to an Open Source Project on GitHub](https://egghead.io/series/how-to-contribute-to-an-open-source-project-on-github).
 
@@ -71,7 +71,7 @@ We actively welcome your pull requests:
 2. If you've added code that should be tested, add tests.
 3. Update the documentation.
 4. Ensure the test suite passes.
-5. Issue the pull request using the repos PULL_REQUEST_TEMPLATE.md. It's important to link the [issue number](https://github.com/amido/stacks/issues) to ensure that the Issue is closed.
+5. Issue the pull request using the repository PULL_REQUEST_TEMPLATE.md. It's important to link the [issue number](https://github.com/amido/stacks/issues) to ensure that the Issue is closed.
 
 #### How to report a bug
 
