@@ -226,3 +226,32 @@ section {
   border-radius: 20px;
   background-color: white;
 }
+
+details > summary {
+  padding-left: 10px;
+  font-size: larger;
+}
+
+details {
+  --ifm-alert-color: var(--ifm-color-gray-900);
+  --ifm-alert-background-color: var(--ifm-color-secondary);
+  --ifm-alert-border-color: var(--ifm-color-secondary);
+
+  background-color: rgb(246, 248, 250);
+  border-color: rgb(246, 248, 250);
+  border-style: solid;
+  border-width: var(--ifm-alert-border-width);
+  border-radius: var(--ifm-alert-border-radius);
+  box-sizing: border-box;
+  color: var(--ifm-alert-color);
+}
+
+details > div {
+  --ifm-alert-background-color: var(--ifm-color-secondary);
+  --ifm-alert-border-color: var(--ifm-color-secondary);
+
+  border-width: 2px 0px 0px 0px;
+  border-style: solid;
+  border-color: var(--ifm-alert-background-color);
+  padding: 20px 20px 10px 40px;
+}
