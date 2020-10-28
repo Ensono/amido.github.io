@@ -237,8 +237,8 @@ details {
   --ifm-alert-background-color: var(--ifm-color-secondary);
   --ifm-alert-border-color: var(--ifm-color-secondary);
 
-  background-color: rgb(246, 248, 250);
-  border-color: rgb(246, 248, 250);
+  background-color:white;
+  border-color: white;
   border-style: solid;
   border-width: var(--ifm-alert-border-width);
   border-radius: var(--ifm-alert-border-radius);
