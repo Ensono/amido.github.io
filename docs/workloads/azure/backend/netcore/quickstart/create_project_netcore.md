@@ -12,6 +12,58 @@ To create the project there are three different options available.
 
 <br />
 
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<Tabs
+    defaultValue="scaffolding_cli"
+    values={[
+        {label: "Scaffolding  CLI", value: 'scaffolding_cli'},
+        {label: 'GitHub Repository Clone', value: 'repository_clone'},
+        {label: '.Net Core Template', value: 'template'}
+    ]}>
+    <TabItem value="scaffolding_cli">
+        <h4>PROS</h4>
+        <ul>
+            <li>Guided project creation in creating the preferred project flavour.</li>
+            <li>Enables the creation of all projects in Amido Stacks templates suite.</li>
+            <li>Allows personalization of project name, domain model, company name.</li>
+            <li>Removes out the content not needed from the GitHub repository.</li>
+        </ul>
+        <h4>CONS</h4>
+        <ul>
+            <li>Requires <strong>npm</strong> and <strong>npx</strong> installation.</li>
+        </ul>
+    </TabItem>
+    <TabItem value="repository_clone">
+        <h4>PROS</h4>
+        <ul>
+            <li>Familiar approach</li>
+            <li>Quick and easy to run (one command)</li>
+        </ul>
+        <h4>CONS</h4>
+        <ul>
+            <li>Does not remove the files not needed in the repository which may create confusion.</li>
+            <li>Does not allow automated personalization of the project.</li>
+            <li>All Amido Stacks repositories links required to create all flavours of projects</li>
+        </ul>
+    </TabItem>
+    <TabItem value="template">
+        <h4>PROS</h4>
+        <ul>
+            <li>Has no dependencies</li>
+            <li>Enables creation of .NET Core projects in Amido Stacks Suite.</li>
+        </ul>
+        <h4>CONS</h4>
+        <ul>
+            <li>Does not allow the generation of all projects in Amido Stacks templates suite.</li>
+            <li>Does not allow automated personalization of the project.</li>
+        </ul>
+    </TabItem>
+</Tabs>
+
+<br />
+
 <details open>
 <summary>Create the project using the Scaffolding CLI</summary>
 
