@@ -1,6 +1,6 @@
 ---
 id: infrastructure_java_cqrs
-title: Java Rest API with CQRS - Azure Infrastructure
+title: Java REST API with CQRS - Azure Infrastructure
 sidebar_label: Infrastructure
 ---
 
@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 ## Overview
 
 This page present the high level design of the reference implementation of the Java Stacks
-application which is based on Spring Boot Rest API with CQRS.
+application which is based on Spring Boot REST API with CQRS.
 
 **This page assumes that the core infrastructure has already been provisioned. Instructions and additional information on the core infrastructure can be found [here](../../../../infrastructure/azure/core_infrastructure.md)**
 
@@ -21,10 +21,10 @@ application which is based on Spring Boot Rest API with CQRS.
 
 | Resource                | Description                                                                          |
 | ----------------------- | ------------------------------------------------------------------------------------ |
-| Resource Group - Core\* | Used to logically group core infrastructure                                          |
-| AKS\*                   | Azure Kubernetes Service                                                             |
-| Public DNS Record       | DNS record pointing Ingress (via application gateway\* and internal load balancer\*) |
-| ACR\*                   | Azure Container Registry                                                             |
+| Resource Group - Core**\*** | Used to logically group core infrastructure                                          |
+| AKS**\***                   | Azure Kubernetes Service                                                             |
+| Public DNS Record       | DNS record pointing Ingress (via application gateway**\*** and internal load balancer**\***) |
+| ACR**\***                   | Azure Container Registry                                                             |
 | Namespace: {env}-api    | Kubernetes namespace for the environment                                             |
 | Ingress                 | Kubernetes Ingress to handle routing to Service                                      |
 | Service                 | Kubernetes Service to handle routing to Deployment Pods                              |
@@ -32,4 +32,4 @@ application which is based on Spring Boot Rest API with CQRS.
 | Resource Group - API    | Used to logically group API specific infrastructure                                  |
 | Cosmos DB               | Azure managed NoSQL database                                                         |
 
-\* Resource is created by the core infrastructure deployment.
+**\*** *Resource is created by the core infrastructure deployment.*
