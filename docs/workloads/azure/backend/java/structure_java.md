@@ -9,38 +9,37 @@ sidebar_label: Project structure
 The outline structure of the project is as below.
 
 ```text
-├── java
-│   └── com
-│       └── xxAMIDOxx
-│           └── xxSTACKSxx
-│               ├── core
-│               │   ├── api
-│               │   │   ├── dto
-│               │   │   ├── exception
-│               │   │   └── filter
-│               │   ├── messaging
-│               │   │   ├── event
-│               │   │   └── publish
-│               │   └── operations
-│               └── menu
-│                   ├── api
-│                   │   ├── v1
-│                   │   │   ├── controller
-│                   │   │   ├── dto
-│                   │   │   │   ├── request
-│                   │   │   │   └── response
-│                   │   │   └── impl
-│                   │   └── v2
-│                   │       └── impl
-│                   ├── commands
-│                   ├── domain
-│                   ├── events
-│                   ├── exception
-│                   ├── mappers
-│                   ├── repository
-│                   └── service
-│                       └── impl
-└── resources
+├───java
+│   └───com
+│       └───xxAMIDOxx
+│           └───xxSTACKSxx
+│               ├───core
+│               │   ├───api
+│               │   │   ├───dto
+│               │   │   ├───exception
+│               │   │   └───filter
+│               │   ├───messaging
+│               │   │   ├───event
+│               │   │   └───publish
+│               │   └───operations
+│               └───menu
+│                   ├───api
+│                   │   ├───v1
+│                   │   │   ├───controller
+│                   │   │   ├───dto
+│                   │   │   │   ├───request
+│                   │   │   │   └───response
+│                   │   │   └───impl
+│                   │   └───v2
+│                   │       └───impl
+│                   ├───domain
+│                   ├───events
+│                   ├───exception
+│                   ├───mappers
+│                   ├───repository
+│                   └───service
+│                       └───impl
+└───resources
 ```
 
 ## Overview of `com.xxAMIDOxx.xxSTACKSxx.core` packages
@@ -57,6 +56,9 @@ Package `core.operations` contains the `OperationContext` class that stores oper
 
 Package `menu.api.v1` contains the `Controller` definitions, both as interface definitions where the
 [Swagger](https://swagger.io/) (OpenAPI) details are defined, and as concrete implementations under the `impl` package.
+
+Package `menu.api.v2` contains the `Controller` definitions for a simple V2 version of, both as interface definitions where the
+[Swagger](https://swagger.io/) (OpenAPI) details defined, and as concrete implementations under the `impl` package.
 
 Package `menu.api.v1.dto` contains request and response object definitions for the different endpoints.
 

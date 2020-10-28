@@ -9,33 +9,52 @@ import Select from "react-select";
 
 const features = [
   {
-    title: "Accelerates architecture setup",
+    title: "Infrastructure",
+    link: "/infrastructure/azure/core_infrastructure",
+    color: "#25CEB6",
     description: (
       <>
-        Stacks helps you to build a solid foundation, meaning that you can focus
-        on solving the project challenges more quickly. You no longer have to
-        re-invent the wheel for every new project!
+        Find out how to configure your cloud provider and other core
+        infrastructure to make Stacks workloads work.
       </>
     ),
   },
   {
-    title: "De-risks delivery of digital transformation",
+    title: "Test Framework",
+    link: "/testing/cli_testing_frameworks",
+    color: "#FE6D6A",
     description: (
       <>
-        Through our extensive experience, we have made educated and opinionated
-        decisions on tools, frameworks and platforms. Being open source we also
-        encourage reviews and developer input on these decisions.
+        Stacks includes a range of front-end focused opinionated test frameworks
+        that can be tailored to your project with just one command.
       </>
     ),
   },
+];
+
+const features2 = [
   {
-    title: "Solutions to build, test and deploy",
+    title: "Contribute to Stacks",
+    link: "/docs/contributions",
+    description: (
+      <>How you can contribute to the Amido Stacks open source project</>
+    ),
+  },
+  {
+    title: "Business benefits",
+    link: "",
+    description: (
+      <>Check out amido.com for more on the business benefits of Stacks</>
+    ),
+  },
+  {
+    title: "Careers at Amido",
+    link: "",
     description: (
       <>
-        Behind our boilerplate projects, we use Terraform, Kubernetes, and
-        pipeline as code with other amazing tools to deploy your tested
-        application. Advanced configuration for multiple cloud providers and
-        offer no lock-in.
+        Join the go-to partner for cloud native transformation. We offer a
+        competitive salary, a great team culture, and commitment to your
+        personal development
       </>
     ),
   },
@@ -79,29 +98,28 @@ function Picker() {
   const OptionMapper = {
     Azure: {
       "Server Side Rendered Web Application": {
-        "Node JS / React": "workloads/azure/frontend/cli_webapp_frameworks"
+        "Node JS / React": "workloads/azure/frontend/cli_webapp_frameworks",
       },
       "Client Side Rendered Web Application": {
-        "Node JS / React": "workloads/azure/frontend/cli_webapp_frameworks"
+        "Node JS / React": "workloads/azure/frontend/cli_webapp_frameworks",
       },
       "REST Web API": {
-        "Java Spring Boot": "workloads/azure/backend/java/intro_java"
+        "Java Spring Boot": "workloads/azure/backend/java/intro_java",
       },
-      "REST Web API with CQRS":
-      {
+      "REST Web API with CQRS": {
         "Java Spring Boot": "workloads/azure/backend/java_cqrs/intro_java_cqrs",
-        "C# / .NET Core": "workloads/azure/backend/netcore/introduction_netcore"
-      }
+        "C# / .NET Core":
+          "workloads/azure/backend/netcore/introduction_netcore",
+      },
     },
     GCP: "workloads/gcp/workloads_gcp_readme",
-    AWS: "workloads/aws/workloads_aws_readme"
+    AWS: "workloads/aws/workloads_aws_readme",
   };
 
   const cloudProviders = Object.keys(OptionMapper).map((key) => ({
     value: OptionMapper[key],
     label: key,
   }));
-
 
   const applications = firstOption
     ? Object.keys(firstOption.value).map((option) => {
@@ -134,45 +152,43 @@ function Picker() {
           }}
           options={cloudProviders}
         />
-        {firstOption && typeof firstOption.value === 'object' && (
-          <>
-            <Select
-              placeholder="Select Solution Architecture"
-              value={secondOption}
-              onChange={(selected) => {
-                setSecondOption(selected);
-              }}
-              options={applications}
-            />
-          </>
-        )}
 
-        {secondOption && typeof secondOption.value === 'object' && (
-          <>
-            <Select
-              placeholder="Select Language/Framework"
-              value={thirdOption}
-              onChange={(selected) => {
-                setThirdOption(selected);
-              }}
-              options={languages}
-            />
-          </>
-        )}
+        <Select
+          placeholder="Select Solution Architecture"
+          value={secondOption}
+          onChange={(selected) => {
+            setSecondOption(selected);
+          }}
+          options={applications || []}
+        />
 
-        {((firstOption && typeof firstOption.value === 'string') || thirdOption ) && (
-          <div className={styles.buttons} style={{ marginTop: 20 }}>
-            <Link
-              className={clsx(
-                "button button--outline button--secondary button--lg",
-                styles.getStarted
-              )}
-              to={baseUrl + (thirdOption ? thirdOption.value : firstOption.value)}
-            >
-              Lets Go!
-            </Link>
-          </div>
-        )}
+        <Select
+          placeholder="Select Language/Framework"
+          value={thirdOption}
+          onChange={(selected) => {
+            setThirdOption(selected);
+          }}
+          options={languages || []}
+        />
+
+        <div className={styles.buttons} style={{ marginTop: 20 }}>
+          <Link
+            className={clsx(
+              "button button--outline button--secondary button--lg",
+              styles.getStarted
+            )}
+            to={
+              baseUrl +
+              (thirdOption
+                ? thirdOption.value
+                : firstOption
+                ? firstOption.value
+                : "")
+            }
+          >
+            GET STARTED WITH STACKS
+          </Link>
+        </div>
       </div>
     </div>
   );
@@ -181,43 +197,122 @@ function Picker() {
 function Home() {
   const context = useDocusaurusContext();
   const { siteConfig = {} } = context;
+  const baseUrl = useBaseUrl("docs/");
+
   return (
     <Layout
       title={`Hello from ${siteConfig.title}`}
       description="Description will go into a meta tag in <head />"
     >
-      <header className={clsx("hero hero--primary", styles.heroBanner)}>
-        <div className="container">
-          <h1 className="hero__title">{siteConfig.title}</h1>
-          <p className="hero__subtitle">{siteConfig.tagline}</p>
-          <div className={styles.buttons}>
-            <Picker />
-          </div>
-        </div>
-      </header>
       <main>
-        {features && features.length > 0 && (
-          <section className={styles.features}>
-            <div className="container">
-              <div className="row">
-                {features.map((props, idx) => (
-                  <Feature key={idx} {...props} />
-                ))}
+        <section className={styles.logocontainer}>
+          <div>LOGO</div>
+        </section>
+        <section className={styles.definition}>
+          <div className="container">
+            <h3>
+              Slash the time it takes to get <br />
+              productive on your software project
+            </h3>
+            <p>
+              Amido Stacks is a catalogue of workload templates that <br />
+              instantly scaffold and deploy boilerplate projects. With Stacks’
+              <br />
+              tried-and-tested technology choices you reduce risk for your
+              delivery.
+            </p>
+            <div className={styles.buttons} style={{ marginTop: 20 }}>
+              <Link
+                className={clsx(
+                  "button button button--primary button--lg",
+                  styles.getStarted
+                )}
+                to={baseUrl}
+              >
+                LEARN MORE ABOUT STACKS
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        <header className={clsx("hero hero--primary", styles.heroBanner)}>
+          <div className="container">
+            <h1 className="hero__title">What can you do with Stacks?</h1>
+            <p className="hero__subtitle">
+              Choose a workload below and you can be up- <br />
+              and-running with a project in less than an hour:
+            </p>
+            <div className={styles.buttons}>
+              <Picker />
+            </div>
+          </div>
+        </header>
+
+        <section className={styles.definition}>
+          <div className="container">
+            <h3>Technologies supported by Stacks</h3>
+            <div className={styles.techs}>
+              <img src="https://logodix.com/logo/42746.png" />
+              <img src="https://logodix.com/logo/929905.png" />
+              <img src="https://logodix.com/logo/5867.png" />
+            </div>
+
+            <div className={styles.techs2}>
+              <img src="https://logodix.com/logo/773611.jpg" />
+              <img src="https://logodix.com/logo/282992.png" />
+              <img
+                src="https://logodix.com/logo/636467.png"
+                alt="azure devops"
+              />
+              <img src="https://logodix.com/logo/258401.png" alt="git lab" />
+              <img src="https://logodix.com/logo/826596.png" alt="docker" />
+            </div>
+          </div>
+        </section>
+
+        <section className={styles.features}>
+          {features.map((feature) => (
+            <div
+              style={{ backgroundColor: feature.color }}
+              className={clsx(styles.feature)}
+            >
+              <h3> {feature.title}</h3>
+              <p>{feature.description}</p>
+
+              <div className={styles.buttons} style={{ marginTop: 20 }}>
+                <Link
+                  className={clsx(
+                    "button button--outline button--secondary button--lg",
+                    styles.getStarted
+                  )}
+                  to={baseUrl + feature.link}
+                >
+                  {feature.title}
+                </Link>
               </div>
             </div>
-          </section>
-        )}
-        <section className={styles.tryOut}>
-          <div className="container">
-            <div className="row">
-              <TryOutText
-                title="Get started in as little as 5 commands"
-                content="Amido Stacks let you focus on the problem, not the tools or setup. To start creating your project run this command to interactively guide:"
-                command="npx @amidostacks/scaffolding-cli run -i"
-              />
-              <TryOutImage imageUrl="https://amidostacksassets.blob.core.windows.net/docs/assets/npx_amidostacks_scaffolding_cli_run_i.gif" />
+          ))}
+        </section>
+
+        <section className={styles.features2}>
+          {features2.map((feature) => (
+            <div className={clsx(styles.feature)}>
+              <h3> {feature.title}</h3>
+              <p>{feature.description}</p>
+
+              <div className={styles.buttons} style={{ marginTop: 20 }}>
+                <Link
+                  className={clsx(
+                    "button button button--primary button--lg",
+                    styles.getStarted
+                  )}
+                  to={baseUrl + feature.link}
+                >
+                  {feature.title}
+                </Link>
+              </div>
             </div>
-          </div>
+          ))}
         </section>
       </main>
     </Layout>
