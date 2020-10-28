@@ -2,6 +2,8 @@
 id: requirements_netcore
 title: Requirements
 sidebar_label: Requirements
+hide_title: false
+hide_table_of_contents: true
 ---
 
 import Tabs from "@theme/Tabs";
@@ -14,50 +16,92 @@ values={[
 {label: 'macOS', value: 'macos'}
 ]}>
 <TabItem value="windows">
-  <ul>
-        <li>.NET Core SDKs and Runtime 3.1._ or superior (for .net core 3.1 template)</li>
-        <li>Visual Studio Code 1.35+ with C# Extension from Microsoft (C# for Visual Studio Code (powered by OmniSharp))</li>
-        <li>Visual Studio 2019 v16.4+</li>
-        <li>WSL (Windows Subsystem for Linux: recommended v1, v2 is still in preview and has not been tested)
-            <ul>
-                <li>For running build, test and deployment scripts targeting Linux environment</li>
-            </ul>
-        </li>
-        <li><a href="https://aka.ms/cosmosdb-emulator">CosmosDB Emulator 2.4.5+</a></li>
-        <li>Docker Desktop(for Windows): Version 2.1.0.1 (37199) or superior</li>
-        <li>Docker Engine 19.03.1+</li>
-        <li>Enable:
-            <ul>
-                <li>Kubernetes 1.14</li>
-                <li>Linux container (Not windows containers)</li>
-            </ul>
-        </li>
-        <li>kubectl v1.14+ (provided with docker 2.1.0.1)
-            <ul>
-                <li>
-                    Also <a href="https://kubernetes.io/docs/tasks/tools/install-kubectl/#install-kubectl-on-windows">downloaded from k8s.io</a>
-                </li>
-            </ul>
-        </li>
-        <li>NGINX ingress controller
-            <ul>
-                <li>Install the ingress controller in you local cluster.</li>
-                <li>Make sure you follow the process for Bare Metal deployment described in here</li>
-            </ul>
-        </li>
-    </ul>
+    <details open>
+        <summary>Requirements for running the API locally</summary>
+        <br />
+        <h5>Mandatory</h5>
+        <ul>
+            <li><a href="https://dotnet.microsoft.com/download/dotnet-core/thank-you/sdk-3.1.403-windows-x64-installer">.NET Core SDK</a> and Runtime 3.1._ or superior (for .net core 3.1 template)</li>
+            <li><a href="https://aka.ms/cosmosdb-emulator">CosmosDB Emulator 2.4.5+</a></li>
+        </ul>
+        <h5>Optional</h5>
+        <ul>
+            <li><a href="https://code.visualstudio.com/">Visual Studio Code</a> 1.35+ with C# Extension from Microsoft (C# for Visual Studio Code (powered by OmniSharp))
+            </li>
+            <li><a href="https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Community&rel=16">Visual Studio 2019 v16.4+</a></li>
+        </ul>
+    </details>
+    <br />
+    <details>
+        <summary>Additional requirements for running the API in docker containers</summary>
+        <br />
+        <h5>Mandatory</h5>
+        <ul>
+            <li><a href="https://desktop.docker.com/win/stable/Docker%20Desktop%20Installer.exe">Docker Desktop(for Windows)</a>: Version 2.1.0.1 (37199) or superior
+                <ul>
+                    <li>Enable:
+                        <ul>
+                            <li>Kubernetes 1.14</li>
+                            <li>Linux container (Not windows containers)</li>
+                        </ul>
+                    </li>
+                    <li>Docker Engine 19.03.1+</li>
+                    <li>WSL (Windows Subsystem for Linux: recommended v1, v2 is still in preview and has not been tested)
+                        <ul>
+                            <li>
+                                <ul>
+                                    <li>For running build, test and deployment scripts targeting Linux environment</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>kubectl v1.14+ (provided with docker 2.1.0.1)
+                        <ul>
+                            <li>Also <a
+                                    href="https://kubernetes.io/docs/tasks/tools/install-kubectl/#install-kubectl-on-windows">downloaded
+                                    from k8s.io</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </details>
+    <br />
+    <details>
+        <summary>Additional requirements for running the API in a kubernetes cluster</summary>
+        <br />
+        <ul>
+            <li>NGINX ingress controller
+                <ul>
+                    <li>Install the ingress controller in you local cluster.</li>
+                    <li>Make sure you follow the process for Bare Metal deployment described in here</li>
+                </ul>
+            </li>
+        </ul>
+    </details>
 </TabItem>
 <TabItem value="macos">
-    <ul>
-        <li>homebrew</li>
-        <li>azure-cli: brew install azure-cli</li>
-        <li>.NET Core SDKs 3.1.* or superior: brew cask install dotnet-sdk</li>
-        <li>
-            <a href="https://aka.ms/cosmosdb-emulator">CosmosDB Emulator 2.4.5+</a>: Currently the Cosmos emulator can only be run on Windows. If you have an Azure subscription, you are able to use the Azure version instead
-        </li>
-        <li>Docker</li>
-        <li>kubectl: docker run --name kubectl bitnami/kubectl:latest</li>
-    </ul>
+    <details open>
+        <summary>Requirements for running the API locally</summary>
+        <br />
+        <ul>
+            <li>homebrew</li>
+            <li>azure-cli: brew install azure-cli</li>
+            <li><a href="https://dotnet.microsoft.com/download/dotnet-core/thank-you/sdk-3.1.403-macos-x64-installer">.NET Core SDK</a> 3.1.* or superior: brew cask install dotnet-sdk</li>
+            <li>
+                <a href="https://aka.ms/cosmosdb-emulator">CosmosDB Emulator 2.4.5+</a>: Currently the Cosmos emulator can only be run on Windows. If you have an Azure subscription, you are able to use the Azure version instead
+            </li>
+        </ul>
+    </details>
+    <br />
+    <details>
+        <summary>Additional requirements for running the API in docker containers</summary>
+        <br />
+        <ul>
+            <li><a href="https://desktop.docker.com/mac/stable/Docker.dmg">Docker Desktop for Mac</a></li>
+            <li>kubectl: docker run --name kubectl bitnami/kubectl:latest</li>
+        </ul>
+    </details>
 </TabItem>
 </Tabs>
 
