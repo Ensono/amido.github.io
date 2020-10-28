@@ -5,6 +5,10 @@
  * and scoped locally.
  */
 
+:root {
+  --ifm-button-border-radius: 36px;
+}
+
 .heroBanner {
   padding: 4rem 0;
   text-align: center;
@@ -23,11 +27,77 @@
   justify-content: center;
 }
 
+.buttons > .button {
+  border-radius: 36px;
+}
+
 .features {
   display: flex;
   align-items: center;
-  padding: 2rem 0;
   width: 100%;
+  flex-direction: row;
+  gap: 30px;
+  background-color: white;
+  flex-wrap: wrap;
+}
+
+.features .feature {
+  display: flex;
+  flex-direction: column;
+  width: calc(50% - 15px);
+  flex-grow: 1;
+  padding: 30px;
+  color: black;
+  min-height: 300px;
+  min-width: 380px;
+}
+
+.features .feature p {
+  flex-grow: 1;
+}
+
+.feature h3 {
+  text-align: center;
+  font-size: 28px;
+  padding: 30px;
+}
+
+.feature .feature-body {
+  padding: 20px;
+}
+
+.features2 {
+  flex-wrap: wrap;
+  display: flex;
+  align-items: center;
+  padding: 1rem 0;
+  width: 100%;
+  flex-direction: row;
+  gap: 30px;
+  background-color: white;
+}
+
+.features2 .feature {
+  display: flex;
+  flex-direction: column;
+  color: var(--primary);
+  background-color: #f2f2f2;
+  width: calc(33% - 30px);
+  flex-grow: 1;
+  padding: 30px;
+  min-height: 380px;
+  min-width: 380px;
+
+  font-size: 18px;
+}
+
+.features2 .feature p {
+  flex-grow: 1;
+  color: black;
+}
+
+.features2 .feature h3 {
+  color: black;
 }
 
 .tryOut {
@@ -36,4 +106,52 @@
   padding: 2rem 0;
   width: 100%;
   background-color: darkgray;
+}
+
+.definition {
+  text-align: center;
+  padding: 30px;
+}
+
+.definition h3 {
+  font-size: 28px;
+}
+
+.definition p {
+  font-size: 25px;
+}
+
+.logocontainer {
+  background-color: white;
+  display: flex;
+  padding: 50px;
+}
+
+.techs {
+  margin: 30px;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.techs img {
+  max-width: 200px;
+  padding: 10px;
+  border-radius: 20px;
+  background-color: white;
+}
+
+.techs2 {
+  margin: 30px;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.techs2 img {
+  max-width: 200px;
+  padding: 10px;
+  height: 100px;
+  border-radius: 20px;
+  background-color: white;
 }
