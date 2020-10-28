@@ -152,48 +152,43 @@ function Picker() {
           }}
           options={cloudProviders}
         />
-        {firstOption && typeof firstOption.value === "object" && (
-          <>
-            <Select
-              placeholder="Select Solution Architecture"
-              value={secondOption}
-              onChange={(selected) => {
-                setSecondOption(selected);
-              }}
-              options={applications || []}
-            />
-          </>
-        )}
 
-        {secondOption && typeof secondOption.value === "object" && (
-          <>
-            <Select
-              placeholder="Select Language/Framework"
-              value={thirdOption}
-              onChange={(selected) => {
-                setThirdOption(selected);
-              }}
-              options={languages || []}
-            />
-          </>
-        )}
+        <Select
+          placeholder="Select Solution Architecture"
+          value={secondOption}
+          onChange={(selected) => {
+            setSecondOption(selected);
+          }}
+          options={applications || []}
+        />
 
-        {((firstOption && typeof firstOption.value === "string") ||
-          thirdOption) && (
-          <div className={styles.buttons} style={{ marginTop: 20 }}>
-            <Link
-              className={clsx(
-                "button button--outline button--secondary button--lg",
-                styles.getStarted
-              )}
-              to={
-                baseUrl + (thirdOption ? thirdOption.value : firstOption.value)
-              }
-            >
-              GET STARTED WITH STACKS
-            </Link>
-          </div>
-        )}
+        <Select
+          placeholder="Select Language/Framework"
+          value={thirdOption}
+          onChange={(selected) => {
+            setThirdOption(selected);
+          }}
+          options={languages || []}
+        />
+
+        <div className={styles.buttons} style={{ marginTop: 20 }}>
+          <Link
+            className={clsx(
+              "button button--outline button--secondary button--lg",
+              styles.getStarted
+            )}
+            to={
+              baseUrl +
+              (thirdOption
+                ? thirdOption.value
+                : firstOption
+                ? firstOption.value
+                : "")
+            }
+          >
+            GET STARTED WITH STACKS
+          </Link>
+        </div>
       </div>
     </div>
   );
@@ -287,7 +282,7 @@ function Home() {
               <div className={styles.buttons} style={{ marginTop: 20 }}>
                 <Link
                   className={clsx(
-                    "button button button--primary button--lg",
+                    "button button--outline button--secondary button--lg",
                     styles.getStarted
                   )}
                   to={baseUrl + feature.link}
