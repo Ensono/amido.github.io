@@ -1,7 +1,7 @@
 ---
 id: testing_the_api_netcore
 title: Testing the .NetCore Rest API
-sidebar_label: Testing the API3
+sidebar_label: Testing the API
 hide_title: true
 hide_table_of_contents: false
 ---
