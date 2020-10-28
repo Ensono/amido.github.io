@@ -217,7 +217,7 @@ function Home() {
           </div>
         </section>
 
-        <section className={styles.definition}>
+        <section className={styles.supportedTechs}>
           <div className="container">
             <h3>Technologies supported by Stacks</h3>
             <div className={styles.techs}>
