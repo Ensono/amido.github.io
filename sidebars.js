@@ -140,8 +140,8 @@ module.exports = {
                         type: "category",
                         label: "Swagger Configuration",
                         items: [
-                          "workloads/azure/backend/netcore/quickstart/swagger_configuration/configure_swagger_netcore",
-                          "workloads/azure/backend/netcore/quickstart/swagger_configuration/configure_swagger_ui_netcore",
+                          "workloads/azure/backend/netcore/architecture/swagger_configuration/configure_swagger_netcore",
+                          "workloads/azure/backend/netcore/architecture/swagger_configuration/configure_swagger_ui_netcore",
                         ],
                       },
                     ],
