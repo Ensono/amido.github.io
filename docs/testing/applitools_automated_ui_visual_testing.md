@@ -1,12 +1,19 @@
----
 id: visual_analysis
 title: Automated UI Visual Testing With Applitools
 sidebar_label: Automated UI Visual Testing
 ---
+Visual Regression testing or Visual testing in software is a quality assurance activity of verifying if the visual aspects of the application’s user interface seem appropriate to the user. It is also known as Visual Validation Testing.
+
+Visual Regression testing can be implemented using a variety of tools and languages and is a fast way of checking defects of front end applications. For more information on Visual Regression testing you can look at this article [Here](https://www.softwaretestinghelp.com/visual-validation-testing/)
+
+##Visual Regression Testing with Applitools Eyes
+
+####Pre-requisites
+An Applitools eyes account - [Applitools](https://applitools.com/)
 
 ## Getting started
 
-We are using the [Applitools](https://applitools.com/) with Cypress for visual testing. For Stacks, we are just using the free tier. But we suggest discussing your requirements and what this means for your team. The free tier only gives:
+We are using [Applitools](https://applitools.com/) with Cypress for visual testing. For Stacks, we have configured the framework to use the free tier, which gives:
 
 - 1 user (normally the pipeline)
 - 100 checkpoints per month
@@ -19,7 +26,7 @@ The configuration file has been added to the `[tsconfig.cypress.json](./tsconfig
 
 In order run Cypress with Applitools, you will need an [Applitools](https://applitools.com/) account. Once signed up (there is a free tier), the API key can be used to create a connection with Applitools.
 
-Please follow the incredible [Cypress Tutorial](https://applitools.com/tutorials/cypress.html) for how Applitools and Cypress go together like pumpkin and pie.
+Please follow the [Cypress Tutorial](https://applitools.com/tutorials/cypress.html)
 
 `export APPLITOOLS_API_KEY=`
 
