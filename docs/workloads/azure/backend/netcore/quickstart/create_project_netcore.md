@@ -23,6 +23,8 @@ import TabItem from "@theme/TabItem";
         {label: '.Net Core Template', value: 'template'}
     ]}>
     <TabItem value="scaffolding_cli">
+        <p>The Amido Stacks Scaffolding CLI can be used to create a fully-functional and deployable project from a template, in a variety of flavours.
+           It includes tests (unit, integration), together with infrastructure and deployment definitions. All by running from your CLI.</p>
         <h4>PROS</h4>
         <ul>
             <li>Guided project creation in creating the preferred project flavour.</li>
@@ -69,17 +71,16 @@ import TabItem from "@theme/TabItem";
 <summary>Create the project using the Scaffolding CLI</summary>
 
 <div>
-The Amido Stacks Scaffolding CLI can be used to create a fully-functional and deployable project from a template, in a variety of flavours.
-It includes tests (unit, integration), together with infrastructure and deployment definitions. All by running from your CLI.
 
-We use [npx](https://www.npmjs.com/package/npx) to execute the [scaffolding-cli](https://www.npmjs.com/package/@amidostacks/scaffolding-cli).
+1. Install **npm**. It is provided with [node](https://nodejs.org/en/download/).
+
+2. Install [npx](https://www.npmjs.com/package/npx) to execute the [scaffolding-cli](https://www.npmjs.com/package/@amidostacks/scaffolding-cli).
 
 ```bash title="Run the command to install npx"
 npm install -g npx
 ```
 
-We are supporting and running [node@12](https://nodejs.org/en/about/releases/).
-Please ensure that your local environment has the correct version [installed](https://nodejs.org/en/download/).
+3. Create the project
 
 ```bash title="Run Scaffolding-CLI command to create the project"
 npx @amidostacks/scaffolding-cli@latest run -i
