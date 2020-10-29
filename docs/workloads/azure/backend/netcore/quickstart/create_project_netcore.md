@@ -76,17 +76,18 @@ import TabItem from "@theme/TabItem";
 
 2. Install [npx](https://www.npmjs.com/package/npx) to execute the [scaffolding-cli](https://www.npmjs.com/package/@amidostacks/scaffolding-cli).
 
-```bash title="Run the command to install npx"
-npm install -g npx
-```
+    ```bash title="Run the command to install npx"
+    npm install -g npx
+    ```
 
 3. Create the project
 
-```bash title="Run Scaffolding-CLI command to create the project"
-npx @amidostacks/scaffolding-cli@latest run -i
-```
+    ```bash title="Run Scaffolding-CLI command to create the project"
+    npx @amidostacks/scaffolding-cli@latest run -i
+    ```
 
-You will be asked a number of questions. Based on the answers, your ready-to-build project template will be produced.
+    You will be asked a number of questions. Based on the answers, your ready-to-build project template will be produced.
+
 </div>
 </details>
 
