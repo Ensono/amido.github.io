@@ -10,6 +10,8 @@ The core infrastructure is the foundation for all other Stacks Workloads. As, in
 
 ## Resources Provisioned
 
+Both the diagram and resource list below are for a single environment. By default, the pipeline template will create two environments (nonprod and prod).
+
 ### Diagram
 
 <img alt="Azure Core Infrastructure" src={useBaseUrl('img/azure_core_infrastructure.png')} />
