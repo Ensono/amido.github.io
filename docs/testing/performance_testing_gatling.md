@@ -4,9 +4,9 @@ title: Performance Testing - Gatling
 sidebar_label: Gatling Performance Testing
 ---
 
-The Amido Stacks Performance Tests is a sample project demonstrating performance testing (Load testing) using the `Gatling` tool.
+The Amido Stacks Performance Tests is a sample project demonstrating performance testing (Load testing) using the [Gatling](https://gatling.io/) tool.
 
-The tests have been written against the Amido Stacks APIs.
+The tests within this repository have been written against the Amido Stacks APIs.
 
 ## Getting started
 
@@ -19,13 +19,6 @@ To get started with performance testing, first clone the [Amido Stacks Performan
 - Java version 11
 - Maven
 - IDE for Scala development. I.e. IntelliJ IDEA
-
-## Useful Documentation
-
-Gatling docs - <https://gatling.io/docs/current>
-
-Blog post by Amir Gharai which was used to set up the framework -
-[Performance Testing Framework with Gatling and Maven](https://www.testingexcellence.com/gatling-maven-performance-test-framework/)
 
 ## Quick run
 
@@ -83,3 +76,5 @@ To delete the resources, run the following command from the root project folder 
 
 [Gatling docs](https://gatling.io/docs/current)
 [Performance Testing Framework with Gatling and Maven](https://devqa.io/gatling-maven-performance-test-framework/)
+
+
