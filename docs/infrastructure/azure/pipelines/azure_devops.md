@@ -36,11 +36,11 @@ resources:
     endpoint: amidostacks # Name of the service account created for the connection to GitHub from Azure DevOps
 ```
 
-### Variable group
+### Variable groups
 
-A variable group will need creating for storing Azure Credentials to be used with the pipeline. Instructions for creating a variable group can be found [here](https://docs.microsoft.com/en-us/azure/devops/pipelines/library/variable-groups?view=azure-devops&tabs=classic#create-a-variable-group). Give the variable group a name and description and make sure the **Allow access to all pipelines** option is checked.
+Variable groups will need creating for storing Azure Credentials to be used with the pipeline. Instructions for creating a variable group can be found [here](https://docs.microsoft.com/en-us/azure/devops/pipelines/library/variable-groups?view=azure-devops&tabs=classic#create-a-variable-group). 
 
-Add the following variables using the Service Connection details from [bootstrapping the Azure tenant](../core_infrastructure.md#bootstrap-the-azure-tenant):
+Create a variable group for the nonprod infrastructure. Give the variable group a name and description and make sure the **Allow access to all pipelines** option is checked. Add the following variables using the Service Connection details from [bootstrapping the Azure tenant](../core_infrastructure.md#bootstrap-the-azure-tenant):
 
 * azure_tenant_id
 * azure_subscription_id
@@ -48,6 +48,13 @@ Add the following variables using the Service Connection details from [bootstrap
 * azure_client_secret
 
 <img alt="Azure Core Variable Group" src={useBaseUrl('img/azure_core_variable_group.png')} />
+
+Repeat this to create a prod infrastructure variable group with the variables below:
+
+* prod_azure_tenant_id
+* prod_azure_subscription_id
+* prod_azure_client_id
+* prod_azure_client_secret
 
 ### Update pipeline template placeholders
 
