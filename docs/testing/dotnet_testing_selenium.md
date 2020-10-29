@@ -75,7 +75,7 @@ In root (*.sln) directory, build the solution using: ) the solution:
 dotnet test
 ```
 
-As a result of the test execution - the 'BDDfy.html' test report will be automatically generated.
+As a result of test execution - a 'BDDfy.html' test report will be automatically generated.
 
 :::info
 You don't need to run `dotnet restore` because it's run implicitly by all commands that require a restore to occur, such as dotnet new, dotnet build and dotnet run._

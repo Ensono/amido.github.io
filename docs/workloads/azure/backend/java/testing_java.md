@@ -1,17 +1,13 @@
 ---
 id: testing_java
-title: Testing the application
-sidebar_label: Testing the API
-hide_title: false
-hide_table_of_contents: false
+title: Pre-deployment tests and reports
+sidebar_label: Pre-deployment tests and reports
 ---
 
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
-## Testing the API
-
-### Running the tests
+## Running the tests
 
 Tests within the code are grouped using Tag annotations. There are three groups: 'Unit', 'Component' and 'Integration'. To just run the unit tests, for example, type:
 
@@ -67,9 +63,9 @@ Similarly, for the Component tests, you should use:
 
 and the equivalent for running the Integration tests.
 
-### Reports
+## Reports
 
-#### Test reports
+### Test reports
 
 A test report may be created from the `test` package in Java using the Surefire Plugin.
 The report file (as either XML or HTML) generated for each of the test classes can be found under `./target/surefire-reports`.
@@ -128,9 +124,12 @@ To generate the Serenity report:
 
 The report can be viewed under `./api-tests/target/site/serenity/index.html`.
 
-#### Code coverage
+### Code coverage report
 
-Run the following command:
+The JaCoCo Code Coverage tool allows identifying how much of the code is run during the test suite execution. It is by no means an identifier of code and test quality in its own right but can be helpful for checking if logic paths have test coverage, especially for code updates. 
+This library is run in the API pipeline, with output reports being made available to the CI tool being used.
+
+To generate the JaCoCo report, please execute the following command:
 
  <Tabs
    groupId="operating-systems"
@@ -158,7 +157,11 @@ Run the following command:
 
 The generated report can be viewed under `./target/site/jacoco/index.html`.
 
-#### Dependency checker report
+### Dependency checker report
+
+The The [OWASP Dependency-Check](https://owasp.org/www-project-dependency-check/) is a Software Composition Analysis tool that attempts to detect publicly disclosed vulnerabilities contained within a project’s dependencies.
+Dependency-check has a command line interface, a Maven plugin, an Ant task, and a Jenkins plugin. The core engine contains a series of analyzers that inspect the project dependencies, collect pieces of information about the dependencies (referred to as evidence within the tool).
+To generate the dependency checker report please execute:
 
  <Tabs
    groupId="operating-systems"
@@ -184,9 +187,9 @@ The generated report can be viewed under `./target/site/jacoco/index.html`.
   </TabItem>
  </Tabs>
 
-The generated report can be viewed under `./target/dependency-check.html`.
+The generated report can be viewed under - `./target/dependency-check.html`.
 
-#### Mutation testing
+### Optional: Mutation testing
 
 PIT mutation testing is used to generate mutation tests (see <https://pitest.org/> for details).
 The mutation coverage goal analyses all classes in the codebase that match the target tests and target class filters.
@@ -216,150 +219,4 @@ To run it:
   </TabItem>
  </Tabs>
 
-The generated report can be viewed under – `./target/pit-reports/YYYYMMDDHHMI`
-
-### Running API tests
-
-Set an environment variable `BASE_URL` (e.g. for local environment use the `export BASE_URL=http://localhost:9000` command).
-
-<br />
-
-<details>
-<summary>Running API tests with Serenity</summary>
-<br />
-To run all tests please navigate to `./api-tests` path and execute the following command:
-
- <Tabs
-   groupId="operating-systems"
-   defaultValue="unix"
-   values={[
-     { label: 'Unix', value: 'unix', },
-     { label: 'Windows', value: 'windows', },
-   ]
- }>
-  <TabItem value="unix">
-
-  ```bash
-  ./mvnw clean verify
-  ```
-
-  </TabItem>
-  <TabItem value="windows">
-
-  ```bash
-  mvnw.cmd clean verify
-  ```
-
-  </TabItem>
- </Tabs>
-
-To run the Smoke tests independently, use:
-
- <Tabs
-   groupId="operating-systems"
-   defaultValue="unix"
-   values={[
-     { label: 'Unix', value: 'unix', },
-     { label: 'Windows', value: 'windows', },
-   ]
- }>
-  <TabItem value="unix">
-
-  ```bash
-  ./mvnw clean verify -Dcucumber.options="--tags @Smoke"
-  ```
-
-  </TabItem>
-  <TabItem value="windows">
-
-  ```bash
-  mvnw.cmd clean verify -Dcucumber.options="--tags @Smoke"
-  ```
-
-  </TabItem>
- </Tabs>
-
-To run the Functional tests independently, use:
-
- <Tabs
-   groupId="operating-systems"
-   defaultValue="unix"
-   values={[
-     { label: 'Unix', value: 'unix', },
-     { label: 'Windows', value: 'windows', },
-   ]
- }>
-  <TabItem value="unix">
-
-  ```bash
-  ./mvnw clean verify -Dcucumber.options="--tags @Functional"
-  ```
-
-  </TabItem>
-  <TabItem value="windows">
-
-  ```bash
-  mvnw.cmd clean verify -Dcucumber.options="--tags @Functional"
-  ```
-
-  </TabItem>
- </Tabs>
- </details>
- 
- <br />
- 
-<details>
-<summary> Running API tests with Karate </summary>
-<br />
-To run all functional tests please navigate to `./api-tests-karate` path and execute the following command:
- 
-<Tabs
-  groupId="operating-systems"
-  defaultValue="unix"
-  values={[
-    { label: 'Unix', value: 'unix', },
-    { label: 'Windows', value: 'windows', },
-  ]
-}>
- <TabItem value="unix">
-
- ```bash
- ./mvnw test -Dtest=RunFunctionalTests
- ```
-
- </TabItem>
-<TabItem value="windows">
-
- ```bash
- mvnw.cmd test -Dtest=RunFunctionalTests
- ```
-
- </TabItem>
- </Tabs>
- 
- To run the Smoke tests independently, use:
- 
-<Tabs
-  groupId="operating-systems"
-  defaultValue="unix"
-  values={[
-    { label: 'Unix', value: 'unix', },
-    { label: 'Windows', value: 'windows', },
-  ]
-}>
- <TabItem value="unix">
-
- ```bash
- ./mvnw test -Dtest=RunSmokeTests
- ```
-
- </TabItem>
-<TabItem value="windows">
-
- ```bash
- mvnw.cmd test -Dtest=RunSmokeTests
- ```
-
- </TabItem>
- </Tabs>
-</details>
+The generated report can be viewed under – `./target/pit-reports/YYYYMMDDHHMI`.

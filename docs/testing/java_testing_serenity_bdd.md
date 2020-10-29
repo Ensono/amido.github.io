@@ -120,7 +120,7 @@ mvn serenity:aggregate
 Using multiple forks can be a good alternative to running all tests in a single JVM, and can reduce the risk of certain types of errors.
 
 :::info
-Choosing the right forking strategy and parallel execution settings can have a substantial impact on the memory requirements, and the execution time of the build system.
+Choosing the right forking strategy and parallel execution settings can have a substantial impact on the memory requirements and the execution time of the build system.
 :::
 
 Using Forked Test Execution, new JVM processes are spun up to execute the tests, up to a configurable maximum number of processes.
@@ -129,7 +129,7 @@ This creates better separation between tests, which can improve their reliabilit
 
 Maven is set to spawn new processes by the forkCount configuration element, as shown here below.
 
-This can either be a number (the maximum number of forks), or a multiplier (the number of forks per CPU). The current configuration uses the value of "2", which means 2 forked processes per CPU:
+This can either be a number (the maximum number of forks) or a multiplier (the number of forks per CPU). The current configuration uses the value of "2", which means 2 forked processes per CPU:
 
 ```xml
  <plugin>

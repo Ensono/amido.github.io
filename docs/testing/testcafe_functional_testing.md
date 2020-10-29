@@ -4,78 +4,101 @@ title: Functional Testing with TestCafe
 sidebar_label: TestCafe - Functional Testing
 ---
 
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+[TestCafe](https://devexpress.github.io/testcafe/) is a Node.js end-to-end open source automation tool that is used to test web applications. It can run your tests on any browser without having to download separate drivers for each browser.
+It is easy to install, configure and get started without any external libraries or plugins required.
+
 ## TestCafe: Functional tests
 
 Templated sample TestCafe automation framework for PROJECT_NAME, bootstrapped using `@amidostacks/scaffolding-cli`.
 
-## Getting started
+### Running tests locally
 
-Ensure that [Node.js](https://nodejs.org/) and [npm](https://www.npmjs.com/) are installed with the versions specified in [package.json](./package.json).
+#### Prerequisites
 
-### Dependencies
+- Ensure that [Node.js](https://nodejs.org/) and [npm](https://www.npmjs.com/) are installed with the versions specified in `./package.json` file.
+- Execute the following command to install all dependencies:
 
 ```bash
 npm install
 ```
 
-### End to End (E2E) Tests
+- Configure your browser:
+
+    - Ensure you have at least one browser installed on your operating system e.g. Chrome.
+    - Include the browser name  in  the `./.testcaferc.json` file. e.g.:
+
+```text
+  "browsers": [
+    "chrome:headless",
+    "firefox:headless"
+  ]
+``` 
+
+At the moment, Chrome is set as the default web browser.
+
+To bypass the browser config in the `./.testcaferc.json` config file, simply run passing in the browser arg:
+
+```bash
+npm run test:e2e --chrome
+```
+
+See [browsers](https://devexpress.github.io/testcafe/documentation/using-testcafe/common-concepts/browsers/) for more information.
+
+- Configure Environment Variables
+
+TestCafe functional tests are configured to run after successful deployment, so environment variables need to be set.
+
+Export the following environment variables.
+    - NODE_ENV, 
+    - APP_BASE_URL: base url to the environment where the web app is deployed,
+    - APP_BASE_PATH: path to main page, 
+    - MENU_API_URL: base url to rest api.
+
+#### Example
+
+ <Tabs
+   groupId="operating-systems"
+   defaultValue="unix"
+   values={[
+     { label: 'Unix', value: 'unix', },
+     { label: 'Windows', value: 'windows', },
+   ]
+ }>
+  <TabItem value="unix">
+
+  ```bash
+  export APP_BASE_PATH=/web/stacks
+  ```
+
+  </TabItem>
+  <TabItem value="windows">
+
+  ```bash
+  set APP_BASE_PATH=/web/stacks
+  ```
+
+  </TabItem>
+ </Tabs>
+ 
+or use the `./.env` file to specify the default values instead of exporting them locally.
+
+### Run Tests
 
 ```bash
 npm run test:e2e
 ```
 
-This should launch [TestCafe](https://devexpress.github.io/testcafe/documentation/getting-started/) and run the tests in the browsers specified in [.testcaferc.json](./.testcaferc.json) in the headless mode.
-
-### Accessibility Tests with aXe
+Run tests in a specific browser:
 
 ```bash
-npm run test:axe
+npm run test:e2e --chrome
 ```
 
-This will launch [TestCafe](https://devexpress.github.io/testcafe/documentation/getting-started/) and run the tests in the browsers specified in [.testcaferc.json](./.testcaferc.json) in headless mode.
+This should launch TestCafe and run the tests in the browsers specified in `./.testcaferc.json` in the headless mode.
 
-This will validated using axe-core, from the Deque family of products: [aXe](https://www.deque.com/axe/). When developing, we expect to support WCAG 2.1 Level AA ["wcag21aa"] at a minimum. The additional configuration can be changed by defining the [context and options](https://www.npmjs.com/package/axe-testcafe#axe-options).
-
-## Browser configuration
-
-We assume that most users will have Chrome installed on their operating system. If this is not the case, the base configuration file  
-  "browsers": [
-    "chrome:headless",
-    "firefox:headless"
-  ],
-
-To bypass the browser config in the [.testcaferc.json](./.testcaferc.json) config file, simply run passing in the browser arg:
-
-```bash
-npm run test:e2e -- chrome
-```
-
-See [browsers](https://devexpress.github.io/testcafe/documentation/using-testcafe/common-concepts/browsers/) for more information.
-
-## Environment variables
-
-### E2E Tests
-
-We can use the [.env](./.env) file to specify defaults instead of exporting locally, or using your IDE.
-
-_⚠️ IMPORTANT: if you have defined an environment variable, then `dotenv` will not override this with the values in the `.env` file. The environment should always hold the source of truth._
-
-- Base URL: `process.env.APP_BASE_URL` (defaults to deployed dev environment `https://dev-netcore-app.nonprod.amidostacks.com `)
-- Base URL: `process.env.APP_BASE_PATH` (optional, default to deployed dev environment `/web/stacks`)
-- Base URL API: `process.env.MENU_API_URL` (defaults to deployed dev environment `https://dev.amidostacks.com/api/menu`)
-- NODE_ENV: `process.env.NODE_ENV` (should be `production` for a deployed runnable webapp)
-
-An example of your environment variable configuration for running against a locally hosted server is as follows.
-
-For Linux/Mac (replacing `export` with `set` for Windows):
-
-``` bash
-export NODE_ENV=development 
-export PORT=3000
-export APP_BASE_URL=APP_BASE_URL_VALUE
-export MENU_API_URL=MENU_API_URL_VALUE
-export APP_BASE_PATH=""
-```
 
 ## Running tests in Docker
 
@@ -94,31 +117,46 @@ docker pull testcafe/testcafe:latest
 ```
 
 ```bash
-docker run -e APP_BASE_URL=$APP_BASE_URL -e APP_BASE_PATH=$APP_BASE_PATH -e MENU_API_URL=$MENU_API_URL -e NODE_ENV=$NODE_ENV -it -v $(pwd):/tests testcafe/testcafe chromium /tests/**/*.test.cf.ts
+docker run -e APP_BASE_URL=$APP_BASE_URL -e APP_BASE_PATH=$APP_BASE_PATH -e MENU_API_URL=$MENU_API_URL -e NODE_ENV=$NODE_ENV -it -v $(pwd):/tests testcafe/testcafe chromium /**/*.test.cf.ts   
 ```
 
-### Running in CI/CD
+## Optional: Running tests with Lambdatest
 
-Currently, we are supporting running Azure Pipelines. Please refer to the [test-functional-testcafe.yml](https://github.com/amido/stacks-pipeline-templates/blob/feature/cycle2/azDevOps/azure/templates/v2/steps/test-functional-testcafe.yml) for information on the step.
+[Lambdatest](https://www.lambdatest.com) is a cloud-based cross browser testing tool that allows to check the web application functionality and other dependencies across various browsers over the internet.
 
-We run the TestCafe functional tests after successful deployment of the webapp to the cluster.
+### Dependencies
 
-The `publishArtifact` task ensures the screenshots are captured if an applicable test fails. These are available as artifacts in the pipeline.
+An active [Lambdatest](https://accounts.lambdatest.com/dashboard) Account
 
-## Running with Lambdatest
+### Settings
 
-[Lambdatest](https://www.lambdatest.com) is a Cross Browser Testing Cloud platform, leveraging the running on 2000+ Real Browsers and Operating Systems Online.
+Export [Lambdatest Credentials](https://www.lambdatest.com/support/docs/npm-plugin-for-testcafe-integration-with-lambdatest/) as following: 
 
-To run using [Lambdatest](https://accounts.lambdatest.com/dashboard), the following environment variables must be enabled on the platform:
+ <Tabs
+   groupId="operating-systems"
+   defaultValue="unix"
+   values={[
+     { label: 'Unix', value: 'unix', },
+     { label: 'Windows', value: 'windows', },
+   ]
+ }>
+  <TabItem value="unix">
 
-For Linux/Mac (replacing `export` with `set` for Windows):
+  ```bash
+  export LT_USERNAME= {your lambdatest username}
+  export LT_ACCESS_KEY= {your lambdatest access_key}
+  ```
 
-```bash
-export LT_USERNAME= {your lambdatest username}
-export LT_ACCESS_KEY= {your lambdatest access_key}
-```
+  </TabItem>
+  <TabItem value="windows">
 
-Lambdatest will create a tunnel to run the tests and automatically record videos.
+  ```bash
+  set LT_USERNAME= {your lambdatest username}
+  set LT_ACCESS_KEY= {your lambdatest access_key}
+  ```
+
+  </TabItem>
+ </Tabs>
 
 ### Running E2E tests with LambdaTest
 
@@ -126,25 +164,10 @@ Lambdatest will create a tunnel to run the tests and automatically record videos
 npm run test:e2e -- "lambdatest:IE@11.0:Windows 10"
 ```
 
+Lambdatest will create a tunnel to run the tests and automatically record videos.
+<br />
 The full list of browser configuration available can be found by running the following in the root:
 
 ```bash
 node_modules/.bin/testcafe -b lambdatest
-```
-
-_Documentation: <https://www.lambdatest.com/support/docs/npm-plugin-for-testcafe-integration-with-lambdatest/>_
-
-
-### Optional: Linting
-
-To install peer dependencies for linting:
-
-```bash
-npx install-peerdeps --save-dev @amidostacks/eslint-config
-```
-
-### Linting
-
-```bash
-npm run lint
 ```
