@@ -10,10 +10,10 @@ We are using [Cypress](https://docs.cypress.io/) for functional testing as much
 as possible. The key features of Cypress:
 
 - Integration testing with API testing support (Node.js)
-- Easy debugability (DOM snapshotting)
+- Easy debuggability (DOM snapshotting)
 - Selector playground
 - Great documentation
-- Best implementation of Live Reloading
+- The best implementation of Live Reloading
 
 ### Why Cypress is categorised in the pre-deployed tests
 
@@ -75,6 +75,7 @@ We suggest co-locating the `*.cy.ts` tests with the page compositions (a composi
 
 e.g.
 
+```bash
 compositions
 ├── create
 │   ├── index.test.cy.ts
@@ -89,6 +90,7 @@ compositions
     ├── index.test.eyes.cy.ts
     ├── index.test.tsx
     └── index.tsx
+```
 
 ### How to configure the environments
 

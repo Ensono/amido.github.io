@@ -14,7 +14,7 @@ The following documentation is an overview of the Pact implementation as part of
 
 :::info
 The `beforeAll` and `afterAll` hooks in Jest is not before all tests but
-before each file._
+before each file.
 :::
 
 ### `[Utils](./utils)`
@@ -153,7 +153,7 @@ It's important to get the `PACT_CONSUMER` and `PACT_PROVIDER` names correct, as 
 
 ⚠️ /pacts: these are checked in for reference only. Please do not change the outputted .json files. They are created on successful test runs by Pact. These will be published to the broker upon successful run in the pipeline, with the corresponding version tags.
 
-#### Running "PACT" for Java Application
+### Running "PACT" for Java Application
 
 **Prerequisite:**
 Please provide the Pact_Broker_URL and Pact_Broker_Token to the provider's pom

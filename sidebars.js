@@ -116,15 +116,7 @@ module.exports = {
                       "workloads/azure/backend/netcore/quickstart/build_and_run_project_netcore"
                     ],
                   },
-                  {
-                    type: "category",
-                    label: "Testing",
-                    items: [
-                      "workloads/azure/backend/netcore/testing/testing_the_api_netcore",
-                      "workloads/azure/backend/netcore/testing/functional_testing_netcore",
-                      "workloads/azure/backend/netcore/testing/performance_testing_netcore",
-                    ],
-                  },
+                  "workloads/azure/backend/netcore/testing/functional_testing_netcore",
                   "workloads/azure/backend/netcore/infrastructure_netcore",
                   "workloads/azure/backend/netcore/pipeline_netcore",
                   "workloads/azure/backend/netcore/logging_netcore",
@@ -192,6 +184,7 @@ module.exports = {
       "testing/testing_java_serenity_bdd",
       "testing/testing_dotnet_selenium",
       "testing/cypress_functional_testing",
+      "testing/testcafe_functional_testing",
       "testing/testing_static_analysis",
       "testing/visual_analysis",
       "testing/contract_testing_pact",

@@ -70,7 +70,7 @@ and the equivalent for running the Integration tests.
 #### Test reports
 
 A test report may be created from the `test` package in Java using the Surefire Plugin.
-The report file (as either XML or HTML) generated for each of the test classes can be found under `<PROJECT-NAME>/target/surefire-reports`.
+The report file (as either XML or HTML) generated for each of the test classes can be found under `./target/surefire-reports`.
 
 Run the following command to create the report:
 
@@ -85,14 +85,14 @@ Run the following command to create the report:
   <TabItem value="unix">
 
   ```bash
-  ./mvnw surefire:test"
+  ./mvnw surefire:test
   ```
 
   </TabItem>
   <TabItem value="windows">
 
   ```bash
-  mvnw.cmd surefire:test"
+  mvnw.cmd surefire:test
   ```
 
   </TabItem>
@@ -111,20 +111,20 @@ To generate the Serenity report:
   <TabItem value="unix">
 
   ```bash
-  ./mvnw clean verify"
+  ./mvnw clean verify
   ```
 
   </TabItem>
   <TabItem value="windows">
 
   ```bash
-  mvnw.cmd clean verify"
+  mvnw.cmd clean verify
   ```
 
   </TabItem>
  </Tabs>
 
-The report can be viewed under `<PROJECT-NAME>/api-tests/target/site/serenity/index.html`.
+The report can be viewed under `./api-tests/target/site/serenity/index.html`.
 
 #### Code coverage
 
@@ -141,20 +141,20 @@ Run the following command:
   <TabItem value="unix">
 
   ```bash
-  ./mvnw jacoco:report"
+  ./mvnw jacoco:report
   ```
 
   </TabItem>
   <TabItem value="windows">
 
   ```bash
-  mvnw.cmd jacoco:report"
+  mvnw.cmd jacoco:report
   ```
 
   </TabItem>
  </Tabs>
 
-The generated report can be viewed under `<PROJECT-NAME>/target/site/jacoco/index.html`.
+The generated report can be viewed under `./target/site/jacoco/index.html`.
 
 #### Dependency checker report
 
@@ -169,20 +169,20 @@ The generated report can be viewed under `<PROJECT-NAME>/target/site/jacoco/inde
   <TabItem value="unix">
 
   ```bash
-  ./mvnw clean install -Powasp-dependency-check"
+  ./mvnw clean install -Powasp-dependency-check
   ```
 
   </TabItem>
   <TabItem value="windows">
 
   ```bash
-  mvnw.cmd clean install -Powasp-dependency-check"
+  mvnw.cmd clean install -Powasp-dependency-check
   ```
 
   </TabItem>
  </Tabs>
 
-The generated report can be viewed under `<PROJECT-NAME>/target/dependency-check.html`.
+The generated report can be viewed under `./target/dependency-check.html`.
 
 #### Mutation testing
 
@@ -201,26 +201,31 @@ To run it:
   <TabItem value="unix">
 
   ```bash
-  ./mvnw org.pitest:pitest-maven:mutationCoverage"
+  ./mvnw org.pitest:pitest-maven:mutationCoverage
   ```
 
   </TabItem>
   <TabItem value="windows">
 
   ```bash
-  mvnw.cmd org.pitest:pitest-maven:mutationCoverage"
+  mvnw.cmd org.pitest:pitest-maven:mutationCoverage
   ```
 
   </TabItem>
  </Tabs>
 
-The generated report can be viewed under – `<PROJECT-NAME>/target/pit-reports/YYYYMMDDHHMI`
+The generated report can be viewed under – `./target/pit-reports/YYYYMMDDHHMI`
 
 ### Running API tests
 
-Set an environment variable `BASE_URL` (e.g. if testing locally set it to <http://localhost:9000>)
+Set an environment variable `BASE_URL` (e.g. if testing locally set it to <http://localhost:9000>) or use the `export BASE_URL=http://localhost:9000` command.
 
-From project path `<>PROJECT-NAME>/api-tests` to run all tests, use
+<br />
+
+<details>
+<summary>Running API tests with Serenity</summary>
+
+To run all tests please navigate to `./api-tests` path and execute the following command:
 
  <Tabs
    groupId="operating-systems"
@@ -233,20 +238,20 @@ From project path `<>PROJECT-NAME>/api-tests` to run all tests, use
   <TabItem value="unix">
 
   ```bash
-  ./mvnw clean verify"
+  ./mvnw clean verify
   ```
 
   </TabItem>
   <TabItem value="windows">
 
   ```bash
-  mvnw.cmd clean verify"
+  mvnw.cmd clean verify
   ```
 
   </TabItem>
  </Tabs>
 
-To run the Smoke tests independently, use
+To run the Smoke tests independently, use:
 
  <Tabs
    groupId="operating-systems"
@@ -272,7 +277,7 @@ To run the Smoke tests independently, use
   </TabItem>
  </Tabs>
 
-and to run the Functional tests independently, use
+To run the Functional tests independently, use:
 
  <Tabs
    groupId="operating-systems"
@@ -297,3 +302,62 @@ and to run the Functional tests independently, use
 
   </TabItem>
  </Tabs>
+ </details>
+ 
+ <br />
+ 
+<details>
+<summary> Running API tests with Karate </summary>
+<br />
+To run all functional tests please navigate to `./api-tests-karate` path and execute the following command:
+ 
+<Tabs
+  groupId="operating-systems"
+  defaultValue="unix"
+  values={[
+    { label: 'Unix', value: 'unix', },
+    { label: 'Windows', value: 'windows', },
+  ]
+}>
+ <TabItem value="unix">
+
+ ```bash
+ ./mvnw test -Dtest=RunFunctionalTests
+ ```
+
+ </TabItem>
+<TabItem value="windows">
+
+ ```bash
+ mvnw.cmd test -Dtest=RunFunctionalTests
+ ```
+
+ </TabItem>
+ </Tabs>
+ 
+ To run the Smoke tests independently, use:
+ 
+<Tabs
+  groupId="operating-systems"
+  defaultValue="unix"
+  values={[
+    { label: 'Unix', value: 'unix', },
+    { label: 'Windows', value: 'windows', },
+  ]
+}>
+ <TabItem value="unix">
+
+ ```bash
+ ./mvnw test -Dtest=RunSmokeTests
+ ```
+
+ </TabItem>
+<TabItem value="windows">
+
+ ```bash
+ mvnw.cmd test -Dtest=RunSmokeTests
+ ```
+
+ </TabItem>
+ </Tabs>
+</details>

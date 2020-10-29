@@ -58,7 +58,14 @@ More properties here: <https://serenity-bdd.github.io/theserenitybook/latest/ser
 
 ### Run Tests Locally
 
-Open current folder in the terminal and execute tests by running any one of the following commands:
+To run the web tests with a given driver, please provide the path to the webdriver file using the system property: `webdriver.driver_name.driver`. For example, your serenity.properties file should contain the following:
+
+```text
+webdriver.driver=chrome
+webdriver.chrome.driver=/path/to/my/chromedriver
+```
+
+Open the project folder in the terminal and execute tests by running any one of the following commands:
 
 Run all tests on the default environment:
 
@@ -100,7 +107,7 @@ Test Report Location is: ..target/site/serenity/index.html
 
 ### Manual Aggregation of the Test Report
 
-Open the ../E2E/Serenity path in the terminal and execute:
+Open the project folder in the terminal and execute:
 
 ```bash
 mvn serenity:aggregate
@@ -111,7 +118,7 @@ mvn serenity:aggregate
 Using multiple forks can be a good alternative to running all tests in a single JVM, and can reduce the risk of certain types of errors.
 
 :::info
-Choosing the right forking strategy and parallel execution settings can have a substantial impact on the memory requirements and the execution time of the build system.
+Choosing the right forking strategy and parallel execution settings can have a substantial impact on the memory requirements, and the execution time of the build system.
 :::
 
 Using Forked Test Execution, new JVM processes are spun up to execute the tests, up to a configurable maximum number of processes.
@@ -120,7 +127,7 @@ This creates better separation between tests, which can improve their reliabilit
 
 Maven is set to spawn new processes by the forkCount configuration element, as shown here below.
 
-This can either be a number (the maximum number of forks) or a multiplier (the number of forks per CPU). The current configuration uses the value of "2", which means 2 forked processes per CPU:
+This can either be a number (the maximum number of forks), or a multiplier (the number of forks per CPU). The current configuration uses the value of "2", which means 2 forked processes per CPU:
 
 ```xml
  <plugin>
