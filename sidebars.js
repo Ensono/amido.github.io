@@ -110,8 +110,7 @@ module.exports = {
                       "workloads/azure/backend/netcore/quickstart/requirements_netcore",
                       "workloads/azure/backend/netcore/quickstart/create_project_netcore",
                       "workloads/azure/backend/netcore/quickstart/configure_project_netcore",
-                      "workloads/azure/backend/netcore/quickstart/build_and_run_project_netcore",
-                      "workloads/azure/backend/netcore/quickstart/deploy_project_netcore"
+                      "workloads/azure/backend/netcore/quickstart/build_and_run_project_netcore"
                     ],
                   },
                   {

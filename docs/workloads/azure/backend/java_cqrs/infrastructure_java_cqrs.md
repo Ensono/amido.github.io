@@ -17,7 +17,7 @@ Both the diagram and resource list below are for a single environment. By defaul
 
 ### Diagram
 
-<img alt="Azure Java API Infrastructure" src={useBaseUrl('img/azure_java_api_infrastructure.png')} />
+<img alt="Azure Java API Infrastructure" src={useBaseUrl('img/azure_rest_api_infrastructure.png')} />
 
 ### Resource List
 
