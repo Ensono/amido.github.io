@@ -8,7 +8,7 @@ hide_table_of_contents: true
 
 ## Create the project
 
-To create the project there are three different options available.
+To create the project there are three different options available presented below.
 
 <br />
 
@@ -43,6 +43,7 @@ import TabItem from "@theme/TabItem";
         </ul>
         <h4>CONS</h4>
         <ul>
+            <li>Requires <strong>git</strong> installation.</li>
             <li>Does not remove the files not needed in the repository which may create confusion.</li>
             <li>Does not allow automated personalization of the project.</li>
             <li>All Amido Stacks repositories links required to create all flavours of projects</li>
@@ -73,7 +74,7 @@ It includes tests (unit, integration), together with infrastructure and deployme
 
 We use [npx](https://www.npmjs.com/package/npx) to execute the [scaffolding-cli](https://www.npmjs.com/package/@amidostacks/scaffolding-cli).
 
-```bash title="Run the next command to install npx"
+```bash title="Run the command to install npx"
 npm install -g npx
 ```
 
@@ -94,7 +95,7 @@ You will be asked a number of questions. Based on the answers, your ready-to-bui
 <summary>Create the project by cloning GitHub repository</summary>
 <div>
 
-Clone the Dotnet project to your local machine from here: [stacks-dotnet repository](https://github.com/amido/stacks-dotnet)
+Clone the .NET project to your local machine from here: [stacks-dotnet repository](https://github.com/amido/stacks-dotnet)
 
 ```bash title="Run git clone repository command"
 git clone git@github.com:amido/stacks-dotnet.git
@@ -115,13 +116,13 @@ git clone git@github.com:amido/stacks-dotnet.git
     Download the [stacks-app-template.1.0.0.nupkg template package](https://github.com/amido/stacks-dotnet/releases/tag/1.0.0)
     (.Net Core 3.1, current LTS release) to a temporary folder.
 
-    ```bash title="Run the next command to install the package"
+    ```bash title="Run the command to install the package"
     dotnet new -i /path/to/stacks-app-template.1.0.0.nupkg
     ```
 
 2. Create the project
 
-    ```bash title="Run the next command to create the project"
+    ```bash title="Run the command to create the project"
     dotnet new stacks-app -n Company.Project -d DomainName
     ```
 
