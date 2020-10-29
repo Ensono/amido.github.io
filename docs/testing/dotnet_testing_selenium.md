@@ -4,6 +4,8 @@ title: UI Browser Automation with Selenium and .NET
 sidebar_label: C# - Selenium .Net
 ---
 
+
+
 ## Getting Started
 
 This page explains how to setup a UI testing framework built with C# and Selenium.
@@ -215,3 +217,5 @@ We can interact with this by using the following:
 public By menus = By.CssSelector("[data-cy='editMenuItem']");
 ```
 
+## Standalone Implementation
+If you wish to simply have a solution that is not tied into the stacks CLI tool then you can clone the frpo from [here](https://github.com/amido/stacks-dotnet-webapp-automation)
