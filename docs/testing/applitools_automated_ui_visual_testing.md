@@ -26,7 +26,7 @@ The configuration file has been added to the `[tsconfig.cypress.json](./tsconfig
 
 In order run Cypress with Applitools, you will need an [Applitools](https://applitools.com/) account. Once signed up (there is a free tier), the API key can be used to create a connection with Applitools.
 
-Please follow the [Cypress Tutorial](https://applitools.com/tutorials/cypress.html)
+Please follow the nvm[Cypress Tutorial](https://applitools.com/tutorials/cypress.html)
 
 `export APPLITOOLS_API_KEY=`
 
