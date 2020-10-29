@@ -32,6 +32,8 @@ module.exports = {
                   "workloads/azure/frontend/environment_variables_nodejs_crs",
                   "workloads/azure/frontend/api_definition_crs",
                   "workloads/azure/frontend/logging_node_js_crs",
+                  "workloads/azure/frontend/infrastructure_csr",
+                  "workloads/azure/frontend/pipeline_csr",
                 ],
               },
               {
@@ -44,10 +46,11 @@ module.exports = {
                   "workloads/azure/frontend/api_definition",
                   "workloads/azure/frontend/logging_node_js",
                   "workloads/azure/frontend/server_side_cache",
+                  "workloads/azure/frontend/infrastructure_ssr",
+                  "workloads/azure/frontend/pipeline_ssr",
                 ],
               },
               "workloads/azure/frontend/browser_support",
-              "workloads/azure/frontend/deployment_node_js",
             ],
           },
           {
