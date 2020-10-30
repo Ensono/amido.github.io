@@ -14,8 +14,7 @@ const features = [
     color: "#25CEB6",
     description: (
       <>
-        Find out how to configure your cloud provider and other core
-        infrastructure to make Stacks workloads work.
+       Find out how to configure your cloud provider and other core infrastructure to make Stacks work for you.
       </>
     ),
   },
@@ -25,8 +24,7 @@ const features = [
     color: "#FE6D6A",
     description: (
       <>
-        Stacks includes a range of front-end focused opinionated test frameworks
-        that can be tailored to your project with just one command.
+       With just one command, discover how to tailor your project with Stacks’ front-end focused opinionated test frameworks.
       </>
     ),
   },
@@ -37,21 +35,21 @@ const features2 = [
     title: "Contribute to Stacks",
     link: "docs/contributions",
     description: (
-      <>How you can contribute to the Amido Stacks open source project</>
+      <>As an open source project, you can be a part of the Github community shaping Amido Stacks</>
     ),
   },
   {
-    title: "Business benefits",
+    title: "Why Amido",
     link: "",
     description: (
-      <>Check out amido.com for more on the business benefits of Stacks</>
+      <>Want to know how Amido is preventing digital transformation failures with Stacks?</>
     ),
   },
   {
     title: "Careers at Amido",
     link: "",
     description: (
-      <>Join the go-to partner for cloud native transformation. Join us!</>
+      <>As the go-to partner for cloud-native transformation, we’re always looking for fresh new talent</>
     ),
   },
 ];
@@ -184,11 +182,8 @@ function Home() {
               productive on your software project
             </h3>
             <p>
-              Amido Stacks is a catalogue of workload templates that <br />
-              instantly scaffold and deploy boilerplate projects. With Stacks’
-              <br />
-              tried-and-tested technology choices you reduce risk for your
-              delivery.
+            Amido Stacks is a catalogue of workload templates that  <br />
+            instantly scaffold and deploy boilerplate software projects.
             </p>
             <div className={styles.buttons} style={{ marginTop: 20 }}>
               <Link

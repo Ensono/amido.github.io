@@ -45,7 +45,7 @@ section {
   padding: 30px 100px;
   font-size: 30px;
   color: black;
-  min-height: 520px;
+  min-height: 580px;
   min-width: 380px;
 }
 
@@ -89,7 +89,7 @@ section {
   width: calc(33% - 30px);
   flex-grow: 1;
   padding: 30px;
-  min-height: 380px;
+  min-height: 600px;
   min-width: 380px;
 
   font-size: 18px;
