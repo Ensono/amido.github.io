@@ -121,8 +121,7 @@ module.exports = {
                     label: "Testing",
                     items: [
                       "workloads/azure/backend/netcore/testing/testing_the_api_netcore",
-                      "workloads/azure/backend/netcore/testing/functional_testing_netcore",
-                      "workloads/azure/backend/netcore/testing/performance_testing_netcore",
+                      "workloads/azure/backend/netcore/testing/functional_testing_netcore"
                     ],
                   },
                   "workloads/azure/backend/netcore/infrastructure_netcore",

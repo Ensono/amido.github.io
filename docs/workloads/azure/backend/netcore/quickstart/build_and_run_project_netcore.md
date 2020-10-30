@@ -110,7 +110,7 @@ but not if the full project is deployed to Azure, where the build process will p
 
 <br />
 
-<details>
+<details open>
 <summary>Verify that the application has started</summary>
 
 <div>

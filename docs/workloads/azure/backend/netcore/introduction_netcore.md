@@ -2,6 +2,8 @@
 id: introduction_netcore
 title: Introduction to the .Net Core REST API application
 sidebar_label: Introduction
+hide_title: true
+hide_table_of_contents: true
 ---
 
 This is a sample .NetCore REST API application with CQRS, showcasing best coding practices and integrating with Azure
@@ -13,6 +15,8 @@ and Cosmos DB is used for cloud persistence.
 The application is designed as a restaurant menu application. Users can create a Menu.
 Menus can hold one or more Categories, and a Category holds menu Items.
 The API provides an interface for clients to create/update and delete any or all of the menu components.
+
+**For a clearer understanding on the output, there is a demo API hosted [here](https://dev-netcore-api.nonprod.amidostacks.com/api/menu/swagger/index.html).**
 
 As an example below is a Json response to illustrate the structure defined by the model.
 
