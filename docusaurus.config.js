@@ -2,7 +2,7 @@ const remarkImages = require('remark-images');
 const rehypeTruncate = require('rehype-truncate');
 
 module.exports = {
-  title: "Amido Stacks",
+  title: "Amido Stacks ",
   tagline:
     "Helping projects gain momentum on digital transformation, with opinionated and modular boilerplate solutions",
   url: "https://amido.github.io",
@@ -30,7 +30,7 @@ module.exports = {
       additionalLanguages: ['csharp', 'docker', 'powershell', 'java', 'bash', 'json'],
     },
     navbar: {
-      title: "Amido Stacks",
+      title: "",
       logo: {
         alt: "Amido Stacks Logo",
         src: "img/logo.svg",
