@@ -2,7 +2,8 @@
 id: setting_up_cosmos_db_locally
 title: Cosmos DB Emulator
 sidebar_label: Cosmos DB Emulator
-hide_table_of_contents: true
+hide_title: false
+hide_table_of_contents: false
 ---
 
 ## Set up Cosmos DB Emulator locally
@@ -14,7 +15,7 @@ Latest instruction can be found in the [Microsoft page](https://docs.microsoft.c
 
 ### Using the Cosmos DB Emulator to run the database locally
 
-1) Download and install the latest version of CosmosDB Emulator. Once it's installed it will be
+1. Download and install the latest version of CosmosDB Emulator. Once it's installed it will be
    available on
 
    ```text
@@ -27,7 +28,7 @@ Latest instruction can be found in the [Microsoft page](https://docs.microsoft.c
    ![CosmosDB](/img/cosmosdb_emulator_3.png)
    Set the cosmosdb URI, databaseName and key in application.yml file using the value above
 
-   ```code
+   ```yaml
    azure:
      cosmosdb:
        uri: xxxxxx
@@ -50,6 +51,6 @@ Latest instruction can be found in the [Microsoft page](https://docs.microsoft.c
 
 <br />
 
-  The Stacks database should have a container called Menu partitioned by `/id`.
+  The **Stacks** database should have a container called **Menu** partitioned by **/id**.
 
   ![CosmosDB](/img/cosmosdb_emulator_2.png)

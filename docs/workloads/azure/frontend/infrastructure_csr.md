@@ -2,6 +2,8 @@
 id: infrastructure_csr
 title: CSR Application - Azure Infrastructure
 sidebar_label: Infrastructure
+hide_title: false
+hide_table_of_contents: false
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
