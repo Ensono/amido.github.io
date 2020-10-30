@@ -1,6 +1,6 @@
 ---
-id: infrastructure_java
-title: Java REST API - Azure Infrastructure
+id: infrastructure_ssr
+title: SSR Application - Azure Infrastructure
 sidebar_label: Infrastructure
 ---
 
@@ -8,16 +8,15 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ## Overview
 
-This page present the high level design of the reference implementation of the Java Stacks
-application which is based on Spring Boot REST API.
+This page present the high level design of the reference implementation of the Stacks server-side rendering application.
 
-**This page assumes that the core infrastructure has already been provisioned. Instructions and additional information on the core infrastructure can be found [here](../../../../infrastructure/azure/core_infrastructure.md)**
+**This page assumes that the core infrastructure has already been provisioned. Instructions and additional information on the core infrastructure can be found [here](../../../infrastructure/azure/core_infrastructure.md)**
 
-Both the diagram and resource list below are for a single environment. By default, the pipeline template will create two environments (dev and prod).
+Both the diagram and resource list below are for a single environment.
 
 ### Diagram
 
-<img alt="Azure Java API Infrastructure" src={useBaseUrl('img/azure_rest_api_infrastructure.png')} />
+<img alt="Azure SSR App Infrastructure" src={useBaseUrl('img/azure_ssr_app_infrastructure.png')} />
 
 ### Resource List
 
@@ -27,12 +26,12 @@ Both the diagram and resource list below are for a single environment. By defaul
 | AKS**\***                   | Azure Kubernetes Service                                                                     |
 | Public DNS Record           | DNS record pointing Ingress (via application gateway**\*** and internal load balancer**\***) |
 | ACR**\***                   | Azure Container Registry                                                                     |
-| Namespace: {env}-api        | Kubernetes namespace for the environment                                                     |
+| Namespace: {env}-app        | Kubernetes namespace for the environment                                                     |
 | Ingress                     | Kubernetes Ingress to handle routing to Service                                              |
 | Service                     | Kubernetes Service to handle routing to Deployment Pods                                      |
 | Deployment                  | Kubernetes Deployment for managing Pods                                                      |
-| Resource Group - API        | Used to logically group API specific infrastructure                                          |
-| Cosmos DB                   | Azure managed NoSQL database                                                                 |
+| Resource Group - APP        | Used to logically group APP specific infrastructure                                          |
+| Redis Cache                 | Azure managed Redis cache                                                                    |
 
 **\*** _Resource is created by the core infrastructure deployment._
 
@@ -42,7 +41,7 @@ Both the diagram and resource list below are for a single environment. By defaul
 
 The following pipelines are currently supported for automating the deployment:
 
-- [Azure DevOps](./pipeline_java.md)
+- [Azure DevOps](./pipeline_ssr.md)
 
 ### Running Locally
 
@@ -57,7 +56,7 @@ Sample commands with example environment vars:
 
 ```bash
 # Navigate to the infra directory
-cd ${YOUR_DIRECTORY_PATH}/deploy/azure/app/kube
+cd ${YOUR_DIRECTORY_PATH}/deploy/azure/app
 
 # Run Amido Terraform Docker container
 docker run -v $(pwd):/usr/data --rm -it amidostacks/ci-tf:0.0.4 /bin/bash
@@ -78,35 +77,26 @@ ARM_TENANT_ID=1111-2222-3333-444
 # Export Terraform variables. Replace the example values.
 export TF_VAR_name_company=amido \
 TF_VAR_name_project=example \
-TF_VAR_name_domain=menu-api \
-TF_VAR_name_component=api \
-TF_VAR_name_role=backend \
+TF_VAR_name_domain=frontend \
+TF_VAR_name_component=webapp \
 TF_VAR_name_environment=dev \
-TF_VAR_attributes=[] \
-TF_VAR_tags={} \
-TF_VAR_resource_group_location=uksouth \
-TF_VAR_app_gateway_frontend_ip_name=amido-example-nonprod-uks-core \
-TF_VAR_dns_record=dev-menu-api \
-TF_VAR_dns_zone_name=nonprod.amidostacks.com \
-TF_VAR_dns_zone_resource_group=amido-example-nonprod-uks-core \
 TF_VAR_core_resource_group=amido-example-nonprod-uks-core \
-TF_VAR_internal_dns_zone_name=nonprod.amidostacks.internal \
-TF_VAR_create_cosmosdb=true \
-TF_VAR_create_cache=false \
+TF_VAR_resource_group_location=uksouth \
 TF_VAR_create_dns_record=true \
-TF_VAR_create_cdn_endpoint=false \
-TF_VAR_cosmosdb_sql_container=Menu \
-TF_VAR_cosmosdb_sql_container_partition_key=/id \
-TF_VAR_cosmosdb_kind=GlobalDocumentDB \
-TF_VAR_cosmosdb_offer_type=Standard \
-TF_VAR_app_insights_name=amido-example-nonprod-uks-core
+TF_VAR_dns_record=dev \
+TF_VAR_dns_zone_name=nonprod.amidostacks.com \
+TF_VAR_internal_dns_zone_name=nonprod.amidostacks.internal \
+TF_VAR_app_gateway_frontend_ip_name=amido-example-nonprod-uks-core \
+TF_VAR_app_insights_name=amido-example-nonprod-uks-core \
+TF_VAR_create_cosmosdb=false \
+TF_VAR_create_cache=true 
 
 # Initial Terraform. Replace the example values.
 terraform init \
 -backend-config="resource_group_name=amido-stacks-terraform" \
 -backend-config="storage_account_name=amidostacksterraform" \
 -backend-config="container_name=tfstate" \
--backend-config="key=example-menu-api"
+-backend-config="key=example-frontend"
 
 # Select or create the "dev" workspace.
 terraform workspace select dev || terraform workspace new dev

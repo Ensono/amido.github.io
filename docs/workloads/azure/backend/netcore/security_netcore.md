@@ -138,7 +138,7 @@ var jwtBearerAuthenticationConfiguration = new JwtBearerAuthenticationConfigurat
 
 By default the component tests test the API with no authentication/authorization enabled.
 
-To create component tests which test that a 401 (Unauthorized) response is returned when no JWT token is provided or that a 403 (Forbidden) response is returned when a JWT token with insufficient claims to fulfill the authorization policy is provided the Enabled, Audience and Authority settings must be set to match the JWT token used in the request (see Configuration section above). 
+To create component tests which test that a 401 (Unauthorized) response is returned when no JWT token is provided or that a 403 (Forbidden) response is returned when a JWT token with insufficient claims to fulfill the authorization policy is provided the Enabled, Audience and Authority settings must be set to match the JWT token used in the request (see Configuration section above).
 
 The OpenApi settings are optional. It is up to you whether you want to set those for component testing.
 

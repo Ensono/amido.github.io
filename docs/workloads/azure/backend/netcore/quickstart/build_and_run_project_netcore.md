@@ -35,15 +35,15 @@ Move to the `<PROJECT-NAME>/src/api` folder and run the next commands in ** Comm
 dotnet restore
 ```
 
-  ```bash
+```bash
 dotnet clean
 ```
 
-  ```bash
+```bash
 dotnet build
 ```
 
-  ```bash
+```bash
 dotnet run --project xxAMIDOxx.xxSTACKSxx.API/xxAMIDOxx.xxSTACKSxx.API.csproj
 ```
 
@@ -55,7 +55,6 @@ Move to the `<PROJECT-NAME>/src/api` folder and run the next commands in **termi
 
 ```bash
 export COSMOSDB_KEY=<COSMOSDB_KEY value here>
-
 ```
 
 ```bash

@@ -26,8 +26,7 @@ values={[
             </ul>
             <h5>Optional</h5>
             <ul>
-                <li><a href="https://code.visualstudio.com/">Visual Studio Code</a> 1.35+ with C# Extension from Microsoft (C# for Visual Studio Code (powered by OmniSharp))
-                </li>
+                <li><a href="https://code.visualstudio.com/">Visual Studio Code</a> 1.35+ with C# Extension from Microsoft (C# for Visual Studio Code (powered by OmniSharp))</li>
                 <li><a href="https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Community&rel=16">Visual Studio 2019 v16.4+</a></li>
             </ul>
         </div>
@@ -42,21 +41,17 @@ values={[
                     <ul>
                         <li>Enable:
                             <ul>
-                                <li>Kubernetes 1.14</li>
+                                <li>Kubernetes 1.14+</li>
                                 <li>Linux container (Not windows containers)</li>
                             </ul>
                         </li>
-                        <li>Docker Engine 19.03.1+</li>
-                        <li>WSL (Windows Subsystem for Linux: recommended v1, v2 is still in preview and has not been tested)
+                        <li>Docker Engine 19.03.1+ (provided with docker)</li>
+                        <li>WSL (Windows Subsystem for Linux: recommended v1, v2 is still in preview and has not been tested) (provided with docker)
                             <ul>
-                                <li>
-                                    <ul>
-                                        <li>For running build, test and deployment scripts targeting Linux environment</li>
-                                    </ul>
-                                </li>
+                                <li>For running build, test and deployment scripts targeting Linux environment</li>
                             </ul>
                         </li>
-                        <li>kubectl v1.14+ (provided with docker 2.1.0.1)
+                        <li>kubectl v1.14+ (provided with docker)
                             <ul>
                                 <li>Also <a
                                         href="https://kubernetes.io/docs/tasks/tools/install-kubectl/#install-kubectl-on-windows">downloaded
@@ -76,7 +71,7 @@ values={[
                 <li>NGINX ingress controller
                     <ul>
                         <li>Install the ingress controller in you local cluster.</li>
-                        <li>Make sure you follow the process for Bare Metal deployment described in here</li>
+                        <li>Make sure you follow the process for Bare Metal deployment described <a href="https://kubernetes.github.io/ingress-nginx/deploy/">here</a>.</li>
                     </ul>
                 </li>
             </ul>
