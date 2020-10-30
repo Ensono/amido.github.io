@@ -56,8 +56,9 @@
    padding: 30px 100px;
    font-size: 30px;
    color: black;
-   min-height: 580px;
+   min-height: 400px;
    min-width: 580px;
+   padding-bottom: 60px;
 
 
  }
@@ -71,7 +72,6 @@
    font-size: 47px;
    text-align: center;
    padding: 30px;
-   min-height: 176px;
  }
  
  .blackButton {
@@ -93,6 +93,7 @@
    flex-direction: row;
    gap: 30px;
    background-color: white;
+   justify-content: center;
  }
  
  .features2 .feature {
@@ -104,8 +105,9 @@
    width: calc(33% - 30px);
    flex-grow: 1;
    padding: 30px;
-   min-height: 600px;
-   min-width: 380px;
+   min-height: 530px;
+   min-width: 455px;
+   max-width: 590px;
  
    font-size: 18px;
  }
@@ -118,6 +120,7 @@
  
  .features2 .feature h3 {
    color: black;
+   min-height: 175px;
  }
  
  .logocontainer {
@@ -222,9 +225,10 @@
  }
  
  .techs img {
-   max-width: 200px;
+   max-width: 280px;
    padding: 10px;
    border-radius: 20px;
+
    background-color: white;
  }
  
@@ -236,9 +240,8 @@
  }
  
  .techs2 img {
-   max-width: 200px;
+   max-width: 280px;
    padding: 10px;
-   height: 100px;
    border-radius: 20px;
    background-color: white;
  }
