@@ -149,7 +149,7 @@ function Picker() {
           options={languages || []}
         />
 
-        <div className={styles.buttons} style={{ marginTop: 20 }}>
+        <div className={styles.buttons} style={{ marginTop: 40 }}>
           <Link
             className={clsx(
               "button button--outline  button--lg",
@@ -296,7 +296,7 @@ function Home() {
                   <h3> {feature.title}</h3>
                   <p>{feature.description}</p>
 
-                  <div className={styles.buttons} style={{ marginTop: 30 }}>
+                  <div className={styles.buttons} style={{ marginTop: 40 }}>
                     <Link
                       style={{ color: "black" }}
                       className={clsx(
