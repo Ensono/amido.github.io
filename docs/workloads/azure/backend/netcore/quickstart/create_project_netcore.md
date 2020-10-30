@@ -27,9 +27,9 @@ import TabItem from "@theme/TabItem";
            It includes tests (unit, integration), together with infrastructure and deployment definitions. All by running from your CLI.</p>
         <h4>PROS</h4>
         <ul>
-            <li>Guided project creation in creating the preferred project flavour.</li>
+            <li>Provides a guided project creation when generating the preferred project flavour.</li>
             <li>Enables the creation of all projects in Amido Stacks templates suite.</li>
-            <li>Allows personalization of project name, domain model, company name.</li>
+            <li>Allows automated personalization of project name, domain model, company name.</li>
             <li>Removes out the content not needed from the GitHub repository.</li>
         </ul>
         <h4>CONS</h4>
@@ -40,21 +40,21 @@ import TabItem from "@theme/TabItem";
     <TabItem value="repository_clone">
         <h4>PROS</h4>
         <ul>
-            <li>Familiar approach</li>
-            <li>Quick and easy to run (one command)</li>
+            <li>Familiar approach.</li>
+            <li>Quick and easy to run (one command).</li>
         </ul>
         <h4>CONS</h4>
         <ul>
             <li>Requires <strong>git</strong> installation.</li>
             <li>Does not remove the files not needed in the repository which may create confusion.</li>
             <li>Does not allow automated personalization of the project.</li>
-            <li>All Amido Stacks repositories links required to create all flavours of projects</li>
+            <li>All Amido Stacks repositories links required to create all flavours of projects.</li>
         </ul>
     </TabItem>
     <TabItem value="template">
         <h4>PROS</h4>
         <ul>
-            <li>Has no dependencies</li>
+            <li>Has no dependencies.</li>
             <li>Enables creation of .NET Core projects in Amido Stacks Suite.</li>
         </ul>
         <h4>CONS</h4>
@@ -82,11 +82,11 @@ import TabItem from "@theme/TabItem";
 
 3. Create the project
 
-    ```bash title="Run Scaffolding-CLI command to create the project"
+    ```bash title="Run Scaffolding-CLI command to start the project creation"
     npx @amidostacks/scaffolding-cli@latest run -i
     ```
 
-    You will be asked a number of questions. Based on the answers, your ready-to-build project template will be produced.
+    A series of questions will be asked to produce a guided choice of Amido Stacks project flavour. Based on the answers, the ready-to-build project template will be produced.
 
 </div>
 </details>
