@@ -51,7 +51,7 @@ Unsure where to being? Start by looking through the following [issues](https://g
 
 Sorting the issues by number of comments generally gives a reasonable proxy for the impact the change will have. More comments, more vested interest.
 
-#### Contributing for the first time to an open source project
+### Contributing for the first time to an open source project
 
 No problem! You can learn how from this *free* series, [How to Contribute to an Open Source Project on GitHub](https://egghead.io/series/how-to-contribute-to-an-open-source-project-on-github).
 
