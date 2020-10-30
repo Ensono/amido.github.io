@@ -1,157 +1,46 @@
 ---
 id: index
-title: Our approach
-sidebar_label: Our approach
+title: About Amido Stacks
+sidebar_label: About Stacks
 slug: /
 ---
 
-## Why we are developing Stacks
+## What is Stacks
 
-Stacks enables teams to gain momentum on digital transformation.
-It helps de-risk project delivery, and enables project teams to focus on solving business challenges, rather than technical overheads.
+Stacks is an Amido open-source project that automates the setup of software development projects. Stacks is for software engineers of all kinds who want to create projects quickly.
 
-## What Stacks is
+Setting up the infrastructure and frameworks necessary to deliver a software project takes time.  A team might spend the first two weeks (sprint 0) making technical decisions and then provisioning and configuring environments, pipelines, compute, test frameworks and more. Stacks automates this setup using code-as-infrastructure to shrink your project's sprint 0 from two weeks to an hour or less.
 
-It’s like a show house, built given what we know now, our skills, abilities, resources and tools available.
+## What can you do with Stacks
 
-The internal layout of the house might change.
-The house might move location.
-It might not even need a roof!
+Most software delivery projects start with a series of technical decisions:
 
-With the solid foundations and structure built, the team can decorate and customise the house for their client.
+- Which cloud provider should I use?
+- What solution architecture do I need to build?
+- What language should I code in?
+- What test framework,
+- ...CI/CD pipeline,
+- ...and compute should I use?
 
-## How we have approached Stacks
+Taken together your tech choices in these six areas are what Stacks calls a *Workload*. For example:
 
-* Open source first
-* Re-usable and configurable boilerplates
-* Cloud first
+- On Azure (cloud provider)
+- I want to build a REST API (solution architecture)
+- Written in Java (language)
+- Using JUnit / Karate as a test framework
+- and GitLab as a CI/CD pipeline
+- with AKS and Docker / Alpine compute
 
-Amido has been building solutions for over 10 years in varied industry segments to solve domain-specific problems. Most of these specialised solutions require lots of research and validation before it can become a viable product. Amido doesn't want to spend time re-inventing solutions for problems that are common on many projects.
+When you run Stacks it presents you with options in each of these six areas. Then it instantly generates your chosen workload, complete with sample applications and cloud provisioning, if that's what you've selected. All the technical overhead is done so you're ready to start coding.
 
+Stacks currently offers 12 unique workload variations with another 43 roadmapped. What are they? Explore the What can you do with Stacks? element [on the home page](https://amido.github.io/stacks/) to find out.
 
+## Why use Stacks
 
-To stay relevant and keep the focus on domain-specific problems, instead of technology implementations, Amido Stacks identifies the common requirements in new projects and contributes open-source resources to reduce risk and save time.
+By massively shrinking sprint 0 Stacks gets you productive very quickly. First time users should be up and running in an hour. Familiar users, with all the required software installed and cloud accounts set up, can get a boilerplated solution up and running in the cloud in five minutes.
 
+But there's more to Stacks than saving time. Amido has thought deeply about the technology choices Stacks offers. Our long experience of delivering successful projects means we know which technologies work well and which work best together. This experience has informed our choices of platforms, services and functions that Stacks offers, which means that using Stacks reduces risk. You can be totally confident that the test frameworks Stacks offers when you're building a REST API in Java, or the CI/ CD pipelines for your C# event listener, or the compute options for your Node SSR web app are going to work well.
 
+## How does it work
 
-Behind each of our tooling and implementation choices, is an Architectural Decision Record (ADR). These records form a technique for capturing important architectural decisions along with their context and consequences. For each record, we have taken the time to research the offerings, obtain the most appropriate decision at the time, and support this with a proof of concept (POC).
-
-The following list is a snapshot of all the records that have been taken into account. These are constantly being reviewed and added to overtime.
-
-*Engineering:*
-
-* Branching strategy
-* Project Repository Layout
-* CI/CD tool
-* Aggregated Versioning
-* Versioning Patter
-* Pull Request gating
-* Pull Request template
-* Tagging container images and code
-* Build step templates
-* Variable substitution
-* Application Deployment Strategy
-* Application-specific Resource Provisioning
-* Release Notes Information
-
-*Security:*
-
-* Container Vulnerability Scanning
-* Use of Long-term Support Versions
-* Baseline Security for HTTPS Endpoints
-
-*Infrastructure:*
-
-* Infrastructure templating
-* Kubernetes
-* Select Container Registry
-* Kubernetes resource templating
-* Service mesh tooling
-* Deployment tool
-* Kubernetes Policy Enforcement
-* Kubernetes Network Policies
-
-*Application - Front End:*
-
-* Node JS Runtime
-* Build & package tools
-* React state management
-* Static Code Analysis
-* Shared Asset Infrastructure
-* UI library
-* NPM Package Management
-* Monorepo structure
-* Logging framework and associated middleware
-* Internationalisation/localisation
-* Javascript development language
-* Authorization & Session Management
-* Data fetching and pre-rendering
-
-*Application - .NET API:*
-
-* NuGet Template Release Strategy
-* NuGet Package Publishing
-* Secret Management
-
-*Testing:*
-
-* Performance Testing tools
-* Security testing tools
-* Contract testing tools
-* Tools and Libraries used for unit tests
-* Static code analysis coverage/tools
-* BDD tool in automated tests
-* Hosted or SaaS Contract Broker
-* Functional Automation Test Framework
-* Unit Testing Framework
-* Integration, Component, and Snapshot Testing Framework
-* Browser Support with Visual Regression Testing
-* Automated Accessibility Testing
-* Supported Browsers
-* Testing localisation and internationalisation
-* Web app quality profiling with SEO tests
-* A/B Testing through multivariate Testing * Experimentation Platform
-* Testing Strategy
-* Consumer-Driven Contract Testing
-* Testing Infrastructure
-* WebApp Automated Security Testing
-* Test artefact publishing
-
-*Observability:*
-
-* Logging Methodology
-* Dashboards
-* React and Node.js Monitoring, Logging and Alerting
-
-*Open Source:*
-
-* Contribution Model
-* Contribution and maintenance approach
-* GitHub Pull Request CI Triggers
-* OpenSource Developer Documentation
-* Content Management Systems
-
-*Application - Java API:*
-
-* JDK Version
-* Container Image
-* Web Framework
-* Build and Package Management
-* Data Access Layer
-* Security
-* API Documentation
-* Logging
-* Monitoring
-* Code Coverage and Quality
-* Message Bus & Streaming Integration
-* Developer IDE
-* Secrets and Configuration
-* Template Scaffolding
-* REST, CQRS, PubSub, Streaming
-* Docker Containers for Builds
-
-### Deployment concepts
-
-The deployment principles of build once then deploy to multiple stages has been applied as best practice for the generated pipeline template.
-Templated out pipeline will encompass the build, deploy dev, deploy prod stages. Each stage is comprised of tasks that the user can either enable or disable depending on their setup and currently available tooling such as SonarCloud or vulnerability scanning.
-
+Select a workload using the What can you do with Stacks element on the home page to see detailed documentation on how to get started.
