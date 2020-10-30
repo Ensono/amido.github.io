@@ -14,7 +14,8 @@ const features = [
     color: "#25CEB6",
     description: (
       <>
-       Find out how to configure your cloud provider and other core infrastructure to make Stacks work for you.
+        Find out how to configure your cloud provider and other core
+        infrastructure to make Stacks work for you.
       </>
     ),
   },
@@ -24,7 +25,8 @@ const features = [
     color: "#FE6D6A",
     description: (
       <>
-       With just one command, discover how to tailor your project with Stacks’ front-end focused opinionated test frameworks.
+        With just one command, discover how to tailor your project with Stacks’
+        front-end focused opinionated test frameworks.
       </>
     ),
   },
@@ -35,21 +37,30 @@ const features2 = [
     title: "Contribute to Stacks",
     link: "docs/contributions",
     description: (
-      <>As an open source project, you can be a part of the Github community shaping Amido Stacks</>
+      <>
+        As an open source project, you can be a part of the Github community
+        shaping Amido Stacks
+      </>
     ),
   },
   {
-    title: "Why Amido",
+    title: "Why  Amido",
     link: "",
     description: (
-      <>Want to know how Amido is preventing digital transformation failures with Stacks?</>
+      <>
+        Want to know how Amido is preventing digital transformation failures
+        with Stacks?
+      </>
     ),
   },
   {
     title: "Careers at Amido",
     link: "",
     description: (
-      <>As the go-to partner for cloud-native transformation, we’re always looking for fresh new talent</>
+      <>
+        As the go-to partner for cloud-native transformation, we’re always
+        looking for fresh new talent
+      </>
     ),
   },
 ];
@@ -169,117 +180,120 @@ function Home() {
       title={`${siteConfig.title}`}
       description="Description will go into a meta tag in <head />"
     >
-      <main>
-        <section className={styles.logocontainer}>
-          <div>
-            <Icon />
-          </div>
-        </section>
-        <section className={styles.definition}>
-          <div className="container">
-            <h3>
-              Slash the time it takes to get <br />
-              productive on your software project
-            </h3>
-            <p>
-            Amido Stacks is a catalogue of workload templates that  <br />
-            instantly scaffold and deploy boilerplate software projects.
-            </p>
-            <div className={styles.buttons} style={{ marginTop: 20 }}>
-              <Link
-                className={clsx(
-                  "button button--primary button--lg",
-                  styles.learnAboutStacks
-                )}
-                to={baseUrl}
-              >
-                LEARN ABOUT STACKS
-              </Link>
+      <div className={styles.mainHolder}>
+        <main className={styles.main}>
+          <section className={styles.logocontainer}>
+            <div>
+              <Icon />
             </div>
-          </div>
-        </section>
+          </section>
+          <section className={styles.definition}>
+            <div className="container">
+              <h3>Get started with Amido Stacks</h3>
 
-        <section className={styles.heroBanner}>
-          <div className="container">
-            <h1 className="hero__title">What can you do with Stacks?</h1>
-            <p className="hero__subtitle">
-              Choose a workload below and you can be up- <br />
-              and-running with a project in less than an hour:
-            </p>
-            <div className={styles.buttons}>
-              <Picker />
-            </div>
-          </div>
-        </section>
-
-        <section className={styles.supportedTechs}>
-          <div className="container">
-            <h3>Technologies supported by Stacks</h3>
-            <div className={styles.techs}>
-              <img src="https://logodix.com/logo/42746.png" />
-              <img src="https://logodix.com/logo/929905.png" />
-              <img src="https://logodix.com/logo/5867.png" />
-            </div>
-
-            <div className={styles.techs2}>
-              <img src="https://logodix.com/logo/773611.jpg" />
-              <img src="https://logodix.com/logo/282992.png" />
-              <img
-                src="https://logodix.com/logo/636467.png"
-                alt="azure devops"
-              />
-              <img src="https://logodix.com/logo/258401.png" alt="git lab" />
-              <img src="https://logodix.com/logo/826596.png" alt="docker" />
-            </div>
-          </div>
-        </section>
-
-        <section className={styles.features}>
-          {features.map((feature) => (
-            <div
-              style={{ backgroundColor: feature.color }}
-              className={clsx(styles.feature)}
-            >
-              <h3> {feature.title}</h3>
-              <p>{feature.description}</p>
-
+              <p>
+                Amido Stacks is a catalogue of workload templates that
+                <br />
+                instantly scaffold and deploy boilerplate software projects.
+                Slash the time it takes to get productive on your software
+                project
+              </p>
               <div className={styles.buttons} style={{ marginTop: 20 }}>
                 <Link
                   className={clsx(
-                    "button  button--outline button--lg",
-                    styles.blackButton
+                    "button button--primary button--lg",
+                    styles.learnAboutStacks
                   )}
-                  to={baseUrl + feature.link}
+                  to={baseUrl}
                 >
-                  {feature.title}
+                  LEARN ABOUT STACKS
                 </Link>
               </div>
             </div>
-          ))}
-        </section>
+          </section>
 
-        <section className={styles.features2}>
-          {features2.map((feature) => (
-            <div className={clsx(styles.feature)}>
-              <h3> {feature.title}</h3>
-              <p>{feature.description}</p>
-
-              <div className={styles.buttons} style={{ marginTop: 30 }}>
-                <Link
-                  style={{ color: "black" }}
-                  className={clsx(
-                    "button button button--primary button--lg",
-                    styles.getStarted
-                  )}
-                  to={baseUrl + feature.link}
-                >
-                  {feature.title}
-                </Link>
+          <section className={styles.heroBanner}>
+            <div className="container">
+              <h1 className="hero__title">What can you do with Stacks?</h1>
+              <p className="hero__subtitle">
+                Choose a workload below and you can be up- <br />
+                and-running with a project in less than an hour:
+              </p>
+              <div className={styles.buttons}>
+                <Picker />
               </div>
             </div>
-          ))}
-        </section>
-      </main>
+          </section>
+
+          <section className={styles.supportedTechs}>
+            <div className="container">
+              <h3>Technologies supported by Stacks</h3>
+              <div className={styles.techs}>
+                <img src="https://logodix.com/logo/42746.png" />
+                <img src="https://logodix.com/logo/929905.png" />
+                <img src="https://logodix.com/logo/5867.png" />
+              </div>
+
+              <div className={styles.techs2}>
+                <img src="https://logodix.com/logo/773611.jpg" />
+                <img src="https://logodix.com/logo/282992.png" />
+                <img
+                  src="https://logodix.com/logo/636467.png"
+                  alt="azure devops"
+                />
+                <img src="https://logodix.com/logo/258401.png" alt="git lab" />
+                <img src="https://logodix.com/logo/826596.png" alt="docker" />
+              </div>
+            </div>
+          </section>
+
+          <section className={styles.features}>
+            {features.map((feature) => (
+              <div
+                style={{ backgroundColor: feature.color }}
+                className={clsx(styles.feature)}
+              >
+                <h3> {feature.title}</h3>
+                <p>{feature.description}</p>
+
+                <div className={styles.buttons} style={{ marginTop: 20 }}>
+                  <Link
+                    className={clsx(
+                      "button  button--outline button--lg",
+                      styles.blackButton
+                    )}
+                    to={baseUrl + feature.link}
+                  >
+                    {feature.title}
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </section>
+
+          <section className={styles.features2}>
+            {features2.map((feature) => (
+              <div className={clsx(styles.feature)}>
+                <h3> {feature.title}</h3>
+                <p>{feature.description}</p>
+
+                <div className={styles.buttons} style={{ marginTop: 30 }}>
+                  <Link
+                    style={{ color: "black" }}
+                    className={clsx(
+                      "button button button--primary button--lg",
+                      styles.getStarted
+                    )}
+                    to={baseUrl + feature.link}
+                  >
+                    {feature.title}
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </section>
+        </main>
+      </div>
     </Layout>
   );
 }
@@ -319,4 +333,3 @@ function Icon() {
     </svg>
   );
 }
-
