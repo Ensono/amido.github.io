@@ -50,7 +50,7 @@
  .features .feature {
    padding: 120px;
    display: flex;
-   flex-direction: column;
+   flex-direction: row;
    width: calc(50% - 15px);
    flex-grow: 1;
    padding: 30px 100px;
@@ -58,6 +58,8 @@
    color: black;
    min-height: 580px;
    min-width: 580px;
+
+
  }
  
  .features .feature p {
