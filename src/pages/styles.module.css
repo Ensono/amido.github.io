@@ -7,6 +7,17 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Karla&display=swap");
 
+.mainHolder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.main {
+  max-width: 1600px;
+}
+
 section {
   padding: 120px;
 }
@@ -46,17 +57,19 @@ section {
   font-size: 30px;
   color: black;
   min-height: 580px;
-  min-width: 380px;
+  min-width: 580px;
 }
 
 .features .feature p {
   flex-grow: 1;
+  text-align: center;
 }
 
 .feature h3 {
   font-size: 47px;
   text-align: center;
   padding: 30px;
+  min-height: 176px;
 }
 
 .blackButton {
@@ -117,7 +130,7 @@ section {
   color: black;
   text-align: center;
   padding: 30px;
-  box-shadow: 0px 20px 5px 0px rgba(0, 0, 0, 0.35);
+  box-shadow: 0px 5px 0px 0px rgba(0, 0, 0, 0.15);
   z-index: 5000;
 }
 
@@ -130,19 +143,20 @@ section {
   font-size: 30px;
 }
 
-
 .supportedTechs {
   background: white;
   color: black;
   text-align: center;
   padding: 30px;
-  box-shadow: 0px 20px 5px 0px rgba(0, 0, 0, 0.35);
+  margin-top: 30px;
+  margin-bottom: 30px;
   z-index: 5000;
 }
 
 .supportedTechs h3 {
   font-size: 44px;
   font-weight: 700;
+  margin-bottom: 60px;
 }
 
 .supportedTechs p {
@@ -156,11 +170,11 @@ section {
 }
 
 .heroBanner {
-  top: -10px;
   padding: 4rem 0;
   text-align: center;
   position: relative;
   background-color: #ffc410;
+  z-index: -5;
 }
 
 .techs {
