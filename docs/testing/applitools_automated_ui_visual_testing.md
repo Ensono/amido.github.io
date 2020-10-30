@@ -1,3 +1,4 @@
+---
 id: visual_analysis
 title: Automated UI Visual Testing With Applitools
 sidebar_label: Automated UI Visual Testing
@@ -6,9 +7,10 @@ Visual Regression testing or Visual testing in software is a quality assurance a
 
 Visual Regression testing can be implemented using a variety of tools and languages and is a fast way of checking defects of front end applications. For more information on Visual Regression testing you can look at this article [Here](https://www.softwaretestinghelp.com/visual-validation-testing/)
 
-##Visual Regression Testing with Applitools Eyes
+## Visual Regression Testing with Applitools Eyes
 
-####Pre-requisites
+### Pre-requisites
+
 An Applitools eyes account - [Applitools](https://applitools.com/)
 
 ## Getting started

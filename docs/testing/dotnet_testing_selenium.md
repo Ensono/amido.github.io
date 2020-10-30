@@ -218,4 +218,5 @@ public By menus = By.CssSelector("[data-cy='editMenuItem']");
 ```
 
 ## Standalone Implementation
+
 If you wish to simply have a solution that is not tied into the stacks CLI tool then you can clone the frpo from [here](https://github.com/amido/stacks-dotnet-webapp-automation)

@@ -8,6 +8,7 @@ Building testing frameworks from scratch requires a lot of boilerplate code. It 
 
 As part of the Amido Stacks projects we have developed a range of testing frameworks for each part of our solutions that are already built in, which can be bootstrapped and tailored to your current project with just one command.
  In addition they also exist as standalone solutions that can be run cloned and run without the need to build the entire solution can can be modified to applications and workloads outside of stacks.
+
 ## Bootstrap your framework
 
 The best way to get started, is bootstrapping the framework using the scaffolding-cli from Amido Stacks. By using it in interactive mode, you can simply answer 5 questions to get a bespoke framework, ready to go with an example test.
