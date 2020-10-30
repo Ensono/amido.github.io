@@ -32,6 +32,8 @@ module.exports = {
                   "workloads/azure/frontend/environment_variables_nodejs_crs",
                   "workloads/azure/frontend/api_definition_crs",
                   "workloads/azure/frontend/logging_node_js_crs",
+                  "workloads/azure/frontend/infrastructure_csr",
+                  "workloads/azure/frontend/pipeline_csr",
                 ],
               },
               {
@@ -44,10 +46,11 @@ module.exports = {
                   "workloads/azure/frontend/api_definition",
                   "workloads/azure/frontend/logging_node_js",
                   "workloads/azure/frontend/server_side_cache",
+                  "workloads/azure/frontend/infrastructure_ssr",
+                  "workloads/azure/frontend/pipeline_ssr",
                 ],
               },
               "workloads/azure/frontend/browser_support",
-              "workloads/azure/frontend/deployment_node_js",
             ],
           },
           {
@@ -110,16 +113,7 @@ module.exports = {
                       "workloads/azure/backend/netcore/quickstart/requirements_netcore",
                       "workloads/azure/backend/netcore/quickstart/create_project_netcore",
                       "workloads/azure/backend/netcore/quickstart/configure_project_netcore",
-                      "workloads/azure/backend/netcore/quickstart/build_and_run_project_netcore",
-                      "workloads/azure/backend/netcore/quickstart/deploy_project_netcore",
-                      {
-                        type: "category",
-                        label: "Swagger Configuration",
-                        items: [
-                          "workloads/azure/backend/netcore/quickstart/swagger_configuration/configure_swagger_netcore",
-                          "workloads/azure/backend/netcore/quickstart/swagger_configuration/configure_swagger_ui_netcore",
-                        ],
-                      },
+                      "workloads/azure/backend/netcore/quickstart/build_and_run_project_netcore"
                     ],
                   },
                   {
@@ -144,6 +138,14 @@ module.exports = {
                       "workloads/azure/backend/netcore/architecture/project_structure_netcore",
                       "workloads/azure/backend/netcore/architecture/data_storage_cosmosdb_netcore",
                       "workloads/azure/backend/netcore/architecture/operations_events_exceptions_correlation_netcore",
+                      {
+                        type: "category",
+                        label: "Swagger Configuration",
+                        items: [
+                          "workloads/azure/backend/netcore/architecture/swagger_configuration/configure_swagger_netcore",
+                          "workloads/azure/backend/netcore/architecture/swagger_configuration/configure_swagger_ui_netcore",
+                        ],
+                      },
                     ],
                   },
                 ],

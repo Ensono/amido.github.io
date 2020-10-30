@@ -2,57 +2,89 @@
 id: build_and_run_project_netcore
 title: Build & Run
 sidebar_label: Build & Run the Project
+hide_title: true
+hide_table_of_contents: true
 ---
 
-## Build locally
+## Build and Run the application
 
-Move to the `<PROJECT-NAME>/src/api` folder, then
+<br />
+
+The API generated consists of configuration to be ran locally or on a docker container.
 
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
-<Tabs
-  groupId="operating-systems"
-  defaultValue="windows"
-  values={[
-  {label: 'Windows', value: 'windows'},
-  {label: 'Linux', value: 'linux'},
-  ]}>
-  <TabItem value="windows">
-      dotnet restore
-      <br />
-      dotnet clean
-      <br />
-      dotnet build
-      <br />
-      dotnet run --project xxAMIDOxx.xxSTACKSxx.API/xxAMIDOxx.xxSTACKSxx.API.csproj
-  </TabItem>
+<details open>
+<summary>Build and run locally</summary>
 
-  <TabItem value="linux">
-      export COSMOSDB_KEY=&#36;&#123;COSMOSDB_KEY&#125;
-      <br />
-      <br />
-      dotnet restore
-      <br />
-      dotnet clean
-      <br />
-      dotnet build
-      <br />
-      dotnet run --project xxAMIDOxx.xxSTACKSxx.API/xxAMIDOxx.xxSTACKSxx.API.csproj
-  </TabItem>
+<div>
+
+<Tabs
+groupId="operating-systems"
+defaultValue="windows"
+values={[
+{label: 'Windows', value: 'windows'},
+{label: 'Linux', value: 'linux'},
+]}>
+<TabItem value="windows">
+
+Move to the `<PROJECT-NAME>/src/api` folder and run the next commands in ** Command Prompt** or **Powershell**
+
+```bash
+dotnet restore
+```
+
+```bash
+dotnet clean
+```
+
+```bash
+dotnet build
+```
+
+```bash
+dotnet run --project xxAMIDOxx.xxSTACKSxx.API/xxAMIDOxx.xxSTACKSxx.API.csproj
+```
+
+</TabItem>
+
+<TabItem value="linux">
+
+Move to the `<PROJECT-NAME>/src/api` folder and run the next commands in **terminal**.
+
+```bash
+export COSMOSDB_KEY=<COSMOSDB_KEY value here>
+```
+
+```bash
+dotnet restore
+```
+
+```bash
+dotnet clean
+```
+
+```bash
+dotnet build
+```
+
+```bash
+dotnet run --project xxAMIDOxx.xxSTACKSxx.API/xxAMIDOxx.xxSTACKSxx.API.csproj
+```
+
+</TabItem>
 </Tabs>
+
+</div>
+</details>
 
 <br />
 
-### Verify that the application has started
+<details>
+<summary>Build and run in docker container</summary>
 
-Browse to [http://localhost:5000/v1/menu](http://localhost:5000/v1/menu). This should return a valid JSON response.
-
-The application configuration uses Swagger/OAS3 to represent the API endpoints. The Swagger UI can be viewed by directing your
-browser to [http://localhost:5000/swagger/index.html](http://localhost:5000/swagger/index.html).
-
-
-## Build using docker container
+<div>
 
 From the `<PROJECT-NAME>/src/api` folder, build a Docker image using e.g. the command below:
 
@@ -73,3 +105,22 @@ The **COSMOSDB_KEY** described in the command above has to be passed when runnin
 but not if the full project is deployed to Azure, where the build process will perform the substitution.
 :::
 
+</div>
+</details>
+
+<br />
+
+<details>
+<summary>Verify that the application has started</summary>
+
+<div>
+
+Browse to [http://localhost:5000/v1/menu](http://localhost:5000/v1/menu). This should return a valid JSON response.
+
+The application configuration uses Swagger/OAS3 to represent the API endpoints. The Swagger UI can be viewed by directing your
+browser to [http://localhost:5000/swagger/index.html](http://localhost:5000/swagger/index.html).
+
+</div>
+</details>
+
+<br />

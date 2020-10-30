@@ -45,7 +45,7 @@ The following is a sample `appsettings.json` file with annotations about logging
     ],
     "MinimumLevel": {
       "Default": "Information", // minimal log level for everything
-      "Override": {}            // Override for indivisual log sources
+      "Override": {}            // Override for individual log sources
     },
     "WriteTo": [
       { "Name": "Console" },    // Write Logs to console
@@ -63,7 +63,7 @@ The following is a sample `appsettings.json` file with annotations about logging
       "Service": "identityapi", // service generating the logs
       "Environment": "dev",     // environment this instance belongs to
     },
-    "Filter": [                 // Ignore logs that macthes the following filters
+    "Filter": [                 // Ignore logs that matches the following filters
       {
         "Name": "ByExcluding",
         "Args": {
