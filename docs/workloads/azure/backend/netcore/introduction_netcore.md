@@ -2,6 +2,8 @@
 id: introduction_netcore
 title: Introduction to the .Net Core REST API application
 sidebar_label: Introduction
+hide_title: true
+hide_table_of_contents: true
 ---
 
 This is a sample .NetCore REST API application with CQRS, showcasing best coding practices and integrating with Azure
