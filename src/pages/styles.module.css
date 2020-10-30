@@ -232,6 +232,10 @@ details > summary {
   font-size: larger;
 }
 
+details>summary:focus {
+  outline: white auto 0px;
+}
+
 details {
   --ifm-alert-color: var(--ifm-color-gray-900);
   --ifm-alert-background-color: var(--ifm-color-secondary);
