@@ -5,17 +5,17 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="generator" content="Docusaurus v2.0.0-alpha.65">
 <link rel="search" type="application/opensearchdescription+xml" title="Amido Stacks " href="/stacks/opensearch.xml"><title data-react-helmet="true">Using the Scaffolding CLI to create the Java Rest API project template | Amido Stacks </title><meta data-react-helmet="true" name="docsearch:version" content="current,latest"><meta data-react-helmet="true" name="twitter:card" content="summary_large_image"><meta data-react-helmet="true" property="og:title" content="Using the Scaffolding CLI to create the Java Rest API project template | Amido Stacks "><meta data-react-helmet="true" name="description" content="Create a custom Java REST API project template from the command line"><meta data-react-helmet="true" property="og:description" content="Create a custom Java REST API project template from the command line"><meta data-react-helmet="true" property="og:url" content="https://amido.github.io/stacks/docs/workloads/azure/backend/java/scaffolding_java"><link data-react-helmet="true" rel="shortcut icon" href="/stacks/img/thumbnail_stacks.png"><link data-react-helmet="true" rel="preconnect" href="https://BH4D9OD16A-dsn.algolia.net" crossorigin="anonymous"><link data-react-helmet="true" rel="canonical" href="https://amido.github.io/stacks/docs/workloads/azure/backend/java/scaffolding_java"><link rel="stylesheet" href="/stacks/styles.17d033bc.css">
-<link rel="preload" href="/stacks/styles.a8d6f841.js" as="script">
-<link rel="preload" href="/stacks/runtime~main.60b6b4f3.js" as="script">
-<link rel="preload" href="/stacks/main.47571b3d.js" as="script">
-<link rel="preload" href="/stacks/1.990f040f.js" as="script">
-<link rel="preload" href="/stacks/2.51d4971b.js" as="script">
-<link rel="preload" href="/stacks/3.ab2bef9f.js" as="script">
-<link rel="preload" href="/stacks/1be78505.3ce40a4b.js" as="script">
-<link rel="preload" href="/stacks/112.95e7f8f7.js" as="script">
+<link rel="preload" href="/stacks/styles.d669615f.js" as="script">
+<link rel="preload" href="/stacks/runtime~main.cafdbc5c.js" as="script">
+<link rel="preload" href="/stacks/main.a90e1dd2.js" as="script">
+<link rel="preload" href="/stacks/1.3d170259.js" as="script">
+<link rel="preload" href="/stacks/2.871c0ce7.js" as="script">
+<link rel="preload" href="/stacks/3.ae273e75.js" as="script">
+<link rel="preload" href="/stacks/1be78505.a86b43f8.js" as="script">
+<link rel="preload" href="/stacks/111.cb0332a3.js" as="script">
 <link rel="preload" href="/stacks/935f2afb.ece8a36a.js" as="script">
-<link rel="preload" href="/stacks/17896441.a040dd0b.js" as="script">
-<link rel="preload" href="/stacks/6c1c083b.b57a8954.js" as="script">
+<link rel="preload" href="/stacks/17896441.eaf17243.js" as="script">
+<link rel="preload" href="/stacks/6c1c083b.e24c7197.js" as="script">
 </head>
 <body>
 <script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){var t=null;try{t=localStorage.getItem("theme")}catch(t){}return t}();t(null!==e?e:"light")}()</script><div id="__docusaurus">
@@ -23,37 +23,18 @@
 It includes tests (unit, integration), together with infrastructure and deployment definitions. All by running from your CLI.</p><p>We use npx to execute and create the
 <a href="https://www.npmjs.com/package/@amidostacks/scaffolding-cli" target="_blank" rel="noopener noreferrer">template-cli</a>
 <a href="https://www.npmjs.com/package/npx" target="_blank" rel="noopener noreferrer">npx</a>.</p><p>We are supporting and running <a href="https://nodejs.org/en/about/releases/" target="_blank" rel="noopener noreferrer">node@12</a>.
-Please ensure that your local environment has the correct version <a href="https://nodejs.org/en/download/" target="_blank" rel="noopener noreferrer">installed</a>.</p><p>To run the Scaffolding CLI, use the following commands</p><div class="mdxCodeBlock_1XEh"><div class="codeBlockContent_1u-d"><button type="button" aria-label="Copy code to clipboard" class="copyButton_10dd">Copy</button><div tabindex="0" class="prism-code language-text codeBlock_3iAC"><div class="codeBlockLines_b7E3" style="color:#393A34;background-color:#f6f8fa"><div class="token-line" style="color:#393A34"><span class="token plain">npx @amidostacks/scaffolding-cli@latest run -i  </span></div></div></div></div></div><p>You will be asked a number of questions. Based on the answers, your ready-to-build project template will be produced.
-Below are the questions asked and given options.</p><p>1) Select Target Cloud Platform
-a) Azure - Azure Kubernetes Services (AKS)
-b) Google Cloud Platform - Google Kubernetes Engine (GKE)
-2) Select Project type
-a) React app with server side rendering
-b) React app with client side rendering
-c) API with .NET
-d) API with Java
-e) Cloud platform shared services
-3) Please provide the company name
-4) Please provide the project name
-5) Please provide scope (domain)
-6) Continue to additional project configuration?
-7) Please provide version control repository name
-8) Please provide platform service region
-9) Provide host name (DNS domain)
-10) Package prefix - will be prepended to companyName.projectName previously supplied, e.g. com or uk.co
-11) Select Testing Framework
-a) Serenity
-b) Karate</p><p>An example is shown in the video below.</p><p><a href="https://asciinema.org/a/358208" target="_blank" rel="noopener noreferrer"><img src="https://asciinema.org/a/358208.svg" alt="asciicast"></a></p></div></article><div class="margin-vert--lg"><nav class="pagination-nav" aria-label="Blog list page navigation"><div class="pagination-nav__item"><a class="pagination-nav__link" href="/stacks/docs/workloads/azure/backend/java/quickstart_java"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">« Getting started with the Java Rest API application</div></a></div><div class="pagination-nav__item pagination-nav__item--next"><a class="pagination-nav__link" href="/stacks/docs/workloads/azure/backend/java/ide_java"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">IDE guidelines for the Java Rest API »</div></a></div></nav></div></div></div></div></div></main></div></div><footer class="footer footer--dark"><div class="container"><div class="row footer__links"><div class="col footer__col"><h4 class="footer__title">Docs</h4><ul class="footer__items"><li class="footer__item"><a class="footer__link-item" href="/stacks/docs/">Getting Started</a></li></ul></div><div class="col footer__col"><h4 class="footer__title">About Us</h4><ul class="footer__items"><li class="footer__item"><a href="https://amido.com/" target="_blank" rel="noopener noreferrer" class="footer__link-item">Amido</a></li></ul></div><div class="col footer__col"><h4 class="footer__title">Open Source</h4><ul class="footer__items"><li class="footer__item"><a href="https://github.com/amido/stacks" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub</a></li></ul></div></div><div class="text--center"><div>Copyright © 2020 Amido Ltd</div></div></div></footer></div>
-<script src="/stacks/styles.a8d6f841.js"></script>
-<script src="/stacks/runtime~main.60b6b4f3.js"></script>
-<script src="/stacks/main.47571b3d.js"></script>
-<script src="/stacks/1.990f040f.js"></script>
-<script src="/stacks/2.51d4971b.js"></script>
-<script src="/stacks/3.ab2bef9f.js"></script>
-<script src="/stacks/1be78505.3ce40a4b.js"></script>
-<script src="/stacks/112.95e7f8f7.js"></script>
+Please ensure that your local environment has the correct version <a href="https://nodejs.org/en/download/" target="_blank" rel="noopener noreferrer">installed</a>.</p><p>To run the Scaffolding CLI, use the following commands</p><div class="mdxCodeBlock_1XEh"><div class="codeBlockContent_1u-d"><button type="button" aria-label="Copy code to clipboard" class="copyButton_10dd">Copy</button><div tabindex="0" class="prism-code language-bash codeBlock_3iAC"><div class="codeBlockLines_b7E3" style="color:#393A34;background-color:#f6f8fa"><div class="token-line" style="color:#393A34"><span class="token plain">npx @amidostacks/scaffolding-cli@latest run -i</span></div></div></div></div></div><p>You will be asked a number of questions. Based on the answers, your ready-to-build project template will be produced.
+Below are the questions asked and given options.</p><ol><li>Select Target Cloud Platform<ol><li>Azure - Azure Kubernetes Services (AKS)</li><li>Google Cloud Platform - Google Kubernetes Engine (GKE)</li></ol></li><li>Select Project type<ol><li>React app with server side rendering</li><li>React app with client side rendering</li><li>API with .NET</li><li>API with Java</li><li>Cloud platform shared services</li></ol></li><li>Please provide the company name</li><li>Please provide the project name</li><li>Please provide scope (domain)</li><li>Continue to additional project configuration?</li><li>Please provide version control repository name</li><li>Please provide platform service region</li><li>Provide host name (DNS domain)</li><li>Package prefix - will be prepended to companyName.projectName previously supplied, e.g. com or uk.co</li><li>Select Testing Framework<ol><li>Serenity</li><li>Karate</li></ol></li></ol><p>An example is shown in the video below.</p><p><a href="https://asciinema.org/a/358208" target="_blank" rel="noopener noreferrer"><img src="https://asciinema.org/a/358208.svg" alt="asciicast"></a></p></div></article><div class="margin-vert--lg"><nav class="pagination-nav" aria-label="Blog list page navigation"><div class="pagination-nav__item"><a class="pagination-nav__link" href="/stacks/docs/workloads/azure/backend/java/quickstart_java"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">« Getting started with the Java Rest API application</div></a></div><div class="pagination-nav__item pagination-nav__item--next"><a class="pagination-nav__link" href="/stacks/docs/workloads/azure/backend/java/ide_java"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">IDE guidelines for the Java Rest API »</div></a></div></nav></div></div></div></div></div></main></div></div><footer class="footer footer--dark"><div class="container"><div class="row footer__links"><div class="col footer__col"><h4 class="footer__title">Docs</h4><ul class="footer__items"><li class="footer__item"><a class="footer__link-item" href="/stacks/docs/">Getting Started</a></li></ul></div><div class="col footer__col"><h4 class="footer__title">About Us</h4><ul class="footer__items"><li class="footer__item"><a href="https://amido.com/" target="_blank" rel="noopener noreferrer" class="footer__link-item">Amido</a></li></ul></div><div class="col footer__col"><h4 class="footer__title">Open Source</h4><ul class="footer__items"><li class="footer__item"><a href="https://github.com/amido/stacks" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub</a></li></ul></div></div><div class="text--center"><div>Copyright © 2020 Amido Ltd</div></div></div></footer></div>
+<script src="/stacks/styles.d669615f.js"></script>
+<script src="/stacks/runtime~main.cafdbc5c.js"></script>
+<script src="/stacks/main.a90e1dd2.js"></script>
+<script src="/stacks/1.3d170259.js"></script>
+<script src="/stacks/2.871c0ce7.js"></script>
+<script src="/stacks/3.ae273e75.js"></script>
+<script src="/stacks/1be78505.a86b43f8.js"></script>
+<script src="/stacks/111.cb0332a3.js"></script>
 <script src="/stacks/935f2afb.ece8a36a.js"></script>
-<script src="/stacks/17896441.a040dd0b.js"></script>
-<script src="/stacks/6c1c083b.b57a8954.js"></script>
+<script src="/stacks/17896441.eaf17243.js"></script>
+<script src="/stacks/6c1c083b.e24c7197.js"></script>
 </body>
 </html>
