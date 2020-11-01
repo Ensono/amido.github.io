@@ -2,11 +2,13 @@
 id: accessibility_testing
 title: Automated Accessibility Testing With Axe
 sidebar_label: Automated Accessibility Testing
+hide_title: false
+hide_table_of_contents: true
 ---
 
 ## Axe: Accessibility testing
 
-From the Deque family of products, we are using
+From the Dequeue family of products, we are using
 [aXe](https://www.deque.com/axe/) for accessibility testing. When developing, we
 expect to support WCAG 2.1 Level AA ["wcag21aa"] at a minimum.
 

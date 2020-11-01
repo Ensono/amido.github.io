@@ -14,8 +14,7 @@ Latest instruction can be found in the [Microsoft page](https://docs.microsoft.c
 
 ### Using the Cosmos DB Emulator to run the database locally
 
-1) Download and install the latest version of CosmosDB Emulator. Once it's installed it will be
-   available on
+1. Download and install the latest version of CosmosDB Emulator. Once it's installed it will be available on
 
    ```text
    https://localhost:8081/_explorer/index.html
@@ -27,7 +26,7 @@ Latest instruction can be found in the [Microsoft page](https://docs.microsoft.c
    ![CosmosDB](/img/cosmosdb_emulator_3.png)
    Set the cosmosdb URI, databaseName and key in application.yml file using the value above
 
-   ```code
+   ```yaml
    azure:
      cosmosdb:
        uri: xxxxxx

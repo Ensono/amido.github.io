@@ -2,6 +2,8 @@
 id: server_side_cache
 title: Server Side Cache
 sidebar_label: Server Side Cache
+hide_title: false
+hide_table_of_contents: true
 ---
 
 ## Cache server side

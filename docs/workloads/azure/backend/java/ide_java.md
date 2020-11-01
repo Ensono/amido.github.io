@@ -2,6 +2,8 @@
 id: ide_java
 title: IDE guidelines for the Java Rest API
 sidebar_label: IDE guidelines
+hide_title: false
+hide_table_of_contents: false
 ---
 
 import Tabs from "@theme/Tabs";

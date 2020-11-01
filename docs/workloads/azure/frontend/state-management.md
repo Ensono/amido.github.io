@@ -2,6 +2,8 @@
 id: state-management
 title: State Management
 sidebar_label: State Management Patterns
+hide_title: false
+hide_table_of_contents: true
 ---
 
 ## Tools used

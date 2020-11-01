@@ -2,6 +2,8 @@
 id: logging_node_js_crs
 title: Logging and Instrumentation
 sidebar_label: Logging and Instrumentation
+hide_title: false
+hide_table_of_contents: true
 ---
 
 [Application insights](https://docs.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview)
@@ -23,11 +25,9 @@ variables.
 
 
  ```javascript
-
     trackError(error :  Error)
 
     customTrace(error :  Error)
-
  ```
 
  You can find those in `utility/telemetry.ts` file.

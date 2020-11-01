@@ -2,6 +2,8 @@
 id: environment_variables_nodejs_crs
 title: Environment Variables
 sidebar_label: Environment Variables
+hide_title: false
+hide_table_of_contents: true
 ---
 
 import Tabs from '@theme/Tabs';

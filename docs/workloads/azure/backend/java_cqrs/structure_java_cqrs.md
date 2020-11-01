@@ -214,7 +214,7 @@ The OAuth 2.0 client is configured as an [Auth0](https://auth0.com/) instance. A
 There is an `auth.properties` file which configures the authorization definitions required to use
 the application with in conjunction with Auth0 to secure access to endpoints with JWT. If this property is set:
 
-```properties
+```text
 auth.isEnabled=true
 ```
 

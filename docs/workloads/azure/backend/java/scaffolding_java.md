@@ -19,33 +19,33 @@ Please ensure that your local environment has the correct version [installed](ht
 
 To run the Scaffolding CLI, use the following commands
 
-```text
-npx @amidostacks/scaffolding-cli@latest run -i  
+```bash
+npx @amidostacks/scaffolding-cli@latest run -i
 ```
 
 You will be asked a number of questions. Based on the answers, your ready-to-build project template will be produced.
 Below are the questions asked and given options.
 
-1) Select Target Cloud Platform
-     a) Azure - Azure Kubernetes Services (AKS)
-     b) Google Cloud Platform - Google Kubernetes Engine (GKE)
-2) Select Project type
-     a) React app with server side rendering
-     b) React app with client side rendering
-     c) API with .NET
-     d) API with Java
-     e) Cloud platform shared services
-3) Please provide the company name
-4) Please provide the project name
-5) Please provide scope (domain)
-6) Continue to additional project configuration?
-7) Please provide version control repository name
-8) Please provide platform service region
-9) Provide host name (DNS domain)
-10) Package prefix - will be prepended to companyName.projectName previously supplied, e.g. com or uk.co
-11) Select Testing Framework
-    a) Serenity
-    b) Karate
+1. Select Target Cloud Platform
+     1. Azure - Azure Kubernetes Services (AKS)
+     2. Google Cloud Platform - Google Kubernetes Engine (GKE)
+2. Select Project type
+     1. React app with server side rendering
+     2. React app with client side rendering
+     3. API with .NET
+     4. API with Java
+     5. Cloud platform shared services
+3. Please provide the company name
+4. Please provide the project name
+5. Please provide scope (domain)
+6. Continue to additional project configuration?
+7. Please provide version control repository name
+8. Please provide platform service region
+9. Provide host name (DNS domain)
+10. Package prefix - will be prepended to companyName.projectName previously supplied, e.g. com or uk.co
+11. Select Testing Framework
+    1. Serenity
+    2. Karate
 
 An example is shown in the video below.
 

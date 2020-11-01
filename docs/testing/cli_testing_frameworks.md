@@ -13,7 +13,9 @@ As part of the Amido Stacks projects we have developed a range of testing framew
 
 The best way to get started, is bootstrapping the framework using the scaffolding-cli from Amido Stacks. By using it in interactive mode, you can simply answer 5 questions to get a bespoke framework, ready to go with an example test.
 
-```npx @amidostacks/scaffolding-cli test -i```
+```bash
+npx @amidostacks/scaffolding-cli test -i
+```
 
 ### Interactive questions
 
@@ -62,7 +64,7 @@ At the end of bootstrapping your example framework, you will have an output that
 * Environment variables
 * ...and information to start testing immediately
 
-```bash
+```text title="Example output from Selenium framework with .NET output folder structure"
 ├── Api
 │   └── Builders
 │       └── Http
@@ -94,8 +96,6 @@ At the end of bootstrapping your example framework, you will have an output that
 │       └── GetMenuExampleTests.cs
 └── appsettings.json
 ```
-
-`_[Above: Example output from Selenium framework with .NET output folder structure](./testing_selenium.md#folder-structure)_`
 
 You are ready to follow the frameworks README.md and run your first test!
 

@@ -2,7 +2,7 @@
 id: introduction_netcore
 title: Introduction to the .Net Core REST API application
 sidebar_label: Introduction
-hide_title: true
+hide_title: false
 hide_table_of_contents: true
 ---
 
