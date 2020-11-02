@@ -2,12 +2,6 @@ module.exports = {
   docs: {
     "Learn about Stacks": [
       "index",
-      "glossary",
-      {
-        type: "category",
-        label: "Build the application",
-        items: [],
-      },
       "contributions",
       "code_of_conduct"
     ],
