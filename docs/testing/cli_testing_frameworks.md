@@ -20,9 +20,9 @@ npx @amidostacks/scaffolding-cli test -i
 ### Interactive questions
 
 ```txt
+✔ Select test framework
 ✔ Please provide the company name to test for
 ✔ Please provide the project name to be tested
-✔ Select test framework
 ✔ Please provide test scope (domain)
 ✔ Select Pipeline Tool
 ```
@@ -35,7 +35,7 @@ npx @amidostacks/scaffolding-cli test -i
 | Framework Type | Acceptance Functional E2E Functional API Component Accessibility Visual Regression | Acceptance Functional E2E Accessibility | Acceptance Functional E2E | Acceptance Functional E2E | Unit  Component  Integration |
 | Language | Typescript Optional: Javascript | Typescript Optional: Javascript | C# | Java | Typescript  Optional: Javascript |
 | Framework | Cypress | TestCafe | Bespoke | Serenity | Jest |
-| Libraries and Tools | Mocha Chai Chai-jQuery Sinon.JS Sinon-Chai Lodash Minimatch Moment Blob Promise | Axios TestCafe Assertions TestCafe API | Microsoft Test SDK Selenium WebDriver WebDriver ChromeDriver Shouldly BDDfy xUnit | Java SDK Selenium WebDriver WebDriver ChromeDriver Serenity JUnit | Jest Snapshot  @testing-library/react |
+| Libraries and Tools | Mocha Chai Chai-jQuery Sinon.JS Sinon-Chai Lodash Minimatch Moment Blob Promise | Axios TestCafe Assertions TestCafe API | Microsoft Test SDK Selenium WebDriver ChromeDriver Shouldly BDDfy xUnit | Java SDK Selenium WebDriver ChromeDriver Serenity JUnit | Jest Snapshot  @testing-library/react |
 | Integrations | Axe Applitools | Axe LambdaTest |  |  | Sonar Scanner |
 | Report(s) | jUnit/xUnit xunit-viewer (single page HTML) Mochawesome (rich HTML results with screenshots) | xUnit | BDDfy xUnit | Serenity reports | jUnit/xUnit  Cobertura, lcov (code coverage)  Sonar reporter |
 | Browsers | Used: Google Chrome  Supported: Mozilla Firefox Microsoft Edge Electron Brave | Used: LambdaTest Google Chrome  Supports: Internet Explorer (11+) Microsoft Edge (legacy and Chromium-based) Mozilla Firefox Safari | Used: Google Chrome  Supports: LambdaTest Internet Explorer (11+) Microsoft Edge (legacy and Chromium-based) Mozilla Firefox Safari | Used: Google Chrome  Supports: Internet Explorer (11+) Microsoft Edge (legacy and Chromium-based) Mozilla Firefox | N/A |
@@ -83,6 +83,7 @@ At the end of bootstrapping your example framework, you will have an output that
 │   │   ├── MenuList.cs
 │   │   └── Notifier.cs
 │   ├── Factory
+│   │   └── RemoteWebDriverFactory.cs
 │   │   └── WebDriverFactory.cs
 │   ├── Pages
 │   │   └── PageObject.cs

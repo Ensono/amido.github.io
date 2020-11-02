@@ -60,7 +60,14 @@ More properties here: <https://serenity-bdd.github.io/theserenitybook/latest/ser
 
 ### Run Tests Locally
 
-Open current folder in the terminal and execute tests by running any one of the following commands:
+To run the web tests with a given driver, please provide the path to the webdriver file using the system property: `webdriver.driver_name.driver`. For example, your serenity.properties file should contain the following:
+
+```text
+webdriver.driver=chrome
+webdriver.chrome.driver=/path/to/my/chromedriver
+```
+
+Open the project folder in the terminal and execute tests by running any one of the following commands:
 
 Run all tests on the default environment:
 
@@ -102,7 +109,7 @@ Test Report Location is: ..target/site/serenity/index.html
 
 ### Manual Aggregation of the Test Report
 
-Open the ../E2E/Serenity path in the terminal and execute:
+Open the project folder in the terminal and execute:
 
 ```bash
 mvn serenity:aggregate
