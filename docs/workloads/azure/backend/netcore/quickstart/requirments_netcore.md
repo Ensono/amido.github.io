@@ -21,7 +21,7 @@ values={[
         <div>
             <h5>Mandatory</h5>
             <ul>
-                <li><a href="https://dotnet.microsoft.com/download/dotnet-core/thank-you/sdk-3.1.403-windows-x64-installer">.NET Core SDK</a> and Runtime 3.1._ or superior (for .net core 3.1 template)</li>
+                <li><a href="https://dotnet.microsoft.com/download/dotnet-core/thank-you/sdk-3.1.403-windows-x64-installer">.NET Core SDK</a> and Runtime 3.1._ or superior (for .NET Core 3.1 template)</li>
                 <li><a href="https://aka.ms/cosmosdb-emulator">CosmosDB Emulator 2.4.5+</a></li>
             </ul>
             <h5>Optional</h5>
@@ -106,5 +106,5 @@ values={[
 </Tabs>
 
 :::note
-The current version of Amido Stacks is a template for .Net Core 3.1 (Current LTS, recommended).
+The current version of Amido Stacks is a template for .NET Core 3.1 (Current LTS, recommended).
 :::

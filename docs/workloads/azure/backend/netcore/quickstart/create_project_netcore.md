@@ -20,7 +20,7 @@ import TabItem from "@theme/TabItem";
     values={[
         {label: "Scaffolding  CLI", value: 'scaffolding_cli'},
         {label: 'GitHub Repository Clone', value: 'repository_clone'},
-        {label: '.Net Core Template', value: 'template'}
+        {label: '.NET Core Template', value: 'template'}
     ]}>
     <TabItem value="scaffolding_cli">
         <p>The Amido Stacks Scaffolding CLI can be used to create a fully-functional and deployable project from a template, in a variety of flavours.
@@ -116,7 +116,7 @@ git clone git@github.com:amido/stacks-dotnet.git
 1. Install the package
 
     Download the [stacks-app-template.1.0.0.nupkg template package](https://github.com/amido/stacks-dotnet/releases/tag/1.0.0)
-    (.Net Core 3.1, current LTS release) to a temporary folder.
+    (.NET Core 3.1, current LTS release) to a temporary folder.
 
     ```bash title="Run the command to install the package"
     dotnet new -i /path/to/stacks-app-template.1.0.0.nupkg

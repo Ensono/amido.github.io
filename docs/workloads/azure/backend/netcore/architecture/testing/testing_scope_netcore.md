@@ -7,7 +7,7 @@ hide_table_of_contents: false
 
 ## Testing Scope
 
-This document outlines the scope of the automated tests that are part of the .Net Core stack. This is to ensure that testing achieves the test coverage required for this project and future projects using the stack.
+This document outlines the scope of the automated tests that are part of the .NET Core stack. This is to ensure that testing achieves the test coverage required for this project and future projects using the stack.
 
 ![Testing Scope](/img/testing_scope.png)
 
