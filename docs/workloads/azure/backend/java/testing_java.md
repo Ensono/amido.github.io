@@ -2,6 +2,8 @@
 id: testing_java
 title: Testing the application
 sidebar_label: Testing the API
+hide_title: false
+hide_table_of_contents: false
 ---
 
 import Tabs from "@theme/Tabs";

@@ -2,6 +2,8 @@
 id: api_definition
 title: Api Definition
 sidebar_label: Api Definition
+hide_title: false
+hide_table_of_contents: false
 ---
 
 The generated scaffolding can be quickly used make calls to external APIs
@@ -14,7 +16,7 @@ library as the HTTPclient.
 It is on purpose left as a thin wrapper implementation so that the user can
 extend with additional parameters on top of the mandated ones; `url`, `method` -
 e.g. a header for authentication. As such it only returns an unopinionated axios
-Instance and not a method initialized implementation. the method paratemer is
+Instance and not a method initialized implementation. the method parameter is
 mainly used as a type guard.
 
 Sample implementation of an entire API can be found in the
@@ -22,7 +24,7 @@ Sample implementation of an entire API can be found in the
 specific implementation of talking to a data provider from node and exposing an
 internal route within express for the FE to use for proxy.
 
-The base implemenation shouldn't be need to touch and it can be found in the
+The base implementation shouldn't be need to touch and it can be found in the
 [here](../src/ssr/constants/apis/index.ts).
 
 To extend and add more of your own custom implementation use menu as an example.
@@ -37,7 +39,7 @@ export interface Api {
    * this is the external url - can be in the form of https://api.hotels.com/foo or when used inside a Kubernetes cluster
    * talking to another service within the same namespace it can take the form of `http://service_name` or
    * `http://service_name.namespace`
-   * NB: do not omit the protocol `http` or `https` otherwise axios will default to localhost:80 as it will not recognise it as a valid TLD.
+   * NB: do not omit the protocol `http` or `https` otherwise axios will default to localhost:80 as it will not recognize it as a valid TLD.
    *
    */
   baseURL: string;
@@ -56,7 +58,7 @@ export interface Api {
 }
 
 /**
- * key map denifinition for endpoints
+ * key map definition for endpoints
  */
 export interface Endpoint {
   [key: string]: {
@@ -72,15 +74,15 @@ export interface Endpoint {
     /**
      * returns the method for the endpoint called by NodeJS httpclient(axios)
      * NB: should be done on a 1-2-1 parity with internal/external
-     * i.e. if an external method is a GET the internal proxy route shoudl also be a GET
+     * i.e. if an external method is a GET the internal proxy route should also be a GET
      */
 
     method: HTTPMethod,
     /**
-     * returns the built internalUrl called by the clientside code (axios) a.k.a BFF
+     * returns the built internalUrl called by the client side code (axios) a.k.a BFF
      * NB: when deployed under a CDN or proxied path within an K8s cluster this will be included
      * e.g. /web/ui/myroute => when called from client it should look like this https://app.example.com/web/ui/myroute
-     * NB2: leave out the preceeding slash => getInternalURL: (id: string) => `deletemenu/${id}`,
+     * NB2: leave out the preceding slash => getInternalURL: (id: string) => `deletemenu/${id}`,
      * that will be added in via the builder process which invokes a "private" method within the Api base class.
      */
 

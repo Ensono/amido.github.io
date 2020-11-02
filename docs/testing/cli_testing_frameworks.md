@@ -4,15 +4,18 @@ title: Stacks Testing Frameworks
 sidebar_label: Stacks Testing Frameworks
 ---
 
-Building a testing framework from scratch requires a lot of boilerplate code. It is also hard to know how to get started without examples.
+Building testing frameworks from scratch requires a lot of boilerplate code. It is also hard to know how to get started without examples.
 
-As part of Amido Stacks projects, we have developed a range of Javascript Front End focused, opinionated, boilerplate testing frameworks that can be bootstrapped and tailored to your current project with just one command.
+As part of the Amido Stacks projects we have developed a range of testing frameworks for each part of our solutions that are already built in, which can be bootstrapped and tailored to your current project with just one command.
+ In addition they also exist as standalone solutions that can be run cloned and run without the need to build the entire solution can can be modified to applications and workloads outside of stacks.
 
 ## Bootstrap your framework
 
-The best way to get started is to bootstrap the framework using the scaffolding-cli from Amido Stacks. By using it in the interactive mode, you can simply answer 5 questions to get a bespoke framework, ready to go with an example test.
+The best way to get started, is bootstrapping the framework using the scaffolding-cli from Amido Stacks. By using it in interactive mode, you can simply answer 5 questions to get a bespoke framework, ready to go with an example test.
 
-```npx @amidostacks/scaffolding-cli test -i```
+```bash
+npx @amidostacks/scaffolding-cli test -i
+```
 
 ### Interactive questions
 
@@ -61,7 +64,7 @@ At the end of bootstrapping your example framework, you will have an output that
 * Environment variables
 * ...and information to start testing immediately
 
-```bash
+```text title="Example output from Selenium framework with .NET output folder structure"
 ├── Api
 │   └── Builders
 │       └── Http
@@ -94,8 +97,6 @@ At the end of bootstrapping your example framework, you will have an output that
 │       └── GetMenuExampleTests.cs
 └── appsettings.json
 ```
-
-`_[Above: Example output from Selenium framework with .NET output folder structure](./testing_selenium.md#folder-structure)_`
 
 You are ready to follow the frameworks README.md and run your first test!
 

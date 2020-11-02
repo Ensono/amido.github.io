@@ -76,7 +76,15 @@ module.exports = {
                   },
                   "workloads/azure/backend/java/infrastructure_java",
                   "workloads/azure/backend/java/pipeline_java",
-                  "workloads/azure/backend/java/testing_java",
+                  {
+                    type: "category",
+                    label: "Testing The API",
+                    items: [
+                      "workloads/azure/backend/java/testing_java",
+                      "workloads/azure/backend/java/execute_serenity_api_tests",
+                      "workloads/azure/backend/java/execute_karate_api_tests",
+                    ],
+                  },
                 ],
               },
               {
@@ -98,7 +106,15 @@ module.exports = {
                   },
                   "workloads/azure/backend/java_cqrs/infrastructure_java_cqrs",
                   "workloads/azure/backend/java_cqrs/pipeline_java_cqrs",
-                  "workloads/azure/backend/java_cqrs/testing_java_cqrs",
+                  {
+                    type: "category",
+                    label: "Testing The API",
+                    items: [
+                      "workloads/azure/backend/java_cqrs/testing_java_cqrs",
+                      "workloads/azure/backend/java_cqrs/execute_serenity_api_tests",
+                      "workloads/azure/backend/java_cqrs/execute_karate_api_tests",
+                    ],
+                  },
                 ],
               },
               {

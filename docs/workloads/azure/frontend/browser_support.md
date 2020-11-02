@@ -2,6 +2,8 @@
 id: browser_support
 title: Browser Support
 sidebar_label: Browser Support
+hide_title: false
+hide_table_of_contents: true
 ---
 
 Given we provide boilerplate WebApps designing for accessibility, we would

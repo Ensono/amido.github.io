@@ -2,6 +2,8 @@
 id: pipeline_csr
 title: CSR Application - Azure DevOps Pipeline
 sidebar_label: Pipeline
+hide_title: false
+hide_table_of_contents: false
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

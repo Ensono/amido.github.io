@@ -2,6 +2,8 @@
 id: infrastructure_ssr
 title: SSR Application - Azure Infrastructure
 sidebar_label: Infrastructure
+hide_title: false
+hide_table_of_contents: false
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -89,7 +91,7 @@ TF_VAR_internal_dns_zone_name=nonprod.amidostacks.internal \
 TF_VAR_app_gateway_frontend_ip_name=amido-example-nonprod-uks-core \
 TF_VAR_app_insights_name=amido-example-nonprod-uks-core \
 TF_VAR_create_cosmosdb=false \
-TF_VAR_create_cache=true 
+TF_VAR_create_cache=true
 
 # Initial Terraform. Replace the example values.
 terraform init \

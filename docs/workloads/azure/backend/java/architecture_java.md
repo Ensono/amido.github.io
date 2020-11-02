@@ -2,6 +2,8 @@
 id: architecture_java
 title: Java Rest API Architecture
 sidebar_label: Architecture overview
+hide_title: false
+hide_table_of_contents: true
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

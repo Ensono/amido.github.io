@@ -36,14 +36,12 @@ The `pactFileWriteMode` option been set to `update` in the provider that the
 pacts append to. Please see
 [pactFileWriteMode](https://docs.pact.io/implementation_guides/ruby/configuration#pactfile_write_mode)
 
-```bash
-# Export the Consumer and Provider names when running locally, or define in Azure Pipelines Library
+```bash title="Export the Consumer and Provider names when running locally, or define in Azure Pipelines Library"
 export PACT_CONSUMER= \
 export PACT_PROVIDER=
 ```
 
-```bash
-# Generate and verify pacts against mock
+```bash title="Generate and verify pacts against mock"
 npm run test:pact
 ```
 
@@ -51,14 +49,12 @@ Due to the afterAll hooks in Jest not invoking after all tests, but before each
 file, there is a `[pactPublish](./utils/pactPublish.ts)` script to publish the
 pacts to the configured broker.
 
-```bash
-# Export broker credentials for running locally, or define in Azure Pipelines Library
+```bash title="Export broker credentials for running locally, or define in Azure Pipelines Library"
 export PACT_BROKER= \
 export PACT_BEARER_TOKEN= \
 ```
 
-```bash
-# Publish the pacts to the configured broker
+```bash title="Publish the pacts to the configured broker"
 npm run test:pact-publish
 ```
 
@@ -88,15 +84,13 @@ Once the files are sourced, it's as simple as starting the stub service either
 from the npm script in CI, or by calling the
 `[pactStubServer.ts](./pact/packStubServer.ts)` from your test.
 
-```bash
-# To start the Pact stub server
+```bash title="To start the Pact stub server"
 npm run test:pact-start-stub
 ```
 
 To test the server:
 
-```bash
-# To test that the service is running and returning expected responses:
+```bash title="To test that the service is running and returning expected responses"
 curl -v localhost:8389/v1/menu/e98583ad-0feb-4e48-9d4f-b20b09cb2633 -H "Accept: application/json"
 ```
 
@@ -106,14 +100,13 @@ Please remember to always stop your server once done testing.
 
 The [Can I Deploy](https://docs.pact.io/pact_broker/can_i_deploy) tool ensures you are safe to deploy your application. Before deploying to a new environment, you need to know if the version is compatible with the provider version. Instead of checking the broker, we can poll the broker and check programmatically with the latest versions.
 
-```bash
-# Run can I deploy using the pact-js SDK
-# This is called in the pipeline
+```bash title="Run can I deploy using the pact-js SDK"
 npm run test:pact-can-i-deploy-ci
 ```
 
-```bash
-# Run can I deploy using the pact CLI
+> The above command is called in the pipeline
+
+```bash title="Run can I deploy using the pact CLI"
 npm run test:pact-can-i-deploy-cli
 ```
 

@@ -23,11 +23,13 @@ import TabItem from "@theme/TabItem";
         {label: '.Net Core Template', value: 'template'}
     ]}>
     <TabItem value="scaffolding_cli">
+        <p>The Amido Stacks Scaffolding CLI can be used to create a fully-functional and deployable project from a template, in a variety of flavours.
+           It includes tests (unit, integration), together with infrastructure and deployment definitions. All by running from your CLI.</p>
         <h4>PROS</h4>
         <ul>
-            <li>Guided project creation in creating the preferred project flavour.</li>
+            <li>Provides a guided project creation when generating the preferred project flavour.</li>
             <li>Enables the creation of all projects in Amido Stacks templates suite.</li>
-            <li>Allows personalization of project name, domain model, company name.</li>
+            <li>Allows automated personalization of project name, domain model, company name.</li>
             <li>Removes out the content not needed from the GitHub repository.</li>
         </ul>
         <h4>CONS</h4>
@@ -38,21 +40,21 @@ import TabItem from "@theme/TabItem";
     <TabItem value="repository_clone">
         <h4>PROS</h4>
         <ul>
-            <li>Familiar approach</li>
-            <li>Quick and easy to run (one command)</li>
+            <li>Familiar approach.</li>
+            <li>Quick and easy to run (one command).</li>
         </ul>
         <h4>CONS</h4>
         <ul>
             <li>Requires <strong>git</strong> installation.</li>
             <li>Does not remove the files not needed in the repository which may create confusion.</li>
             <li>Does not allow automated personalization of the project.</li>
-            <li>All Amido Stacks repositories links required to create all flavours of projects</li>
+            <li>All Amido Stacks repositories links required to create all flavours of projects.</li>
         </ul>
     </TabItem>
     <TabItem value="template">
         <h4>PROS</h4>
         <ul>
-            <li>Has no dependencies</li>
+            <li>Has no dependencies.</li>
             <li>Enables creation of .NET Core projects in Amido Stacks Suite.</li>
         </ul>
         <h4>CONS</h4>
@@ -69,23 +71,23 @@ import TabItem from "@theme/TabItem";
 <summary>Create the project using the Scaffolding CLI</summary>
 
 <div>
-The Amido Stacks Scaffolding CLI can be used to create a fully-functional and deployable project from a template, in a variety of flavours.
-It includes tests (unit, integration), together with infrastructure and deployment definitions. All by running from your CLI.
 
-We use [npx](https://www.npmjs.com/package/npx) to execute the [scaffolding-cli](https://www.npmjs.com/package/@amidostacks/scaffolding-cli).
+1. Install **npm**. It is provided with [node](https://nodejs.org/en/download/).
 
-```bash title="Run the command to install npx"
-npm install -g npx
-```
+2. Install [npx](https://www.npmjs.com/package/npx) to execute the [scaffolding-cli](https://www.npmjs.com/package/@amidostacks/scaffolding-cli).
 
-We are supporting and running [node@12](https://nodejs.org/en/about/releases/).
-Please ensure that your local environment has the correct version [installed](https://nodejs.org/en/download/).
+    ```bash title="Run the command to install npx"
+    npm install -g npx
+    ```
 
-```bash title="Run Scaffolding-CLI command to create the project"
-npx @amidostacks/scaffolding-cli@latest run -i
-```
+3. Create the project
 
-You will be asked a number of questions. Based on the answers, your ready-to-build project template will be produced.
+    ```bash title="Run Scaffolding-CLI command to start the project creation"
+    npx @amidostacks/scaffolding-cli@latest run -i
+    ```
+
+    A series of questions will be asked to produce a guided choice of Amido Stacks project flavour. Based on the answers, the ready-to-build project template will be produced.
+
 </div>
 </details>
 

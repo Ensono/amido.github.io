@@ -2,6 +2,8 @@
 id: cms
 title: Contentfull Integration
 sidebar_label: CMS - Contentfull Integration
+hide_title: false
+hide_table_of_contents: false
 ---
 
 This implementation showcases NextJS's Static Generation feature using

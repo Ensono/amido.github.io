@@ -10,10 +10,10 @@ We are using [Cypress](https://docs.cypress.io/) for functional testing as much
 as possible. The key features of Cypress:
 
 - Integration testing with API testing support (Node.js)
-- Easy debuggability (DOM snapshotting)
+- Easy to debug
 - Selector playground
 - Great documentation
-- The best implementation of Live Reloading
+- Best implementation of Live Reloading
 
 ### Why Cypress is categorised in the pre-deployed tests
 
@@ -51,13 +51,37 @@ Say if you are following Test Driven Development (TDD) cycles, or if you wish to
 
 To open and run Cypress locally with live reload, after installing dependencies:
 
-1. Install app dependencies `npm install`
-2. Build the web app `npm run build`
-3. Compile the `*.cy.ts` Cypress test files `npm run test:cypress:compile`
+1. Install app dependencies
+
+   ``` bash
+   npm install
+   ```
+
+2. Build the web app
+
+   ```bash
+   npm run build
+   ```
+
+3. Compile the `*.cy.ts` Cypress test files
+
+   ```bash
+   npm run test:cypress:compile
+   ```
+
    (optional: pass `--watch` through to watch for changes)
+
 4. Start the server, run the tests headless, tear down the server:
-   `npm run test:cypress`. When writing tests: Open Cypress with live-reloading
-   and selector playground `npm run test:cypress:open`
+
+   ```bash
+   npm run test:cypress
+   ```
+
+   When writing tests: Open Cypress with live-reloading and selector playground.
+
+   ```bash
+   npm run test:cypress:open
+   ```
 
 ### How to run all the tests without keeping the server running
 
@@ -75,7 +99,7 @@ We suggest co-locating the `*.cy.ts` tests with the page compositions (a composi
 
 e.g.
 
-```bash
+```text
 compositions
 ├── create
 │   ├── index.test.cy.ts
@@ -99,4 +123,7 @@ We suggest tightly coupling Cypress with the app under test. This means sharing 
 For example, if an API URL changes, you will only have a single place to change and the tests and app will be updated together.
 
  Note that the environment variables are required on the hosting platform, e.g.
-`export NODE_ENV=dev`
+
+```bash
+export NODE_ENV=dev
+```
