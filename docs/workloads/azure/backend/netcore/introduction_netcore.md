@@ -1,12 +1,12 @@
 ---
 id: introduction_netcore
-title: Introduction to the .Net Core REST API application
+title: Introduction to the .NET Core REST API application
 sidebar_label: Introduction
 hide_title: false
 hide_table_of_contents: true
 ---
 
-This is a sample .NetCore REST API application with CQRS, showcasing best coding practices and integrating with Azure
+This is a sample .NET Core REST API application with CQRS, showcasing best coding practices and integrating with Azure
 and scaffolding for Amido Stacks.
 
 The application implements Application Insights for performance management,

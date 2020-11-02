@@ -9,7 +9,7 @@ hide_table_of_contents: false
 
 Consumer Driven Contract (CDC) Testing is a pattern that allows a consumer (i.e: a client) and a provider (i.e. an API provider) to communicate using an agreed contract (a pact)
 It's mostly beneficial in scenarios where there's many consumers that need to talk with one service provider, although it can be useful even with one consumer and one provider only.
-For our .net core stacks, we are using pact.net library.
+For our .NET Core stacks, we are using pact.net library.
 
 ### How Pact works
 
