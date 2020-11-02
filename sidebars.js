@@ -70,7 +70,15 @@ module.exports = {
                   },
                   "workloads/azure/backend/java/infrastructure_java",
                   "workloads/azure/backend/java/pipeline_java",
-                  "workloads/azure/backend/java/testing_java",
+                  {
+                    type: "category",
+                    label: "Testing The API",
+                    items: [
+                      "workloads/azure/backend/java/testing_java",
+                      "workloads/azure/backend/java/execute_serenity_api_tests",
+                      "workloads/azure/backend/java/execute_karate_api_tests",
+                    ],
+                  },
                 ],
               },
               {
@@ -92,7 +100,15 @@ module.exports = {
                   },
                   "workloads/azure/backend/java_cqrs/infrastructure_java_cqrs",
                   "workloads/azure/backend/java_cqrs/pipeline_java_cqrs",
-                  "workloads/azure/backend/java_cqrs/testing_java_cqrs",
+                  {
+                    type: "category",
+                    label: "Testing The API",
+                    items: [
+                      "workloads/azure/backend/java_cqrs/testing_java_cqrs",
+                      "workloads/azure/backend/java_cqrs/execute_serenity_api_tests",
+                      "workloads/azure/backend/java_cqrs/execute_karate_api_tests",
+                    ],
+                  },
                 ],
               },
               {
@@ -110,14 +126,7 @@ module.exports = {
                       "workloads/azure/backend/netcore/quickstart/build_and_run_project_netcore"
                     ],
                   },
-                  {
-                    type: "category",
-                    label: "Testing",
-                    items: [
-                      "workloads/azure/backend/netcore/testing/testing_the_api_netcore",
-                      "workloads/azure/backend/netcore/testing/functional_testing_netcore"
-                    ],
-                  },
+                  "workloads/azure/backend/netcore/testing/functional_testing_netcore",
                   "workloads/azure/backend/netcore/infrastructure_netcore",
                   "workloads/azure/backend/netcore/pipeline_netcore",
                   "workloads/azure/backend/netcore/logging_netcore",
@@ -185,6 +194,7 @@ module.exports = {
       "testing/testing_java_serenity_bdd",
       "testing/testing_dotnet_selenium",
       "testing/cypress_functional_testing",
+      "testing/testcafe_functional_testing",
       "testing/testing_static_analysis",
       "testing/visual_analysis",
       "testing/contract_testing_pact",

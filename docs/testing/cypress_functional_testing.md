@@ -10,7 +10,7 @@ We are using [Cypress](https://docs.cypress.io/) for functional testing as much
 as possible. The key features of Cypress:
 
 - Integration testing with API testing support (Node.js)
-- Easy debugability (DOM snapshotting)
+- Easy to debug
 - Selector playground
 - Great documentation
 - Best implementation of Live Reloading
