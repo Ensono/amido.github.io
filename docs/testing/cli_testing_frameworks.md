@@ -4,22 +4,25 @@ title: Stacks Testing Frameworks
 sidebar_label: Stacks Testing Frameworks
 ---
 
-Building a testing frameworks from scratch requires a lot of boilerplate code. It is also hard to know how to get started without examples.
+Building testing frameworks from scratch requires a lot of boilerplate code. It is also hard to know how to get started without examples.
 
-As part of Amido Stacks projects, we have developed a range of Javascript Front End focused, opinionated, boilerplate testing frameworks that can be bootstrapped and tailored to your current project with just one command.
+As part of the Amido Stacks projects we have developed a range of testing frameworks for each part of our solutions that are already built in, which can be bootstrapped and tailored to your current project with just one command.
+ In addition they also exist as standalone solutions that can be run cloned and run without the need to build the entire solution can can be modified to applications and workloads outside of stacks.
 
 ## Bootstrap your framework
 
-The best way to get started, is bootstrap the framework using the scaffolding-cli from Amido Stacks. By using it in interactive mode, you can simply answer 5 questions to get a bespoke framework, ready to go with an example test.
+The best way to get started, is bootstrapping the framework using the scaffolding-cli from Amido Stacks. By using it in interactive mode, you can simply answer 5 questions to get a bespoke framework, ready to go with an example test.
 
-```npx @amidostacks/scaffolding-cli test -i```
+```bash
+npx @amidostacks/scaffolding-cli test -i
+```
 
 ### Interactive questions
 
 ```txt
+✔ Select test framework
 ✔ Please provide the company name to test for
 ✔ Please provide the project name to be tested
-✔ Select test framework
 ✔ Please provide test scope (domain)
 ✔ Select Pipeline Tool
 ```
@@ -32,7 +35,7 @@ The best way to get started, is bootstrap the framework using the scaffolding-cl
 | Framework Type | Acceptance Functional E2E Functional API Component Accessibility Visual Regression | Acceptance Functional E2E Accessibility | Acceptance Functional E2E | Acceptance Functional E2E | Unit  Component  Integration |
 | Language | Typescript Optional: Javascript | Typescript Optional: Javascript | C# | Java | Typescript  Optional: Javascript |
 | Framework | Cypress | TestCafe | Bespoke | Serenity | Jest |
-| Libraries and Tools | Mocha Chai Chai-jQuery Sinon.JS Sinon-Chai Lodash Minimatch Moment Blob Promise | Axios TestCafe Assertions TestCafe API | Microsoft Test SDK Selenium WebDriver WebDriver ChromeDriver Shouldly BDDfy xUnit | Java SDK Selenium WebDriver WebDriver ChromeDriver Serenity JUnit | Jest Snapshot  @testing-library/react |
+| Libraries and Tools | Mocha Chai Chai-jQuery Sinon.JS Sinon-Chai Lodash Minimatch Moment Blob Promise | Axios TestCafe Assertions TestCafe API | Microsoft Test SDK Selenium WebDriver ChromeDriver Shouldly BDDfy xUnit | Java SDK Selenium WebDriver ChromeDriver Serenity JUnit | Jest Snapshot  @testing-library/react |
 | Integrations | Axe Applitools | Axe LambdaTest |  |  | Sonar Scanner |
 | Report(s) | jUnit/xUnit xunit-viewer (single page HTML) Mochawesome (rich HTML results with screenshots) | xUnit | BDDfy xUnit | Serenity reports | jUnit/xUnit  Cobertura, lcov (code coverage)  Sonar reporter |
 | Browsers | Used: Google Chrome  Supported: Mozilla Firefox Microsoft Edge Electron Brave | Used: LambdaTest Google Chrome  Supports: Internet Explorer (11+) Microsoft Edge (legacy and Chromium-based) Mozilla Firefox Safari | Used: Google Chrome  Supports: LambdaTest Internet Explorer (11+) Microsoft Edge (legacy and Chromium-based) Mozilla Firefox Safari | Used: Google Chrome  Supports: Internet Explorer (11+) Microsoft Edge (legacy and Chromium-based) Mozilla Firefox | N/A |
@@ -61,7 +64,7 @@ At the end of bootstrapping your example framework, you will have an output that
 * Environment variables
 * ...and information to start testing immediately
 
-```bash
+```text title="Example output from Selenium framework with .NET output folder structure"
 ├── Api
 │   └── Builders
 │       └── Http
@@ -80,6 +83,7 @@ At the end of bootstrapping your example framework, you will have an output that
 │   │   ├── MenuList.cs
 │   │   └── Notifier.cs
 │   ├── Factory
+│   │   └── RemoteWebDriverFactory.cs
 │   │   └── WebDriverFactory.cs
 │   ├── Pages
 │   │   └── PageObject.cs
@@ -93,8 +97,6 @@ At the end of bootstrapping your example framework, you will have an output that
 │       └── GetMenuExampleTests.cs
 └── appsettings.json
 ```
-
-`_[Above: Example output from Selenium framework with .NET output folder structure](./testing_selenium.md#folder-structure)_`
 
 You are ready to follow the frameworks README.md and run your first test!
 

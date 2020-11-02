@@ -3,11 +3,13 @@ id: testing_java_serenity_bdd
 title: UI Browser Automation with Serenity BDD and Java
 sidebar_label: Java - Serenity BDD
 ---
+In the Java world there are few tools that provide an easier experience with adding behaviour driven development to your automated testing better than [Serenity BDD](http://serenity-bdd.info/#/).  Not only is it very easy to use but it also adds a rich layer of reporting to your automated testing framework which is crucial for project management and keeping your stakeholders informed. 
+
 
 ## Getting started
 
-Serenity BDD provides excellent integration with Selenium, which allows you to avoid a lot of the boilerplate and infrastructure code you normally need to deal with in automated web tests.
-In particular, Serenity manages the driver lifecycle for you (so you don’t need to create your own driver instances, or close them at the end of the tests).
+Serenity BDD provides excellent integrations with Selenium, which allows you to avoid a lot of the boilerplate and infrastructure code you normally need to deal with in automated web tests.
+In particular, Serenity manages the driver lifecycle for you (so you don’t need to create your own driver instances or close them at the end of the tests).
 
 Serenity can also be configured to automatically take screenshots throughout the tests, creating rich documentation of how each test played out.
 
@@ -58,7 +60,14 @@ More properties here: <https://serenity-bdd.github.io/theserenitybook/latest/ser
 
 ### Run Tests Locally
 
-Open current folder in the terminal and execute tests by running any one of the following commands:
+To run the web tests with a given driver, please provide the path to the webdriver file using the system property: `webdriver.driver_name.driver`. For example, your serenity.properties file should contain the following:
+
+```text
+webdriver.driver=chrome
+webdriver.chrome.driver=/path/to/my/chromedriver
+```
+
+Open the project folder in the terminal and execute tests by running any one of the following commands:
 
 Run all tests on the default environment:
 
@@ -100,7 +109,7 @@ Test Report Location is: ..target/site/serenity/index.html
 
 ### Manual Aggregation of the Test Report
 
-Open the ../E2E/Serenity path in the terminal and execute:
+Open the project folder in the terminal and execute:
 
 ```bash
 mvn serenity:aggregate

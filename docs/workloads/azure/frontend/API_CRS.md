@@ -2,6 +2,8 @@
 id: api_definition_crs
 title: Api Definition
 sidebar_label: Api Definition
+hide_title: false
+hide_table_of_contents: false
 ---
 
 The generated scaffolding can be quickly used make calls to external APIs
@@ -22,21 +24,16 @@ Sample implementation of an entire API can be found in the
 
 
 ```javascript
-
 export const fetchMenus = () =>
     action(GetMenuActionTypes.FETCH_POSTS, [], {
         method: "get" as Method,
         route: "/menu", // Todo: Point to deployed example API
     })
-
-
 ```
 
 The specific saga implementation is [menu api](../src/state/ducks/get-menus/saga)
 
 ```javascript
-
-
 import {all, call, fork, put, takeEvery} from "redux-saga/effects"
 import {
     MetaActionWithAPI,
@@ -72,7 +69,6 @@ function* watchFetchRequest(): Generator {
 export default function* postSaga() {
     yield all([fork(watchFetchRequest)])
 }
-
 ```
 
 Feel free to modify the example code for your own API endpoints!

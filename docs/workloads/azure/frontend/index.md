@@ -30,7 +30,7 @@ found [here](./deployment.md)
 
 ---
 
-The base infrastracture layout and usage guides for extending can be found
+The base infrastructure layout and usage guides for extending can be found
 [here](./infrastructure.md)
 
 ## State management

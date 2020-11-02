@@ -1,7 +1,7 @@
 ---
 id: functional_testing_netcore
-title: Functional testing
-sidebar_label: Functional testing
+title: Testing the application
+sidebar_label: Testing the API
 hide_title: false
 hide_table_of_contents: false
 ---
@@ -19,7 +19,15 @@ The project contains the framework for testing API's and a number of test cases 
 - HttpClient (For API requests)
 - Shouldly (Assertions)
 
-## Folder structure
+## Running Tests
+
+Navigate to `API.FunctionalTests` folder and run the following command:
+
+```bash
+dotnet test
+```
+
+## Test Folder structure
 
 ```text
 ├── Builders
@@ -31,7 +39,6 @@ The project contains the framework for testing API's and a number of test cases 
     ├── Stories
     └── Steps
 ```
-
 
 ## Builders
 
@@ -71,7 +78,7 @@ This is the parent folder for all test code
 
 ## Fixtures
 
-Fixtures contains xUnit class fixtures. These class fixtures are used to create test context for the tests. The fixture is where you can put fixture setup (via constructor) and teardown (Via `Dispose()`)
+The "Fixtures" folder contains xUnit class fixtures. These class fixtures are used to create test context for the tests. The fixture is where you can put fixture setup (via constructor) and teardown (Via `Dispose()`)
 
 See [xUnit documentation](https://xunit.net/docs/shared-context) for information on different fixtures and how to use them.
 

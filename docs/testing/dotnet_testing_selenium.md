@@ -1,8 +1,10 @@
 ---
 id: testing_dotnet_selenium
 title: UI Browser Automation with Selenium and .NET
-sidebar_label: C# - Selenium .Net
+sidebar_label: C# - Selenium .NET
 ---
+
+
 
 ## Getting Started
 
@@ -73,6 +75,8 @@ In root (*.sln) directory, build the solution using: ) the solution:
 dotnet test
 ```
 
+As a result of test execution - a 'BDDfy.html' test report will be automatically generated.
+
 :::info
 You don't need to run `dotnet restore` because it's run implicitly by all commands that require a restore to occur, such as dotnet new, dotnet build and dotnet run._
 :::
@@ -109,11 +113,11 @@ If you wish to use a local instance of Selenium Webdriver, be sure to download t
 ```bash
 ├── Configuration
 ├── Selenium
-└── Tests
-    ├── Fixtures
-    ├── Stories
-    └── Steps
-├── appsettings.json
+├── Tests
+│   ├── Fixtures
+│   ├── Stories
+│   └── Steps
+└── appsettings.json
 ```
 
 ### Configuration
@@ -206,7 +210,16 @@ In this example, we show how the edit icon can be referenced by using the data a
 ![edit_button](https://amidostacksassets.blob.core.windows.net/docs/assets/data_attribute.png)
 
 ```html
-<button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary Mui-disabled MuiIconButton-edgeEnd Mui-disabled" tabindex="-1" type="button" disabled="" aria-label="edit" data-cy="editMenuItem"><span class="MuiIconButton-label"><svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="presentation"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"></path></svg></span></button>
+<button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary Mui-disabled MuiIconButton-edgeEnd Mui-disabled"
+        tabindex="-1" type="button" disabled="" aria-label="edit" data-cy="editMenuItem">
+    <span class="MuiIconButton-label">
+        <svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="presentation">
+            <path
+                d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z">
+            </path>
+        </svg>
+    </span>
+</button>
 ```
 
 We can interact with this by using the following:
@@ -215,3 +228,6 @@ We can interact with this by using the following:
 public By menus = By.CssSelector("[data-cy='editMenuItem']");
 ```
 
+## Standalone Implementation
+
+If you wish to simply have a solution that is not tied into the stacks CLI tool then you can clone the frpo from [here](https://github.com/amido/stacks-dotnet-webapp-automation)

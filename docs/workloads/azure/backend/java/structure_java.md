@@ -2,6 +2,8 @@
 id: structure_java
 title: Java Rest API Structure
 sidebar_label: Project structure
+hide_title: false
+hide_table_of_contents: false
 ---
 
 ## Project structure

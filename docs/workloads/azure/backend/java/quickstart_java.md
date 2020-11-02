@@ -71,9 +71,9 @@ This is version `1.0.0` of the `java-stacks` project.
     </TabItem>
     <TabItem value="windows">
 
-   ```text
-   mvnw.cmd spring-boot:run
-   ```
+    ```text
+    mvnw.cmd spring-boot:run
+    ```
 
    </TabItem>
    </Tabs>

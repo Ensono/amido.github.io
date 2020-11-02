@@ -10,7 +10,7 @@ hide_table_of_contents: false
 
 <br />
 
-Dot Net Core provides a simple logging abstraction with most of required logging features used by an application. Everywhere in the application, when logging is required, the Classes generating logs should receive via dependency injection an instance of `ILogger<>` to use as the logger object. The `ILogger<>` instances are created by Logging Factory registered by each application and will abstract the logging library from the application logging.
+.NET Core provides a simple logging abstraction with most of required logging features used by an application. Everywhere in the application, when logging is required, the Classes generating logs should receive via dependency injection an instance of `ILogger<>` to use as the logger object. The `ILogger<>` instances are created by Logging Factory registered by each application and will abstract the logging library from the application logging.
 
 The standard library has limited capabilities on log forwarding and requires additional packages to add proper filtering, enrichment and forwarding. For this reason the use of Serilog is required to extend the default logging features.
 
@@ -45,7 +45,7 @@ The following is a sample `appsettings.json` file with annotations about logging
     ],
     "MinimumLevel": {
       "Default": "Information", // minimal log level for everything
-      "Override": {}            // Override for indivisual log sources
+      "Override": {}            // Override for individual log sources
     },
     "WriteTo": [
       { "Name": "Console" },    // Write Logs to console
@@ -63,7 +63,7 @@ The following is a sample `appsettings.json` file with annotations about logging
       "Service": "identityapi", // service generating the logs
       "Environment": "dev",     // environment this instance belongs to
     },
-    "Filter": [                 // Ignore logs that macthes the following filters
+    "Filter": [                 // Ignore logs that matches the following filters
       {
         "Name": "ByExcluding",
         "Args": {

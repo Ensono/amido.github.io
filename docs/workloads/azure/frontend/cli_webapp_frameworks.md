@@ -2,6 +2,8 @@
 id: cli_webapp_frameworks
 title: Getting Started
 sidebar_label: Getting Started
+hide_title: false
+hide_table_of_contents: false
 ---
 
 Web applications require a lot of boilerplate. It's also hard to know how to get started without examples. We offer both server side rendered (SSR) and client side rendered (CSR) solutions that can be bootstrapped and tailored to your current project with just one command.
@@ -33,11 +35,14 @@ At the end of bootstrapping your example framework, you will have an output that
 * and information to start testing immediately
 
 
-### Development 
+### Development
 
 ```bash
 npm install
-npm  run dev
+```
+
+```bash
+npm run dev
 ```
 
 This offers live reload of both server side  - *when using ssr* - and client side code.
@@ -46,7 +51,13 @@ This offers live reload of both server side  - *when using ssr* - and client sid
 
 ```bash
 npm install
+```
+
+```bash
 npm run build
+```
+
+```bash
 npm run start
 ```
 

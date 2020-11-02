@@ -2,6 +2,8 @@
 id: identity
 title: Identity using Auth0
 sidebar_label: Identity using Auth0
+hide_title: false
+hide_table_of_contents: false
 ---
 
 - [Auth0](https://auth0.com/) is the Identity-as-a-Service (IDaaS) used in the

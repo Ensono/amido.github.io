@@ -2,6 +2,8 @@
 id: intro_node_js
 title: Introduction
 sidebar_label: Introduction
+hide_title: false
+hide_table_of_contents: true
 ---
 
 ## What

@@ -2,6 +2,8 @@
 id: logging_node_js
 title: Logging and Instrumentation
 sidebar_label: Logging and Instrumentation
+hide_title: false
+hide_table_of_contents: true
 ---
 
 [Application insights](https://docs.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview)

@@ -1,7 +1,9 @@
 ---
 id: repository_overview_netcore
 title: Repository Overview
-sidebar_label: Repository
+sidebar_label: Repository Structure
+hide_title: false
+hide_table_of_contents: true
 ---
 
 

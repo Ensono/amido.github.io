@@ -7,6 +7,7 @@
 
 /* You can override the default Infima variables here. */
 :root {
+  --ifm-navbar-background-color: #242526;
   --ifm-color-primary: #fac518;
   --ifm-color-primary-dark: #f1ba05;
   --ifm-color-primary-darker: #e4b005;
@@ -17,9 +18,24 @@
   --ifm-code-font-size: 95%;
 }
 
+.navbar {
+  background-color: #242526;
+  color: white !important;
+}
+
+.navbar__link {
+  color: white !important;
+}
+
 .docusaurus-highlight-code-line {
-  background-color: rgb(72, 77, 91);
+  background-color: rgb(211,211,211);
   display: block;
   margin: 0 calc(-1 * var(--ifm-pre-padding));
   padding: 0 var(--ifm-pre-padding);
+}
+
+
+
+.navbar__logo {
+  height: 150% !important; 
 }
