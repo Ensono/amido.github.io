@@ -6,6 +6,9 @@ hide_title: false
 hide_table_of_contents: true
 ---
 
+import { HideNavigation} from "../../../../src/pages/HideNavigation";
+<HideNavigation next />
+
 Given we provide boilerplate WebApps designing for accessibility, we would
 like to have optionality to support broad range of browsers. We look to
 following the standards set by Government Digital Services (GDS) on designing
@@ -30,7 +33,7 @@ example demonstrates the recommended approach to implement polyfills._
 - [Browserslist](https://github.com/browserslist/browserslist) -
   `.browserslistrc` contains the list of supported browsers.
 - [Examples](https://github.com/browserslist/browserslist-example) - to update
-    this list
+  this list
 - [eslint-plugin-compat](https://www.npmjs.com/package/eslint-plugin-compat) -
   enforces the browser support across stacks.
 

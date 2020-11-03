@@ -13,7 +13,7 @@ export const HideNavigation = ({ next, prev }) => {
       //@ts-ignore
       document.querySelector("div.pagination-nav__item>a").style.display = "none";
     }
-  }, []);
+  });
 
   return null;
 };

@@ -8,6 +8,7 @@ hide_table_of_contents: false
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import { HideNavigation} from "../../../../src/pages/HideNavigation";
 
 Web applications require a lot of boilerplate. It's also hard to know how to get started without examples. We offer both server side rendered (SSR) and client side rendered (CSR) solutions that can be bootstrapped and tailored to your current project with just one command.
 
@@ -126,3 +127,6 @@ Since the frameworks provide real examples on deployed applications, we recommen
 ## Feedback
 
 As always, we only improve from the incredible feedback and contributions from people like you. To help us improve, see our contribution guide for more information.
+
+
+<HideNavigation prev />
