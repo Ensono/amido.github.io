@@ -8,7 +8,7 @@ hide_table_of_contents: false
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-import { HideNavigation} from "../../../../src/pages/HideNavigation";
+import HideNavigation  from "../../../../src/pages/HideNavigation";
 
 
 
