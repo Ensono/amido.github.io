@@ -74,7 +74,7 @@ function Picker() {
 
   const baseUrl = useBaseUrl("docs/");
   const OptionMapper = {
-    Azure: {
+    "Azure Cloud Services [Azure]": {
       "Server Side Rendered Web Application": {
         "Node JS / React": "workloads/azure/frontend/cli_webapp_frameworks_ssr",
       },
@@ -90,8 +90,8 @@ function Picker() {
           "workloads/azure/backend/netcore/introduction_netcore",
       },
     },
-    GCP: "workloads/gcp/workloads_gcp_readme",
-    AWS: "workloads/aws/workloads_aws_readme",
+    "Google Cloud Platform [GCP]": "workloads/gcp/workloads_gcp_readme",
+    "Amazon Web Services [AWS]": "workloads/aws/workloads_aws_readme",
   };
 
   const cloudProviders = Object.keys(OptionMapper).map((key) => ({
