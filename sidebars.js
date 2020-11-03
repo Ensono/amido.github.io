@@ -56,10 +56,11 @@ module.exports = {
                 label: "Java Spring Boot REST API",
                 items: [
                   "workloads/azure/backend/java/intro_java",
+                  "workloads/azure/backend/java/requirements_java",
+                  "workloads/azure/backend/java/setting_up_cosmos_db_locally_java",
                   "workloads/azure/backend/java/quickstart_java",
                   "workloads/azure/backend/java/scaffolding_java",
                   "workloads/azure/backend/java/ide_java",
-                  "workloads/azure/backend/java/setting_up_cosmos_db_locally",
                   {
                     type: "category",
                     label: "Architecture",
@@ -86,10 +87,11 @@ module.exports = {
                 label: "Java Spring Boot REST API with CQRS",
                 items: [
                   "workloads/azure/backend/java_cqrs/intro_java_cqrs",
+                  "workloads/azure/backend/java_cqrs/requirements_java_cqrs",
+                  "workloads/azure/backend/java_cqrs/setting_up_cosmos_db_locally_java_cqrs",
                   "workloads/azure/backend/java_cqrs/quickstart_java_cqrs",
                   "workloads/azure/backend/java_cqrs/scaffolding_java_cqrs",
                   "workloads/azure/backend/java_cqrs/ide_java_cqrs",
-                  "workloads/azure/backend/java_cqrs/setting_up_cosmos_db_locally_cqrs",
                   {
                     type: "category",
                     label: "Architecture",

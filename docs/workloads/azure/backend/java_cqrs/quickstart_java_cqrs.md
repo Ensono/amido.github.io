@@ -15,15 +15,22 @@ This is version `1.0.0` of the `java-stacks` project.
 
 ### Running the application locally
 
-1. Clone the Java project to your local machine from here: [stacks-java repository](https://github.com/amido/stacks-java)
+1. Clone the Java project to your local machine from here: [stacks-java repository](https://github.com/amido/stacks-java/tree/api-with-no-cqrs)
 2. Configure required environment variables
 
     The application is currently configured to work with the Azure environment.
 
     It uses an Azure **CosmosDB** database to store the example application data. So you should have access to an instance to use with the application.
-    Note: For running on a local Windows environment you can use the [Cosmos DB emulator](https://docs.microsoft.com/en-us/azure/cosmos-db/local-emulator?tabs=ssl-netstd21) (CosmosDB Emulator has a known fixed key).
+    Note: For running on a local Windows environment you can use the [Cosmos DB emulator](setting_up_cosmos_db_locally_java_cqrs.md) (CosmosDB Emulator has a known fixed key).
+    For further info please follow the link [link](https://docs.microsoft.com/en-us/azure/cosmos-db/local-emulator?tabs=ssl-netstd21).
 
     In addition, Azure **ApplicationInsights** is used for logging purposes. If this is unavailable, modify the application so that it doesn't fail to startup if it can't access ApplicationInsights, and simply log to the terminal instead.
+
+    ```yaml
+       application-insights:
+           instrumentation-key: xxxxxx
+           enabled: false
+       ```
 
     There are two corresponding environment variables that need to be set to interact with these systems:
 
@@ -50,7 +57,7 @@ This is version `1.0.0` of the `java-stacks` project.
 
 3. Build and run the application
 
-    Note that at a minimum Java 11 should be installed.
+    Note that at a minimum [Java 11](https://adoptopenjdk.net/) should be installed.
 
     Move to the `<PROJECT-NAME>/java` folder, then
 
@@ -71,14 +78,44 @@ This is version `1.0.0` of the `java-stacks` project.
     </TabItem>
     <TabItem value="windows">
 
-   ```text
-   mvnw.cmd spring-boot:run
-   ```
+    ```text
+    mvnw.cmd spring-boot:run
+    ```
 
    </TabItem>
    </Tabs>
 
-4. Verify that the application has started
+4. Build and run the application using Cosmos DB Emulator
+   please refer to section "Determine which root certificates have been installed" in [Setting Up CosmosDB Emulator](setting_up_cosmos_db_locally_java_cqrs.md)
+
+    Move to the `<PROJECT-NAME>/java` folder, then
+    <br />
+
+    <Tabs
+      groupId="operating-systems"
+      defaultValue="unix"
+      values={[
+        { label: 'Unix', value: 'unix', },
+        { label: 'Windows', value: 'windows', },
+      ]
+    }>
+    <TabItem value="unix">
+
+    ```text
+    ./mvnw spring-boot:run -Dspring-boot.run.jvmArguments='-Djavax.net.ssl.trustStore="<Location of the root cosmos db certificate>" -Djavax.net.ssl.trustStorePassword="changeit"'
+    ```
+
+    </TabItem>
+    <TabItem value="windows">
+
+    ```text
+    mvnw.cmd spring-boot:run -Dspring-boot.run.jvmArguments='-Djavax.net.ssl.trustStore="<Location of the root cosmos db certificate>" -Djavax.net.ssl.trustStorePassword="changeit"'
+    ```
+
+   </TabItem>
+   </Tabs>
+
+5. Verify that the application has started
 
     Browse to [http://localhost:9000/v1/menu](http://localhost:9000/v1/menu). This should return a valid JSON response.
 
@@ -120,6 +157,8 @@ These parameters are used to verify that the JWT supplied in the Authorization h
 (This can also be configured to run on another port)
 
 ## Using a Docker image
+
+<https://docs.docker.com/docker-for-windows/install/>
 
 From the `<PROJECT-NAME>/java` folder, build a Docker image using e.g. the command below:
 

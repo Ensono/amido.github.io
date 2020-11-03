@@ -9,6 +9,8 @@ import TabItem from "@theme/TabItem";
 
 ## IDE guidelines
 
+The IDE we have used is Intellij.
+
 We recommend that you install the following plugins:
 
 - Lombok - To reduce the amount of boiler-plate code that needs to be written
@@ -25,6 +27,31 @@ We recommend that you install the following plugins:
 - Surefire - Used for reporting purposes (creates reports based on tests in the Java test package).
 - fmt-maven-plugin - Formats the java code based on rules in java-google-style.xml.
 - Spotbugs - Performs a static analysis of the Java code to check for bugs.
+
+### Set up the project
+
+#### How to import the whole project
+
+   In the IDE(We used Intellij) go to File -> New -> Project.
+   Set project SDK to Java 11. Click Next -> Next
+   ![New Project](/img/new_java_project.png)
+
+   Choose the java project folder
+   ![New Java Project](/img/new_java_project_1.png)
+   click finish.
+
+#### What setup required to get it up and running
+
+   Open up the "java" folder and right click on pom.xml and choose "Add as Maven Project".
+   Click on Run -> Edit Configurations
+   ![Run Configurations](/img/run_configuration.png)
+   Click on Add new Configuration and choose Application/Spring boot
+   ![Run Configurations_1](/img/run_configuration_1.png)
+   Choose the main class as "Application.java" and under environment set environment variable
+   for **AZURE_COSMOSDB_KEY** and set JRE to Java 11. Click OK
+   ![Run Configurations_2](/img/run_configuration_2.png)
+
+   Open Application.java file and right click and choose run Application.![Run Java Application](/img/run_java_application.png)
 
 ### Code Quality
 

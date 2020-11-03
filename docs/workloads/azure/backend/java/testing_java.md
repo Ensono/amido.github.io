@@ -126,7 +126,7 @@ The report can be viewed under `./api-tests/target/site/serenity/index.html`.
 
 ### Code coverage report
 
-The JaCoCo Code Coverage tool allows identifying how much of the code is run during the test suite execution. It is by no means an identifier of code and test quality in its own right but can be helpful for checking if logic paths have test coverage, especially for code updates. 
+The JaCoCo Code Coverage tool allows identifying how much of the code is run during the test suite execution. It is by no means an identifier of code and test quality in its own right but can be helpful for checking if logic paths have test coverage, especially for code updates.
 This library is run in the API pipeline, with output reports being made available to the CI tool being used.
 
 To generate the JaCoCo report, please execute the following command:
@@ -220,3 +220,44 @@ To run it:
  </Tabs>
 
 The generated report can be viewed under – `./target/pit-reports/YYYYMMDDHHMI`.
+
+### Running tests in parallel threads - Using forks
+
+Choosing the right forking strategy and parallel execution settings can have a substantial impact on the memory requirements, and the execution time of the build system.
+Using multiple forks can be a good alternative to running all tests in a single JVM, and can reduce the risk of certain types of errors.
+
+Using Forked Test Execution, new JVM processes are spun up to execute the tests, up to a configurable maximum number of processes. This creates better separation between tests, which can improve their reliability.
+
+Maven is set to spawn new processes by the `forkCount` configuration element, as shown here below. This can either be a number (the maximum number of forks) or a multiplier (the number of forks per CPU).
+The current configuration uses the value of "2", which means 2 forked processes per CPU:
+
+```xml
+<plugin>
+    <artifactId>maven-failsafe-plugin</artifactId>
+    <version>2.22.2</version>
+    <configuration>
+        <parallel>classes</parallel>
+        <threadCount>2</threadCount>
+        <forkCount>2</forkCount>
+    </configuration>
+</plugin>
+```
+
+### Access token configuration
+
+In order to make the authenticated requests (pass Bearer Token into headers) for the functional tests, please change the value of ```generate.auth0.token``` from ``serenity.conf`` file config to 'true'.
+Also, to get the right access token please provide values for following variables in the ``environment variables``:
+
+```
+- CLIENT_ID
+- CLIENT_SECRET
+- AUDIENCE
+- GRANT_TYPE
+- OAUTH_TOKEN_URL
+```
+
+In case the Authorization Token is not required the ```generate.auth0.token``` value is false
+
+:::note
+The more threads are used, the higher the chances of sporadic, hard-to-reproduce test failures due to timeouts and other related issues. The added performance gain of each thread also tends to drop off for higher numbers of threads.
+:::

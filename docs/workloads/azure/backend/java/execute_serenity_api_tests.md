@@ -97,15 +97,40 @@ To run the Functional tests independently, use:
 
   </TabItem>
  </Tabs>
- 
- 
+
+To run tests by other tags and ignore tests that contain @Ignore tags use:
+
+ <Tabs
+   groupId="operating-systems"
+   defaultValue="unix"
+   values={[
+     { label: 'Unix', value: 'unix', },
+     { label: 'Windows', value: 'windows', },
+   ]
+ }>
+  <TabItem value="unix">
+
+  ```bash
+  ./mvnw clean verify -Dcucumber.options="--tags ~@Ignore --tags @YourTag"
+  ```
+
+  </TabItem>
+  <TabItem value="windows">
+
+  ```bash
+  mvnw.cmd clean verify -Dcucumber.options="--tags ~@Ignore --tags @YourTag"
+  ```
+
+  </TabItem>
+ </Tabs>
+
 <h3> Test Report </h3>
 
 As a result of the test execution - `serenity-maven-plugin` will automatically generate the test report - `./api-tests/target/site/serenity/index.html`.
 
 ### Note
 
-To manually aggregate the Serenity report execute the following command under `./api-tests` directory: 
+To manually aggregate the Serenity report execute the following command under `./api-tests` directory:
 
  <Tabs
    groupId="operating-systems"
@@ -130,4 +155,3 @@ To manually aggregate the Serenity report execute the following command under `.
 
   </TabItem>
  </Tabs>
- 
