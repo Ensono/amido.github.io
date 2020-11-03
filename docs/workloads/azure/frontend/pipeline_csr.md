@@ -5,6 +5,7 @@ sidebar_label: Pipeline
 hide_title: false
 hide_table_of_contents: false
 ---
+import { HideNavigation} from "../../../../src/pages/HideNavigation";
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
@@ -30,3 +31,6 @@ Follow the steps below to create the pipeline and trigger the initial run.
 2. Select your repository.
 3. Select the **Existing Azure Pipelines YAML files** option and enter the path `build/azDevops/azure/app-pipeline.yml`
 4. Click run and wait for the pipeline to complete.
+
+
+<HideNavigation next />

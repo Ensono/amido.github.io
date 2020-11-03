@@ -37,7 +37,7 @@ const features = [
 const features2 = [
   {
     title: "Contribute to Stacks",
-    link: "docs/contributions",
+    link: "contributions",
     description: (
       <>
         As an open source project, you can be a part of the Github community
@@ -47,7 +47,7 @@ const features2 = [
   },
   {
     title: "Why  Amido",
-    link: "",
+    link: "https://amido.com/about-us/",
     description: (
       <>
         Want to know how Amido is preventing digital transformation failures
@@ -57,7 +57,7 @@ const features2 = [
   },
   {
     title: "Careers at Amido",
-    link: "",
+    link: "https://amido.com/careers/",
     description: (
       <>
         As the go-to partner for cloud-native transformation, we’re always
@@ -76,10 +76,10 @@ function Picker() {
   const OptionMapper = {
     Azure: {
       "Server Side Rendered Web Application": {
-        "Node JS / React": "workloads/azure/frontend/cli_webapp_frameworks",
+        "Node JS / React": "workloads/azure/frontend/cli_webapp_frameworks_ssr",
       },
       "Client Side Rendered Web Application": {
-        "Node JS / React": "workloads/azure/frontend/cli_webapp_frameworks",
+        "Node JS / React": "workloads/azure/frontend/cli_webapp_frameworks_csr",
       },
       "REST Web API": {
         "Java Spring Boot": "workloads/azure/backend/java/intro_java",
@@ -261,13 +261,13 @@ function Home() {
             <section className={styles.supportedTechs}>
               <div className="container">
                 <h3>Technologies supported by Stacks</h3>
-                <div className={styles.techs}>
+                <div className={styles.techs2}>
                   <img
                     src="https://logodix.com/logo/42746.png"
                     onClick={() => triggerSearch("azure")}
                   />
                   <img
-                    src="https://logodix.com/logo/929905.png"
+                    src="https://logodix.com/logo/433020.jpg"
                     onClick={() => triggerSearch("google cloud")}
                   />
                   <img
@@ -355,7 +355,7 @@ function Home() {
                         "button button button--primary button--lg",
                         styles.getStarted
                       )}
-                      to={baseUrl + feature.link}
+                      to={ feature.link.startsWith("http") ? feature.link  : baseUrl + feature.link}
                     >
                       {feature.title}
                     </Link>
@@ -443,3 +443,7 @@ function Icon() {
     </svg>
   );
 }
+
+
+
+
