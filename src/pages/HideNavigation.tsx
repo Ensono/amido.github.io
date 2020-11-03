@@ -1,6 +1,6 @@
 import React from "react";
 
-export const HideNavigation = ({ next, prev }) => {
+export default ({ next, prev }) => {
   React.useEffect(() => {
     if (next) {
       //@ts-ignore
@@ -17,5 +17,5 @@ export const HideNavigation = ({ next, prev }) => {
     }
   });
 
-  return null;
+  return <div />;
 };

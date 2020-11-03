@@ -7,7 +7,7 @@ hide_table_of_contents: false
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import { HideNavigation} from "../../../../src/pages/HideNavigation";
+import HideNavigation  from "../../../../src/pages/HideNavigation";
 
 The pipeline will automate provisioning and updating the server-side rendering infrastructure and application in Azure.
 

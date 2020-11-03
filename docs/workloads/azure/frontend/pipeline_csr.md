@@ -5,7 +5,7 @@ sidebar_label: Pipeline
 hide_title: false
 hide_table_of_contents: false
 ---
-import { HideNavigation} from "../../../../src/pages/HideNavigation";
+import HideNavigation  from "../../../../src/pages/HideNavigation";
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
