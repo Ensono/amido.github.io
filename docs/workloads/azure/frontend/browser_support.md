@@ -7,7 +7,6 @@ hide_table_of_contents: true
 ---
 
 import { HideNavigation} from "../../../../src/pages/HideNavigation";
-<HideNavigation next />
 
 Given we provide boilerplate WebApps designing for accessibility, we would
 like to have optionality to support broad range of browsers. We look to
@@ -46,3 +45,6 @@ npx browserslist
 ```
 
 > If you do not have npx already: "npm install -g npx"
+<!-- markdownlint-disable MD033 -->
+<HideNavigation next />
+
