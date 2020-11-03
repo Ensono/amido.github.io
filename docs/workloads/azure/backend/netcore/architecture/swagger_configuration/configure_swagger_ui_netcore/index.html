@@ -6,15 +6,15 @@
 <meta name="generator" content="Docusaurus v2.0.0-alpha.65">
 <link rel="search" type="application/opensearchdescription+xml" title="Amido Stacks " href="/stacks/opensearch.xml"><title data-react-helmet="true">Configure Swagger UI | Amido Stacks </title><meta data-react-helmet="true" name="docsearch:version" content="current,latest"><meta data-react-helmet="true" name="twitter:card" content="summary_large_image"><meta data-react-helmet="true" property="og:title" content="Configure Swagger UI | Amido Stacks "><meta data-react-helmet="true" name="description" content="Configure Swagger UI"><meta data-react-helmet="true" property="og:description" content="Configure Swagger UI"><meta data-react-helmet="true" property="og:url" content="https://amido.github.io/stacks/docs/workloads/azure/backend/netcore/architecture/swagger_configuration/configure_swagger_ui_netcore"><link data-react-helmet="true" rel="shortcut icon" href="/stacks/img/thumbnail_stacks.png"><link data-react-helmet="true" rel="preconnect" href="https://BH4D9OD16A-dsn.algolia.net" crossorigin="anonymous"><link data-react-helmet="true" rel="canonical" href="https://amido.github.io/stacks/docs/workloads/azure/backend/netcore/architecture/swagger_configuration/configure_swagger_ui_netcore"><link rel="stylesheet" href="/stacks/styles.356b3251.css">
 <link rel="preload" href="/stacks/styles.152fa486.js" as="script">
-<link rel="preload" href="/stacks/runtime~main.ebcee31b.js" as="script">
+<link rel="preload" href="/stacks/runtime~main.2ced39a0.js" as="script">
 <link rel="preload" href="/stacks/main.2a63a7c6.js" as="script">
-<link rel="preload" href="/stacks/1.c03767d8.js" as="script">
-<link rel="preload" href="/stacks/2.44a71c6f.js" as="script">
+<link rel="preload" href="/stacks/1.18530baa.js" as="script">
+<link rel="preload" href="/stacks/2.e975b8a8.js" as="script">
 <link rel="preload" href="/stacks/3.d459d900.js" as="script">
-<link rel="preload" href="/stacks/1be78505.f88f4666.js" as="script">
+<link rel="preload" href="/stacks/1be78505.16df2acc.js" as="script">
 <link rel="preload" href="/stacks/116.011c6c03.js" as="script">
 <link rel="preload" href="/stacks/935f2afb.576916a7.js" as="script">
-<link rel="preload" href="/stacks/17896441.46d4717a.js" as="script">
+<link rel="preload" href="/stacks/17896441.0158a1c7.js" as="script">
 <link rel="preload" href="/stacks/d21d2c84.35f317e0.js" as="script">
 </head>
 <body>
@@ -29,15 +29,15 @@ OpenAPI uses the concept of tags to group endpoints related to the same resource
 </span></div><div class="token-line" style="color:#393A34"><span class="token plain">    //By Default, all endpoints are grouped by the controller name</span></div><div class="token-line" style="color:#393A34"><span class="token plain">    //We want to Group by Api Group first, then by controller name if group not provided</span></div><div class="token-line" style="color:#393A34"><span class="token plain">    c.TagActionsBy((api) =&gt; new[] { api.GroupName ?? api.ActionDescriptor.RouteValues[&quot;controller&quot;] });</span></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block">
 </span></div><div class="token-line" style="color:#393A34"><span class="token plain">    //Include all endpoints available in the document</span></div><div class="token-line" style="color:#393A34"><span class="token plain">    c.DocInclusionPredicate((docName, apiDesc) =&gt; { return true; });</span></div><div class="token-line" style="color:#393A34"><span class="token plain">});</span></div></div></div></div></div><p>The swagger configuration is complete and the swagger ui should be available as below.</p><p><img alt="Swagger UI" src="/stacks/assets/images/swagger-ui-info-6770d7c76d6846ad13f91895148c2c94.png"></p></div></article><div class="margin-vert--lg"><nav class="pagination-nav" aria-label="Blog list page navigation"><div class="pagination-nav__item"><a class="pagination-nav__link" href="/stacks/docs/workloads/azure/backend/netcore/architecture/swagger_configuration/configure_swagger_netcore"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">« Configure Swagger</div></a></div><div class="pagination-nav__item pagination-nav__item--next"><a class="pagination-nav__link" href="/stacks/docs/workloads/gcp/workloads_gcp_readme"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Workloads on Google Cloud Platform »</div></a></div></nav></div></div></div></div></div></main></div></div><footer class="footer footer--dark"><div class="container"><div class="row footer__links"><div class="col footer__col"><h4 class="footer__title">Docs</h4><ul class="footer__items"><li class="footer__item"><a class="footer__link-item" href="/stacks/docs/">Getting Started</a></li></ul></div><div class="col footer__col"><h4 class="footer__title">About Us</h4><ul class="footer__items"><li class="footer__item"><a href="https://amido.com/" target="_blank" rel="noopener noreferrer" class="footer__link-item">Amido</a></li></ul></div><div class="col footer__col"><h4 class="footer__title">Open Source</h4><ul class="footer__items"><li class="footer__item"><a href="https://github.com/amido/stacks" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub</a></li></ul></div></div><div class="text--center"><div>Copyright © 2020 Amido Ltd</div></div></div></footer></div>
 <script src="/stacks/styles.152fa486.js"></script>
-<script src="/stacks/runtime~main.ebcee31b.js"></script>
+<script src="/stacks/runtime~main.2ced39a0.js"></script>
 <script src="/stacks/main.2a63a7c6.js"></script>
-<script src="/stacks/1.c03767d8.js"></script>
-<script src="/stacks/2.44a71c6f.js"></script>
+<script src="/stacks/1.18530baa.js"></script>
+<script src="/stacks/2.e975b8a8.js"></script>
 <script src="/stacks/3.d459d900.js"></script>
-<script src="/stacks/1be78505.f88f4666.js"></script>
+<script src="/stacks/1be78505.16df2acc.js"></script>
 <script src="/stacks/116.011c6c03.js"></script>
 <script src="/stacks/935f2afb.576916a7.js"></script>
-<script src="/stacks/17896441.46d4717a.js"></script>
+<script src="/stacks/17896441.0158a1c7.js"></script>
 <script src="/stacks/d21d2c84.35f317e0.js"></script>
 </body>
 </html>
