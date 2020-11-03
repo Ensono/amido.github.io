@@ -20,12 +20,12 @@ Instance and not a method initialized implementation. the method parameter is
 mainly used as a type guard.
 
 Sample implementation of an entire API can be found in the
-[menu api](../src/ssr/constants/apis/menu.ts), this demonstrates a business
+```../src/ssr/constants/apis/menu.ts```, this demonstrates a business
 specific implementation of talking to a data provider from node and exposing an
 internal route within express for the FE to use for proxy.
 
 The base implementation shouldn't be need to touch and it can be found in the
-[here](../src/ssr/constants/apis/index.ts).
+```../src/ssr/constants/apis/index.ts```.
 
 To extend and add more of your own custom implementation use menu as an example.
 
@@ -100,12 +100,12 @@ These are used by the front end hit the relevant proxied endpoint within node
 (behind an express route).
 
 An example of how this is implemented can be seen in the
-[server.ts](../src/ssr/server/index.ts) - again this file can be zero-touch and
+```../src/ssr/server/index.ts``` - again this file can be zero-touch and
 user should focus only on extending the individual APIs - see
-[menu api](../src/ssr/server/api/menu/index.ts).
+```../src/ssr/server/api/menu/index.ts```.
 
 Sample implementation from a page can be seen in
-[here](../src/ssr/components/ApiPane/index.tsx).
+```../src/ssr/components/ApiPane/index.tsx```.
 
 Key things to note:
 

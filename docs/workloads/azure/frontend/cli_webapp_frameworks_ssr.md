@@ -6,9 +6,10 @@ hide_title: false
 hide_table_of_contents: false
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-import HideNavigation  from "../../../../src/pages/HideNavigation";
+import HideNavigation from "../../../../src/pages/HideNavigation";
 
 Web applications require a lot of boilerplate. It's also hard to know how to get started without examples. We offer both server side rendered (SSR) and client side rendered (CSR) solutions that can be bootstrapped and tailored to your current project with just one command.
 
@@ -55,10 +56,6 @@ set NODE_ENV=development <br/>
 set PORT= #### <br/>
 set APP_BASE_URL=http://localhost <br/>
 set APP_BASE_PATH="" <br/>
-set NEXT_PUBLIC_CONTENTFUL_PREVIEW_ACCESS_TOKEN= #### <br/>
-set NEXT_PUBLIC_CONTENTFUL_PREVIEW_SECRET= #### <br/>
-set NEXT_PUBLIC_CONTENTFUL_SPACE_ID= #### <br/>
-set NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN= ### <br/>
 
 </div>
 
@@ -71,16 +68,18 @@ export NODE_ENV=development <br/>
 export PORT= #### <br/>
 export APP_BASE_URL=http://localhost <br/>
 export APP_BASE_PATH= "" <br/>
-export NEXT_PUBLIC_CONTENTFUL_PREVIEW_ACCESS_TOKEN= #### <br/>
-export NEXT_PUBLIC_CONTENTFUL_PREVIEW_SECRET= #### <br/>
-export NEXT_PUBLIC_CONTENTFUL_SPACE_ID= #### <br/>
-export NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN= ### <br/>
 
 </div>
 
   </TabItem>
 
 </Tabs>
+
+## Configure Optional Features
+
+[Auth0](docs/workloads/azure/frontend/identity) <br/>
+[Contentful](docs/workloads/azure/frontend/cms) <br/>
+[API](docs/workloads/azure/frontend/api_definition) <br/>
 
 ## Get developing
 
@@ -127,6 +126,5 @@ Since the frameworks provide real examples on deployed applications, we recommen
 ## Feedback
 
 As always, we only improve from the incredible feedback and contributions from people like you. To help us improve, see our contribution guide for more information.
-
 
 <HideNavigation prev />
