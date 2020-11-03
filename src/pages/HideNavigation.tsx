@@ -4,14 +4,16 @@ export const HideNavigation = ({ next, prev }) => {
   React.useEffect(() => {
     if (next) {
       //@ts-ignore
-      document.querySelectorAll(
+      const element = document.querySelector(
         "div.pagination-nav__item.pagination-nav__item--next>a"
-        //@ts-ignore
-      ).style.display = "none";
+      );
+      //@ts-ignore
+      if (element && element.style) element.style.display = "none";
     }
     if (prev) {
+      const element = document.querySelector("div.pagination-nav__item>a");
       //@ts-ignore
-      document.querySelector("div.pagination-nav__item>a").style.display = "none";
+      if (element && element.style) element.style.display = "none";
     }
   });
 
