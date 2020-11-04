@@ -16,7 +16,8 @@ Latest instruction can be found in [here](https://docs.microsoft.com/en-us/azure
 ### Using the Cosmos DB Emulator to run the database locally
 
 1. Download and install the latest version of CosmosDB Emulator. Once it's installed it will be
-   available on [localhost](https://localhost:8081/_explorer/index.html)
+   available on :q
+   
 
    You can also find the Emulator from Start Menu and type Azure Cosmos DB Emulator.
    The value for **COSMOSDB_KEY** can be found within the emulator. See Primary Key:
