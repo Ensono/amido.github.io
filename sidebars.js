@@ -16,14 +16,13 @@ module.exports = {
             label: "Frontend Web Applications",
             items: [
               "workloads/azure/frontend/ide_node_js",
-              "workloads/azure/frontend/cli_webapp_frameworks",
               "workloads/azure/frontend/monorepo",
               "workloads/azure/frontend/state-management",
               {
                 type: "category",
                 label: "Client Side Rendering",
                 items: [
-                  "workloads/azure/frontend/environment_variables_nodejs_crs",
+                  "workloads/azure/frontend/cli_webapp_frameworks_csr",
                   "workloads/azure/frontend/api_definition_crs",
                   "workloads/azure/frontend/logging_node_js_crs",
                   "workloads/azure/frontend/infrastructure_csr",
@@ -34,7 +33,7 @@ module.exports = {
                 type: "category",
                 label: "Server  Side Rendering",
                 items: [
-                  "workloads/azure/frontend/environment_variables_nodejs",
+                  "workloads/azure/frontend/cli_webapp_frameworks_ssr",
                   "workloads/azure/frontend/cms",
                   "workloads/azure/frontend/identity",
                   "workloads/azure/frontend/api_definition",

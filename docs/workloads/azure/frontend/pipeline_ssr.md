@@ -7,6 +7,7 @@ hide_table_of_contents: false
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import HideNavigation  from "../../../../src/pages/HideNavigation";
 
 The pipeline will automate provisioning and updating the server-side rendering infrastructure and application in Azure.
 
@@ -48,3 +49,7 @@ Follow the steps below to create the pipeline and trigger the initial run.
 2. Select your repository.
 3. Select the **Existing Azure Pipelines YAML files** option and enter the path `build/azDevops/azure/app-pipeline.yml`
 4. Click run and wait for the pipeline to complete.
+
+<!-- markdownlint-disable MD033 -->
+<HideNavigation next />
+

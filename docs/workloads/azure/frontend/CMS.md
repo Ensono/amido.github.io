@@ -6,6 +6,13 @@ hide_title: false
 hide_table_of_contents: false
 ---
 
+## ⚠️ Important 👷‍♀️🚧
+
+> Please note CMS is an optional feature included in the Stacks workspace. To
+> turn off CMS please remove the folder [/cms](../src/ssr/pages/cms) inside
+> ssr/pages before building and make sure the tsconfig does not include these
+> files.
+
 This implementation showcases NextJS's Static Generation feature using
 [Contentful](https://www.contentful.com/) as the data source.
 
@@ -162,10 +169,3 @@ to supplies the locales needed for translations.
   ![published_blog](https://amidostacksassets.blob.core.windows.net/docs/assets/published_blog.jpg)
 
 ---
-
-## ⚠️ Important 👷‍♀️🚧
-
-> Please note CMS is an optional feature included in the Stacks workspace. To
-> turn off CMS please remove the folder [/cms](../src/ssr/pages/cms) inside
-> ssr/pages before building and make sure the tsconfig does not include these
-> files.
