@@ -34,7 +34,8 @@ Below are the questions asked and given options.
      2. React app with client side rendering
      3. API with .NET
      4. API with Java
-     5. Cloud platform shared services
+     5. API with Java and CQRS
+     6. Cloud platform shared services
 3. Please provide the company name
 4. Please provide the project name
 5. Please provide scope (domain)
@@ -47,6 +48,6 @@ Below are the questions asked and given options.
     1. Serenity
     2. Karate
 
-An example is shown in the video below.
+<!-- An example is shown in the video below.-->
 
-[![asciicast](https://asciinema.org/a/358208.svg)](https://asciinema.org/a/358208)
+<!-- [![asciicast](https://asciinema.org/a/358208.svg)](https://asciinema.org/a/358208) -->
