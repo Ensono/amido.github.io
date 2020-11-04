@@ -128,8 +128,6 @@ source code.
 
 #### Verifying common programming flaws
 
-From the `<PROJECT-NAME>/java` folder run
-
  <Tabs
    groupId="operating-systems"
    defaultValue="unix"

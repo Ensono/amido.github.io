@@ -42,9 +42,9 @@ values={[
             <ul>
                 <li>homebrew</li>
                 <li>azure-cli: brew install azure-cli</li>
-                <li><a href="https://adoptopenjdk.net/releases.html">Install Java 11:</a> $ wget https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.9%2B11.1/OpenJDK11U-jdk_x64_mac_hotspot_11.0.9_11.tar.gz</li>
-                <li>Move to the folder where you downloaded the file and extract it : $ tar -xf OpenJDK11U-jdk_x64_mac_hotspot_11.0.9_11.tar.gz</li>
-                <li>Add JAVA to you path: $ export PATH=$PWD/OpenJDK11U-jdk_x64/Contents/Home/bin:$PATH</li>
+                <li><a href="https://adoptopenjdk.net/releases.html">Install Java 11:</a><code> $ wget https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.9%2B11.1/OpenJDK11U-jdk_x64_mac_hotspot_11.0.9_11.tar.gz</code></li>
+                <li>Move to the folder where you downloaded the file and extract it : <code> $ tar -xf OpenJDK11U-jdk_x64_mac_hotspot_11.0.9_11.tar.gz</code></li>
+                <li>Add JAVA to you path: <code> $ export PATH=$PWD/OpenJDK11U-jdk_x64/Contents/Home/bin:$PATH</code></li>
                 <li>An IDE</li>
                 <li>Make sure no environment variables set for Maven_home</li>
                 <li>

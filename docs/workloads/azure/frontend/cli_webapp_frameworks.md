@@ -20,7 +20,7 @@ The best way to get started, is bootstrap the framework using the scaffolding-cl
 
 ### Get developing in just a few questions
 
-[![asciicast](https://asciinema.org/a/znvqsWhks970mYkUjGkwFoTKS.svg)](https://asciinema.org/a/znvqsWhks970mYkUjGkwFoTKS)
+<!-- [![asciicast](https://asciinema.org/a/znvqsWhks970mYkUjGkwFoTKS.svg)](https://asciinema.org/a/znvqsWhks970mYkUjGkwFoTKS) -->
 
 
 ## Get developing

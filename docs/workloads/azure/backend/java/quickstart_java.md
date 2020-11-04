@@ -71,14 +71,14 @@ This is version `1.0.0` of the `java-stacks` project.
     }>
     <TabItem value="unix">
 
-    ```text
+    ```bash
     ./mvnw spring-boot:run
     ```
 
     </TabItem>
     <TabItem value="windows">
 
-    ```text
+    ```bash
     mvnw.cmd spring-boot:run
     ```
 
@@ -101,14 +101,14 @@ This is version `1.0.0` of the `java-stacks` project.
     }>
     <TabItem value="unix">
 
-    ```text
+    ```bash
     ./mvnw spring-boot:run -Dspring-boot.run.jvmArguments='-Djavax.net.ssl.trustStore="<Location of the root cosmos db certificate>" -Djavax.net.ssl.trustStorePassword="changeit"'
     ```
 
     </TabItem>
     <TabItem value="windows">
 
-    ```text
+    ```bash
     mvnw.cmd spring-boot:run -Dspring-boot.run.jvmArguments='-Djavax.net.ssl.trustStore="<Location of the root cosmos db certificate>" -Djavax.net.ssl.trustStorePassword="changeit"'
     ```
 
@@ -177,4 +177,3 @@ Once the Docker image is created, you can then run a Docker container based on t
    ```
 
 which passes in the two required environment variables from your own environment.
-

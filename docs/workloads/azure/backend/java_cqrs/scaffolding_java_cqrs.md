@@ -48,6 +48,5 @@ Below are the questions asked and given options.
     1. Serenity
     2. Karate
 
-An example is shown in the video below.
-
-[![asciicast](https://asciinema.org/a/358208.svg)](https://asciinema.org/a/358208)
+<!--An example is shown in the video below. -->
+<!-- [![asciicast](https://asciinema.org/a/358208.svg)](https://asciinema.org/a/358208) -->
