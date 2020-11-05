@@ -248,7 +248,7 @@ The current configuration uses the value of "2", which means 2 forked processes 
 In order to make the authenticated requests (pass Bearer Token into headers) for the functional tests, please change the value of ```generate.auth0.token``` from ``serenity.conf`` file config to 'true'.
 Also, to get the right access token please provide values for following variables in the ``environment variables``:
 
-```
+```properties
 - CLIENT_ID
 - CLIENT_SECRET
 - AUDIENCE
