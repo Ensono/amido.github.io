@@ -440,7 +440,3 @@ function Icon() {
     </svg>
   );
 }
-
-
-
-
