@@ -126,7 +126,7 @@ In rare cases you may want to suppress the default of Scenario-s executing in pa
 
 For convenience, some stats are logged to the console when execution completes, which should look something like this:
 
-```
+```text
 ======================================================
 elapsed:   2.35 | threads:    5 | thread time: 4.98
 features:    54 | ignored:   25 | efficiency: 0.42
