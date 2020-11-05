@@ -215,8 +215,7 @@ function Home() {
 
             <p>
               Amido Stacks is a catalogue of{" "}
-              <a href={baseUrl + "workloads/workloads"}> workload </a>
-              templates that
+              <a href={baseUrl}> workload</a> templates that
               <br />
               instantly scaffold and deploy boilerplate software projects. Slash
               the time it takes to get productive on your software project
@@ -241,13 +240,11 @@ function Home() {
             <p className="hero__subtitle">
               Choose a{" "}
               <a
-                href={baseUrl + "workloads/workloads"}
+                href={baseUrl}
                 style={{ color: "black", textDecoration: "underline" }}
               >
                 {" "}
-                workload{" "}
-              </a>{" "}
-              below and you can be up- <br />
+                workload</a>{" "} below and you can be up- <br />
               and-running with a project in less than an hour:
             </p>
             <div className={styles.buttons}>
@@ -443,7 +440,3 @@ function Icon() {
     </svg>
   );
 }
-
-
-
-
