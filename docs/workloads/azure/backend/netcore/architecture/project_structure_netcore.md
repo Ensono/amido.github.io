@@ -110,7 +110,7 @@ import TabItem from "@theme/TabItem";
     </TabItem>
     <TabItem value="application">
         <p>
-            The application scope contains the projects that will handle most of the application behavior and technical
+            The application scope contains the projects that will handle most of the application behaviour and technical
             requirements but not the actual business logic of it. It will bridge the public API and the domain logic.
         </p>
         <p>
@@ -274,7 +274,7 @@ import TabItem from "@theme/TabItem";
     <TabItem value="tests">
         <p>
             The tests scope contains all tests that covers the application code via white box method. Tests
-            that are run from inside out with access to the code and testing the behavior of the code.
+            that are run from inside out with access to the code and testing the behaviour of the code.
         </p>
         <p>
             Each set of tests will have a level of coverage and different level of details.
@@ -287,7 +287,7 @@ import TabItem from "@theme/TabItem";
             dependency.
         </p>
         <p>
-            Resources like Repositories and gateway are mocked to provide dummy or fake the behavior expected by the
+            Resources like Repositories and gateway are mocked to provide dummy or fake the behaviour expected by the
             application(or not) in order to test multiple usage scenarios of the application.
         </p>
         <p>
@@ -347,7 +347,7 @@ import TabItem from "@theme/TabItem";
         </p>
         <p>
             The Integration Tests implemented in the scope of this solution does not focus on testing configuration(i.e: test if
-            a deployed service can talk to a database). The focus is to test the implementation behavior between
+            a deployed service can talk to a database). The focus is to test the implementation behaviour between
             the edge components and their respective dependencies, like repositories and gateways. Examples of tests we want do
             with integration testes are:
         </p>
