@@ -15,13 +15,13 @@ Latest instruction can be found in [here](https://docs.microsoft.com/en-us/azure
 
 ### Using the Cosmos DB Emulator to run the database locally
 
-1. Download and install the latest version of CosmosDB Emulator. Once it's installed it will be
+   Download and install the latest version of CosmosDB Emulator. Once it's installed it will be
    available on [localhost](https://localhost:8081/_explorer/index.html)
 
    You can also find the Emulator from Start Menu and type Azure Cosmos DB Emulator.
    The value for **COSMOSDB_KEY** can be found within the emulator. See Primary Key:
 
-   ![CosmosDB](/img/cosmosdb_emulator_3.png)
+   ![cosmosdb](/img/cosmosdb_emulator_3.png)
    Set the cosmosdb URI, databaseName and key in application.yml file using the value above
 
    ```yaml
@@ -43,13 +43,13 @@ Latest instruction can be found in [here](https://docs.microsoft.com/en-us/azure
   Create a database called Stacks for the application, and a database called CosmosDBPackage for the
   integration tests of the CosmosDB package
 
-  ![CosmosDB](/img/cosmosdb_emulator_1.png)
+  ![cosmosdb](/img/cosmosdb_emulator_1.png)
 
 <br />
 
   The **Stacks** database should have a container called **Menu** partitioned by **/id**.
 
-  ![CosmosDB](/img/cosmosdb_emulator_2.png)
+  ![cosmosdb](/img/cosmosdb_emulator_2.png)
 
   <br />
 
@@ -59,7 +59,7 @@ Latest instruction can be found in [here](https://docs.microsoft.com/en-us/azure
 
   <br />
 
-  ![Certificates](/img/cosmosdb_emulator_certificate.png)
+  ![certificates](/img/cosmosdb_emulator_certificate.png)
 
   <br />
 
