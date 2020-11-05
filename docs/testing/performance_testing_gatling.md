@@ -76,5 +76,3 @@ To delete the resources, run the following command from the root project folder 
 
 [Gatling docs](https://gatling.io/docs/current)
 [Performance Testing Framework with Gatling and Maven](https://devqa.io/gatling-maven-performance-test-framework/)
-
-

@@ -4,6 +4,8 @@ title: Stacks Testing Frameworks
 sidebar_label: Stacks Testing Frameworks
 ---
 
+import HideNavigation  from "../../src/pages/HideNavigation";
+
 Building testing frameworks from scratch requires a lot of boilerplate code. It is also hard to know how to get started without examples.
 
 As part of the Amido Stacks projects we have developed a range of testing frameworks for each part of our solutions that are already built in, which can be bootstrapped and tailored to your current project with just one command.
@@ -107,3 +109,5 @@ Since the frameworks provide real examples on deployed applications, we recommen
 ## Feedback
 
 As always, we only improve from the incredible feedback and contributions from people like you. To help us improve, see our contribution guide for more information.
+
+<HideNavigation prev />

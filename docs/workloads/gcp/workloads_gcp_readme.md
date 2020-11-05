@@ -4,6 +4,8 @@ title: Workloads on Google Cloud Platform
 sidebar_label: Workloads on GCP
 ---
 
+import HideNavigation  from "../../../src/pages/HideNavigation";
+
 We're working on adding workloads for GCP at the moment. Currently there is one available:
 
 - Server-side rendered webapp in JavaScript / NodeJS and React
@@ -17,3 +19,6 @@ Currently roadmapped for GCP are these workloads:
 - Client-side rendered webapp in JavaScript / NodeJS and React
 
 Contact stacks@amido.com for more information.
+
+<HideNavigation next />
+<HideNavigation prev />

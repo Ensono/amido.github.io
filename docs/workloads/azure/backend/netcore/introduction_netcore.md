@@ -6,6 +6,9 @@ hide_title: false
 hide_table_of_contents: true
 ---
 
+import HideNavigation  from "../../../../../src/pages/HideNavigation";
+
+
 This is a sample .NET Core REST API application with CQRS, showcasing best coding practices and integrating with Azure
 and scaffolding for Amido Stacks.
 
@@ -45,3 +48,6 @@ As an example below is a Json response to illustrate the structure defined by th
     "enabled": true
 }
 ```
+
+<HideNavigation prev />
+
