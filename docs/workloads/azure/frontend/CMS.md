@@ -1,7 +1,7 @@
 ---
 id: cms
-title: Contentfull Integration
-sidebar_label: CMS - Contentfull Integration
+title: Contentful Integration
+sidebar_label: CMS - Contentful Integration
 hide_title: false
 hide_table_of_contents: false
 ---

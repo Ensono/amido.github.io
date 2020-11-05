@@ -15,13 +15,13 @@ This document outlines the scope of the automated tests that are part of the .NE
 
 Unit testing is an automated test method where software tests are focused on testing small units of a system individually without any external dependencies.
 
-The purpose of unit tests is identify and ensure the unit under test adhere to requirements either functional or non-functional, while ensuring future changes to the system does not break the expected behavior unintentionally.
+The purpose of unit tests is identify and ensure the unit under test adhere to requirements either functional or non-functional, while ensuring future changes to the system does not break the expected behaviour unintentionally.
 
 ### Component Tests
 
 Component testing is a variation of Integration Tests where only internal component integration is covered, any external dependencies must be mocked.
 
-Component Integration Tests focus only in the behavior of integrated units within the component, component tests are not focused on individual behaviors contained within each component, but more the behavior visible outside it.
+Component Integration Tests focus only in the behaviour of integrated units within the component, component tests are not focused on individual behaviours contained within each component, but more the behaviour visible outside it.
 
 When want to identify a chain of events triggered by an operation, if a successful command makes call to the right dependencies(mocked), the input data flows through the layers and are forwarded to the dependencies correctly.
 
@@ -36,11 +36,11 @@ Integration tests are needed to assist on testing areas where unit tests and com
 
 Integration tests should support, not replace, unit and component tests, writing Integration is more complex than wittering other tests, because it might break more often when any of the units changes, for that reason, Component and Unit tests should be preferred.
 
-Component IntegrationTests for internal dependency tests are currently handled by Component Tests, it's focus is only test the behavior of internal dependencies and any external dependency is mocked, for that reason, we don't have integration tests project for internal components
+Component IntegrationTests for internal dependency tests are currently handled by Component Tests, it's focus is only test the behaviour of internal dependencies and any external dependency is mocked, for that reason, we don't have integration tests project for internal components
 
 Integration tests are not meant to test configuration issues, configuration should be easily tested by smoke tests.
 
-Integration tests intended purpose is to test integration behavior between two or more components, check if the data format provided and expected are valid, also encoding and parsing of this data, required parameters are provided correctly.
+Integration tests intended purpose is to test integration behaviour between two or more components, check if the data format provided and expected are valid, also encoding and parsing of this data, required parameters are provided correctly.
 
 
 ### Contract Tests

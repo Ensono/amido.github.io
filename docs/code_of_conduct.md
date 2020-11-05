@@ -27,7 +27,7 @@ We have four key values in which we stand by:
 
 A primary goal of Amido Stacks is to be inclusive to the largest number of contributors, with the most varied and diverse backgrounds possible. As such, we are committed to providing a friendly, safe and welcoming environment for all, regardless of gender, sexual orientation, ability, ethnicity, socioeconomic status, and religion (or lack thereof).
 
-This code of conduct outlines our expectations for all those who participate in our community, as well as the consequences for unacceptable behavior.
+This code of conduct outlines our expectations for all those who participate in our community, as well as the consequences for unacceptable behaviour.
 
 We invite all those who participate in Amido Stacks to help us create safe and positive experiences for everyone.
 
@@ -39,20 +39,20 @@ Communities mirror the societies in which they exist and positive action is esse
 
 If you see someone who is making an extra effort to ensure our community is welcoming, friendly, and encourages all participants to contribute to the fullest extent, we want to know.
 
-### Expected Behavior
+### Expected Behaviour
 
-The following behaviors are expected and requested of all community members:
+The following behaviours are expected and requested of all community members:
 
 * Participate in an authentic and active way. In doing so, you contribute to the health and longevity of this community.
 * Exercise consideration and respect in your speech and actions.
 * Attempt collaboration before conflict.
-* Refrain from demeaning, discriminatory, or harassing behavior and speech.
+* Refrain from demeaning, discriminatory, or harassing behaviour and speech.
 * Be mindful of your surroundings and of your fellow participants. Alert community leaders if you notice a dangerous situation, someone in distress, or violations of this Code of Conduct, even if they seem inconsequential.
 * Remember that community event venues may be shared with members of the public; please be respectful to all patrons of these locations.
 
-### Unacceptable Behavior
+### Unacceptable Behaviour
 
-The following behaviors are considered harassment and are unacceptable within our community:
+The following behaviours are considered harassment and are unacceptable within our community:
 
 * Violence, threats of violence or violent language directed against another person.
 * Sexist, racist, homophobic, transphobic, ableist or otherwise discriminatory jokes and language.
@@ -63,14 +63,14 @@ The following behaviors are considered harassment and are unacceptable within ou
 * Inappropriate physical contact. You should have someone’s consent before touching them.
 * Unwelcome sexual attention. This includes, sexualized comments or jokes; inappropriate touching, groping, and unwelcomed sexual advances.
 * Deliberate intimidation, stalking or following (online or in person).
-* Advocating for, or encouraging, any of the above behavior.
+* Advocating for, or encouraging, any of the above behaviour.
 * Sustained disruption of community events, including talks and presentations.
 
 ### Scope
 
 We expect all community participants (contributors, paid or otherwise; sponsors; and other guests) to abide by this Code of Conduct in all community venues–online and in-person–as well as in all one-on-one communications pertaining to community business.
 
-This code of conduct and its related procedures also applies to unacceptable behavior occurring outside the scope of community activities when such behavior has the potential to adversely affect the safety and well-being of community members.
+This code of conduct and its related procedures also applies to unacceptable behaviour occurring outside the scope of community activities when such behaviour has the potential to adversely affect the safety and well-being of community members.
 
 ***
 
