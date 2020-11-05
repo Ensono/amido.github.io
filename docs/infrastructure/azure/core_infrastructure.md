@@ -4,6 +4,7 @@ title: Azure Core Infrastructure
 sidebar_label: Core Infrastructure
 ---
 
+import HideNavigation  from "../../../src/pages/HideNavigation";
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The core infrastructure is the foundation for all other Stacks Workloads. As, in most cases, this will be the first part of Stacks that you deploy we will also cover bootstrapping your Azure tenant.
@@ -139,3 +140,5 @@ terraform workspace select nonprod || terraform workspace new nonprod
 # Check the plan matches your expected changes. 
 terraform plan
 ```
+
+<HideNavigation prev />

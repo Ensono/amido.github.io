@@ -4,6 +4,7 @@ title: Running API tests with Karate
 sidebar_label: REST API testing with Karate
 ---
 
+import HideNavigation  from "../../../../../src/pages/HideNavigation";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
@@ -159,3 +160,5 @@ scenarios:  145 | passed:   145 | failed: 0
 ### Test Reports
 
  As a result of the test execution - karate will automatically generate the test report - `target/surefire-reports/karate-summary.html`.
+
+<HideNavigation next />

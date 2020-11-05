@@ -6,6 +6,8 @@ hide_title: true
 hide_table_of_contents: false
 ---
 
+import HideNavigation  from "../src/pages/HideNavigation";
+
 ## Code of conduct
 
 [Amido](https://amido.com/about-us/) is a independent technical consultancy delivering intelligent solutions that drive growth, innovation, and operational efficiency.
@@ -73,3 +75,5 @@ This code of conduct and its related procedures also applies to unacceptable beh
 ***
 
 *Primary source: [Citizen Code of Conduct - Revision 2.2](http://citizencodeofconduct.org/) Portions of text derived from the Django Code of Conduct and the Geek Feminism Anti-Harassment Policy.*
+
+<HideNavigation next />

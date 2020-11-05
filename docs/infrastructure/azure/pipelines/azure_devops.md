@@ -4,6 +4,7 @@ title: Azure DevOps Pipeline
 sidebar_label: Azure DevOps
 ---
 
+import HideNavigation  from "../../../../src/pages/HideNavigation";
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The pipeline will automate provisioning and updating the core infrastructure in Azure. This page assumes you have already completed the steps on the [core infrastructure page](../core_infrastructure.md).
@@ -74,3 +75,5 @@ Follow the steps below to create the pipeline and trigger the initial run.
 6. Add an NS record set to the base domain DNS using the same name as the newly created DNS zone and the NS values noted.
 7. Re-run the pipeline in Azure DevOps.
 8. Repeat steps 5, 6 & 7 for the prod DNS zone.
+
+<HideNavigation next />

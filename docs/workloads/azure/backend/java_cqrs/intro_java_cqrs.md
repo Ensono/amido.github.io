@@ -5,6 +5,9 @@ sidebar_label: Introduction
 hide_table_of_contents: true
 ---
 
+import HideNavigation  from "../../../../../src/pages/HideNavigation";
+
+
 ## Stacks Java Spring Boot REST API Application
 
 ### Overview
@@ -42,3 +45,5 @@ As an example below is a Json response to illustrate the structure defined by th
   "enabled" : true
 }
 ```
+
+<HideNavigation prev />
