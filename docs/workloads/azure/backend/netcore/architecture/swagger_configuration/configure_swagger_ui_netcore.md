@@ -6,6 +6,9 @@ sidebar_label: Swagger UI
 hide_table_of_contents: true
 ---
 
+import HideNavigation  from "../../../../../../../src/pages/HideNavigation";
+
+
 ## Configure Swagger UI
 
 <br />
@@ -117,3 +120,5 @@ services.AddSwaggerGen(c => {
 The swagger configuration is complete and the swagger ui should be available as below.
 
 ![Swagger UI](/img/swagger-ui-info.png)
+
+<HideNavigation next />

@@ -40,13 +40,13 @@ An operation that modifies one or multiple resource in the application. Commands
 
 ##### Queries
 
-Are operations that does not modify the resources in the application. It intend to retrieve data from the application but should also raise events in order to generate insights into user behavior for platform improvement.
+Are operations that does not modify the resources in the application. It intend to retrieve data from the application but should also raise events in order to generate insights into user behaviour for platform improvement.
 
 **Example:**
 How many times the user make use of a feature (search invoice, page search results, and so on). Queries will probably also generate data in form of exceptions when the user does not permission to execute operations, for security, auditing and monitoring purposes.
 
 :::note
-All Commands and Queries must raise events in order to generate enough data for observability and behavior analysis by data platform team.
+All Commands and Queries must raise events in order to generate enough data for observability and behaviour analysis by data platform team.
 :::
 
 <br />
