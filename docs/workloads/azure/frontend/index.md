@@ -24,7 +24,7 @@ The base domain code explanations and usage guides for extending can be found
 ---
 
 The base deployment code explanations and usage guides for extending can be
-found [here](./deployment.md)
+found [here](deployment.md)
 
 ## Infrastructure Code
 
@@ -38,4 +38,4 @@ The base infrastructure layout and usage guides for extending can be found
 ---
 
 The usage guides for state management and middlewares can be found
-[here](./state-management.md)
+[here](state-management.md)
