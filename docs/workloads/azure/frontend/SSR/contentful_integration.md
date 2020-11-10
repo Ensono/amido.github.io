@@ -1,5 +1,5 @@
 ---
-id: cms
+id: contentful_integration
 title: Contentful Integration
 sidebar_label: CMS - Contentful Integration
 hide_title: false

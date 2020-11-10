@@ -1,15 +1,16 @@
 ---
-id: cli_webapp_frameworks_ssr
+id: getting_started_csr
 title: Getting Started
 sidebar_label: Getting Started
 hide_title: false
 hide_table_of_contents: false
 ---
 
-import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-import HideNavigation from "../../../../src/pages/HideNavigation";
+import HideNavigation  from "../../../../..//src/pages/HideNavigation";
+
+
 
 Web applications require a lot of boilerplate. It's also hard to know how to get started without examples. We offer both server side rendered (SSR) and client side rendered (CSR) solutions that can be bootstrapped and tailored to your current project with just one command.
 
@@ -25,20 +26,16 @@ The best way to get started, is bootstrap the framework using the scaffolding-cl
 
 ### Get developing in just a few questions
 
-[![asciicast](https://asciinema.org/a/znvqsWhks970mYkUjGkwFoTKS.svg)](https://asciinema.org/a/znvqsWhks970mYkUjGkwFoTKS)
+<!-- [![asciicast](https://asciinema.org/a/znvqsWhks970mYkUjGkwFoTKS.svg)](https://asciinema.org/a/znvqsWhks970mYkUjGkwFoTKS) -->
+
+
+
 
 ## Environment Variables
 
 Before you can start developing you will need to replace your environment variables with the appropriated values.
 This values will be automatically picked up and used by the underlying server and web client.
 
-```bash
- NODE_ENV=development
- PORT={PORT}
- APP_BASE_URL=http://localhost
- APP_BASE_PATH=""
-
-```
 
 <!-- markdownlint-disable MD033 -->
 
@@ -51,44 +48,91 @@ values={[
 <TabItem value="windows">
 
 <div>
-set NODE_ENV=development <br/>
-set PORT= #### <br/>
-set APP_BASE_URL=http://localhost <br/>
-set APP_BASE_PATH="" <br/>
+
+```bash
+set NODE_ENV=development
+```
+
+```bash
+set PORT=<Set PORT here>
+```
+
+```bash
+set NODE_ENV: process.env.NODE_ENV || "development"
+```
+
+```bash
+set PUBLIC_URL: publicUrl
+```
+
+```bash
+set APP_BASE_PATH: ## Stacks base path
+```
+
+```bash
+set MENU_API_URL: ## Used by the internal API fetcher
+```
+
+```bash title="Instrumentation Key"
+set APPINSIGHTS_INSTRUMENTATIONKEY:<Set instrumentation hey here>
+```
 
 </div>
 
-  </TabItem>
+</TabItem>
 
-  <TabItem value="linux">
+<TabItem value="linux">
 
-<div>
-export NODE_ENV=development <br/>
-export PORT= #### <br/>
-export APP_BASE_URL=http://localhost <br/>
-export APP_BASE_PATH= "" <br/>
+  <div>
 
-</div>
+  ```bash
+  export NODE_ENV=development
+  ```
 
-  </TabItem>
+  ```bash
+  export PORT=<Set Port here>
+  ```
+
+  ```bash
+  export NODE_ENV: process.env.NODE_ENV || "development"
+  ```
+
+  ```bash
+  export PUBLIC_URL: publicUrl
+  ```
+
+  ```bash
+  export APP_BASE_PATH: ## Stacks base path
+  ```
+
+  ```bash
+  export MENU_API_URL: ## Used by the internal API fetcher
+  ```
+
+  ```bash title="Instrumentation Key"
+  export APPINSIGHTS_INSTRUMENTATIONKEY:<Instrumentation Key here>
+  ```
+
+  </div>
+
+</TabItem>
 
 </Tabs>
 
-## Configure Optional Features
 
-[Auth0](Identity.md) <br/>
-[Contentful](CMS.md) <br/>
-[API](Api.md) <br/>
+
 
 ## Get developing
 
 At the end of bootstrapping your example framework, you will have an output that will contain all the:
 
-- dependencies
-- scripts
-- example tests
-- pipelines
-- and information to start testing
+* dependencies
+* scripts
+* example tests
+* pipelines
+* and information to start testing 
+
+
 
 ### Development
 
@@ -100,9 +144,9 @@ npm install
 npm run dev
 ```
 
-This offers live reload of both server side - _when using ssr_ - and client side code.
+This offers live reload of both server side  - *when using ssr* - and client side code.
 
-### Production
+### Production 
 
 ```bash
 npm install
@@ -125,5 +169,6 @@ Since the frameworks provide real examples on deployed applications, we recommen
 ## Feedback
 
 As always, we only improve from the incredible feedback and contributions from people like you. To help us improve, see our contribution guide for more information.
+
 
 <HideNavigation prev />
