@@ -148,51 +148,39 @@ function Picker() {
   return (
     <div className="container" style={{display:"flex", justifyContent:"center"}}>
       <div className={["col", "col--6", styles.containerSelects].join(" ")}>
-        <Select
-          placeholder="Select Cloud Provider"
-          value={firstOption}
-          onChange={(selected) => {
-            setFirstOption(selected);
-          }}
-          options={cloudProviders}
+        <Select placeholder="Select Cloud Provider"
+                value={firstOption}
+                onChange={(selected) => { 
+                  setFirstOption(selected); 
+                  setSecondOption(null);
+                }}
+                options={cloudProviders}
         />
 
         {applications.length > 0 && (
-          <Select
-            placeholder="Select Solution Architecture"
-            value={secondOption}
-            onChange={(selected) => {
-              setSecondOption(selected);
-            }}
-            options={applications || []}
+          <Select placeholder="Select Solution Architecture"
+                  value={secondOption}
+                  onChange={(selected) => { 
+                    setSecondOption(selected); 
+                    setThirdOption(null);
+                  }}
+                  options={applications || []}
           />
         )}
 
         {languages.length > 0 && (
-          <Select
-            placeholder="Select Language/Framework"
-            value={thirdOption}
-            onChange={(selected) => {
-              setThirdOption(selected);
-            }}
-            options={languages || []}
+          <Select placeholder="Select Language/Framework"
+                  value={thirdOption}
+                  onChange={(selected) => { 
+                    setThirdOption(selected); 
+                  }}
+                  options={languages || []}
           />
         )}
 
         <div className={styles.buttons} style={{ marginTop: 40 }}>
-          <Link
-            className={clsx(
-              "button button--outline  button--lg",
-              styles.blackButton
-            )}
-            to={
-              baseUrl +
-              (thirdOption
-                ? thirdOption.value
-                : firstOption
-                ? firstOption.value
-                : "")
-            }
+          <Link className={clsx("button button--outline  button--lg", styles.blackButton )}
+                to={ baseUrl + (thirdOption ? thirdOption.value : firstOption ? firstOption.value : "") }
           >
             GET STARTED WITH STACKS
           </Link>
