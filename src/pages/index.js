@@ -293,57 +293,77 @@ function Home() {
                 <h3>Technologies supported by Stacks</h3>
                 <div className={styles.techs2}>
                   <CSharpLogo className={styles.logo} onClick={() => triggerSearch("C#")} />
-                  <JavaLogo className={styles.logo} onClick={() => triggerSearch("Java")} />
+                  <span>
+                    <JavaLogo className={styles.logo} onClick={() => triggerSearch("Java")} />
+                  </span>
                   <NodeLogo className={styles.logo} onClick={() => triggerSearch("node")} />
                 </div>
                 <div className={styles.techs2}>
                   <DotNetCoreLogo className={styles.logo} onClick={() => triggerSearch(".NET Core")} />
-                  <SpringBootLogo className={styles.logo} onClick={() => triggerSearch("Spring Boot")} />
+                  <span>
+                    <SpringBootLogo className={[styles.logo, styles.springBoot].join(" ")} onClick={() => triggerSearch("Spring Boot")} />
+                  </span>
                   <ReactLogo className={styles.logo} onClick={() => triggerSearch("React")} />
                 </div>
                 <div className={styles.techs2}>
                   <Auth0Logo className={styles.logo} onClick={() => triggerSearch("Auth0")} />
-                  <SwaggerLogo className={styles.logo} onClick={() => triggerSearch("Swagger")} />
-                  <GatlingLogo className={styles.logo} onClick={() => triggerSearch("Gatling")} />
+                  <span>
+                    <SwaggerLogo className={[styles.logo, styles.swagger].join(" ")} onClick={() => triggerSearch("Swagger")} />
+                  </span>
+                  <AzureBlobStorageLogo className={[styles.logo, styles.azureBlob].join(" ")} onClick={() => triggerSearch("Azure Blob Storage")} />
                 </div>
                 <div className={styles.techs2}>
-                  <XunitLogo className={[styles.logo, styles.xunit].join(" ")} onClick={() => triggerSearch("xUnit")}/>
-                  <CucumberLogo className={[styles.logo, styles.cucumber].join(" ")} onClick={() => triggerSearch("Cucumber")}/>
-                  <AppliToolsLogo className={styles.logo, styles.applitools } onClick={() => triggerSearch("Applitools")} />
+                  <CosmosDbLogo className={[styles.logo, styles.cosmosdb].join(" ")} onClick={() => triggerSearch("Cosmos DB")} />
+                  <span>
+                    <CucumberLogo className={[styles.logo, styles.cucumber].join(" ")} onClick={() => triggerSearch("Cucumber")}/>
+                  </span>
+                  <GoogleCloudStorageLogo className={[styles.logo, styles.googleStorage].join(" ")} onClick={() => triggerSearch("Google Cloud Storage")} />
                 </div>
                 <div className={styles.techs2}>
-                  <ShouldlyLogo  onClick={() => triggerSearch("Shouldly")} />
+                  <AzureFunctionsLogo className={[styles.logo, styles.azureFunctions].join(" ")} onClick={() => triggerSearch("Azure Functions")} />
+                  <span>
+                    <CypressLogo className={[styles.logo, styles.cypress, styles.tooLarge].join(" ")} onClick={() => triggerSearch("Cypress")}/>
+                  </span>
                   <KarateLogo className={[styles.logo, styles.karate].join(" ")} onClick={() => triggerSearch("Karate")} />
-                  <CypressLogo className={styles.logo} onClick={() => triggerSearch("Cypress")}/>
                 </div>
                 <div className={styles.techs2}>
                   <XbehaveLogo className={styles.logo} onClick={() => triggerSearch("xBehave")} />
-                  <JunitLogo className={styles.logo} onClick={() => triggerSearch("JUnit")} />
+                  <span>
+                    <JunitLogo className={[styles.logo, styles.tooLarge].join(" ")} onClick={() => triggerSearch("JUnit")} />
+                  </span>
                   <TestcafeLogo className={[styles.logo, styles.testCafe].join(" ")} onClick={() => triggerSearch("Testcafe")} />
                 </div>
                 <div className={styles.techs2}>
                   <BddfyLogo className={[styles.logo, styles.bddfy].join(" ")} onClick={() => triggerSearch("BDDfy")} />
-                  <RestAssuredLogo onClick={() => triggerSearch("REST-Assured")} />
+                  <span>
+                    <RestAssuredLogo className={[styles.logo, styles.tooLarge].join(" ")} onClick={() => triggerSearch("REST-Assured")} />
+                  </span>
                   <JestLogo className={[styles.logo, styles.jest].join(" ")} onClick={() => triggerSearch("Jest")} />
                 </div>
                 <div className={styles.techs2}>
                   <AzurePipelinesLogo className={[styles.logo, styles.azurePipelines].join(" ")} onClick={() => triggerSearch("Azure Pipelines")} />
-                  <SerenityLogo onClick={() => triggerSearch("Serenity")} />
+                  <span>
+                    <SerenityLogo className={[styles.logo, styles.tooLarge].join(" ")} onClick={() => triggerSearch("Serenity")} />
+                  </span>
                   <GoogleLighthouseLogo className={[styles.logo, styles.googleLighthouse].join(" ")} onClick={() => triggerSearch("Google Lighthouse")} />
                 </div>
                 <div className={styles.techs2}>
                   <AzureKubernetesServiceLogo className={[styles.logo, styles.azureKubernetes].join(" ")} onClick={() => triggerSearch("Azure Kubernetes Service")} />
-                  <AzureFunctionsLogo className={[styles.logo, styles.azureFunctions].join(" ")} onClick={() => triggerSearch("Azure Functions")} />
+                  <span>
+                    <ShouldlyLogo className={[styles.logo, styles.tooLarge].join(" ")} onClick={() => triggerSearch("Shouldly")} />
+                  </span>
                   <GitlabLogo className={styles.logo} onClick={() => triggerSearch("GitLab")} />
                 </div>
                 <div className={styles.techs2}>
                   <DockerLogo className={styles.logo} onClick={() => triggerSearch("Docker")} />
-                  <AzureBlobStorageLogo class={[styles.logo, styles.azureBlob].join(" ")} onClick={() => triggerSearch("Azure Blob Storage")} />
+                  <span>
+                    <AppliToolsLogo className={styles.logo, styles.applitools } onClick={() => triggerSearch("Applitools")} />
+                  </span>
                   <GoogleKubernetesEngineLogo className={[styles.logo, styles.googleKubernetes].join(" ")} onClick={() => triggerSearch("Google Kubernetes Engine")} />
                 </div>
                 <div className={styles.techs2}>
-                  <CosmosDbLogo className={[styles.logo, styles.cosmosdb].join(" ")} onClick={() => triggerSearch("Cosmos DB")} />
-                  <GoogleCloudStorageLogo className={[styles.logo, styles.googleStorage].join(" ")} onClick={() => triggerSearch("Google Cloud Storage")} />
+                  <XunitLogo className={[styles.logo, styles.xunit, styles.tooLarge].join(" ")} onClick={() => triggerSearch("xUnit")}/>
+                  <GatlingLogo className={[styles.logo, styles.tooLarge].join(" ")} onClick={() => triggerSearch("Gatling")} />
                 </div>
               </div>
             </section>

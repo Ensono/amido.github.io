@@ -2,7 +2,7 @@ import React from "react";
 
 function TestcafeLogo(props) {
     return (
-      <svg width={140} height={127} viewBox="0 0 140 127" fill="none" {...props}>
+      <svg width={140} height={127} viewBox="0 0 115 127" fill="none" {...props}>
         <g clipPath="url(#prefix__clip0)">
           <path
             d="M119.91 11.199l-9.974-9.986-41.894 41.948-15.96-15.98-9.972 9.988 25.932 25.967L119.91 11.2z"

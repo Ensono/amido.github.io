@@ -2,10 +2,10 @@ import React from "react";
 
 function ReactLogo(props) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 60" width="120" height="60" fill-rule="evenodd" {...props}>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 60" width="120" height="60" fillRule="evenodd" {...props}>
         <g transform="matrix(.06928 0 0 .06928 7.367398 13.505331)" fill="none">
             <circle r="50.167" cy="237.628" cx="269.529" fill="#00d8ff" />
-            <g stroke="#00d8ff" stroke-width="24">
+            <g stroke="#00d8ff" strokeWidth="24">
                 <path
                     d="M269.53 135.628c67.356 0 129.928 9.665 177.107 25.907 56.844 19.57 91.794 49.233 91.794 76.093 0 27.99-37.04 59.503-98.083 79.728-46.15 15.29-106.88 23.272-170.818 23.272-65.554 0-127.63-7.492-174.3-23.44-59.046-20.182-94.61-52.103-94.61-79.56 0-26.642 33.37-56.076 89.415-75.616 47.355-16.51 111.472-26.384 179.486-26.384z" />
                 <path

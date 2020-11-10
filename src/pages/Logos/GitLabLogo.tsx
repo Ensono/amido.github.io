@@ -2,7 +2,7 @@ import React from "react";
 
 function GitlabLogo(props) {
     return (
-      <svg viewBox="0 0 865 784" {...props}>
+      <svg viewBox="0 0 784 784" {...props}>
         <style>
           {
             ".prefix__st3{fill:#e24329}.prefix__st4{fill:#fca326}.prefix__st5{fill:#fc6d26}.prefix__st6{fill:#8c929d}.prefix__st15{opacity:.1;fill:#e828e3}.prefix__st15,.prefix__st16{display:inline}.prefix__st18{font-family:&apos;SourceSansPro-Semibold&apos;}.prefix__st19{font-size:24px}"
