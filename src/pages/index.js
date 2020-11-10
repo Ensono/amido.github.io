@@ -146,16 +146,8 @@ function Picker() {
         })
       : [];
   return (
-    <div className="container">
-      <div
-        className="col col--6"
-        style={{
-          color: "black",
-          display: "flex",
-          flexDirection: "column",
-          gap: "20px",
-        }}
-      >
+    <div className="container" style={{display:"flex", justifyContent:"center"}}>
+      <div className={["col", "col--6", styles.containerSelects].join(" ")}>
         <Select
           placeholder="Select Cloud Provider"
           value={firstOption}
@@ -267,9 +259,9 @@ function Home() {
           </div>
         </section>
 
-        <section className={styles.heroBanner}>
+        <section id="stacks-selector" className={styles.heroBanner}>
           <div className="container">
-            <h1 className="hero__title">What can you do with Stacks?</h1>
+            <h1  className="hero__title">What can you do with Stacks?</h1>
             <p className="hero__subtitle">
               Choose a{" "}
               <a
