@@ -19,7 +19,10 @@ The application is designed as a restaurant menu application. Users can create a
 Menus can hold one or more Categories, and a Category holds menu Items.
 The API provides an interface for clients to create/update and delete any or all of the menu components.
 
+
+:::tip Demo
 **For a clearer understanding on the output, there is a demo API hosted [here](https://dev-netcore-api.nonprod.amidostacks.com/api/menu/swagger/index.html).**
+:::
 
 As an example below is a Json response to illustrate the structure defined by the model.
 
