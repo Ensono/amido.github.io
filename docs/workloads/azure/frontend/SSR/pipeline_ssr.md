@@ -51,5 +51,4 @@ Follow the steps below to create the pipeline and trigger the initial run.
 4. Click run and wait for the pipeline to complete.
 
 <!-- markdownlint-disable MD033 -->
-<HideNavigation next />
 

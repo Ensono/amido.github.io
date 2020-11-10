@@ -22,7 +22,9 @@ Brilliant.
 
 The best way to get started, is bootstrap the framework using the scaffolding-cli from Amido Stacks. By using it in interactive mode, you can simply answered 5 questions to get a bespoke framework, ready to go with an example test.
 
-`npx @amidostacks/scaffolding-cli run -i`
+```bash title="Run to start configuring your solution"
+npx @amidostacks/scaffolding-cli run -i
+```
 
 ### Get developing in just a few questions
 
@@ -54,7 +56,7 @@ set NODE_ENV=development
 ```
 
 ```bash
-set PORT=<Set PORT here>
+set PORT=3000
 ```
 
 ```bash
@@ -74,7 +76,7 @@ set MENU_API_URL: ## Used by the internal API fetcher
 ```
 
 ```bash title="Instrumentation Key"
-set APPINSIGHTS_INSTRUMENTATIONKEY:<Set instrumentation hey here>
+set APPINSIGHTS_INSTRUMENTATIONKEY:{Set instrumentation hey here}
 ```
 
 </div>

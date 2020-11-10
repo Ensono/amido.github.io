@@ -21,7 +21,9 @@ Brilliant.
 
 The best way to get started, is bootstrap the framework using the scaffolding-cli from Amido Stacks. By using it in interactive mode, you can simply answered 5 questions to get a bespoke framework, ready to go with an example test.
 
-`npx @amidostacks/scaffolding-cli run -i`
+```bash title="Run to start configuring your solution"
+npx @amidostacks/scaffolding-cli run -i
+```
 
 ### Get developing in just a few questions
 
@@ -34,10 +36,9 @@ This values will be automatically picked up and used by the underlying server an
 
 ```bash
  NODE_ENV=development
- PORT={PORT}
+ PORT=3000
  APP_BASE_URL=http://localhost
  APP_BASE_PATH=""
-
 ```
 
 <!-- markdownlint-disable MD033 -->
@@ -51,10 +52,22 @@ values={[
 <TabItem value="windows">
 
 <div>
-set NODE_ENV=development <br/>
-set PORT= #### <br/>
-set APP_BASE_URL=http://localhost <br/>
-set APP_BASE_PATH="" <br/>
+
+```bash
+set NODE_ENV=development
+```
+
+```bash
+set PORT=3000
+```
+
+```bash
+set APP_BASE_URL=http://localhost
+```
+
+```bash
+set APP_BASE_PATH=""
+```
 
 </div>
 
@@ -63,14 +76,26 @@ set APP_BASE_PATH="" <br/>
   <TabItem value="linux">
 
 <div>
-export NODE_ENV=development <br/>
-export PORT= #### <br/>
-export APP_BASE_URL=http://localhost <br/>
-export APP_BASE_PATH= "" <br/>
+
+```bash
+export NODE_ENV=development
+```
+
+```bash
+export PORT=3000
+```
+
+```bash
+export APP_BASE_URL=http://localhost
+```
+
+```bash
+export APP_BASE_PATH=""
+```
 
 </div>
 
-  </TabItem>
+</TabItem>
 
 </Tabs>
 
