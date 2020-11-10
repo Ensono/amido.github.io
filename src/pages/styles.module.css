@@ -43,7 +43,6 @@
    width: 100%;
    flex-direction: row;
    gap: 30px;
-   background-color: white;
    flex-wrap: wrap;
  }
  
@@ -95,7 +94,6 @@
    width: 100%;
    flex-direction: row;
    gap: 30px;
-   background-color: white;
    justify-content: center;
  }
  
@@ -117,25 +115,16 @@
  
  .features2 .feature p {
    flex-grow: 1;
-   color: black;
+   color: var(--ifm-font-color-base);
    font-size: 30px;
  }
  
  .features2 .feature h3 {
-   color: black;
-   min-height: 175px;
- }
- 
- .logocontainer {
-   background-color: white;
-   display: flex;
-   padding: 50px;
-   justify-content: center;
+  color: var(--ifm-heading-color);
+  min-height: 175px;
  }
  
  .definition {
-   background: white;
-   color: black;
    text-align: center;
    padding: 30px;
    box-shadow: 0px 5px 0px 0px rgba(0, 0, 0, 0.15);
@@ -152,10 +141,9 @@
  }
  
  .supportedTechs {
-   background: white;
-   color: black;
+   color: var(--ifm-heading-color);
    text-align: center;
-   padding: 30px;
+   padding-top: 30px;
    margin-top: 30px;
    margin-bottom: 30px;
    z-index: 5000;
@@ -185,24 +173,81 @@
  }
  
  .logocontainer {
-   background-color: white;
    display: flex;
    padding: 50px;
+   justify-content: center;
  }
+
+ .logocontainer>div>svg>g>path {
+    color: var(--ifm-heading-color);
+    fill: currentColor;
+  }
  
  .techs2 {
-   margin: 30px;
+   height: 100px;
+   margin: 30px 0px 30px 0px;
    display: flex;
    gap: 50px;
-   justify-content: center;
+   justify-content: space-around;
    flex-wrap: wrap;
+   align-items: center;
+   flex-flow: nowrap;
+   flex-direction: row;
  }
- 
- .techs2 img {
-   height: 90px;
-   padding: 20px;
-   border-radius: 20px;
-   cursor: pointer;
-   background-color: white;
+
+ .techs2>:nth-child(2) {
+   flex-grow: 2;
  }
- 
+
+ .techs2:last-child {
+   justify-content: space-between;
+ }
+
+ .techs2:last-child>:nth-child(1) {
+   flex-grow: 2;
+ }
+
+.logo {
+  height: 100%;
+  width: auto;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.supportedTechs~.techs2:last-child {
+  justify-content: space-between;
+}
+
+.xunit>svg>g>path,
+.xunit>svg>g>g>path,
+.azureBlob>path,
+.googleKubernetes>path:first-child,
+.googleStorage>path:first-child,
+.cosmosdb>path:first-child,
+.azureKubernetes>path:first-child,
+.azureFunctions>g>g>path,
+.azurePipelines>path:first-child,
+.googleLighthouse>path:last-child,
+.testCafe>path,
+.karate>path,
+.cucumber>path:first-child,
+.xunit>g>path,
+.xunit>path,
+.jest>path:nth-child(3)
+{
+  color: var(--ifm-heading-color);
+  fill: currentColor;
+}
+
+.bddfy {
+  color: var(--ifm-heading-color);
+  background-color: currentColor;
+}
+
+
+.jest>path:nth-child(2) {
+  color: var(--ifm-heading-color);
+  stroke: var(--ifm-heading-color);
+  fill: currentColor;
+}
+

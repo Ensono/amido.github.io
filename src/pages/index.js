@@ -7,6 +7,39 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 import styles from "./styles.module.css";
 import Select from "react-select";
 
+import CSharpLogo from "./Logos/CSharpLogo";
+import SpringBootLogo from "./Logos/SpringBootLogo";
+import JavaLogo from "./Logos/JavaLogo";
+import NodeLogo from "./Logos/NodeLogo";
+import DotNetCoreLogo from "./Logos/DotNetCoreLogo";
+import ReactLogo from "./Logos/ReactLogo";
+import Auth0Logo from "./Logos/Auth0Logo";
+import SwaggerLogo from "./Logos/SwaggerLogo";
+import GatlingLogo from "./Logos/GatlingLogo";
+import CucumberLogo from "./Logos/CucumberLogo";
+import XunitLogo from "./Logos/XUnitLogo";
+import ShouldlyLogo from "./Logos/ShouldlyLogo";
+import AppliToolsLogo from "./Logos/AppliToolsLogo";
+import KarateLogo from "./Logos/KarateLogo";
+import XbehaveLogo from "./Logos/XBehaveLogo";
+import CypressLogo from "./Logos/CypressLogo";
+import JunitLogo from "./Logos/JUnitLogo";
+import TestcafeLogo from "./Logos/TestcafeLogo";
+import RestAssuredLogo from "./Logos/RestAssuredLogo";
+import JestLogo from "./Logos/JestLogo";
+import AzurePipelinesLogo from "./Logos/AzurePipelinesLogo";
+import SerenityLogo from "./Logos/SerenityLogo";
+import GoogleLighthouseLogo from "./Logos/GoogleLighthouseLogo";
+import AzureKubernetesServiceLogo from "./Logos/AzureKubernetesServiceLogo";
+import AzureFunctionsLogo from "./Logos/AzureFunctionsLogo";
+import GitlabLogo from "./Logos/GitLabLogo";
+import DockerLogo from "./Logos/DockerLogo";
+import AzureBlobStorageLogo from "./Logos/AzureBlobStorageLogo";
+import GoogleKubernetesEngineLogo from "./Logos/GoogleKubernetesEngineLogo";
+import CosmosDbLogo from "./Logos/CosmosDbLogo";
+import GoogleCloudStorageLogo from "./Logos/GoogleCloudStorageLogo";
+import BddfyLogo from "./Logos/BDDfyLogo";
+
 const features = [
   {
     title: "Infrastructure",
@@ -206,7 +239,7 @@ function Home() {
       <main>
         <section className={styles.logocontainer}>
           <div>
-            <Icon />
+            <AmidoStacksLogo />
           </div>
         </section>
         <section className={styles.definition}>
@@ -259,44 +292,58 @@ function Home() {
               <div className="container">
                 <h3>Technologies supported by Stacks</h3>
                 <div className={styles.techs2}>
-                  <img
-                    src="https://logodix.com/logo/42746.png"
-                    onClick={() => triggerSearch("azure")}
-                  />
-                  <img
-                    src="https://logodix.com/logo/433020.jpg"
-                    onClick={() => triggerSearch("google cloud")}
-                  />
-                  <img
-                    src="https://logodix.com/logo/5867.png"
-                    onClick={() => triggerSearch("aws")}
-                  />
+                  <CSharpLogo className={styles.logo} onClick={() => triggerSearch("C#")} />
+                  <JavaLogo className={styles.logo} onClick={() => triggerSearch("Java")} />
+                  <NodeLogo className={styles.logo} onClick={() => triggerSearch("node")} />
                 </div>
-
                 <div className={styles.techs2}>
-                  <img
-                    src="https://logodix.com/logo/773611.jpg"
-                    onClick={() => triggerSearch("c#")}
-                  />
-                  <img
-                    src="https://logodix.com/logo/282992.png"
-                    onClick={() => triggerSearch("java")}
-                  />
-                  <img
-                    src="https://logodix.com/logo/636467.png"
-                    alt="azure devops"
-                    onClick={() => triggerSearch("azure devops")}
-                  />
-                  <img
-                    src="https://logodix.com/logo/258401.png"
-                    alt="git lab"
-                    onClick={() => triggerSearch("gitlab")}
-                  />
-                  <img
-                    src="https://logodix.com/logo/826596.png"
-                    alt="docker"
-                    onClick={() => triggerSearch("docker")}
-                  />
+                  <DotNetCoreLogo className={styles.logo} onClick={() => triggerSearch(".NET Core")} />
+                  <SpringBootLogo className={styles.logo} onClick={() => triggerSearch("Spring Boot")} />
+                  <ReactLogo className={styles.logo} onClick={() => triggerSearch("React")} />
+                </div>
+                <div className={styles.techs2}>
+                  <Auth0Logo className={styles.logo} onClick={() => triggerSearch("Auth0")} />
+                  <SwaggerLogo className={styles.logo} onClick={() => triggerSearch("Swagger")} />
+                  <GatlingLogo className={styles.logo} onClick={() => triggerSearch("Gatling")} />
+                </div>
+                <div className={styles.techs2}>
+                  <XunitLogo className={[styles.logo, styles.xunit].join(" ")} onClick={() => triggerSearch("xUnit")}/>
+                  <CucumberLogo className={[styles.logo, styles.cucumber].join(" ")} onClick={() => triggerSearch("Cucumber")}/>
+                  <AppliToolsLogo className={styles.logo, styles.applitools } onClick={() => triggerSearch("Applitools")} />
+                </div>
+                <div className={styles.techs2}>
+                  <ShouldlyLogo  onClick={() => triggerSearch("Shouldly")} />
+                  <KarateLogo className={[styles.logo, styles.karate].join(" ")} onClick={() => triggerSearch("Karate")} />
+                  <CypressLogo className={styles.logo} onClick={() => triggerSearch("Cypress")}/>
+                </div>
+                <div className={styles.techs2}>
+                  <XbehaveLogo className={styles.logo} onClick={() => triggerSearch("xBehave")} />
+                  <JunitLogo className={styles.logo} onClick={() => triggerSearch("JUnit")} />
+                  <TestcafeLogo className={[styles.logo, styles.testCafe].join(" ")} onClick={() => triggerSearch("Testcafe")} />
+                </div>
+                <div className={styles.techs2}>
+                  <BddfyLogo className={[styles.logo, styles.bddfy].join(" ")} onClick={() => triggerSearch("BDDfy")} />
+                  <RestAssuredLogo onClick={() => triggerSearch("REST-Assured")} />
+                  <JestLogo className={[styles.logo, styles.jest].join(" ")} onClick={() => triggerSearch("Jest")} />
+                </div>
+                <div className={styles.techs2}>
+                  <AzurePipelinesLogo className={[styles.logo, styles.azurePipelines].join(" ")} onClick={() => triggerSearch("Azure Pipelines")} />
+                  <SerenityLogo onClick={() => triggerSearch("Serenity")} />
+                  <GoogleLighthouseLogo className={[styles.logo, styles.googleLighthouse].join(" ")} onClick={() => triggerSearch("Google Lighthouse")} />
+                </div>
+                <div className={styles.techs2}>
+                  <AzureKubernetesServiceLogo className={[styles.logo, styles.azureKubernetes].join(" ")} onClick={() => triggerSearch("Azure Kubernetes Service")} />
+                  <AzureFunctionsLogo className={[styles.logo, styles.azureFunctions].join(" ")} onClick={() => triggerSearch("Azure Functions")} />
+                  <GitlabLogo className={styles.logo} onClick={() => triggerSearch("GitLab")} />
+                </div>
+                <div className={styles.techs2}>
+                  <DockerLogo className={styles.logo} onClick={() => triggerSearch("Docker")} />
+                  <AzureBlobStorageLogo class={[styles.logo, styles.azureBlob].join(" ")} onClick={() => triggerSearch("Azure Blob Storage")} />
+                  <GoogleKubernetesEngineLogo className={[styles.logo, styles.googleKubernetes].join(" ")} onClick={() => triggerSearch("Google Kubernetes Engine")} />
+                </div>
+                <div className={styles.techs2}>
+                  <CosmosDbLogo className={[styles.logo, styles.cosmosdb].join(" ")} onClick={() => triggerSearch("Cosmos DB")} />
+                  <GoogleCloudStorageLogo className={[styles.logo, styles.googleStorage].join(" ")} onClick={() => triggerSearch("Google Cloud Storage")} />
                 </div>
               </div>
             </section>
@@ -369,7 +416,7 @@ function Home() {
 
 export default Home;
 
-function Icon() {
+function AmidoStacksLogo() {
   return (
     <svg
       width="378"
@@ -378,7 +425,7 @@ function Icon() {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <g clip-path="url(#clip0)">
+      <g clipPath="url(#clip0)">
         <path
           d="M236.22 81.8319L188.976 0.00260925L141.732 81.8319L94.488 163.661H125.984L157.48 109.108L188.976 54.5559L220.472 109.108L251.968 163.661H283.464L236.22 81.8319Z"
           fill="#231F20"
@@ -440,3 +487,4 @@ function Icon() {
     </svg>
   );
 }
+
