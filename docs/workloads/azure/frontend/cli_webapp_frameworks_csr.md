@@ -33,8 +33,8 @@ The best way to get started, is bootstrap the framework using the scaffolding-cl
 
 ## Environment Variables
 
-Before you can start developing you will need to replace your environment variables with the appropriated values.
-This values will be automatically picked up and used by the underlying server and web client.
+Before you can start developing you'll need to replace your environment variables with the appropriate values.
+These values will be automatically picked up and used by the underlying server and web client.
 
 
 <!-- markdownlint-disable MD033 -->
@@ -49,7 +49,7 @@ values={[
 
 <div>
 set NODE_ENV=development  <br/>
-set PORT=PORT  <br/>
+set PORT=3000 <br/>
 set NODE_ENV: process.env.NODE_ENV || "development",  <br/>
 set PUBLIC_URL: publicUrl,  <br/>
 set APP_BASE_PATH: ## Stacks base path,  <br/>
@@ -64,7 +64,7 @@ set APPINSIGHTS_INSTRUMENTATIONKEY: ## Instrumentation Key  <br/>
 
 <div>
 export NODE_ENV=development  <br/>
-export PORT=PORT  <br/>
+export PORT=3000  <br/>
 export NODE_ENV: process.env.NODE_ENV || "development",  <br/>
 export PUBLIC_URL: publicUrl,  <br/>
 export APP_BASE_PATH: ## Stacks base path,  <br/>
@@ -81,13 +81,13 @@ export APPINSIGHTS_INSTRUMENTATIONKEY: ## Instrumentation Key  <br/>
 
 ## Get developing
 
-At the end of bootstrapping your example framework, you will have an output that will contain all the:
+At the end of bootstrapping your example framework you'll have an output that will contain all the:
 
 * dependencies
 * scripts
 * example tests
 * pipelines
-* and information to start testing 
+* and information needed to start testing
 
 
 
@@ -101,9 +101,9 @@ npm install
 npm run dev
 ```
 
-This offers live reload of both server side  - *when using ssr* - and client side code.
+This offers live reload of client side code and server side code *if you're using ssr*.
 
-### Production 
+### Production
 
 ```bash
 npm install
@@ -117,7 +117,7 @@ npm run build
 npm run start
 ```
 
-This will start the app in production mode, so you can see how it would behave deployed!
+This will start the app in production mode so you can see how it will behave when deployed.
 
 ## Customising
 
@@ -125,7 +125,7 @@ Since the frameworks provide real examples on deployed applications, we recommen
 
 ## Feedback
 
-As always, we only improve from the incredible feedback and contributions from people like you. To help us improve, see our contribution guide for more information.
+Your feedback and contributions will help us to improve. See the [Stacks guide to new contributions](https://amido.github.io/stacks/docs/contributions) for more information.
 
 
 <HideNavigation prev />
