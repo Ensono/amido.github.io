@@ -20,7 +20,7 @@ Instance and not a method initialized implementation. the method paratemer is
 mainly used as a type guard.
 
 Sample implementation of an entire API can be found in the
-[menu api](../src/state/ducks/get-menus), this demonstrates how to setup a saga to fetch a specific business endpoint.
+menu api under `../src/state/ducks/get-menus`, this demonstrates how to setup a saga to fetch a specific business endpoint.
 
 
 ```javascript
@@ -31,7 +31,7 @@ export const fetchMenus = () =>
     })
 ```
 
-The specific saga implementation is [menu api](../src/state/ducks/get-menus/saga)
+The specific saga implementation is menu api `../src/state/ducks/get-menus/saga`
 
 ```javascript
 import {all, call, fork, put, takeEvery} from "redux-saga/effects"
