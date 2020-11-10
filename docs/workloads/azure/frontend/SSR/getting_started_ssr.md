@@ -53,45 +53,45 @@ values={[
 
 <div>
 
-```bash
-set NODE_ENV=development
-```
+  ```bash
+  set NODE_ENV=development
+  ```
 
-```bash
-set PORT=3000
-```
+  ```bash
+  set PORT=3000
+  ```
 
-```bash
-set APP_BASE_URL=http://localhost
-```
+  ```bash
+  set APP_BASE_URL=http://localhost
+  ```
 
-```bash
-set APP_BASE_PATH=""
-```
+  ```bash
+  set APP_BASE_PATH=""
+  ```
 
 </div>
 
-  </TabItem>
+</TabItem>
 
-  <TabItem value="linux">
+<TabItem value="linux">
 
 <div>
 
-```bash
-export NODE_ENV=development
-```
+  ```bash
+  export NODE_ENV=development
+  ```
 
-```bash
-export PORT=3000
-```
+  ```bash
+  export PORT=3000
+  ```
 
-```bash
-export APP_BASE_URL=http://localhost
-```
+  ```bash
+  export APP_BASE_URL=http://localhost
+  ```
 
-```bash
-export APP_BASE_PATH=""
-```
+  ```bash
+  export APP_BASE_PATH=""
+  ```
 
 </div>
 
@@ -117,6 +117,8 @@ At the end of bootstrapping your example framework, you will have an output that
 
 ### Development
 
+Move to the `<PROJECT-NAME>/src` folder and run the next commands
+
 ```bash
 npm install
 ```
@@ -128,6 +130,8 @@ npm run dev
 This offers live reload of both server side - _when using ssr_ - and client side code.
 
 ### Production
+
+Move to the `<PROJECT-NAME>/src` folder and run the next commands
 
 ```bash
 npm install

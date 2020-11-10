@@ -51,33 +51,33 @@ values={[
 
 <div>
 
-```bash
-set NODE_ENV=development
-```
+  ```bash
+  set NODE_ENV=development
+  ```
 
-```bash
-set PORT=3000
-```
+  ```bash
+  set PORT=3000
+  ```
 
-```bash
-set NODE_ENV: process.env.NODE_ENV || "development"
-```
+  ```bash
+  set NODE_ENV: process.env.NODE_ENV || "development"
+  ```
 
-```bash
-set PUBLIC_URL: publicUrl
-```
+  ```bash
+  set PUBLIC_URL: publicUrl
+  ```
 
-```bash
-set APP_BASE_PATH: ## Stacks base path
-```
+  ```bash
+  set APP_BASE_PATH: ## Stacks base path
+  ```
 
-```bash
-set MENU_API_URL: ## Used by the internal API fetcher
-```
+  ```bash
+  set MENU_API_URL: ## Used by the internal API fetcher
+  ```
 
-```bash title="Instrumentation Key"
-set APPINSIGHTS_INSTRUMENTATIONKEY:{Set instrumentation hey here}
-```
+  ```bash title="Instrumentation Key"
+  set APPINSIGHTS_INSTRUMENTATIONKEY:{Set instrumentation hey here}
+  ```
 
 </div>
 
@@ -85,7 +85,7 @@ set APPINSIGHTS_INSTRUMENTATIONKEY:{Set instrumentation hey here}
 
 <TabItem value="linux">
 
-  <div>
+<div>
 
   ```bash
   export NODE_ENV=development
@@ -115,7 +115,7 @@ set APPINSIGHTS_INSTRUMENTATIONKEY:{Set instrumentation hey here}
   export APPINSIGHTS_INSTRUMENTATIONKEY:<Instrumentation Key here>
   ```
 
-  </div>
+</div>
 
 </TabItem>
 
@@ -138,6 +138,8 @@ At the end of bootstrapping your example framework, you will have an output that
 
 ### Development
 
+Move to the `<PROJECT-NAME>/src` folder and run the next commands
+
 ```bash
 npm install
 ```
@@ -148,7 +150,9 @@ npm run dev
 
 This offers live reload of both server side  - *when using ssr* - and client side code.
 
-### Production 
+### Production
+
+Move to the `<PROJECT-NAME>/src` folder and run the next commands
 
 ```bash
 npm install
