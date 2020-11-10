@@ -33,7 +33,6 @@ Before you can start developing you will need to replace your environment variab
 This values will be automatically picked up and used by the underlying server and web client.
 
 ```bash
-##
  NODE_ENV=development
  PORT={PORT}
  APP_BASE_URL=http://localhost
@@ -77,9 +76,9 @@ export APP_BASE_PATH= "" <br/>
 
 ## Configure Optional Features
 
-[Auth0](docs/workloads/azure/frontend/identity) <br/>
-[Contentful](docs/workloads/azure/frontend/cms) <br/>
-[API](docs/workloads/azure/frontend/api_definition) <br/>
+[Auth0](Identity.md) <br/>
+[Contentful](CMS.md) <br/>
+[API](Api.md) <br/>
 
 ## Get developing
 

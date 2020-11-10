@@ -21,7 +21,7 @@ values={[
         <div>
             <h5>Mandatory</h5>
             <ul>
-                <li><a href="https://adoptopenjdk.net/">Install Java 11</a> and set JAVA_HOME environment variable to the directory java is installed and make sure MAVEN_HOME environment variable is not set in</li>
+                <li><a href="https://adoptopenjdk.net/">Install Java 11</a> and set JAVA_HOME environment variable to the directory java is installed and make sure MAVEN_HOME environment variable is not set</li>
                 <li><a href="https://aka.ms/cosmosdb-emulator">CosmosDB Emulator 2.4.5+</a></li>
                 <li>An IDE</li>
             </ul>
@@ -46,7 +46,7 @@ values={[
                 <li>Move to the folder where you downloaded the file and extract it :<code> $ tar -xf OpenJDK11U-jdk_x64_mac_hotspot_11.0.9_11.tar.gz</code></li>
                 <li>Add JAVA to you path: <code> export PATH=$PWD/OpenJDK11U-jdk_x64/Contents/Home/bin:$PATH</code></li>
                 <li>An IDE</li>
-                <li>Make sure no environment variables set for Maven_home</li>
+                <li>Make sure no environment variables set for MAVEN_HOME</li>
                 <li>
                     <a href="https://aka.ms/cosmosdb-emulator">CosmosDB Emulator 2.4.5+</a>: Currently the Cosmos emulator can only be run on Windows. If you have an Azure subscription, you are able to use the Azure version instead
                 </li>
@@ -64,5 +64,5 @@ values={[
 </Tabs>
 
 :::note
-The current version of Amido Stacks is a using Java 11 (Current LTS, recommended).
+The current version of Amido Stacks is using Java 11 (Current LTS, recommended).
 :::
