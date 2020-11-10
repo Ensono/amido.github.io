@@ -87,4 +87,4 @@ function AzureKubernetesServiceLogo(props) {
   );
 }
 
-  export default AzureKubernetesServiceLogo;
+export default AzureKubernetesServiceLogo;

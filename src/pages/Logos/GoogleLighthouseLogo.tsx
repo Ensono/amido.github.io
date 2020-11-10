@@ -97,4 +97,4 @@ function GoogleLighthouseLogo(props) {
     );
   }
 
-  export default GoogleLighthouseLogo;
+export default GoogleLighthouseLogo;

@@ -33,4 +33,4 @@ function CypressLogo(props) {
   )
 }
 
-  export default CypressLogo;
+export default CypressLogo;
