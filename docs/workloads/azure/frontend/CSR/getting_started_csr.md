@@ -1,5 +1,5 @@
 ---
-id: cli_webapp_frameworks_csr
+id: getting_started_csr
 title: Getting Started
 sidebar_label: Getting Started
 hide_title: false
@@ -8,7 +8,7 @@ hide_table_of_contents: false
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-import HideNavigation  from "../../../../src/pages/HideNavigation";
+import HideNavigation  from "../../../../../src/pages/HideNavigation";
 
 
 
@@ -22,7 +22,9 @@ Brilliant.
 
 The best way to get started, is bootstrap the framework using the scaffolding-cli from Amido Stacks. By using it in interactive mode, you can simply answered 5 questions to get a bespoke framework, ready to go with an example test.
 
-`npx @amidostacks/scaffolding-cli run -i`
+```bash title="Run to start configuring your solution"
+npx @amidostacks/scaffolding-cli run -i
+```
 
 ### Get developing in just a few questions
 
@@ -48,31 +50,74 @@ values={[
 <TabItem value="windows">
 
 <div>
-set NODE_ENV=development  <br/>
-set PORT=PORT  <br/>
-set NODE_ENV: process.env.NODE_ENV || "development",  <br/>
-set PUBLIC_URL: publicUrl,  <br/>
-set APP_BASE_PATH: ## Stacks base path,  <br/>
-set MENU_API_URL: ## Used by the internal API fetcher  <br/>
-set APPINSIGHTS_INSTRUMENTATIONKEY: ## Instrumentation Key  <br/>
+
+  ```bash
+  set NODE_ENV=development
+  ```
+
+  ```bash
+  set PORT=3000
+  ```
+
+  ```bash
+  set NODE_ENV: process.env.NODE_ENV || "development"
+  ```
+
+  ```bash
+  set PUBLIC_URL: publicUrl
+  ```
+
+  ```bash
+  set APP_BASE_PATH: ## Stacks base path
+  ```
+
+  ```bash
+  set MENU_API_URL: ## Used by the internal API fetcher
+  ```
+
+  ```bash title="Instrumentation Key"
+  set APPINSIGHTS_INSTRUMENTATIONKEY:{Set instrumentation hey here}
+  ```
 
 </div>
 
-  </TabItem>
+</TabItem>
 
-  <TabItem value="linux">
+<TabItem value="linux">
 
 <div>
-export NODE_ENV=development  <br/>
-export PORT=PORT  <br/>
-export NODE_ENV: process.env.NODE_ENV || "development",  <br/>
-export PUBLIC_URL: publicUrl,  <br/>
-export APP_BASE_PATH: ## Stacks base path,  <br/>
-export MENU_API_URL: ## Used by the internal API fetcher  <br/>
-export APPINSIGHTS_INSTRUMENTATIONKEY: ## Instrumentation Key  <br/>
+
+  ```bash
+  export NODE_ENV=development
+  ```
+
+  ```bash
+  export PORT=<Set Port here>
+  ```
+
+  ```bash
+  export NODE_ENV: process.env.NODE_ENV || "development"
+  ```
+
+  ```bash
+  export PUBLIC_URL: publicUrl
+  ```
+
+  ```bash
+  export APP_BASE_PATH: ## Stacks base path
+  ```
+
+  ```bash
+  export MENU_API_URL: ## Used by the internal API fetcher
+  ```
+
+  ```bash title="Instrumentation Key"
+  export APPINSIGHTS_INSTRUMENTATIONKEY:<Instrumentation Key here>
+  ```
+
 </div>
 
-  </TabItem>
+</TabItem>
 
 </Tabs>
 
@@ -93,6 +138,8 @@ At the end of bootstrapping your example framework, you will have an output that
 
 ### Development
 
+Move to the `<PROJECT-NAME>/src` folder and run the next commands
+
 ```bash
 npm install
 ```
@@ -103,7 +150,9 @@ npm run dev
 
 This offers live reload of both server side  - *when using ssr* - and client side code.
 
-### Production 
+### Production
+
+Move to the `<PROJECT-NAME>/src` folder and run the next commands
 
 ```bash
 npm install

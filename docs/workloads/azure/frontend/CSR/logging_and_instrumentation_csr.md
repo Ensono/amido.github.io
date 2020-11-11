@@ -1,5 +1,5 @@
 ---
-id: logging_node_js
+id: logging_and_instrumentation_csr
 title: Logging and Instrumentation
 sidebar_label: Logging and Instrumentation
 hide_title: false
@@ -14,7 +14,20 @@ AppInsights is configured with the `instrumentationKey`
 (or `process.env.APPINSIGHTS_INSTRUMENTATIONKEY`) provided from the environment
 variables. 
 
-AppInsights collects the console logs provided by the Winston.
-AppInsights on Client side is implemented using a React HOC(Higher order
-component) to the Next's `_app.ts`.
- 
+
+ By default this will add telemetry to the Redux Reducers, and track all the dispatched actions!
+
+ Awesome!
+
+## Utility Functions
+
+ There is also a set of utility functions to handle custom telemetry:
+
+
+ ```javascript
+    trackError(error :  Error)
+
+    customTrace(error :  Error)
+ ```
+
+ You can find those in `utility/telemetry.ts` file.
