@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[95],{71:function(t,n,e){"use strict";e.r(n);var i=e(2),a=e(0),c=e.n(a);n.default=function(t){return c.a.createElement("img",Object(i.a)({src:"../../../static/img/JUnit.svg",alt:"JUnit"},t))}}}]);

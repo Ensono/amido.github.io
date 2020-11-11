@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[7],{52:function(e,t,a){"use strict";a.r(t);var n=a(2),c=a(0),i=a.n(c);t.default=function(e){return i.a.createElement("img",Object(n.a)({src:"../../../static/img/xbehave.svg",alt:"xBehave"},e))}}}]);
