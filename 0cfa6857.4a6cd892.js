@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[10],{54:function(t,n,e){"use strict";e.r(n);var a=e(2),c=e(0),s=e.n(c);n.default=function(t){return s.a.createElement("img",Object(a.a)({src:"../../../static/img/shouldly.svg",alt:"Shouldly"},t))}}}]);

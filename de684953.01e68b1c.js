@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[120],{79:function(e,s,t){"use strict";t.r(s);var n=t(2),a=t(0),r=t.n(a);s.default=function(e){return r.a.createElement("img",Object(n.a)({src:"../../../static/img/rest-assured.svg",alt:"Rest Assured"},e))}}}]);

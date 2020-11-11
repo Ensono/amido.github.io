@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[69],{69:function(t,n,e){"use strict";e.r(n);var a=e(2),c=e(0),i=e.n(c);n.default=function(t){return i.a.createElement("img",Object(a.a)({src:"../../../static/img/BDDfy.svg",alt:"BDDfy"},t))}}}]);

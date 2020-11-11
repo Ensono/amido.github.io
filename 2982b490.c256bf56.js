@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[25],{59:function(e,t,n){"use strict";n.r(t);var i=n(2),a=n(0),c=n.n(a);t.default=function(e){return c.a.createElement("img",Object(i.a)({src:"../../../static/img/serenity.svg",alt:"Serenity"},e))}}}]);
