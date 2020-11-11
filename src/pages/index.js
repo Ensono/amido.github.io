@@ -351,30 +351,19 @@ function Home() {
         </div>
         <section className={styles.features}>
           {features.map((feature) => (
-            <div
-              className={clsx(styles.feature)}
-              style={{
-                justifyContent: feature.justification,
-                backgroundColor: feature.color,
-              }}
+            <div className={clsx(styles.feature)}
+                 style={{
+                   justifyContent: feature.justification,
+                   backgroundColor: feature.color,
+                 }}
             >
-              <div
-                style={{
-                  maxWidth: "480px",
-                  display: "flex",
-                  flexDirection: "column",
-                }}
-              >
-                <h3> {feature.title}</h3>
+              <div>
+                <h3>{feature.title}</h3>
                 <p>{feature.description}</p>
 
                 <div className={styles.buttons} style={{ marginTop: 20 }}>
-                  <Link
-                    className={clsx(
-                      "button  button--outline button--lg",
-                      styles.blackButton
-                    )}
-                    to={baseUrl + feature.link}
+                  <Link className={clsx("button  button--outline button--lg", styles.blackButton)}
+                        to={baseUrl + feature.link}
                   >
                     {feature.title}
                   </Link>
