@@ -1,8 +1,9 @@
 import React from "react";
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 function BddfyLogo(props) {
   return (
-    <img src="../../../static/img/BDDfy.svg" alt="BDDfy" {...props}/>
+    <img src={useBaseUrl('img/BDDfy.svg')} alt="BDDfy" {...props}/>
   );
 }
 

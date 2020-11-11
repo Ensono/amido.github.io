@@ -1,8 +1,9 @@
 import React from "react";
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 function SerenityLogo(props) {
   return (
-    <img src="../../../static/img/serenity.svg" alt="Serenity" {...props}/>
+    <img src={useBaseUrl('img/serenity.svg')} alt="Serenity" {...props}/>
   )
 }
 

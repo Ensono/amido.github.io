@@ -1,8 +1,9 @@
 import React from "react";
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 function JunitLogo(props) {
   return (
-    <img src="../../../static/img/JUnit.svg" alt="JUnit" {...props}/>
+    <img src={useBaseUrl('img/JUnit.svg')} alt="JUnit" {...props}/>
   );
 }
 
