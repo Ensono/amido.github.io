@@ -33,7 +33,7 @@ Taken together your tech choices in these six areas are what Stacks calls a *Wor
 
 When you run Stacks it presents you with options in each of these six areas. Then it instantly generates your chosen workload, complete with sample applications and cloud provisioning, if that's what you've selected. All the technical overhead is done so you're ready to start coding.
 
-Stacks currently offers 12 unique workload variations with another 43 roadmapped. What are they? Explore the What can you do with Stacks? element [on the home page](https://amido.github.io/stacks/) to find out.
+Stacks currently offers 12 unique workload variations with another 43 roadmapped. What are they? Explore the [What can you do with Stacks?](../#stacks-selector) element [on the home page](https://amido.github.io/stacks/) to find out.
 
 ## Why use Stacks
 

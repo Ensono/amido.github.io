@@ -1,5 +1,5 @@
 ---
-id: cli_webapp_frameworks_ssr
+id: getting_started_ssr
 title: Getting Started
 sidebar_label: Getting Started
 hide_title: false
@@ -9,7 +9,7 @@ hide_table_of_contents: false
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-import HideNavigation from "../../../../src/pages/HideNavigation";
+import HideNavigation from "../../../../../src/pages/HideNavigation";
 
 Web applications require a lot of boilerplate. It's also hard to know how to get started without examples. We offer both server side rendered (SSR) and client side rendered (CSR) solutions that can be bootstrapped and tailored to your current project with just one command.
 
@@ -21,7 +21,9 @@ Brilliant.
 
 The best way to get started, is bootstrap the framework using the scaffolding-cli from Amido Stacks. By using it in interactive mode, you can simply answered 5 questions to get a bespoke framework, ready to go with an example test.
 
-`npx @amidostacks/scaffolding-cli run -i`
+```bash title="Run to start configuring your solution"
+npx @amidostacks/scaffolding-cli run -i
+```
 
 ### Get developing in just a few questions
 
@@ -34,10 +36,9 @@ This values will be automatically picked up and used by the underlying server an
 
 ```bash
  NODE_ENV=development
- PORT={PORT}
+ PORT=3000
  APP_BASE_URL=http://localhost
  APP_BASE_PATH=""
-
 ```
 
 <!-- markdownlint-disable MD033 -->
@@ -51,34 +52,58 @@ values={[
 <TabItem value="windows">
 
 <div>
-set NODE_ENV=development <br/>
-set PORT= #### <br/>
-set APP_BASE_URL=http://localhost <br/>
-set APP_BASE_PATH="" <br/>
+
+  ```bash
+  set NODE_ENV=development
+  ```
+
+  ```bash
+  set PORT=3000
+  ```
+
+  ```bash
+  set APP_BASE_URL=http://localhost
+  ```
+
+  ```bash
+  set APP_BASE_PATH=""
+  ```
 
 </div>
 
-  </TabItem>
+</TabItem>
 
-  <TabItem value="linux">
+<TabItem value="linux">
 
 <div>
-export NODE_ENV=development <br/>
-export PORT= #### <br/>
-export APP_BASE_URL=http://localhost <br/>
-export APP_BASE_PATH= "" <br/>
+
+  ```bash
+  export NODE_ENV=development
+  ```
+
+  ```bash
+  export PORT=3000
+  ```
+
+  ```bash
+  export APP_BASE_URL=http://localhost
+  ```
+
+  ```bash
+  export APP_BASE_PATH=""
+  ```
 
 </div>
 
-  </TabItem>
+</TabItem>
 
 </Tabs>
 
 ## Configure Optional Features
 
-[Auth0](Identity.md) <br/>
-[Contentful](CMS.md) <br/>
-[API](Api.md) <br/>
+[Auth0](identity.md) <br/>
+[Contentful](contentful_integration.md) <br/>
+[API](api_definition.md) <br/>
 
 ## Get developing
 
@@ -92,6 +117,8 @@ At the end of bootstrapping your example framework, you will have an output that
 
 ### Development
 
+Move to the `<PROJECT-NAME>/src` folder and run the next commands
+
 ```bash
 npm install
 ```
@@ -103,6 +130,8 @@ npm run dev
 This offers live reload of both server side - _when using ssr_ - and client side code.
 
 ### Production
+
+Move to the `<PROJECT-NAME>/src` folder and run the next commands
 
 ```bash
 npm install

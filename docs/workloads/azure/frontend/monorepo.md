@@ -1,5 +1,5 @@
 ---
-id: monorepo
+id: stacks_monorepo
 title: Stacks Monorepo
 sidebar_label: Stacks Monorepo
 ---
