@@ -2,6 +2,18 @@
 id: infrastructure_netcore
 title: .NET Core - Azure Infrastructure
 sidebar_label: Infrastructure
+description: High level design of the reference implementation of the .NET Core Stacks REST API with CQRS.
+keywords:
+  - .net core
+  - rest api
+  - cqrs
+  - pipeline
+  - azure
+  - azure container registry
+  - azure kubernetes service
+  - application insights
+  - cosmos db
+  - deployment
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

@@ -2,6 +2,22 @@
 id: execute_serenity_api_tests
 title: Running API tests with Serenity
 sidebar_label: REST API testing with Serenity
+description: How to test rest api application with serenity bdd and serenity rest assured
+keywords:
+  - java
+  - rest 
+  - api
+  - serenity
+  - serenity bdd
+  - rest assured
+  - run serenity tests
+  - serenity test example
+  - test runner
+  - serenity test report
+  - execute parallel tests
+  - framework
+  - testing
+  - test
 ---
 
 import Tabs from "@theme/Tabs";

@@ -2,6 +2,17 @@
 id: testing_dotnet_selenium
 title: UI Browser Automation with Selenium and .NET
 sidebar_label: C# - Selenium .NET
+description: UI tests with Selenium and .NET
+keywords:
+  - selenium
+  - tests
+  - testing
+  - ui
+  - .Net
+  - template
+  - example
+  - run the tests
+  - model
 ---
 
 

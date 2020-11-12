@@ -4,6 +4,18 @@ title: SSR Application - Azure DevOps Pipeline
 sidebar_label: Pipeline
 hide_title: false
 hide_table_of_contents: false
+description: SSR Application - Azure DevOps Pipeline
+keywords:
+  - rest 
+  - api
+  - ssr
+  - application
+  - azure
+  - pipeline
+  - side 
+  - rendering
+  - server 
+  - server side rendering  
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

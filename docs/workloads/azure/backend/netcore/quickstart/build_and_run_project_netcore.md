@@ -4,6 +4,17 @@ title: Build & Run
 sidebar_label: Build & Run the Project
 hide_title: true
 hide_table_of_contents: true
+description:  Build and Run .NET Core REST API application with CQRS
+keywords:
+  - .net core
+  - rest api
+  - cqrs
+  - azure
+  - application insights
+  - cosmos db
+  - build
+  - run
+  - application
 ---
 
 ## Build and Run the application

@@ -4,6 +4,20 @@ title: Server Side Cache
 sidebar_label: Server Side Cache
 hide_title: false
 hide_table_of_contents: true
+description: SSR Application - Server Side Cache
+keywords:
+  - rest 
+  - api
+  - ssr
+  - application
+  - azure
+  - server
+  - side
+  - cache
+  - side 
+  - rendering
+  - server 
+  - server side rendering  
 ---
 
 ## Cache server side

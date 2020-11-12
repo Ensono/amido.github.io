@@ -2,6 +2,16 @@
 id: pipeline_java
 title: Java REST API - Azure DevOps Pipeline
 sidebar_label: Pipeline
+description: Java REST API- Azure DevOps Pipeline
+keywords:
+  - java
+  - rest 
+  - api
+  - azure
+  - devops
+  - pipeline
+  - spring boot
+  - setting
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

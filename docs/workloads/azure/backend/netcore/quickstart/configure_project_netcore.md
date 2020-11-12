@@ -4,6 +4,19 @@ title: Configure the project
 hide_title: true
 sidebar_label: Configure the project
 hide_table_of_contents: true
+description:  Configure, Build and run .NET Core REST API application with CQRS on local and docker container
+keywords:
+  - .net core
+  - rest api
+  - cqrs
+  - azure
+  - application insights
+  - cosmos db
+  - build
+  - run
+  - application
+  - configure
+  - docker
 ---
 
 ## Configure the project

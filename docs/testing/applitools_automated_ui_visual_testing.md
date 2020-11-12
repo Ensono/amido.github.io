@@ -2,6 +2,13 @@
 id: visual_analysis
 title: Automated UI Visual Testing With Applitools
 sidebar_label: Automated UI Visual Testing
+description: How to run tests with Applitools
+keywords:
+  - cypress
+  - tests
+  - testing
+  - applitools
+  - visual analysis
 ---
 Visual Regression testing or Visual testing in software is a quality assurance activity of verifying if the visual aspects of the application’s user interface seem appropriate to the user. It is also known as Visual Validation Testing.
 
@@ -28,9 +35,11 @@ The configuration file has been added to the `[tsconfig.cypress.json](./tsconfig
 
 In order run Cypress with Applitools, you will need an [Applitools](https://applitools.com/) account. Once signed up (there is a free tier), the API key can be used to create a connection with Applitools.
 
-Please follow the nvm[Cypress Tutorial](https://applitools.com/tutorials/cypress.html)
+Please follow the nvm [Cypress Tutorial](https://applitools.com/tutorials/cypress.html)
 
-`export APPLITOOLS_API_KEY=`
+ ```bash
+`export APPLITOOLS_API_KEY=KEY_VALUE`
+ ```
 
 ### How to run the tests locally
 

@@ -4,6 +4,15 @@ title: Introduction to the .NET Core REST API application
 sidebar_label: Introduction
 hide_title: false
 hide_table_of_contents: true
+description: Introduction to .NET Core REST API application with CQRS
+keywords:
+  - .net core
+  - rest api
+  - cqrs
+  - showcase
+  - azure
+  - application insights
+  - cosmos db
 ---
 
 import HideNavigation  from "../../../../../src/pages/HideNavigation";

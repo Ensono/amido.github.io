@@ -4,6 +4,19 @@ title: Logging and Instrumentation
 sidebar_label: Logging and Instrumentation
 hide_title: false
 hide_table_of_contents: true
+description: CSR Application - Logging and Instrumentation
+keywords:
+  - rest 
+  - api
+  - csr
+  - application
+  - template
+  - logging
+  - instrumentation
+  - client 
+  - side 
+  - rendering
+  - client side rendering
 ---
 
 [Application insights](https://docs.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview)

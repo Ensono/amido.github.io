@@ -214,7 +214,8 @@ function Home() {
   return (
     <Layout
       title={`${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />"
+      description={`${siteConfig.customFields.description}`}
+      keywords={siteConfig.customFields.keywords}
     >
       <main>
         <section className={styles.logocontainer}>

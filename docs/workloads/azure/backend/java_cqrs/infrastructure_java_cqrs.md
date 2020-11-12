@@ -2,6 +2,17 @@
 id: infrastructure_java_cqrs
 title: Java REST API with CQRS - Azure Infrastructure
 sidebar_label: Infrastructure
+description: Java REST API with CQRS - Azure Infrastructure
+keywords:
+  - java
+  - rest 
+  - api
+  - cqrs
+  - azure
+  - infrastructure
+  - ingress
+  - service
+  - aks
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

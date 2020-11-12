@@ -4,6 +4,26 @@ title: Data Storage - CosmosDB
 sidebar_label: Data Storage - CosmosDB
 hide_title: true
 hide_table_of_contents: true
+description: .NET Core REST API application - how to use the Stacks package for CosmosDB document storage
+keywords:
+  - .net core
+  - rest api
+  - cqrs
+  - template 
+  - cosmos 
+  - cosmosdb 
+  - data storage 
+  - azure 
+  - storage 
+  - configuration 
+  - cosmosdbkey
+  - documentsearch
+  - sql
+  - api
+  - repository
+  - cosmosdb package
+  - dependency injection
+  - stacks
 ---
 
 ## Data Storage - CosmosDB

@@ -4,6 +4,19 @@ title: Operations, Events, Exceptions and Correlation
 sidebar_label: Operations, Events, Exceptions and Correlation
 hide_title: false
 hide_table_of_contents: false
+description: .NET Core REST API application - Operations, Events, Exceptions and Correlation
+keywords:
+  - .net core
+  - rest api
+  - cqrs
+  - example 
+  - template 
+  - repository
+  - structure
+  - operations
+  - events
+  - exceptions 
+  - correlation
 ---
 
 This document purpose is to clarify concepts implemented in the platform in order to facilitate the monitoring and management of services deployed to the platform.

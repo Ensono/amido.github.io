@@ -4,6 +4,18 @@ title: Architecture Overview
 sidebar_label: Architecture Overview
 hide_title: true
 hide_table_of_contents: false
+description: .NET Core REST API application - Architecture Overview
+keywords:
+  - .net core
+  - rest api
+  - template 
+  - architecture overview
+  - aggregate 
+  - AggregateRoot 
+  - domain 
+  - events 
+  - repository
+  - stacks
 ---
 
 

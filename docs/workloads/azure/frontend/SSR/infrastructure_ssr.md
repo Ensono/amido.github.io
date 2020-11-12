@@ -4,6 +4,20 @@ title: SSR Application - Azure Infrastructure
 sidebar_label: Infrastructure
 hide_title: false
 hide_table_of_contents: false
+description: SSR Application - Azure Infrastructure
+keywords:
+  - rest 
+  - api
+  - ssr
+  - application
+  - azure
+  - infrastructure
+  - deploy
+  - pipeline
+  - side 
+  - rendering
+  - server 
+  - server side rendering  
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

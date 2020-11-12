@@ -11,6 +11,38 @@ module.exports = {
   favicon: "img/thumbnail_stacks.png",
   organizationName: "Amido", // Usually your GitHub org/user name.
   projectName: "Stacks", // Usually your repo name.
+  customFields: {
+    description: 'Amido Stacks is a catalogue of workload templates that\n' +
+        'instantly scaffold and deploy boilerplate software projects. Slash the time it takes to get productive on your software project.',
+    keywords: [
+      "Microsoft Azure",
+      "Google Cloud Platform",
+      "AWS",
+      "C#",
+      ".NET",
+      "Java",
+      "Spring Boot",
+      "Node",
+      "React",
+      "xUnit",
+      "Shouldly",
+      "BBDfy",
+      "Cucumber",
+      "Serenity",
+      "BDD",
+      "JUnit",
+      "Karate",
+      "REST",
+      "Rest Assured",
+      "Jest",
+      "Gatling",
+      "TestCafe",
+      "Google Lighthouse",
+      "Applitools",
+      "Cypress",
+      "OWASP",
+    ],
+  },
   themeConfig: {
     algolia: {
       apiKey: "56a3097b6350cd2363a8746a98c6c278",

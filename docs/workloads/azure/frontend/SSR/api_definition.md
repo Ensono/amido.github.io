@@ -4,6 +4,18 @@ title: Api Definition
 sidebar_label: Api Definition
 hide_title: false
 hide_table_of_contents: false
+description: SSR Application - Api Definition
+keywords:
+  - rest 
+  - api
+  - ssr
+  - application
+  - definition
+  - settings
+  - side 
+  - rendering
+  - server 
+  - server side rendering  
 ---
 
 The generated scaffolding can be quickly used make calls to external APIs

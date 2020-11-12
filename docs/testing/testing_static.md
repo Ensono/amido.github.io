@@ -2,6 +2,18 @@
 id: testing_static_analysis
 title: Testing - Static Code Analysis
 sidebar_label: Static Code Analysis
+description: How to use Jest with SonarCloud
+keywords:
+  - jest
+  - sonarcloud
+  - tests
+  - testing
+  - static
+  - code
+  - analysis
+  - example
+  - report
+  - static quality gates
 ---
 
 Amido Stacks projects use [SonarQube](https://docs.sonarqube.org/) for static analysis. 

@@ -2,6 +2,14 @@
 id: cypress_functional_testing
 title: Functional Testing with Cypress
 sidebar_label: Cypress - Functional Testing
+description: Cypress - Functional Testing Example
+keywords:
+  - cypress
+  - tests
+  - testing
+  - pre-deployed tests
+  - continuous integration
+  - configure the cypress tests
 ---
 
 ## Cypress: Functional tests

@@ -4,6 +4,15 @@ title: Identity using Auth0
 sidebar_label: Identity using Auth0
 hide_title: false
 hide_table_of_contents: false
+description: Identity using Auth0
+keywords:
+  - rest 
+  - api
+  - ssr
+  - identity
+  - auth0
+  - framework
+  - redis cache
 ---
 
 - [Auth0](https://auth0.com/) is the Identity-as-a-Service (IDaaS) used in the

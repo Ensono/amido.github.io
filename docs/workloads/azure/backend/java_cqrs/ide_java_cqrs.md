@@ -2,6 +2,25 @@
 id: ide_java_cqrs
 title: IDE guidelines for the Java Rest API
 sidebar_label: IDE guidelines
+description: IDE guidelines for the Java Rest API
+keywords:
+  - java
+  - rest 
+  - api
+  - ide
+  - ide guidelines
+  - plugins
+  - code quality
+  - lombok
+  - sonarlint
+  - spring assistant
+  - check style
+  - google java format
+  - spotbugs
+  - jacoco
+  - setups
+  - pom
+  - cqrs
 ---
 
 import Tabs from "@theme/Tabs";

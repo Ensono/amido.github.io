@@ -2,6 +2,20 @@
 id: structure_java_cqrs
 title: Java Rest API Structure
 sidebar_label: Project structure
+description: Java Rest API Structure
+keywords:
+  - java
+  - rest 
+  - api
+  - project
+  - overview
+  - configuration
+  - logging
+  - application insights
+  - swagger
+  - authorisation
+  - settings
+  - cqrs
 ---
 
 ## Project structure

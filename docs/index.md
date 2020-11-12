@@ -3,6 +3,13 @@ id: index
 title: About Amido Stacks
 sidebar_label: About Stacks
 slug: /
+description: What is Stacks and ow does it work
+keywords:
+  - amido
+  - stacks
+  - open-source
+  - solution
+  - template
 ---
 
 ## What is Stacks

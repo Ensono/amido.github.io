@@ -4,6 +4,14 @@ title: Automated Accessibility Testing With Axe
 sidebar_label: Automated Accessibility Testing
 hide_title: false
 hide_table_of_contents: true
+description: Accessibility testing with Axe
+keywords:
+  - axe
+  - tests
+  - testing
+  - jest
+  - cypress
+  - accessibility testing
 ---
 
 ## Axe: Accessibility testing
