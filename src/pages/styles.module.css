@@ -60,7 +60,7 @@ html {
   font-size: 30px;
   color: black;
   min-height: 400px;
-  min-width: 455px;
+  min-width: 320px;
   align-self: stretch;
 }
 
@@ -113,7 +113,7 @@ html {
   flex-grow: 1;
   padding: 30px 15px 30px 15px;
   min-height: 530px;
-  min-width: 455px;
+  min-width: 320px;
   max-width: 590px;
   font-size: 18px;
 }
@@ -243,52 +243,6 @@ html {
   fill: currentColor;
 }
 
-.techs2 {
-  height: 100px;
-  min-height: 100px;
-  margin: 30px 0px 30px 0px;
-  padding: 10px 0px 10px 0px;
-  display: flex;
-  gap: 50px;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  align-items: center;
-  flex-flow: nowrap;
-  flex-direction: row;
-}
-
-.techs2 > span {
-  height: 100%;
-  width: auto;
-  align-items: center;
-  justify-content: center;
-  display: flex;
-}
-
-.techs2 > :nth-child(2) {
-  flex-grow: 2;
-}
-
-.techs2:last-child {
-  justify-content: space-between;
-}
-
-.techs2:last-child > :nth-child(1) {
-  flex-grow: 2;
-}
-
-.logo {
-  height: 100%;
-  min-height: 100%;
-  width: auto;
-  border-radius: 10px;
-  cursor: pointer;
-}
-
-.supportedTechs ~ .techs2:last-child {
-  justify-content: space-between;
-}
-
 .xunit > svg > g > path,
 .xunit > svg > g > g > path,
 .azureBlob > path,
@@ -309,29 +263,71 @@ html {
   fill: currentColor;
 }
 
-.bddfy {
-  background-color: white;
-}
-
 .jest > path:nth-child(2) {
   color: var(--ifm-heading-color);
   stroke: var(--ifm-heading-color);
   fill: currentColor;
 }
 
-.springBoot {
-  margin-left: 40px;
+.tableContainer {
+  display: flex;
+  justify-content: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  flex-direction: column;
 }
 
-.swagger {
-  margin-right: 140px;
-  height: 70%;
+.flexTable {
+  display: flex;
+  flex-flow: row wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 20px;
+  height: 100px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
-.cypress {
-  margin-right: 130px;
+.flexTable>div {
+  display: flex;
+  height: 100%;
+  width: calc(100% / 3 - 40px);
+  align-items: center;
 }
 
-.tooLarge {
-  height: 60%;
+.flexTable>div * {
+  height: 100%;
+}
+
+.flexTable>div:nth-child(1) {
+  justify-content: flex-start;
+  margin-right: auto;
+  flex-grow: 1;
+}
+.flexTable>div:nth-child(2) {
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  flex-grow: 2;
+}
+.flexTable>div:nth-child(3) {
+  justify-content: flex-end;
+  margin-left: auto;
+  flex-grow: 1;
+}
+
+.flexTable:last-child>div:nth-child(2) {
+  justify-content: flex-end;
+  margin-left: auto;
+  flex-grow: 1;
+}
+
+.flexTable>div>div {
+  display: flex;
+}
+
+.flexRow {
+  height: 100%;
+  max-width: 100%;
+  flex-grow: 1;
 }

@@ -2,7 +2,7 @@ import React from "react";
 
 function AppliToolsLogo(props) {
   return (
-    <svg width={170} height={32} viewBox="0 0 170 32" fill="none" {...props}>
+    <svg viewBox="0 0 170 32" fill="none" {...props}>
       <mask
         id="prefix__a"
         maskUnits="userSpaceOnUse"
