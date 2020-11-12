@@ -109,10 +109,10 @@ function Picker() {
   const OptionMapper = {
     "Azure Cloud Services [Azure]": {
       "Server Side Rendered Web Application": {
-        "Node JS / React": "workloads/azure/frontend/cli_webapp_frameworks_ssr",
+        "Node JS / React": "workloads/azure/frontend/SSR/ide_setup_ssr",
       },
       "Client Side Rendered Web Application": {
-        "Node JS / React": "workloads/azure/frontend/cli_webapp_frameworks_csr",
+        "Node JS / React": "workloads/azure/frontend/CSR/ide_setup_csr",
       },
       "REST Web API": {
         "Java Spring Boot": "workloads/azure/backend/java/intro_java",
