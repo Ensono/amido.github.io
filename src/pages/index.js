@@ -147,7 +147,7 @@ function Picker() {
       : [];
   return (
     <div className="container" style={{display:"flex", justifyContent:"center"}}>
-      <div className={["col", "col--6", styles.containerSelects].join(" ")}>
+      <div className={clsx("col", "col--6", styles.containerSelects)}>
         <Select placeholder="Select Cloud Provider"
                 value={firstOption}
                 onChange={(selected) => { 
@@ -272,79 +272,61 @@ function Home() {
             <section className={styles.supportedTechs}>
               <div className="container">
                 <h3>Technologies supported by Stacks</h3>
-                <div className={styles.techs2}>
-                  <CSharpLogo className={styles.logo} onClick={() => triggerSearch("C#")} />
-                  <span>
-                    <JavaLogo className={styles.logo} onClick={() => triggerSearch("Java")} />
-                  </span>
-                  <NodeLogo className={styles.logo} onClick={() => triggerSearch("node")} />
-                </div>
-                <div className={styles.techs2}>
-                  <DotNetCoreLogo className={styles.logo} onClick={() => triggerSearch(".NET Core")} />
-                  <span>
-                    <SpringBootLogo className={[styles.logo, styles.springBoot].join(" ")} onClick={() => triggerSearch("Spring Boot")} />
-                  </span>
-                  <ReactLogo className={styles.logo} onClick={() => triggerSearch("React")} />
-                </div>
-                <div className={styles.techs2}>
-                  <Auth0Logo className={styles.logo} onClick={() => triggerSearch("Auth0")} />
-                  <span>
-                    <SwaggerLogo className={[styles.logo, styles.swagger].join(" ")} onClick={() => triggerSearch("Swagger")} />
-                  </span>
-                  <AzureBlobStorageLogo className={[styles.logo, styles.azureBlob].join(" ")} onClick={() => triggerSearch("Azure Blob Storage")} />
-                </div>
-                <div className={styles.techs2}>
-                  <CosmosDbLogo className={[styles.logo, styles.cosmosdb].join(" ")} onClick={() => triggerSearch("Cosmos DB")} />
-                  <span>
-                    <CucumberLogo className={[styles.logo, styles.cucumber].join(" ")} onClick={() => triggerSearch("Cucumber")}/>
-                  </span>
-                  <GoogleCloudStorageLogo className={[styles.logo, styles.googleStorage].join(" ")} onClick={() => triggerSearch("Google Cloud Storage")} />
-                </div>
-                <div className={styles.techs2}>
-                  <AzureFunctionsLogo className={[styles.logo, styles.azureFunctions].join(" ")} onClick={() => triggerSearch("Azure Functions")} />
-                  <span>
-                    <CypressLogo className={[styles.logo, styles.cypress, styles.tooLarge].join(" ")} onClick={() => triggerSearch("Cypress")}/>
-                  </span>
-                  <KarateLogo className={[styles.logo, styles.karate].join(" ")} onClick={() => triggerSearch("Karate")} />
-                </div>
-                <div className={styles.techs2}>
-                  <XbehaveLogo className={styles.logo} onClick={() => triggerSearch("xBehave")} />
-                  <span>
-                    <JunitLogo className={[styles.logo, styles.tooLarge].join(" ")} onClick={() => triggerSearch("JUnit")} />
-                  </span>
-                  <TestcafeLogo className={[styles.logo, styles.testCafe].join(" ")} onClick={() => triggerSearch("Testcafe")} />
-                </div>
-                <div className={styles.techs2}>
-                  <BddfyLogo className={[styles.logo, styles.bddfy].join(" ")} onClick={() => triggerSearch("BDDfy")} />
-                  <span>
-                    <RestAssuredLogo className={[styles.logo, styles.tooLarge].join(" ")} onClick={() => triggerSearch("REST-Assured")} />
-                  </span>
-                  <JestLogo className={[styles.logo, styles.jest].join(" ")} onClick={() => triggerSearch("Jest")} />
-                </div>
-                <div className={styles.techs2}>
-                  <AzurePipelinesLogo className={[styles.logo, styles.azurePipelines].join(" ")} onClick={() => triggerSearch("Azure Pipelines")} />
-                  <span>
-                    <SerenityLogo className={[styles.logo, styles.tooLarge].join(" ")} onClick={() => triggerSearch("Serenity")} />
-                  </span>
-                  <GoogleLighthouseLogo className={[styles.logo, styles.googleLighthouse].join(" ")} onClick={() => triggerSearch("Google Lighthouse")} />
-                </div>
-                <div className={styles.techs2}>
-                  <AzureKubernetesServiceLogo className={[styles.logo, styles.azureKubernetes].join(" ")} onClick={() => triggerSearch("Azure Kubernetes Service")} />
-                  <span>
-                    <ShouldlyLogo className={[styles.logo, styles.tooLarge].join(" ")} onClick={() => triggerSearch("Shouldly")} />
-                  </span>
-                  <GitlabLogo className={styles.logo} onClick={() => triggerSearch("GitLab")} />
-                </div>
-                <div className={styles.techs2}>
-                  <DockerLogo className={styles.logo} onClick={() => triggerSearch("Docker")} />
-                  <span>
-                    <AppliToolsLogo className={styles.logo, styles.applitools } onClick={() => triggerSearch("Applitools")} />
-                  </span>
-                  <GoogleKubernetesEngineLogo className={[styles.logo, styles.googleKubernetes].join(" ")} onClick={() => triggerSearch("Google Kubernetes Engine")} />
-                </div>
-                <div className={styles.techs2}>
-                  <XunitLogo className={[styles.logo, styles.xunit, styles.tooLarge].join(" ")} onClick={() => triggerSearch("xUnit")}/>
-                  <GatlingLogo className={[styles.logo, styles.tooLarge].join(" ")} onClick={() => triggerSearch("Gatling")} />
+                <div className={styles.tableContainer}>
+                  <div className={clsx(styles.flexTable)} role="rowGroup">
+                    <div><div><CSharpLogo className={clsx(styles.flexRow)} role="cell" onClick={() => triggerSearch("C#")} /></div></div>
+                    <div><div><JavaLogo className={clsx(styles.flexRow)} role="cell" onClick={() => triggerSearch("Java")} /></div></div>
+                    <div><div><NodeLogo className={clsx(styles.flexRow)} role="cell" onClick={() => triggerSearch("node")} /></div></div>
+                  </div>
+                  <div className={clsx(styles.flexTable)} role="rowGroup">
+                    <div><div><DotNetCoreLogo className={clsx(styles.flexRow)} role="cell" onClick={() => triggerSearch(".NET Core")} /></div></div>
+                    <div><div><SpringBootLogo className={clsx(styles.flexRow, styles.springBoot)} role="cell" onClick={() => triggerSearch("Spring Boot")} /></div></div>
+                    <div><div><ReactLogo className={clsx(styles.flexRow)} role="cell" onClick={() => triggerSearch("React")} /></div></div>
+                  </div>
+                  <div className={clsx(styles.flexTable)} role="rowGroup">
+                    <div><div><Auth0Logo className={clsx(styles.flexRow)} role="cell" onClick={() => triggerSearch("Auth0")} /></div></div>
+                    <div><div><SwaggerLogo className={clsx(styles.flexRow, styles.swagger)} role="cell" onClick={() => triggerSearch("Swagger")} /></div></div>
+                    <div><div><AzureBlobStorageLogo className={clsx(styles.flexRow, styles.azureBlob)} role="cell" onClick={() => triggerSearch("Azure Blob Storage")} /></div></div>
+                  </div>
+                  <div className={clsx(styles.flexTable)} role="rowGroup">
+                    <div><div><CosmosDbLogo className={clsx(styles.flexRow, styles.cosmosdb)} role="cell" onClick={() => triggerSearch("Cosmos DB")} /></div></div>
+                    <div><div><CucumberLogo className={clsx(styles.flexRow, styles.cucumber)} role="cell" onClick={() => triggerSearch("Cucumber")}/></div></div>
+                    <div><div><GoogleCloudStorageLogo className={clsx(styles.flexRow, styles.googleStorage)} role="cell" onClick={() => triggerSearch("Google Cloud Storage")} /></div></div>
+                  </div>
+                  <div className={clsx(styles.flexTable)} role="rowGroup">
+                    <div><div><AzureFunctionsLogo className={clsx(styles.flexRow, styles.azureFunctions)} role="cell" onClick={() => triggerSearch("Azure Functions")} /></div></div>
+                    <div><div><CypressLogo className={clsx(styles.flexRow, styles.cypress, styles.tooLarge)} role="cell" onClick={() => triggerSearch("Cypress")}/></div></div>
+                    <div><div><KarateLogo className={clsx(styles.flexRow, styles.karate)} role="cell" onClick={() => triggerSearch("Karate")} /></div></div>
+                  </div>
+                  <div className={clsx(styles.flexTable)} role="rowGroup">
+                    <div><div><XbehaveLogo className={clsx(styles.flexRow)} role="cell" onClick={() => triggerSearch("xBehave")} /></div></div>
+                    <div><div><JunitLogo className={clsx(styles.flexRow, styles.tooLarge)} role="cell" onClick={() => triggerSearch("JUnit")} /></div></div>
+                    <div><div><TestcafeLogo className={clsx(styles.flexRow, styles.testCafe)} role="cell" onClick={() => triggerSearch("Testcafe")} /></div></div>
+                  </div>
+                  <div className={clsx(styles.flexTable)} role="rowGroup">
+                    <div><div><BddfyLogo className={clsx(styles.flexRow, styles.bddfy)} role="cell" onClick={() => triggerSearch("BDDfy")} /></div></div>
+                    <div><div><RestAssuredLogo className={clsx(styles.flexRow, styles.tooLarge)} role="cell" onClick={() => triggerSearch("REST-Assured")} /></div></div>
+                    <div><div><JestLogo className={clsx(styles.flexRow, styles.jest)} role="cell" onClick={() => triggerSearch("Jest")} /></div></div>
+                  </div>
+                  <div className={clsx(styles.flexTable)} role="rowGroup">
+                    <div><div><AzurePipelinesLogo className={clsx(styles.flexRow, styles.azurePipelines)} role="cell" onClick={() => triggerSearch("Azure Pipelines")} /></div></div>
+                    <div><div><SerenityLogo className={clsx(styles.flexRow, styles.tooLarge)} role="cell" onClick={() => triggerSearch("Serenity")} /></div></div>
+                    <div><div><GoogleLighthouseLogo className={clsx(styles.flexRow, styles.googleLighthouse)} role="cell" onClick={() => triggerSearch("Google Lighthouse")} /></div></div>
+                  </div>
+                  <div className={clsx(styles.flexTable)} role="rowGroup">
+                    <div><div><AzureKubernetesServiceLogo className={clsx(styles.flexRow, styles.azureKubernetes)} role="cell" onClick={() => triggerSearch("Azure Kubernetes Service")} /></div></div>
+                    <div><div><ShouldlyLogo className={clsx(styles.flexRow, styles.tooLarge)} role="cell" onClick={() => triggerSearch("Shouldly")} /></div></div>
+                    <div><div><GitlabLogo className={clsx(styles.flexRow)} role="cell" onClick={() => triggerSearch("GitLab")} /></div></div>
+                  </div>
+                  <div className={clsx(styles.flexTable)} role="rowGroup">
+                    <div><div><DockerLogo className={clsx(styles.flexRow)} role="cell" onClick={() => triggerSearch("Docker")} /></div></div>
+                    <div><div><AppliToolsLogo className={clsx(styles.flexRow, styles.applitools)} role="cell" onClick={() => triggerSearch("Applitools")} /></div></div>
+                    <div><div><GoogleKubernetesEngineLogo className={clsx(styles.flexRow, styles.googleKubernetes)} role="cell" onClick={() => triggerSearch("Google Kubernetes Engine")} /></div></div>
+                  </div>
+                  <div className={clsx(styles.flexTable)} role="rowGroup">
+                    <div><div><XunitLogo className={clsx(styles.flexRow, styles.xunit, styles.tooLarge)} role="cell" onClick={() => triggerSearch("xUnit")}/></div></div>
+                    <div><div><GatlingLogo className={clsx(styles.flexRow, styles.tooLarge)} role="cell" onClick={() => triggerSearch("Gatling")} /></div></div>
+                  </div>
                 </div>
               </div>
             </section>
@@ -352,30 +334,19 @@ function Home() {
         </div>
         <section className={styles.features}>
           {features.map((feature) => (
-            <div
-              className={clsx(styles.feature)}
-              style={{
-                justifyContent: feature.justification,
-                backgroundColor: feature.color,
-              }}
+            <div className={clsx(styles.feature)}
+                 style={{
+                   justifyContent: feature.justification,
+                   backgroundColor: feature.color,
+                 }}
             >
-              <div
-                style={{
-                  maxWidth: "480px",
-                  display: "flex",
-                  flexDirection: "column",
-                }}
-              >
-                <h3> {feature.title}</h3>
+              <div>
+                <h3>{feature.title}</h3>
                 <p>{feature.description}</p>
 
                 <div className={styles.buttons} style={{ marginTop: 20 }}>
-                  <Link
-                    className={clsx(
-                      "button  button--outline button--lg",
-                      styles.blackButton
-                    )}
-                    to={baseUrl + feature.link}
+                  <Link className={clsx("button  button--outline button--lg", styles.blackButton)}
+                        to={baseUrl + feature.link}
                   >
                     {feature.title}
                   </Link>

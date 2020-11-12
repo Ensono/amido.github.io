@@ -2,7 +2,7 @@ import React from "react";
 
 function Auth0Logo(props) {
     return (
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 60" width="120" height="60" {...props}>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 60" {...props}>
         <path
             d="M33.3 42l-3.944-12 10.32-7.415H26.914L22.97 10.58h12.763l3.948 12.004c2.286 6.96-.072 14.88-6.4 19.414zm-20.646 0l10.32 7.42L33.3 42l-10.32-7.415zm-6.38-19.42c-2.413 7.343.388 15.12 6.377 19.423V42l3.944-12-10.32-7.42 12.76.004L22.97 10.58H10.2z"
             fill="#eb5424" />

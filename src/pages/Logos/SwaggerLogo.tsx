@@ -2,7 +2,7 @@ import React from "react";
 
 function SwaggerLogo(props) {
   return (
-    <svg width="220" height="65" viewBox="0 0 220 65" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+    <svg viewBox="0 0 220 65" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
       <path
         d="M27.0865 53.1692C12.948 53.1692 1.44507 41.5352 1.44507 27.2338C1.44507 12.9323 12.948 1.29834 27.0865 1.29834C41.225 1.29834 52.728 12.9334 52.728 27.2343C52.728 41.5352 41.225 53.1692 27.0865 53.1692Z"
         fill="#85EA2D" />

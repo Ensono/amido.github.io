@@ -2,7 +2,7 @@ import React from "react";
 
 function ReactLogo(props) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 60" width="120" height="60" fillRule="evenodd" {...props}>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 60" fillRule="evenodd" {...props}>
         <g transform="matrix(.06928 0 0 .06928 7.367398 13.505331)" fill="none">
             <circle r="50.167" cy="237.628" cx="269.529" fill="#00d8ff" />
             <g stroke="#00d8ff" strokeWidth="24">

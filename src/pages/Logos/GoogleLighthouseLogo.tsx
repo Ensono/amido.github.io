@@ -2,7 +2,7 @@ import React from "react";
 
 function GoogleLighthouseLogo(props) {
     return (
-      <svg width="115" height="163" viewBox="0 0 115 163" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+      <svg viewBox="0 0 115 163" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
           <path
               d="M57.5 115C89.2564 115 115 89.2564 115 57.5C115 25.7436 89.2564 0 57.5 0C25.7436 0 0 25.7436 0 57.5C0 89.2564 25.7436 115 57.5 115Z"
               fill="#F1F3F4" />
