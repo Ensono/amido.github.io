@@ -2,6 +2,17 @@
 id: pipeline_java_cqrs
 title: Java REST API with CQRS - Azure DevOps Pipeline
 sidebar_label: Pipeline
+description: Java REST API with CQRS - Azure DevOps Pipeline
+keywords:
+  - java
+  - rest 
+  - api
+  - cqrs
+  - azure
+  - devops
+  - pipeline
+  - spring boot
+  - setting
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

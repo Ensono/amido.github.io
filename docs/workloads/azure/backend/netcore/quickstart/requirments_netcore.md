@@ -4,6 +4,25 @@ title: Requirements
 sidebar_label: Requirements
 hide_title: false
 hide_table_of_contents: true
+description: Detailed requirements to create .NET Core REST API application from a template
+keywords:
+  - .net core
+  - rest api
+  - cqrs
+  - example 
+  - template 
+  - azure
+  - application insights
+  - cosmos db
+  - build
+  - run
+  - application
+  - configure
+  - docker
+  - tests
+  - github
+  - scaffolding
+  - cli
 ---
 
 import Tabs from "@theme/Tabs";

@@ -2,6 +2,17 @@
 id: contract_testing_pact
 title: API Contract Testing With Pact
 sidebar_label: API Contract Testing With Pact
+description: Contract testing with Pact
+keywords:
+  - contract testing
+  - pact
+  - consumer
+  - provider
+  - pact stub service
+  - pact broker
+  - example
+  - java
+  - dotnet
 ---
 
 ## Consumer-Driven contract testing with Pact

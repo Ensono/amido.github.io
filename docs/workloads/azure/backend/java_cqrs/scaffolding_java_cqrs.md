@@ -3,6 +3,18 @@ id: scaffolding_java_cqrs
 title: Using the Scaffolding CLI to create the Java Rest API project template
 sidebar_label: Using the Scaffolding CLI
 hide_table_of_contents: true
+description: Using the Scaffolding CLI to create the Java Rest API project template
+keywords:
+  - java
+  - rest 
+  - api
+  - cqrs
+  - application
+  - spring boot
+  - swagger
+  - template
+  - scaffolding cli
+  - get started
 ---
 
 ## Create a custom Java REST API project template from the command line

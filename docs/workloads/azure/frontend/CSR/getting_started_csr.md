@@ -4,6 +4,23 @@ title: Getting Started
 sidebar_label: Getting Started
 hide_title: false
 hide_table_of_contents: false
+description: Getting started with CSR
+keywords:
+  - rest 
+  - api
+  - csr
+  - scaffolding
+  - template
+  - example
+  - backend
+  - axios
+  - bootstrap
+  - dependencies
+  - start project
+  - client 
+  - side 
+  - rendering
+  - client side rendering
 ---
 
 import Tabs from '@theme/Tabs';

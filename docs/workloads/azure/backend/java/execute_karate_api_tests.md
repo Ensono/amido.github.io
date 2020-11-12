@@ -2,6 +2,20 @@
 id: execute_karate_api_tests
 title: Running API tests with Karate
 sidebar_label: REST API testing with Karate
+description: Test rest api application with karate
+keywords:
+  - java
+  - rest 
+  - api
+  - karate
+  - run karate tests
+  - karate test example
+  - test runner
+  - karate test report
+  - execute parallel tests
+  - framework
+  - testing
+  - test
 ---
 
 import HideNavigation  from "../../../../../src/pages/HideNavigation";

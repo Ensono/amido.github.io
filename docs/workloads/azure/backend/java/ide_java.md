@@ -4,6 +4,24 @@ title: IDE guidelines for the Java Rest API
 sidebar_label: IDE guidelines
 hide_title: false
 hide_table_of_contents: false
+description: IDE guidelines for the Java Rest API
+keywords:
+  - java
+  - rest 
+  - api
+  - ide
+  - ide guidelines
+  - plugins
+  - code quality
+  - lombok
+  - sonarlint
+  - spring assistant
+  - check style
+  - google java format
+  - spotbugs
+  - jacoco
+  - setups
+  - pom
 ---
 
 import Tabs from "@theme/Tabs";

@@ -2,6 +2,16 @@
 id: performance_testing_gatling
 title: Performance Testing - Gatling
 sidebar_label: Gatling Performance Testing
+description: Performance tests with gatling
+keywords:
+  - gatling
+  - tests
+  - testing
+  - performance
+  - template
+  - example
+  - run performance tests
+  - gatling report
 ---
 
 The Amido Stacks Performance Tests is a sample project demonstrating performance testing (Load testing) using the [Gatling](https://gatling.io/) tool.

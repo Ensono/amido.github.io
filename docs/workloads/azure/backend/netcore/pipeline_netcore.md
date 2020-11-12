@@ -2,6 +2,15 @@
 id: pipeline_netcore
 title: .NET Core - Azure DevOps Pipeline
 sidebar_label: Pipeline
+description: How to configure Azure DevOps Pipeline for .NET Core
+keywords:
+  - .net core
+  - azure devops
+  - configure
+  - pipeline
+  - setting up
+  - template
+  - build
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

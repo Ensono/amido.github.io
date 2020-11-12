@@ -2,6 +2,13 @@
 id: cli_testing_frameworks
 title: Stacks Testing Frameworks
 sidebar_label: Stacks Testing Frameworks
+description: Bootstrap your framework using the cli testing frameworks
+keywords:
+  - bootstrap
+  - framework
+  - testing
+  - example
+  - cli
 ---
 
 import HideNavigation  from "../../src/pages/HideNavigation";

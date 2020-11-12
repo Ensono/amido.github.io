@@ -4,6 +4,17 @@ title: Testing the application
 sidebar_label: Testing the API
 hide_title: false
 hide_table_of_contents: false
+description: Dotnet API tests examples using bddfy
+keywords:
+  - dotnet api tests
+  - rest 
+  - api
+  - bddfy
+  - xunit
+  - shouldly
+  - csharp
+  - dotnet
+  - testing
 ---
 
 

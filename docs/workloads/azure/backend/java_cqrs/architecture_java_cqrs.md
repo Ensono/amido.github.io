@@ -2,6 +2,25 @@
 id: architecture_java_cqrs
 title: Java Rest API Architecture
 sidebar_label: Architecture overview
+description: Spring Boot Rest API Architecture
+keywords:
+  - java
+  - rest 
+  - api
+  - architecture
+  - spring boot
+  - cqrs
+  - event
+  - controller
+  - logs
+  - monitoring
+  - query service
+  - repository
+  - azure cosmos db
+  - event handler
+  - event listener
+  - event dispatcher
+  - authorisation
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

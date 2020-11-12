@@ -4,6 +4,25 @@ title: Create the project
 hide_title: true
 sidebar_label: Create the project
 hide_table_of_contents: true
+description: Create .NET Core REST API application from a template
+keywords:
+  - .net core
+  - rest api
+  - cqrs
+  - example 
+  - template 
+  - azure
+  - application insights
+  - cosmos db
+  - build
+  - run
+  - application
+  - configure
+  - docker
+  - tests
+  - github
+  - scaffolding
+  - cli
 ---
 
 ## Create the project

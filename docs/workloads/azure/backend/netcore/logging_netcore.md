@@ -4,6 +4,15 @@ title: Logging with Serilog and Application Insights
 sidebar_label: Logging
 hide_title: true
 hide_table_of_contents: false
+description: Logging for .NET Core
+keywords:
+  - .net core
+  - logging
+  - logger
+  - serilog
+  - application insights
+  - standard
+  - serilog configuration
 ---
 
 ## Logging with Serilog and Application Insights

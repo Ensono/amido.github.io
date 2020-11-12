@@ -2,6 +2,16 @@
 id: testcafe_functional_testing
 title: Functional Testing with TestCafe
 sidebar_label: TestCafe - Functional Testing
+description: How to create functional tests with TestCafe 
+keywords:
+  - TestCafe
+  - tests
+  - testing
+  - functional
+  - template
+  - example
+  - run TestCafe tests
+  - TestCafe report
 ---
 
 import Tabs from "@theme/Tabs";

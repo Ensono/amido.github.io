@@ -4,6 +4,18 @@ title: Configure Swagger
 sidebar_label: Swagger
 hide_title: true
 hide_table_of_contents: true
+description: Configure Swagger for .NET Core REST API application
+keywords:
+  - .net core
+  - rest 
+  - api
+  - tests 
+  - stacks
+  - swagger
+  - registration
+  - controller
+  - configuration
+  - dotnet
 ---
 
 ## Configure Swagger

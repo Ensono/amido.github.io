@@ -4,6 +4,11 @@ title: Introduction to workloads
 sidebar_label: Introduction
 hide_title: false
 hide_table_of_contents: true
+description: What are the workload options
+keywords:
+  - workload
+  - scaffolding
+  - scaffolding cli
 ---
 
 import HideNavigation  from "../../src/pages/HideNavigation";
