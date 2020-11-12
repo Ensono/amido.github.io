@@ -14,6 +14,7 @@ module.exports = {
           {
             type: "category",
             label: "Frontend Web Applications",
+            items: [
               {
                 type: "category",
                 label: "Client Side Rendering",
