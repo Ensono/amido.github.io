@@ -1,5 +1,5 @@
 ---
-id: api_definition
+id: api_definition_ssr
 title: Api Definition
 sidebar_label: Api Definition
 hide_title: false

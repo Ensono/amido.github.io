@@ -1,5 +1,5 @@
 ---
-id: state-management
+id: state_management_csr
 title: State Management
 sidebar_label: State Management Patterns
 hide_title: false
