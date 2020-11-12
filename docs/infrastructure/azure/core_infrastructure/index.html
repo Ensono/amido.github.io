@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="generator" content="Docusaurus v2.0.0-alpha.65">
-<link rel="search" type="application/opensearchdescription+xml" title="Amido Stacks " href="/stacks/opensearch.xml"><title data-react-helmet="true">Azure Core Infrastructure | Amido Stacks </title><meta data-react-helmet="true" name="docsearch:version" content="current,latest"><meta data-react-helmet="true" name="twitter:card" content="summary_large_image"><meta data-react-helmet="true" property="og:title" content="Azure Core Infrastructure | Amido Stacks "><meta data-react-helmet="true" name="description" content="The core infrastructure is the foundation for all other Stacks Workloads. As, in most cases, this will be the first part of Stacks that you deploy we will also cover bootstrapping your Azure tenant."><meta data-react-helmet="true" property="og:description" content="The core infrastructure is the foundation for all other Stacks Workloads. As, in most cases, this will be the first part of Stacks that you deploy we will also cover bootstrapping your Azure tenant."><meta data-react-helmet="true" property="og:url" content="https://amido.github.io/stacks/docs/infrastructure/azure/core_infrastructure"><link data-react-helmet="true" rel="shortcut icon" href="/stacks/img/thumbnail_stacks.png"><link data-react-helmet="true" rel="preconnect" href="https://BH4D9OD16A-dsn.algolia.net" crossorigin="anonymous"><link data-react-helmet="true" rel="canonical" href="https://amido.github.io/stacks/docs/infrastructure/azure/core_infrastructure"><link rel="stylesheet" href="/stacks/styles.bd9f5e20.css">
+<link rel="search" type="application/opensearchdescription+xml" title="Amido Stacks " href="/stacks/opensearch.xml"><title data-react-helmet="true">Azure Core Infrastructure | Amido Stacks </title><meta data-react-helmet="true" name="docsearch:version" content="current,latest"><meta data-react-helmet="true" name="twitter:card" content="summary_large_image"><meta data-react-helmet="true" property="og:title" content="Azure Core Infrastructure | Amido Stacks "><meta data-react-helmet="true" name="description" content="How to bootstrap the Azure tenant"><meta data-react-helmet="true" property="og:description" content="How to bootstrap the Azure tenant"><meta data-react-helmet="true" name="keywords" content="azure devops,scaffolding cli,workload,pipeline,pipeline template,resources"><meta data-react-helmet="true" property="og:url" content="https://amido.github.io/stacks/docs/infrastructure/azure/core_infrastructure"><link data-react-helmet="true" rel="shortcut icon" href="/stacks/img/thumbnail_stacks.png"><link data-react-helmet="true" rel="preconnect" href="https://BH4D9OD16A-dsn.algolia.net" crossorigin="anonymous"><link data-react-helmet="true" rel="canonical" href="https://amido.github.io/stacks/docs/infrastructure/azure/core_infrastructure"><link rel="stylesheet" href="/stacks/styles.bd9f5e20.css">
 <link rel="preload" href="/stacks/styles.e3b65cc9.js" as="script">
-<link rel="preload" href="/stacks/runtime~main.ca09259c.js" as="script">
-<link rel="preload" href="/stacks/main.475bd169.js" as="script">
+<link rel="preload" href="/stacks/runtime~main.dac4e7ea.js" as="script">
+<link rel="preload" href="/stacks/main.73fbb7cd.js" as="script">
 <link rel="preload" href="/stacks/1.0868716e.js" as="script">
 <link rel="preload" href="/stacks/2.5a5dcc35.js" as="script">
 <link rel="preload" href="/stacks/3.6912b792.js" as="script">
@@ -15,26 +15,26 @@
 <link rel="preload" href="/stacks/150.9051d196.js" as="script">
 <link rel="preload" href="/stacks/935f2afb.7bd3ab1f.js" as="script">
 <link rel="preload" href="/stacks/17896441.c2861c0d.js" as="script">
-<link rel="preload" href="/stacks/dafaefe7.05b5d45b.js" as="script">
-<link rel="preload" href="/stacks/23325b98.dd758ae8.js" as="script">
-<link rel="preload" href="/stacks/3ccbe900.0b3df34a.js" as="script">
-<link rel="preload" href="/stacks/3dbbb6bc.61b41b0a.js" as="script">
-<link rel="preload" href="/stacks/3deea674.c229e3bc.js" as="script">
-<link rel="preload" href="/stacks/40932100.099839a3.js" as="script">
-<link rel="preload" href="/stacks/414e16ac.1f292862.js" as="script">
-<link rel="preload" href="/stacks/52351b48.84e4fcdc.js" as="script">
-<link rel="preload" href="/stacks/560e98d8.702b9ed7.js" as="script">
-<link rel="preload" href="/stacks/570a173c.641bf14e.js" as="script">
-<link rel="preload" href="/stacks/5b5ac82e.7c999eef.js" as="script">
-<link rel="preload" href="/stacks/6b834008.dcc32fd8.js" as="script">
-<link rel="preload" href="/stacks/6e17e9f9.df240d2a.js" as="script">
-<link rel="preload" href="/stacks/7a17dc8a.3374a608.js" as="script">
-<link rel="preload" href="/stacks/82666630.067b8e4b.js" as="script">
-<link rel="preload" href="/stacks/83b4c89e.c77b9247.js" as="script">
-<link rel="preload" href="/stacks/b006c56e.3f2e0cfa.js" as="script">
-<link rel="preload" href="/stacks/b5831b65.c7b48d06.js" as="script">
-<link rel="preload" href="/stacks/b5d03cf8.8fcda09b.js" as="script">
-<link rel="preload" href="/stacks/d21d2c84.b98b4cca.js" as="script">
+<link rel="preload" href="/stacks/dafaefe7.f053254e.js" as="script">
+<link rel="preload" href="/stacks/23325b98.b61b9b6f.js" as="script">
+<link rel="preload" href="/stacks/3ccbe900.f707fce4.js" as="script">
+<link rel="preload" href="/stacks/3dbbb6bc.04efb3c6.js" as="script">
+<link rel="preload" href="/stacks/3deea674.728d59e5.js" as="script">
+<link rel="preload" href="/stacks/40932100.b412ac11.js" as="script">
+<link rel="preload" href="/stacks/414e16ac.78f6b69d.js" as="script">
+<link rel="preload" href="/stacks/52351b48.f14204cf.js" as="script">
+<link rel="preload" href="/stacks/560e98d8.acb33c7d.js" as="script">
+<link rel="preload" href="/stacks/570a173c.1bc5129e.js" as="script">
+<link rel="preload" href="/stacks/5b5ac82e.98a2ca6b.js" as="script">
+<link rel="preload" href="/stacks/6b834008.defb7f36.js" as="script">
+<link rel="preload" href="/stacks/6e17e9f9.08bfb557.js" as="script">
+<link rel="preload" href="/stacks/7a17dc8a.2fa1865e.js" as="script">
+<link rel="preload" href="/stacks/82666630.fd391f2e.js" as="script">
+<link rel="preload" href="/stacks/83b4c89e.37986576.js" as="script">
+<link rel="preload" href="/stacks/b006c56e.f82dfd85.js" as="script">
+<link rel="preload" href="/stacks/b5831b65.84a1f2be.js" as="script">
+<link rel="preload" href="/stacks/b5d03cf8.b159886c.js" as="script">
+<link rel="preload" href="/stacks/d21d2c84.c5a23ae0.js" as="script">
 </head>
 <body>
 <script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){var t=null;try{t=localStorage.getItem("theme")}catch(t){}return t}();t(null!==e?e:"light")}()</script><div id="__docusaurus">
@@ -52,8 +52,8 @@ executions of Terraform.</p><p>Sample commands with example environment vars:</p
 </span></div><div class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token comment" style="color:#999988;font-style:italic"># Select or create the &quot;nonprod&quot; workspace.</span><span class="token plain"></span></div><div class="token-line" style="color:#393A34"><span class="token plain">terraform workspace </span><span class="token keyword" style="color:#00009f">select</span><span class="token plain"> nonprod </span><span class="token operator" style="color:#393A34">||</span><span class="token plain"> terraform workspace new nonprod</span></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block">
 </span></div><div class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token comment" style="color:#999988;font-style:italic"># Check the plan matches your expected changes. </span><span class="token plain"></span></div><div class="token-line" style="color:#393A34"><span class="token plain">terraform plan</span></div></div></div></div></div><div></div></div></article><div class="margin-vert--lg"><nav class="pagination-nav" aria-label="Blog list page navigation"><div class="pagination-nav__item"><a class="pagination-nav__link" href="/stacks/docs/infrastructure/introduction"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">« Infrastructure Introduction</div></a></div><div class="pagination-nav__item pagination-nav__item--next"><a class="pagination-nav__link" href="/stacks/docs/infrastructure/azure/pipelines/azure_devops"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Azure DevOps Pipeline »</div></a></div></nav></div></div></div><div class="col col--3"><div class="tableOfContents_3SO_"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#resources-provisioned" class="table-of-contents__link">Resources Provisioned</a><ul><li><a href="#diagram" class="table-of-contents__link">Diagram</a></li><li><a href="#resource-list" class="table-of-contents__link">Resource List</a></li></ul></li><li><a href="#deploying" class="table-of-contents__link">Deploying</a><ul><li><a href="#bootstrap-the-azure-tenant" class="table-of-contents__link">Bootstrap the Azure tenant</a></li><li><a href="#using-the-scaffolding-cli" class="table-of-contents__link">Using the Scaffolding CLI</a></li><li><a href="#pipelines" class="table-of-contents__link">Pipelines</a></li><li><a href="#running-locally" class="table-of-contents__link">Running Locally</a></li></ul></li></ul></div></div></div></div></main></div></div><footer class="footer footer--dark"><div class="container"><div class="row footer__links"><div class="col footer__col"><h4 class="footer__title">Docs</h4><ul class="footer__items"><li class="footer__item"><a class="footer__link-item" href="/stacks/docs/">Getting Started</a></li></ul></div><div class="col footer__col"><h4 class="footer__title">About Us</h4><ul class="footer__items"><li class="footer__item"><a href="https://amido.com/" target="_blank" rel="noopener noreferrer" class="footer__link-item">Amido</a></li></ul></div><div class="col footer__col"><h4 class="footer__title">Open Source</h4><ul class="footer__items"><li class="footer__item"><a href="https://github.com/amido/stacks" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub</a></li></ul></div></div><div class="text--center"><div>Copyright © 2020 Amido Ltd</div></div></div></footer></div>
 <script src="/stacks/styles.e3b65cc9.js"></script>
-<script src="/stacks/runtime~main.ca09259c.js"></script>
-<script src="/stacks/main.475bd169.js"></script>
+<script src="/stacks/runtime~main.dac4e7ea.js"></script>
+<script src="/stacks/main.73fbb7cd.js"></script>
 <script src="/stacks/1.0868716e.js"></script>
 <script src="/stacks/2.5a5dcc35.js"></script>
 <script src="/stacks/3.6912b792.js"></script>
@@ -61,25 +61,25 @@ executions of Terraform.</p><p>Sample commands with example environment vars:</p
 <script src="/stacks/150.9051d196.js"></script>
 <script src="/stacks/935f2afb.7bd3ab1f.js"></script>
 <script src="/stacks/17896441.c2861c0d.js"></script>
-<script src="/stacks/dafaefe7.05b5d45b.js"></script>
-<script src="/stacks/23325b98.dd758ae8.js"></script>
-<script src="/stacks/3ccbe900.0b3df34a.js"></script>
-<script src="/stacks/3dbbb6bc.61b41b0a.js"></script>
-<script src="/stacks/3deea674.c229e3bc.js"></script>
-<script src="/stacks/40932100.099839a3.js"></script>
-<script src="/stacks/414e16ac.1f292862.js"></script>
-<script src="/stacks/52351b48.84e4fcdc.js"></script>
-<script src="/stacks/560e98d8.702b9ed7.js"></script>
-<script src="/stacks/570a173c.641bf14e.js"></script>
-<script src="/stacks/5b5ac82e.7c999eef.js"></script>
-<script src="/stacks/6b834008.dcc32fd8.js"></script>
-<script src="/stacks/6e17e9f9.df240d2a.js"></script>
-<script src="/stacks/7a17dc8a.3374a608.js"></script>
-<script src="/stacks/82666630.067b8e4b.js"></script>
-<script src="/stacks/83b4c89e.c77b9247.js"></script>
-<script src="/stacks/b006c56e.3f2e0cfa.js"></script>
-<script src="/stacks/b5831b65.c7b48d06.js"></script>
-<script src="/stacks/b5d03cf8.8fcda09b.js"></script>
-<script src="/stacks/d21d2c84.b98b4cca.js"></script>
+<script src="/stacks/dafaefe7.f053254e.js"></script>
+<script src="/stacks/23325b98.b61b9b6f.js"></script>
+<script src="/stacks/3ccbe900.f707fce4.js"></script>
+<script src="/stacks/3dbbb6bc.04efb3c6.js"></script>
+<script src="/stacks/3deea674.728d59e5.js"></script>
+<script src="/stacks/40932100.b412ac11.js"></script>
+<script src="/stacks/414e16ac.78f6b69d.js"></script>
+<script src="/stacks/52351b48.f14204cf.js"></script>
+<script src="/stacks/560e98d8.acb33c7d.js"></script>
+<script src="/stacks/570a173c.1bc5129e.js"></script>
+<script src="/stacks/5b5ac82e.98a2ca6b.js"></script>
+<script src="/stacks/6b834008.defb7f36.js"></script>
+<script src="/stacks/6e17e9f9.08bfb557.js"></script>
+<script src="/stacks/7a17dc8a.2fa1865e.js"></script>
+<script src="/stacks/82666630.fd391f2e.js"></script>
+<script src="/stacks/83b4c89e.37986576.js"></script>
+<script src="/stacks/b006c56e.f82dfd85.js"></script>
+<script src="/stacks/b5831b65.84a1f2be.js"></script>
+<script src="/stacks/b5d03cf8.b159886c.js"></script>
+<script src="/stacks/d21d2c84.c5a23ae0.js"></script>
 </body>
 </html>
