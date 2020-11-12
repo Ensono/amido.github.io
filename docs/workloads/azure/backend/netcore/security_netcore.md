@@ -2,6 +2,15 @@
 id: security_netcore
 title: Application Security
 sidebar_label: Security
+description: OAuth for .NET Core
+keywords:
+  - oauth
+  - .net core
+  - authentication
+  - configuration
+  - enable oauth
+  - authorization url
+  - authorization
 ---
 
 ## Overview

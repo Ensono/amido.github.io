@@ -4,6 +4,18 @@ title: Configure Swagger UI
 hide_title: true
 sidebar_label: Swagger UI
 hide_table_of_contents: true
+description: Swagger UI configuration for the .NET Core REST API application
+keywords:
+  - .net core
+  - rest api
+  - tests 
+  - stacks
+  - swagger
+  - swagger ui
+  - registration
+  - controller
+  - configuration
+  - dotnet
 ---
 
 import HideNavigation  from "../../../../../../../src/pages/HideNavigation";

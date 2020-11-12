@@ -2,6 +2,25 @@
 id: testing_java
 title: Pre-deployment tests and reports
 sidebar_label: Pre-deployment tests and reports
+description: Pre-deployment tests and reports for Java Rest API project
+keywords:
+  - java
+  - rest 
+  - api
+  - project
+  - testing
+  - test
+  - unit
+  - component
+  - integration
+  - report
+  - mutation
+  - parallel
+  - owasp
+  - code coverage
+  - configuration
+  - access token
+  - dependency checker
 ---
 
 import Tabs from "@theme/Tabs";

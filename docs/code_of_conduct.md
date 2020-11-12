@@ -4,6 +4,14 @@ title: Code of conduct
 sidebar_label: Code of conduct
 hide_title: true
 hide_table_of_contents: false
+description: Code of conduct
+keywords:
+  - conduct
+  - values
+  - behaviour
+  - community
+  - scope
+  - open-source
 ---
 
 import HideNavigation  from "../src/pages/HideNavigation";

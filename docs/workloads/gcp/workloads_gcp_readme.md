@@ -2,6 +2,13 @@
 id: workloads_gcp_readme
 title: Workloads on Google Cloud Platform
 sidebar_label: Workloads on GCP
+description: Workloads on GCP
+keywords:
+  - workload
+  - gsp
+  - webapp
+  - server-side
+  - in progress
 ---
 
 import HideNavigation  from "../../../src/pages/HideNavigation";

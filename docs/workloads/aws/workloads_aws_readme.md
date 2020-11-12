@@ -2,6 +2,11 @@
 id: workloads_aws_readme
 title: Workloads on Amazon Web Services
 sidebar_label: Workloads on AWS
+description: Workloads on AWS
+keywords:
+  - aws
+  - workloads
+  - stacks
 ---
 
 import HideNavigation  from "../../../src/pages/HideNavigation";

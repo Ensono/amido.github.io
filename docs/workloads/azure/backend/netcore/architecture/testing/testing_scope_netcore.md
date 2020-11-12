@@ -3,6 +3,19 @@ id: testing_scope_netcore
 title: Testing Scope
 hide_title: true
 hide_table_of_contents: false
+description: Unit, Component, Integration, Contract and Functional testing for the .NET Core REST API application
+keywords:
+  - .net core
+  - rest api
+  - tests 
+  - repository
+  - stacks
+  - unit tests
+  - testing scope
+  - component tests
+  - integration tests
+  - contract tests
+  - functional tests
 ---
 
 ## Testing Scope

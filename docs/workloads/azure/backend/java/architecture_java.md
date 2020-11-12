@@ -4,6 +4,24 @@ title: Java Rest API Architecture
 sidebar_label: Architecture overview
 hide_title: false
 hide_table_of_contents: true
+description: Spring Boot Rest API Architecture
+keywords:
+  - java
+  - rest 
+  - api
+  - architecture
+  - spring boot
+  - event
+  - controller
+  - logs
+  - monitoring
+  - query service
+  - repository
+  - azure cosmos db
+  - event handler
+  - event listener
+  - event dispatcher
+  - authorisation
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

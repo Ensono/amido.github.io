@@ -4,6 +4,22 @@ title: State Management
 sidebar_label: State Management Patterns
 hide_title: false
 hide_table_of_contents: true
+description: Stacks State Management Patterns
+keywords:
+  - stacks
+  - management
+  - pattern
+  - react
+  - redux
+  - saga
+  - logger
+  - devtools
+  - wrapper
+  - webapp
+  - ssr
+  - node
+  - client side rendering
+  - server side rendering
 ---
 
 ## Tools used

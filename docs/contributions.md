@@ -4,6 +4,15 @@ title: New Contributions
 sidebar_label: New Contributions
 hide_title: true
 hide_table_of_contents: false
+description: How to contribute to continuous improvement
+keywords:
+  - stacks
+  - contributions
+  - report a bug
+  - community
+  - advice
+  - open development
+  - improvement
 ---
 
 ## New Contributions

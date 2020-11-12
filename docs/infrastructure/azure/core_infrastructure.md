@@ -2,6 +2,14 @@
 id: core_infrastructure
 title: Azure Core Infrastructure
 sidebar_label: Core Infrastructure
+description: How to bootstrap the Azure tenant
+keywords:
+  - azure devops
+  - scaffolding cli
+  - workload
+  - pipeline
+  - pipeline template
+  - resources
 ---
 
 import HideNavigation  from "../../../src/pages/HideNavigation";

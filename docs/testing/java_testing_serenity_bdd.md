@@ -2,6 +2,18 @@
 id: testing_java_serenity_bdd
 title: UI Browser Automation with Serenity BDD and Java
 sidebar_label: Java - Serenity BDD
+description: UI tests with Serenity BDD and Java
+keywords:
+  - serenity
+  - tests
+  - testing
+  - ui
+  - java
+  - template
+  - example
+  - run the tests
+  - run tests by tag
+  - serenity report
 ---
 In the Java world there are few tools that provide an easier experience with adding behaviour driven development to your automated testing better than [Serenity BDD](http://serenity-bdd.info/#/).  Not only is it very easy to use but it also adds a rich layer of reporting to your automated testing framework which is crucial for project management and keeping your stakeholders informed. 
 

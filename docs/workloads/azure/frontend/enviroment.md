@@ -4,6 +4,13 @@ title: Environment Variables
 sidebar_label: Environment Variables
 hide_title: false
 hide_table_of_contents: false
+description: Environment Variables
+keywords:
+  - rest 
+  - api
+  - application
+  - environment variables
+  - support
 ---
 
 import Tabs from '@theme/Tabs';

@@ -3,6 +3,13 @@ id: intro_java
 title: Introduction to the Java REST API application
 sidebar_label: Introduction
 hide_table_of_contents: true
+description: Introduction to the Java REST API application
+keywords:
+  - java
+  - rest 
+  - api
+  - introduction
+  - spring boot
 ---
 
 import HideNavigation  from "../../../../../src/pages/HideNavigation";

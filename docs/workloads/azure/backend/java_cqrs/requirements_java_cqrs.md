@@ -4,6 +4,17 @@ title: Requirements
 sidebar_label: Requirements
 hide_title: false
 hide_table_of_contents: true
+description: Requirements for getting started with the Java Rest API application
+keywords:
+  - java
+  - rest 
+  - api
+  - cqrs
+  - application
+  - spring boot
+  - swagger
+  - settings
+  - get started
 ---
 
 import Tabs from "@theme/Tabs";

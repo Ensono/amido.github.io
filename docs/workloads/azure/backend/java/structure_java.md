@@ -4,6 +4,19 @@ title: Java Rest API Structure
 sidebar_label: Project structure
 hide_title: false
 hide_table_of_contents: false
+description: Java Rest API Structure
+keywords:
+  - java
+  - rest 
+  - api
+  - project
+  - overview
+  - configuration
+  - logging
+  - application insights
+  - swagger
+  - authorisation
+  - settings
 ---
 
 ## Project structure

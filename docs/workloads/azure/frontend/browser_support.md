@@ -4,6 +4,15 @@ title: Browser Support
 sidebar_label: Browser Support
 hide_title: false
 hide_table_of_contents: true
+description: Browser Support
+keywords:
+  - rest 
+  - api
+  - application
+  - browser
+  - support
+  - polyfills
+  - eslint
 ---
 
 import HideNavigation  from "../../../../src/pages/HideNavigation";
