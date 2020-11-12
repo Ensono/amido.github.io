@@ -223,7 +223,6 @@ html {
 }
 
 .logocontainer {
-  display: flex;
   margin-left: auto;
   margin-right: auto;
   padding: 50px 15px 50px 15px;
@@ -322,9 +321,6 @@ html {
   flex-grow: 1;
 }
 
-.flexTable>div>div {
-  display: flex;
-}
 
 .flexRow {
   height: 100%;
