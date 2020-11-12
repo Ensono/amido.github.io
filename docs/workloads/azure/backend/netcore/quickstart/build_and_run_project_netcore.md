@@ -29,7 +29,7 @@ values={[
 ]}>
 <TabItem value="windows">
 
-Move to the `<PROJECT-NAME>/src/api` folder and run the next commands in ** Command Prompt** or **Powershell**
+Move to the `<PROJECT-NAME>/src/api` folder and run the next commands in **Command Prompt** or **Powershell**
 
 ```bash
 dotnet restore

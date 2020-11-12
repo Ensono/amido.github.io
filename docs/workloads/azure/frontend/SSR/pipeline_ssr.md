@@ -7,7 +7,7 @@ hide_table_of_contents: false
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import HideNavigation  from "../../../../src/pages/HideNavigation";
+import HideNavigation  from "../../../../../src/pages/HideNavigation";
 
 The pipeline will automate provisioning and updating the server-side rendering infrastructure and application in Azure.
 
@@ -25,15 +25,15 @@ A variable group will need creating for storing application variables to be used
 
 Add the following variables:
 
-| Variable Name                       | Required for         | Note                                      |
-| ----------------------------------- | -------------------- | ----------------------------------------- |
-| MENU_API_URL                        | Application Backend  | Output of a Stacks backend workload       |
-| NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN | Application CMS      | from [Contentful](./CMS.md)               |
-| NEXT_PUBLIC_CONTENTFUL_SPACE_ID     | Application CMS      | from [Contentful](./CMS.md)               |
-| SONAR_ORGANIZATION                  | Static Code Analysis | from [sonarcloud](https://sonarcloud.io/) |
-| SONAR_PROJECT_KEY                   | Static Code Analysis | from [sonarcloud](https://sonarcloud.io/) |
-| SONAR_PROJECT_NAME                  | Static Code Analysis | from [sonarcloud](https://sonarcloud.io/) |
-| SONAR_TOKEN                         | Static Code Analysis | from [sonarcloud](https://sonarcloud.io/) |
+| Variable Name                       | Required for         | Note                                           |
+| ----------------------------------- | -------------------- | -----------------------------------------------|
+| MENU_API_URL                        | Application Backend  | Output of a Stacks backend workload            |
+| NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN | Application CMS      | from [Contentful](./contentful_integration.md) |
+| NEXT_PUBLIC_CONTENTFUL_SPACE_ID     | Application CMS      | from [Contentful](./contentful_integration.md) |
+| SONAR_ORGANIZATION                  | Static Code Analysis | from [sonarcloud](https://sonarcloud.io/)      |
+| SONAR_PROJECT_KEY                   | Static Code Analysis | from [sonarcloud](https://sonarcloud.io/)      |
+| SONAR_PROJECT_NAME                  | Static Code Analysis | from [sonarcloud](https://sonarcloud.io/)      |
+| SONAR_TOKEN                         | Static Code Analysis | from [sonarcloud](https://sonarcloud.io/)      |
 
 <img alt="Azure SSR Variable Group" src={useBaseUrl('img/azure_ssr_variable_group.png')} />
 
@@ -51,5 +51,4 @@ Follow the steps below to create the pipeline and trigger the initial run.
 4. Click run and wait for the pipeline to complete.
 
 <!-- markdownlint-disable MD033 -->
-<HideNavigation next />
 

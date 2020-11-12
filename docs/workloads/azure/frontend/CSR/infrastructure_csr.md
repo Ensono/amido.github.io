@@ -12,7 +12,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 This page present the high level design of the reference implementation of the Stacks client-side rendering application.
 
-**This page assumes that the core infrastructure has already been provisioned. Instructions and additional information on the core infrastructure can be found [here](../../../infrastructure/azure/core_infrastructure.md)**
+**This page assumes that the core infrastructure has already been provisioned. Instructions and additional information on the core infrastructure can be found [here](../../../../infrastructure/azure/core_infrastructure.md)**
 
 Both the diagram and resource list below are for a single environment.
 

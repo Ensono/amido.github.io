@@ -18,6 +18,7 @@
  }
  
  .main {
+   width: 100%;
    max-width: 1600px;
  }
  
@@ -30,8 +31,11 @@
    display: flex;
    align-items: center;
    justify-content: center;
+   width: 100%;
  }
+
  
+
  .buttons > .button {
    border-radius: 36px;
  }
@@ -43,21 +47,19 @@
    width: 100%;
    flex-direction: row;
    gap: 30px;
-   background-color: white;
    flex-wrap: wrap;
  }
  
  .features .feature {
-   padding: 120px;
    display: flex;
    flex-direction: row;
    width: calc(50% - 15px);
    flex-grow: 1;
-   padding: 30px 100px;
+   padding: 30px 30px;
    font-size: 30px;
    color: black;
    min-height: 400px;
-   min-width: 720px;
+   min-width: 524px;
    padding-bottom: 60px;
  }
  
@@ -86,7 +88,36 @@
  .feature .feature-body {
    padding: 20px;
  }
- 
+
+ .containerSelects {
+    color: black;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+  
+ }
+
+ @media (min-width:900px) {
+   .containerSelects {
+      width: 40%;
+   }
+ }
+
+ @media (max-width:899px) {
+  .containerSelects {
+     width: 100%;
+  }
+}
+
+  .containerSelects2 {
+    display: flex;
+    justify-self: center;
+    flex-direction: column;
+    width: 55%;
+  }
+
  .features2 {
    flex-wrap: wrap;
    display: flex;
@@ -95,7 +126,6 @@
    width: 100%;
    flex-direction: row;
    gap: 30px;
-   background-color: white;
    justify-content: center;
  }
  
@@ -117,25 +147,16 @@
  
  .features2 .feature p {
    flex-grow: 1;
-   color: black;
+   color: var(--ifm-font-color-base);
    font-size: 30px;
  }
  
  .features2 .feature h3 {
-   color: black;
-   min-height: 175px;
- }
- 
- .logocontainer {
-   background-color: white;
-   display: flex;
-   padding: 50px;
-   justify-content: center;
+  color: var(--ifm-heading-color);
+  min-height: 175px;
  }
  
  .definition {
-   background: white;
-   color: black;
    text-align: center;
    padding: 30px;
    box-shadow: 0px 5px 0px 0px rgba(0, 0, 0, 0.15);
@@ -152,10 +173,9 @@
  }
  
  .supportedTechs {
-   background: white;
-   color: black;
+   color: var(--ifm-heading-color);
    text-align: center;
-   padding: 30px;
+   padding-top: 30px;
    margin-top: 30px;
    margin-bottom: 30px;
    z-index: 5000;
@@ -185,24 +205,104 @@
  }
  
  .logocontainer {
-   background-color: white;
    display: flex;
    padding: 50px;
+   justify-content: center;
  }
- 
+
+ .logocontainer>div>svg>g>path {
+    color: var(--ifm-heading-color);
+    fill: currentColor;
+  }
+
  .techs2 {
-   margin: 30px;
+   height: 100px;
+   margin: 30px 0px 30px 0px;
+  padding: 10px 0px 10px 0px;
    display: flex;
    gap: 50px;
-   justify-content: center;
+   justify-content: space-around;
    flex-wrap: wrap;
+   align-items: center;
+   flex-flow: nowrap;
+   flex-direction: row;
  }
- 
- .techs2 img {
-   height: 90px;
-   padding: 20px;
-   border-radius: 20px;
-   cursor: pointer;
-   background-color: white;
+
+ .techs2>span {
+  height: 100%;
+  width: auto;
+  align-items: center;
+  justify-content: center;
+  display: flex;
  }
- 
+
+ .techs2>:nth-child(2) {
+   flex-grow: 2;
+ }
+
+ .techs2:last-child {
+   justify-content: space-between;
+ }
+
+ .techs2:last-child>:nth-child(1) {
+   flex-grow: 2;
+ }
+
+.logo {
+  height: 100%;
+  width: auto;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.supportedTechs~.techs2:last-child {
+  justify-content: space-between;
+}
+
+.xunit>svg>g>path,
+.xunit>svg>g>g>path,
+.azureBlob>path,
+.googleKubernetes>path:first-child,
+.googleStorage>path:first-child,
+.cosmosdb>path:first-child,
+.azureKubernetes>path:first-child,
+.azureFunctions>g>g>path,
+.azurePipelines>path:first-child,
+.googleLighthouse>path:last-child,
+.testCafe>path,
+.karate>path,
+.cucumber>path:first-child,
+.xunit>g>path,
+.xunit>path,
+.jest>path:nth-child(3)
+{
+  color: var(--ifm-heading-color);
+  fill: currentColor;
+}
+
+.bddfy {
+  background-color: white;
+}
+
+.jest>path:nth-child(2) {
+  color: var(--ifm-heading-color);
+  stroke: var(--ifm-heading-color);
+  fill: currentColor;
+}
+
+.springBoot {
+  margin-left: 40px;
+}
+
+.swagger {
+  margin-right: 140px;
+  height: 70%;
+}
+
+.cypress {
+  margin-right: 130px;
+}
+
+.tooLarge {
+  height: 60%;
+}
