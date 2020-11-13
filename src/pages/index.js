@@ -109,10 +109,10 @@ function Picker() {
   const OptionMapper = {
     "Azure Cloud Services [Azure]": {
       "Server Side Rendered Web Application": {
-        "Node JS / React": "workloads/azure/frontend/cli_webapp_frameworks_ssr",
+        "Node JS / React": "workloads/azure/frontend/SSR/ide_setup_ssr",
       },
       "Client Side Rendered Web Application": {
-        "Node JS / React": "workloads/azure/frontend/cli_webapp_frameworks_csr",
+        "Node JS / React": "workloads/azure/frontend/CSR/ide_setup_csr",
       },
       "REST Web API": {
         "Java Spring Boot": "workloads/azure/backend/java/intro_java",
@@ -228,11 +228,9 @@ function Home() {
             <h3>Get started with Amido Stacks</h3>
 
             <p>
-              Amido Stacks is a catalogue of{" "}
-              <a href={baseUrl}> workload</a> templates that
-              <br />
-              instantly scaffold and deploy boilerplate software projects. Slash
-              the time it takes to get productive on your software project
+              Increase velocity for successful digital transformations with reliable,
+              tried and tested code that slashes configuration time and speeds up deployment. <br />
+              Amido Stacks is a catalogue of {" "} <a href={baseUrl}> workload</a> templates, package management and example implementations that act as a foundation for you to springboard into build.
             </p>
             <div className={styles.buttons} style={{ marginTop: 20 }}>
               <Link

@@ -116,7 +116,7 @@ values={[
 
 [Auth0](identity.md) <br/>
 [Contentful](contentful_integration.md) <br/>
-[API](api_definition.md) <br/>
+[API](api_definition_ssr.md) <br/>
 
 ## Get developing
 

@@ -1,21 +1,9 @@
 ---
-id: intro_node_js
+id: intro_node_js_ssr
 title: Introduction
 sidebar_label: Introduction
 hide_title: false
 hide_table_of_contents: true
-description: Introduction
-keywords:
-  - rest 
-  - api
-  - csr
-  - ssr
-  - client 
-  - side 
-  - rendering
-  - server 
-  - client side rendering
-  - server side rendering
 ---
 
 ## What

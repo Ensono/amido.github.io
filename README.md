@@ -6,7 +6,6 @@
 - [Stacks JAVA](https://github.com/amido/stacks-java)
 - [Stacks Pipeline Templates](https://github.com/amido/stacks-pipeline-templates)
 - [Stacks Terraform](https://github.com/amido/stacks-terraform)
-- [Stacks Testing Awesome](https://github.com/amido/stacks-testing-awesome)
 
 ### Packages
 

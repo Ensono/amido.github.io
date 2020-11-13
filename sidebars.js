@@ -15,35 +15,39 @@ module.exports = {
             type: "category",
             label: "Frontend Web Applications",
             items: [
-              "workloads/azure/frontend/ide_setup",
-              "workloads/azure/frontend/stacks_monorepo",
-              "workloads/azure/frontend/state-management",
               {
                 type: "category",
                 label: "Client Side Rendering",
                 items: [
+                  "workloads/azure/frontend/CSR/ide_setup_csr",
+                  "workloads/azure/frontend/CSR/stacks_monorepo_csr",
+                  "workloads/azure/frontend/CSR/state_management_csr",
                   "workloads/azure/frontend/CSR/getting_started_csr",
-                  "workloads/azure/frontend/CSR/api_definition_crs",
+                  "workloads/azure/frontend/CSR/api_definition_csr",
                   "workloads/azure/frontend/CSR/logging_and_instrumentation_csr",
                   "workloads/azure/frontend/CSR/infrastructure_csr",
                   "workloads/azure/frontend/CSR/pipeline_csr",
+                  "workloads/azure/frontend/CSR/browser_support_csr"
                 ],
               },
               {
                 type: "category",
                 label: "Server  Side Rendering",
                 items: [
+                  "workloads/azure/frontend/SSR/ide_setup_ssr",
+                  "workloads/azure/frontend/SSR/stacks_monorepo_ssr",
+                  "workloads/azure/frontend/SSR/state_management_ssr",
                   "workloads/azure/frontend/SSR/getting_started_ssr",
                   "workloads/azure/frontend/SSR/contentful_integration",
                   "workloads/azure/frontend/SSR/identity",
-                  "workloads/azure/frontend/SSR/api_definition",
+                  "workloads/azure/frontend/SSR/api_definition_ssr",
                   "workloads/azure/frontend/SSR/logging_and_instrumentation_ssr",
                   "workloads/azure/frontend/SSR/server_side_cache",
                   "workloads/azure/frontend/SSR/infrastructure_ssr",
                   "workloads/azure/frontend/SSR/pipeline_ssr",
+                  "workloads/azure/frontend/SSR/browser_support_ssr"
                 ],
               },
-              "workloads/azure/frontend/browser_support",
             ],
           },
           {
