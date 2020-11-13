@@ -65,7 +65,7 @@ module.exports = {
       title: "",
       logo: {
         alt: "Amido Stacks Logo",
-        src: "img/logo.svg",
+        src: "img/logo_wide.svg",
       },
       items: [
         {
