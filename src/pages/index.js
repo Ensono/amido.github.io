@@ -395,7 +395,7 @@ function AmidoStacksLogo() {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <g clipPath="url(#clip0)">
+      <g clipPath="useBaseUrl(#clip0)">
         <path
           d="M236.22 81.8319L188.976 0.00260925L141.732 81.8319L94.488 163.661H125.984L157.48 109.108L188.976 54.5559L220.472 109.108L251.968 163.661H283.464L236.22 81.8319Z"
           fill="#231F20"
