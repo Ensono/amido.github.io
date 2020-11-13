@@ -130,6 +130,8 @@ At the end of bootstrapping your example framework, you will have an output that
 
 ### Development
 
+The source code can be found [here](https://github.com/amido/stacks-webapp-template) 
+
 Move to the `<PROJECT-NAME>/src` folder and run the next commands
 
 ```bash
