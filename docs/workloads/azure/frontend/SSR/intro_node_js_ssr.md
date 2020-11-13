@@ -1,5 +1,5 @@
 ---
-id: intro_node_js
+id: intro_node_js_ssr
 title: Introduction
 sidebar_label: Introduction
 hide_title: false

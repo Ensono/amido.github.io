@@ -1,12 +1,21 @@
 ---
-id: browser_support
+id: browser_support_csr
 title: Browser Support
 sidebar_label: Browser Support
 hide_title: false
 hide_table_of_contents: true
+description: Browser Support
+keywords:
+  - rest 
+  - api
+  - application
+  - browser
+  - support
+  - polyfills
+  - eslint
 ---
 
-import HideNavigation  from "../../../../src/pages/HideNavigation";
+import HideNavigation  from "../../../../../src/pages/HideNavigation";
 
 Given we provide boilerplate WebApps designing for accessibility, we would
 like to have optionality to support broad range of browsers. We look to

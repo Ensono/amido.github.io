@@ -4,6 +4,15 @@ title: Repository Overview
 sidebar_label: Repository Structure
 hide_title: false
 hide_table_of_contents: true
+description: .NET Core REST API application - Repository Overview
+keywords:
+  - .net core
+  - rest api
+  - cqrs
+  - example 
+  - template 
+  - repository
+  - structure
 ---
 
 

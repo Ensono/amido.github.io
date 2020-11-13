@@ -2,6 +2,20 @@
 id: quickstart_java_cqrs
 title: Getting started with the Java Rest API application
 sidebar_label: Getting started
+description: Getting started with the Java Rest API application
+keywords:
+  - java
+  - rest 
+  - api
+  - cqrs
+  - application
+  - spring boot
+  - authorization
+  - docker
+  - swagger
+  - auth0
+  - settings
+  - get started
 ---
 
 import Tabs from '@theme/Tabs';

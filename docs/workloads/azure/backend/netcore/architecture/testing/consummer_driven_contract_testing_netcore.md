@@ -3,6 +3,17 @@ id: consummer_driven_contract_testing_netcore
 title: Consumer Driven Contract Testing
 hide_title: true
 hide_table_of_contents: false
+description: Contract testing for the .NET Core REST API application
+keywords:
+  - .net core
+  - rest api
+  - tests 
+  - stacks
+  - contract tests
+  - pact
+  - consumer
+  - provider
+  - broker
 ---
 
 ## Consumer Driven Contract Testing

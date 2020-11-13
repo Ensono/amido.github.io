@@ -5,304 +5,325 @@
  * and scoped locally.
  */
 
- @import url("https://fonts.googleapis.com/css2?family=Karla&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Karla&display=swap");
 
- html { 
-   min-width: 800px;
- }
- .mainHolder {
-   width: 100%;
-   height: 100%;
-   display: flex;
-   justify-content: center;
- }
- 
- .main {
-   width: 100%;
-   max-width: 1600px;
- }
- 
- :root {
-   --ifm-button-border-radius: 36px;
-   font-family: "Karla", sans-serif;
- }
- 
- .buttons {
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   width: 100%;
- }
-
- 
-
- .buttons > .button {
-   border-radius: 36px;
- }
- 
- .features {
-   padding: 0px;
-   display: flex;
-   align-items: center;
-   width: 100%;
-   flex-direction: row;
-   gap: 30px;
-   flex-wrap: wrap;
- }
- 
- .features .feature {
-   display: flex;
-   flex-direction: row;
-   width: calc(50% - 15px);
-   flex-grow: 1;
-   padding: 30px 30px;
-   font-size: 30px;
-   color: black;
-   min-height: 400px;
-   min-width: 524px;
-   padding-bottom: 60px;
- }
- 
- .features .feature p {
-   flex-grow: 1;
-   text-align: center;
- }
- 
- .feature h3 {
-   font-size: 47px;
-   text-align: center;
-   padding: 30px;
- }
- 
- .blackButton {
-   background-color: black;
-   color: white;
-   border-color: black;
- }
- 
- .blackButton:hover {
-   color: black;
-   background-color: #e6e6e6;
- }
- 
- .feature .feature-body {
-   padding: 20px;
- }
-
- .containerSelects {
-    color: black;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
-  
- }
-
- @media (min-width:900px) {
-   .containerSelects {
-      width: 40%;
-   }
- }
-
- @media (max-width:899px) {
-  .containerSelects {
-     width: 100%;
-  }
+html {
+  min-width: 320px;
 }
 
-  .containerSelects2 {
-    display: flex;
-    justify-self: center;
-    flex-direction: column;
-    width: 55%;
-  }
-
- .features2 {
-   flex-wrap: wrap;
-   display: flex;
-   align-items: center;
-   padding: 1rem 0;
-   width: 100%;
-   flex-direction: row;
-   gap: 30px;
-   justify-content: center;
- }
- 
- .features2 .feature {
-   display: flex;
-   flex-direction: column;
-   text-align: center;
- 
-   color: var(--primary);
-   width: calc(33% - 30px);
-   flex-grow: 1;
-   padding: 30px;
-   min-height: 530px;
-   min-width: 455px;
-   max-width: 590px;
- 
-   font-size: 18px;
- }
- 
- .features2 .feature p {
-   flex-grow: 1;
-   color: var(--ifm-font-color-base);
-   font-size: 30px;
- }
- 
- .features2 .feature h3 {
-  color: var(--ifm-heading-color);
-  min-height: 175px;
- }
- 
- .definition {
-   text-align: center;
-   padding: 30px;
-   box-shadow: 0px 5px 0px 0px rgba(0, 0, 0, 0.15);
-   z-index: 5000;
- }
- 
- .definition h3 {
-   font-size: 44px;
-   font-weight: 700;
- }
- 
- .definition p {
-   font-size: 30px;
- }
- 
- .supportedTechs {
-   color: var(--ifm-heading-color);
-   text-align: center;
-   padding-top: 30px;
-   margin-top: 30px;
-   margin-bottom: 30px;
-   z-index: 5000;
- }
- 
- .supportedTechs h3 {
-   font-size: 44px;
-   font-weight: 700;
-   margin-bottom: 60px;
- }
- 
- .supportedTechs p {
-   font-size: 30px;
- }
- 
- .learnAboutStacks {
-   margin-top: 30px;
-   margin-bottom: 30px;
-   color: black;
- }
- 
- .heroBanner {
-   padding: 4rem 0;
-   text-align: center;
-   position: relative;
-   background-color: #ffc410;
- }
- 
- .logocontainer {
-   display: flex;
-   padding: 50px;
-   justify-content: center;
- }
-
- .logocontainer>div>svg>g>path {
-    color: var(--ifm-heading-color);
-    fill: currentColor;
-  }
-
- .techs2 {
-   height: 100px;
-   margin: 30px 0px 30px 0px;
-  padding: 10px 0px 10px 0px;
-   display: flex;
-   gap: 50px;
-   justify-content: space-around;
-   flex-wrap: wrap;
-   align-items: center;
-   flex-flow: nowrap;
-   flex-direction: row;
- }
-
- .techs2>span {
+.mainHolder {
+  width: 100%;
   height: 100%;
-  width: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.main {
+  width: 100%;
+  max-width: 1600px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+:root {
+  --ifm-button-border-radius: 36px;
+  font-family: "Karla", sans-serif;
+}
+
+.buttons {
+  display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
+}
+
+.buttons > .button {
+  border-radius: 36px;
+}
+
+.features {
+  padding: 0px;
   display: flex;
- }
+  align-items: center;
+  width: 100%;
+  flex-direction: row;
+  gap: 30px;
+  flex-wrap: wrap;
+}
 
- .techs2>:nth-child(2) {
-   flex-grow: 2;
- }
+.features .feature {
+  display: flex;
+  width: calc(50% - 15px);
+  flex-grow: 1;
+  padding: 30px 0px 60px 0px;
+  font-size: 30px;
+  color: black;
+  min-height: 400px;
+  min-width: 320px;
+  align-self: stretch;
+}
 
- .techs2:last-child {
-   justify-content: space-between;
- }
-
- .techs2:last-child>:nth-child(1) {
-   flex-grow: 2;
- }
-
-.logo {
+.features .feature div {
+  max-width: 480px;
+  width: 100%;
   height: 100%;
-  width: auto;
-  border-radius: 10px;
-  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
 }
 
-.supportedTechs~.techs2:last-child {
-  justify-content: space-between;
+.features .feature p {
+  display: flex;
+  flex: 1;
+  text-align: center;
+  align-self: stretch;
+  padding: 0px 30px 0px 30px;
 }
 
-.xunit>svg>g>path,
-.xunit>svg>g>g>path,
-.azureBlob>path,
-.googleKubernetes>path:first-child,
-.googleStorage>path:first-child,
-.cosmosdb>path:first-child,
-.azureKubernetes>path:first-child,
-.azureFunctions>g>g>path,
-.azurePipelines>path:first-child,
-.googleLighthouse>path:last-child,
-.testCafe>path,
-.karate>path,
-.cucumber>path:first-child,
-.xunit>g>path,
-.xunit>path,
-.jest>path:nth-child(3)
-{
+.features > .feature .buttons {
+  justify-self: end;
+  height: 46px;
+}
+
+.feature h3 {
+  font-size: 47px;
+  text-align: center;
+  padding: 30px 0px 30px 0px;
+}
+
+.features2 {
+  flex-wrap: wrap;
+  display: flex;
+  align-items: center;
+  padding: 1rem 0;
+  width: 100%;
+  flex-direction: row;
+  gap: 30px;
+  justify-content: center;
+}
+
+
+.features2 .feature {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  color: var(--primary);
+  width: calc(33% - 30px);
+  flex-grow: 1;
+  padding: 30px 15px 30px 15px;
+  min-height: 530px;
+  min-width: 320px;
+  max-width: 590px;
+  font-size: 18px;
+}
+
+.features2 .feature p {
+  display: flex;
+  flex-grow: 1;
+  color: var(--ifm-font-color-base);
+  font-size: 30px;
+  padding: 0px 15px 0px 15px;
+}
+
+.features2 .feature h3 {
+  color: var(--ifm-heading-color);
+  min-height: 175px;
+}
+
+.blackButton {
+  background-color: black;
+  color: white;
+  border-color: black;
+  height: 46px;
+}
+
+.blackButton:hover {
+  color: black;
+  background-color: #e6e6e6;
+}
+
+.feature .feature-body {
+  padding: 20px;
+}
+
+.containerSelects {
+  color: black;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+@media (min-width: 900px) {
+  .containerSelects {
+    width: 40%;
+  }
+}
+
+@media (max-width: 899px) {
+  .containerSelects {
+    width: 100%;
+  }
+}
+
+.containerSelects2 {
+  display: flex;
+  justify-self: center;
+  flex-direction: column;
+  width: 55%;
+}
+
+.definition {
+  text-align: center;
+  padding: 30px;
+  box-shadow: 0px 5px 0px 0px rgba(0, 0, 0, 0.15);
+  z-index: 5000;
+}
+
+.definition h3 {
+  font-size: 44px;
+  font-weight: 700;
+}
+
+.definition p {
+  font-size: 30px;
+}
+
+.supportedTechs {
+  color: var(--ifm-heading-color);
+  text-align: center;
+  padding-top: 30px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.supportedTechs h3 {
+  font-size: 44px;
+  font-weight: 700;
+  margin-bottom: 60px;
+}
+
+.supportedTechs p {
+  font-size: 30px;
+}
+
+.learnAboutStacks {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  color: black;
+}
+
+.heroBanner {
+  padding: 4rem 0;
+  text-align: center;
+  position: relative;
+  background-color: #ffc410;
+}
+
+.logocontainer {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 50px 15px 50px 15px;
+  justify-content: center;
+  max-width: 378px;
+}
+
+.logocontainer > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.logocontainer > div > svg > g > path {
   color: var(--ifm-heading-color);
   fill: currentColor;
 }
 
-.bddfy {
-  background-color: white;
+.xunit > svg > g > path,
+.xunit > svg > g > g > path,
+.azureBlob > path,
+.googleKubernetes > path:first-child,
+.googleStorage > path:first-child,
+.cosmosdb > path:first-child,
+.azureKubernetes > path:first-child,
+.azureFunctions > g > g > path,
+.azurePipelines > path:first-child,
+.googleLighthouse > path:last-child,
+.testCafe > path,
+.karate > path,
+.cucumber > path:first-child,
+.xunit > g > path,
+.xunit > path,
+.jest > path:nth-child(3) {
+  color: var(--ifm-heading-color);
+  fill: currentColor;
 }
 
-.jest>path:nth-child(2) {
+.jest > path:nth-child(2) {
   color: var(--ifm-heading-color);
   stroke: var(--ifm-heading-color);
   fill: currentColor;
 }
 
-.springBoot {
-  margin-left: 40px;
+.tableContainer {
+  display: flex;
+  justify-content: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  flex-direction: column;
 }
 
-.swagger {
-  margin-right: 140px;
-  height: 70%;
+.flexTable {
+  display: flex;
+  flex-flow: row wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 20px;
+  height: 100px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
-.cypress {
-  margin-right: 130px;
+.flexTable>div {
+  display: flex;
+  height: 100%;
+  width: calc(100% / 3 - 40px);
+  align-items: center;
 }
 
-.tooLarge {
-  height: 60%;
+.flexTable>div * {
+  height: 100%;
+}
+
+.flexTable>div:nth-child(1) {
+  justify-content: flex-start;
+  margin-right: auto;
+  flex-grow: 1;
+}
+.flexTable>div:nth-child(2) {
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  flex-grow: 2;
+}
+.flexTable>div:nth-child(3) {
+  justify-content: flex-end;
+  margin-left: auto;
+  flex-grow: 1;
+}
+
+.flexTable:last-child>div:nth-child(2) {
+  justify-content: flex-end;
+  margin-left: auto;
+  flex-grow: 1;
+}
+
+
+.flexRow {
+  height: 100%;
+  max-width: 100%;
+  flex-grow: 1;
 }

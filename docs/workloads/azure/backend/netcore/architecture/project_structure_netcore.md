@@ -4,6 +4,15 @@ title: Solution Structure
 sidebar_label: Solution Structure
 hide_title: true
 hide_table_of_contents: true
+description: .NET Core REST API application - Solution Structure
+keywords:
+  - .net core
+  - rest api
+  - cqrs
+  - example 
+  - template 
+  - repository
+  - structure
 ---
 
 ## Solution Structure

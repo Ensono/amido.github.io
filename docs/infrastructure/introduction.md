@@ -3,6 +3,12 @@ id: introduction
 title: Infrastructure Introduction
 sidebar_label: Introduction
 hide_table_of_contents: true
+description: Initial configuration for Stacks workloads 
+keywords:
+  - terraform
+  - configuration
+  - cloud provider
+  - documentation
 ---
 
 import HideNavigation  from "../../src/pages/HideNavigation";

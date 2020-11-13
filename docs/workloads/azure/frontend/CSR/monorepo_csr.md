@@ -1,7 +1,15 @@
 ---
-id: stacks_monorepo
+id: stacks_monorepo_csr
 title: Stacks Monorepo
 sidebar_label: Stacks Monorepo
+description: Stacks Monorepo
+keywords:
+  - rest 
+  - api
+  - csr
+  - ssr
+  - stacks
+  - monorepo
 ---
 
 ## Description

@@ -2,7 +2,7 @@ import React from "react";
 
 function CSharpLogo(props) {
     return (
-        <svg width={455} height={500} viewBox="-26 -20 507 552" {...props}>
+        <svg preserveAspectRatio="xMidYMid meet" viewBox="-26 -20 507 552" {...props}>
         <defs>
             <linearGradient
             id="prefix__d"

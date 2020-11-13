@@ -1,8 +1,9 @@
 import React from "react";
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 function XbehaveLogo(props) {
   return (
-    <img src="../../../static/img/xbehave.svg" alt="xBehave" {...props}/>
+    <img src={useBaseUrl('img/xbehave.svg')} alt="xBehave" {...props}/>
   );
 }
 

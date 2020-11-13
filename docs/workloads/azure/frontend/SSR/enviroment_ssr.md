@@ -1,5 +1,5 @@
 ---
-id: environment_variables_nodejs
+id: environment_variables_nodejs_ssr
 title: Environment Variables
 sidebar_label: Environment Variables
 hide_title: false

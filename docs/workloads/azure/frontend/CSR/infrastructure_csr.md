@@ -4,6 +4,19 @@ title: CSR Application - Azure Infrastructure
 sidebar_label: Infrastructure
 hide_title: false
 hide_table_of_contents: false
+description: CSR Application - Azure Infrastructure
+keywords:
+  - rest 
+  - api
+  - csr
+  - application
+  - template
+  - azure
+  - infrastructure
+  - client 
+  - side 
+  - rendering
+  - client side rendering
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

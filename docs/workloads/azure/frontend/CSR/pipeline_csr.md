@@ -4,6 +4,21 @@ title: CSR Application - Azure DevOps Pipeline
 sidebar_label: Pipeline
 hide_title: false
 hide_table_of_contents: false
+description: CSR Application - Azure DevOps Pipeline
+keywords:
+  - rest 
+  - api
+  - csr
+  - application
+  - template
+  - azure
+  - devops
+  - pipeline
+  - settings
+  - client 
+  - side 
+  - rendering
+  - client side rendering
 ---
 import HideNavigation  from "../../../../../src/pages/HideNavigation";
 

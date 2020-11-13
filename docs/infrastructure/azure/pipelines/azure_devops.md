@@ -2,6 +2,12 @@
 id: azure_devops
 title: Azure DevOps Pipeline
 sidebar_label: Azure DevOps
+description: How do you set up a pipeline in Azure DevOps
+keywords:
+  - workload
+  - pipeline
+  - Azure DevOps
+  - pipeline template
 ---
 
 import HideNavigation  from "../../../../src/pages/HideNavigation";

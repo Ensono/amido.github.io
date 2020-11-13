@@ -4,6 +4,13 @@ title: Cosmos DB Emulator
 sidebar_label: Cosmos DB Emulator
 hide_title: false
 hide_table_of_contents: false
+description: How to set up the Cosmos DB Emulator
+keywords:
+  - cosmos db
+  - emulator 
+  - settings
+  - template
+  - certificate
 ---
 
 ## Set up Cosmos DB Emulator locally

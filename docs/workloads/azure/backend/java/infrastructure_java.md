@@ -2,6 +2,17 @@
 id: infrastructure_java
 title: Java REST API - Azure Infrastructure
 sidebar_label: Infrastructure
+description: Java REST API - Azure Infrastructure
+keywords:
+  - java
+  - rest 
+  - api
+  - azure
+  - infrastructure
+  - ingress
+  - service
+  - aks
+  - pipelines
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

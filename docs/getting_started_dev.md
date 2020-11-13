@@ -2,6 +2,11 @@
 id: getting_started_dev
 title: Dev [Node.js] - Using the repo to build the Node.js application
 sidebar_label: Dev [Node.js]- Using the repo to build the Node.js application
+description: How to get started
+keywords:
+  - bootstrapping
+  - stacks
+  - get started
 ---
 
 ## Getting started

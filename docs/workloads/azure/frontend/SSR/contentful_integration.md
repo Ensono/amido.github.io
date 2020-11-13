@@ -4,6 +4,16 @@ title: Contentful Integration
 sidebar_label: CMS - Contentful Integration
 hide_title: false
 hide_table_of_contents: false
+description: CMS - Contentful Integration
+keywords:
+  - rest 
+  - api
+  - ssr
+  - cms
+  - integration
+  - settings
+  - configuration
+  - contentful cli
 ---
 
 ## ⚠️ Important 👷‍♀️🚧

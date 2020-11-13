@@ -4,6 +4,19 @@ title: Getting Started
 sidebar_label: Getting Started
 hide_title: false
 hide_table_of_contents: false
+description: Getting started with SSR
+keywords:
+  - rest 
+  - api
+  - ssr
+  - cms
+  - integration
+  - framework
+  - configuration
+  - side 
+  - rendering
+  - server 
+  - server side rendering  
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -103,7 +116,7 @@ values={[
 
 [Auth0](identity.md) <br/>
 [Contentful](contentful_integration.md) <br/>
-[API](api_definition.md) <br/>
+[API](api_definition_ssr.md) <br/>
 
 ## Get developing
 
