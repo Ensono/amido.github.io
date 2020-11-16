@@ -321,9 +321,22 @@ html {
   flex-grow: 1;
 }
 
-
 .flexRow {
   height: 100%;
   max-width: 100%;
   flex-grow: 1;
+  cursor: pointer;
+}
+
+div details summary {
+  cursor: pointer;
+}
+
+div details div {
+  padding-top: 20px;
+  padding-left: 20px;
+}
+
+div details summary:focus {
+  outline-width: 0px;
 }
