@@ -102,6 +102,12 @@ This is version `1.0.0` of the `java-stacks` project.
    please refer to section "Determine which root certificates have been installed" in [Setting Up CosmosDB Emulator](setting_up_cosmos_db_locally_java.md)
 
     Move to the `<PROJECT-NAME>/java` folder, then
+    go to `application.yml` either comment out the `application-insights` block or set `enabled`  property to `false`.
+    In `logback-spring.xml` comment out the application-insight section.
+
+    ![logback](/img/logback_xml.png)
+
+    Set `AZURE_COSMOSDB_KEY` as an environment variable and set the value to be the primary key value on the emulator.
     <br />
 
     <Tabs
@@ -125,8 +131,8 @@ This is version `1.0.0` of the `java-stacks` project.
     mvnw.cmd spring-boot:run -Dspring-boot.run.jvmArguments='-Djavax.net.ssl.trustStore="<Location of the root cosmos db certificate>" -Djavax.net.ssl.trustStorePassword="changeit"'
     ```
 
-   </TabItem>
-   </Tabs>
+    </TabItem>
+    </Tabs>
 
 5. Verify that the application has started
 

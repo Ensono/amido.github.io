@@ -57,6 +57,7 @@ import TabItem from "@theme/TabItem";
         </ul>
     </TabItem>
     <TabItem value="repository_clone">
+    <p>source code can be found [here](https://github.com/amido/stacks-dotnet)</p>
         <h4>PROS</h4>
         <ul>
             <li>Familiar approach.</li>
