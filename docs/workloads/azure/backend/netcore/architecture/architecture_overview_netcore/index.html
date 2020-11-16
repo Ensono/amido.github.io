@@ -6,16 +6,16 @@
 <meta name="generator" content="Docusaurus v2.0.0-alpha.65">
 <link rel="search" type="application/opensearchdescription+xml" title="Amido Stacks " href="/stacks/opensearch.xml"><title data-react-helmet="true">Architecture Overview | Amido Stacks </title><meta data-react-helmet="true" name="docsearch:version" content="current,latest"><meta data-react-helmet="true" name="twitter:card" content="summary_large_image"><meta data-react-helmet="true" property="og:title" content="Architecture Overview | Amido Stacks "><meta data-react-helmet="true" name="description" content=".NET Core REST API application - Architecture Overview"><meta data-react-helmet="true" property="og:description" content=".NET Core REST API application - Architecture Overview"><meta data-react-helmet="true" name="keywords" content=".net core,rest api,template,architecture overview,aggregate,AggregateRoot,domain,events,repository,stacks"><meta data-react-helmet="true" property="og:url" content="https://amido.github.io/stacks/docs/workloads/azure/backend/netcore/architecture/architecture_overview_netcore"><link data-react-helmet="true" rel="shortcut icon" href="/stacks/img/thumbnail_stacks.png"><link data-react-helmet="true" rel="preconnect" href="https://BH4D9OD16A-dsn.algolia.net" crossorigin="anonymous"><link data-react-helmet="true" rel="canonical" href="https://amido.github.io/stacks/docs/workloads/azure/backend/netcore/architecture/architecture_overview_netcore"><link rel="stylesheet" href="/stacks/styles.bd1da3bf.css">
 <link rel="preload" href="/stacks/styles.f455cc2c.js" as="script">
-<link rel="preload" href="/stacks/runtime~main.8cbbc52e.js" as="script">
-<link rel="preload" href="/stacks/main.8f910a60.js" as="script">
-<link rel="preload" href="/stacks/1.d05a3158.js" as="script">
-<link rel="preload" href="/stacks/2.37750fb4.js" as="script">
-<link rel="preload" href="/stacks/3.603c8a33.js" as="script">
-<link rel="preload" href="/stacks/1be78505.8f57a859.js" as="script">
-<link rel="preload" href="/stacks/157.29bcdb5c.js" as="script">
+<link rel="preload" href="/stacks/runtime~main.da20ed9f.js" as="script">
+<link rel="preload" href="/stacks/main.0c94f775.js" as="script">
+<link rel="preload" href="/stacks/1.6a035d66.js" as="script">
+<link rel="preload" href="/stacks/2.3d228e0e.js" as="script">
+<link rel="preload" href="/stacks/3.ef237281.js" as="script">
+<link rel="preload" href="/stacks/1be78505.36ab0a5a.js" as="script">
+<link rel="preload" href="/stacks/157.4715d845.js" as="script">
 <link rel="preload" href="/stacks/935f2afb.b09735eb.js" as="script">
-<link rel="preload" href="/stacks/17896441.68d0e451.js" as="script">
-<link rel="preload" href="/stacks/f388282e.81e45389.js" as="script">
+<link rel="preload" href="/stacks/17896441.287cdd66.js" as="script">
+<link rel="preload" href="/stacks/f388282e.19da6f33.js" as="script">
 </head>
 <body>
 <script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){var t=null;try{t=localStorage.getItem("theme")}catch(t){}return t}();t(null!==e?e:"light")}()</script><div id="__docusaurus">
@@ -27,15 +27,15 @@ When a person get married, they might change their names, but the identity stay 
 A checkout cart can have products the customer want to buy, when product is added to the cart the total should be updated.</p><p>In simple terms we could just make call to recalculate the total and it is all done. With this approach, we have a coupling between the operation add item and Calculate totals</p><p>In DDD, we could just raise an event of type ItemAddedToCartEvent and implement an event handler to calculate the totals outside of the AddItem operation but within the same context.</p><p>This approach makes both operations decoupled and flexible for extension, when we add new operations that need to calculate the total, we just need to extend the event handler to catch all events that triggers the Totals recalculation.</p><p>Another usage for events is EventSourcing, where we gather these events to identify what happened when we persist the changes caused by the operation.</p><br><h3><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_2cZh" id="domain-exceptions"></a>Domain Exceptions<a aria-hidden="true" tabindex="-1" class="hash-link" href="#domain-exceptions" title="Direct link to heading">#</a></h3><p>Domain exceptions, sometimes called business rule violation, are exceptions raised within the domain when an operation or object fail to meet business rules.</p><p><strong>Example:</strong>
 When an employee raises a purchase order, if the purchase order value is above a certain limit, the domain will raise an exception telling that the operation can&#x27;t be completed, this exception will interrupt the processing and tell the application about the error.</p><p>Because domain exceptions does not know about the environment it&#x27;s running in, the Application have to handle these exceptions and wrap it with an exception containing the environment context details like: Which operation raised the exception, who triggered the exception, correlation-id of the trigger and so on.</p><br><h3><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_2cZh" id="repository"></a>Repository<a aria-hidden="true" tabindex="-1" class="hash-link" href="#repository" title="Direct link to heading">#</a></h3><p>To make it possible to execute operations against a domain, we require a component that prepare the domain object to last known state before the operation is executed.</p><p>The repository is the component that lives between the application and the domain, it is responsible to Load <strong>aggregate roots</strong> from the database or the materialize the domain from a chain of events when using EventSourcing.</p><p>It is also the responsible to persist the changes and events that occurred to an AggregateRoot after an operation is executed.</p></div></article><div class="margin-vert--lg"><nav class="pagination-nav" aria-label="Blog list page navigation"><div class="pagination-nav__item"><a class="pagination-nav__link" href="/stacks/docs/workloads/azure/backend/netcore/security_netcore"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">« Application Security</div></a></div><div class="pagination-nav__item pagination-nav__item--next"><a class="pagination-nav__link" href="/stacks/docs/workloads/azure/backend/netcore/architecture/repository_overview_netcore"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Repository Overview »</div></a></div></nav></div></div></div><div class="col col--3"><div class="tableOfContents_3SO_"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#ddd-architecture-overview" class="table-of-contents__link">DDD Architecture Overview</a><ul><li><a href="#bounded-context" class="table-of-contents__link">Bounded Context</a></li><li><a href="#entities" class="table-of-contents__link">Entities</a></li><li><a href="#value-objects" class="table-of-contents__link">Value Objects</a></li><li><a href="#aggregates" class="table-of-contents__link">Aggregates</a></li><li><a href="#aggregateroot" class="table-of-contents__link">AggregateRoot</a></li><li><a href="#domain-events" class="table-of-contents__link">Domain Events</a></li><li><a href="#domain-exceptions" class="table-of-contents__link">Domain Exceptions</a></li><li><a href="#repository" class="table-of-contents__link">Repository</a></li></ul></li></ul></div></div></div></div></main></div></div><footer class="footer footer--dark"><div class="container"><div class="row footer__links"><div class="col footer__col"><h4 class="footer__title">Docs</h4><ul class="footer__items"><li class="footer__item"><a class="footer__link-item" href="/stacks/docs/">Getting Started</a></li></ul></div><div class="col footer__col"><h4 class="footer__title">About Us</h4><ul class="footer__items"><li class="footer__item"><a href="https://amido.com/" target="_blank" rel="noopener noreferrer" class="footer__link-item">Amido</a></li></ul></div><div class="col footer__col"><h4 class="footer__title">Open Source</h4><ul class="footer__items"><li class="footer__item"><a href="https://github.com/amido/stacks" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub</a></li></ul></div></div><div class="text--center"><div>Copyright © 2020 Amido Ltd</div></div></div></footer></div>
 <script src="/stacks/styles.f455cc2c.js"></script>
-<script src="/stacks/runtime~main.8cbbc52e.js"></script>
-<script src="/stacks/main.8f910a60.js"></script>
-<script src="/stacks/1.d05a3158.js"></script>
-<script src="/stacks/2.37750fb4.js"></script>
-<script src="/stacks/3.603c8a33.js"></script>
-<script src="/stacks/1be78505.8f57a859.js"></script>
-<script src="/stacks/157.29bcdb5c.js"></script>
+<script src="/stacks/runtime~main.da20ed9f.js"></script>
+<script src="/stacks/main.0c94f775.js"></script>
+<script src="/stacks/1.6a035d66.js"></script>
+<script src="/stacks/2.3d228e0e.js"></script>
+<script src="/stacks/3.ef237281.js"></script>
+<script src="/stacks/1be78505.36ab0a5a.js"></script>
+<script src="/stacks/157.4715d845.js"></script>
 <script src="/stacks/935f2afb.b09735eb.js"></script>
-<script src="/stacks/17896441.68d0e451.js"></script>
-<script src="/stacks/f388282e.81e45389.js"></script>
+<script src="/stacks/17896441.287cdd66.js"></script>
+<script src="/stacks/f388282e.19da6f33.js"></script>
 </body>
 </html>
