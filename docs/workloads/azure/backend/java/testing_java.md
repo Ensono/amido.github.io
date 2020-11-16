@@ -178,7 +178,7 @@ The generated report can be viewed under `./target/site/jacoco/index.html`.
 
 ### Dependency checker report
 
-The The [OWASP Dependency-Check](https://owasp.org/www-project-dependency-check/) is a Software Composition Analysis tool that attempts to detect publicly disclosed vulnerabilities contained within a project’s dependencies.
+The [OWASP Dependency-Check](https://owasp.org/www-project-dependency-check/) is a Software Composition Analysis tool that attempts to detect publicly disclosed vulnerabilities contained within a project’s dependencies.
 Dependency-check has a command line interface, a Maven plugin, an Ant task, and a Jenkins plugin. The core engine contains a series of analyzers that inspect the project dependencies, collect pieces of information about the dependencies (referred to as evidence within the tool).
 To generate the dependency checker report please execute:
 
