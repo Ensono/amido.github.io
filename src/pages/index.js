@@ -302,7 +302,7 @@ function Home() {
                   </div>
                   <div className={clsx(styles.flexTable)} role="rowGroup">
                     <div><div><BddfyLogo className={clsx(styles.flexRow, styles.bddfy)} role="cell" onClick={() => triggerSearch("BDDfy")} /></div></div>
-                    <div><div><RestAssuredLogo className={clsx(styles.flexRow, styles.flexRow20Sm)} role="cell" onClick={() => triggerSearch("REST-Assured")} /></div></div>
+                    <div><div><RestAssuredLogo className={clsx(styles.flexRow, styles.flexRow40Sm)} role="cell" onClick={() => triggerSearch("REST-Assured")} /></div></div>
                     <div><div><JestLogo className={clsx(styles.flexRow, styles.jest)} role="cell" onClick={() => triggerSearch("Jest")} /></div></div>
                   </div>
                   <div className={clsx(styles.flexTable)} role="rowGroup">
