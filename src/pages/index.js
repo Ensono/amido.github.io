@@ -31,7 +31,7 @@ import AzurePipelinesLogo from "./Logos/AzurePipelinesLogo";
 import SerenityLogo from "./Logos/SerenityLogo";
 import GoogleLighthouseLogo from "./Logos/GoogleLighthouseLogo";
 import AzureKubernetesServiceLogo from "./Logos/AzureKubernetesServiceLogo";
-import AzureFunctionsLogo from "./Logos/AzureFunctionsLogo";
+import TerraformLogo from "./Logos/TerraformLogo";
 import GitlabLogo from "./Logos/GitLabLogo";
 import DockerLogo from "./Logos/DockerLogo";
 import AzureBlobStorageLogo from "./Logos/AzureBlobStorageLogo";
@@ -253,7 +253,6 @@ function Home() {
               Choose a{" "}
               <a
                 href={baseUrl}
-                style={{ color: "black", textDecoration: "underline" }}
               >
                 {" "}
                 workload</a>{" "} below and you can be up- <br />
@@ -274,16 +273,16 @@ function Home() {
                   <div className={clsx(styles.flexTable)} role="rowGroup">
                     <div><div><CSharpLogo className={clsx(styles.flexRow)} role="cell" onClick={() => triggerSearch("C#")} /></div></div>
                     <div><div><JavaLogo className={clsx(styles.flexRow)} role="cell" onClick={() => triggerSearch("Java")} /></div></div>
-                    <div><div><NodeLogo className={clsx(styles.flexRow)} role="cell" onClick={() => triggerSearch("node")} /></div></div>
+                    <div><div><NodeLogo className={clsx(styles.flexRow, styles.flexRow10Sm)} role="cell" onClick={() => triggerSearch("node")} /></div></div>
                   </div>
                   <div className={clsx(styles.flexTable)} role="rowGroup">
-                    <div><div><DotNetCoreLogo className={clsx(styles.flexRow)} role="cell" onClick={() => triggerSearch(".NET Core")} /></div></div>
+                    <div><div><DotNetCoreLogo className={clsx(styles.flexRow, styles.flexRow10Sm)} role="cell" onClick={() => triggerSearch(".NET Core")} /></div></div>
                     <div><div><SpringBootLogo className={clsx(styles.flexRow, styles.springBoot)} role="cell" onClick={() => triggerSearch("Spring Boot")} /></div></div>
                     <div><div><ReactLogo className={clsx(styles.flexRow)} role="cell" onClick={() => triggerSearch("React")} /></div></div>
                   </div>
                   <div className={clsx(styles.flexTable)} role="rowGroup">
                     <div><div><Auth0Logo className={clsx(styles.flexRow)} role="cell" onClick={() => triggerSearch("Auth0")} /></div></div>
-                    <div><div><SwaggerLogo className={clsx(styles.flexRow, styles.swagger)} role="cell" onClick={() => triggerSearch("Swagger")} /></div></div>
+                    <div><div><SwaggerLogo className={clsx(styles.flexRow, styles.swagger, styles.flexRow20Sm)} role="cell" onClick={() => triggerSearch("Swagger")} /></div></div>
                     <div><div><AzureBlobStorageLogo className={clsx(styles.flexRow, styles.azureBlob)} role="cell" onClick={() => triggerSearch("Azure Blob Storage")} /></div></div>
                   </div>
                   <div className={clsx(styles.flexTable)} role="rowGroup">
@@ -292,38 +291,38 @@ function Home() {
                     <div><div><GoogleCloudStorageLogo className={clsx(styles.flexRow, styles.googleStorage)} role="cell" onClick={() => triggerSearch("Google Cloud Storage")} /></div></div>
                   </div>
                   <div className={clsx(styles.flexTable)} role="rowGroup">
-                    <div><div><AzureFunctionsLogo className={clsx(styles.flexRow, styles.azureFunctions)} role="cell" onClick={() => triggerSearch("Azure Functions")} /></div></div>
-                    <div><div><CypressLogo className={clsx(styles.flexRow, styles.cypress, styles.tooLarge)} role="cell" onClick={() => triggerSearch("Cypress")}/></div></div>
+                    <div><div><TerraformLogo className={clsx(styles.flexRow, styles.terraform, styles.flexRow40Sm)} role="cell" onClick={() => triggerSearch("Terraform")} /></div></div>
+                    <div><div><CypressLogo className={clsx(styles.flexRow, styles.cypress, styles.flexRow20Sm)} role="cell" onClick={() => triggerSearch("Cypress")}/></div></div>
                     <div><div><KarateLogo className={clsx(styles.flexRow, styles.karate)} role="cell" onClick={() => triggerSearch("Karate")} /></div></div>
                   </div>
                   <div className={clsx(styles.flexTable)} role="rowGroup">
-                    <div><div><XbehaveLogo className={clsx(styles.flexRow)} role="cell" onClick={() => triggerSearch("xBehave")} /></div></div>
-                    <div><div><JunitLogo className={clsx(styles.flexRow, styles.tooLarge)} role="cell" onClick={() => triggerSearch("JUnit")} /></div></div>
+                    <div><div><XbehaveLogo className={clsx(styles.flexRow, styles.flexRow10Sm)} role="cell" onClick={() => triggerSearch("xBehave")} /></div></div>
+                    <div><div><JunitLogo className={clsx(styles.flexRow, styles.flexRow40Sm)} role="cell" onClick={() => triggerSearch("JUnit")} /></div></div>
                     <div><div><TestcafeLogo className={clsx(styles.flexRow, styles.testCafe)} role="cell" onClick={() => triggerSearch("Testcafe")} /></div></div>
                   </div>
                   <div className={clsx(styles.flexTable)} role="rowGroup">
                     <div><div><BddfyLogo className={clsx(styles.flexRow, styles.bddfy)} role="cell" onClick={() => triggerSearch("BDDfy")} /></div></div>
-                    <div><div><RestAssuredLogo className={clsx(styles.flexRow, styles.tooLarge)} role="cell" onClick={() => triggerSearch("REST-Assured")} /></div></div>
+                    <div><div><RestAssuredLogo className={clsx(styles.flexRow, styles.flexRow20Sm)} role="cell" onClick={() => triggerSearch("REST-Assured")} /></div></div>
                     <div><div><JestLogo className={clsx(styles.flexRow, styles.jest)} role="cell" onClick={() => triggerSearch("Jest")} /></div></div>
                   </div>
                   <div className={clsx(styles.flexTable)} role="rowGroup">
                     <div><div><AzurePipelinesLogo className={clsx(styles.flexRow, styles.azurePipelines)} role="cell" onClick={() => triggerSearch("Azure Pipelines")} /></div></div>
-                    <div><div><SerenityLogo className={clsx(styles.flexRow, styles.tooLarge)} role="cell" onClick={() => triggerSearch("Serenity")} /></div></div>
+                    <div><div><SerenityLogo className={clsx(styles.flexRow, styles.flexRow40Sm)} role="cell" onClick={() => triggerSearch("Serenity")} /></div></div>
                     <div><div><GoogleLighthouseLogo className={clsx(styles.flexRow, styles.googleLighthouse)} role="cell" onClick={() => triggerSearch("Google Lighthouse")} /></div></div>
                   </div>
                   <div className={clsx(styles.flexTable)} role="rowGroup">
                     <div><div><AzureKubernetesServiceLogo className={clsx(styles.flexRow, styles.azureKubernetes)} role="cell" onClick={() => triggerSearch("Azure Kubernetes Service")} /></div></div>
-                    <div><div><ShouldlyLogo className={clsx(styles.flexRow, styles.tooLarge)} role="cell" onClick={() => triggerSearch("Shouldly")} /></div></div>
+                    <div><div><ShouldlyLogo className={clsx(styles.flexRow, styles.flexRow30Sm)} role="cell" onClick={() => triggerSearch("Shouldly")} /></div></div>
                     <div><div><GitlabLogo className={clsx(styles.flexRow)} role="cell" onClick={() => triggerSearch("GitLab")} /></div></div>
                   </div>
                   <div className={clsx(styles.flexTable)} role="rowGroup">
-                    <div><div><DockerLogo className={clsx(styles.flexRow)} role="cell" onClick={() => triggerSearch("Docker")} /></div></div>
-                    <div><div><AppliToolsLogo className={clsx(styles.flexRow, styles.applitools)} role="cell" onClick={() => triggerSearch("Applitools")} /></div></div>
+                    <div><div><DockerLogo className={clsx(styles.flexRow, styles.flexRow10Sm)} role="cell" onClick={() => triggerSearch("Docker")} /></div></div>
+                    <div><div><AppliToolsLogo className={clsx(styles.flexRow, styles.applitools, styles.flexRow30Sm)} role="cell" onClick={() => triggerSearch("Applitools")} /></div></div>
                     <div><div><GoogleKubernetesEngineLogo className={clsx(styles.flexRow, styles.googleKubernetes)} role="cell" onClick={() => triggerSearch("Google Kubernetes Engine")} /></div></div>
                   </div>
                   <div className={clsx(styles.flexTable)} role="rowGroup">
-                    <div><div><XunitLogo className={clsx(styles.flexRow, styles.xunit, styles.tooLarge)} role="cell" onClick={() => triggerSearch("xUnit")}/></div></div>
-                    <div><div><GatlingLogo className={clsx(styles.flexRow, styles.tooLarge)} role="cell" onClick={() => triggerSearch("Gatling")} /></div></div>
+                    <div><div><XunitLogo className={clsx(styles.flexRow, styles.xunit, styles.flexRow40Sm)} role="cell" onClick={() => triggerSearch("xUnit")}/></div></div>
+                    <div><div><GatlingLogo className={clsx(styles.flexRow, styles.flexRow40Sm)} role="cell" onClick={() => triggerSearch("Gatling")} /></div></div>
                   </div>
                 </div>
               </div>
@@ -343,7 +342,7 @@ function Home() {
                 <p>{feature.description}</p>
 
                 <div className={styles.buttons} style={{ marginTop: 20 }}>
-                  <Link className={clsx("button  button--outline button--lg", styles.blackButton)}
+                  <Link className={clsx("button button--outline button--lg", styles.blackButton)}
                         to={baseUrl + feature.link}
                   >
                     {feature.title}
@@ -364,7 +363,6 @@ function Home() {
 
                   <div className={styles.buttons} style={{ marginTop: 40 }}>
                     <Link
-                      style={{ color: "black" }}
                       className={clsx(
                         "button button button--primary button--lg",
                         styles.getStarted
