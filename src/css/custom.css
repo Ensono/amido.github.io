@@ -8,14 +8,40 @@
 /* You can override the default Infima variables here. */
 :root {
   --ifm-navbar-background-color: #242526;
-  --ifm-color-primary: #fac518;
-  --ifm-color-primary-dark: #f1ba05;
-  --ifm-color-primary-darker: #e4b005;
-  --ifm-color-primary-darkest: #bc9104;
-  --ifm-color-primary-light: #fbcc33;
-  --ifm-color-primary-lighter: #fbcf40;
-  --ifm-color-primary-lightest: #fcd968;
+  --ifm-color-primary: #fecb02;
+  --ifm-color-primary-dark: #e5b701;
+  --ifm-color-primary-darker: #d9ad01;
+  --ifm-color-primary-darkest: #b28f01;
+  --ifm-color-primary-light: #fed01b;
+  --ifm-color-primary-lighter: #fed328;
+  --ifm-color-primary-lightest: #fedb4e;
   --ifm-code-font-size: 95%;
+}
+
+:root {
+  --ifm-link-color: var(--ifm-font-color-base);
+  --ifm-link-decoration-line: underline;
+  --ifm-link-opacity: 0;
+  --ifm-text-decoration-style: solid;
+
+
+  --ifm-link-hover-color: var(--ifm-font-color-base);
+  --ifm-link-hover-decoration-line: underline;
+  --ifm-link-hover-opacity: 0.5;
+  --ifm-text-hover-decoration-style: solid;
+
+  --ifm-transition-duration: 0.25s;
+  --ifm-transition-property: opacity;
+  --ifm-transition-timing-function: ease;
+  --ifm-transition-delay: 0s
+}
+
+:root {
+  --docsearch-hit-active-color: var(--docsearch-hit-color) !important;
+}
+
+html[data-theme="dark"] {
+  --docsearch-hit-active-color: black !important;
 }
 
 .navbar {
@@ -27,6 +53,10 @@
   color: white !important;
 }
 
+.navbar__link:hover {
+  color: var(--ifm-navbar-link-hover-color) !important;
+}
+
 .docusaurus-highlight-code-line {
   background-color: rgb(211,211,211);
   display: block;
@@ -34,8 +64,27 @@
   padding: 0 var(--ifm-pre-padding);
 }
 
-
-
 .navbar__logo {
-  height: 150% !important; 
+  height: 150% !important;
+}
+
+.DocSearch-Hit-source {
+  color: var(--docsearch-hit-color) !important;
+}
+
+.DocSearch-Hit mark {
+  text-decoration-line: underline !important;
+  color: var(--docsearch-hit-color) !important;
+}
+
+html[data-theme="dark"] .DocSearch-Hit[aria-selected="true"] .DocSearch-Hit-Title{
+  color: black !important;
+}
+
+html[data-theme="dark"] .DocSearch-Hit[aria-selected="true"] mark {
+  text-decoration-line: underline !important;
+}
+
+.pagination-nav__label {
+  color: var(--ifm-color-primary);
 }
