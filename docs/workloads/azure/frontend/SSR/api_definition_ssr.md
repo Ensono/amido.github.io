@@ -23,7 +23,7 @@ meaning another endpoint either within your system developed by another team or
 a public endpoint of 3rd party provider e.g. `hotels.com` etc...
 
 The backend (and frontend) uses the [axios](https://github.com/axios/axios)
-library as the HTTPclient.
+library as the HTTP Client.
 
 It is on purpose left as a thin wrapper implementation so that the user can
 extend with additional parameters on top of the mandated ones; `url`, `method` -
@@ -122,7 +122,7 @@ Sample implementation from a page can be seen in
 Key things to note:
 
 - `import api from "constants/apis/menu";`
-- multiple APIs from constants can be instatiated
+- multiple APIs from constants can be instantiated
 - e.g. `import menuApi from "constants/apis/menu";`
     `import categoryApi from "constants/apis/menu";`
 

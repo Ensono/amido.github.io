@@ -23,17 +23,16 @@ meaning another endpoint either within your system developed by another team or
 a public endpoint of 3rd party provider e.g. `hotels.com` etc...
 
 The backend (and frontend) uses the [axios](https://github.com/axios/axios)
-library as the HTTPclient.
+library as the HTTP Client.
 
 It is on purpose left as a thin wrapper implementation so that the user can
 extend with additional parameters on top of the mandated ones; `url`, `method` -
 e.g. a header for authentication. As such it only returns an unopinionated axios
-Instance and not a method initialized implementation. the method paratemer is
+Instance and not a method initialized implementation. the method parameter is
 mainly used as a type guard.
 
 Sample implementation of an entire API can be found in the
 ```../src/state/ducks/get-menus```, this demonstrates how to setup a saga to fetch a specific business endpoint.
-
 
 ```javascript
 export const fetchMenus = () =>
