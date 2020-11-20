@@ -16,7 +16,7 @@ keywords:
 
 Stacks is an Amido open-source project that automates the setup of software development projects. Stacks is for software engineers of all kinds who want to create projects quickly.
 
-Setting up the infrastructure and frameworks necessary to deliver a software project takes time.  A team might spend the first two weeks (sprint 0) making technical decisions and then provisioning and configuring environments, pipelines, compute, test frameworks and more. Stacks automates this setup using code-as-infrastructure to shrink your project's sprint 0 from two weeks to an hour or less.
+Setting up the infrastructure and frameworks necessary to deliver a software project takes time. A team might spend the first two weeks (sprint 0) making technical decisions and then provisioning and configuring environments, pipelines, compute, test frameworks and more. Stacks automates this setup using code-as-infrastructure to shrink your project's sprint 0 from two weeks to an hour or less.
 
 ## What can you do with Stacks
 
@@ -50,4 +50,4 @@ But there's more to Stacks than saving time. Amido has thought deeply about the 
 
 ## How does it work
 
-Select a workload using the What can you do with Stacks element on the home page to see detailed documentation on how to get started.
+Select a workload using the What can you do with Stacks element on the home page to see detailed documentation on how to get started. For a more detailed section on Workloads please see [Introduction to workloads](./workloads/workloads).
