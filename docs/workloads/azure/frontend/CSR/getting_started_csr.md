@@ -180,8 +180,9 @@ npm start
 
 Runs the app in the development mode.<br /> Open [http://localhost:3001](http://localhost:3001) to view it in the browser.
 
-> ⚠️ IMPORTANT: For local development, you will need to start the server to host
-> the webapp under dev.
+:::note
+For local development, you will need to start the server to host the webapp under dev.
+:::
 
 ```text
 Note: To avoid running the CSR in localhost CORS issues we can run the SSR app in the background and use MENU_API_URL env point to http://localhost:3000

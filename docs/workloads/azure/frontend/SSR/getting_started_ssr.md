@@ -154,7 +154,7 @@ npm install
 npm run dev
 ```
 
-```bash to run locally
+```bash title="to run locally"
 npm run start
 ```
 
@@ -193,8 +193,7 @@ The template is a Server Side Rendered (SSR) implementation using:
   In order to be able to build and run the webapp template, across environments
   and as part of CI, we need to use [Docker](https://docs.docker.com/install/).
   
-  ```bash
-  # build from the webapp directory
+  ```bash title="build from the webapp directory"
   docker build ../ -f ./Dockerfile -t stacks-app
   ```
   
