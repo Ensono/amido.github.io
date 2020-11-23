@@ -4,8 +4,8 @@
   <ShortName>Amido Stacks </ShortName>
   <Description>Search Amido Stacks </Description>
   <InputEncoding>UTF-8</InputEncoding>
-  <Image width="16" height="16" type="image/x-icon">https://amido.github.io/img/thumbnail_stacks.png</Image>
-  <Url type="text/html" method="get" template="https://amido.github.io/search?q={searchTerms}"/>
-  <Url type="application/opensearchdescription+xml" rel="self" template="https://amido.github.io/opensearch.xml" />
-  <moz:SearchForm>https://amido.github.io</moz:SearchForm>
+  <Image width="16" height="16" type="image/x-icon">https://stacks.amido.com/img/thumbnail_stacks.png</Image>
+  <Url type="text/html" method="get" template="https://stacks.amido.com/search?q={searchTerms}"/>
+  <Url type="application/opensearchdescription+xml" rel="self" template="https://stacks.amido.com/opensearch.xml" />
+  <moz:SearchForm>https://stacks.amido.com</moz:SearchForm>
 </OpenSearchDescription>
