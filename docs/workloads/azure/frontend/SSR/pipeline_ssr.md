@@ -6,16 +6,16 @@ hide_title: false
 hide_table_of_contents: false
 description: SSR Application - Azure DevOps Pipeline
 keywords:
-  - rest 
+  - rest
   - api
   - ssr
   - application
   - azure
   - pipeline
-  - side 
+  - side
   - rendering
-  - server 
-  - server side rendering  
+  - server
+  - server side rendering
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -63,4 +63,3 @@ Follow the steps below to create the pipeline and trigger the initial run.
 4. Click run and wait for the pipeline to complete.
 
 <!-- markdownlint-disable MD033 -->
-

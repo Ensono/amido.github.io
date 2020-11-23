@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: /
 
-Sitemap: https://amido.github.io/stacks/sitemap.xml
+Sitemap: https://stacks.amido.com/sitemap.xml

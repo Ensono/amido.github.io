@@ -63,7 +63,7 @@ For example:
 
 - **dev - dev.application.properties**
 
-To a local environment of your choice, then set the `env` arg to `local` and amend the url accordingly in the `local.application.properties` file.  
+To a local environment of your choice, then set the `env` arg to `local` and amend the url accordingly in the `local.application.properties` file.
 
 ## Run all simulations
 

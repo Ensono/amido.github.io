@@ -5,8 +5,8 @@ module.exports = {
   title: "Amido Stacks ",
   tagline:
     "Helping projects gain momentum on digital transformation, with opinionated and modular boilerplate solutions",
-  url: "https://amido.github.io",
-  baseUrl: "/stacks/",
+  url: "https://stacks.amido.com",
+  baseUrl: "/",
   onBrokenLinks: "warn",
   favicon: "img/thumbnail_stacks.png",
   organizationName: "Amido", // Usually your GitHub org/user name.
@@ -75,7 +75,7 @@ module.exports = {
           position: "right",
         },
         {
-          href: "https://github.com/amido/stacks",
+          href: "https://github.com/amido/amido.github.io",
           label: "GitHub",
           position: "right",
         },
@@ -107,7 +107,7 @@ module.exports = {
           items: [
             {
               label: "GitHub",
-              to: "https://github.com/amido/stacks",
+              to: "https://github.com/amido/amido.github.io",
             },
           ],
         },

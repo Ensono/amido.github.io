@@ -3,7 +3,7 @@ Contributing
 
 Thank you for considering contributing to [Amido](https://amido.com/) Stacks. It's people like you that continue to make Stacks the best it can be.
 
-Following these guidelines helps you communicate and participate with the developers maintaining and developing these open source projects. We will cover: 
+Following these guidelines helps you communicate and participate with the developers maintaining and developing these open source projects. We will cover:
 * How to file issues
 * How to raise a PR
 * How to suggest a new feature
@@ -35,10 +35,10 @@ The basis of all is to remember to do good humaning. Everyone is on their own pa
 * Tests aren't optional
 
 # How to contribute
-Unsure where to being? Start by looking through the following [issues](https://github.com/amido/stacks/issues?q=is%3Aissue+is%3Aopen+sort%3Acomments-desc) labels:
+Unsure where to being? Start by looking through the following [issues](https://github.com/amido/amido.github.io/issues?q=is%3Aissue+is%3Aopen+sort%3Acomments-desc) labels:
 
-* [good-first-issue](https://github.com/amido/stacks/labels/good-first-issue) - should only require a few lines of code, and a test or two.
-* [documentation](https://github.com/amido/stacks/labels/kind%2Fdocumentation) - we always need to improve our documentation, it's one of the best ways to contribute.
+* [good-first-issue](https://github.com/amido/amido.github.io/labels/good-first-issue) - should only require a few lines of code, and a test or two.
+* [documentation](https://github.com/amido/amido.github.io/labels/kind%2Fdocumentation) - we always need to improve our documentation, it's one of the best ways to contribute.
 
 Sorting the issues by number of comments generally gives a reasonable proxy for the impact the change will have. More comments, more vested interest.
 
@@ -48,7 +48,7 @@ No problem! You can learn how from this *free* series, [How to Contribute to an 
 Alternatively, ask us for help.
 
 # Open Development
-All work on Amido Stacks is on GitHub. Both Amido maintainers and external contributors send pull requests which go through the same review process. We are using [Azure Pipelines](https://azure.microsoft.com/en-gb/services/devops/pipelines/) as our CI/CD tool of choice. Every PR will invoke a series of steps to build, test, and deploy. 
+All work on Amido Stacks is on GitHub. Both Amido maintainers and external contributors send pull requests which go through the same review process. We are using [Azure Pipelines](https://azure.microsoft.com/en-gb/services/devops/pipelines/) as our CI/CD tool of choice. Every PR will invoke a series of steps to build, test, and deploy.
 
 ## Code changes happen through pull requests
 We use Github for hosting and supporting our open source Stack projects. The Amido internal maintainers team will be monitoring Github for pull requests (PRs) and issues.
@@ -59,11 +59,11 @@ We actively welcome your pull requests:
 2. If you've added code that should be tested, add tests.
 3. Update the documentation.
 4. Ensure the test suite passes.
-5. Issue the pull request using the repos PULL_REQUEST_TEMPLATE.md. It's important to link the [issue number](https://github.com/amido/stacks/issues) to ensure that the Issue is closed.
+5. Issue the pull request using the repos PULL_REQUEST_TEMPLATE.md. It's important to link the [issue number](https://github.com/amido/amido.github.io/issues) to ensure that the Issue is closed.
 
 ## How to report a bug
 ### Security first
-If you find a security vulnerability, do NOT open an [issue](https://github.com/amido/stacks/issues/new/choose). Email [Amido](mailto:stacks@amido.com) instead.
+If you find a security vulnerability, do NOT open an [issue](https://github.com/amido/amido.github.io/issues/new/choose). Email [Amido](mailto:stacks@amido.com) instead.
 
 If you aren't sure you've found an security issue, ask yourself the following:
 1. Can I access something that is not mine?
@@ -72,7 +72,7 @@ If you aren't sure you've found an security issue, ask yourself the following:
 If you answered "yes" to either question, please get in contact.
 
 ### Report bugs using Github issues
-We use GitHub issues to track public bugs. Report a bug by opening a new issue. Please follow the [issue templates](https://github.com/amido/stacks/tree/master/.github/ISSUE_TEMPLATE). 
+We use GitHub issues to track public bugs. Report a bug by opening a new issue. Please follow the [issue templates](https://github.com/amido/amido.github.io/tree/master/.github/ISSUE_TEMPLATE).
 
 In general, please follow the guidelines:
 * A quick summary and/or background

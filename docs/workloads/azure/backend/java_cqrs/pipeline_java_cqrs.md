@@ -5,7 +5,7 @@ sidebar_label: Pipeline
 description: Java REST API with CQRS - Azure DevOps Pipeline
 keywords:
   - java
-  - rest 
+  - rest
   - api
   - cqrs
   - azure
@@ -47,7 +47,7 @@ Where possible, the scaffolding CLI will have populated the correct values in th
 
 ### Create the pipeline
 
-Follow the steps below to create the pipeline and trigger the initial run. 
+Follow the steps below to create the pipeline and trigger the initial run.
 
 1. In the pipelines section of Azure DevOps, select **New Pipeline**.
 2. Select your repository.

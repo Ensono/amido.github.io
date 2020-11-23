@@ -9,8 +9,8 @@ keywords:
   - .net core
   - rest api
   - cqrs
-  - example 
-  - template 
+  - example
+  - template
   - azure
   - application insights
   - cosmos db
@@ -164,7 +164,3 @@ git clone git@github.com:amido/stacks-dotnet.git
 
 </div>
 </details>
-
-
-
-

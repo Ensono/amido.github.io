@@ -16,7 +16,7 @@ keywords:
   - static quality gates
 ---
 
-Amido Stacks projects use [SonarQube](https://docs.sonarqube.org/) for static analysis. 
+Amido Stacks projects use [SonarQube](https://docs.sonarqube.org/) for static analysis.
 
 To enable integrations with GitHub and for use in Azure DevOps CI, the results are then hosted and viewable on [SonarCloud](https://sonarcloud.io/).
 

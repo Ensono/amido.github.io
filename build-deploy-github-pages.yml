@@ -1,4 +1,5 @@
-pr: none
+pr:
+  - master
 
 pool:
   vmImage: ubuntu-18.04
@@ -25,11 +26,10 @@ variables:
   - name: version_spec
     value: 12.x
   - name: self_repo
-    value: stacks
+    value: amido.github.io
   - name: working_directory
     value: '$(Agent.BuildDirectory)/s/$(self_repo)'
   - group: amido-stacks-webapp
-
 
 steps:
   - checkout: self
@@ -55,5 +55,3 @@ steps:
     displayName: "Publish: GitHub Pages"
     workingDirectory: $(working_directory)
     condition: and(contains(variables['build.sourceBranch'], 'refs/heads/master'), succeeded())
-
-
