@@ -3,7 +3,7 @@ id: introduction
 title: Infrastructure Introduction
 sidebar_label: Introduction
 hide_table_of_contents: true
-description: Initial configuration for Stacks workloads 
+description: Initial configuration for Stacks workloads
 keywords:
   - terraform
   - configuration

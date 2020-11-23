@@ -6,7 +6,7 @@ hide_title: false
 hide_table_of_contents: false
 description: CSR Application - Azure DevOps Pipeline
 keywords:
-  - rest 
+  - rest
   - api
   - csr
   - application
@@ -15,8 +15,8 @@ keywords:
   - devops
   - pipeline
   - settings
-  - client 
-  - side 
+  - client
+  - side
   - rendering
   - client side rendering
 ---
@@ -49,4 +49,3 @@ Follow the steps below to create the pipeline and trigger the initial run.
 
 <!-- markdownlint-disable MD033 -->
 <HideNavigation next />
-

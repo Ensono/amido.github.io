@@ -19,7 +19,7 @@ For local execution:
 
   1. Clone the project and navigate to the relevant path.
   2. run the following commands in the following order
-  
+
   ```bash
   npm install
   npm run build

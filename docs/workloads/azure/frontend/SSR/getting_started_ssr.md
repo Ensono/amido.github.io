@@ -6,17 +6,17 @@ hide_title: false
 hide_table_of_contents: false
 description: Getting started with SSR
 keywords:
-  - rest 
+  - rest
   - api
   - ssr
   - cms
   - integration
   - framework
   - configuration
-  - side 
+  - side
   - rendering
-  - server 
-  - server side rendering  
+  - server
+  - server side rendering
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -187,68 +187,68 @@ The template is a Server Side Rendered (SSR) implementation using:
 - Nextjs using a
   [Custom Server](https://nextjs.org/docs/advanced-features/custom-server) with
   Node.js [Express.js](https://expressjs.com/)
-  
+
 ## To build and run using Docker
-  
+
   In order to be able to build and run the webapp template, across environments
   and as part of CI, we need to use [Docker](https://docs.docker.com/install/).
-  
+
   ```bash title="Build from the webapp directory"
   docker build ../ -f ./Dockerfile -t stacks-app
   ```
-  
+
   Run it:
-  
+
   ```bash
   docker run --rm -it -p 3000:3000 stacks-app
   docker run --rm -it -v $(pwd):/app/deployed/src stacks-app:latest /bin/sh
   docker run --rm -it -v $(pwd):/usr/src sonarsource/sonar-scanner-cli
   docker run --rm -it -p 3000:3000 stacks-app:latest /bin/sh
   ```
-  
+
   Alternatives to running in a container
-  
+
   ```bash
   CMD ["pm2-runtime", "--json", "./ecosystem.yml", "--exp-backoff-restart-delay=500", "-a", "--update-env"]
   ```
-  
+
 ### Dockerfile Notes
-  
+
   Best practice guidelines:
-  
+
 - Do not run app under root
-  - To maximise cache layer capacity we should copy over package.json into /tmp
-    and build there
-  
+    - To maximise cache layer capacity we should copy over package.json into /tmp
+      and build there
+
 ## Testing
-  
+
 ### Unit, Component and Snapshot Testing
-  
+
   We are using [Jest](https://jestjs.io/) for running all unit, component,
   integration and snapshot tests. Jest supports TypeScript via Babel. Because
   TypeScript support in Babel is transpilation, to ensure that Jest will
   type-check the tests as they are run we use
   [ts-jest](https://github.com/kulshekhar/ts-jest).
-  
+
   To help that encourage good testing practices for React DOM testing, we are
   leveraging a helper library [react-testing-library](https://jestjs.io/).
-  
+
   `npm run test`: To run all unit tests. This will also run any snapshot tests.
   Snapshots are to be checked in and are found under the source code.
   `__tests__/__snapshots__`
-  
+
 For more information using Cypress, see:
-[Testing and Quality]<https://amido.github.io/stacks/docs/testing/cypress_functional_testing>).
+[Testing and Quality]<https://stacks.amido.com/docs/testing/cypress_functional_testing>).
 
 ### Visual Testing
 
 For more information using Applitools with Cypress, see:
-[Testing and Quality](https://amido.github.io/stacks/docs/testing/visual_analysis).
+[Testing and Quality](https://stacks.amido.com/docs/testing/visual_analysis).
 
 ### Accessibility Testing
 
 For more information using Axe with Jest and Cypress, see:
-[Testing and Quality](https://amido.github.io/stacks/docs/testing/accessibility_testing).
+[Testing and Quality](https://stacks.amido.com/docs/testing/accessibility_testing).
 
 ### Static Testing
 

@@ -45,7 +45,7 @@ resources:
 
 ### Variable groups
 
-Variable groups will need creating for storing Azure Credentials to be used with the pipeline. Instructions for creating a variable group can be found [here](https://docs.microsoft.com/en-us/azure/devops/pipelines/library/variable-groups?view=azure-devops&tabs=classic#create-a-variable-group). 
+Variable groups will need creating for storing Azure Credentials to be used with the pipeline. Instructions for creating a variable group can be found [here](https://docs.microsoft.com/en-us/azure/devops/pipelines/library/variable-groups?view=azure-devops&tabs=classic#create-a-variable-group).
 
 Create a variable group for the nonprod infrastructure. Give the variable group a name and description and make sure the **Allow access to all pipelines** option is checked. Add the following variables using the Service Connection details from [bootstrapping the Azure tenant](../core_infrastructure.md#bootstrap-the-azure-tenant):
 
@@ -69,7 +69,7 @@ Where possible, the scaffolding CLI will have populated the correct values in th
 
 ### Create the pipeline
 
-Follow the steps below to create the pipeline and trigger the initial run. 
+Follow the steps below to create the pipeline and trigger the initial run.
 
 *Please note that pipeline will create DNS zones for both nonprod and prod (by default, `nonprod.${BASE_DOMAIN}` and `prod.${BASE_DOMAIN}`). These will need NS records adding to the base domain and will cause the pipeline to fail on the initial run.*
 

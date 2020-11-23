@@ -6,7 +6,7 @@ hide_title: false
 hide_table_of_contents: false
 description: Getting started with CSR
 keywords:
-  - rest 
+  - rest
   - api
   - csr
   - scaffolding
@@ -17,8 +17,8 @@ keywords:
   - bootstrap
   - dependencies
   - start project
-  - client 
-  - side 
+  - client
+  - side
   - rendering
   - client side rendering
 ---
@@ -271,6 +271,6 @@ Since the frameworks provide real examples on deployed applications, we recommen
 
 ## Feedback
 
-Your feedback and contributions will help us to improve. See the [Stacks guide to new contributions](https://amido.github.io/stacks/docs/contributions) for more information.
+Your feedback and contributions will help us to improve. See the [Stacks guide to new contributions](https://stacks.amido.com/docs/contributions) for more information.
 
 <HideNavigation prev />

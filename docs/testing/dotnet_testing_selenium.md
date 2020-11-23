@@ -64,7 +64,7 @@ It's as simple as following these steps:
 
 ## Building the solution
 
-Please ensure you have the [.NET Core 3.1 SDK installed.](https://dotnet.microsoft.com/download) 
+Please ensure you have the [.NET Core 3.1 SDK installed.](https://dotnet.microsoft.com/download)
 
 _MacOS/Linux: For [Homebrew](https://formulae.brew.sh/) users, `brew cask install dotnet-sdk` will install the long term support version._
 
@@ -170,7 +170,7 @@ See xUnit documentation for information on different fixtures and how to use the
 
 The Stories folder contains all the test cases (I.e. the BDDfy stories). Each class should represent a new test story, and within each class/story, there will be several test cases which test a specific feature.
 
-Test cases within a story are defined using xUnit `Facts`. BDDfy is used to describe and orchestrate the tests. 
+Test cases within a story are defined using xUnit `Facts`. BDDfy is used to describe and orchestrate the tests.
 
 The solution tags (or annotates) tests as smoke tests using xUnit `Traits`. I.e. `[Trait("Category", "SmokeTest")]`
 
@@ -212,7 +212,7 @@ One of the best methods to test your locator is working is by trying it in the b
 
 ### Element recommendations
 
-[Data attributes](https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes) can help identify the elements under test. 
+[Data attributes](https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes) can help identify the elements under test.
 
 ### Example
 

@@ -7,7 +7,7 @@ hide_table_of_contents: false
 description: IDE guidelines for the Java Rest API
 keywords:
   - java
-  - rest 
+  - rest
   - api
   - ide
   - ide guidelines

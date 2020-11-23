@@ -5,7 +5,7 @@ sidebar_label: Getting started
 description: Getting started with the Java Rest API application
 keywords:
   - java
-  - rest 
+  - rest
   - api
   - application
   - spring boot

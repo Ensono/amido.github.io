@@ -53,10 +53,10 @@ The basis of all is to remember to do good humaning. Everyone is on their own pa
 
 ## How to contribute
 
-Unsure where to being? Start by looking through the following [issues](https://github.com/amido/stacks/issues?q=is%3Aissue+is%3Aopen+sort%3Acomments-desc) labels:
+Unsure where to being? Start by looking through the following [issues](https://github.com/amido/amido.github.io/issues?q=is%3Aissue+is%3Aopen+sort%3Acomments-desc) labels:
 
-* [good-first-issue](https://github.com/amido/stacks/labels/good-first-issue) - should only require a few lines of code, and a test or two.
-* [documentation](https://github.com/amido/stacks/labels/kind%2Fdocumentation) - we always need to improve our documentation, it's one of the best ways to contribute.
+* [good-first-issue](https://github.com/amido/amido.github.io/labels/good-first-issue) - should only require a few lines of code, and a test or two.
+* [documentation](https://github.com/amido/amido.github.io/labels/kind%2Fdocumentation) - we always need to improve our documentation, it's one of the best ways to contribute.
 
 Sorting the issues by number of comments generally gives a reasonable proxy for the impact the change will have. More comments, more vested interest.
 
@@ -80,13 +80,13 @@ We actively welcome your pull requests:
 2. If you've added code that should be tested, add tests.
 3. Update the documentation.
 4. Ensure the test suite passes.
-5. Issue the pull request using the repository PULL_REQUEST_TEMPLATE.md. It's important to link the [issue number](https://github.com/amido/stacks/issues) to ensure that the Issue is closed.
+5. Issue the pull request using the repository PULL_REQUEST_TEMPLATE.md. It's important to link the [issue number](https://github.com/amido/amido.github.io/issues) to ensure that the Issue is closed.
 
 ### How to report a bug
 
 #### Security first
 
-If you find a security vulnerability, do NOT open an [issue](https://github.com/amido/stacks/issues/new/choose). Email [Amido](mailto:stacks@amido.com) instead.
+If you find a security vulnerability, do NOT open an [issue](https://github.com/amido/amido.github.io/issues/new/choose). Email [Amido](mailto:stacks@amido.com) instead.
 
 If you aren't sure you've found an security issue, ask yourself the following:
 
@@ -97,7 +97,7 @@ If you answered "yes" to either question, please get in contact.
 
 ### Report bugs using Github issues
 
-We use GitHub issues to track public bugs. Report a bug by opening a new issue. Please follow the [issue templates](https://github.com/amido/stacks/tree/master/.github/ISSUE_TEMPLATE).
+We use GitHub issues to track public bugs. Report a bug by opening a new issue. Please follow the [issue templates](https://github.com/amido/amido.github.io/tree/master/.github/ISSUE_TEMPLATE).
 
 In general, please follow the guidelines:
 
