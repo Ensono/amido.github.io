@@ -1,4 +1,3 @@
 User-agent: *
-Disallow: /
-
+Disallow:
 Sitemap: https://stacks.amido.com/sitemap.xml
