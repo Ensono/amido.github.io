@@ -44,6 +44,10 @@ module.exports = {
     ],
   },
   themeConfig: {
+    gtag: {
+      trackingID: 'G-EKCQBC5CSJ',
+      anonymizeIP: true, // Should IPs be anonymized? (optional)
+    },
     algolia: {
       apiKey: "56a3097b6350cd2363a8746a98c6c278",
       indexName: "amido_stacks",
@@ -133,6 +137,10 @@ module.exports = {
           changefreq: "weekly",
           priority: 0.5,
           trailingSlash: false,
+        },
+        googleAnalytics: {
+          trackingID: 'G-EKCQBC5CSJ',
+          anonymizeIP: true, // Should IPs be anonymized? (optional)
         },
       }
     ]
