@@ -21,12 +21,15 @@ keywords:
 import HideNavigation  from "../../../../../src/pages/HideNavigation";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
+import ResponsivePlayer from "../../../../../src/pages/Components/ResponsivePlayer/ResponsivePlayer"
 
 Karate is an open-source general-purpose test-automation framework that can script calls to HTTP end-points and assert that the JSON or XML responses are as expected. Karate also has support for service-virtualization where it can bring up "mock" (or stub) servers which can substitute for web-services that need to participate in an integration-test. Karate's capabilities include being able to run tests in parallel, HTML reports and compatibility with Continuous Integration tools.
 
 ## Getting Started
 
 This page explains how to setup the API testing framework built with Java and Karate.
+
+<ResponsivePlayer url="https://youtu.be/3KDWfGlD0xU" />
 
 ### Prerequisites
 

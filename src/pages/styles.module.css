@@ -454,3 +454,9 @@ html[data-theme="dark"] .getStarted:hover {
   background-color: white;
   color: black;
 }
+
+.videoSection {
+  padding: 30px;
+  width: 100%;
+  background-color: #18191a;
+}

@@ -22,6 +22,7 @@ keywords:
 
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
+import ResponsivePlayer from "../../../../../src/pages/Components/ResponsivePlayer/ResponsivePlayer"
 
 [Serenity BDD](https://serenity-bdd.github.io/theserenitybook/latest/index.html) is an open source library that aims to make the idea of living documentation a reality.
 It also uses the test results to produce illustrated, narrative reports that document and describe what your application does and how it works.
@@ -29,6 +30,8 @@ It also uses the test results to produce illustrated, narrative reports that doc
 ## Getting Started
 
 This page explains how to setup the API testing framework built with Java and Serenity BDD.
+
+<ResponsivePlayer url="https://youtu.be/ogu9q_tzyt0" />
 
 ### Prerequisites
 

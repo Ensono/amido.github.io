@@ -1,0 +1,39 @@
+/* stylelint-disable docusaurus/copyright-header */
+
+.playerSection {
+  padding: 30px;
+}
+
+.playerWrapper {
+  position: relative;
+  padding-top: 56.25%;
+}
+
+.player {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.playlistWrapper {
+   display: flex;
+   justify-content: flex-start;
+   flex-direction: column;
+   padding: 5px;
+}
+
+.playlistItem {
+  background-color: #18191a;
+  margin: 2px;
+  color: white;
+  text-align: center;
+  font-weight: 700;
+  font-size: max(18px, min(2vw, 24px));
+  vertical-align: middle;
+}
+
+.playlistItem:hover {
+  color: white;
+  opacity: var(--ifm-link-hover-opacity);
+  cursor: pointer;
+}
