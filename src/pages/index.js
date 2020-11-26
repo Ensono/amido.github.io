@@ -192,7 +192,6 @@ function Picker() {
                   to={ isFinalChoice ? (baseUrl + (thirdOption ? thirdOption.value : firstOption ? firstOption.value : "")) : "" }
                   { ...isFinalChoice ? "" : "disabled"}
             >
-              {console.log("Final Choice Rendered : ", isFinalChoice)}
               GET STARTED WITH STACKS
             </Link>
         </div>
