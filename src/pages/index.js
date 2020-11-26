@@ -107,6 +107,7 @@ function Picker() {
   const [firstOption, setFirstOption] = useState(undefined);
   const [secondOption, setSecondOption] = useState(undefined);
   const [thirdOption, setThirdOption] = useState(undefined);
+  const [isFinalChoice, setFinalChoice] = useState(false);
 
   const baseUrl = useBaseUrl("docs/");
   const OptionMapper = {
@@ -148,24 +149,28 @@ function Picker() {
           return { value: secondOption.value[key], label: key };
         })
       : [];
+
+
   return (
     <div className="container" style={{display:"flex", justifyContent:"center"}}>
       <div className={clsx("col", "col--6", styles.containerSelects)}>
         <Select placeholder="Select Cloud Provider"
                 value={firstOption}
-                onChange={(selected) => { 
-                  setFirstOption(selected); 
+                onChange={(selected) => {
+                  setFirstOption(selected);
                   setSecondOption(null);
+                  setFinalChoice(typeof selected.value === "object" ? false : true);
                 }}
                 options={cloudProviders}
         />
 
-        {applications.length > 0 && (
+        { applications.length > 0 && (
           <Select placeholder="Select Solution Architecture"
                   value={secondOption}
-                  onChange={(selected) => { 
-                    setSecondOption(selected); 
+                  onChange={(selected) => {
+                    setSecondOption(selected);
                     setThirdOption(null);
+                    setFinalChoice(false);
                   }}
                   options={applications || []}
           />
@@ -174,19 +179,22 @@ function Picker() {
         {languages.length > 0 && (
           <Select placeholder="Select Language/Framework"
                   value={thirdOption}
-                  onChange={(selected) => { 
-                    setThirdOption(selected); 
+                  onChange={(selected) => {
+                    setThirdOption(selected);
+                    setFinalChoice(true);
                   }}
                   options={languages || []}
           />
         )}
 
         <div className={styles.buttons} style={{ marginTop: 40 }}>
-          <Link className={clsx("button button--outline  button--lg", styles.blackButton )}
-                to={ baseUrl + (thirdOption ? thirdOption.value : firstOption ? firstOption.value : "") }
-          >
-            GET STARTED WITH STACKS
-          </Link>
+            <Link className={clsx("button button--outline button--lg", styles.blackButton, isFinalChoice ? "" : styles.disabledButton )}
+                  to={ isFinalChoice ? (baseUrl + (thirdOption ? thirdOption.value : firstOption ? firstOption.value : "")) : "" }
+                  { ...isFinalChoice ? "" : "disabled"}
+            >
+              {console.log("Final Choice Rendered : ", isFinalChoice)}
+              GET STARTED WITH STACKS
+            </Link>
         </div>
       </div>
     </div>
