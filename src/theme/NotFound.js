@@ -19,7 +19,7 @@ function NotFound() {
         {
           React.useEffect(() => {
             window.onload = () => {
-              window.location.href.includes("/stacks") ? window.location.href = window.location.href.replace("/stacks", "") : "";
+              window.location.href.includes("/stacks") ? window.location.href = window.location.href.replace("/stacks", "") : ""; 
             }
           })
         }
