@@ -23,7 +23,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import HideNavigation from "../../../../../src/pages/HideNavigation";
-import ResponsivePlayer from "../../../../../src/pages/Components/ResponsivePlayer/ResponsivePlayer"
+import ResponsivePlayer from "../../../../../src/pages/Components/ResponsivePlayer/ResponsivePlayer";
 
 Web applications require a lot of boilerplate. It's also hard to know how to get started without examples. We offer both server side rendered (SSR) and client side rendered (CSR) solutions that can be bootstrapped and tailored to your current project with just one command.
 

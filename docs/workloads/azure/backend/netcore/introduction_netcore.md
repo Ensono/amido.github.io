@@ -16,7 +16,7 @@ keywords:
 ---
 
 import HideNavigation  from "../../../../../src/pages/HideNavigation";
-import ResponsivePlayer from "../../../../../src/pages/Components/ResponsivePlayer/ResponsivePlayer"
+import ResponsivePlayer from "../../../../../src/pages/Components/ResponsivePlayer/ResponsivePlayer";
 
 This is a sample .NET Core REST API application with CQRS, showcasing best coding practices and integrating with Azure
 and scaffolding for Amido Stacks.

@@ -14,7 +14,7 @@ keywords:
 ---
 
 import HideNavigation  from "../../../../../src/pages/HideNavigation";
-import ResponsivePlayer from "../../../../../src/pages/Components/ResponsivePlayer/ResponsivePlayer"
+import ResponsivePlayer from "../../../../../src/pages/Components/ResponsivePlayer/ResponsivePlayer";
 
 
 ## Stacks Java Spring Boot REST API Application

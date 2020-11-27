@@ -72,4 +72,4 @@ function AmidoStacksLogo() {
     );
 }
 
-export default AmidoStacksLogo;  
+export default AmidoStacksLogo;
