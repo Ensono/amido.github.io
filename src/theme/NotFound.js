@@ -19,7 +19,10 @@ function NotFound() {
         {
           React.useEffect(() => {
             window.onload = () => {
-              window.location.href.includes("/stacks") ? window.location.href = window.location.href.replace("/stacks", "") : ""; 
+              const pathNames = window.location.pathname.split("/");
+              if (pathNames.length > 2 && pathNames[1]?.includes("stacks")) {
+                window.location.pathname = "/" + pathNames.slice(2, pathNames.length).join("/"); 
+              }
             }
           })
         }
