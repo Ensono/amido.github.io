@@ -8,18 +8,17 @@
 <link rel="preconnect" href="https://www.googletagmanager.com">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-EKCQBC5CSJ"></script>
 <script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-EKCQBC5CSJ",{anonymize_ip:!0})</script>
-<link rel="search" type="application/opensearchdescription+xml" title="Amido Stacks " href="/opensearch.xml"><title data-react-helmet="true">Automated Accessibility Testing With Axe | Amido Stacks </title><meta data-react-helmet="true" name="docsearch:version" content="current,latest"><meta data-react-helmet="true" name="twitter:card" content="summary_large_image"><meta data-react-helmet="true" property="og:title" content="Automated Accessibility Testing With Axe | Amido Stacks "><meta data-react-helmet="true" name="description" content="Accessibility testing with Axe"><meta data-react-helmet="true" property="og:description" content="Accessibility testing with Axe"><meta data-react-helmet="true" name="keywords" content="axe,tests,testing,jest,cypress,accessibility testing"><meta data-react-helmet="true" property="og:url" content="https://stacks.amido.com/docs/testing/accessibility_testing"><link data-react-helmet="true" rel="shortcut icon" href="/img/thumbnail_stacks.png"><link data-react-helmet="true" rel="preconnect" href="https://BH4D9OD16A-dsn.algolia.net" crossorigin="anonymous"><link data-react-helmet="true" rel="canonical" href="https://stacks.amido.com/docs/testing/accessibility_testing"><link rel="stylesheet" href="/styles.dba97f68.css">
-<link rel="preload" href="/styles.fa0c6467.js" as="script">
-<link rel="preload" href="/runtime~main.c90df1d3.js" as="script">
-<link rel="preload" href="/main.4f912c57.js" as="script">
-<link rel="preload" href="/1.852d177b.js" as="script">
-<link rel="preload" href="/2.68164daa.js" as="script">
-<link rel="preload" href="/3.757da109.js" as="script">
-<link rel="preload" href="/1be78505.7f02cb03.js" as="script">
-<link rel="preload" href="/156.489376ee.js" as="script">
-<link rel="preload" href="/935f2afb.955c3195.js" as="script">
-<link rel="preload" href="/17896441.35beaef6.js" as="script">
-<link rel="preload" href="/be437379.16cbeded.js" as="script">
+<link rel="search" type="application/opensearchdescription+xml" title="Amido Stacks " href="/opensearch.xml"><title data-react-helmet="true">Automated Accessibility Testing With Axe | Amido Stacks </title><meta data-react-helmet="true" name="docsearch:version" content="current,latest"><meta data-react-helmet="true" name="twitter:card" content="summary_large_image"><meta data-react-helmet="true" property="og:title" content="Automated Accessibility Testing With Axe | Amido Stacks "><meta data-react-helmet="true" name="description" content="Accessibility testing with Axe"><meta data-react-helmet="true" property="og:description" content="Accessibility testing with Axe"><meta data-react-helmet="true" name="keywords" content="axe,tests,testing,jest,cypress,accessibility testing"><meta data-react-helmet="true" property="og:url" content="https://stacks.amido.com/docs/testing/accessibility_testing"><link data-react-helmet="true" rel="shortcut icon" href="/img/thumbnail_stacks.png"><link data-react-helmet="true" rel="preconnect" href="https://BH4D9OD16A-dsn.algolia.net" crossorigin="anonymous"><link data-react-helmet="true" rel="canonical" href="https://stacks.amido.com/docs/testing/accessibility_testing"><link rel="stylesheet" href="/styles.121582fa.css">
+<link rel="preload" href="/styles.400e2041.js" as="script">
+<link rel="preload" href="/runtime~main.e0b98e15.js" as="script">
+<link rel="preload" href="/main.aa94ec26.js" as="script">
+<link rel="preload" href="/2.8cc7fd83.js" as="script">
+<link rel="preload" href="/3.4912f150.js" as="script">
+<link rel="preload" href="/4.7481968f.js" as="script">
+<link rel="preload" href="/1be78505.e9c8dbbf.js" as="script">
+<link rel="preload" href="/935f2afb.48727725.js" as="script">
+<link rel="preload" href="/17896441.15bc3a47.js" as="script">
+<link rel="preload" href="/be437379.de63edda.js" as="script">
 </head>
 <body>
 <script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){var t=null;try{t=localStorage.getItem("theme")}catch(t){}return t}();t(null!==e?e:"light")}()</script><div id="__docusaurus">
@@ -27,16 +26,15 @@
 <a href="https://www.deque.com/axe/" target="_blank" rel="noopener noreferrer">aXe</a> for accessibility testing. When developing, we
 expect to support WCAG 2.1 Level AA [&quot;wcag21aa&quot;] at a minimum.</p><p>aXe tests are performed on two levels:</p><ol><li>Rendering the React component and testing with Jest.</li><li>Rendering the entire page and testing with Cypress.</li></ol><p>Both examples are in the scaffolded web app templates: <a href="https://github.com/amido/stacks-webapp-template/tree/master/packages/scaffolding-cli/templates/src/ssr" target="_blank" rel="noopener noreferrer">https://github.com/amido/stacks-webapp-template/tree/master/packages/scaffolding-cli/templates/src/ssr</a></p><h3><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_2cZh" id="cypress-debugging-axe-failures"></a>Cypress: Debugging Axe failures<a aria-hidden="true" tabindex="-1" class="hash-link" href="#cypress-debugging-axe-failures" title="Direct link to heading">#</a></h3><blockquote><p>When accessibility violations are detected, your test will fail and an entry titled &quot;A11Y ERROR!&quot; will be added to the command log for each type of violation found (they will be above the failed assertion). Clicking on those will reveal more specifics about the error in the DevTools console.
 Source: <a href="https://github.com/avanslaars/cypress-axe#standard-output" target="_blank" rel="noopener noreferrer">cypress-axe#standard-output</a></p></blockquote><p>For information on how to fix the failure, follow the HelpUrl printed to the console.</p></div></article><div class="margin-vert--lg"><nav class="pagination-nav" aria-label="Blog list page navigation"><div class="pagination-nav__item"><a class="pagination-nav__link" href="/docs/testing/contract_testing_pact"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">« API Contract Testing With Pact</div></a></div><div class="pagination-nav__item pagination-nav__item--next"><a class="pagination-nav__link" href="/docs/testing/performance_testing_gatling"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Performance Testing - Gatling »</div></a></div></nav></div></div></div></div></div></main></div></div><footer class="footer footer--dark"><div class="container"><div class="row footer__links"><div class="col footer__col"><h4 class="footer__title">Docs</h4><ul class="footer__items"><li class="footer__item"><a class="footer__link-item" href="/docs/">Getting Started</a></li></ul></div><div class="col footer__col"><h4 class="footer__title">About Us</h4><ul class="footer__items"><li class="footer__item"><a href="https://amido.com/" target="_blank" rel="noopener noreferrer" class="footer__link-item">Amido</a></li></ul></div><div class="col footer__col"><h4 class="footer__title">Open Source</h4><ul class="footer__items"><li class="footer__item"><a href="https://github.com/amido/amido.github.io" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub</a></li></ul></div></div><div class="text--center"><div>Copyright © 2020 Amido Ltd</div></div></div></footer></div>
-<script src="/styles.fa0c6467.js"></script>
-<script src="/runtime~main.c90df1d3.js"></script>
-<script src="/main.4f912c57.js"></script>
-<script src="/1.852d177b.js"></script>
-<script src="/2.68164daa.js"></script>
-<script src="/3.757da109.js"></script>
-<script src="/1be78505.7f02cb03.js"></script>
-<script src="/156.489376ee.js"></script>
-<script src="/935f2afb.955c3195.js"></script>
-<script src="/17896441.35beaef6.js"></script>
-<script src="/be437379.16cbeded.js"></script>
+<script src="/styles.400e2041.js"></script>
+<script src="/runtime~main.e0b98e15.js"></script>
+<script src="/main.aa94ec26.js"></script>
+<script src="/2.8cc7fd83.js"></script>
+<script src="/3.4912f150.js"></script>
+<script src="/4.7481968f.js"></script>
+<script src="/1be78505.e9c8dbbf.js"></script>
+<script src="/935f2afb.48727725.js"></script>
+<script src="/17896441.15bc3a47.js"></script>
+<script src="/be437379.de63edda.js"></script>
 </body>
 </html>
