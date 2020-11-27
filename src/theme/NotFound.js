@@ -17,10 +17,12 @@ function NotFound() {
         <BrowserOnly>
         <script>
         {
+          React.useEffect(() => {
             window.onload = () => {
-              document.referrer.includes("/stacks") ? window.location = document.referrer.replace("/stacks", "") : "";
+              document.referrer.includes("/stacks") ? window.location.replace(document.referrer.replace("/stacks", "")) : "";
             }
-          }
+          })
+        }
         </script>
         </BrowserOnly>
       </Head>
