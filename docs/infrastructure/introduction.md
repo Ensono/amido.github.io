@@ -12,9 +12,13 @@ keywords:
 ---
 
 import HideNavigation  from "../../src/pages/HideNavigation";
+import ResponsivePlayer from "../../src/pages/Components/ResponsivePlayer/ResponsivePlayer";
+
 
 
 All Stacks workloads require initial configuration of the cloud provider and some core infrastructure.
+
+<ResponsivePlayer url="https://youtu.be/tzmBRLOcKBw" />
 
 ## Terraform
 

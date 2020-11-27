@@ -20,6 +20,7 @@ keywords:
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import HideNavigation  from "../../../../../src/pages/HideNavigation";
+import ResponsivePlayer from "../../../../../src/pages/Components/ResponsivePlayer/ResponsivePlayer";
 
 The pipeline will automate provisioning and updating the server-side rendering infrastructure and application in Azure.
 
@@ -30,6 +31,8 @@ Where possible, we are creating reusable steps ([stacks-pipeline-templates](http
 <img alt="SSR Application - Azure DevOps Pipeline" src={useBaseUrl('img/azure_ssr_azure_devops_pipeline.png')} />
 
 ## Setting up Azure DevOps
+
+<ResponsivePlayer url="https://youtu.be/tzmBRLOcKBw" />
 
 ### Variable group
 

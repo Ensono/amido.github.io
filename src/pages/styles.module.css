@@ -182,6 +182,7 @@ article a:hover,
 .blackButton:hover {
   color: black;
   background-color: #e6e6e6;
+  cursor: pointer;
 }
 
 .feature .feature-body {
@@ -453,4 +454,20 @@ html[data-theme="dark"] .learnAboutStacks:hover,
 html[data-theme="dark"] .getStarted:hover {
   background-color: white;
   color: black;
+}
+
+.videoSection {
+  padding: 30px;
+  width: 100%;
+  background-color: #18191a;
+}
+
+.disabledButton {
+  cursor: default;
+}
+
+.disabledButton:hover {
+  cursor: default;
+  color: white;
+  background-color: black;
 }
