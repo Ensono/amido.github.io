@@ -21,7 +21,7 @@ function NotFound() {
             window.onload = () => {
               const pathNames = window.location.pathname.split("/");
               if (pathNames.length > 2 && pathNames[1]?.includes("stacks")) {
-                window.location.pathname = "/" + pathNames.slice(2, pathNames.length).join("/");
+                window.location.pathname = "/" + pathNames.slice(2, pathNames.length).join("/"); 
               }
             }
           })
