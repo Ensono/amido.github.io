@@ -12,6 +12,7 @@ keywords:
 
 import HideNavigation  from "../../../../src/pages/HideNavigation";
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import ResponsivePlayer from "../../../../src/pages/Components/ResponsivePlayer/ResponsivePlayer";
 
 The pipeline will automate provisioning and updating the core infrastructure in Azure. This page assumes you have already completed the steps on the [core infrastructure page](../core_infrastructure.md).
 
@@ -47,6 +48,7 @@ resources:
 
 Variable groups will need creating for storing Azure Credentials to be used with the pipeline. Instructions for creating a variable group can be found [here](https://docs.microsoft.com/en-us/azure/devops/pipelines/library/variable-groups?view=azure-devops&tabs=classic#create-a-variable-group).
 
+<ResponsivePlayer url="https://youtu.be/PKOFParEhFI" />
 Create a variable group for the nonprod infrastructure. Give the variable group a name and description and make sure the **Allow access to all pipelines** option is checked. Add the following variables using the Service Connection details from [bootstrapping the Azure tenant](../core_infrastructure.md#bootstrap-the-azure-tenant):
 
 * azure_tenant_id
