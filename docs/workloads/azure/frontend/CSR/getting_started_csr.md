@@ -271,6 +271,6 @@ Since the frameworks provide real examples on deployed applications, we recommen
 
 ## Feedback
 
-Your feedback and contributions will help us to improve. See the [Stacks guide to new contributions](https://stacks.amido.com/docs/contributions) for more information.
+Your feedback and contributions will help us to improve. See the [Stacks guide to new contributions](//docs/contributions) for more information.
 
 <HideNavigation prev />

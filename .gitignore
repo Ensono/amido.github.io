@@ -5,12 +5,13 @@
 # Dependencies
 **/node_modules
 
-# Production
-/build
-
 # Generated files
 .docusaurus
 .cache-loader
+/site/
+
+#
+.terraform/
 
 # Misc
 .DS_Store

@@ -1,0 +1,348 @@
+name: $(Build.SourceBranchName)-init
+
+pr:
+  - master
+  - staging
+
+trigger:
+  branches:
+    include:
+      - 'master'
+      - 'staging'
+  paths:
+    include:
+      - '*'
+
+resources:
+  repositories:
+    - repository: templates
+      type: github
+      name: amido/stacks-pipeline-templates
+      ref: refs/tags/v1.4.23
+      endpoint: amidostacks
+  containers:
+    - container: node
+      image: amidostacks/node:0.0.3
+    - container: k8s_deploy
+      image: amidostacks/ci-k8s:0.0.11
+    - container: terraform_custom
+      image: amidostacks/ci-tf:0.0.4
+
+variables:
+  - name: company
+    value: "amido"
+  - name: project
+    value: "stacks"
+  - name: component
+    value: "website"
+  - name: pool_vm_image
+    value: ubuntu-18.04
+  # - name: node_version
+  #   value: 12.x
+  - name: resource_region
+    value: northeurope
+  # Self Config
+  - name: self_repo
+    value: amido.github.io
+  - name: self_repo_dir
+    value: "$(Agent.BuildDirectory)/s/$(self_repo)"
+  - name: self_repo_tf_src
+    value: "deploy/azure/app/site"
+  - name: self_repo_tf_dir
+    value: "$(self_repo_dir)/$(self_repo_tf_src)"
+  - name: self_pipeline_repo
+    value: "$(Agent.BuildDirectory)/s/stacks-pipeline-templates"
+  - name: self_pipeline_scripts_dir
+    value: "$(self_pipeline_repo)/scripts"
+  - name: site_build_dir
+    value: "$(self_repo_dir)/dist"
+  - name: npm_cache_dir
+    value: "$(self_repo_dir)/.npm"
+  # TF State Config
+  - name: tf_state_rg
+    value: "amido-stacks-rg-uks"
+  - name: tf_state_storage
+    value: "amidostackstfstategbl"
+  - name: tf_state_container
+    value: "tfstate"
+  - name: tf_state_key
+    value: "stacks-website"
+  # Versioning
+  - name: version_major
+    value: 0
+  - name: version_minor
+    value: 0
+  - name: version_revision
+    value: "$[counter(join(variables['version_major'], join('-', variables['version_minor'])), 0)]"
+  - name: version_number
+    value: "${{ variables.version_major }}.${{ variables.version_minor }}.$(version_revision)"
+  # Yamllint
+  - name: yamllint_config_file
+    value: "${{ variables.self_repo_dir }}/yamllint.conf"
+  - name: yamllint_scan_directory
+    value: "."
+  # Hostnames
+  - name: hostname_nonprod
+    value: "dev-stacks.amido.com"
+  - name: hostname_prod
+    value: "stacks.amido.com"
+  # # Groups
+  # - group: amido-stacks-webapp
+
+stages:
+  - stage: Build
+    jobs:
+      - job: Validation
+        pool:
+          vmImage: ${{ variables.pool_vm_image }}
+        steps:
+          - checkout: self
+
+          - checkout: templates
+
+          # Update Build Number
+          - template: azDevOps/azure/templates/v2/steps/build-updatebuildnumber-dotnet.yml@templates
+            parameters:
+              sourcebranch_name: "$(Build.SourceBranchName)"
+              raw_version_number: "${{ variables.version_number }}"
+
+          # # Validates all YAML files in the repo to check they adhere to standards
+          # - template: azDevOps/azure/templates/v3/steps/build/test-validate-yaml.yml@templates
+          #   parameters:
+          #     pipeline_scripts_directory: "${{ variables.self_pipeline_scripts_dir }}"
+          #     container: "k8s_deploy"
+          #     yamllint_config_file: "${{ variables.yamllint_config_file }}"
+          #     yamllint_scan_directory: "${{ variables.yamllint_scan_directory }}"
+
+          # # Runs a terraform fomatting check and a validation check
+          # - template: azDevOps/azure/templates/v3/steps/build/test-validate-terraform.yml@templates
+          #   parameters:
+          #     pipeline_scripts_directory: "${{ variables.self_pipeline_scripts_dir }}"
+          #     terraform_container: "terraform_custom"
+          #     terraform_directory: "${{ variables.self_repo_tf_dir }}"
+
+          # Moves cache dir to somewhere cacheable outside
+          # of the container by the cache task
+          - bash: |
+              npm set cache "${{ variables.npm_cache_dir }}"
+            displayName: "Node: Sets cache directory"
+
+          - task: Cache@2
+            inputs:
+              key: 'npm-test | "$(Agent.OS)" | ${{ variables.self_repo_dir }}/package-lock.json'
+              restoreKeys: |
+                npm-test | "$(Agent.OS)"
+                npm-test
+              path: "${{ variables.npm_cache_dir }}"
+
+          # Install dependencies
+          - bash: |
+              npm ci
+            workingDirectory: ${{ variables.self_repo_dir }}
+            displayName: "Install dependencies"
+
+          - bash: |
+              npm run lint
+            workingDirectory: ${{ variables.self_repo_dir }}
+            displayName: 'Lint: Run markdown lint'
+
+  - stage: Dev
+    condition: and(contains(variables['Build.SourceBranch'], 'refs/heads/staging'), succeeded())
+    jobs:
+      - deployment: SiteInfraDev
+        container: terraform_custom
+        pool:
+          vmImage: ${{ variables.pool_vm_image }}
+        environment: dev
+        variables:
+          - group: amido-stacks-infra-credentials-nonprod
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+                - checkout: self
+
+                - checkout: templates
+
+                - template: azDevOps/azure/templates/v2/steps/deploy-terraform-resource.yml@templates
+                  parameters:
+                    # Terraform Basic Config
+                    terraform_working_dir: "$(self_repo_tf_dir)"
+                    # changing this would require changing the downstream consumers of these outputs
+                    #
+                    terraform_output_artefact: "tfoutputs"
+                    # Terraform State Config
+                    terraform_backend_client_id: $(azure_client_id)
+                    terraform_backend_client_secret: $(azure_client_secret)
+                    terraform_backend_tenant_id: $(azure_tenant_id)
+                    terraform_backend_subscription_id: $(azure_subscription_id)
+                    terraform_state_rg: $(tf_state_rg)
+                    terraform_state_storage: $(tf_state_storage)
+                    terraform_state_container: $(tf_state_container)
+                    terraform_state_key: $(tf_state_key)
+                    # Azure Config
+                    azure_client_id: "$(azure_client_id)"
+                    azure_client_secret: "$(azure_client_secret)"
+                    azure_tenant_id: "$(azure_tenant_id)"
+                    azure_subscription_id: "$(azure_subscription_id)"
+                    # for branch based builds this can be $(Build.SourceBranchName)
+                    terraform_state_workspace: $(Environment.Name)
+                    # Global Config
+                    company: ${{ variables.company }}
+                    project: ${{ variables.project }}
+                    environment: ""
+                    azure_cli_providers: []
+                    tags: ""
+                    # Terraform Resource Specific Config
+                    terraform_extra_properties:
+                      {
+                        TF_VAR_name_company: "${{ variables.company }}",
+                        TF_VAR_name_project: "${{ variables.project }}",
+                        TF_VAR_name_component: "${{ variables.component }}",
+                        TF_VAR_stage: "$(Environment.Name)",
+
+                        TF_VAR_resource_group_location: "${{ variables.resource_region }}",
+
+                        TF_VAR_index_doc: "index.html",
+                        TF_VAR_error_doc: "404.html",
+                        TF_VAR_account_replication_type: "LRS",
+                        TF_VAR_account_kind: "StorageV2",
+                        TF_VAR_account_tier: "Standard",
+                        TF_VAR_account_min_tls_version: "TLS1_2",
+
+                        TF_VAR_response_header_cdn: '[
+                          {
+                            action: "Append",
+                            name: "Content-Security-Policy",
+                            value: "default-src * ''unsafe-inline'' ''unsafe-eval''"
+                          },
+                          {
+                            action:"Append",
+                            name: "Cache-Control",
+                            value: "no-cache"
+                          },
+                          {
+                            action: "Append",
+                            name: "X-Frame-Options",
+                            value: "SAMEORIGIN"
+                          },
+                          {
+                            action: "Append",
+                            name: "X-Content-Type-Options",
+                            value: "nosniff"
+                          },
+                          {
+                            action: "Append",
+                            name: "Strict-Transport-Security",
+                            value: "max-age=63072000"
+                          },
+                          {
+                            action: "Append",
+                            name: "Referrer-Policy",
+                            value: "no-referrer-when-downgrade"
+                          },
+                          {
+                            action: "Append",
+                            name: "X-XSS-Protection",
+                            value: "1; mode=block;"
+                          }
+                        ]',
+                        TF_VAR_app_hostname: "${{ variables.hostname_nonprod }}",
+                      }
+                    terraform_output_commands: |
+                      raw_tf=$(terraform output -json | jq -r 'keys[] as $k | "##vso[task.setvariable variable=\($k);isOutput=true]\(.[$k] | .value)"')
+                      readarray -t outputs <<<"$raw_tf"
+                      for i in "${outputs[@]}"; do echo "$i"; done
+
+      - deployment: DeployDev
+        dependsOn: SiteInfraDev
+        container: k8s_deploy
+        pool:
+          vmImage: ${{ variables.pool_vm_image }}
+        environment: dev
+        variables:
+          - name: website_resource_group
+            value: "$[ dependencies.SiteInfraDev.outputs['SiteInfraDev.tfoutputs.website_resource_group'] ]"
+          - name: storage_account_name
+            value: "$[ dependencies.SiteInfraDev.outputs['SiteInfraDev.tfoutputs.storage_account_name'] ]"
+          - name: storage_account_key
+            value: "$[ dependencies.SiteInfraDev.outputs['SiteInfraDev.tfoutputs.storage_account_key'] ]"
+          - name: cdn_profile_name
+            value: "$[ dependencies.SiteInfraDev.outputs['SiteInfraDev.tfoutputs.cdn_profile_name'] ]"
+          - name: cdn_endpoint_name
+            value: "$[ dependencies.SiteInfraDev.outputs['SiteInfraDev.tfoutputs.cdn_endpoint_name'] ]"
+          # Groups
+          - group: amido-stacks-infra-credentials-nonprod
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+                - checkout: self
+
+                - checkout: templates
+
+                # Moves cache dir to somewhere cacheable outside
+                # of the container by the cache task
+                - bash: |
+                    npm set cache "${{ variables.npm_cache_dir }}"
+                  displayName: "Node: Sets cache directory"
+
+                - task: Cache@2
+                  inputs:
+                    key: 'npm-test | "$(Agent.OS)" | ${{ variables.self_repo_dir }}/package-lock.json'
+                    restoreKeys: |
+                      npm-test | "$(Agent.OS)"
+                      npm-test
+                    path: "${{ variables.npm_cache_dir }}"
+                  # target:
+                  #   container: host
+
+                # Install dependencies
+                - bash: |
+                    npm ci
+                  workingDirectory: ${{ variables.self_repo_dir }}
+                  displayName: "Install dependencies"
+
+                - bash: |
+                    BASE_URL="https://${{ variables.hostname_nonprod }}"
+                    ./node_modules/.bin/docusaurus build --out-dir=${{ variables.site_build_dir }}
+                  workingDirectory: "${{ variables.self_repo_dir }}"
+                  displayName: "Build Application"
+
+                - task: Bash@3
+                  inputs:
+                    filePath: "${{ variables.self_pipeline_scripts_dir }}/util-azure-login.bash"
+                    arguments: >
+                      -a "$(azure_client_id)"
+                      -b "$(azure_client_secret)"
+                      -c "$(azure_tenant_id)"
+                      -d "$(azure_subscription_id)"
+                  displayName: "Login: Azure CLI"
+
+                - bash: |
+                    az storage blob upload-batch \
+                      --account-name "$(storage_account_name)" \
+                      --account-key "$(storage_account_key)" \
+                      -s "${{ variables.site_build_dir }}" \
+                      -d "\$web"
+                  workingDirectory: "${{ variables.self_repo_dir }}"
+                  displayName: Push to Blob Storage
+
+                - bash: |
+                    az cdn endpoint purge \
+                      -n "$(cdn_profile_name)" \
+                      --profile-name "$(cdn_profile_name)" \
+                      --content-paths "/*" \
+                      --resource-group "$(website_resource_group)" \
+                      --no-wait
+                  workingDirectory: "${{ variables.self_repo_dir }}"
+                  displayName: Purge CDN Endpoint
+
+  # - bash: |
+  #     git config --global user.email $(GIT_USER_EMAIL)
+  #     git config --global user.name $(GIT_USER_NAME)
+  #     echo "machine github.com login $(GIT_USER_NAME) password $(GITHUB_TOKEN)" > ~/.netrc
+  #     GIT_USER="$(GIT_USER_NAME)" npm run publish
+  #   displayName: "Publish: GitHub Pages"
+  #   workingDirectory: ${{ variables.self_pipeline_scripts_dir }}
+  #   condition: and(contains(variables['build.sourceBranch'], 'refs/heads/master'), succeeded())

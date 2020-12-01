@@ -1,11 +1,13 @@
 const remarkImages = require('remark-images');
 const rehypeTruncate = require('rehype-truncate');
 
+const BASE_URL = process.env.BASE_URL || "https://localhost";
+
 module.exports = {
   title: "Amido Stacks ",
   tagline:
     "Helping projects gain momentum on digital transformation, with opinionated and modular boilerplate solutions",
-  url: "https://stacks.amido.com",
+  url: BASE_URL,
   baseUrl: "/",
   onBrokenLinks: "warn",
   favicon: "img/thumbnail_stacks.png",
