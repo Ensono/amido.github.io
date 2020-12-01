@@ -13,7 +13,7 @@ keywords:
   - repository
 ---
 
-## NuGet Dependencies repositories
+## NuGet Dependencies
 
 The .NET Core API depends on a couple of NuGet packages. Below there are links to each of these repositories.
 
