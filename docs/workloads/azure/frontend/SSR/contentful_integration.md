@@ -19,7 +19,7 @@ keywords:
 ## ⚠️ Important 👷‍♀️🚧
 
 > Please note CMS is an optional feature included in the Stacks workspace. To
-> turn off CMS please remove the folder [/cms](../src/ssr/pages/cms) inside
+> turn off CMS please remove the folder ```../src/ssr/pages/cms``` inside
 > ssr/pages before building and make sure the tsconfig does not include these
 > files.
 
@@ -71,7 +71,7 @@ en-US:
 ![Contentful Management Token](https://amidostacksassets.blob.core.windows.net/docs/assets/contentful_locales.png)
 
 > Please updated the environment variable
-> [NEXT_PUBLIC_CONTENTFUL_DEFAULT_LOCALE](../src/ssr/environment-configuration/environment-variables.js)
+> NEXT_PUBLIC_CONTENTFUL_DEFAULT_LOCALE - ```../src/ssr/environment-configuration/environment-variables.js```
 > with the right locale
 
 ## Set up the tokens

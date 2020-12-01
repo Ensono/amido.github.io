@@ -160,7 +160,7 @@ At the end of bootstrapping your example framework you'll have an output that wi
 
 ### Development
 
-If you like to view the github repository , the source code can be found [here](https://github.com/amido/stacks-webapp-template/tree/master/packages/scaffolding-cli/templates/src/csr)
+If you like to view the github repository , the source code can be found [here](https://github.com/amido/stacks-typescript-csr)
 
 Move to the `<PROJECT-NAME>/src` folder and run the next commands
 
