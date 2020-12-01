@@ -1,10 +1,10 @@
 ---
-id: nuget_dependencies_repositories
-title: NuGet dependencies repositories for .NET Core API
-sidebar_label: NuGet Dependencies Repositories
+id: nuget_dependencies
+title: NuGet dependencies for .NET Core API
+sidebar_label: NuGet Dependencies
 hide_title: true
 hide_table_of_contents: true
-description: Repositories for NuGet dependencies on .NET Core API
+description: Repositories of NuGet dependencies used in .NET Core API
 keywords:
   - .net core
   - rest api
