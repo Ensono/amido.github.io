@@ -145,6 +145,7 @@ module.exports = {
                       "workloads/azure/backend/netcore/architecture/project_structure_netcore",
                       "workloads/azure/backend/netcore/architecture/data_storage_cosmosdb_netcore",
                       "workloads/azure/backend/netcore/architecture/operations_events_exceptions_correlation_netcore",
+                      "workloads/azure/backend/netcore/architecture/nuget_dependencies",
                       {
                         type: "category",
                         label: "Swagger Configuration",
