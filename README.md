@@ -1,4 +1,4 @@
-Stacks Website
+`Stacks Website
 ==============
 
 This repo is for the doumentation site in Docusaurus.
@@ -18,6 +18,7 @@ Note: Both sites are publicly available.
 - [Stacks Webapp Template](https://github.com/amido/stacks-webapp-template)
 - [Stacks .NET](https://github.com/amido/stacks-dotnet)
 - [Stacks Java](https://github.com/amido/stacks-java)
+- [Stacks Java](https://github.com/amido/stacks-java/tree/feat/api-with-no-cqrs)
 - [Stacks TypeScript SSR](https://github.com/stacks-typescript-ssr)
 - [Stacks TypeScript CSR](https://github.com/stacks-typescript-csr)
 - [Stacks Pipeline Templates](https://github.com/amido/stacks-pipeline-templates)

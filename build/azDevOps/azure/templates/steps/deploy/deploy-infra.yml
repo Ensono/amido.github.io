@@ -1,0 +1,69 @@
+parameters:
+  environment_name: ""
+  repository_directory: ""
+  pipeline_scripts_directory: ""
+  company: ""
+  project: ""
+  # Terraform
+  terraform_directory: ""
+  terraform_backend_client_id: ""
+  terraform_backend_client_secret: ""
+  terraform_backend_tenant_id: ""
+  terraform_backend_subscription_id: ""
+  terraform_state_rg: ""
+  terraform_state_storage: ""
+  terraform_state_container: ""
+  terraform_state_key: ""
+  terraform_extra_properties: {}
+  # Azure Config
+  azure_client_id: ""
+  azure_client_secret: ""
+  azure_tenant_id: ""
+  azure_subscription_id: ""
+steps:
+  - bash: |
+      echo "ATBCI: ${{ parameters.terraform_backend_client_id }}"
+      echo "ATBCS: ${{ parameters.terraform_backend_client_secret }}"
+      echo "ATBATI: ${{ parameters.terraform_backend_tenant_id }}"
+      echo "ATBASI: ${{ parameters.terraform_backend_subscription_id }}"
+
+      echo "ACI: ${{ parameters.azure_client_id }}"
+      echo "ACS: ${{ parameters.azure_client_secret }}"
+      echo "ATI: ${{ parameters.azure_tenant_id }}"
+      echo "ASI: ${{ parameters.azure_subscription_id }}"
+
+  - template: azDevOps/azure/templates/v2/steps/deploy-terraform-resource.yml@templates
+    parameters:
+      # Terraform Basic Config
+      terraform_working_dir: "${{ parameters.terraform_directory }}"
+      # changing this would require changing the downstream consumers of these outputs
+      #
+      terraform_output_artefact: "tfoutputs"
+      # Terraform State Config
+      terraform_backend_client_id: "${{ parameters.terraform_backend_client_id }}"
+      terraform_backend_client_secret: "${{ parameters.terraform_backend_client_secret }}"
+      terraform_backend_tenant_id: "${{ parameters.terraform_backend_tenant_id }}"
+      terraform_backend_subscription_id: "${{ parameters.terraform_backend_subscription_id }}"
+      terraform_state_rg: ${{ parameters.terraform_state_rg }}
+      terraform_state_storage: ${{ parameters.terraform_state_storage }}
+      terraform_state_container: ${{ parameters.terraform_state_container }}
+      terraform_state_key: $${{ parameters.terraform_state_key }}
+      # Azure Config
+      azure_client_id: "${{ parameters.azure_client_id }}"
+      azure_client_secret: "${{ parameters.azure_client_secret }}"
+      azure_tenant_id: "${{ parameters.azure_tenant_id }}"
+      azure_subscription_id: "${{ parameters.azure_subscription_id }}"
+      # for branch based builds this can be $(Build.SourceBranchName)
+      terraform_state_workspace: ${{ parameters.environment_name }}
+      # Global Config
+      company: ${{ parameters.company }}
+      project: ${{ parameters.project }}
+      environment: ""
+      azure_cli_providers: []
+      tags: ""
+      # Terraform Resource Specific Config
+      terraform_extra_properties: "${{ parameters.terraform_extra_properties }}"
+      terraform_output_commands: |
+        raw_tf=$(terraform output -json | jq -r 'keys[] as $k | "##vso[task.setvariable variable=\($k);isOutput=true]\(.[$k] | .value)"')
+        readarray -t outputs <<<"$raw_tf"
+        for i in "${outputs[@]}"; do echo "$i"; done

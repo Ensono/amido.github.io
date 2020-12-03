@@ -1,0 +1,55 @@
+parameters:
+  repository_directory: ""
+  pipeline_scripts_directory: ""
+  # YAML Lint
+  yamllint_container: ""
+  yamllint_config_file: ""
+  yamllint_scan_directory: ""
+  # Terraform
+  terraform_container: ""
+  terraform_directory: ""
+  # NPM Cache directory
+  npm_cache_dir: ""
+
+steps:
+  # # Validates all YAML files in the repo to check they adhere to standards
+  # - template: azDevOps/azure/templates/v3/steps/build/test-validate-yaml.yml@templates
+  #   parameters:
+  #     pipeline_scripts_directory: "${{ parameters.pipeline_scripts_directory }}"
+  #     container: "${{ parameters.yamllint_container }}"
+  #     yamllint_config_file: "${{ parameters.yamllint_config_file }}"
+  #     yamllint_scan_directory: "${{ parameters.yamllint_scan_directory }}"
+
+  # # Runs a terraform fomatting check and a validation check
+  # - template: azDevOps/azure/templates/v3/steps/build/test-validate-terraform.yml@templates
+  #   parameters:
+  #     pipeline_scripts_directory: "${{ parameters.pipeline_scripts_directory }}"
+  #     terraform_container: "${{ parameters.terraform_container"
+  #     terraform_directory: "${{ parameters.terraform_directory }}"
+
+  # Moves cache dir to somewhere cacheable outside
+  # of the container by the cache task
+  - bash: |
+      npm set cache "${{ parameters.npm_cache_dir }}"
+    displayName: "Node: Sets cache directory"
+
+  # Cache the npm cache directory
+  - task: Cache@2
+    inputs:
+      key: 'npm-test | "$(Agent.OS)" | ${{ parameters.repository_directory }}/package-lock.json'
+      restoreKeys: |
+        npm-test | "$(Agent.OS)"
+        npm-test
+      path: "${{ parameters.npm_cache_dir }}"
+
+  # Install dependencies
+  - bash: |
+      npm ci
+    workingDirectory: ${{ parameters.repository_directory }}
+    displayName: "Install dependencies"
+
+  # Run linitng
+  - bash: |
+      npm run lint
+    workingDirectory: ${{ parameters.repository_directory }}
+    displayName: 'Lint: Run markdown lint'

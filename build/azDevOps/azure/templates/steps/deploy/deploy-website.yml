@@ -1,0 +1,72 @@
+parameters:
+  repository_directory: ""
+  pipeline_scripts_directory: ""
+  # Azure Credentials
+  azure_client_id: ""
+  azure_client_secret: ""
+  azure_tenant_id: ""
+  azure_subscription_id: ""
+  # Npm
+  npm_cache_dir: ""
+  # Website
+  storage_account_name: ""
+  storage_account_key: ""
+  cdn_resource_group: ""
+  cdn_endpoint_name: ""
+  cdn_profile_name: ""
+steps:
+  # Moves cache dir to somewhere cacheable outside
+  # of the container by the cache task
+  - bash: |
+      npm set cache "${{ parameters.npm_cache_dir }}"
+    displayName: "Node: Sets cache directory"
+
+  - task: Cache@2
+    inputs:
+      key: 'npm-test | "$(Agent.OS)" | ${{ parameters.repository_directory }}/package-lock.json'
+      restoreKeys: |
+        npm-test | "$(Agent.OS)"
+        npm-test
+      path: "${{ parameters.npm_cache_dir }}"
+
+  # Install dependencies
+  - bash: |
+      npm ci
+    workingDirectory: "${{ parameters.repository_directory }}"
+    displayName: "Install dependencies"
+
+  # Docusaurus build
+  - bash: |
+      BASE_URL="https://${{ variables.hostname_nonprod }}"
+      ./node_modules/.bin/docusaurus build --out-dir=${{ variables.site_build_dir }}
+    workingDirectory: "${{ parameters.repository_directory }}"
+    displayName: "Build Application"
+
+  - task: Bash@3
+    inputs:
+      filePath: "${{ variables.self_pipeline_scripts_dir }}/util-azure-login.bash"
+      arguments: >
+        -a "${{ parameters.azure_client_id }}"
+        -b "${{ parameters.azure_client_secret }}"
+        -c "${{ parameters.azure_tenant_id }}"
+        -d "${{ parameters.azure_subscription_id }}"
+    displayName: "Login: Azure CLI"
+
+  - bash: |
+      az storage blob upload-batch \
+        --account-name "${{ parameters.storage_account_name }}" \
+        --account-key "${{ parameters.storage_account_key }}" \
+        -s "${{ variables.site_build_dir }}" \
+        -d "\$web"
+    workingDirectory: "${{ variables.self_repo_dir }}"
+    displayName: Push to Blob Storage
+
+  - bash: |
+      az cdn endpoint purge \
+        -n "${{ parameters.cdn_profile_name }}" \
+        --profile-name "${{ parameters.cdn_profile_name }}" \
+        --content-paths "/*" \
+        --resource-group "${{ parameters.cdn_resource_group }}" \
+        --no-wait
+    workingDirectory: "${{ variables.self_repo_dir }}"
+    displayName: Purge CDN Endpoint
