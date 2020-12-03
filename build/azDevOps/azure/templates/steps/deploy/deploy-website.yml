@@ -9,6 +9,7 @@ parameters:
   # Npm
   npm_cache_dir: ""
   # Website
+  site_build_dir: ""
   storage_account_name: ""
   storage_account_key: ""
   cdn_resource_group: ""
@@ -37,14 +38,14 @@ steps:
 
   # Docusaurus build
   - bash: |
-      BASE_URL="https://${{ variables.hostname_nonprod }}"
-      ./node_modules/.bin/docusaurus build --out-dir=${{ variables.site_build_dir }}
+      BASE_URL="https://${{ parameters.hostname }}"
+      ./node_modules/.bin/docusaurus build --out-dir=${{ parameters.site_build_dir }}
     workingDirectory: "${{ parameters.repository_directory }}"
     displayName: "Build Application"
 
   - task: Bash@3
     inputs:
-      filePath: "${{ variables.self_pipeline_scripts_dir }}/util-azure-login.bash"
+      filePath: "${{ parameters.pipeline_scripts_directory }}/util-azure-login.bash"
       arguments: >
         -a "${{ parameters.azure_client_id }}"
         -b "${{ parameters.azure_client_secret }}"
@@ -56,9 +57,9 @@ steps:
       az storage blob upload-batch \
         --account-name "${{ parameters.storage_account_name }}" \
         --account-key "${{ parameters.storage_account_key }}" \
-        -s "${{ variables.site_build_dir }}" \
+        -s "${{ parameters.site_build_dir }}" \
         -d "\$web"
-    workingDirectory: "${{ variables.self_repo_dir }}"
+    workingDirectory: "${{ parameters.repository_directory }}"
     displayName: Push to Blob Storage
 
   - bash: |
@@ -68,5 +69,5 @@ steps:
         --content-paths "/*" \
         --resource-group "${{ parameters.cdn_resource_group }}" \
         --no-wait
-    workingDirectory: "${{ variables.self_repo_dir }}"
+    workingDirectory: "${{ parameters.repository_directory }}"
     displayName: Purge CDN Endpoint

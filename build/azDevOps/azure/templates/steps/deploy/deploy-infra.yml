@@ -21,17 +21,6 @@ parameters:
   azure_tenant_id: ""
   azure_subscription_id: ""
 steps:
-  - bash: |
-      echo "ATBCI: ${{ parameters.terraform_backend_client_id }}"
-      echo "ATBCS: ${{ parameters.terraform_backend_client_secret }}"
-      echo "ATBATI: ${{ parameters.terraform_backend_tenant_id }}"
-      echo "ATBASI: ${{ parameters.terraform_backend_subscription_id }}"
-
-      echo "ACI: ${{ parameters.azure_client_id }}"
-      echo "ACS: ${{ parameters.azure_client_secret }}"
-      echo "ATI: ${{ parameters.azure_tenant_id }}"
-      echo "ASI: ${{ parameters.azure_subscription_id }}"
-
   - template: azDevOps/azure/templates/v2/steps/deploy-terraform-resource.yml@templates
     parameters:
       # Terraform Basic Config
@@ -47,7 +36,7 @@ steps:
       terraform_state_rg: ${{ parameters.terraform_state_rg }}
       terraform_state_storage: ${{ parameters.terraform_state_storage }}
       terraform_state_container: ${{ parameters.terraform_state_container }}
-      terraform_state_key: $${{ parameters.terraform_state_key }}
+      terraform_state_key: ${{ parameters.terraform_state_key }}
       # Azure Config
       azure_client_id: "${{ parameters.azure_client_id }}"
       azure_client_secret: "${{ parameters.azure_client_secret }}"

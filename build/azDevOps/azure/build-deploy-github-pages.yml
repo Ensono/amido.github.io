@@ -147,10 +147,10 @@ stages:
                     project: "${{ variables.project }}"
                     # Terraform
                     terraform_directory: "${{ variables.self_repo_tf_dir }}"
-                    terraform_backend_azure_client_id: "$(azure_client_id)"
-                    terraform_backend_azure_client_secret: "$(azure_client_secret)"
-                    terraform_backend_azure_tenant_id: "$(azure_tenant_id)"
-                    terraform_backend_azure_subscription_id: "$(azure_subscription_id)"
+                    terraform_backend_client_id: "$(azure_client_id)"
+                    terraform_backend_client_secret: "$(azure_client_secret)"
+                    terraform_backend_tenant_id: "$(azure_tenant_id)"
+                    terraform_backend_subscription_id: "$(azure_subscription_id)"
                     terraform_state_rg: ${{ variables.tf_state_rg }}
                     terraform_state_storage: ${{ variables.tf_state_storage }}
                     terraform_state_container: ${{ variables.tf_state_container }}
@@ -218,7 +218,7 @@ stages:
 
       - deployment: DeployDev
         dependsOn: SiteInfraDev
-        container: k8s_deploy
+        container: k8s
         pool:
           vmImage: ${{ variables.pool_vm_image }}
         environment: dev
@@ -255,6 +255,7 @@ stages:
                     # Npm
                     npm_cache_dir: "${{ variables.npm_cache_dir }}"
                     # Website
+                    site_build_dir: "${{ variables.site_build_dir }}"
                     storage_account_name: "$(storage_account_name)"
                     storage_account_key: "$(storage_account_key)"
                     cdn_resource_group: "$(website_resource_group)"
@@ -359,7 +360,7 @@ stages:
 
       - deployment: DeployProd
         dependsOn: SiteInfraProd
-        container: k8s_deploy
+        container: k8s
         pool:
           vmImage: ${{ variables.pool_vm_image }}
         environment: prod
@@ -396,6 +397,7 @@ stages:
                     # Npm
                     npm_cache_dir: "${{ variables.npm_cache_dir }}"
                     # Website
+                    site_build_dir: "${{ variables.site_build_dir }}"
                     storage_account_name: "$(storage_account_name)"
                     storage_account_key: "$(storage_account_key)"
                     cdn_resource_group: "$(website_resource_group)"
