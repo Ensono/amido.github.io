@@ -28,7 +28,7 @@ The application is designed as a restaurant menu application. Users can create a
 Menus can hold one or more Categories, and a Category holds menu Items.
 The API provides an interface for clients to create/update and delete any or all of the menu components.
 
-<ResponsivePlayer url="https://youtu.be/wfuQ7ynH3FY" />
+<ResponsivePlayer url="https://vimeo.com/486748697" />
 
 
 :::tip Demo

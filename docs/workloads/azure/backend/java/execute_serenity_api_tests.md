@@ -31,7 +31,7 @@ It also uses the test results to produce illustrated, narrative reports that doc
 
 This page explains how to setup the API testing framework built with Java and Serenity BDD.
 
-<ResponsivePlayer url="https://youtu.be/ogu9q_tzyt0" />
+<ResponsivePlayer url="https://vimeo.com/486755397" />
 
 ### Prerequisites
 

@@ -32,7 +32,7 @@ Where possible, we are creating reusable steps ([stacks-pipeline-templates](http
 
 ## Setting up Azure DevOps
 
-<ResponsivePlayer url="https://youtu.be/tzmBRLOcKBw" />
+<ResponsivePlayer url="https://vimeo.com/486755365" />
 
 ### Variable group
 
