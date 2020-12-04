@@ -276,7 +276,7 @@ function Home() {
 
         <section className={styles.videoSection}>
           <div className="container">
-            <ResponsivePlayerWithLinks url="https://youtu.be/QkKZd-2Lw9E"
+            <ResponsivePlayerWithLinks url="https://vimeo.com/486755315"
                                        links={[
                                          { title:"Using the template CLI to scaffold", time: "0:00" },
                                          { title:"Creating the variables for the environment", time: "3:23" },

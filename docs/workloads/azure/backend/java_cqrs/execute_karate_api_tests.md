@@ -29,7 +29,7 @@ Karate is an open-source general-purpose test-automation framework that can scri
 
 This page explains how to setup the API testing framework built with Java and Karate.
 
-<ResponsivePlayer url="https://youtu.be/3KDWfGlD0xU" />
+<ResponsivePlayer url="https://vimeo.com/486755267" />
 
 ### Prerequisites
 

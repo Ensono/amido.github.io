@@ -30,7 +30,7 @@ Serenity can also be configured to automatically take screenshots throughout the
 
 When you write your tests in a fluent, readable manner, these screenshots become part of the "living documentation" of your application.
 
-<ResponsivePlayer url="https://youtu.be/ogu9q_tzyt0" />
+<ResponsivePlayer url="https://vimeo.com/486755397" />
 
 ### Configurations
 

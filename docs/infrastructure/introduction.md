@@ -18,7 +18,7 @@ import ResponsivePlayer from "../../src/pages/Components/ResponsivePlayer/Respon
 
 All Stacks workloads require initial configuration of the cloud provider and some core infrastructure.
 
-<ResponsivePlayer url="https://youtu.be/tzmBRLOcKBw" />
+<ResponsivePlayer url="https://vimeo.com/486755365" />
 
 ## Terraform
 
