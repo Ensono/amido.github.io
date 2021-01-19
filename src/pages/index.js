@@ -87,7 +87,7 @@ const features2 = [
     description: (
       <>
         Stacks de-risks your project and accelerates your architecture,
-        giving you a platform-agnostic, tried-and-tested route to faster business benefit"
+        giving you a platform-agnostic, tried-and-tested route to faster business benefit
       </>
     ),
   },
