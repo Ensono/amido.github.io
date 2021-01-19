@@ -82,12 +82,12 @@ const features2 = [
     ),
   },
   {
-    title: "Why  Amido",
-    link: "https://amido.com/about-us/",
+    title: "Business benefit with Stacks",
+    link: "https://www.amido.com/approach/amido-stacks",
     description: (
       <>
-        Want to know how Amido is preventing digital transformation failures
-        with Stacks?
+        Stacks de-risks your project and accelerates your architecture,
+        giving you a platform-agnostic, tried-and-tested route to faster business benefit"
       </>
     ),
   },
@@ -238,6 +238,7 @@ function Home() {
             <h3>Get started with Amido Stacks</h3>
 
             <p>
+              Stacks is the cloud-native software factory for digital transformations that work.
               Increase velocity for successful digital transformations with reliable,
               tried and tested code that slashes configuration time and speeds up deployment. <br />
               Amido Stacks is a catalogue of {" "} <a href={baseUrl}> workload</a> templates, package management and example implementations that act as a foundation for you to springboard into build.
@@ -405,5 +406,3 @@ function Home() {
 }
 
 export default Home;
-
-
