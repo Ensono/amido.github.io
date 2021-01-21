@@ -239,7 +239,7 @@ function Home() {
 
             <p>
               Stacks is the cloud-native software factory for digital transformations that work.
-              Increase velocity for successful digital transformations with reliable,
+              Increase project predictability with reliable,
               tried and tested code that slashes configuration time and speeds up deployment. <br />
               Amido Stacks is a catalogue of {" "} <a href={baseUrl}> workload</a> templates, package management and example implementations that act as a foundation for you to springboard into build.
             </p>
