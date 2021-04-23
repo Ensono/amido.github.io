@@ -204,6 +204,7 @@ function Home() {
   const context = useDocusaurusContext();
   const { siteConfig = {} } = context;
   const baseUrl = useBaseUrl("docs/");
+  const workloadsUrl = useBaseUrl("docs/workloads/workloads");
   const amidoEnsonoUrl = "https://www.amido.com/amido-and-ensono";
   const triggerSearch = (term) => {
     document.querySelector(".DocSearch-Button").click();
@@ -242,7 +243,7 @@ function Home() {
               Stacks is the cloud-native software factory for digital transformations that work.
               Increase project predictability with reliable,
               tried and tested code that slashes configuration time and speeds up deployment. <br />
-              Amido Stacks is a catalogue of {" "} <a href={baseUrl}> workload</a> templates, package management and example implementations that act as a foundation for you to springboard into build.  <br />
+              Amido Stacks is a catalogue of {" "} <a href={workloadsUrl}> workload</a> templates, package management and example implementations that act as a foundation for you to springboard into build.  <br />
             </p>
             <p>
               Brought to you by <a href={amidoEnsonoUrl}>Amido, an Ensono company. </a>
