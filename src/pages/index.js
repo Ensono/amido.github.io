@@ -204,7 +204,7 @@ function Home() {
   const context = useDocusaurusContext();
   const { siteConfig = {} } = context;
   const baseUrl = useBaseUrl("docs/");
-  const ensonoUrl = "http://www.ensono.com/uk";
+  const amidoEnsonoUrl = "https://www.amido.com/amido-and-ensono";
   const triggerSearch = (term) => {
     document.querySelector(".DocSearch-Button").click();
     setTimeout(() => {
@@ -243,7 +243,9 @@ function Home() {
               Increase project predictability with reliable,
               tried and tested code that slashes configuration time and speeds up deployment. <br />
               Amido Stacks is a catalogue of {" "} <a href={baseUrl}> workload</a> templates, package management and example implementations that act as a foundation for you to springboard into build.  <br />
-              Brought to you by Amido, an <a href={ensonoUrl}>Ensono</a> company.
+            </p>
+            <p>
+              Brought to you by <a href={amidoEnsonoUrl}>Amido, an Ensono company. </a>
             </p>
             <div className={styles.buttons} style={{ marginTop: 20 }}>
               <Link
