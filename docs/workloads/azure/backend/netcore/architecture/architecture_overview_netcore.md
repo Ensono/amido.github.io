@@ -26,11 +26,11 @@ keywords:
 
 ### Bounded Context
 
-In DDD, when we start mapping the business domain into objects we have to identify it's relation to each other on a wide scope, at start we identify them as a big and indivisible context to have a clear view of it's relationships.
+In DDD, when we start mapping the business domain into objects we have to identify it's relation to each other on a wide scope, at start we identify them as a big and indivisible context to have a clear view of its relationships.
 
-When their relationships are identified we have to identify the smallest cohesive scope where they fit together on it's own context. This boundary is given the name of bounded context.
+When their relationships are identified we have to identify the smallest cohesive scope where they fit together on its own context. This boundary is given the name of bounded context.
 
-A domain object might belong to multiple bounded context, but on each of them will have a different set of attributes that are only relevant to the context they are within.
+A domain object might belong to multiple bounded contexts, but on each of them will have a different set of attributes that are only relevant to the context they are within.
 
 In some cases, a domain object might change it's name to make more sense within the context it is located.
 

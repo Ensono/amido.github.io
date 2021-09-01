@@ -66,6 +66,7 @@ Move to the `<PROJECT-NAME>/src/api` folder and run the next commands in **termi
 
 ```bash
 export COSMOSDB_KEY=<COSMOSDB_KEY value here>
+export SERVICEBUS_CONNECTIONSTRING=<Your Service Bus connection string here>
 ```
 
 ```bash
@@ -108,11 +109,11 @@ This uses the **Dockerfile** in this folder to generate the Docker image.
 After the creation of the Docker image, the Docker container can be run using the command below:
 
 ```bash title="Run docker container"
-docker run -p 5000:80 --mount type=bind,source=/path/to/PROJECT-NAME/src/api/xxAMIDOxx.xxSTACKSxx.API/appsettings.json,target=/app/config/appsettings.json -e COSMOSDB_KEY=your-key dotnet-api:latest`
+docker run -p 5000:80 --mount type=bind,source=/path/to/PROJECT-NAME/src/api/xxAMIDOxx.xxSTACKSxx.API/appsettings.json,target=/app/config/appsettings.json -e COSMOSDB_KEY=your-key -e SERVICEBUS_CONNECTIONSTRING=your-connection-string  dotnet-api:latest`
 ```
 
 :::note
-The **COSMOSDB_KEY** described in the command above has to be passed when running the container. Note that the **appsettings.json** value is mounted here for running locally,
+The **COSMOSDB_KEY** and **SERVICEBUS_CONNECTIONSTRING** described in the command above has to be passed when running the container. Note that the **appsettings.json** value is mounted here for running locally,
 but not if the full project is deployed to Azure, where the build process will perform the substitution.
 :::
 

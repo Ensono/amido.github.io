@@ -17,14 +17,26 @@ keywords:
 
 ## Solution Structure
 
-<br />
+
+<p><b>Simple Web API</b></p>
 
 ```text
 Solution 'xxAMIDOxx.xxSTACKSss.API'
 ├── API
 │  ├── xxAMIDOxx.xxSTACKSxx.API
 │  ├── xxAMIDOxx.xxSTACKSxx.API.Models
-│  └── xxAMIDOxx.xxSTACKSxx.API.ContractTests
+└── Tests
+   ├── xxAMIDOxx.xxSTACKSxx.API.UnitTests
+```
+
+
+<p><b>Web API with CQRS</b></p>
+
+```text
+Solution 'xxAMIDOxx.xxSTACKSss.API'
+├── API
+│  ├── xxAMIDOxx.xxSTACKSxx.API
+│  ├── xxAMIDOxx.xxSTACKSxx.API.Models
 ├── Application
 │  ├── xxAMIDOxx.xxSTACKSxx.Application.CommandHandlers
 │  ├── xxAMIDOxx.xxSTACKSxx.Application.Integration
@@ -42,6 +54,21 @@ Solution 'xxAMIDOxx.xxSTACKSss.API'
    └── xxAMIDOxx.xxSTACKSxx.Infrastructure.IntegrationTests
 ```
 
+<p><b>Functions and Worker Services</b></p>
+
+```text
+├── Functions
+│  ├── function-listener
+│  │   ├── xxAMIDOxx.xxSTACKSxx.Listener
+│  │   └── xxAMIDOxx.xxSTACKSxx.Listener.UnitTests
+│  ├── function-worker
+│  │   ├── xxAMIDOxx.xxSTACKSxx.Worker
+│  │   └── xxAMIDOxx.xxSTACKSxx.Worker.UnitTests
+├── Worker
+│  └── xxAMIDOxx.xxSTACKSxx.BackgroundWorker
+```
+
+
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
@@ -52,7 +79,8 @@ import TabItem from "@theme/TabItem";
     {label: 'Application', value: 'application'},
     {label: 'Domain', value: 'domain'},
     {label: 'Shared', value: 'shared'},
-    {label: 'Tests', value: 'tests'}
+    {label: 'Tests', value: 'tests'},
+    {label: 'Functions and Worker Services', value: 'functions-worker'}
     ]}>
     <TabItem value="api">
         <p>
@@ -280,6 +308,47 @@ import TabItem from "@theme/TabItem";
             boundary.
         </p>
     </TabItem>
+    <TabItem value="functions-worker">
+        <h3>Company.Project.Listener</h3>
+        <p>
+            The function listener contains a Azure function that is triggered by a message in a Azure Service Bus topic.
+        </p>
+        <p>
+            It uses a package to help with serialization and deserialization called Amido.Stacks.Messaging.Azure.ServiceBus
+        </p>
+        <br />
+        <h3>Company.Project.Listener.UnitTests</h3>
+        <p>
+            Tests the function execution.
+        </p>
+        <br />
+        <h3>Company.Project.Worker</h3>
+        <p>
+            The function Worker contains a Azure function that is triggered by a change in CosmosDb.
+        </p>
+        <p>
+            This change is read by the function, deserialized and an event is raised to Service Bus
+        </p>
+        <br />
+        <h3>Company.Project.Worker.UnitTests</h3>
+        <p>
+            Tests the function execution.
+        </p>
+        <br />
+        <p>
+            Resources like Repositories and gateway are mocked to provide dummy or fake the behaviour expected by the
+            application(or not) in order to test multiple usage scenarios of the application.
+        </p>
+        <br />
+        <h3>Company.Project.BackgroundWorker</h3>
+        <p>
+            The Worker service is a service triggered by messages in a Azure Service Bus topic.
+        </p>
+        <p>
+            It uses a package to help with serialization and deserialization called Amido.Stacks.Messaging.Azure.ServiceBus
+        </p>
+        
+    </TabItem>
     <TabItem value="tests">
         <p>
             The tests scope contains all tests that covers the application code via white box method. Tests
@@ -368,11 +437,7 @@ import TabItem from "@theme/TabItem";
             <li>Check if a value is cached correctly when retrieved from an external storage.</li>
         </ul>
         <br />
-        <h3>Company.Project.API.ContractTests</h3>
-        <p>Contract tests cover testing of the API contracts between the provider of an API service and the consumer of the API
-            service. Documentation for contract testing can be found within the following documentation:</p>
         <p><a href="/docs/workloads/azure/backend/netcore/architecture/testing/testing_scope_netcore">Testing Scope</a></p>
-        <p><a href="/docs/workloads/azure/backend/netcore/architecture/testing/consummer_driven_contract_testing_netcore">Consumer-Driven Contract Testing</a></p>
     </TabItem>
 </Tabs>
 

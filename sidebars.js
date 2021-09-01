@@ -118,24 +118,42 @@ module.exports = {
               },
               {
                 type: "category",
-                label: ".NET Core REST API with CQRS",
+                label: ".NET Core",
                 items: [
                   "workloads/azure/backend/netcore/introduction_netcore",
                   {
                     type: "category",
-                    label: "Getting started",
+                    label: "Quickstart",
                     items: [
-                      "workloads/azure/backend/netcore/quickstart/requirements_netcore",
-                      "workloads/azure/backend/netcore/quickstart/create_project_netcore",
-                      "workloads/azure/backend/netcore/quickstart/configure_project_netcore",
-                      "workloads/azure/backend/netcore/quickstart/build_and_run_project_netcore"
-                    ],
+                      {
+                        type: "category",
+                        label: "REST API",
+                        items: [
+                          "workloads/azure/backend/netcore/quickstart/web_api/create_project_netcore",
+                          "workloads/azure/backend/netcore/quickstart/web_api/build_and_run_project_netcore"
+                        ],
+                      },
+                      {
+                        type: "category",
+                        label: "REST API with CQRS",
+                        items: [
+
+                          "workloads/azure/backend/netcore/quickstart/web_api_cqrs/create_project_netcore",
+                          "workloads/azure/backend/netcore/quickstart/web_api_cqrs/configure_project_netcore",
+                          "workloads/azure/backend/netcore/quickstart/web_api_cqrs/build_and_run_project_netcore"
+                        ],
+                      },
+                      {
+                        type: "category",
+                        label: "REST API with CQRS and Events",
+                        items: [
+                          "workloads/azure/backend/netcore/quickstart/web_api_cqrs_events/create_project_netcore",
+                          "workloads/azure/backend/netcore/quickstart/web_api_cqrs_events/configure_project_netcore",
+                          "workloads/azure/backend/netcore/quickstart/web_api_cqrs_events/build_and_run_project_netcore"
+                        ],
+                      },
+                    ]
                   },
-                  "workloads/azure/backend/netcore/testing/functional_testing_netcore",
-                  "workloads/azure/backend/netcore/infrastructure_netcore",
-                  "workloads/azure/backend/netcore/pipeline_netcore",
-                  "workloads/azure/backend/netcore/logging_netcore",
-                  "workloads/azure/backend/netcore/security_netcore",
                   {
                     type: "category",
                     label: "Architecture",
@@ -156,6 +174,12 @@ module.exports = {
                       },
                     ],
                   },
+                  "workloads/azure/backend/netcore/requirements_netcore",
+                  "workloads/azure/backend/netcore/testing/functional_testing_netcore",
+                  "workloads/azure/backend/netcore/infrastructure_netcore",
+                  "workloads/azure/backend/netcore/pipeline_netcore",
+                  "workloads/azure/backend/netcore/logging_netcore",
+                  "workloads/azure/backend/netcore/security_netcore",
                 ],
               },
             ],

@@ -29,3 +29,4 @@ The .NET Core API depends on a couple of NuGet packages. Below there are links t
 | Amido.Stacks.Application.CQRS.Abstractions 	| [stacks-dotnet-packages-cqrs-abstractions](https://github.com/amido/stacks-dotnet-packages-cqrs-abstractions)     |
 | Amido.Stacks..Data.Documents.Abstractions  	| [stacks-dotnet-packages-data-abstractions](https://github.com/amido/stacks-dotnet-packages-data-abstractions)     |
 | Amido.Stacks.Data.Documents.CosmosDB       	| [stacks-dotnet-packages-cosmosdb](https://github.com/amido/stacks-dotnet-packages-cosmosdb)                       |
+| Amido.Stacks.Messaging.Azure.ServiceBus    	| [stacks-dotnet-packages-messaging-asb](https://github.com/amido/stacks-dotnet-packages-messaging-asb)             |

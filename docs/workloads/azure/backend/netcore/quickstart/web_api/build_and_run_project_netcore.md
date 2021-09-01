@@ -4,14 +4,12 @@ title: Build & Run
 sidebar_label: Build & Run the Project
 hide_title: true
 hide_table_of_contents: true
-description:  Build and Run .NET Core REST API application with CQRS
+description:  Build and Run .NET Core REST API application
 keywords:
   - .net core
   - rest api
-  - cqrs
   - azure
   - application insights
-  - cosmos db
   - build
   - run
   - application
@@ -65,10 +63,6 @@ dotnet run --project xxAMIDOxx.xxSTACKSxx.API/xxAMIDOxx.xxSTACKSxx.API.csproj
 Move to the `<PROJECT-NAME>/src/api` folder and run the next commands in **terminal**.
 
 ```bash
-export COSMOSDB_KEY=<COSMOSDB_KEY value here>
-```
-
-```bash
 dotnet restore
 ```
 
@@ -108,13 +102,8 @@ This uses the **Dockerfile** in this folder to generate the Docker image.
 After the creation of the Docker image, the Docker container can be run using the command below:
 
 ```bash title="Run docker container"
-docker run -p 5000:80 --mount type=bind,source=/path/to/PROJECT-NAME/src/api/xxAMIDOxx.xxSTACKSxx.API/appsettings.json,target=/app/config/appsettings.json -e COSMOSDB_KEY=your-key dotnet-api:latest`
+docker run -p 5000:80 --mount type=bind,source=/path/to/PROJECT-NAME/src/api/xxAMIDOxx.xxSTACKSxx.API/appsettings.json,target=/app/config/appsettings.json`
 ```
-
-:::note
-The **COSMOSDB_KEY** described in the command above has to be passed when running the container. Note that the **appsettings.json** value is mounted here for running locally,
-but not if the full project is deployed to Azure, where the build process will perform the substitution.
-:::
 
 </div>
 </details>

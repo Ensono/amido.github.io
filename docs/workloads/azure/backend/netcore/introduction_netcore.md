@@ -16,10 +16,9 @@ keywords:
 ---
 
 import HideNavigation  from "../../../../../src/pages/HideNavigation";
-import ResponsivePlayer from "../../../../../src/pages/Components/ResponsivePlayer/ResponsivePlayer";
 
-This is a sample .NET Core REST API application with CQRS, showcasing best coding practices and integrating with Azure
-and scaffolding for Amido Stacks.
+Stacks is a sample .NET Core REST API application, or a sample .Net Core REST API application with CQRS, or even a sample .Net Core REST API application with CQRS and events, <br/>
+showcasing best coding practices and integrating with Azure.
 
 The application implements Application Insights for performance management,
 and Cosmos DB is used for cloud persistence.
@@ -27,8 +26,6 @@ and Cosmos DB is used for cloud persistence.
 The application is designed as a restaurant menu application. Users can create a Menu.
 Menus can hold one or more Categories, and a Category holds menu Items.
 The API provides an interface for clients to create/update and delete any or all of the menu components.
-
-<ResponsivePlayer url="https://vimeo.com/486748697" />
 
 
 :::tip Demo
