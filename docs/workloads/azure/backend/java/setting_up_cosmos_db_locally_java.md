@@ -131,36 +131,22 @@ keytool -list -keystore cacerts
 </TabItem>
 <TabItem value="unix">
 
-In order to allow the Java Application to connect to the **CosmosDB Emulator**, you need to import its self-signed
-certificate to a java trust store.
-
 #### Download the certificate
+
 ```bash
 curl -k https://localhost:8081/_explorer/emulator.pem > emulatorcert.crt
 ```
 
-#### Import the certificate to a trust store
+#### Import to Java trust store
+
 ```bash
-keytool -keystore "<path to keystore>" \
-  -importcert \
-  -alias documentdbemulator \
-  -file "<path to emulatorcert.crt>"
+keytool -importcert -cacerts -alias documentdbemulator -file <path to emulatorcert.crt>
 ```
 
-At this point the certificate is imported but Java is unable to use it, as it uses a format that is unsupported
-in Java 11. The trust store needs to be converted from [`pkcs12` (SSL)](https://en.wikipedia.org/wiki/PKCS_12) to
-[`jks` (Java KeyStore)](https://en.wikipedia.org/wiki/Java_KeyStore).
+In order to make sure the certificate is there, you can run the following:
 
-#### Convert the trust store
 ```bash
-keytool -importkeystore \
-  -srckeystore "<path to the trust store>" \
-  -srcstoretype pkcs12 \
-  -srcalias documentdbemulator \
-  -destkeystore "<path to the converted trust store>" \
-  -deststoretype jks \
-  -deststorepass "<store password>" \
-  -destalias documentdbemulator
+keytool -list -cacerts | grep -A1 documentdbemulator
 ```
 
 </TabItem>
