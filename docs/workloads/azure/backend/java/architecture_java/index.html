@@ -10,15 +10,15 @@
 <script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-EKCQBC5CSJ",{anonymize_ip:!0})</script>
 <link rel="search" type="application/opensearchdescription+xml" title="Amido Stacks " href="/opensearch.xml"><title data-react-helmet="true">Java Rest API Architecture | Amido Stacks </title><meta data-react-helmet="true" name="docsearch:version" content="current,latest"><meta data-react-helmet="true" name="twitter:card" content="summary_large_image"><meta data-react-helmet="true" property="og:title" content="Java Rest API Architecture | Amido Stacks "><meta data-react-helmet="true" name="description" content="Spring Boot Rest API Architecture"><meta data-react-helmet="true" property="og:description" content="Spring Boot Rest API Architecture"><meta data-react-helmet="true" name="keywords" content="java,rest,api,architecture,spring boot,event,controller,logs,monitoring,query service,repository,azure cosmos db,event handler,event listener,event dispatcher,authorisation"><meta data-react-helmet="true" property="og:url" content="https://stacks.amido.com/docs/workloads/azure/backend/java/architecture_java"><link data-react-helmet="true" rel="shortcut icon" href="/img/thumbnail_stacks.png"><link data-react-helmet="true" rel="preconnect" href="https://BH4D9OD16A-dsn.algolia.net" crossorigin="anonymous"><link data-react-helmet="true" rel="canonical" href="https://stacks.amido.com/docs/workloads/azure/backend/java/architecture_java"><link rel="stylesheet" href="/styles.121582fa.css">
 <link rel="preload" href="/styles.3ecfe508.js" as="script">
-<link rel="preload" href="/runtime~main.0f0fa452.js" as="script">
-<link rel="preload" href="/main.fa0fa66b.js" as="script">
-<link rel="preload" href="/2.ea12a4b6.js" as="script">
-<link rel="preload" href="/3.95f84400.js" as="script">
-<link rel="preload" href="/4.17f841d8.js" as="script">
-<link rel="preload" href="/1be78505.f37f8516.js" as="script">
+<link rel="preload" href="/runtime~main.5ee68518.js" as="script">
+<link rel="preload" href="/main.4a55ceba.js" as="script">
+<link rel="preload" href="/2.6fc29928.js" as="script">
+<link rel="preload" href="/3.51fdfe7f.js" as="script">
+<link rel="preload" href="/4.d4726095.js" as="script">
+<link rel="preload" href="/1be78505.bdd4cc90.js" as="script">
 <link rel="preload" href="/935f2afb.120b59ca.js" as="script">
-<link rel="preload" href="/17896441.821c5b1f.js" as="script">
-<link rel="preload" href="/28fc92da.b69170c4.js" as="script">
+<link rel="preload" href="/17896441.18783a46.js" as="script">
+<link rel="preload" href="/28fc92da.87f05ff3.js" as="script">
 </head>
 <body>
 <script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){var t=null;try{t=localStorage.getItem("theme")}catch(t){}return t}();t(null!==e?e:"light")}()</script><div id="__docusaurus">
@@ -26,14 +26,14 @@
 describing how the persistence state has changed e.g. if a “Create Category” event is successful,
 then a “Menu Updated” event and a “Category Created” event will be published.</p><p>Application Events contain the following basic information:</p><table><thead><tr><th>Event Attribute</th><th>Description</th></tr></thead><tbody><tr><td>id</td><td>Unique id of the event instance (format: uuid)</td></tr><tr><td>eventCode</td><td>Code identifying the type of event</td></tr><tr><td>correlationId</td><td>Transaction identifier. This attribute is also returned as a response header if the command was received via the REST API and can also be found in all log entries relating to the transaction. CorrelationID can either be supplied by the input event/request or generated when not supplied.</td></tr><tr><td>operationCode</td><td>Code identifying the operation which generated the event</td></tr><tr><td>creationDate</td><td>When the event was created</td></tr><tr><td>Custom Attribute(s)</td><td>e.g. menuId</td></tr></tbody></table></div></article><div class="margin-vert--lg"><nav class="pagination-nav" aria-label="Blog list page navigation"><div class="pagination-nav__item"><a class="pagination-nav__link" href="/docs/workloads/azure/backend/java/ide_java"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">« IDE guidelines for the Java Rest API</div></a></div><div class="pagination-nav__item pagination-nav__item--next"><a class="pagination-nav__link" href="/docs/workloads/azure/backend/java/structure_java"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Java Rest API Structure »</div></a></div></nav></div></div></div></div></div></main></div></div><footer class="footer footer--dark"><div class="container"><div class="row footer__links"><div class="col footer__col"><h4 class="footer__title">Docs</h4><ul class="footer__items"><li class="footer__item"><a class="footer__link-item" href="/docs/">Getting Started</a></li></ul></div><div class="col footer__col"><h4 class="footer__title">About Us</h4><ul class="footer__items"><li class="footer__item"><a href="https://amido.com/" target="_blank" rel="noopener noreferrer" class="footer__link-item">Amido</a></li></ul></div><div class="col footer__col"><h4 class="footer__title">Open Source</h4><ul class="footer__items"><li class="footer__item"><a href="https://github.com/amido/amido.github.io" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub</a></li></ul></div></div><div class="text--center"><div>Copyright © 2021 Amido Ltd</div></div></div></footer></div>
 <script src="/styles.3ecfe508.js"></script>
-<script src="/runtime~main.0f0fa452.js"></script>
-<script src="/main.fa0fa66b.js"></script>
-<script src="/2.ea12a4b6.js"></script>
-<script src="/3.95f84400.js"></script>
-<script src="/4.17f841d8.js"></script>
-<script src="/1be78505.f37f8516.js"></script>
+<script src="/runtime~main.5ee68518.js"></script>
+<script src="/main.4a55ceba.js"></script>
+<script src="/2.6fc29928.js"></script>
+<script src="/3.51fdfe7f.js"></script>
+<script src="/4.d4726095.js"></script>
+<script src="/1be78505.bdd4cc90.js"></script>
 <script src="/935f2afb.120b59ca.js"></script>
-<script src="/17896441.821c5b1f.js"></script>
-<script src="/28fc92da.b69170c4.js"></script>
+<script src="/17896441.18783a46.js"></script>
+<script src="/28fc92da.87f05ff3.js"></script>
 </body>
 </html>
