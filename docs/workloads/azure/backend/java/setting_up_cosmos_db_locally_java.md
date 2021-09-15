@@ -128,6 +128,7 @@ Now running the below should list 4 certificates.
 ```bash
 keytool -list -keystore cacerts
 ```
+
 </TabItem>
 <TabItem value="unix">
 
