@@ -3,6 +3,6 @@ terraform {
   required_providers {
     azurerm = "~> 2.5"
     null    = "~> 2.1"
-    tls     = "~> 2.1"
+    #tls     = "~> 2.1"
   }
 }
