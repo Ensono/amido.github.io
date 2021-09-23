@@ -1,10 +1,9 @@
 FROM node:lts
 
-WORKDIR /app/website
+WORKDIR /app
 
-EXPOSE 3008 35729
-COPY ./docs /app/docs
-COPY ./website /app/website
+EXPOSE 3000
+COPY . /app/
 RUN npm install
 
 CMD ["npm", "start"]
