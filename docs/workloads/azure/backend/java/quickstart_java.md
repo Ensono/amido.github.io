@@ -28,14 +28,21 @@ This is version `1.0.0` of the `java-stacks` project.
 
 ### Running the application locally
 
-1. Clone the Java project to your local machine from here: [stacks-java repository](https://github.com/amido/stacks-java/tree/feat/api-with-no-cqrs)
+1. Clone one of the Java projects to your local machine from one of the following repos:
+    ---
+   1. Simple web API: [stacks-java repository](https://github.com/amido/stacks-java)
+   2. Web API with CQRS: [stacks-java-cqrs repository](https://github.com/amido/stacks-java-cqrs)
+   3. Web API with CQRS and events: [stacks-java-cqrs-events repository](https://github.com/amido/stacks-java-cqrs-events)
+   
 2. Configure required environment variables
-
+    ---
     The application is currently configured to work with the Azure environment.
 
     It uses an Azure **CosmosDB** database to store the example application data. So you should have access to an instance to use with the application.
-    Note: For running on a local Windows environment you can use the [Cosmos DB emulator](setting_up_cosmos_db_locally_java.md) (CosmosDB Emulator has a known fixed key).
+    Note: For running on a local Windows environment you can use the [Cosmos DB emulator](docs/workloads/azure/backend/java/setting_up_cosmos_db_locally_java.md) (CosmosDB Emulator has a known fixed key). There is no need for CosmosDB for the simple web API implementation (1.i above) as there is no persistence layer in it. 
     For further info please follow the [link](https://docs.microsoft.com/en-us/azure/cosmos-db/local-emulator?tabs=ssl-netstd21).
+    
+    ---
 
     In addition, Azure **ApplicationInsights** is used for logging purposes. If this is unavailable, modify the application so that it doesn't fail to startup if it can't access ApplicationInsights, and simply log to the terminal instead.
 
@@ -43,7 +50,7 @@ This is version `1.0.0` of the `java-stacks` project.
        application-insights:
            instrumentation-key: xxxxxx
            enabled: false
-       ```
+    ```
 
     There are two corresponding environment variables that need to be set to interact with these systems:
 
@@ -69,6 +76,7 @@ This is version `1.0.0` of the `java-stacks` project.
     </Tabs>
 
 3. Build and run the application
+    ---
 
     Note that at a minimum [Java 11](https://adoptopenjdk.net/) should be installed.
 
@@ -98,8 +106,11 @@ This is version `1.0.0` of the `java-stacks` project.
    </TabItem>
    </Tabs>
 
+    For instructions on how to customise the project for your company please look in the [Scaffolding](docs/workloads/azure/backend/java/scaffolding_java.md) section
+
 4. Build and run the application using Cosmos DB Emulator
-   please refer to section "Determine which root certificates have been installed" in [Setting Up CosmosDB Emulator](setting_up_cosmos_db_locally_java.md)
+    ---
+   Please refer to section "Determine which root certificates have been installed" in [Setting Up CosmosDB Emulator](docs/workloads/azure/backend/java/setting_up_cosmos_db_locally_java.md)
 
     Move to the `<PROJECT-NAME>/java` folder, then
     go to `application.yml` either comment out the `application-insights` block or set `enabled`  property to `false`.
@@ -135,7 +146,7 @@ This is version `1.0.0` of the `java-stacks` project.
     </Tabs>
 
 5. Verify that the application has started
-
+    ---
     Browse to [http://localhost:9000/v1/menu](http://localhost:9000/v1/menu). This should return a valid JSON response.
 
     The application configuration uses Swagger/OAS3 to represent the API endpoints. The Swagger UI can be viewed by directing your

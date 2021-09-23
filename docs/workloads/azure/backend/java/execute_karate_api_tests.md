@@ -2,7 +2,7 @@
 id: execute_karate_api_tests
 title: Running API tests with Karate
 sidebar_label: REST API testing with Karate
-description: Test rest api application with karate
+description: How to test rest api application with karate
 keywords:
   - java
   - rest 
@@ -177,5 +177,5 @@ scenarios:  145 | passed:   145 | failed: 0
 ### Test Reports
 
  As a result of the test execution - karate will automatically generate the test report - `target/surefire-reports/karate-summary.html`.
-
+ 
 <HideNavigation next />

@@ -22,7 +22,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 This page present the high level design of the reference implementation of the Java Stacks
 application which is based on Spring Boot REST API.
 
-**This page assumes that the core infrastructure has already been provisioned. Instructions and additional information on the core infrastructure can be found [here](../../../../infrastructure/azure/core_infrastructure.md)**
+**This page assumes that the core infrastructure has already been provisioned. Instructions and additional information on the core infrastructure can be found [here](docs/infrastructure/azure/core_infrastructure.md)**
 
 Both the diagram and resource list below are for a single environment. By default, the pipeline template will create two environments (dev and prod).
 
@@ -53,7 +53,7 @@ Both the diagram and resource list below are for a single environment. By defaul
 
 The following pipelines are currently supported for automating the deployment:
 
-- [Azure DevOps](./pipeline_java.md)
+- [Azure DevOps](docs/workloads/azure/backend/java/pipeline_java.md)
 
 ### Running Locally
 

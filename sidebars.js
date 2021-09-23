@@ -68,9 +68,23 @@ module.exports = {
                     type: "category",
                     label: "Architecture",
                     items: [
-                      "workloads/azure/backend/java/architecture_java",
-                      "workloads/azure/backend/java/structure_java",
-                    ],
+                      {
+                        type: "category",
+                        label: "Web API Architecture",
+                        items: [
+                          "workloads/azure/backend/java/architecture/web_api/architecture_java",
+                          "workloads/azure/backend/java/architecture/web_api/structure_java",
+                        ]
+                      },
+                      {
+                        type: "category",
+                        label: "Web API with CQRS and Events Architecture",
+                        items: [
+                          "workloads/azure/backend/java/architecture/java_cqrs/architecture_java_cqrs",
+                          "workloads/azure/backend/java/architecture/java_cqrs/structure_java_cqrs",
+                        ]
+                      }
+                    ]
                   },
                   "workloads/azure/backend/java/infrastructure_java",
                   "workloads/azure/backend/java/pipeline_java",

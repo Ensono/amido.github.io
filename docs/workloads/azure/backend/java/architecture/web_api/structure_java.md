@@ -26,17 +26,13 @@ The outline structure of the project is as below.
 ```text
 ├───java
 │   └───com
-│       └───xxAMIDOxx
-│           └───xxSTACKSxx
+│       └───amido
+│           └───stacks
 │               ├───core
-│               │   ├───api
-│               │   │   ├───dto
-│               │   │   ├───exception
-│               │   │   └───filter
-│               │   ├───messaging
-│               │   │   ├───event
-│               │   │   └───publish
-│               │   └───operations
+│               │   └───api
+│               │   ├───dto
+│               │   ├───exception
+│               │   └───filter
 │               └───menu
 │                   ├───api
 │                   │   ├───v1
@@ -48,26 +44,25 @@ The outline structure of the project is as below.
 │                   │   └───v2
 │                   │       └───impl
 │                   ├───domain
-│                   ├───events
-│                   ├───exception
-│                   ├───mappers
-│                   ├───repository
-│                   └───service
-│                       └───impl
+│                   └───mappers
 └───resources
 ```
 
-## Overview of `com.xxAMIDOxx.xxSTACKSxx.core` packages
+## Overview of `com.amido.stacks.core` packages
 
 The `core.api` package contains the request filter definitions (responsible for generating a
 correlation ID for every request), and the main Exception
 class from which all other custom exceptions in the code extend.
 
-Package `core.messaging` contains the `ApplicationEvent` definition and default event publisher (events are published via a logger).
+Package `core.azure.servicebus` contains configuration classes for Azure ServiceBus.
+
+Package `core.cqrs` contains the `ApplicationCommand` and `CommandHandler` definitions.
+
+Package `core.messaging` contains the `ApplicationEvent` definition and the event publishers and listeners (listeners just log events).
 
 Package `core.operations` contains the `OperationContext` class that stores operation codes and correlation ID.
 
-## Overview of `com.xxAMIDOxx.xxSTACKSxx.menu` packages
+## Overview of `com.amido.stacks.menu` packages
 
 Package `menu.api.v1` contains the `Controller` definitions, both as interface definitions where the
 [Swagger](https://swagger.io/) (OpenAPI) details are defined, and as concrete implementations under the `impl` package.
@@ -99,12 +94,12 @@ on the CosmosRepository to fulfil the service's actions.
 The `resources` directory contains an `application.yaml` file, and this is responsible for the project configuration.
 This information includes Azure Cosmos DB and Application Insights configuration, which are passed as a environment variables during the deployment phase.
 
-Below is snippet of the `application.yml` configuring the Swagger and the Spring Boot specifications:
+Below is snippet of the `application.yml` configuring the Swagger, Azure and the Spring Boot specifications:
 
 ```yaml
 spring:
   application:
-    name: xxSTACKSxx-api
+    name: stacks-api
   data:
     rest:
       detection-strategy: annotated
@@ -126,13 +121,34 @@ springdoc:
     disable-swagger-default-url: true
     display-operation-id: true
     path: /swagger/index.html
-  packagesToScan: com.xxAMIDOxx.xxSTACKSxx.menu.api
+  packagesToScan: com.amido.stacks.menu.api
   api-docs:
     groups:
       enabled: true
     enabled: true
     path: /swagger/oas-json
+    
+azure:
+  cosmos:
+    uri: https://localhost:8081
+    database: Stacks
+    key: xxxxxx
+  application-insights:
+    instrumentation-key: xxxxxx
+    enabled: true
+  keyvault:
+    enabled: false
+    uri: xxxxx
+    client-id: xxxxxx
+    client-key: xxxxxx
+    tenant-id: xxxxxx
+  servicebus:
+    connectionString: xxxxx
+    topicName: sbt-menu-events
+    subscriptionName: sbs-menu-events
+    enabled: true
 ```
+Note: Keys with the `xxxxx` value are placeholders meant to be replaced with values from your environment, as necessary.
 
 ## Application logging
 

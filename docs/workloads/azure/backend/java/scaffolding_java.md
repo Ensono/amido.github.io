@@ -1,9 +1,9 @@
 ---
 id: scaffolding_java
-title: Using the Scaffolding CLI to create the Java Rest API project template
-sidebar_label: Using the Scaffolding CLI
+title: Using the Maven Scaffolding to create the Java project template
+sidebar_label: Using the Maven Scaffolding
 hide_table_of_contents: true
-description: Using the Scaffolding CLI to create the Java Rest API project template
+description: Using the Maven Scaffolding to create the Java project template
 keywords:
   - java
   - rest 
@@ -12,53 +12,33 @@ keywords:
   - spring boot
   - swagger
   - template
-  - scaffolding cli
+  - maven scaffolding
   - get started
 ---
 
-## Create a custom Java REST API project template from the command line
+## Create a custom Java project template from the command line
 
-The Amido Stacks Scaffolding CLI can be used to create a fully-functional and deployable project from a template, in a variety of flavours.
-It includes tests (unit, integration), together with infrastructure and deployment definitions. All by running from your CLI.
+You can customize the deployment of the project running a handful of command lines. Currently scaffolfing is handled by Maven and you can use it
+by cloning one of the repositories and then installing the project as a Maven archetype locally; from there we can create a new project by using
+that archetype as a template. To do so we do:
 
-We use npx to execute and create the
-[template-cli](https://www.npmjs.com/package/@amidostacks/scaffolding-cli)
-[npx](https://www.npmjs.com/package/npx).
+1. Clone any of the STACKS Java project (simple-api, stacks-java-cqrs, stacks-java-cqrs-events)
+2. Navigate to the <directory you cloned the project into>/java in the terminal
+3. Then issue the following Maven commands, using the included wrapper:
+   1. ``./mvnw archetype:create-from-project`` - To create the archetype
+   2. `` cd target/generated-sources/archetype`` - Navigate to the folder it was crated in
+   3. ``..\..\..\mvnw install`` - Install the archetype locally
+4. Now, navigate to a directory in which you'd like to crate the localized project into
+5. To create the project we do ``<path-to-mvn-executable>/mvn archetype:generate -DarchetypeGroupId='com.amido' -DarchetypeArtifactId='<archetype-artifact-id>' -DarchetypeVersion='<archetype-version>' -DgroupId='<your-group-id>' -DartifactId='<your-artifact-id>' -Dversion='<your-version>' -Dpackage='<package-name>'``
+   1. `<archetype-artifact-id>` refers to the archetype name ID, as that was created above. That ID is made of the artifact name of the original
+      project as declared in its `pom.xml` suffixed with "archetype"
+      1. For example: `stacks-api-cqrs-events-archetype`. The name can also be observed in the log created from the first command above.
+   2. `<archetype-version>` should be taken from the `pom.xml` of the original project
+   3. `<your-group-id>` is a placeholder for your group ID
+   4. `<your-artifact-id>` is a placeholder for your artifact ID
+   5. `<your-version>` is a placeholder for your version
+   6. `<package-name>` is a placeholder for the root package name and structure. 
+      1. For example, using `com.test.stacks` will instruct Maven to place the code in `src/main/java/com/test/stacks` and update all the relevant references accordingly (i.e. `imports`)
 
-We are supporting and running [node@12](https://nodejs.org/en/about/releases/).
-Please ensure that your local environment has the correct version [installed](https://nodejs.org/en/download/).
 
-To run the Scaffolding CLI, use the following commands
-
-```bash
-npx @amidostacks/scaffolding-cli@latest run -i
-```
-
-You will be asked a number of questions. Based on the answers, your ready-to-build project template will be produced.
-Below are the questions asked and given options.
-
-1. Select Target Cloud Platform
-     1. Azure - Azure Kubernetes Services (AKS)
-     2. Google Cloud Platform - Google Kubernetes Engine (GKE)
-2. Select Project type
-     1. React app with server side rendering
-     2. React app with client side rendering
-     3. API with .NET
-     4. API with Java
-     5. API with Java and CQRS
-     6. Cloud platform shared services
-3. Please provide the company name
-4. Please provide the project name
-5. Please provide scope (domain)
-6. Continue to additional project configuration?
-7. Please provide version control repository name
-8. Please provide platform service region
-9. Provide host name (DNS domain)
-10. Package prefix - will be prepended to companyName.projectName previously supplied, e.g. com or uk.co
-11. Select Testing Framework
-    1. Serenity
-    2. Karate
-
-<!-- An example is shown in the video below.-->
-
-<!-- [![asciicast](https://asciinema.org/a/358208.svg)](https://asciinema.org/a/358208) -->
+Note: For now, until the release of the Amido STACKS CLI Tool v2 is released, this is the only way to get started with STACKS

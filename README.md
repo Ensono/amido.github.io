@@ -3,8 +3,9 @@
 
 - [Stacks Webapp Template](https://github.com/amido/stacks-webapp-template)
 - [Stacks .NET](https://github.com/amido/stacks-dotnet)
-- [Stacks Java with CQRS](https://github.com/amido/stacks-java)
-- [Stacks Java](https://github.com/amido/stacks-java/tree/feat/api-with-no-cqrs)
+- [Stacks Java](https://github.com/amido/stacks-java)
+- [Stacks Java with CQRS](https://github.com/amido/stacks-java-cqrs)
+- [Stacks Java with CQRS and Events](https://github.com/amido/stacks-java-cqrs-events)
 - [Stacks CSR](https://github.com/amido/stacks-typescript-csr)
 - [Stacks SSR](https://github.com/amido/stacks-typescript-ssr)
 - [Stacks Pipeline Templates](https://github.com/amido/stacks-pipeline-templates)

@@ -24,41 +24,41 @@ The outline structure of the project is as below.
 
 ```text
 ├── java
-│   └── com
-│       └── xxAMIDOxx
-│           └── xxSTACKSxx
-│               ├── core
-│               │   ├── api
-│               │   │   ├── dto
-│               │   │   ├── exception
-│               │   │   └── filter
-│               │   ├── azure
-│               │   │   └── servicebus
-│               │   ├── cqrs
-│               │   │   ├── command
-│               │   │   └── handler
-│               │   ├── messaging
-│               │   │   ├── event
-│               │   │   └── publish
-│               │   └── operations
-│               └── menu
-│                   ├── api
-│                   │   ├── v1
-│                   │   │   ├── dto
-│                   │   │   │   ├── request
-│                   │   │   │   └── response
-│                   │   │   └── impl
-│                   │   └── v2
-│                   │       └── impl
-│                   ├── commands
-│                   ├── domain
-│                   ├── events
-│                   ├── exception
-│                   ├── handlers
-│                   ├── mappers
-│                   ├── repository
-│                   └── service
-│                       └── impl
+│         └── com
+│             └── xxAMIDOxx
+│                 └── xxSTACKSxx
+│                     ├── core
+│                     │         ├── api
+│                     │         │         ├── dto
+│                     │         │         ├── exception
+│                     │         │         └── filter
+│                     │         ├── azure
+│                     │         │         └── servicebus
+│                     │         ├── cqrs
+│                     │         │         ├── command
+│                     │         │         └── handler
+│                     │         ├── messaging
+│                     │         │         ├── event
+│                     │         │         └── publish
+│                     │         └── operations
+│                     └── menu
+│                         ├── api
+│                         │         ├── v1
+│                         │         │         ├── dto
+│                         │         │         │         ├── request
+│                         │         │         │         └── response
+│                         │         │         └── impl
+│                         │         └── v2
+│                         │             └── impl
+│                         ├── commands
+│                         ├── domain
+│                         ├── events
+│                         ├── exception
+│                         ├── handlers
+│                         ├── mappers
+│                         ├── repository
+│                         └── service
+│                             └── impl
 └── resources
 ```
 
