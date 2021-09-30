@@ -18,12 +18,12 @@ keywords:
 
 ## Create a custom Java project template from the command line
 
-You can customize the deployment of the project running a handful of command lines. Currently scaffolfing is handled by Maven and you can use it
+You can customize the deployment of the project running a handful of command lines. Currently, scaffolding is handled by Maven and you can use it
 by cloning one of the repositories and then installing the project as a Maven archetype locally; from there we can create a new project by using
 that archetype as a template. To do so we do:
 
 1. Clone any of the STACKS Java project (simple-api, stacks-java-cqrs, stacks-java-cqrs-events)
-2. Navigate to the <directory you cloned the project into>/java in the terminal
+2. Navigate to the `<directory you cloned the project into>/java` in the terminal
 3. Then issue the following Maven commands, using the included wrapper:
    1. ``./mvnw archetype:create-from-project`` - To create the archetype
    2. `` cd target/generated-sources/archetype`` - Navigate to the folder it was crated in

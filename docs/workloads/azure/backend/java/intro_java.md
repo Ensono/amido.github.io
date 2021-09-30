@@ -1,5 +1,5 @@
 ---
-id: intro_java_cqrs
+id: intro_java
 title: Introduction to the Java REST API application
 sidebar_label: Introduction
 hide_table_of_contents: true

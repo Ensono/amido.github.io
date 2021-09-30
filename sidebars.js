@@ -92,42 +92,11 @@ module.exports = {
                     type: "category",
                     label: "Testing The API",
                     items: [
-                      "workloads/azure/backend/java/testing_java",
-                      "workloads/azure/backend/java/execute_serenity_api_tests",
-                      "workloads/azure/backend/java/execute_karate_api_tests",
+                      "workloads/azure/backend/java/testing/testing_java",
+                      "workloads/azure/backend/java/testing/execute_serenity_api_tests",
+                      "workloads/azure/backend/java/testing/execute_karate_api_tests",
                     ],
-                  },
-                ],
-              },
-              {
-                type: "category",
-                label: "Java Spring Boot REST API with CQRS",
-                items: [
-                  "workloads/azure/backend/java_cqrs/intro_java_cqrs",
-                  "workloads/azure/backend/java_cqrs/requirements_java_cqrs",
-                  "workloads/azure/backend/java_cqrs/setting_up_cosmos_db_locally_java_cqrs",
-                  "workloads/azure/backend/java_cqrs/quickstart_java_cqrs",
-                  "workloads/azure/backend/java_cqrs/scaffolding_java_cqrs",
-                  "workloads/azure/backend/java_cqrs/ide_java_cqrs",
-                  {
-                    type: "category",
-                    label: "Architecture",
-                    items: [
-                      "workloads/azure/backend/java_cqrs/architecture_java_cqrs",
-                      "workloads/azure/backend/java_cqrs/structure_java_cqrs",
-                    ],
-                  },
-                  "workloads/azure/backend/java_cqrs/infrastructure_java_cqrs",
-                  "workloads/azure/backend/java_cqrs/pipeline_java_cqrs",
-                  {
-                    type: "category",
-                    label: "Testing The API",
-                    items: [
-                      "workloads/azure/backend/java_cqrs/testing_java_cqrs",
-                      "workloads/azure/backend/java_cqrs/execute_serenity_api_tests",
-                      "workloads/azure/backend/java_cqrs/execute_karate_api_tests",
-                    ],
-                  },
+                  }
                 ],
               },
               {
