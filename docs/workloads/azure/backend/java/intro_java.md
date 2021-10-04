@@ -8,17 +8,20 @@ keywords:
   - java
   - rest 
   - api
+  - cqrs
   - introduction
   - spring boot
 ---
 
 import HideNavigation  from "../../../../../src/pages/HideNavigation";
+import ResponsivePlayer from "../../../../../src/pages/Components/ResponsivePlayer/ResponsivePlayer";
+
 
 ## Stacks Java Spring Boot REST API Application
 
 ### Overview
 
-This is a sample Java REST API application, showcasing best coding practices and integrating with Azure
+This is a sample Java REST API application with CQRS, showcasing best coding practices and integrating with Azure
 and scaffolding for Amido Stacks.
 
 The application implements Application Insights for performance management,
@@ -27,6 +30,8 @@ and Cosmos DB is used for cloud persistence.
 The application is designed as a restaurant menu application. Users can create a Menu.
 Menus can hold one or more Categories, and a Category holds menu Items.
 The API provides an interface for clients to create/update and delete any or all of the menu components.
+
+<ResponsivePlayer url="https://vimeo.com/486755314" />
 
 As an example below is a Json response to illustrate the structure defined by the model.
 

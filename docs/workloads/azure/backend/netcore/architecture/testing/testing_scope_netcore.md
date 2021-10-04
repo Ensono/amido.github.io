@@ -14,7 +14,6 @@ keywords:
   - testing scope
   - component tests
   - integration tests
-  - contract tests
   - functional tests
 ---
 
@@ -54,23 +53,6 @@ Component IntegrationTests for internal dependency tests are currently handled b
 Integration tests are not meant to test configuration issues, configuration should be easily tested by smoke tests.
 
 Integration tests intended purpose is to test integration behaviour between two or more components, check if the data format provided and expected are valid, also encoding and parsing of this data, required parameters are provided correctly.
-
-
-### Contract Tests
-
-
-Contract tests is a variation of Integration Test that ensures that two services interact together in the correct manner. The tests consider one of the services to be the Provider and the other to be the Consumer and that the two parties adhere to a Contract that is set up between them.
-
-The Provider is the system that provides a service to Consumers.
-
-The Consumer is a system that consumes a service that the Provider has made available.
-
-The Contract defines the request and the expected response required by a service.
-
-When the contracts are not being adhered to, it is likely that the consumer will have issues when integrating with the new changes.
-
-These tests use test doubles and real endpoints.
-
 
 ### Functional Tests
 

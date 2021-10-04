@@ -68,9 +68,23 @@ module.exports = {
                     type: "category",
                     label: "Architecture",
                     items: [
-                      "workloads/azure/backend/java/architecture_java",
-                      "workloads/azure/backend/java/structure_java",
-                    ],
+                      {
+                        type: "category",
+                        label: "Web API Architecture",
+                        items: [
+                          "workloads/azure/backend/java/architecture/web_api/architecture_java",
+                          "workloads/azure/backend/java/architecture/web_api/structure_java",
+                        ]
+                      },
+                      {
+                        type: "category",
+                        label: "Web API with CQRS and Events Architecture",
+                        items: [
+                          "workloads/azure/backend/java/architecture/java_cqrs/architecture_java_cqrs",
+                          "workloads/azure/backend/java/architecture/java_cqrs/structure_java_cqrs",
+                        ]
+                      }
+                    ]
                   },
                   "workloads/azure/backend/java/infrastructure_java",
                   "workloads/azure/backend/java/pipeline_java",
@@ -78,64 +92,51 @@ module.exports = {
                     type: "category",
                     label: "Testing The API",
                     items: [
-                      "workloads/azure/backend/java/testing_java",
-                      "workloads/azure/backend/java/execute_serenity_api_tests",
-                      "workloads/azure/backend/java/execute_karate_api_tests",
+                      "workloads/azure/backend/java/testing/testing_java",
+                      "workloads/azure/backend/java/testing/execute_serenity_api_tests",
+                      "workloads/azure/backend/java/testing/execute_karate_api_tests",
                     ],
-                  },
+                  }
                 ],
               },
               {
                 type: "category",
-                label: "Java Spring Boot REST API with CQRS",
-                items: [
-                  "workloads/azure/backend/java_cqrs/intro_java_cqrs",
-                  "workloads/azure/backend/java_cqrs/requirements_java_cqrs",
-                  "workloads/azure/backend/java_cqrs/setting_up_cosmos_db_locally_java_cqrs",
-                  "workloads/azure/backend/java_cqrs/quickstart_java_cqrs",
-                  "workloads/azure/backend/java_cqrs/scaffolding_java_cqrs",
-                  "workloads/azure/backend/java_cqrs/ide_java_cqrs",
-                  {
-                    type: "category",
-                    label: "Architecture",
-                    items: [
-                      "workloads/azure/backend/java_cqrs/architecture_java_cqrs",
-                      "workloads/azure/backend/java_cqrs/structure_java_cqrs",
-                    ],
-                  },
-                  "workloads/azure/backend/java_cqrs/infrastructure_java_cqrs",
-                  "workloads/azure/backend/java_cqrs/pipeline_java_cqrs",
-                  {
-                    type: "category",
-                    label: "Testing The API",
-                    items: [
-                      "workloads/azure/backend/java_cqrs/testing_java_cqrs",
-                      "workloads/azure/backend/java_cqrs/execute_serenity_api_tests",
-                      "workloads/azure/backend/java_cqrs/execute_karate_api_tests",
-                    ],
-                  },
-                ],
-              },
-              {
-                type: "category",
-                label: ".NET Core REST API with CQRS",
+                label: ".NET Core",
                 items: [
                   "workloads/azure/backend/netcore/introduction_netcore",
                   {
                     type: "category",
-                    label: "Getting started",
+                    label: "Quickstart",
                     items: [
-                      "workloads/azure/backend/netcore/quickstart/requirements_netcore",
-                      "workloads/azure/backend/netcore/quickstart/create_project_netcore",
-                      "workloads/azure/backend/netcore/quickstart/configure_project_netcore",
-                      "workloads/azure/backend/netcore/quickstart/build_and_run_project_netcore"
-                    ],
+                      {
+                        type: "category",
+                        label: "REST API",
+                        items: [
+                          "workloads/azure/backend/netcore/quickstart/web_api/create_project_netcore",
+                          "workloads/azure/backend/netcore/quickstart/web_api/build_and_run_project_netcore"
+                        ],
+                      },
+                      {
+                        type: "category",
+                        label: "REST API with CQRS",
+                        items: [
+
+                          "workloads/azure/backend/netcore/quickstart/web_api_cqrs/create_project_netcore",
+                          "workloads/azure/backend/netcore/quickstart/web_api_cqrs/configure_project_netcore",
+                          "workloads/azure/backend/netcore/quickstart/web_api_cqrs/build_and_run_project_netcore"
+                        ],
+                      },
+                      {
+                        type: "category",
+                        label: "REST API with CQRS and Events",
+                        items: [
+                          "workloads/azure/backend/netcore/quickstart/web_api_cqrs_events/create_project_netcore",
+                          "workloads/azure/backend/netcore/quickstart/web_api_cqrs_events/configure_project_netcore",
+                          "workloads/azure/backend/netcore/quickstart/web_api_cqrs_events/build_and_run_project_netcore"
+                        ],
+                      },
+                    ]
                   },
-                  "workloads/azure/backend/netcore/testing/functional_testing_netcore",
-                  "workloads/azure/backend/netcore/infrastructure_netcore",
-                  "workloads/azure/backend/netcore/pipeline_netcore",
-                  "workloads/azure/backend/netcore/logging_netcore",
-                  "workloads/azure/backend/netcore/security_netcore",
                   {
                     type: "category",
                     label: "Architecture",
@@ -156,6 +157,12 @@ module.exports = {
                       },
                     ],
                   },
+                  "workloads/azure/backend/netcore/requirements_netcore",
+                  "workloads/azure/backend/netcore/testing/functional_testing_netcore",
+                  "workloads/azure/backend/netcore/infrastructure_netcore",
+                  "workloads/azure/backend/netcore/pipeline_netcore",
+                  "workloads/azure/backend/netcore/logging_netcore",
+                  "workloads/azure/backend/netcore/security_netcore",
                 ],
               },
             ],

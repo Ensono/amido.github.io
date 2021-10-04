@@ -1,7 +1,9 @@
 ---
-id: structure_java_cqrs
+id: structure_java
 title: Java Rest API Structure
 sidebar_label: Project structure
+hide_title: false
+hide_table_of_contents: false
 description: Java Rest API Structure
 keywords:
   - java
@@ -15,7 +17,6 @@ keywords:
   - swagger
   - authorisation
   - settings
-  - cqrs
 ---
 
 ## Project structure
@@ -23,78 +24,64 @@ keywords:
 The outline structure of the project is as below.
 
 ```text
-├── java
-│   └── com
-│       └── xxAMIDOxx
-│           └── xxSTACKSxx
-│               ├── core
-│               │   ├── api
-│               │   │   ├── dto
-│               │   │   ├── exception
-│               │   │   └── filter
-│               │   ├── azure
-│               │   │   └── servicebus
-│               │   ├── cqrs
-│               │   │   ├── command
-│               │   │   └── handler
-│               │   ├── messaging
-│               │   │   ├── event
-│               │   │   └── publish
-│               │   └── operations
-│               └── menu
-│                   ├── api
-│                   │   ├── v1
-│                   │   │   ├── dto
-│                   │   │   │   ├── request
-│                   │   │   │   └── response
-│                   │   │   └── impl
-│                   │   └── v2
-│                   │       └── impl
-│                   ├── commands
-│                   ├── domain
-│                   ├── events
-│                   ├── exception
-│                   ├── handlers
-│                   ├── mappers
-│                   ├── repository
-│                   └── service
-│                       └── impl
-└── resources
+├───java
+│   └───com
+│       └───amido
+│           └───stacks
+│               ├───core
+│               │   └───api
+│               │   ├───dto
+│               │   ├───exception
+│               │   └───filter
+│               └───menu
+│                   ├───api
+│                   │   ├───v1
+│                   │   │   ├───controller
+│                   │   │   ├───dto
+│                   │   │   │   ├───request
+│                   │   │   │   └───response
+│                   │   │   └───impl
+│                   │   └───v2
+│                   │       └───impl
+│                   ├───domain
+│                   └───mappers
+└───resources
 ```
 
-## Overview of `com.xxAMIDOxx.xxSTACKSxx.core` packages
+## Overview of `com.amido.stacks.core` packages
 
 The `core.api` package contains the request filter definitions (responsible for generating a
 correlation ID for every request), and the main Exception
 class from which all other custom exceptions in the code extend.
 
-The `core.azure.servicebus` package contains definitions to sent messages to the Azure service bus, if configured. It is disabled by default.
+Package `core.azure.servicebus` contains configuration classes for Azure ServiceBus.
 
-The `core.cqrs` package contains the basic `Command` and `CommandHandler` definitions that individual commands extend.
+Package `core.cqrs` contains the `ApplicationCommand` and `CommandHandler` definitions.
 
-Package `core.messaging` contains the `ApplicationEvent` definition and default event publisher (used when servicebus is disable in configuration).
+Package `core.messaging` contains the `ApplicationEvent` definition and the event publishers and listeners (listeners just log events).
 
-Package `core.operations` contains the abstract `OperationContext` class that stores operation code and correlation ID.
+Package `core.operations` contains the `OperationContext` class that stores operation codes and correlation ID.
 
-## Overview of `com.xxAMIDOxx.xxSTACKSxx.menu` packages
+## Overview of `com.amido.stacks.menu` packages
 
 Package `menu.api.v1` contains the `Controller` definitions, both as interface definitions where the
 [Swagger](https://swagger.io/) (OpenAPI) details are defined, and as concrete implementations under the `impl` package.
+
+Package `menu.api.v2` contains the `Controller` definitions for a simple V2 version of, both as interface definitions where the
+[Swagger](https://swagger.io/) (OpenAPI) details defined, and as concrete implementations under the `impl` package.
 
 Package `menu.api.v1.dto` contains request and response object definitions for the different endpoints.
 
 Package `menu.api` additionally contains the `OpenApiConfiguration` class, which is responsible for
 defining what is displayed by the Swagger UI page for the application.
 
-Package `menu.commands` contains the `Command` classes specific to particular API update operations, e.g. `CreateMenuCommand`, `DeleteItemCommand` etc.
+Package `menu.commands` contains the `OperationCode` class which holds codes for each operation, e.g. `CREATE_MENU`, `UPDATE_CATEGORY` etc.
 
 Package `menu.domain` contains the data object defintions for the Menu model: `Menu`, `Category` and `Item`.
 
 Package `menu.events` contains the `Event` definitions for specific API update events.
 
 Package `menu.exception` contains the custom `Exception` definitions for the application.
-
-Package `menu.handlers` contains the `Handler` definitions that coordinate command execution and the sending of events.
 
 Package `menu.repository` contains the `MenuRepository` interface definition, which defines repository operations and
 extends `CosmosRepository`, itself an extension of the Spring `PagingAndSortingRepository`.
@@ -107,12 +94,12 @@ on the CosmosRepository to fulfil the service's actions.
 The `resources` directory contains an `application.yaml` file, and this is responsible for the project configuration.
 This information includes Azure Cosmos DB and Application Insights configuration, which are passed as a environment variables during the deployment phase.
 
-Below is snippet of the `application.yml` configuring the Swagger and the Spring Boot specifications:
+Below is snippet of the `application.yml` configuring the Swagger, Azure and the Spring Boot specifications:
 
 ```yaml
 spring:
   application:
-    name: xxSTACKSxx-api
+    name: stacks-api
   data:
     rest:
       detection-strategy: annotated
@@ -134,13 +121,35 @@ springdoc:
     disable-swagger-default-url: true
     display-operation-id: true
     path: /swagger/index.html
-  packagesToScan: com.xxAMIDOxx.xxSTACKSxx.menu.api
+  packagesToScan: com.amido.stacks.menu.api
   api-docs:
     groups:
       enabled: true
     enabled: true
     path: /swagger/oas-json
+    
+azure:
+  cosmos:
+    uri: https://localhost:8081
+    database: Stacks
+    key: xxxxxx
+  application-insights:
+    instrumentation-key: xxxxxx
+    enabled: true
+  keyvault:
+    enabled: false
+    uri: xxxxx
+    client-id: xxxxxx
+    client-key: xxxxxx
+    tenant-id: xxxxxx
+  servicebus:
+    connectionString: xxxxx
+    topicName: sbt-menu-events
+    subscriptionName: sbs-menu-events
+    enabled: true
 ```
+
+Note: Keys with the `xxxxx` value are placeholders meant to be replaced with values from your environment, as necessary.
 
 ## Application logging
 
@@ -228,7 +237,7 @@ The OAuth 2.0 client is configured as an [Auth0](https://auth0.com/) instance. A
 There is an `auth.properties` file which configures the authorization definitions required to use
 the application with in conjunction with Auth0 to secure access to endpoints with JWT. If this property is set:
 
-```text
+```properties
 auth.isEnabled=true
 ```
 

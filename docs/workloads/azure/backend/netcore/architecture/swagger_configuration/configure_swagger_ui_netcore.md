@@ -25,7 +25,7 @@ import HideNavigation  from "../../../../../../../src/pages/HideNavigation";
 
 <br />
 
-### Configure the Swagger U.Interface to consume the generated documents
+### Configure the Swagger UI.Interface to consume the generated documents
 
 To configure the Swagger UI, spec path along with the name of the spec must be passed in the `SwaggerEndpoint()` method within the `UseSwaggerUI()` extension.
 

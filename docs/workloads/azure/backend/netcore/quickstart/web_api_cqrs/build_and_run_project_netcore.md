@@ -21,7 +21,7 @@ keywords:
 
 <br />
 
-The API generated consists of configuration to be run locally or on a docker container.
+The API generated consists of configuration to be ran locally or on a docker container.
 
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";

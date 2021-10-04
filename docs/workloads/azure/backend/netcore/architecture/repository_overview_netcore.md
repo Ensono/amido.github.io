@@ -4,7 +4,7 @@ title: Repository Overview
 sidebar_label: Repository Structure
 hide_title: false
 hide_table_of_contents: true
-description: .NET Core REST API application - Repository Overview
+description: .NET Core REST API application - Repositories Overview
 keywords:
   - .net core
   - rest api
@@ -45,3 +45,10 @@ keywords:
    |          performance, etc)
    └── ui: stores the front end service and components
 ```
+
+
+There are 3 repositories available:
+
+[stacks-dotnet](https://github.com/amido/stacks-dotnet) for a simple web API <br/>
+[stacks-dotnet-cqrs](https://github.com/amido/stacks-dotnet-cqrs) for a web API with CQRS <br/>
+[stacks-dotnet-cqrs-events](https://github.com/amido/stacks-dotnet-cqrs-events) for a web API with CQRS and Event Listening (with function and worker service) <br/>
