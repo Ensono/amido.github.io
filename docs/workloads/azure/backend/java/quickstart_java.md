@@ -22,16 +22,16 @@ import TabItem from '@theme/TabItem';
 
 ## Using the repository to build the Java Spring Boot Rest API application
 
-### Running the application locally
+## Running the application locally
 
-1. Clone one of the Java projects to your local machine from one of the following repos:
-    ---
+1. ### Clone one of the Java projects to your local machine from one of the following repos
+    
    1. Simple web API: [stacks-java repository](https://github.com/amido/stacks-java)
    2. Web API with CQRS: [stacks-java-cqrs repository](https://github.com/amido/stacks-java-cqrs)
    3. Web API with CQRS and events: [stacks-java-cqrs-events repository](https://github.com/amido/stacks-java-cqrs-events)
    
-2. Configure required environment variables
-    ---
+2. ### Configure required environment variables
+    
     The application is currently configured to work with the Azure environment.
 
     It uses an Azure **CosmosDB** database to store the example application data. So you should have access to an instance to use with the application.
@@ -71,8 +71,7 @@ import TabItem from '@theme/TabItem';
       </TabItem>
     </Tabs>
 
-3. Build and run the application
-    ---
+3. ### Build and run the application
 
     Note that at a minimum [Java 11](https://adoptopenjdk.net/) should be installed.
 
@@ -104,8 +103,8 @@ import TabItem from '@theme/TabItem';
 
     For instructions on how to customise the project for your company please look in the [Scaffolding](docs/workloads/azure/backend/java/scaffolding_java) section
 
-4. Build and run the application using Cosmos DB Emulator
-    ---
+4. ### Build and run the application using Cosmos DB Emulator
+    
    Please refer to section "Determine which root certificates have been installed" in [Setting Up CosmosDB Emulator](docs/workloads/azure/backend/java/setting_up_cosmos_db_locally_java.)
 
     Move to the `<PROJECT-NAME>/java` folder, then
@@ -141,8 +140,8 @@ import TabItem from '@theme/TabItem';
     </TabItem>
     </Tabs>
 
-5. Verify that the application has started
-    ---
+5. ### Verify that the application has started
+
     Browse to [http://localhost:9000/v1/menu](http://localhost:9000/v1/menu). This should return a valid JSON response.
 
     The application configuration uses Swagger/OAS3 to represent the API endpoints. The Swagger UI can be viewed by directing your

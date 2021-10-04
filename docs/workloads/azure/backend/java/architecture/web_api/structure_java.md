@@ -148,6 +148,7 @@ azure:
     subscriptionName: sbs-menu-events
     enabled: true
 ```
+
 Note: Keys with the `xxxxx` value are placeholders meant to be replaced with values from your environment, as necessary.
 
 ## Application logging

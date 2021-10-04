@@ -35,19 +35,19 @@ There are several ways to get your Stacks project, or to get parts of it.
 
 <div>
 
-1. Install the package
+1. ### Install the package
 
     Access Amido.Stacks.CQRS.Template package page in Nuget [here](https://www.nuget.org/packages/Amido.Stacks.CQRS.Templates/).<br/>
     Copy and execute the command displayed in the page (if you want to get the latest version).<br/>
     For example,
 
     ```bash title="Run the command to install the package"
-    dotnet new --install Amido.Stacks.CQRS.Templates::0.0.92
+      dotnet new --install Amido.Stacks.CQRS.Templates::0.0.92
     ```
-
+   
     Once installed you can either, create a new project (step 2) or add CQRS to an existing project (step 3). Choose one.
 
-2. Create a new  project
+2. ### Create a new project
 
     Navigate to the folder where you wish to create a new project on.
 
@@ -57,7 +57,7 @@ There are several ways to get your Stacks project, or to get parts of it.
           
     The above command will create a folder and a repository called `Company.Project`.
 
-3. Add CQRS to an existing project
+3. ### Add CQRS to an existing project
 
     Navigate to the folder where your existing .sln file is located
 
@@ -113,7 +113,7 @@ Based on the answers, the ready-to-build project template will be produced.
 
 <br/><hr/>
 
-<p><b>Pros and cons of each option</b></p>
+## Pros and cons of each option
 
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
@@ -154,9 +154,7 @@ import TabItem from "@theme/TabItem";
         </ul>
     </TabItem>
     <TabItem value="scaffolding_cli">
-        
         <p>The Amido Stacks Scaffolding CLI will be used to create a fully-functional and deployable project from a template, in a variety of flavours.</p>
-        
         <h4>PROS</h4>
         <ul>
             <li>Provides a guided project creation when generating the preferred project flavour.</li>
@@ -169,7 +167,6 @@ import TabItem from "@theme/TabItem";
             <li>Requires <strong>npm</strong> and <strong>npx</strong> installation.</li>
         </ul>
     </TabItem>
-    
 </Tabs>
 
 <br />

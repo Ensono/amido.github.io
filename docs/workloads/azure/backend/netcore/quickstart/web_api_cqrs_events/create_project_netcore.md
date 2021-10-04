@@ -35,7 +35,7 @@ There are several ways to get your Stacks project, or to get parts of it.
 
 <div>
 
-1. Install the package
+1.### Install the package
 
     Access Amido.Stacks.CQRS.Events.Template package page in Nuget [here](https://www.nuget.org/packages/Amido.Stacks.CQRS.Events.Templates/)
     Copy and execute the command displayed in the page (if you want to get the latest version).
@@ -45,9 +45,9 @@ There are several ways to get your Stacks project, or to get parts of it.
     dotnet new --install Amido.Stacks.CQRS.Events.Templates::0.0.92
     ```
 
-<h2>Once installed, you obtain 5 templates that can be used</h2><br/>
+ Once installed, you obtain 5 templates that can be used
 
-2. <h3>stacks-app-cqrs-events</h3>
+2.### stacks-app-cqrs-events
 
     <p>The full template containing API, functions, background worker and build infrastructure</p>
 
@@ -59,7 +59,7 @@ There are several ways to get your Stacks project, or to get parts of it.
 
     The above command will create a folder and a repository called `Company.Project`.
 
-3.  <h3>stacks-api-cqrs-events</h3>
+3.### stacks-api-cqrs-events
 
     <p>A template for the api project. If you need a CQRS WebAPI that can publish messages to ServiceBus, this is the template to use.</p>
 
@@ -71,7 +71,7 @@ There are several ways to get your Stacks project, or to get parts of it.
 
     The above command will create a folder and a repository called `Company.Project`.    
     
-4.  <h3>stacks-function-cosmosdb-worker</h3>
+4.### stacks-function-cosmosdb-worker
 
     <p>A template for a Azure Function containing a CosmosDb change feed trigger. Upon a CosmosDb event, the worker reads it and publishes a message to Service Bus.</p>
 
@@ -81,7 +81,7 @@ There are several ways to get your Stacks project, or to get parts of it.
     dotnet new stacks-function-cosmosdb-worker -n Company.Project
     ```
 
-5.  <h3>stacks-function-asb-listener</h3>
+5.### stacks-function-asb-listener
 
     <p>A template containing an Azure Function project with a single function that has a Service Bus subscription trigger. The function receives the message and deserializes it.</p>
 
@@ -91,7 +91,7 @@ There are several ways to get your Stacks project, or to get parts of it.
     dotnet new stacks-function-asb-listener -n Company.Project
     ```
 
-6.  <h3>stacks-app-asb-worker</h3>
+6.### stacks-app-asb-worker
 
     <p>A template contains a background worker application that reads and handles messages from a ServiceBus subscription.</p>
 
@@ -124,9 +124,9 @@ There are several ways to get your Stacks project, or to get parts of it.
 
 Clone the .NET project to your local machine from here: [stacks-dotnet-cqrs-events repository](https://github.com/amido/stacks-dotnet-cqrs-events)
 
-```bash title="Run git clone repository command"
-git clone git@github.com:amido/stacks-dotnet-cqrs-events.git
-```
+    ```bash title="Run git clone repository command"
+    git clone git@github.com:amido/stacks-dotnet-cqrs-events.git
+    ```
 
 </div>
 </details>
@@ -146,7 +146,7 @@ Based on the answers, the ready-to-build project template will be produced.
 
 <br/><hr/>
 
-<p><b>Pros and cons of each option</b></p>
+## Pros and cons of each option
 
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
@@ -188,9 +188,7 @@ import TabItem from "@theme/TabItem";
         </ul>
     </TabItem>
     <TabItem value="scaffolding_cli">
-        
         <p>The Amido Stacks Scaffolding CLI will be used to create a fully-functional and deployable project from a template, in a variety of flavours.</p>
-        
         <h4>PROS</h4>
         <ul>
             <li>Provides a guided project creation when generating the preferred project flavour.</li>
@@ -203,7 +201,6 @@ import TabItem from "@theme/TabItem";
             <li>Requires <strong>npm</strong> and <strong>npx</strong> installation.</li>
         </ul>
     </TabItem>
-    
 </Tabs>
 
 <br />

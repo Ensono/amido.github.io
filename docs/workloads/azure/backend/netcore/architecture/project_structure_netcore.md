@@ -18,7 +18,7 @@ keywords:
 ## Solution Structure
 
 
-<p><b>Simple Web API</b></p>
+### Simple Web API
 
 ```text
 Solution 'xxAMIDOxx.xxSTACKSss.API'
@@ -30,7 +30,7 @@ Solution 'xxAMIDOxx.xxSTACKSss.API'
 ```
 
 
-<p><b>Web API with CQRS</b></p>
+### Web API with CQRS
 
 ```text
 Solution 'xxAMIDOxx.xxSTACKSss.API'
@@ -54,7 +54,7 @@ Solution 'xxAMIDOxx.xxSTACKSss.API'
    └── xxAMIDOxx.xxSTACKSxx.Infrastructure.IntegrationTests
 ```
 
-<p><b>Functions and Worker Services</b></p>
+### Functions and Worker Services
 
 ```text
 ├── Functions
@@ -347,7 +347,6 @@ import TabItem from "@theme/TabItem";
         <p>
             It uses a package to help with serialization and deserialization called Amido.Stacks.Messaging.Azure.ServiceBus
         </p>
-        
     </TabItem>
     <TabItem value="tests">
         <p>
