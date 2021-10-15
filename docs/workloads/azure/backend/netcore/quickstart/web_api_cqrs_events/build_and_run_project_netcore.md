@@ -47,10 +47,6 @@ dotnet restore
 ```
 
 ```bash
-dotnet clean
-```
-
-```bash
 dotnet build
 ```
 
@@ -67,14 +63,12 @@ Move to the `<PROJECT-NAME>/src/api` folder and run the next commands in **termi
 ```bash
 export COSMOSDB_KEY=<COSMOSDB_KEY value here>
 export SERVICEBUS_CONNECTIONSTRING=<Your Service Bus connection string here>
+export EVENTHUB_CONNECTIONSTRING=<Your Event Hub connection string here>
+export STORAGE_CONNECTIONSTRING=<Your Event Hub storage connection string here>
 ```
 
 ```bash
 dotnet restore
-```
-
-```bash
-dotnet clean
 ```
 
 ```bash
@@ -109,11 +103,11 @@ This uses the **Dockerfile** in this folder to generate the Docker image.
 After the creation of the Docker image, the Docker container can be run using the command below:
 
 ```bash title="Run docker container"
-docker run -p 5000:80 --mount type=bind,source=/path/to/PROJECT-NAME/src/api/xxAMIDOxx.xxSTACKSxx.API/appsettings.json,target=/app/config/appsettings.json -e COSMOSDB_KEY=your-key -e SERVICEBUS_CONNECTIONSTRING=your-connection-string  dotnet-api:latest`
+docker run -p 5000:80 --mount type=bind,source=/path/to/PROJECT-NAME/src/api/xxAMIDOxx.xxSTACKSxx.API/appsettings.json,target=/app/config/appsettings.json -e COSMOSDB_KEY=your-key -e SERVICEBUS_CONNECTIONSTRING=your-asb-connection-string -e EVENTHUB_CONNECTIONSTRING=your-aeh-connection-string -e STORAGE_CONNECTIONSTRING=your-aeh-storage-connection-string  dotnet-api:latest`
 ```
 
 :::note
-The **COSMOSDB_KEY** and **SERVICEBUS_CONNECTIONSTRING** described in the command above has to be passed when running the container. Note that the **appsettings.json** value is mounted here for running locally,
+The **COSMOSDB_KEY** described in the command above has to be passed when running the container. **SERVICEBUS_CONNECTIONSTRING** OR **EVENTHUB_CONNECTIONSTRING** and **STORAGE_CONNECTIONSTRING** are needed based on the configuration and message service you'll be using. Note that the **appsettings.json** value is mounted here for running locally,
 but not if the full project is deployed to Azure, where the build process will perform the substitution.
 :::
 

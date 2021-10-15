@@ -25,7 +25,7 @@ keywords:
 
 ## Create the project
 
-There are several ways to get your Stacks project, or to get parts of it.
+There are several ways to get your Stacks project, or to get parts of it as well as a couple of configuration options.
 
 <br />
 
@@ -35,7 +35,7 @@ There are several ways to get your Stacks project, or to get parts of it.
 
 <div>
 
-1.### Install the package
+1. ### Install the package
 
     Access Amido.Stacks.CQRS.Events.Template package page in Nuget [here](https://www.nuget.org/packages/Amido.Stacks.CQRS.Events.Templates/)
     Copy and execute the command displayed in the page (if you want to get the latest version).
@@ -45,69 +45,81 @@ There are several ways to get your Stacks project, or to get parts of it.
     dotnet new --install Amido.Stacks.CQRS.Events.Templates::0.0.92
     ```
 
- Once installed, you obtain 5 templates that can be used
+ Once installed, you obtain 6 templates that can be used
 
-2.### stacks-app-cqrs-events
+2. ### stacks-cqrs-events-app
 
     <p>The full template containing API, functions, background worker and build infrastructure</p>
 
     Navigate to the folder where you wish to create a new project on.
 
     ```bash title="Run the command to create the project"
-    dotnet new stacks-app-cqrs-events -n Company.Project -d YourDomain
+    dotnet new stacks-cqrs-events-app -n Company.Project -do YourDomain -e MessagingProvider -d DatabaseOption
     ```
 
     The above command will create a folder and a repository called `Company.Project`.
 
-3.### stacks-api-cqrs-events
+3. ### stacks-cqrs-events-webapi
 
-    <p>A template for the api project. If you need a CQRS WebAPI that can publish messages to ServiceBus, this is the template to use.</p>
+    <p>A template for the api project. If you need a CQRS WebAPI that can publish messages, this is the template to use.</p>
 
     Navigate to the folder where you wish to create a new project on.
 
     ```bash title="Run the command to create the project"
-    dotnet new stacks-api-cqrs-events -n Company.Project -d YourDomain
+    dotnet new stacks-cqrs-events-webapi -n Company.Project -do YourDomain -e MessagingProvider
     ```
 
-    The above command will create a folder and a repository called `Company.Project`.    
-    
-4.### stacks-function-cosmosdb-worker
+    The above command will create a folder and a repository called `Company.Project`.
+
+4. ### stacks-az-func-cosmosdb-worker
 
     <p>A template for a Azure Function containing a CosmosDb change feed trigger. Upon a CosmosDb event, the worker reads it and publishes a message to Service Bus.</p>
 
     Navigate to the folder where you wish to create a new project on.
 
     ```bash title="Run the command to create the function"
-    dotnet new stacks-function-cosmosdb-worker -n Company.Project
+    dotnet new stacks-az-func-cosmosdb-worker -n Company.Project
     ```
 
-5.### stacks-function-asb-listener
+5. ### stacks-az-func-asb-listener
 
     <p>A template containing an Azure Function project with a single function that has a Service Bus subscription trigger. The function receives the message and deserializes it.</p>
 
     Navigate to the folder where you wish to create a new project on.
 
     ```bash title="Run the command to create the function"
-    dotnet new stacks-function-asb-listener -n Company.Project
+    dotnet new stacks-az-func-asb-listener -n Company.Project
     ```
 
-6.### stacks-app-asb-worker
+6. ### stacks-asb-worker
 
     <p>A template contains a background worker application that reads and handles messages from a ServiceBus subscription.</p>
 
     Navigate to the folder where you wish to create a new project on.
 
     ```bash title="Run the command to create the function"
-    dotnet new stacks-app-asb-worker -n Company.Project
+    dotnet new stacks-asb-worker -n Company.Project
     ```
 
-:::note Template parameter details
+:::note Template parameter details (some templates may offer only a subset of the arguments shown)
 
 * **-n**, **--name**
     * Sets the project name
     * Omitting it will result in the project name being the same as the folder where the command has been ran from
-* **-d**, **--domain**
+* **-do**, **--domain**
     * Sets the name of the aggregate root object. It is also the name of the collection within CosmosDB instance.
+* **-d**, **--database**
+    * Configures which database provider to be used
+* **-d**, **--database**
+    * Configures which database provider to be used
+* **-e**, **--eventPublisher**
+    * Configures the messaging service
+* **-en**, **--enableFunctionWorker**
+    * Configures the messaging service
+* **-p:e**, **--enableFunctionListener**
+    * Configures the messaging service
+* **-p:en**, **--enableBackgroundWorker**
+    * Configures the messaging service
 * **-o**
     * Sets the path to where the project is added
     * Omitting the parameter will result in the creation of a new folder
@@ -138,7 +150,7 @@ Clone the .NET project to your local machine from here: [stacks-dotnet-cqrs-even
 
 <div>
 
-The scaffolding CLI is being redeveloped to offer you more guided choices of Amido Stacks project flavour. 
+The scaffolding CLI is being redeveloped to offer you more guided choices of Amido Stacks project flavour.
 Based on the answers, the ready-to-build project template will be produced.
 
 </div>
@@ -198,7 +210,7 @@ import TabItem from "@theme/TabItem";
         </ul>
         <h4>CONS</h4>
         <ul>
-            <li>Requires <strong>npm</strong> and <strong>npx</strong> installation.</li>
+            <li>Requires the installation of an extra application.</li>
         </ul>
     </TabItem>
 </Tabs>
