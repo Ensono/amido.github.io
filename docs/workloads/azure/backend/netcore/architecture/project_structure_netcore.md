@@ -9,8 +9,8 @@ keywords:
   - .net core
   - rest api
   - cqrs
-  - example 
-  - template 
+  - example
+  - template
   - repository
   - structure
 ---
@@ -58,10 +58,13 @@ Solution 'xxAMIDOxx.xxSTACKSss.API'
 
 ```text
 ├── Functions
-│  ├── function-listener
+│  ├── function-aeh-listener
 │  │   ├── xxAMIDOxx.xxSTACKSxx.Listener
 │  │   └── xxAMIDOxx.xxSTACKSxx.Listener.UnitTests
-│  ├── function-worker
+│  ├── function-asb-listener
+│  │   ├── xxAMIDOxx.xxSTACKSxx.Listener
+│  │   └── xxAMIDOxx.xxSTACKSxx.Listener.UnitTests
+│  ├── function-cosmosdb-worker
 │  │   ├── xxAMIDOxx.xxSTACKSxx.Worker
 │  │   └── xxAMIDOxx.xxSTACKSxx.Worker.UnitTests
 ├── Worker
@@ -162,7 +165,7 @@ import TabItem from "@theme/TabItem";
         <ul>
             <li>
                 Merge commands and query handlers project into a single <code>Company.Project.Application</code> project for simplicity
-                (Integration should still be independent) and host within the API. (current usage) 
+                (Integration should still be independent) and host within the API. (current usage)
             </li>
             <li>
                 Host commands are separate from
@@ -309,12 +312,25 @@ import TabItem from "@theme/TabItem";
         </p>
     </TabItem>
     <TabItem value="functions-worker">
-        <h3>Company.Project.Listener</h3>
+        <h3>Company.Project.Listener (Azure Service Bus)</h3>
         <p>
             The function listener contains a Azure function that is triggered by a message in a Azure Service Bus topic.
         </p>
         <p>
             It uses a package to help with serialization and deserialization called Amido.Stacks.Messaging.Azure.ServiceBus
+        </p>
+        <br />
+        <h3>Company.Project.Listener.UnitTests</h3>
+        <p>
+            Tests the function execution.
+        </p>
+        <br />
+       <h3>Company.Project.Listener (Azure Event Hubs)</h3>
+        <p>
+            The function listener contains a Azure function that is triggered by a message from Azure Event Hubs.
+        </p>
+        <p>
+            It uses a package to help with serialization and deserialization called Amido.Stacks.Messaging.Azure.EventHub.
         </p>
         <br />
         <h3>Company.Project.Listener.UnitTests</h3>
