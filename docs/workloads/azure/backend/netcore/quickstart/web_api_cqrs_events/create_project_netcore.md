@@ -35,71 +35,71 @@ There are several ways to get your Stacks project, or to get parts of it as well
 
 <div>
 
-1. ### Install the package
+## Install the package
 
-    Access Amido.Stacks.CQRS.Events.Template package page in Nuget [here](https://www.nuget.org/packages/Amido.Stacks.CQRS.Events.Templates/)
-    Copy and execute the command displayed in the page (if you want to get the latest version).
-    For example
+Access Amido.Stacks.CQRS.Events.Template package page in Nuget [here](https://www.nuget.org/packages/Amido.Stacks.CQRS.Events.Templates/)
+Copy and execute the command displayed in the page (if you want to get the latest version).
+For example
 
-    ```bash title="Run the command to install the package"
-    dotnet new --install Amido.Stacks.CQRS.Events.Templates::0.0.92
-    ```
+```bash title="Run the command to install the package"
+dotnet new --install Amido.Stacks.CQRS.Events.Templates::0.0.92
+```
 
- Once installed, you obtain 6 templates that can be used
+Once installed, you obtain 6 templates that can be used
 
-2. ### stacks-cqrs-events-app
+### stacks-cqrs-events-app
 
-    <p>The full template containing API, functions, background worker and build infrastructure</p>
+<p>The full template containing API, functions, background worker and build infrastructure</p>
 
-    Navigate to the folder where you wish to create a new project on.
+Navigate to the folder where you wish to create a new project on.
 
-    ```bash title="Run the command to create the project"
-    dotnet new stacks-cqrs-events-app -n Company.Project -do YourDomain -e MessagingProvider -d DatabaseOption
-    ```
+```bash title="Run the command to create the project"
+dotnet new stacks-cqrs-events-app -n Company.Project -do YourDomain -e MessagingProvider -d DatabaseOption
+```
 
-    The above command will create a folder and a repository called `Company.Project`.
+The above command will create a folder and a repository called `Company.Project`.
 
-3. ### stacks-cqrs-events-webapi
+### stacks-cqrs-events-webapi
 
-    <p>A template for the api project. If you need a CQRS WebAPI that can publish messages, this is the template to use.</p>
+<p>A template for the api project. If you need a CQRS WebAPI that can publish messages, this is the template to use.</p>
 
-    Navigate to the folder where you wish to create a new project on.
+Navigate to the folder where you wish to create a new project on.
 
-    ```bash title="Run the command to create the project"
-    dotnet new stacks-cqrs-events-webapi -n Company.Project -do YourDomain -e MessagingProvider
-    ```
+```bash title="Run the command to create the project"
+dotnet new stacks-cqrs-events-webapi -n Company.Project -do YourDomain -e MessagingProvider
+```
 
-    The above command will create a folder and a repository called `Company.Project`.
+The above command will create a folder and a repository called `Company.Project`.
 
-4. ### stacks-az-func-cosmosdb-worker
+### stacks-az-func-cosmosdb-worker
 
-    <p>A template for a Azure Function containing a CosmosDb change feed trigger. Upon a CosmosDb event, the worker reads it and publishes a message to Service Bus.</p>
+<p>A template for a Azure Function containing a CosmosDb change feed trigger. Upon a CosmosDb event, the worker reads it and publishes a message to Service Bus.</p>
 
-    Navigate to the folder where you wish to create a new project on.
+Navigate to the folder where you wish to create a new project on.
 
-    ```bash title="Run the command to create the function"
-    dotnet new stacks-az-func-cosmosdb-worker -n Company.Project
-    ```
+```bash title="Run the command to create the function"
+dotnet new stacks-az-func-cosmosdb-worker -n Company.Project
+```
 
-5. ### stacks-az-func-asb-listener
+### stacks-az-func-asb-listener
 
-    <p>A template containing an Azure Function project with a single function that has a Service Bus subscription trigger. The function receives the message and deserializes it.</p>
+<p>A template containing an Azure Function project with a single function that has a Service Bus subscription trigger. The function receives the message and deserializes it.</p>
 
-    Navigate to the folder where you wish to create a new project on.
+Navigate to the folder where you wish to create a new project on.
 
-    ```bash title="Run the command to create the function"
-    dotnet new stacks-az-func-asb-listener -n Company.Project
-    ```
+```bash title="Run the command to create the function"
+dotnet new stacks-az-func-asb-listener -n Company.Project
+```
 
-6. ### stacks-asb-worker
+### stacks-asb-worker
 
-    <p>A template contains a background worker application that reads and handles messages from a ServiceBus subscription.</p>
+<p>A template contains a background worker application that reads and handles messages from a ServiceBus subscription.</p>
 
-    Navigate to the folder where you wish to create a new project on.
+Navigate to the folder where you wish to create a new project on.
 
-    ```bash title="Run the command to create the function"
-    dotnet new stacks-asb-worker -n Company.Project
-    ```
+```bash title="Run the command to create the function"
+dotnet new stacks-asb-worker -n Company.Project
+```
 
 :::note Template parameter details (some templates may offer only a subset of the arguments shown)
 
