@@ -35,29 +35,29 @@ There are several ways to get your Stacks project, or to get parts of it.
 
 <div>
 
-1. ### Install the package
+### Install the package
 
-    Access Amido.Stacks.CQRS.Template package page in Nuget [here](https://www.nuget.org/packages/Amido.Stacks.CQRS.Templates/).<br/>
-    Copy and execute the command displayed in the page (if you want to get the latest version).<br/>
-    For example,
+Access Amido.Stacks.CQRS.Template package page in Nuget [here](https://www.nuget.org/packages/Amido.Stacks.CQRS.Templates/).<br/>
+Copy and execute the command displayed in the page (if you want to get the latest version).<br/>
+For example,
 
-    ```bash title="Run the command to install the package"
-      dotnet new --install Amido.Stacks.CQRS.Templates::0.0.92
-    ```
+```bash title="Run the command to install the package"
+	dotnet new --install Amido.Stacks.CQRS.Templates::0.0.92
+```
 
-    Once installed you can either, create a new project (step 2) or add CQRS to an existing project (step 3). Choose one.
+Once installed you can either, create a new project (step 2) or add CQRS to an existing project (step 3). Choose one.
 
-2. ### Create a new project
+### Create a new project
 
-    Navigate to the folder where you wish to create a new project on.
+Navigate to the folder where you wish to create a new project on.
 
-    ```bash title="Run the command to create the project"
-    dotnet new stacks-cqrs-webapi -n Company.Project -do YourDomain
-    ```
+```bash title="Run the command to create the project"
+dotnet new stacks-cqrs-webapi -n Company.Project -do YourDomain
+```
 
-    The above command will create a folder and a repository called `Company.Project`.
+The above command will create a folder and a repository called `Company.Project`.
 
-#### Setting the database option
+### Setting the database option
 
 To create a project with CosmosDb as the database you can use the following command
 
@@ -65,16 +65,16 @@ To create a project with CosmosDb as the database you can use the following comm
 dotnet new stacks-cqrs-webapi -n Company.Project -do YourDomain -d CosmosDb
 ```
 
-3. ### Add CQRS to an existing project
+### Add CQRS to an existing project
 
-    Navigate to the folder where your existing .sln file is located
+Navigate to the folder where your existing .sln file is located
 
-    ```bash title="Run the command to create the project"
-    dotnet new stacks-add-cqrs -n Company.Project -d YourDomain
-    ```
+```bash title="Run the command to create the project"
+dotnet new stacks-add-cqrs -n Company.Project -d YourDomain
+```
 
-    The above command will create a folder and a repository called `Company.Project`.
-    Some projects will be added to your .sln file
+The above command will create a folder and a repository called `Company.Project`.
+Some projects will be added to your .sln file
 
 :::note Template parameter details
 

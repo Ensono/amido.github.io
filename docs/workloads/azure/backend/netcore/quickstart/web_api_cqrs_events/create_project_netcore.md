@@ -136,9 +136,9 @@ dotnet new stacks-asb-worker -n Company.Project
 
 Clone the .NET project to your local machine from here: [stacks-dotnet-cqrs-events repository](https://github.com/amido/stacks-dotnet-cqrs-events)
 
-    ```bash title="Run git clone repository command"
-    git clone git@github.com:amido/stacks-dotnet-cqrs-events.git
-    ```
+```bash title="Run git clone repository command"
+git clone git@github.com:amido/stacks-dotnet-cqrs-events.git
+```
 
 </div>
 </details>
