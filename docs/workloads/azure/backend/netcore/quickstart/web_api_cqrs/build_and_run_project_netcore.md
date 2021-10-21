@@ -47,10 +47,6 @@ dotnet restore
 ```
 
 ```bash
-dotnet clean
-```
-
-```bash
 dotnet build
 ```
 
@@ -70,10 +66,6 @@ export COSMOSDB_KEY=<COSMOSDB_KEY value here>
 
 ```bash
 dotnet restore
-```
-
-```bash
-dotnet clean
 ```
 
 ```bash

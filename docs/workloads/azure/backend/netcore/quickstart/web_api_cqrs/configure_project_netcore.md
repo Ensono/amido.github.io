@@ -21,8 +21,9 @@ keywords:
 
 ## Configure the project
 
-It uses an Azure **CosmosDB** database to store the example application data.
-There is a corresponding environment variable that needs to be set to interact with CosmosDB.
+It uses an Azure **CosmosDB** or **InMemory** database to store the example application data.
+
+To interact with CosmosDb there is a environment variable that needs to be set. The **InMemory** database doesn't require additional configuration and upon project generation is the default option.
 
 <br />
 

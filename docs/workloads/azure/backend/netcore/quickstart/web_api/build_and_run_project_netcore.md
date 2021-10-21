@@ -45,10 +45,6 @@ dotnet restore
 ```
 
 ```bash
-dotnet clean
-```
-
-```bash
 dotnet build
 ```
 
@@ -64,10 +60,6 @@ Move to the `<PROJECT-NAME>/src/api` folder and run the next commands in **termi
 
 ```bash
 dotnet restore
-```
-
-```bash
-dotnet clean
 ```
 
 ```bash

@@ -49,10 +49,10 @@ There are several ways to get your Stacks project.
     Navigate to the folder where you wish to create a new project on.
 
     ```bash title="Run the command to create the project"
-    dotnet new stacks-app-web-api -n Company.Project -d YourDomain
+    dotnet new stacks-webapi -n Company.Project -d YourDomain
     ```
 
-    The above command will create a folder and a repository called `Company.Project`.
+    The above command will create a folder called `Company.Project`.
 
 :::note Template parameter details
 
@@ -91,7 +91,7 @@ git clone git@github.com:amido/stacks-dotnet.git
 
 <div>
 
-The scaffolding CLI is being redeveloped to offer you more guided choices of Amido Stacks project flavour. 
+The scaffolding CLI is being redeveloped to offer you more guided choices of Amido Stacks project flavour.
 Based on the answers, the ready-to-build project template will be produced.
 
 </div>
@@ -116,7 +116,7 @@ import TabItem from "@theme/TabItem";
         <ul>
             <li>Has no dependencies.</li>
             <li>Enables creation of .NET Core projects in Amido Stacks Suite.</li>
-            <li>Enables versioning and access to older versions of Stacks templates</li>
+            <li>Enables versioning and access to older versions of Stacks templates.</li>
             <li>Removes out the content not needed from the GitHub repository.</li>
         </ul>
         <h4>CONS</h4>
@@ -125,7 +125,7 @@ import TabItem from "@theme/TabItem";
         </ul>
     </TabItem>
     <TabItem value="repository_clone">
-    <p>source code can be found [here](https://github.com/amido/stacks-dotnet)</p>
+    <p>Source code can be found [here](https://github.com/amido/stacks-dotnet)</p>
         <h4>PROS</h4>
         <ul>
             <li>Familiar approach.</li>
@@ -139,7 +139,7 @@ import TabItem from "@theme/TabItem";
             <li>All Amido Stacks repositories links required to create all flavours of projects.</li>
         </ul>
     </TabItem>
-    <TabItem value="scaffolding_cli">        
+    <TabItem value="scaffolding_cli">
         <p>The Amido Stacks Scaffolding CLI will be used to create a fully-functional and deployable project from a template, in a variety of flavours.</p>
         <h4>PROS</h4>
         <ul>
@@ -150,7 +150,7 @@ import TabItem from "@theme/TabItem";
         </ul>
         <h4>CONS</h4>
         <ul>
-            <li>Requires <strong>npm</strong> and <strong>npx</strong> installation.</li>
+            <li>Requires the installation of an extra application.</li>
         </ul>
     </TabItem>
 </Tabs>

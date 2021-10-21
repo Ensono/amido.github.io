@@ -35,46 +35,56 @@ There are several ways to get your Stacks project, or to get parts of it.
 
 <div>
 
-1. ### Install the package
+### Install the package
 
-    Access Amido.Stacks.CQRS.Template package page in Nuget [here](https://www.nuget.org/packages/Amido.Stacks.CQRS.Templates/).<br/>
-    Copy and execute the command displayed in the page (if you want to get the latest version).<br/>
-    For example,
+Access Amido.Stacks.CQRS.Template package page in Nuget [here](https://www.nuget.org/packages/Amido.Stacks.CQRS.Templates/).<br/>
+Copy and execute the command displayed in the page (if you want to get the latest version).<br/>
+For example,
 
-    ```bash title="Run the command to install the package"
-      dotnet new --install Amido.Stacks.CQRS.Templates::0.0.92
-    ```
-   
-    Once installed you can either, create a new project (step 2) or add CQRS to an existing project (step 3). Choose one.
+```bash title="Run the command to install the package"
+	dotnet new --install Amido.Stacks.CQRS.Templates::0.0.92
+```
 
-2. ### Create a new project
+Once installed you can either, create a new project (step 2) or add CQRS to an existing project (step 3). Choose one.
 
-    Navigate to the folder where you wish to create a new project on.
+### Create a new project
 
-    ```bash title="Run the command to create the project"
-    dotnet new stacks-app-web-api-cqrs -n Company.Project -d YourDomain
-    ```
-          
-    The above command will create a folder and a repository called `Company.Project`.
+Navigate to the folder where you wish to create a new project on.
 
-3. ### Add CQRS to an existing project
+```bash title="Run the command to create the project"
+dotnet new stacks-cqrs-webapi -n Company.Project -do YourDomain
+```
 
-    Navigate to the folder where your existing .sln file is located
+The above command will create a folder and a repository called `Company.Project`.
 
-    ```bash title="Run the command to create the project"
-    dotnet new stacks-add-web-api-cqrs -n Company.Project -d YourDomain
-    ```
+### Setting the database option
 
-    The above command will create a folder and a repository called `Company.Project`.    
-    Some projects will be added to your .sln file
+To create a project with CosmosDb as the database you can use the following command
+
+```bash title="Run the command to create the project with database"
+dotnet new stacks-cqrs-webapi -n Company.Project -do YourDomain -d CosmosDb
+```
+
+### Add CQRS to an existing project
+
+Navigate to the folder where your existing .sln file is located
+
+```bash title="Run the command to create the project"
+dotnet new stacks-add-cqrs -n Company.Project -d YourDomain
+```
+
+The above command will create a folder and a repository called `Company.Project`.
+Some projects will be added to your .sln file
 
 :::note Template parameter details
 
 * **-n**, **--name**
     * Sets the project name
     * Omitting it will result in the project name being the same as the folder where the command has been ran from
-* **-d**, **--domain**
+* **-do**, **--domain**
     * Sets the name of the aggregate root object. It is also the name of the collection within CosmosDB instance.
+* **-d**, **--database**
+    * Configures which database provider to be used.
 * **-o**
     * Sets the path to where the project is added
     * Omitting the parameter will result in the creation of a new folder
@@ -105,7 +115,7 @@ git clone git@github.com:amido/stacks-dotnet-cqrs.git
 
 <div>
 
-The scaffolding CLI is being redeveloped to offer you more guided choices of Amido Stacks project flavour. 
+The scaffolding CLI is being redeveloped to offer you more guided choices of Amido Stacks project flavour.
 Based on the answers, the ready-to-build project template will be produced.
 
 </div>
@@ -164,7 +174,7 @@ import TabItem from "@theme/TabItem";
         </ul>
         <h4>CONS</h4>
         <ul>
-            <li>Requires <strong>npm</strong> and <strong>npx</strong> installation.</li>
+            <li>Requires the installation of an extra application.</li>
         </ul>
     </TabItem>
 </Tabs>
