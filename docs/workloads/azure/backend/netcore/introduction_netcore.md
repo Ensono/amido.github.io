@@ -17,13 +17,17 @@ keywords:
 
 import HideNavigation  from "../../../../../src/pages/HideNavigation";
 
-Stacks is a sample .NET Core REST API application, or a sample .Net Core REST API application with CQRS, or even a sample .Net Core REST API application with CQRS and events, <br/>
-showcasing best coding practices and integrating with Azure.
+Stacks is a collection of sample .NET Core template projects that contain
 
-The application implements Application Insights for performance management,
-and Cosmos DB is used for cloud persistence.
+- Simple Web API application
+- A Web API application with CQRS functionality
+- A Web API application with CQRS and event sourcing functionality
 
-The application is designed as a restaurant menu application. Users can create a Menu.
+Stacks showcases best coding practices adopted throughout Amido and helps bootstrap client projects faster with already proven and tested code.
+
+All applications contain build and cloud infrastructure and are currently hosted on Azure. They use Application Insights for performance management, and different settings exist that can be set for cloud persistence.
+
+The application base is designed as a restaurant menu application. Users can create a Menu.
 Menus can hold one or more Categories, and a Category holds menu Items.
 The API provides an interface for clients to create/update and delete any or all of the menu components.
 
@@ -59,6 +63,8 @@ As an example below is a Json response to illustrate the structure defined by th
     "enabled": true
 }
 ```
+
+Even though the restaurant/menu context is used as the foundation for the templates, the .NET template engine provides us with the ability to change the domain with a simple command. The templates are highly customizable and modular, so a project can be generated with only what you need. Conditional compilation is used depending on the settings you provide to generate the minimal amount of code needed for your project.
 
 <HideNavigation prev />
 
