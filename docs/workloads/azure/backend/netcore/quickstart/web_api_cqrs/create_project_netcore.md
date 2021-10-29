@@ -23,6 +23,8 @@ keywords:
   - github
 ---
 
+import ResponsivePlayer from "../../../../../../../src/pages/Components/ResponsivePlayer/ResponsivePlayer";
+
 ## Create the project
 
 There are several ways to get your Stacks project, or to get parts of it.
@@ -45,6 +47,8 @@ For example,
 	dotnet new --install Amido.Stacks.CQRS.Templates::0.0.92
 ```
 
+<ResponsivePlayer url="https://vimeo.com/640289104" />
+
 Once installed you can either, create a new project (step 2) or add CQRS to an existing project (step 3). Choose one.
 
 ### Create a new project
@@ -65,6 +69,8 @@ To create a project with CosmosDb as the database you can use the following comm
 dotnet new stacks-cqrs-webapi -n Company.Project -do YourDomain -d CosmosDb
 ```
 
+<ResponsivePlayer url="https://vimeo.com/640289034" />
+
 ### Add CQRS to an existing project
 
 Navigate to the folder where your existing .sln file is located
@@ -75,6 +81,9 @@ dotnet new stacks-add-cqrs -n Company.Project -d YourDomain
 
 The above command will create a folder and a repository called `Company.Project`.
 Some projects will be added to your .sln file
+
+
+<ResponsivePlayer url="https://vimeo.com/640287397" />
 
 :::note Template parameter details
 

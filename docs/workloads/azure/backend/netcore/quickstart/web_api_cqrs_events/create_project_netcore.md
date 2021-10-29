@@ -23,6 +23,8 @@ keywords:
   - github
 ---
 
+import ResponsivePlayer from "../../../../../../../src/pages/Components/ResponsivePlayer/ResponsivePlayer";
+
 ## Create the project
 
 There are several ways to get your Stacks project, or to get parts of it as well as a couple of configuration options.
@@ -44,6 +46,8 @@ For example
 ```bash title="Run the command to install the package"
 dotnet new --install Amido.Stacks.CQRS.Events.Templates::0.0.92
 ```
+
+<ResponsivePlayer url="https://vimeo.com/640289104" />
 
 Once installed, you obtain 6 templates that can be used
 
@@ -124,6 +128,9 @@ dotnet new stacks-asb-worker -n Company.Project
     * Sets the path to where the project is added
     * Omitting the parameter will result in the creation of a new folder
 :::
+
+
+<ResponsivePlayer url="https://vimeo.com/640289070" />
 
 </div>
 </details>

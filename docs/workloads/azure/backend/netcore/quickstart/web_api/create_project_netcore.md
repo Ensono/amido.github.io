@@ -21,6 +21,8 @@ keywords:
   - github
 ---
 
+import ResponsivePlayer from "../../../../../../../src/pages/Components/ResponsivePlayer/ResponsivePlayer";
+
 ## Create the project
 
 There are several ways to get your Stacks project.
@@ -43,6 +45,7 @@ There are several ways to get your Stacks project.
     dotnet new --install Amido.Stacks.Templates::0.0.92
     ```
 
+	<ResponsivePlayer url="https://vimeo.com/640289104" />
 
 2. Create a new  project
 
