@@ -16,7 +16,12 @@ keywords:
   - get started
 ---
 
+import ResponsivePlayer from "../../../../../src/pages/Components/ResponsivePlayer/ResponsivePlayer";
+
 ## Create a custom Java project template from the command line
+
+<ResponsivePlayer url="https://vimeo.com/640390929" />
+
 
 You can customize the deployment of the project running a handful of command lines. Currently, scaffolding is handled by Maven and you can use it
 by cloning one of the repositories and then installing the project as a Maven archetype locally; from there we can create a new project by using
