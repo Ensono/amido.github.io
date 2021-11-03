@@ -35,36 +35,43 @@ There are several ways to get your Stacks project.
 
 <div>
 
-1. Install the package
+### Install the package
 
-    Access Amido.Stacks.Templates package page in Nuget [here](https://www.nuget.org/packages/Amido.Stacks.Templates/).<br/>
-    Copy and execute the command displayed in the page (if you want to get the latest version).<br/>
-    For example,
+Access Amido.Stacks.Templates package page in Nuget [here](https://www.nuget.org/packages/Amido.Stacks.Templates/).<br/>
+Copy and execute the command displayed in the page (if you want to get the latest version).<br/>
+For example,
 
-    ```bash title="Run the command to install the package"
-    dotnet new --install Amido.Stacks.Templates::0.0.92
-    ```
+```bash title="Run the command to install the package"
+dotnet new --install Amido.Stacks.Templates
+```
 
-	<ResponsivePlayer url="https://vimeo.com/640289104" />
+<ResponsivePlayer url="https://vimeo.com/640289104" />
 
-2. Create a new  project
+### Create a new  project
 
-    Navigate to the folder where you wish to create a new project on.
+Navigate to the folder where you wish to create a new project on.
 
-    ```bash title="Run the command to create the project"
-    dotnet new stacks-webapi -n Company.Project -d YourDomain
-    ```
+```bash title="Run the command to create the project"
+dotnet new stacks-webapi -n Company.Project -d YourDomain
+```
 
-    The above command will create a folder called `Company.Project`.
+The above command will create a folder called `Company.Project`.
+
+### Uninstalling a template
+
+```bash title="To uninstall the template pack you have to execute the following command"
+dotnet new --uninstall Amido.Stacks.Templates
+```
+
 
 :::note Template parameter details
 
-* **-n**, **--name**
+* **-n|--name**
     * Sets the project name
     * Omitting it will result in the project name being the same as the folder where the command has been ran from
-* **-d**, **--domain**
+* **-d|--domain**
     * Sets the name of the aggregate root object. It is also the name of the collection within CosmosDB instance.
-* **-o**
+* **-o|--output**
     * Sets the path to where the project is added
     * Omitting the parameter will result in the creation of a new folder
 :::
@@ -75,7 +82,7 @@ There are several ways to get your Stacks project.
 <br />
 
 <details>
-<summary>Create the project by cloning GitHub repository</summary>
+<summary>Create the templates locally by cloning the GitHub repository (outdated)</summary>
 <div>
 
 Clone the .NET project to your local machine from here: [stacks-dotnet repository](https://github.com/amido/stacks-dotnet)
