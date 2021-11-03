@@ -41,14 +41,11 @@ values={[
 Move to the `<PROJECT-NAME>/src/api` folder and run the next commands in **Command Prompt** or **Powershell**
 
 ```bash
-dotnet restore
-```
-
-```bash
 dotnet build
 ```
 
 ```bash
+# Note that the template engine will rename your paths, so change the command accordingly
 dotnet run --project xxAMIDOxx.xxSTACKSxx.API/xxAMIDOxx.xxSTACKSxx.API.csproj
 ```
 
@@ -59,14 +56,11 @@ dotnet run --project xxAMIDOxx.xxSTACKSxx.API/xxAMIDOxx.xxSTACKSxx.API.csproj
 Move to the `<PROJECT-NAME>/src/api` folder and run the next commands in **terminal**.
 
 ```bash
-dotnet restore
-```
-
-```bash
 dotnet build
 ```
 
 ```bash
+# Note that the template engine will rename your paths, so change the command accordingly
 dotnet run --project xxAMIDOxx.xxSTACKSxx.API/xxAMIDOxx.xxSTACKSxx.API.csproj
 ```
 
