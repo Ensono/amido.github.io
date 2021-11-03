@@ -66,14 +66,14 @@ dotnet new --uninstall Amido.Stacks.Templates
 
 :::note Template parameter details
 
-* **-n|--name**
-    * Sets the project name
-    * Omitting it will result in the project name being the same as the folder where the command has been ran from
-* **-d|--domain**
-    * Sets the name of the aggregate root object. It is also the name of the collection within CosmosDB instance.
-* **-o|--output**
-    * Sets the path to where the project is added
-    * Omitting the parameter will result in the creation of a new folder
+- **-n|--name**
+    - Sets the project name
+    - Omitting it will result in the project name being the same as the folder where the command has been ran from
+- **-d|--domain**
+    - Sets the name of the aggregate root object. It is also the name of the collection within CosmosDB instance.
+- **-o|--output**
+    - Sets the path to where the project is added
+    - Omitting the parameter will result in the creation of a new folder
 :::
 
 </div>

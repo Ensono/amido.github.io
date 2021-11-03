@@ -44,7 +44,7 @@ Copy and execute the command displayed in the page (if you want to get the lates
 For example
 
 ```bash title="Run the command to install the package"
-dotnet new --install Amido.Stacks.CQRS.Events.Templates::0.0.92
+dotnet new --install Amido.Stacks.CQRS.Events.Templates
 ```
 
 <ResponsivePlayer url="https://vimeo.com/640289104" />
@@ -58,7 +58,7 @@ Once installed, you obtain 6 templates that can be used
 Navigate to the folder where you wish to create a new project on.
 
 ```bash title="Run the command to create the project"
-dotnet new stacks-cqrs-events-app -n Company.Project -do YourDomain -e MessagingProvider -d DatabaseOption
+dotnet new stacks-cqrs-events-app -n Company.Project -d YourDomain -e MessagingProvider -db DatabaseOption
 ```
 
 The above command will create a folder and a repository called `Company.Project`.
@@ -70,7 +70,7 @@ The above command will create a folder and a repository called `Company.Project`
 Navigate to the folder where you wish to create a new project on.
 
 ```bash title="Run the command to create the project"
-dotnet new stacks-cqrs-events-webapi -n Company.Project -do YourDomain -e MessagingProvider
+dotnet new stacks-cqrs-events-webapi -n Company.Project -d YourDomain -e MessagingProvider
 ```
 
 The above command will create a folder and a repository called `Company.Project`.
@@ -92,7 +92,7 @@ dotnet new stacks-az-func-cosmosdb-worker -n Company.Project
 Navigate to the folder where you wish to create a new project on.
 
 ```bash title="Run the command to create the function"
-dotnet new stacks-az-func-asb-listener -n Company.Project
+dotnet new stacks-az-func-asb-listener -n Company.Project -d Menu
 ```
 
 ### stacks-asb-worker
@@ -102,31 +102,29 @@ dotnet new stacks-az-func-asb-listener -n Company.Project
 Navigate to the folder where you wish to create a new project on.
 
 ```bash title="Run the command to create the function"
-dotnet new stacks-asb-worker -n Company.Project
+dotnet new stacks-asb-worker -n Company.Project -d Menu
 ```
 
 :::note Template parameter details (some templates may offer only a subset of the arguments shown)
 
-* **-n**, **--name**
-    * Sets the project name
-    * Omitting it will result in the project name being the same as the folder where the command has been ran from
-* **-do**, **--domain**
-    * Sets the name of the aggregate root object. It is also the name of the collection within CosmosDB instance.
-* **-d**, **--database**
-    * Configures which database provider to be used
-* **-d**, **--database**
-    * Configures which database provider to be used
-* **-e**, **--eventPublisher**
-    * Configures the messaging service
-* **-en**, **--enableFunctionWorker**
-    * Configures the messaging service
-* **-p:e**, **--enableFunctionListener**
-    * Configures the messaging service
-* **-p:en**, **--enableBackgroundWorker**
-    * Configures the messaging service
-* **-o**
-    * Sets the path to where the project is added
-    * Omitting the parameter will result in the creation of a new folder
+- **-n|--name**
+    - Sets the project name
+    - Omitting it will result in the project name being the same as the folder where the command has been ran from
+- **-d|--domain**
+    - Sets the name of the aggregate root object. It is also the name of the collection within CosmosDB instance.
+- **-db|--database**
+    - Configures which database provider to be used
+- **-e|--eventPublisher**
+    - Configures the messaging service
+- **-e:fw|--enableFunctionWorker**
+    - Configures the messaging service
+- **-e:fl|--enableFunctionListener**
+    - Configures the messaging service
+- **-e:bw|--enableBackgroundWorker**
+    - Configures the messaging service
+- **-o|--output**
+    - Sets the path to where the project is added
+    - Omitting the parameter will result in the creation of a new folder
 :::
 
 
@@ -138,7 +136,7 @@ dotnet new stacks-asb-worker -n Company.Project
 <br />
 
 <details>
-<summary>Create the project by cloning GitHub repository</summary>
+<summary>Create the templates locally by cloning the GitHub repository (outdated)</summary>
 <div>
 
 Clone the .NET project to your local machine from here: [stacks-dotnet-cqrs-events repository](https://github.com/amido/stacks-dotnet-cqrs-events)
