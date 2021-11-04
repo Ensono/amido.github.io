@@ -8,12 +8,12 @@ description: .NET Core REST API application - Architecture Overview
 keywords:
   - .net core
   - rest api
-  - template 
+  - template
   - architecture overview
-  - aggregate 
-  - AggregateRoot 
-  - domain 
-  - events 
+  - aggregate
+  - AggregateRoot
+  - domain
+  - events
   - repository
   - stacks
 ---
@@ -26,7 +26,7 @@ keywords:
 
 ### Bounded Context
 
-In DDD, when we start mapping the business domain into objects we have to identify it's relation to each other on a wide scope, at start we identify them as a big and indivisible context to have a clear view of its relationships.
+In DDD, when we start mapping the business domain into objects, we have to identify their relation to each other on a wide scope, at start we identify them as a big and indivisible context to have a clear view of its relationships.
 
 When their relationships are identified we have to identify the smallest cohesive scope where they fit together on its own context. This boundary is given the name of bounded context.
 
