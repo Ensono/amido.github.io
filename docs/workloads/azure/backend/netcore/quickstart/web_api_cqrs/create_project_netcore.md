@@ -56,7 +56,7 @@ Once installed you can either, create a new project (step 2) or add CQRS to an e
 Navigate to the folder where you wish to create a new project on.
 
 ```bash title="Run the command to create the project"
-dotnet new stacks-cqrs-webapi -n Company.Project -do YourDomain
+dotnet new stacks-cqrs-webapi -n Company.Project -d YourDomain
 ```
 
 The above command will create a folder and a repository called `Company.Project`.
@@ -72,7 +72,7 @@ dotnet new --uninstall Amido.Stacks.Templates
 To create a project with CosmosDb as the database you can use the following command
 
 ```bash title="Run the command to create the project with database"
-dotnet new stacks-cqrs-webapi -n Company.Project -do YourDomain -d CosmosDb
+dotnet new stacks-cqrs-webapi -n Company.Project -d YourDomain -d CosmosDb
 ```
 
 <ResponsivePlayer url="https://vimeo.com/640289034" />
