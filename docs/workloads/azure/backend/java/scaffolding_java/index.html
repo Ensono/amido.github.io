@@ -10,7 +10,7 @@
 <script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-EKCQBC5CSJ",{anonymize_ip:!0})</script>
 <link rel="search" type="application/opensearchdescription+xml" title="Amido Stacks " href="/opensearch.xml"><title data-react-helmet="true">Using the Maven Scaffolding to create the Java project template | Amido Stacks </title><meta data-react-helmet="true" name="docsearch:version" content="current,latest"><meta data-react-helmet="true" name="twitter:card" content="summary_large_image"><meta data-react-helmet="true" property="og:title" content="Using the Maven Scaffolding to create the Java project template | Amido Stacks "><meta data-react-helmet="true" name="description" content="Using the Maven Scaffolding to create the Java project template"><meta data-react-helmet="true" property="og:description" content="Using the Maven Scaffolding to create the Java project template"><meta data-react-helmet="true" name="keywords" content="java,rest,api,application,spring boot,swagger,template,maven scaffolding,get started"><meta data-react-helmet="true" property="og:url" content="https://stacks.amido.com/docs/workloads/azure/backend/java/scaffolding_java"><link data-react-helmet="true" rel="shortcut icon" href="/img/thumbnail_stacks.png"><link data-react-helmet="true" rel="preconnect" href="https://BH4D9OD16A-dsn.algolia.net" crossorigin="anonymous"><link data-react-helmet="true" rel="canonical" href="https://stacks.amido.com/docs/workloads/azure/backend/java/scaffolding_java"><link rel="stylesheet" href="/styles.e81a5f08.css">
 <link rel="preload" href="/styles.f4107b64.js" as="script">
-<link rel="preload" href="/runtime~main.d9ee064f.js" as="script">
+<link rel="preload" href="/runtime~main.a911597e.js" as="script">
 <link rel="preload" href="/main.be5c8e65.js" as="script">
 <link rel="preload" href="/2.d92087f0.js" as="script">
 <link rel="preload" href="/3.3ba510cb.js" as="script">
@@ -21,14 +21,14 @@
 <link rel="preload" href="/1.26dc51a6.js" as="script">
 <link rel="preload" href="/e0259b1c.ea9ccdfe.js" as="script">
 <link rel="preload" href="/23325b98.11d3c35b.js" as="script">
-<link rel="preload" href="/2a973f19.5691f174.js" as="script">
+<link rel="preload" href="/2a973f19.2a37c44b.js" as="script">
 <link rel="preload" href="/3fa30493.59d40570.js" as="script">
 <link rel="preload" href="/40932100.0cf1c613.js" as="script">
 <link rel="preload" href="/5b5ac82e.32bfe61e.js" as="script">
 <link rel="preload" href="/5daba60d.2257e6f9.js" as="script">
 <link rel="preload" href="/6c1c083b.f9891921.js" as="script">
 <link rel="preload" href="/7e09430d.fd5f9923.js" as="script">
-<link rel="preload" href="/95bab7f5.8a7c978b.js" as="script">
+<link rel="preload" href="/95bab7f5.d9138c6e.js" as="script">
 <link rel="preload" href="/a7fa594d.cf8babcc.js" as="script">
 <link rel="preload" href="/b5d03cf8.d7a95656.js" as="script">
 </head>
@@ -39,7 +39,7 @@ by cloning one of the repositories and then installing the project as a Maven ar
 that archetype as a template. To do so we do:</p><ol><li>Clone any of the STACKS Java project (simple-api, stacks-java-cqrs, stacks-java-cqrs-events)</li><li>Navigate to the <code>&lt;directory you cloned the project into&gt;/java</code> in the terminal</li><li>Then issue the following Maven commands, using the included wrapper:<ol><li><code>./mvnw archetype:create-from-project</code> - To create the archetype</li><li><code> cd target/generated-sources/archetype</code> - Navigate to the folder it was crated in</li><li><code>..\..\..\mvnw install</code> - Install the archetype locally</li></ol></li><li>Now, navigate to a directory in which you&#x27;d like to crate the localized project into</li><li>To create the project we do <code>&lt;path-to-mvn-executable&gt;/mvn archetype:generate -DarchetypeGroupId=&#x27;com.amido&#x27; -DarchetypeArtifactId=&#x27;&lt;archetype-artifact-id&gt;&#x27; -DarchetypeVersion=&#x27;&lt;archetype-version&gt;&#x27; -DgroupId=&#x27;&lt;your-group-id&gt;&#x27; -DartifactId=&#x27;&lt;your-artifact-id&gt;&#x27; -Dversion=&#x27;&lt;your-version&gt;&#x27; -Dpackage=&#x27;&lt;package-name&gt;&#x27;</code><ol><li><code>&lt;archetype-artifact-id&gt;</code> refers to the archetype name ID, as that was created above. That ID is made of the artifact name of the original
 project as declared in its <code>pom.xml</code> suffixed with &quot;archetype&quot;<ol><li>For example: <code>stacks-api-cqrs-events-archetype</code>. The name can also be observed in the log created from the first command above.</li></ol></li><li><code>&lt;archetype-version&gt;</code> should be taken from the <code>pom.xml</code> of the original project</li><li><code>&lt;your-group-id&gt;</code> is a placeholder for your group ID</li><li><code>&lt;your-artifact-id&gt;</code> is a placeholder for your artifact ID</li><li><code>&lt;your-version&gt;</code> is a placeholder for your version</li><li><code>&lt;package-name&gt;</code> is a placeholder for the root package name and structure. <ol><li>For example, using <code>com.test.stacks</code> will instruct Maven to place the code in <code>src/main/java/com/test/stacks</code> and update all the relevant references accordingly (i.e. <code>imports</code>)</li></ol></li></ol></li></ol><p>Note: For now, until the release of the Amido STACKS CLI Tool v2 is released, this is the only way to get started with STACKS</p></div></article><div class="margin-vert--lg"><nav class="pagination-nav" aria-label="Blog list page navigation"><div class="pagination-nav__item"><a class="pagination-nav__link" href="/docs/workloads/azure/backend/java/quickstart_java"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">« Getting started with the Java Rest API application</div></a></div><div class="pagination-nav__item pagination-nav__item--next"><a class="pagination-nav__link" href="/docs/workloads/azure/backend/java/ide_java"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">IDE guidelines for the Java Rest API »</div></a></div></nav></div></div></div></div></div></main></div></div><footer class="footer footer--dark"><div class="container"><div class="row footer__links"><div class="col footer__col"><h4 class="footer__title">Docs</h4><ul class="footer__items"><li class="footer__item"><a class="footer__link-item" href="/docs/">Getting Started</a></li></ul></div><div class="col footer__col"><h4 class="footer__title">About Us</h4><ul class="footer__items"><li class="footer__item"><a href="https://amido.com/" target="_blank" rel="noopener noreferrer" class="footer__link-item">Amido</a></li></ul></div><div class="col footer__col"><h4 class="footer__title">Open Source</h4><ul class="footer__items"><li class="footer__item"><a href="https://github.com/amido/amido.github.io" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub</a></li></ul></div></div><div class="text--center"><div>Copyright © 2021 Amido Ltd</div></div></div></footer></div>
 <script src="/styles.f4107b64.js"></script>
-<script src="/runtime~main.d9ee064f.js"></script>
+<script src="/runtime~main.a911597e.js"></script>
 <script src="/main.be5c8e65.js"></script>
 <script src="/2.d92087f0.js"></script>
 <script src="/3.3ba510cb.js"></script>
@@ -50,14 +50,14 @@ project as declared in its <code>pom.xml</code> suffixed with &quot;archetype&qu
 <script src="/1.26dc51a6.js"></script>
 <script src="/e0259b1c.ea9ccdfe.js"></script>
 <script src="/23325b98.11d3c35b.js"></script>
-<script src="/2a973f19.5691f174.js"></script>
+<script src="/2a973f19.2a37c44b.js"></script>
 <script src="/3fa30493.59d40570.js"></script>
 <script src="/40932100.0cf1c613.js"></script>
 <script src="/5b5ac82e.32bfe61e.js"></script>
 <script src="/5daba60d.2257e6f9.js"></script>
 <script src="/6c1c083b.f9891921.js"></script>
 <script src="/7e09430d.fd5f9923.js"></script>
-<script src="/95bab7f5.8a7c978b.js"></script>
+<script src="/95bab7f5.d9138c6e.js"></script>
 <script src="/a7fa594d.cf8babcc.js"></script>
 <script src="/b5d03cf8.d7a95656.js"></script>
 </body>
