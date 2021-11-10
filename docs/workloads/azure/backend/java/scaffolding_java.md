@@ -23,6 +23,8 @@ import ResponsivePlayer from "../../../../../src/pages/Components/ResponsivePlay
 <ResponsivePlayer url="https://vimeo.com/640390929" />
 
 
+**Before starting, please make sure that your environment meets all the [requirements](requirements_java.md).**
+
 You can customize the deployment of the project running a handful of command lines. Currently, scaffolding is handled by Maven and you can use it
 by cloning one of the repositories and then installing the project as a Maven archetype locally; from there we can create a new project by using
 that archetype as a template. To do so we do:
