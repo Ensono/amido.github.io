@@ -58,7 +58,7 @@ values={[
                 <li>An IDE</li>
                 <li>Make sure no environment variables set for MAVEN_HOME</li>
                 <li>
-                    <a href="https://aka.ms/cosmosdb-emulator">CosmosDB Emulator 2.4.5+</a>: Currently the Cosmos emulator can only be run on Windows. If you have an Azure subscription, you are able to use the Azure version instead
+                    <a href="https://aka.ms/cosmosdb-emulator">CosmosDB Emulator 2.4.5+</a>
                 </li>
             </ul>
             <h5>Optional</h5>
