@@ -115,6 +115,8 @@ but not if the full project is deployed to Azure, where the build process will p
 
 <div>
 
+Keep in mind that if you've changed the domain the path will reflect that. If your domain is `Foo`. Then the path will be `../v1/foo` instead of `..v1/menu` etc.
+
 Browse to [http://localhost:5000/v1/menu](http://localhost:5000/v1/menu). This should return a valid JSON response.
 
 The application configuration uses Swagger/OAS3 to represent the API endpoints. The Swagger UI can be viewed by directing your
