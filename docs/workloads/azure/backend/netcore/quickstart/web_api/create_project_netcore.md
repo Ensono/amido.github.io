@@ -52,7 +52,7 @@ dotnet new --install Amido.Stacks.Templates
 Navigate to the folder where you wish to create a new project on.
 
 ```bash title="Run the command to create the project"
-dotnet new stacks-webapi -n Company.Project -d YourDomain
+dotnet new stacks-webapi -n Company.Project -do YourDomain
 ```
 
 The above command will create a folder called `Company.Project`.
@@ -69,7 +69,7 @@ dotnet new --uninstall Amido.Stacks.Templates
 - **-n|--name**
     - Sets the project name
     - Omitting it will result in the project name being the same as the folder where the command has been ran from
-- **-d|--domain**
+- **-do|--domain**
     - Sets the name of the aggregate root object. It is also the name of the collection within CosmosDB instance.
 - **-o|--output**
     - Sets the path to where the project is added
