@@ -6,11 +6,11 @@ Site-wide variables, usage:
 - then reference like: <tag>{siteVariables.variableName}</tag>
  */
 export const siteVariables = {
-    javaModuleParentVersion: 'parentversion',
-    javaCommonsVersion: 'commonsversion',
-    javaApiVersion: 'apiversion',
-    javaMessagingVersion: 'messagingversion',
-    javaCqrsVersion: 'cqrsversion',
-    javaAzureCosmosVersion: 'cosmosversion',
-    javaAzureServicebusVersion: 'servicebusversion'
+    javaModuleParentVersion: '1.0.0',
+    javaCommonsVersion: '1.0.0',
+    javaApiVersion: '1.0.0',
+    javaMessagingVersion: '1.0.0',
+    javaCqrsVersion: '1.0.0',
+    javaAzureCosmosVersion: '1.0.0',
+    javaAzureServicebusVersion: '1.0.0'
 }
