@@ -37,7 +37,7 @@ values={[
             </ul>
             <h5>Optional</h5>
             <ul>
-                <li><a href="https://www.jetbrains.com/idea/download/#section=windows">Intellij</a></li>
+                <li><a href="https://www.jetbrains.com/idea/download/#section=windows">IntelliJ IDEA</a></li>
             </ul>
         </div>
     </details>
@@ -63,8 +63,8 @@ values={[
             </ul>
             <h5>Optional</h5>
             <ul>
-              <li>add this to the path to your dotfiles, .bash_profile or .zshrc depending on what shell you are running</li>
-              <li><a href="https://www.jetbrains.com/idea/download/download-thanks.html?platform=mac&code=IIC">Intellij</a></li>
+              <li>Add this to the path to your dotfiles: .bash_profile or .zshrc depending on what shell you are running</li>
+              <li><a href="https://www.jetbrains.com/idea/download/download-thanks.html?platform=mac&code=IIC">IntelliJ IDEA</a></li>
             </ul>
       </div>
     </details>
