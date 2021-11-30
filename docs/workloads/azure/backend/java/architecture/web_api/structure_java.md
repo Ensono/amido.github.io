@@ -24,45 +24,27 @@ keywords:
 The outline structure of the project is as below.
 
 ```text
-├───java
-│   └───com
-│       └───amido
-│           └───stacks
-│               ├───core
-│               │   └───api
-│               │   ├───dto
-│               │   ├───exception
-│               │   └───filter
-│               └───menu
-│                   ├───api
-│                   │   ├───v1
-│                   │   │   ├───controller
-│                   │   │   ├───dto
-│                   │   │   │   ├───request
-│                   │   │   │   └───response
-│                   │   │   └───impl
-│                   │   └───v2
-│                   │       └───impl
-│                   ├───domain
-│                   └───mappers
-└───resources
+├── java
+│   └── com
+│       └── amido
+│           └── stacks
+│               └── workloads
+│                   └── menu
+│                       ├── api
+│                       │   ├── v1
+│                       │   │   ├── dto
+│                       │   │   │   ├── request
+│                       │   │   │   └── response
+│                       │   │   └── impl
+│                       │   └── v2
+│                       │       └── impl
+│                       ├── domain
+│                       └── mappers
+└── resources
+    └── local
 ```
 
-## Overview of `com.amido.stacks.core` packages
-
-The `core.api` package contains the request filter definitions (responsible for generating a
-correlation ID for every request), and the main Exception
-class from which all other custom exceptions in the code extend.
-
-Package `core.azure.servicebus` contains configuration classes for Azure ServiceBus.
-
-Package `core.cqrs` contains the `ApplicationCommand` and `CommandHandler` definitions.
-
-Package `core.messaging` contains the `ApplicationEvent` definition and the event publishers and listeners (listeners just log events).
-
-Package `core.operations` contains the `OperationContext` class that stores operation codes and correlation ID.
-
-## Overview of `com.amido.stacks.menu` packages
+## Overview of `com.amido.stacks.workloads.menu` packages
 
 Package `menu.api.v1` contains the `Controller` definitions, both as interface definitions where the
 [Swagger](https://swagger.io/) (OpenAPI) details are defined, and as concrete implementations under the `impl` package.
@@ -194,24 +176,6 @@ enable it to interact with Application Insights:
  application-insights:
     instrumentation-key: xxxxxx
     enabled: true
-```
-
-We also need to add the SDK dependencies to the `pom.xml` file definitions:
-
-```xml
-<dependency>
-    <groupId>com.microsoft.azure</groupId>
-    <artifactId>applicationinsights-spring-boot-starter</artifactId>
-    <version>${applicationinsights.version}</version>
-    <scope>runtime</scope>
-</dependency>
-
-<dependency>
-    <groupId>com.microsoft.azure</groupId>
-    <artifactId>applicationinsights-logging-logback</artifactId>
-    <version>${applicationinsights.version}</version>
-    <scope>runtime</scope>
-</dependency>
 ```
 
 Additionally, an `AI-Agent.xml` definition is included in the `resource` directory to enable deeper data insights:

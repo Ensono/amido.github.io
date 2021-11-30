@@ -24,7 +24,7 @@ import TabItem from '@theme/TabItem';
 
 ## Running the application locally
 
-1. ### Clone one of the Java projects to your local machine from one of the following repos
+1. ### Clone one of the Java workloads to your local machine from one of the following repos
     
    1. Simple web API: [stacks-java repository](https://github.com/amido/stacks-java)
    2. Web API with CQRS: [stacks-java-cqrs repository](https://github.com/amido/stacks-java-cqrs)
@@ -32,17 +32,22 @@ import TabItem from '@theme/TabItem';
    
 2. ### Configure required environment variables
     
-    The application is currently configured to work with the Azure environment.
+    :::note
+    The application is currently configured to work with the Azure environment only.
+    :::
 
     It uses an Azure **CosmosDB** database to store the example application data. So you should have access to an instance to use with the application.
-    Note: For running on a local Windows environment you can use the [Cosmos DB emulator](docs/workloads/azure/backend/java/setting_up_cosmos_db_locally_java) (CosmosDB Emulator has a known fixed key). There is no need for CosmosDB for the simple web API implementation (1.i above) as there is no persistence layer in it. 
+   
+    :::note
+    For running on a local environment you can use the [Cosmos DB emulator](docs/workloads/azure/backend/java/setting_up_cosmos_db_locally_java) (CosmosDB Emulator has a known fixed key). There is no need for CosmosDB for the simple web API implementation (1.i above) as there is no persistence layer in it. 
     For further info please follow the [link](https://docs.microsoft.com/en-us/azure/cosmos-db/local-emulator?tabs=ssl-netstd21).
-    
+    :::
+
     ---
 
     In addition, Azure **ApplicationInsights** is used for logging purposes. If this is unavailable, modify the application so that it doesn't fail to startup if it can't access ApplicationInsights, and simply log to the terminal instead.
 
-    ```yaml
+    ```yaml {3}
        application-insights:
            instrumentation-key: xxxxxx
            enabled: false
