@@ -38,6 +38,7 @@ that archetype as a template. To do so we do:
    3. ``..\..\..\mvnw install`` - Install the archetype locally
 4. Now, navigate to a directory in which you'd like to crate the localized project into
 5. To create the project we do:
+
    ```bash
    <path-to-mvn-executable>/mvn archetype:generate \
      -DarchetypeGroupId='com.amido.stacks.workloads' \
@@ -48,6 +49,7 @@ that archetype as a template. To do so we do:
      -Dversion='<your-version>' \
      -Dpackage='<your-package-name>
    ```
+
    1. `<archetype-artifact-id>` refers to the archetype name ID, as that was created above. That ID is made of the artifact name of the original
       project as declared in its `pom.xml` suffixed with `-archetype`
       1. For example: `stacks-api-cqrs-events-archetype`. The name can also be observed in the log created from the first command above.

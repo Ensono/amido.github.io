@@ -13,6 +13,7 @@ keywords:
 - commons
 ---
 
+<!-- markdownlint-disable MD033 MD046 -->
 import {siteVariables} from '@site/versions';
 
 ## Module Overview

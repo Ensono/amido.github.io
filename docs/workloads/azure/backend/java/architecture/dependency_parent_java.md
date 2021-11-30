@@ -12,6 +12,7 @@ keywords:
 - archetype
 ---
 
+<!-- markdownlint-disable MD033 MD046 -->
 import {siteVariables} from '@site/versions';
 
 
@@ -29,7 +30,7 @@ deploy.
 
 ### Project structure
 
-```
+```text
 java
 \_.mvn
 : |_settings.xml
@@ -118,8 +119,8 @@ To use the deployed archetypes:
 To build the module locally:
 
 1.  Clone this repo
-3.  run `./mvnw clean install` to install the module locally.
-4.  Add it as any other [dependency](#use-it-as-a-dependency)
+2.  Run `./mvnw clean install` to install the module locally.
+3.  Add it as any other [dependency](#use-it-as-a-dependency)
 
 ### Creating an Archetype from this repository
 

@@ -108,7 +108,7 @@ import TabItem from '@theme/TabItem';
 
     For instructions on how to customise the project for your company please look in the [Scaffolding](docs/workloads/azure/backend/java/scaffolding_java) section
 
-5. ### Build and run the application using Cosmos DB Emulator
+4. ### Build and run the application using Cosmos DB Emulator
     
    Please refer to section "Determine which root certificates have been installed" in [Setting Up CosmosDB Emulator](docs/workloads/azure/backend/java/setting_up_cosmos_db_locally_java.)
 
@@ -145,7 +145,7 @@ import TabItem from '@theme/TabItem';
     </TabItem>
     </Tabs>
 
-6. ### Verify that the application has started
+5. ### Verify that the application has started
 
     Browse to [http://localhost:9000/v1/menu](http://localhost:9000/v1/menu). This should return a valid JSON response.
 
