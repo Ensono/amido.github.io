@@ -7,6 +7,7 @@ module.exports = {
     "Helping projects gain momentum on digital transformation, with opinionated and modular boilerplate solutions",
   url: "https://stacks.amido.com",
   baseUrl: "/",
+  trailingSlash: false,
   onBrokenLinks: "warn",
   favicon: "img/thumbnail_stacks.png",
   organizationName: "Amido", // Usually your GitHub org/user name.
@@ -47,6 +48,10 @@ module.exports = {
     gtag: {
       trackingID: 'G-EKCQBC5CSJ',
       anonymizeIP: true, // Should IPs be anonymized? (optional)
+    },
+    googleAnalytics: {
+      trackingID: 'G-EKCQBC5CSJ',
+      anonymizeIP: true, // Should IPs be anonymized?
     },
     algolia: {
       apiKey: "56a3097b6350cd2363a8746a98c6c278",
@@ -133,15 +138,9 @@ module.exports = {
           customCss: require.resolve("./src/css/custom.css")
         },
         sitemap: {
-          cacheTime: 600 * 1000,
           changefreq: "weekly",
-          priority: 0.5,
-          trailingSlash: false,
-        },
-        googleAnalytics: {
-          trackingID: 'G-EKCQBC5CSJ',
-          anonymizeIP: true, // Should IPs be anonymized? (optional)
-        },
+          priority: 0.5
+        }
       }
     ]
   ]
