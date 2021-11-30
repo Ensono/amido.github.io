@@ -7,7 +7,6 @@ module.exports = {
     "Helping projects gain momentum on digital transformation, with opinionated and modular boilerplate solutions",
   url: "https://stacks.amido.com",
   baseUrl: "/",
-  trailingSlash: false,
   onBrokenLinks: "warn",
   favicon: "img/thumbnail_stacks.png",
   organizationName: "Amido", // Usually your GitHub org/user name.
@@ -43,6 +42,7 @@ module.exports = {
       "Cypress",
       "OWASP",
     ],
+    trailingSlash: false,
   },
   themeConfig: {
     gtag: {
