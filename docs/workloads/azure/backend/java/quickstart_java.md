@@ -63,6 +63,8 @@ application-insights:
   enabled: false
 ```
 
+Alternatively, you can use Spring `local` profile, which is configured to not require cloud infrastructure to run. For the details, please follow the [Spring Profiles](https://www.baeldung.com/spring-profiles#4-jvm-system-parameter) article.
+
 There are two corresponding environment variables that need to be set to interact with these systems:
 
 ```text
