@@ -20,62 +20,75 @@ keywords:
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+<!-- markdownlint-disable MD029 -->
+
 ## Using the repository to build the Java Spring Boot Rest API application
 
 ## Running the application locally
 
 1. ### Clone one of the Java workloads to your local machine from one of the following repos
     
-   1. Simple web API: [stacks-java repository](https://github.com/amido/stacks-java)
-   2. Web API with CQRS: [stacks-java-cqrs repository](https://github.com/amido/stacks-java-cqrs)
-   3. Web API with CQRS and events: [stacks-java-cqrs-events repository](https://github.com/amido/stacks-java-cqrs-events)
+    1. Simple web API: [stacks-java repository](https://github.com/amido/stacks-java)
+    2. Web API with CQRS: [stacks-java-cqrs repository](https://github.com/amido/stacks-java-cqrs)
+    3. Web API with CQRS and events: [stacks-java-cqrs-events repository](https://github.com/amido/stacks-java-cqrs-events)
    
-2. ### Configure required environment variables
-    
-    :::note
-    The application is currently configured to work with the Azure environment only.
-    :::
+2. ### Configure the application
 
-    It uses an Azure **CosmosDB** database to store the example application data. So you should have access to an instance to use with the application.
+:::note
+The application is currently configured to work with the Azure environment only.
+:::
+
+  It uses an Azure **CosmosDB** database to store the example application data. So you should have access to an instance to use with the application.
    
-    :::note
-    For running on a local environment you can use the [Cosmos DB emulator](docs/workloads/azure/backend/java/setting_up_cosmos_db_locally_java) (CosmosDB Emulator has a known fixed key). There is no need for CosmosDB for the simple web API implementation (1.i above) as there is no persistence layer in it. 
-    For further info please follow the [link](https://docs.microsoft.com/en-us/azure/cosmos-db/local-emulator?tabs=ssl-netstd21).
-    :::
+:::note
+For running on a local environment you can use the [Cosmos DB emulator](/docs/workloads/azure/backend/java/setting_up_cosmos_db_locally_java) (CosmosDB Emulator has a known fixed key). There is no need for CosmosDB for the simple web API implementation (1.i above) as there is no persistence layer in it. 
+For further info please follow the [link](https://docs.microsoft.com/en-us/azure/cosmos-db/local-emulator?tabs=ssl-netstd21).
+:::
 
-    ---
+Set the cosmosdb URI, databaseName and key in main application configuration file (`application.yml`) using the values coming from the CosmosDB Emulator UI.
 
-    In addition, Azure **ApplicationInsights** is used for logging purposes. If this is unavailable, modify the application so that it doesn't fail to startup if it can't access ApplicationInsights, and simply log to the terminal instead.
+```yaml title=application.yml
+azure:
+ cosmosdb:
+   uri: xxxxxx
+   database: xxxxxx
+   key: xxxxxx
+```
 
-    ```yaml {3}
-       application-insights:
-           instrumentation-key: xxxxxx
-           enabled: false
-    ```
+In addition, Azure **ApplicationInsights** is used for logging purposes. If this is unavailable, modify the application so that it doesn't fail to startup if it can't access ApplicationInsights, and simply log to the terminal instead.
 
-    There are two corresponding environment variables that need to be set to interact with these systems:
+```yaml {3} title=application.yml
+application-insights:
+  instrumentation-key: xxxxxx
+  enabled: false
+```
 
-    ```text
-    AZURE_COSMOSDB_KEY
-    AZURE_APPLICATION_INSIGHTS_INSTRUMENTATION_KEY
-    ```
+Alternatively, you can use Spring `local` profile, which is configured to not require cloud infrastructure to run. For the details, please follow the [Spring Profiles](https://www.baeldung.com/spring-profiles#4-jvm-system-parameter) article.
 
-    <Tabs
-      groupId="operating-systems"
-      defaultValue="unix"
-      values={[
-        {label: 'Unix', value: 'unix'},
-        {label: 'Windows', value: 'windows'},
-      ]}>
-      <TabItem value="unix">
-      Set the two environment variables as additional variables within e.g. ~/.profile or /etc/profile.
-      </TabItem>
-      <TabItem value="windows">
-      Open the System Properties then select the Advanced tab, then click on the Environment Variables
-      button and add the new parameters.
-      </TabItem>
-    </Tabs>
+There are two corresponding environment variables that need to be set to interact with these systems:
 
+```text
+COSMOSDB_KEY
+AZURE_APPLICATION_INSIGHTS_INSTRUMENTATION_KEY
+```
+
+<Tabs
+  groupId="operating-systems"
+  defaultValue="unix"
+  values={[
+    {label: 'Unix', value: 'unix'},
+    {label: 'Windows', value: 'windows'},
+  ]}>
+  <TabItem value="unix">
+  Set the two environment variables as additional variables within e.g. ~/.profile or /etc/profile.
+  </TabItem>
+  <TabItem value="windows">
+  Open the System Properties then select the Advanced tab, then click on the Environment Variables
+  button and add the new parameters.
+  </TabItem>
+</Tabs>
+
+   
 3. ### Build and run the application
 
     Note that at a minimum [Java 11](https://adoptopenjdk.net/) should be installed.
@@ -114,11 +127,32 @@ import TabItem from '@theme/TabItem';
 
     Move to the `<PROJECT-NAME>/java` folder, then
     go to `application.yml` either comment out the `application-insights` block or set `enabled`  property to `false`.
-    In `logback-spring.xml` comment out the application-insight section.
+    
+    In `logback-spring.xml` comment out two sections relating to the application-insights (both the appender and the logger).
 
-    ![logback](/img/logback_xml.png)
+    ```xml title=logback-spring.xml
+   <?xml version="1.0" encoding="UTF-8"?>
+    <configuration>
+      <appender class="ch.qos.logback.core.ConsoleAppender" name="console">
+        <encoder>
+          <pattern>%d{dd-MM-yyyy HH:mm:ss.SSS} %magenta([%thread]) | %X{CorrelationId} |
+            %highlight(%-5level) %logger{36}.%M - %msg%n
+          </pattern>
+        </encoder>
+      </appender>
+      <!-- <appender class="com.microsoft.applicationinsights.logback.ApplicationInsightsAppender"
+        name="aiAppender">
+      </appender> -->
+      <root level="info">
+        <appender-ref ref="console"/>
+      </root>
+      <!-- <root level="info">
+        <appender-ref ref="aiAppender"/> -->
+      </root>
+    </configuration>
+    ```
 
-    Set `AZURE_COSMOSDB_KEY` as an environment variable and set the value to be the primary key value on the emulator.
+    Set `COSMOSDB_KEY` as an environment variable and set the value to be the primary key value on the emulator.
     <br />
 
     <Tabs
