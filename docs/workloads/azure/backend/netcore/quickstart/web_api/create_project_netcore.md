@@ -37,7 +37,9 @@ There are several ways to get your Stacks project.
 
 ### Install the package
 
-**NOTE:** .NET 3.1 templates have been deprecated. If you want to use the 3.1 templates the latest version is [3.0.232](https://www.nuget.org/packages/Amido.Stacks.Templates/3.0.232)
+:::note
+.NET 3.1 templates have been deprecated. If you want to use the 3.1 templates the latest version is [3.0.232](https://www.nuget.org/packages/Amido.Stacks.Templates/3.0.232)
+:::
 
 Access Amido.Stacks.Templates package page in Nuget [here](https://www.nuget.org/packages/Amido.Stacks.Templates/). Copy and execute the command displayed in the page (if you want to get the latest version). For example:
 
