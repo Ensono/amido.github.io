@@ -4,7 +4,7 @@ title: Introduction to the .NET Core REST API application
 sidebar_label: Introduction
 hide_title: false
 hide_table_of_contents: true
-description: Introduction to .NET Core REST API application with CQRS
+description: Introduction to .NET 6 REST API application with CQRS
 keywords:
   - .net core
   - rest api
