@@ -1,6 +1,6 @@
 ---
 id: introduction_netcore
-title: Introduction to the .NET Core REST API application
+title: Introduction to the .NET 6 REST API application
 sidebar_label: Introduction
 hide_title: false
 hide_table_of_contents: true
