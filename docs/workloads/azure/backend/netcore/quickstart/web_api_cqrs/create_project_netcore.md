@@ -39,9 +39,9 @@ There are several ways to get your Stacks project, or to get parts of it.
 
 ### Install the package
 
-Access Amido.Stacks.CQRS.Template package page in Nuget [here](https://www.nuget.org/packages/Amido.Stacks.CQRS.Templates/).<br/>
-Copy and execute the command displayed in the page (if you want to get the latest version).<br/>
-For example,
+**NOTE:** .NET 3.1 templates have been deprecated. If you want to use the 3.1 templates the latest version is [3.0.130](https://www.nuget.org/packages/Amido.Stacks.CQRS.Templates/3.0.130)
+
+Access Amido.Stacks.CQRS.Template package page in Nuget [here](https://www.nuget.org/packages/Amido.Stacks.CQRS.Templates/). Copy and execute the command displayed in the page (if you want to get the latest version). For example:
 
 ```bash title="Run the command to install the package"
 	dotnet new --install Amido.Stacks.CQRS.Templates
