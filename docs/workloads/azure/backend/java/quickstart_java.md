@@ -58,9 +58,9 @@ azure:
 In addition, Azure **ApplicationInsights** is used for logging purposes. If this is unavailable, modify the application so that it doesn't fail to startup if it can't access ApplicationInsights, and simply log to the terminal instead.
 
 ```yaml {3} title=application.yml
-application-insights:
-  instrumentation-key: xxxxxx
-  enabled: false
+  application-insights:
+    instrumentation-key: xxxxxx
+    enabled: false
 ```
 
 Alternatively, you can use Spring `local` profile, which is configured to not require cloud infrastructure to run. For the details, please follow the [Spring Profiles](https://www.baeldung.com/spring-profiles#4-jvm-system-parameter) article.
