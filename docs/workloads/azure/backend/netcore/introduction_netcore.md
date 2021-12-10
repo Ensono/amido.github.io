@@ -17,7 +17,7 @@ keywords:
 
 import HideNavigation  from "../../../../../src/pages/HideNavigation";
 
-Stacks is a collection of sample .NET Core template projects that contain
+Stacks is a collection of sample .NET 6 template projects that contain
 
 - Simple Web API application
 - A Web API application with CQRS functionality
