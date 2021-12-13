@@ -62,7 +62,7 @@ Once installed, you obtain 6 templates that can be used
 Navigate to the folder where you wish to create a new project on.
 
 ```bash title="Run the command to create the project"
-dotnet new stacks-cqrs-events-app -n Company.Project -d YourDomain -e MessagingProvider -db DatabaseOption
+dotnet new stacks-cqrs-events-app -n Company.Project -do YourDomain -e MessagingProvider -db DatabaseOption
 ```
 
 The above command will create a folder and a repository called `Company.Project`.
@@ -74,7 +74,7 @@ The above command will create a folder and a repository called `Company.Project`
 Navigate to the folder where you wish to create a new project on.
 
 ```bash title="Run the command to create the project"
-dotnet new stacks-cqrs-events-webapi -n Company.Project -d YourDomain -e MessagingProvider
+dotnet new stacks-cqrs-events-webapi -n Company.Project -do YourDomain -e MessagingProvider
 ```
 
 The above command will create a folder and a repository called `Company.Project`.
@@ -96,7 +96,7 @@ dotnet new stacks-az-func-cosmosdb-worker -n Company.Project
 Navigate to the folder where you wish to create a new project on.
 
 ```bash title="Run the command to create the function"
-dotnet new stacks-az-func-asb-listener -n Company.Project -d Menu
+dotnet new stacks-az-func-asb-listener -n Company.Project -do Menu
 ```
 
 ### stacks-asb-worker
@@ -106,7 +106,7 @@ dotnet new stacks-az-func-asb-listener -n Company.Project -d Menu
 Navigate to the folder where you wish to create a new project on.
 
 ```bash title="Run the command to create the function"
-dotnet new stacks-asb-worker -n Company.Project -d Menu
+dotnet new stacks-asb-worker -n Company.Project -do Menu
 ```
 
 :::note Template parameter details (some templates may offer only a subset of the arguments shown)
