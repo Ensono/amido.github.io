@@ -39,6 +39,10 @@ There are several ways to get your Stacks project, or to get parts of it as well
 
 ## Install the package
 
+:::note
+.NET 3.1 templates have been deprecated. If you want to use the 3.1 templates the latest version is [3.0.296](https://www.nuget.org/packages/Amido.Stacks.CQRS.Events.Templates/3.0.296)
+:::
+
 Access Amido.Stacks.CQRS.Events.Template package page in Nuget [here](https://www.nuget.org/packages/Amido.Stacks.CQRS.Events.Templates/)
 Copy and execute the command displayed in the page (if you want to get the latest version).
 For example
