@@ -24,7 +24,7 @@ variables:
   - name: pool_vm_image
     value: ubuntu-18.04
   - name: version_spec
-    value: 12.x
+    value: 16.x
   - name: self_repo
     value: amido.github.io
   - name: working_directory

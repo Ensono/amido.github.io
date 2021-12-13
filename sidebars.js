@@ -68,6 +68,20 @@ module.exports = {
                     type: "category",
                     label: "Architecture",
                     items: [
+                      "workloads/azure/backend/java/architecture/maven_modules_java",
+                      {
+                        type: "category",
+                        label: "Modules",
+                        items: [
+                          "workloads/azure/backend/java/architecture/dependency_parent_java",
+                          "workloads/azure/backend/java/architecture/dependency_commons_java",
+                          "workloads/azure/backend/java/architecture/dependency_api_java",
+                          "workloads/azure/backend/java/architecture/dependency_cqrs_java",
+                          "workloads/azure/backend/java/architecture/dependency_messaging_java",
+                          "workloads/azure/backend/java/architecture/dependency_cosmos_java",
+                          "workloads/azure/backend/java/architecture/dependency_servicebus_java",
+                        ]
+                      },
                       {
                         type: "category",
                         label: "Web API Architecture",

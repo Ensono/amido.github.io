@@ -52,24 +52,17 @@ the `AZURE_COSMOS_EMULATOR_IP_ADDRESS_OVERRIDE=$ipaddr`. Instead, set it to `127
 The value for `COSMOSDB_KEY` can be found within the emulator. See Primary Key:
 
 ![cosmosdb](/img/cosmosdb_emulator_3.png)
-Set the cosmosdb URI, databaseName and key in `application.yml` file using the value above
-
-```yaml
-azure:
- cosmosdb:
-   uri: xxxxxx
-   database: xxxxxx
-   key: xxxxxx
-```
+Please, take a note of the cosmosdb URI, databaseName and key, as they will be needed to configure the
+application in a further step.
 
 ### Create the Cosmos DB structure
 
 Based on the template the CosmosDB has to contain a fixed structure.
 
-Create a collection **Stacks** with a container id **menu** and the partition key **/id**.
+Create a collection `Stacks` with a container id `menu` and the partition key `/id`.
 
-Create a database called Stacks for the application, and a database called CosmosDBPackage for the
-integration tests of the CosmosDB package
+Create a database called Stacks for the application, and a database called `CosmosDBPackage` for the
+integration tests of the CosmosDB package (using the same container id and partition key as the main database).
 
 ![cosmosdb](/img/cosmosdb_emulator_1.png)
 

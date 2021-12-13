@@ -24,59 +24,33 @@ The outline structure of the project is as below.
 
 ```text
 ├── java
-│         └── com
-│             └── xxAMIDOxx
-│                 └── xxSTACKSxx
-│                     ├── core
-│                     │         ├── api
-│                     │         │         ├── dto
-│                     │         │         ├── exception
-│                     │         │         └── filter
-│                     │         ├── azure
-│                     │         │         └── servicebus
-│                     │         ├── cqrs
-│                     │         │         ├── command
-│                     │         │         └── handler
-│                     │         ├── messaging
-│                     │         │         ├── event
-│                     │         │         └── publish
-│                     │         └── operations
-│                     └── menu
-│                         ├── api
-│                         │         ├── v1
-│                         │         │         ├── dto
-│                         │         │         │         ├── request
-│                         │         │         │         └── response
-│                         │         │         └── impl
-│                         │         └── v2
-│                         │             └── impl
-│                         ├── commands
-│                         ├── domain
-│                         ├── events
-│                         ├── exception
-│                         ├── handlers
-│                         ├── mappers
-│                         ├── repository
-│                         └── service
-│                             └── impl
+│   └── com
+│       └── amido
+│           └── stacks
+│               └── workloads
+│                   └── menu
+│                       ├── api
+│                       │   ├── v1
+│                       │   │   ├── dto
+│                       │   │   │   ├── request
+│                       │   │   │   └── response
+│                       │   │   └── impl
+│                       │   └── v2
+│                       │       └── impl
+│                       ├── commands
+│                       ├── domain
+│                       ├── events
+│                       ├── exception
+│                       ├── handlers
+│                       ├── mappers
+│                       ├── repository
+│                       └── service
+│                           └── impl
 └── resources
+    └── local
 ```
 
-## Overview of `com.xxAMIDOxx.xxSTACKSxx.core` packages
-
-The `core.api` package contains the request filter definitions (responsible for generating a
-correlation ID for every request), and the main Exception
-class from which all other custom exceptions in the code extend.
-
-The `core.azure.servicebus` package contains definitions to sent messages to the Azure service bus, if configured. It is disabled by default.
-
-The `core.cqrs` package contains the basic `Command` and `CommandHandler` definitions that individual commands extend.
-
-Package `core.messaging` contains the `ApplicationEvent` definition and default event publisher (used when servicebus is disable in configuration).
-
-Package `core.operations` contains the abstract `OperationContext` class that stores operation code and correlation ID.
-
-## Overview of `com.xxAMIDOxx.xxSTACKSxx.menu` packages
+## Overview of `com.amido.stacks.workflows.menu` packages
 
 Package `menu.api.v1` contains the `Controller` definitions, both as interface definitions where the
 [Swagger](https://swagger.io/) (OpenAPI) details are defined, and as concrete implementations under the `impl` package.
@@ -185,24 +159,6 @@ enable it to interact with Application Insights:
  application-insights:
     instrumentation-key: xxxxxx
     enabled: true
-```
-
-We also need to add the SDK dependencies to the `pom.xml` file definitions:
-
-```xml
-<dependency>
-    <groupId>com.microsoft.azure</groupId>
-    <artifactId>applicationinsights-spring-boot-starter</artifactId>
-    <version>${applicationinsights.version}</version>
-    <scope>runtime</scope>
-</dependency>
-
-<dependency>
-    <groupId>com.microsoft.azure</groupId>
-    <artifactId>applicationinsights-logging-logback</artifactId>
-    <version>${applicationinsights.version}</version>
-    <scope>runtime</scope>
-</dependency>
 ```
 
 Additionally, an `AI-Agent.xml` definition is included in the `resource` directory to enable deeper data insights:
