@@ -1,10 +1,10 @@
 ---
 id: introduction_netcore
-title: Introduction to the .NET Core REST API application
+title: Introduction to the .NET 6 REST API application
 sidebar_label: Introduction
 hide_title: false
 hide_table_of_contents: true
-description: Introduction to .NET Core REST API application with CQRS
+description: Introduction to .NET 6 REST API application with CQRS
 keywords:
   - .net core
   - rest api
@@ -17,7 +17,7 @@ keywords:
 
 import HideNavigation  from "../../../../../src/pages/HideNavigation";
 
-Stacks is a collection of sample .NET Core template projects that contain
+Stacks is a collection of sample .NET 6 template projects that contain
 
 - Simple Web API application
 - A Web API application with CQRS functionality

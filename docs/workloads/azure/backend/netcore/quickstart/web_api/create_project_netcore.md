@@ -37,9 +37,11 @@ There are several ways to get your Stacks project.
 
 ### Install the package
 
-Access Amido.Stacks.Templates package page in Nuget [here](https://www.nuget.org/packages/Amido.Stacks.Templates/).<br/>
-Copy and execute the command displayed in the page (if you want to get the latest version).<br/>
-For example,
+:::note
+.NET 3.1 templates have been deprecated. If you want to use the 3.1 templates the latest version is [3.0.232](https://www.nuget.org/packages/Amido.Stacks.Templates/3.0.232)
+:::
+
+Access Amido.Stacks.Templates package page in Nuget [here](https://www.nuget.org/packages/Amido.Stacks.Templates/). Copy and execute the command displayed in the page (if you want to get the latest version). For example:
 
 ```bash title="Run the command to install the package"
 dotnet new --install Amido.Stacks.Templates
@@ -52,7 +54,7 @@ dotnet new --install Amido.Stacks.Templates
 Navigate to the folder where you wish to create a new project on.
 
 ```bash title="Run the command to create the project"
-dotnet new stacks-webapi -n Company.Project -d YourDomain
+dotnet new stacks-webapi -n Company.Project -do YourDomain
 ```
 
 The above command will create a folder called `Company.Project`.
@@ -69,7 +71,7 @@ dotnet new --uninstall Amido.Stacks.Templates
 - **-n|--name**
     - Sets the project name
     - Omitting it will result in the project name being the same as the folder where the command has been ran from
-- **-d|--domain**
+- **-do|--domain**
     - Sets the name of the aggregate root object. It is also the name of the collection within CosmosDB instance.
 - **-o|--output**
     - Sets the path to where the project is added

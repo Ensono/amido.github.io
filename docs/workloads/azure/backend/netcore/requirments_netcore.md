@@ -9,8 +9,8 @@ keywords:
   - .net core
   - rest api
   - cqrs
-  - example 
-  - template 
+  - example
+  - template
   - azure
   - application insights
   - cosmos db
@@ -40,7 +40,7 @@ values={[
         <div>
             <h5>Mandatory</h5>
             <ul>
-                <li><a href="https://dotnet.microsoft.com/download/dotnet-core/thank-you/sdk-3.1.403-windows-x64-installer">.NET Core SDK</a> and Runtime 3.1._ or superior (for .NET Core 3.1 template)</li>
+                <li><a href="https://dotnet.microsoft.com/en-us/download/dotnet/6.0">.NET 6 SDK</a> and Runtime 6.0.* or superior (for .NET 6 templates)</li>
                 <li><a href="https://aka.ms/cosmosdb-emulator">CosmosDB Emulator 2.4.5+</a></li>
             </ul>
             <h5>Optional</h5>
@@ -104,7 +104,7 @@ values={[
             <ul>
                 <li>homebrew</li>
                 <li>azure-cli: brew install azure-cli</li>
-                <li><a href="https://dotnet.microsoft.com/download/dotnet-core/thank-you/sdk-3.1.403-macos-x64-installer">.NET Core SDK</a> 3.1.* or superior: brew cask install dotnet-sdk</li>
+                <li><a href="https://dotnet.microsoft.com/en-us/download/dotnet/6.0">.NET 6 SDK</a> 6.0.* or superior: brew cask install dotnet-sdk</li>
                 <li>
                     <a href="https://aka.ms/cosmosdb-emulator">CosmosDB Emulator 2.4.5+</a>: Currently the Cosmos emulator can only be run on Windows. If you have an Azure subscription, you are able to use the Azure version instead
                 </li>
@@ -125,5 +125,5 @@ values={[
 </Tabs>
 
 :::note
-The current version of Amido Stacks is a template for .NET Core 3.1 (Current LTS, recommended).
+The current version of Amido Stacks are templates for .NET 6 (Current LTS, recommended).
 :::

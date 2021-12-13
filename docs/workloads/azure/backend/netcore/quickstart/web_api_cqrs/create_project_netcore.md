@@ -39,9 +39,11 @@ There are several ways to get your Stacks project, or to get parts of it.
 
 ### Install the package
 
-Access Amido.Stacks.CQRS.Template package page in Nuget [here](https://www.nuget.org/packages/Amido.Stacks.CQRS.Templates/).<br/>
-Copy and execute the command displayed in the page (if you want to get the latest version).<br/>
-For example,
+:::note
+.NET 3.1 templates have been deprecated. If you want to use the 3.1 templates the latest version is [3.0.130](https://www.nuget.org/packages/Amido.Stacks.CQRS.Templates/3.0.130)
+:::
+
+Access Amido.Stacks.CQRS.Template package page in Nuget [here](https://www.nuget.org/packages/Amido.Stacks.CQRS.Templates/). Copy and execute the command displayed in the page (if you want to get the latest version). For example:
 
 ```bash title="Run the command to install the package"
 	dotnet new --install Amido.Stacks.CQRS.Templates
@@ -56,7 +58,7 @@ Once installed you can either, create a new project (step 2) or add CQRS to an e
 Navigate to the folder where you wish to create a new project on.
 
 ```bash title="Run the command to create the project"
-dotnet new stacks-cqrs-webapi -n Company.Project -d YourDomain
+dotnet new stacks-cqrs-webapi -n Company.Project -do YourDomain
 ```
 
 The above command will create a folder and a repository called `Company.Project`.
@@ -72,7 +74,7 @@ dotnet new --uninstall Amido.Stacks.Templates
 To create a project with CosmosDb as the database you can use the following command
 
 ```bash title="Run the command to create the project with database"
-dotnet new stacks-cqrs-webapi -n Company.Project -d YourDomain -d CosmosDb
+dotnet new stacks-cqrs-webapi -n Company.Project -do YourDomain -do CosmosDb
 ```
 
 <ResponsivePlayer url="https://vimeo.com/640289034" />
@@ -86,7 +88,7 @@ In order for the template to generate correctly you'll need to execute it in the
 ```shell
 % cd src
 
-% dotnet new stacks-add-cqrs -n Foo.Bar.CQRS -d Menu
+% dotnet new stacks-add-cqrs -n Foo.Bar.CQRS -do Menu
 The template "Amido Stacks Web Api CQRS - Add to existing solution" was created successfully.
 ```
 
@@ -166,7 +168,7 @@ If you don't want to do that you can generate the new projects with a different 
 - **-n|--name**
     - Sets the project name
     - Omitting it will result in the project name being the same as the folder where the command has been ran from
-- **-d|--domain**
+- **-do|--domain**
     - Sets the name of the aggregate root object. It is also the name of the collection within CosmosDB instance.
 - **-db|--database**
     - Configures which database provider to be used.
