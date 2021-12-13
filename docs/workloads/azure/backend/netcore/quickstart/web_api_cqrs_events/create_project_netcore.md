@@ -114,7 +114,7 @@ dotnet new stacks-asb-worker -n Company.Project -do Menu
 - **-n|--name**
     - Sets the project name
     - Omitting it will result in the project name being the same as the folder where the command has been ran from
-- **-d|--domain**
+- **-do|--domain**
     - Sets the name of the aggregate root object. It is also the name of the collection within CosmosDB instance.
 - **-db|--database**
     - Configures which database provider to be used
