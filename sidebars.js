@@ -54,6 +54,7 @@ module.exports = {
             type: "category",
             label: "Backend Services",
             items: [
+              "workloads/azure/backend/architecture-overview",
               {
                 type: "category",
                 label: "Java Spring Boot REST API",
