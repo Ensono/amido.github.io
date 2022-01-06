@@ -1,0 +1,314 @@
+# Project Settings
+
+Each project that is supported by the Stacks CLI have a settings file associated with them. This is called, by default, `stackscli.yml`. It is possible to override the actual file that is used as well as the filename.
+
+The settings file is intended to allow the project maintainers to define what steps needs to be done on a project and instruct the CLI what to do, without having to refactor the CLI.
+
+## Structure
+
+The following table details the structure of the settings file.
+
+| Parameter          | Description                                                                     | Example | Allowed Values |
+| ------------------ | ------------------------------------------------------------------------------- | ------- | -------------- |
+| `framework`        | The framework that the project is based on.                                     |         |                |
+| `pipeline`         | This is a list of the supported pipelines and the associated files              |         |                |
+| `init.operations`  | List of operations that need to be performed on the temporary project directory |         |                |
+| `setup.operations` | List of operations that need to be performed on the project directory           |         |                |
+
+Settings file root structure
+
+The following table shows the options that can be specified for a framework
+
+<table>
+<caption>Framework Options</caption>
+<colgroup>
+<col style={{ width: '25%' }} />
+<col style={{ width: '25%' }} />
+<col style={{ width: '25%' }} />
+<col style={{ width: '25%' }} />
+</colgroup>
+<thead>
+<tr className="header">
+<th>Parameter</th>
+<th>Description</th>
+<th>Example</th>
+<th>Allowed Values</th>
+</tr>
+</thead>
+<tbody>
+<tr className="odd">
+<td><p><code>name</code></p></td>
+<td><p>Name of the framework that this project targets</p></td>
+<td><p><code>dotnet</code>, <code>java</code></p></td>
+<td><p><code>commands</code></p></td>
+</tr>
+<tr className="even">
+<td><p>A list of the commands and the versions that are required for the project</p>
+<p>This is a list, so multiple commands and versions can be specified in the yaml file</p></td>
+<td></td>
+<td></td>
+<td><p><code>commands.name</code></p></td>
+</tr>
+<tr className="odd">
+<td><p>Name of the command to be checked</p></td>
+<td><p><code>dotnet</code></p></td>
+<td></td>
+<td></td>
+</tr>
+<tr className="even">
+<td><p><code>commands.version</code></p></td>
+<td><p>This is a semantic version constraint that the command version must conform to</p>
+<p>So to ensure that the <code>dotnet</code> command is version <code>3.1</code> the following version string can be used <code>&gt;= 3.1, &lt; 3.2</code></p></td>
+<td><p><code>&gt;= 3.1, &lt; 3.2</code></p></td>
+<td><p>Any valid semver constraint</p></td>
+</tr>
+</tbody>
+</table>
+
+> **Note**
+> 
+> If no command or version is specified then the command that is found on the machine that the CLI is running on will be used without checking.
+
+> **Important**
+> 
+> It is possible to ignore the results of the version check when the CLI is running by using the `force` option, but remember that it is a destructive operation and it will delete any existing projects that exist in the same path.
+
+Not all version numbers conform to semantic versioning. For example Java tends to add characters to the version number, e.g. `1.8.0_301`. To get around this the CLI tries to make the version semver compliant by removing the `_`, so the version tested will be `1.8.0301` which is a valid semver.
+
+The next table shows the options for the operations.
+
+> **Note**
+> 
+> These are valid for both `init` and `setup` operations
+
+<table>
+<caption>Operations parameters</caption>
+<colgroup>
+<col style={{ width: '25%' }} />
+<col style={{ width: '25%' }} />
+<col style={{ width: '25%' }} />
+<col style={{ width: '25%' }} />
+</colgroup>
+<thead>
+<tr className="header">
+<th>Parameter</th>
+<th>Description</th>
+<th>Example</th>
+<th>Allowed Values</th>
+</tr>
+</thead>
+<tbody>
+<tr className="odd">
+<td><p><code>action</code></p></td>
+<td><p>The type of action that needs to be performed</p>
+<p>If <code>copy</code> is specified then no other parameters are required. This only really makes sense when in the <code>setup</code> phase of the project. It copy the contents of the downloaded repository to the project directory. This is useful for projects that do not have a templating system, such as <code>stacks-infrastructure-aks</code>.</p></td>
+<td><p><code>cmd</code></p></td>
+<td><p><code>cmd</code>, <code>copy</code></p></td>
+</tr>
+<tr className="even">
+<td><p><code>cmd</code></p></td>
+<td><p>The command that needs to be run.</p>
+<p>Each framework has a set of commands that it knows it can during the setup of the project run. The value that is set here must be specified within that list in order for the command to execute.</p></td>
+<td><p>java = <code>java</code></p>
+<p>dotnet = <code>dotnet</code></p></td>
+<td></td>
+</tr>
+<tr className="odd">
+<td><p><code>args</code></p></td>
+<td><p>The arguments that need to be passed to the command</p></td>
+<td><p><code>new -i .</code></p></td>
+<td></td>
+</tr>
+<tr className="even">
+<td><p><code>desc</code></p></td>
+<td><p>Description of what is being performed. This is output during the execution of the CLI</p></td>
+<td><p>Installing template from folder</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+The follow table shows the values that can be assigned to the pipeline list.
+
+<table>
+<caption>Pipeline options</caption>
+<colgroup>
+<col style={{ width: '25%' }} />
+<col style={{ width: '25%' }} />
+<col style={{ width: '25%' }} />
+<col style={{ width: '25%' }} />
+</colgroup>
+<thead>
+<tr className="header">
+<th>Parameter</th>
+<th>Description</th>
+<th>Example</th>
+<th>Allowed Values</th>
+</tr>
+</thead>
+<tbody>
+<tr className="odd">
+<td><p><code>type</code></p></td>
+<td><p>Type of pipeline being configured</p></td>
+<td><p><code>azdo</code></p></td>
+<td><p><code>azdo</code></p></td>
+</tr>
+<tr className="even">
+<td><p><code>files</code></p></td>
+<td><p>List of files that should be worked on.</p>
+<p>See <a href="#project_settings_file_definition">File definition</a> for syntax</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr className="odd">
+<td><p><code>template</code></p></td>
+<td><p>List of templates that the CLI should use. At the moment only <code>variable</code> is supported.</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr className="even">
+<td><p><code>replacements</code></p></td>
+<td><p>This is a list of replacements that need to be made in the build file</p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<caption>File definition</caption>
+<colgroup>
+<col style={{ width: '33%' }} />
+<col style={{ width: '33%' }} />
+<col style={{ width: '33%' }} />
+</colgroup>
+<thead>
+<tr className="header">
+<th>Parameter</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr className="odd">
+<td><p><code>name</code></p></td>
+<td><p>Name of the file.</p>
+<p>The names <code>build</code> and <code>variable</code> are reserved by the CLI and are used when writing out files. Other files can be specified and the replacements will be made on each one.</p>
+<p>The names must be unique, if not then the last one specified with the same name will take precedence.</p></td>
+<td><p><code>build</code></p></td>
+</tr>
+<tr className="even">
+<td><p><code>path</code></p></td>
+<td><p>Path to the file in question, relative to the repository root</p></td>
+<td><p><code>build/azDevOps/azure/azure-pipelines-netcore-k8s.yml</code></p></td>
+</tr>
+<tr className="odd">
+<td><p><code>noreplace</code></p></td>
+<td><p>If set to <code>true</code> then no replacements will be attempted on this file.</p>
+<p>This is not supported when used in a <code>template</code> definition.</p></td>
+<td><p><code>true</code></p></td>
+</tr>
+</tbody>
+</table>
+
+> **Note**
+> 
+> If no template is specified for the `variable` then the static version built into the CLI will be used. This can be seen in [???](#azdo_variable_template).
+
+| Parameter | Description                                                    | Example       |
+| --------- | -------------------------------------------------------------- | ------------- |
+| `pattern` | Regular expression pattern for finding the text to be replaced | `^.*myvalue$` |
+| `value`   | Value to replace the phrase that has been found by the pattern | `Foo Bar`     |
+
+Replacement definition
+
+## YAML File
+
+The following code listing shows an example settings file.
+
+**Example project settings file.**
+
+``` yaml
+framework:
+  name: dotnet 
+  commands: 
+    - name: dotnet 
+      version: ">= 3.1, < 3.2" 
+
+pipeline:
+  - type: azdo 
+    files:
+       - name: build 
+         path: build/azDevOps/azure/azure-pipelines-netcore-k8s.yml
+       - name: variable 
+         path: build/azDevOps/azure/azuredevops-vars.yml
+    replacements: 
+        - pattern: ^.*myvalue$
+          value: Foo Bar
+
+init: 
+  operations: 
+    - action: cmd 
+      args: new stacks-docs -n {{ .Input.Business.Company }}.{{ .Input.Business.Domain }} 
+      desc: Create a project using the "stacks-docs" project 
+
+setup: 
+   operations:
+```
+
+  - Sets the framework that the commands should be run for
+
+  - Specify the commands for which the version number should be checked
+
+  - The name of the command to get the version number for
+
+  - The version constraint that the version number should be checked against
+
+  - Specify the pipeline that is being targeted
+
+  - Name and path to the build pipeline file in the repository, for the specified pipeline system
+
+  - Name and path to the variable template in the repository
+
+  - List of replacements that should be made in the specified build file
+
+  - Perform operations on the temporary project directory
+
+  - List any number of operations that need to be performed
+
+  - States the action that needs to be performed
+
+  - The arguments that need to be passed to the framework command, in this case `dotnet`
+
+  - Description of the operation, this will be displayed in the log output when the CLI is executed
+
+  - Define operations that need to be performed after the project has been created
+
+This example shows one action that needs to be performed on the project before it has been created in the user specified working directory.
+
+## Examples
+
+The GO template package is very powerful and allows advanced configuration in a settings file. This section shows some examples of what can be achieved.
+
+### Setting a default value
+
+The framework properties that can be specified on a project allow extra information to be specified in the CLI configuration that is passed to the template. This information does not have to be set, but a default value maybe required in the template.
+
+For example, in the `stacks-dotnet-cqrs-events` project we need to be able to pass in `servicebus` or `eventhub` based on the selection from the user. However if this selection is not made then the project settings file should still work as expected. It is not possible to default the property to a known value as these properties will be used by other languages, so the value needs to have a default in the template.
+
+To achieve this the `or` template function needs to be used. This function takes values and will use the first value that has been set.
+
+The following listing shows a snippet of the project settings file for a project.
+
+**Setting default value using Go template.**
+
+``` linenum
+- action: cmd
+  cmd: dotnet
+  args: new stacks-cqrs-events-app -n {{ .Input.Business.Company }}.{{ .Input.Business.Domain }} -o {{ .Project.Directory.WorkingDir }} -e {{ or .Project.Framework.Properties.Prop1 "servicebus"}}
+```
+
+In this example all of the values for the parameters come from the `.Input` or `.Project` object (as detailed in the [???](#_templating) section).
+
+The last parameter to be set is defined as `{{ or .Project.Framework.Properties.Prop1 "servicebus" }}`. This will set the `-e` parameter to the value set in the property if that is set or default to "servicebus".
+
