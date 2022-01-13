@@ -23,17 +23,7 @@ keywords:
 
 import ResponsivePlayer from "../../../../../../../src/pages/Components/ResponsivePlayer/ResponsivePlayer";
 
-## Create the project
-
-There are several ways to get your Stacks project.
-
-<br />
-
-
-<details>
-<summary>Create a new project using the template</summary>
-
-<div>
+## Create a project using the Nuget template package
 
 ### Install the package
 
@@ -51,7 +41,7 @@ dotnet new --install Amido.Stacks.Templates
 
 ### Create a new  project
 
-Navigate to the folder where you wish to create a new project on.
+Navigate to the folder where you wish to create a new project in.
 
 ```bash title="Run the command to create the project"
 dotnet new stacks-webapi -n Company.Project -do YourDomain
@@ -65,7 +55,6 @@ The above command will create a folder called `Company.Project`.
 dotnet new --uninstall Amido.Stacks.Templates
 ```
 
-
 :::note Template parameter details
 
 - **-n|--name**
@@ -77,63 +66,3 @@ dotnet new --uninstall Amido.Stacks.Templates
     - Sets the path to where the project is added
     - Omitting the parameter will result in the creation of a new folder
 :::
-
-</div>
-</details>
-
-<br />
-
-<details>
-<summary>Create the project using the Scaffolding CLI (in redevelopment)</summary>
-
-<div>
-
-The scaffolding CLI is being redeveloped to offer you more guided choices of Amido Stacks project flavour.
-Based on the answers, the ready-to-build project template will be produced.
-
-</div>
-</details>
-
-<br/><hr/>
-
-## Pros and cons of each option
-
-import Tabs from "@theme/Tabs";
-import TabItem from "@theme/TabItem";
-
-<Tabs
-    defaultValue="template"
-    values={[
-        {label: '.NET Core Template', value: 'template'},
-        {label: "Scaffolding  CLI", value: 'scaffolding_cli'}
-    ]}>
-    <TabItem value="template">
-        <h4>PROS</h4>
-        <ul>
-            <li>Has no dependencies.</li>
-            <li>Enables creation of .NET Core projects in Amido Stacks Suite.</li>
-            <li>Enables versioning and access to older versions of Stacks templates.</li>
-            <li>Removes out the content not needed from the GitHub repository.</li>
-        </ul>
-        <h4>CONS</h4>
-        <ul>
-            <li>Too many commands to run.</li>
-        </ul>
-    </TabItem>
-    <TabItem value="scaffolding_cli">
-        <p>The Amido Stacks Scaffolding CLI will be used to create a fully-functional and deployable project from a template, in a variety of flavours.</p>
-        <h4>PROS</h4>
-        <ul>
-            <li>Provides a guided project creation when generating the preferred project flavour.</li>
-            <li>Enables the creation of all projects in Amido Stacks templates suite.</li>
-            <li>Allows automated personalization of project name, domain model, company name.</li>
-            <li>Removes out the content not needed from the GitHub repository.</li>
-        </ul>
-        <h4>CONS</h4>
-        <ul>
-            <li>Requires the installation of an extra application.</li>
-        </ul>
-    </TabItem>
-</Tabs>
-
-<br />
