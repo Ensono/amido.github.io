@@ -1,8 +1,8 @@
 ---
 id: create_project_netcore
-title: Create the project
+title: Create REST API with CQRS and Events project
 hide_title: true
-sidebar_label: Create the project
+sidebar_label: Create REST API with CQRS and Events project
 hide_table_of_contents: true
 description: Create .NET Core REST API application with CQRS from a template
 keywords:
