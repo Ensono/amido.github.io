@@ -183,21 +183,6 @@ If you don't want to do that you can generate the new projects with a different 
 <br />
 
 <details>
-<summary>Create the templates locally by cloning the GitHub repository (outdated)</summary>
-<div>
-
-Clone the .NET project to your local machine from here: [stacks-dotnet-cqrs repository](https://github.com/amido/stacks-dotnet-cqrs)
-
-```bash title="Run git clone repository command"
-git clone git@github.com:amido/stacks-dotnet-cqrs.git
-```
-
-</div>
-</details>
-
-<br/>
-
-<details>
 <summary>Create the project using the Scaffolding CLI (in redevelopment)</summary>
 
 <div>
@@ -219,7 +204,6 @@ import TabItem from "@theme/TabItem";
     defaultValue="template"
     values={[
         {label: '.NET Core Template', value: 'template'},
-        {label: 'GitHub Repository Clone', value: 'repository_clone'},
         {label: "Scaffolding  CLI", value: 'scaffolding_cli'}
     ]}>
     <TabItem value="template">
@@ -233,21 +217,6 @@ import TabItem from "@theme/TabItem";
         <h4>CONS</h4>
         <ul>
             <li>Too many commands to run.</li>
-        </ul>
-    </TabItem>
-    <TabItem value="repository_clone">
-    <p>source code can be found [here](https://github.com/amido/stacks-dotnet-cqrs)</p>
-        <h4>PROS</h4>
-        <ul>
-            <li>Familiar approach.</li>
-            <li>Quick and easy to run (one command).</li>
-        </ul>
-        <h4>CONS</h4>
-        <ul>
-            <li>Requires <strong>git</strong> installation.</li>
-            <li>Does not remove the files not needed in the repository which may create confusion.</li>
-            <li>Does not allow automated personalization of the project.</li>
-            <li>All Amido Stacks repositories links required to create all flavours of projects.</li>
         </ul>
     </TabItem>
     <TabItem value="scaffolding_cli">
