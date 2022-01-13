@@ -119,6 +119,7 @@ module.exports = {
                 label: ".NET Core",
                 items: [
                   "workloads/azure/backend/netcore/introduction_netcore",
+                  "workloads/azure/backend/netcore/requirements_netcore",
                   {
                     type: "category",
                     label: "Quickstart",
@@ -172,7 +173,6 @@ module.exports = {
                       },
                     ],
                   },
-                  "workloads/azure/backend/netcore/requirements_netcore",
                   "workloads/azure/backend/netcore/testing/functional_testing_netcore",
                   "workloads/azure/backend/netcore/infrastructure_netcore",
                   "workloads/azure/backend/netcore/pipeline_netcore",

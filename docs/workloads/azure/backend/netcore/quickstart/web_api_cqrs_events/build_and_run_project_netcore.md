@@ -51,6 +51,22 @@ dotnet build
 dotnet run --project xxAMIDOxx.xxSTACKSxx.API/xxAMIDOxx.xxSTACKSxx.API.csproj
 ```
 
+:::note Potential issue on some Windows installations
+Depending on how deep your folder structure is you might encounter a problem where you cannot build the project. This happens because of our dependency on [Pact](https://docs.pact.io/) for our contract tests.
+
+The error looks something like this
+
+```shell
+Error MSB3491 Path: File exceeds the OS max path limit. The fully qualified file name must be less than 260 characters.
+```
+
+There are two fixes possible so far:
+
+- You must enable long file paths on Windows by following the instructions [here](https://docs.microsoft.com/en-us/windows/win32/fileio/maximum-file-path-limitation?tabs=powershell#enable-long-paths-in-windows-10-version-1607-and-later)
+- Create your folder on an upper level where the paths won't exceed 260 characters
+
+:::
+
 </TabItem>
 
 <TabItem value="linux">
