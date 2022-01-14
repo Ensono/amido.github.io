@@ -45,8 +45,8 @@ values={[
             </ul>
             <h5>Optional</h5>
             <ul>
+				<li><a href="https://visualstudio.microsoft.com/vs/">Visual Studio 2022</a></li>
                 <li><a href="https://code.visualstudio.com/">Visual Studio Code</a> 1.35+ with C# Extension from Microsoft (C# for Visual Studio Code (powered by OmniSharp))</li>
-                <li><a href="https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Community&rel=16">Visual Studio 2019 v16.4+</a></li>
             </ul>
         </div>
     </details>
