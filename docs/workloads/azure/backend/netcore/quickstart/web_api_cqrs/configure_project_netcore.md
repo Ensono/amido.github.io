@@ -19,26 +19,50 @@ keywords:
   - docker
 ---
 
-## Configure the project
 
-It uses an Azure **CosmosDB** or **InMemory** database to store the example application data.
+## Configuring the project
 
-To interact with CosmosDb there is a environment variable that needs to be set. The **InMemory** database doesn't require additional configuration and upon project generation is the default option.
+All security sensitive information is passed as a secret in our configuration. We have a library called [Amido.Stacks.Configuration](https://github.com/amido/stacks-dotnet-packages-configuration) that reads secrets from the environment before the application starts and makes the needed substitutions in the configuration files.
+
+### Configuring Cosmos DB
+
+The project can be set to use Azure **Cosmos DB** or an **InMemory** database to store the example application data. The **InMemory** database works out of the box and no further setup is required aside from creating your project. Depending on your desired setup you'll have to provide some or all of the configuration in the `appsettings.json` file section showed below.
+
+```json title="<PROJECT-NAME>/src/api/xxAMIDOxx.xxSTACKSxx.API/appsettings.json"
+"CosmosDb": {
+	"DatabaseAccountUri": "<Add CosmosDB Account URI here>",
+	"DatabaseName": "Stacks",
+	"SecurityKeySecret": {
+		"Identifier": "COSMOSDB_KEY",
+	...
+	}
+}
+```
 
 <br />
 
-<details open>
+<details>
 <summary>Using the Cosmos DB Emulator to run the database locally</summary>
 
 <div>
 
-For running on local environments, [Cosmos DB emulator](https://docs.microsoft.com/en-us/azure/cosmos-db/local-emulator?tabs=ssl-netstd21) can be used in a Windows environment.
+For running on local environments (Windows/Linux/macOS) please follow the [instructions provided by Microsoft.](https://docs.microsoft.com/en-us/azure/cosmos-db/local-emulator?tabs=ssl-netstd21)
 
-1. Install Cosmos DB Emulator
+1. Navigate to the local Cosmos DB URL in your browser as indicated in the documentation given in the above link.
 
-2. Identify the **Primary key**
+2. Identify the **Primary Key**. Please refer to the field in the screenshot below.
 
 ![CosmosDB](/img/cosmosdb_emulator_3.png)
+
+3. Cosmos DB has to contain a fixed structure depending on your project. Create a collection `Stacks` (this corresponds to `DatabaseName` in the `appsettings.json` file) with a container id `Menu` (name of domain object) and the partition key `/id`. Keep in mind that if you've changed the domain (default being `Menu`), you have to supply your own domain when creating the container.
+
+![CosmosDB](/img/cosmosdb_emulator_1.png)
+
+:::note CosmosDb environment variable
+
+To interact with CosmosDb there is a environment variable called `COSMOSDB_KEY` that needs to be set before running your application. This variable holds the value of the **Primary Key** you got from step 2. Please see the next section on details of how to set it on your machine.
+
+:::
 
 </div>
 </details>
@@ -46,50 +70,10 @@ For running on local environments, [Cosmos DB emulator](https://docs.microsoft.c
 <br />
 
 <details>
-<summary>Not using the Cosmos DB Emulator</summary>
-
-<div>
-When choosing not to run the CosmosDB locally, further configuration needs to be changed.
-
-Set the CosmosDB URI parameter **DatabaseAccountUri**
-
-```json {2} title="<PROJECT-NAME>/src/api/xxAMIDOxx.xxSTACKSxx.API/appsettings.json"
-"CosmosDb": {
-    "DatabaseAccountUri": "<Add CosmosDB Account URI here>",
-    ...
-}
-```
-
-</div>
-</details>
-
-<br />
-
-<details open>
-<summary>Create the Cosmos DB structure</summary>
-
+<summary>Setting the COSMOSDB_KEY environment variable</summary>
 <div>
 
-Based on the solution template the Cosmos DB has to contain a fixed structure.
 
-Create a collection **Stacks** with a container id **menu** (name of domain object) and the partition key **/id**.
-
-![CosmosDB](/img/cosmosdb_emulator_1.png)
-
-</div>
-</details>
-
-<br />
-
-import Tabs from "@theme/Tabs";
-import TabItem from "@theme/TabItem";
-
-For the project just created to connect to the Cosmos Db database, the primary key has to be provided as a environment variable. To add this variable perform one of the next two steps.
-
-
-<details open>
-<summary>Setting the key as a system property</summary>
-<div>
 <Tabs
 defaultValue="windows"
 values={[
@@ -98,41 +82,30 @@ values={[
 ]}>
 <TabItem value="windows">
 
-1. Replace the Cosmos DB Primary key in the command.
+There are a couple of different ways to set the environment variable
 
-2. Run the command in powershell with administrator privileges.
+## Using Powershell
 
-```powershell title="Run command to add the COSMOSDB_KEY system variable"
-[Environment]::SetEnvironmentVariable("COSMOSDB_KEY", "Cosmos DB Primary key", [EnvironmentVariableTarget]::Machine)
+You can use `Powershell` with administrator privileges to execute the command below. Substitute `<PRIMARY-KEY-HERE>` with your own key.
+
+```powershell title="Run PS command to add the COSMOSDB_KEY system variable"
+[Environment]::SetEnvironmentVariable("COSMOSDB_KEY", "<PRIMARY-KEY-HERE>", [EnvironmentVariableTarget]::Machine)
 ```
 
-</TabItem>
-<TabItem value="unix">
-    Set as additional variable within e.g. <code>~/.profile</code> or <code>/etc/profile</code>.
-</TabItem>
-</Tabs>
-</div>
-</details>
-
-<br />
-
-<details>
-<summary>Set the variable specific to Visual Studio</summary>
-
-<div>
+## Using Visual Studio
 
 1. Open the project in Visual Studio. The solution file is located at `src/api/xxAMIDOxx.xxSTACKSxx.API.sln`.
 
-2. Add **COSMOSDB_KEY** environment variable to the **launchSettings.json** file generated by Visual Studio and add the Cosmos DB Primary key value.
+2. Add **COSMOSDB_KEY** environment variable to the **launchSettings.json** file generated by Visual Studio and add the Cosmos DB Primary Key value.
 
-```json {4} title="src/api/xxAMIDOxx.xxSTACKSxx.API/properties/launchSettings.json"
+```json title="src/api/xxAMIDOxx.xxSTACKSxx.API/properties/launchSettings.json"
 {
   ...
   "profiles": {
     "xxAMIDOxx.xxSTACKSxx.API": {
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
-        "COSMOSDB_KEY": "<Add Cosmos DB Primary Key here>"
+        "COSMOSDB_KEY": "<PRIMARY-KEY-HERE>"
         ...
       }
     }
@@ -140,10 +113,23 @@ values={[
 }
 ```
 
-:::info
-The variable is referenced in **appsettings.json**.
+## Using VSCode
 
-```json {4} title="src/api/xxAMIDOxx.xxSTACKSxx.API/appsettings.json"
+If you're using VSCode that means you'll have a `launch.json` file generated when you try to run the project. In that file there's an `env` section where you can put environment variables for the current session.
+
+```json title="launch.json"
+"env": {
+	...
+    "COSMOSDB_KEY": "<PRIMARY-KEY-HERE>",
+    ...
+}
+```
+
+:::note Note on usage
+
+The variable is referenced in **appsettings.json**. As mentioned in the beginning section of this page this environment variable name will be substituted with the actual value on startup.
+
+```json title="src/api/xxAMIDOxx.xxSTACKSxx.API/appsettings.json"
 "CosmosDb": {
     ...
     "SecurityKeySecret": {
@@ -155,7 +141,80 @@ The variable is referenced in **appsettings.json**.
 
 :::
 
+</TabItem>
+<TabItem value="unix">
+
+There are a couple of different ways to set the environment variable
+
+## Using terminal
+
+You can use the `terminal` to execute the command below. Substitute `<PRIMARY-KEY-HERE>` with your own key. This will set the environment variable only for the current session of your terminal.
+
+```shell title="Run terminal command to add the COSMOSDB_KEY system variable"
+export COSMOSDB_KEY=<PRIMARY-KEY-HERE>
+```
+
+To set the environment variable permanently on your system you'll have to edit your `bash_profile` or `.zshenv` file depending on which shell are you using.
+
+```shell title="Example for setting env variable in .zchenv"
+echo 'export COSMOSDB_KEY=<PRIMARY-KEY-HERE>' >> ~/.zshenv
+```
+
+## Using VSCode
+
+If you're using VSCode that means you'll have a `launch.json` file generated when you try to run the project. In that file there's an `env` section where you can put environment variables for the current session.
+
+```json title="launch.json"
+"env": {
+	...
+    "COSMOSDB_KEY": "<PRIMARY-KEY-HERE>",
+    ...
+}
+```
+
+:::note Note on usage
+
+The variable is referenced in **appsettings.json**. As mentioned in the beginning section of this page this environment variable name will be substituted with the actual value on startup.
+
+```json title="src/api/xxAMIDOxx.xxSTACKSxx.API/appsettings.json"
+"CosmosDb": {
+    ...
+    "SecurityKeySecret": {
+        "Identifier": "COSMOSDB_KEY",
+        ...
+    }
+}
+```
+
+:::
+</TabItem>
+</Tabs>
 </div>
 </details>
 
 <br />
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<details>
+<summary>Connecting to deployed Cosmos DB instance</summary>
+
+<div>
+When choosing not to run the CosmosDB locally via the emulator, further configuration needs to be changed in the `appsettings.json` file.
+
+Aside from setting the `COSMOSDB_KEY` as an environment variable (described in the previous section), you'll have to set the CosmosDB URI parameter `DatabaseAccountUri` as well.
+
+```json title="<PROJECT-NAME>/src/api/xxAMIDOxx.xxSTACKSxx.API/appsettings.json"
+"CosmosDb": {
+	"DatabaseAccountUri": "<Add CosmosDB Account URI here>",
+	"DatabaseName": "Stacks",
+	"SecurityKeySecret": {
+		"Identifier": "COSMOSDB_KEY",
+	...
+	}
+}
+```
+
+</div>
+</details>

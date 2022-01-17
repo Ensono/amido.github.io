@@ -24,7 +24,7 @@ keywords:
 
 All security sensitive information is passed as a secret in our configuration. We have a library called [Amido.Stacks.Configuration](https://github.com/amido/stacks-dotnet-packages-configuration) that reads secrets from the environment before the application starts and makes the needed substitutions in the configuration files.
 
-## Configuring Cosmos DB
+### Configuring Cosmos DB
 
 The project can be set to use Azure **Cosmos DB** or an **InMemory** database to store the example application data. The **InMemory** database works out of the box and no further setup is required aside from creating your project. Depending on your desired setup you'll have to provide some or all of the configuration in the `appsettings.json` file section showed below.
 
