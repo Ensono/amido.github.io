@@ -25,7 +25,7 @@ keywords:
 
 import ResponsivePlayer from "../../../../../../../src/pages/Components/ResponsivePlayer/ResponsivePlayer";
 
-## Create the project
+## Create a project
 
 ## Install the package
 

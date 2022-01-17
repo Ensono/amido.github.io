@@ -25,9 +25,10 @@ keywords:
 
 import ResponsivePlayer from "../../../../../../../src/pages/Components/ResponsivePlayer/ResponsivePlayer";
 
-## Create a project using the Nuget template package
+## Create a project
 
-<summary>Create a new project using the template or add code to an existing project</summary>
+<details>
+<summary>Installing/uninstalling the package</summary>
 
 ### Install the package
 
@@ -37,17 +38,30 @@ import ResponsivePlayer from "../../../../../../../src/pages/Components/Responsi
 
 Access Amido.Stacks.CQRS.Template package page in Nuget [here](https://www.nuget.org/packages/Amido.Stacks.CQRS.Templates/). Copy and execute the command displayed in the page (if you want to get the latest version). For example:
 
-```bash title="Run the command to install the package"
+```bash title="Run command to install the package"
 	dotnet new --install Amido.Stacks.CQRS.Templates
 ```
 
 <ResponsivePlayer url="https://vimeo.com/640289104" />
 
-Once installed you can either, create a new project (step 2) or add CQRS to an existing project (step 3). Choose one.
+Once installed you can either, create a new project or add CQRS to an existing project.
+
+### Uninstalling the templates
+
+If you want to remove the templates from your system you'll have to uninstall the Nuget package.
+
+```bash title="To uninstall package execute the following command"
+dotnet new --uninstall Amido.Stacks.CQRS.Templates
+```
+
+</details>
+
+<details>
+<summary>Creating a new project</summary>
 
 ### Create a new project
 
-Navigate to the folder where you wish to create a new project on.
+Navigate to the folder where you wish to create a new project in. Then run the following command.
 
 ```bash title="Run the command to create the project"
 dotnet new stacks-cqrs-webapi -n Company.Project -do YourDomain
@@ -55,21 +69,34 @@ dotnet new stacks-cqrs-webapi -n Company.Project -do YourDomain
 
 The above command will create a folder and a repository called `Company.Project`.
 
-### Uninstalling a template
-
-```bash title="To uninstall the template pack you have to execute the following command"
-dotnet new --uninstall Amido.Stacks.Templates
-```
-
 ### Setting the database option
 
 To create a project with CosmosDb as the database you can use the following command
 
 ```bash title="Run the command to create the project with database"
-dotnet new stacks-cqrs-webapi -n Company.Project -do YourDomain -do CosmosDb
+dotnet new stacks-cqrs-webapi -n Company.Project -do YourDomain -db CosmosDb
 ```
 
+:::note Template parameter details
+
+- **-n|--name**
+    - Sets the project name
+    - Omitting it will result in the project name being the same as the folder where the command has been ran from
+- **-do|--domain**
+    - Sets the name of the aggregate root object. It is also the name of the collection within CosmosDB instance.
+- **-db|--database**
+    - Configures which database provider to be used.
+- **-o|--output**
+    - Sets the path to where the project is added
+    - Omitting the parameter will result in the creation of a new folder
+:::
+
 <ResponsivePlayer url="https://vimeo.com/640289034" />
+
+</details>
+
+<details>
+<summary>Adding CQRS to an existing project</summary>
 
 ### Add CQRS to an existing project
 
@@ -155,16 +182,4 @@ If you don't want to do that you can generate the new projects with a different 
 
 <ResponsivePlayer url="https://vimeo.com/640287397" />
 
-:::note Template parameter details
-
-- **-n|--name**
-    - Sets the project name
-    - Omitting it will result in the project name being the same as the folder where the command has been ran from
-- **-do|--domain**
-    - Sets the name of the aggregate root object. It is also the name of the collection within CosmosDB instance.
-- **-db|--database**
-    - Configures which database provider to be used.
-- **-o|--output**
-    - Sets the path to where the project is added
-    - Omitting the parameter will result in the creation of a new folder
-:::
+</details>
