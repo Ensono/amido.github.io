@@ -50,9 +50,7 @@ For running on local environments (Windows/Linux/macOS) please follow the [instr
 
 1. Navigate to the local Cosmos DB URL in your browser as indicated in the documentation given in the above link.
 
-2. Identify the **Primary Key**. Please refer to the field in the screenshot below.
-
-![CosmosDB](/img/cosmosdb_emulator_3.png)
+2. Identify the **Primary Key**. Please refer to the field in the screenshot below. ![CosmosDB](/img/cosmosdb_emulator_3.png)
 
 3. Cosmos DB has to contain a fixed structure depending on your project. Create a collection `Stacks` (this corresponds to `DatabaseName` in the `appsettings.json` file) with a container id `Menu` (name of domain object) and the partition key `/id`. Keep in mind that if you've changed the domain (default being `Menu`), you have to supply your own domain when creating the container.
 
@@ -160,7 +158,7 @@ To set the environment variable permanently on your system you'll have to edit y
 echo 'export COSMOSDB_KEY=<PRIMARY-KEY-HERE>' >> ~/.zshenv
 ```
 
-## Using VSCode
+## Using Visual Studio Code
 
 If you're using VSCode that means you'll have a `launch.json` file generated when you try to run the project. In that file there's an `env` section where you can put environment variables for the current session.
 
