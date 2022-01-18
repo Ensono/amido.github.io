@@ -5,6 +5,9 @@ module.exports = {
       "contributions",
       "code_of_conduct"
     ],
+    Architecture: [
+      "workloads/azure/backend/architecture-overview",
+    ],
     Workloads: [
       "workloads/workloads",
       {
@@ -54,7 +57,6 @@ module.exports = {
             type: "category",
             label: "Backend Services",
             items: [
-              "workloads/azure/backend/architecture-overview",
               {
                 type: "category",
                 label: "Java Spring Boot REST API",
