@@ -1,0 +1,373 @@
+# Runtime Configuration
+
+Configuration for the CLI can be performed in several ways:
+
+  - On the command line
+
+  - Using environment variables
+
+  - Using a configuration file (YAML or JSON)
+
+When using a configuration file it is possible to setup more than one project.
+
+## Settings
+
+The following tables show the configuration options that are available at the root level and the command level.
+
+### Global Options
+
+The following options can be applied to any command within the Stacks CLI.
+
+| Option                     | Environment Variable               | Description                                                                   | Default               | Options                                      |
+| -------------------------- | ---------------------------------- | ----------------------------------------------------------------------------- | --------------------- | -------------------------------------------- |
+| `-c`, `--config`           | AMIDOSTACKS\_CONFIG                | Path to the configuration file to use                                         |                       |                                              |
+| `-l`, `--loglevel`         | AMIDOSTACKS\_LOG\_LEVEL            | Level of logging to be used                                                   | `info`                | `debug`, `info`, `warning`, `error`, `fatal` |
+| `-f`, `--logformat`        | AMIDOSTACKS\_LOG\_FORMAT           | Output type of the logging                                                    | `text`                | `text`, `json`                               |
+| `--logcolour`               | AMIDOSTACKS\_LOG\_COLOUR           | State if logging should include colour                                        |                       |                                              |
+| `--logfile`                | AMIDOSTACKS\_LOG\_FILE             | Write all logs to the specified file                                          |                       |                                              |
+| `-w`, `--workingdirectory` | AMIDOSTACKS\_DIRECTORY\_WORKINGDIR | Directory that the projects should be created in                              | `${PWD}`              |                                              |
+| `--tempdir`                | AMIDOSTACKS\_DIRECTORY\_TEMPDIR    | Directory to be used by Stacks for its temp files                             | System temp directory |                                              |
+| `--nobanner`               | AMIDOSTACKS\_OPTIONS\_NOBANNER     | Do not display the Stacks banner when running the command                     | `false`               |                                              |
+| `--nocliversion`           | AMIDOSTACKS\_OPTIONS\_NOCLIVERSION | Do not perform a version check for the latest version of the Amido Stacks CLI | `false`               |                                              |
+
+Global Options
+
+### Scaffold Options
+
+<table>
+<caption>Scaffold Options</caption>
+<colgroup>
+<col style={{ width: '20%' }} />
+<col style={{ width: '20%' }} />
+<col style={{ width: '20%' }} />
+<col style={{ width: '20%' }} />
+<col style={{ width: '20%' }} />
+</colgroup>
+<thead>
+<tr className="header">
+<th>Option</th>
+<th>Environment Variable</th>
+<th>Description</th>
+<th>Default</th>
+<th>Options</th>
+</tr>
+</thead>
+<tbody>
+<tr className="odd">
+<td><p><code>-n</code>, <code>--name</code></p></td>
+<td><p>AMIDOSTACKS_PROJECT_NAME</p></td>
+<td><p>Name of the project to create</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr className="even">
+<td><p><code>--sourcecontrol</code></p></td>
+<td><p>AMIDOSTACKS_PROJECT_SOURCECONTROL_TYPE</p></td>
+<td><p>Source control system to be used</p></td>
+<td><p><code>github</code></p></td>
+<td></td>
+</tr>
+<tr className="odd">
+<td><p><code>-u</code>, <code>--sourcecontrolurl</code></p></td>
+<td><p>AMIDOSTACKS_PROJECT_SOURCECONTROL_URL</p></td>
+<td><p>URL to the remote repository</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr className="even">
+<td><p><code>--projectsettingsfile</code></p></td>
+<td><p>AMIDOSTACKS_PROJECT_SETTINGSFILE</p></td>
+<td><p>Each project will have its own <code>stackscli.yml</code> file, however this can ber overridden with a path to a different file using this option</p></td>
+<td><p><code>null</code></p></td>
+<td></td>
+</tr>
+<tr className="odd">
+<td><p><code>-F</code>, <code>--framework</code></p></td>
+<td><p>AMIDOSTACKS_PROJECT_FRAMEWORK_TYPE</p></td>
+<td><p>The framework that is to be used</p></td>
+<td></td>
+<td><p><code>dotnet</code>, <code>java</code>, <code>nodejs</code></p></td>
+</tr>
+<tr className="even">
+<td><p><code>-O</code>, <code>--frameworkoption</code></p></td>
+<td><p>AMIDOSTACKS_PROJECT_FRAMEWORK_OPTION</p></td>
+<td><p>The sort of project to be created</p></td>
+<td></td>
+<td><p><code>webapi</code>, <code>cqrs</code>, <code>events</code></p></td>
+</tr>
+<tr className="odd">
+<td><p><code>-V</code>, <code>--frameworkversion</code></p></td>
+<td><p>AMIDOSTACKS_PROJECT_FRAMEWORK_VERSION</p></td>
+<td><p>The version of the Amido stacks project to use.</p>
+<p>This can be a version, a tag, a SHA ref or a branch.</p></td>
+<td><p><code>latest</code></p></td>
+<td></td>
+</tr>
+<tr className="even">
+<td><p><code>--frameworkprop1</code></p></td>
+<td><p>AMIDOSTACKS_PROJECT_FRAMEWORK_PROPERTIES_PROP1</p></td>
+<td><p>Properties that need to be set to allow the scaffolding to run the correct command</p>
+<p>The project settings file will be defined by the project maintainers, but will may specify that a property needs to be set.</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr className="odd">
+<td><p><code>--frameworkprop2</code></p></td>
+<td><p>AMIDOSTACKS_PROJECT_FRAMEWORK_PROPERTIES_PROP2</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr className="even">
+<td><p><code>--frameworkprop3</code></p></td>
+<td><p>AMIDOSTACKS_PROJECT_FRAMEWORK_PROPERTIES_PROP3</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr className="odd">
+<td><p><code>--frameworkprop4</code></p></td>
+<td><p>AMIDOSTACKS_PROJECT_FRAMEWORK_PROPERTIES_PROP5</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr className="even">
+<td><p><code>--frameworkprop5</code></p></td>
+<td><p>AMIDOSTACKS_PROJECT_FRAMEWORK_PROPERTIES_PROP5</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr className="odd">
+<td><p><code>-P</code>, <code>--platformtype</code></p></td>
+<td><p>AMIDOSTACKS_PLATFORM_TYPE</p></td>
+<td><p>Platform being deployed to</p></td>
+<td></td>
+<td><p><code>aks</code></p></td>
+</tr>
+<tr className="even">
+<td><p><code>-p</code>, <code>--pipeline</code></p></td>
+<td><p>AMIDOSTACKS_PIPELINE</p></td>
+<td><p>Pipeline being used to build the project</p></td>
+<td></td>
+<td><p><code>azdo</code></p></td>
+</tr>
+<tr className="odd">
+<td><p><code>-C</code>, <code>--cloud</code></p></td>
+<td><p>AMIDOSTACKS_CLOUD</p></td>
+<td><p>Cloud platform being used</p></td>
+<td></td>
+<td><p><code>azure</code>, <code>aws</code>, <code>gcp</code></p></td>
+</tr>
+<tr className="even">
+<td><p><code>-R</code>, <code>--cloudregion</code></p></td>
+<td><p>AMIDOSTACKS_CLOUD_REGION</p></td>
+<td><p>Region that the project will be deployed to</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr className="odd">
+<td><p><code>-G</code>, <code>--cloudgroup</code></p></td>
+<td><p>AMIDOSTACKS_CLOUD_GROUP</p></td>
+<td><p>Group in the cloud platform that will hold all the resources</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr className="even">
+<td><p><code>--company</code></p></td>
+<td><p>AMIDOSTACKS_BUSINESS_COMPANY</p></td>
+<td><p>Name of your company or organisation</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr className="odd">
+<td><p><code>-A</code>, <code>--area</code></p></td>
+<td><p>AMIDOSTACKS_BUSINESS_DOMAIN</p></td>
+<td><p>Area of the company that is responsible for the project</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr className="even">
+<td><p><code>--component</code></p></td>
+<td><p>AMIDOSTACKS_BUSINESS_COMPONENT</p></td>
+<td><p>Component of the overall project</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr className="odd">
+<td><p><code>--tfstorage</code></p></td>
+<td><p>AMIDOSTACKS_TERRAFORM_BACKEND_STORAGE</p></td>
+<td><p>Name of the storage account being used for the state</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr className="even">
+<td><p><code>--tfgroup</code></p></td>
+<td><p>AMIDOSTACKS_TERRAFORM_BACKEND_GROUP</p></td>
+<td><p>Group name of the storage account</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr className="odd">
+<td><p><code>--tfcontainer</code></p></td>
+<td><p>AMIDOSTACKS_TERRAFORM_BACKEND_CONTAINER</p></td>
+<td><p>Container being used to store the data</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr className="even">
+<td><p><code>-d</code>, <code>--domain</code></p></td>
+<td><p>AMIDOSTACKS_NETWORK_BASE_DOMAIN_EXTERNAL</p></td>
+<td><p>External domain root to be used for the projects</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr className="odd">
+<td><p><code>--internaldomain</code></p></td>
+<td><p>AMIDOSTACKS_NETWORK_BASE_DOMAIN_INTERNAL</p></td>
+<td><p>Internal domain root to be used for projects.</p></td>
+<td><p>If not specified then the internal domain will be inferred from the external by replacing the TLD with <code>internal</code>. Thus if <code>mydomain.com</code> is provided as the external domain then the internal will be set to <code>mydomain.internal</code>.</p></td>
+<td></td>
+</tr>
+<tr className="even">
+<td><p><code>--cmdlog</code></p></td>
+<td><p>AMIDOSTACKS_OPTIONS_CMDLOG</p></td>
+<td><p>Create a log file of all the commands that have been run during the scaffold process</p>
+<p>The command log is create in the current directory with the filename <code>cmdlog.txt</code></p></td>
+<td><p><code>false</code></p></td>
+<td></td>
+</tr>
+<tr className="odd">
+<td><p><code>--dryrun</code></p></td>
+<td><p>AMIDOSTACKS_OPTIONS_DRYRUN</p></td>
+<td><p>Perform a dry run of the scaffold process. Useful for checking that things will be setup as required. No operations will be performed on the machine when run in this mode</p></td>
+<td><p><code>false</code></p></td>
+<td></td>
+</tr>
+<tr className="even">
+<td><p><code>--settingsfile</code></p></td>
+<td><p>AMIDOSTACKS_SETTINGSFILE</p></td>
+<td><p>Name of the file to look for in the project</p></td>
+<td><p><code>stackscli.yml</code></p></td>
+<td></td>
+</tr>
+<tr className="odd">
+<td><p><code>--cmdlog</code></p></td>
+<td><p>AMIDOSTACKS_CMDLOG</p></td>
+<td><p>Generate a log of all the commands that the CLI has run.</p>
+<p>The <code>cmdlog.txt</code> file is created in the directory that the CLI has been run in.</p></td>
+<td><p><code>false</code></p></td>
+<td></td>
+</tr>
+<tr className="even">
+<td><p><code>--dryrun</code></p></td>
+<td><p>AMIDOSTACKS_DRYRUN</p></td>
+<td><p>Perform a dryrun of all the CLI. Particularly useful when used with <code>--cmdlog</code></p></td>
+<td><p><code>false</code></p></td>
+<td></td>
+</tr>
+<tr className="odd">
+<td><p><code>--save</code></p></td>
+<td><p>AMIDOSTACKS_SAVE</p></td>
+<td><p>If using the interactive or command line mode for configuring the CLI, the given configuration can be saved to a file. This allows the configuration to be replayed again at a later date.</p>
+<p>The configuration is saved to <code>stacks.yml</code> in the specified working directory</p></td>
+<td><p><code>false</code></p></td>
+<td></td>
+</tr>
+<tr className="even">
+<td><p><code>--nocleanup</code></p></td>
+<td><p>AMIDOSTACKS_NOCLEANUP</p></td>
+<td><p>Do not perform cleanup operations after the scaffoling has been completed</p></td>
+<td><p><code>false</code></p></td>
+<td></td>
+</tr>
+<tr className="odd">
+<td><p><code>--force</code></p></td>
+<td><p>AMIDOSTACKS_FORCE</p></td>
+<td><p><strong>This is a destructive operation</strong></p>
+<p>By using <code>force</code> the CLI will delete any projects, of the same name, that already exist in the working directory and then create the new project in its place.</p>
+<p>It will also continue to run if the command version checks fail. For example if the project calls for <code>dotnet</code> version 3.1 and you have 5.0.303, the CLI would not normally continue, but with <code>force</code> this will be ignored and the process will continue.</p></td>
+<td><p><code>false</code></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+## Command Log Format
+
+If the command log has been enabled, using `--cmdlog`, a file with all the commands that have been run during the scaffolding operation will be generated. The format of this file is as follows:
+
+`[<DIR>] <CMD> <ARGS>`
+
+The \<DIR\> shows in which directory the command has been run in. Please note that this directory may have been deleted after the CLI has been run as it was temporary.
+
+The \<CMD\> and \<ARGS\> show the command that was run and the arguments that were passed to it.
+
+> **Note**
+> 
+> On Windows based machines the \<CMD\> will be prefixed with `cmd /C` which tells the CLI how to run the command. PowerShell has not yet been used as it is easy to customise the shell and those customisations may cause the CLI to fail when running the commands.
+
+## Configuration File
+
+The following shows an example of a configuration file that can be passed to the command.
+
+**CLI Configuration File.**
+
+``` yaml
+project:
+- name: tigerfest
+  framework:
+    option: webapi
+    version: latest
+  platform:
+    type: aks
+  sourcecontrol:
+    type: github
+    url: https://github.com/russellseymour/my-new-project.git
+
+pipeline: azdo
+
+cloud:
+  platform: azure
+  region: ukwest
+  group: a-new-resource-group
+
+business:
+  company: MyCompany
+  domain: core
+  component: infra
+
+terraform:
+  backend:
+    storage: adfsdafsdfsdf
+    group: Stacks-Ancillary-Resources
+    container: tfstate
+
+network:
+  base:
+    domain:
+      external: mydomain.com
+
+log:
+  level: info
+
+options:
+  cmdlog: false
+  dryrun: false
+
+stacks:
+  dotnet:
+    webapi:
+      url: https://github.com/amido/stacks-dotnet
+      trunk: master
+```
+
+Note that when using the configuration file it is possible to specify multiple projects to be configured. This allows several projects to be setup at the same time, without having to run the command multiple times. Each project will be created within the specified working directory.
+
+If this file was called `conf.yml` the command to run to consume the file would be:
+
+``` bash
+.\stacks-cli.exe scaffold -c .\local\conf.yml
+```
+

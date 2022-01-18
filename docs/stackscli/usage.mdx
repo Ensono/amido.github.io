@@ -1,0 +1,172 @@
+# Using the CLI
+
+The Stacks CLI is built using Go, which means that it is a single binary which can be downloaded and run without the need to run an installer. It is currently built for the following platforms
+
+  - ![windows](./images/icons/windows.png) Windows
+
+  - ![apple](./images/icons/apple.png) Mac OS
+
+  - ![linux](./images/icons/linux.png) Linux
+
+The CLI will download the specified projects and run a series of operations to customise them according to the user’s requirements. The steps that are to be performed in each project is governed by a project settings file, which by default is called `stackscli.yml`.
+
+## Installation
+
+As the CLI is a single binary the quickest way to install it is to download it and put it somewhere in your PATH. The following code snippets show how this can be achieved using Bash and PowerShell.
+
+### Linux and Mac OS
+
+``` bash
+# Download the binary to a location in the PATH
+## Mac OS
+wget https://github.com/amido/stacks-cli/releases/download/v0.0.218/stacks-cli-darwin-amd64-0.0.218 -O /usr/local/bin/stacks-cli
+
+## Linux
+wget https://github.com/amido/stacks-cli/releases/download/v0.0.218/stacks-cli-linux-amd64-0.0.218 -O /usr/local/bin/stacks-cli
+
+## Ensure that the command is executable
+chmod +x /usr//local/bin/stacks-cli
+```
+
+### Windows
+
+The following PowerShell snippet will download the application to the user’s Downloads directory. It is up to the user to put it somewhere that is accessible on the PATH or use the full path to the app when using it.
+
+``` powershell
+# Download the binary
+Invoke-RestMethod -Uri https://github.com/amido/stacks-cli/releases/download/v0.0.218/stacks-cli-windows-amd64-0.0.218.exe -OutFile $env:USERPROFILE\Downloads\stacks-cli.exe
+```
+
+## Commands
+
+The CLI has a number of commands and various options. The easiest way to see what is available it to run the `stacks-cli` command, which will display the help page.
+
+> **Note**
+> 
+> The operation of the Stacks CLI is identical on every platform
+
+![Stacks CLI Help](images/stackscli-global-help.png)
+
+### Completion
+
+The completion command adds completion scripts to any of the following shells:
+
+  - bash
+
+  - fish
+
+  - powershell
+
+  - zsh
+
+By adding the completion to the shell, it allows the \[TAB\] key to be used to cycle through the options of any command, making discovery of options easier and increase efficiency.
+
+The following command shows the help for configuring auto-completion for PowerShell.
+
+``` bash
+stacks-cli completion powershell -h
+```
+
+![Help page for `completion` command](images/stackscli-completion-help.png)
+
+As can be seen from the output, the command required to load the completion script into the current shell is displayed.
+
+### Interactive Command
+
+The interactive command will ask several questions about the required projects, what platform it is being run on and cloud configuration. It will then save the output of these details to a configuration file that can then be read in by the `scaffold` command. This file can also be reused if the projects need to be recreated from scratch again.
+
+``` bash
+stacks-cli interactive
+```
+
+Please see the [???](#.NET%20WebApi%20project%20using%20the%20interactive%20mode) section for an example of how this command can be used.
+
+The CLI allows properties to be set that influence the way that the project is scaffolded. Up to five of these properties can be set. However the interactive command only asks once if properties are required. To set more than property, please separate the values using a comma.
+
+### Scaffold
+
+The `scaffold` command is the main command that will be used. This downloads the specified projects, customises them and sets them up in the specified directory. To see the help for this command run the following:
+
+``` bash
+stacks-cli scaffold -h
+```
+
+![Help page for `scaffold` command](images/stackscli-scaffold-help.png)
+
+The [???](#Examples) section has a lot of examples showing how to run the Stacks CLI, the following show some simple uses of the command.
+
+## Validation
+
+The CLI will validate certain inputs to make sure that they are valid for use with the scaffolding commands as defined by the project settings.
+
+In some cases the CLI will modify the inputs, for example if a space is present in the company name it will be replaced with an underscore:
+
+  - "My Company" → "My\_Company"
+
+  - "My Fantastic Company" → "My\_Fantastic\_Company"
+
+  - "My Company" → "My\_Company"
+
+## Command Availability Checks
+
+Each framework has a list of commands associated with it. This denotes the list of commands that it can run during the configuration of the project.
+
+When the application runs, it will determine the frameworks that have been selected in the projects and perform a check to see if those commands are available on the machine. It does this by checking the PATH variable for the command. This check is performed very early on in the process so it does not cause an issue when iterating around the projects that need to be setup.
+
+> **Note**
+> 
+> It is not possible for the Stacks project to specify the full path to the command because it can be different on each and every machine that the Stacks CLI will run on.
+
+The commands for each of the supported frameworks are as follows:
+
+| Framework | Commands |
+| --------- | -------- |
+| dotnet    | `dotnet` |
+| java      | `java`   |
+
+Framework Commands
+
+If a command cannot be located, the CLI will be terminated. This does not mean the command does not exist on the machine, rather that it is not accessble using the PATH environment variable. The Stacks CLI is not a package manager and as such will not attempt to install the missing commands.
+
+The following screenshot shows the output of a scaffolding run where the "dotnet" framework has been specified and the `dotnet` command cannot be found:
+
+![Checking availability for framework commands](images/stackscli-framework-cmd-availability.png)
+
+If multiple frameworks have been set, by specifying multiple projects, each framework’s commands will be checked for availability.
+
+> **Note**
+> 
+> Although the screenshot shows the detection of the framework commands when running from a configuration file, the same checks are performed when with arguments on the command line.
+
+## Logging
+
+The Amido Stacks CLI is designed to be as simple and efficient to use as possible, however there are cases when it is useful to gewt more information from the CLI when it is being run.
+
+Bu default the CLI runs with `info` level logging, which means that simple messages about what is happening are displayed. If an error occurs within the CLI itself then this will be displayed, however when the CLI runs an external command, as is the case when it runs configuration from a project, and it fails you may see messages similar to the following:
+
+![Errors from the operations that the CLI runs](images/stackscli-op-error.png)
+
+This is not terribly helpful to understand what is happening. This is ocurring because the CLI is running other commands that are outputting to `stderr` which the CLI does not show by default. To change this behaviour change the logging to `debug` or `trace` and the output will no include all of the commands that are being run as well any output on `stdout`.
+
+![Showing commands using debug log level](images/stackscli-op-debug.png)
+
+## Connectivity Check
+
+As the CLI relies heavily on being able to contact GitHub, it checks to see if the `github.com` domain can be resolved. It does this as one of the first checks it performs. If it cannot resolve the address then it will terminate execution with an error similar to the following.
+
+![Stacks CLI failed connectivity check](images/stackscli-connectivity-check.png)
+
+## CLI Version Check
+
+The Stacks CLI is constantly evolving and as such there are new versions being released frequently. To help ensure that you are running the most up to date version, it will check the releases for the CLI and compare that version against the one that you are running. If there is a mismatch then the CLI will inform you of the newer version.
+
+> **Note**
+> 
+> This check does not prevent normal operation if you have an older version. However you *may* find that some things do not work as you intend.
+
+![Stacks CLI version check](images/stackscli-version-check.png)
+
+This is a simple version check, it does not update the CLI for you, but does provide a link to the latest version for download and information purposes.
+
+The version check can be turned off using the `--nocliversion` option or the `options.nocliversion` in a configuration file or using the `AMIDOSTACKS_OPTIONS_NOCLIVERSION` environment variable.
+

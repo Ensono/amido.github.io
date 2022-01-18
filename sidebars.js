@@ -5,6 +5,9 @@ module.exports = {
       "contributions",
       "code_of_conduct"
     ],
+    Architecture: [
+      "workloads/azure/backend/architecture-overview",
+    ],
     Workloads: [
       "workloads/workloads",
       {
@@ -228,5 +231,12 @@ module.exports = {
       "testing/accessibility_testing",
       "testing/performance_testing_gatling",
     ],
+    "Stacks CLI": [
+      "stackscli/usage",
+      "stackscli/runtime_config",
+      "stackscli/project_settings",
+      "stackscli/examples",
+      "stackscli/troubleshooting"
+    ]
   },
 };
