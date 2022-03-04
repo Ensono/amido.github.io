@@ -50,4 +50,4 @@ But there's more to Stacks than saving time. Amido has thought deeply about the 
 
 ## How does it work
 
-Select a workload using the What can you do with Stacks element on the home page to see detailed documentation on how to get started. For a more detailed section on Workloads please see [Introduction to workloads](./workloads/workloads).
+Select a workload using the What can you do with Stacks element on the home page to see detailed documentation on how to get started. For a more detailed section on Workloads please see [Introduction to workloads](/docs/workloads/workloads.md).
