@@ -14,6 +14,7 @@ keywords:
   - azure
   - application insights
   - cosmos db
+  - aws sqs
   - build
   - run
   - application
@@ -109,7 +110,11 @@ dotnet new stacks-asb-worker -n Company.Project -do Menu
 - **-db|--database**
     - Configures which database provider to be used
 - **-e|--eventPublisher**
-    - Configures the messaging service
+    - Configures the messaging service. Available services are:
+        - ServiceBus
+        - EventHub
+        - AwsSqs
+        - None
 - **-e:fw|--enableFunctionWorker**
     - Configures the messaging service
 - **-e:fl|--enableFunctionListener**
