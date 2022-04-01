@@ -12,6 +12,7 @@ keywords:
   - azure
   - application insights
   - cosmos db
+  - aws sqs
   - build
   - run
   - application
@@ -27,7 +28,7 @@ import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
 <details open>
-<summary>Build and run locally</summary>
+<summary>Build and run locally on Azure</summary>
 
 <div>
 
@@ -98,7 +99,7 @@ dotnet run --project xxAMIDOxx.xxSTACKSxx.API/xxAMIDOxx.xxSTACKSxx.API.csproj
 <br />
 
 <details>
-<summary>Build and run in docker container</summary>
+<summary>Build and run in docker container on Azure</summary>
 
 <div>
 
@@ -119,6 +120,103 @@ docker run -p 5000:80 --mount type=bind,source=/path/to/PROJECT-NAME/src/api/xxA
 :::note
 The **COSMOSDB_KEY** described in the command above has to be passed when running the container. **SERVICEBUS_CONNECTIONSTRING** OR **EVENTHUB_CONNECTIONSTRING** and **STORAGE_CONNECTIONSTRING** are needed based on the configuration and message service you'll be using. Note that the **appsettings.json** value is mounted here for running locally,
 but not if the full project is deployed to Azure, where the build process will perform the substitution.
+:::
+
+</div>
+</details>
+
+<br />
+
+<details open>
+<summary>Build and run locally on AWS</summary>
+
+<div>
+
+<Tabs
+groupId="operating-systems"
+defaultValue="windows"
+values={[
+{label: 'Windows', value: 'windows'},
+{label: 'Linux', value: 'linux'},
+]}>
+<TabItem value="windows">
+
+Move to the `<PROJECT-NAME>/src/api` folder and run the next commands in **Command Prompt** or **Powershell**
+
+```bash
+dotnet build
+```
+
+```bash
+# Note that the template engine will rename your paths, so change the command accordingly
+dotnet run --project xxAMIDOxx.xxSTACKSxx.API/xxAMIDOxx.xxSTACKSxx.API.csproj
+```
+
+:::note Potential issue on some Windows installations
+Depending on how deep your folder structure is you might encounter a problem where you cannot build the project. This happens because of our dependency on [Pact](https://docs.pact.io/) for our contract tests.
+
+The error looks something like this
+
+```shell
+Error MSB3491 Path: File exceeds the OS max path limit. The fully qualified file name must be less than 260 characters.
+```
+
+There are two fixes possible so far:
+
+- You must enable long file paths on Windows by following the instructions [here](https://docs.microsoft.com/en-us/windows/win32/fileio/maximum-file-path-limitation?tabs=powershell#enable-long-paths-in-windows-10-version-1607-and-later)
+- Create your folder on an upper level where the paths won't exceed 260 characters
+
+:::
+
+</TabItem>
+
+<TabItem value="linux">
+
+Move to the `<PROJECT-NAME>/src/api` folder and run the next commands in **terminal**.
+
+```bash
+export SQS_QUEUE_URL=<SQS-QUEUE-URL value here>
+```
+
+```bash
+dotnet build
+```
+
+```bash
+# Note that the template engine will rename your paths, so change the command accordingly
+dotnet run --project xxAMIDOxx.xxSTACKSxx.API/xxAMIDOxx.xxSTACKSxx.API.csproj
+```
+
+</TabItem>
+</Tabs>
+
+</div>
+</details>
+
+<br />
+
+<details>
+<summary>Build and run in docker container on AWS</summary>
+
+<div>
+
+From the `<PROJECT-NAME>/src/api` folder, build a Docker image using e.g. the command below:
+
+```bash title="Build docker image"
+docker build -t dotnet-api .
+```
+
+This uses the **Dockerfile** in this folder to generate the Docker image.
+
+After the creation of the Docker image, the Docker container can be run using the command below:
+
+```bash title="Run docker container"
+docker run -p 5000:80 --mount type=bind,source=/path/to/PROJECT-NAME/src/api/xxAMIDOxx.xxSTACKSxx.API/appsettings.json,target=/app/config/appsettings.json -e SQS_QUEUE_URL=your-sqs-queue-url dotnet-api:latest`
+```
+
+:::note
+The **SQS_QUEUE_URL** described in the command above has to be passed when running the container. **SQS_QUEUE_URL** is needed based on the configuration and message service you'll be using. Note that the **appsettings.json** value is mounted here for running locally,
+but not if the full project is deployed to AWS, where the build process will perform the substitution.
 :::
 
 </div>
