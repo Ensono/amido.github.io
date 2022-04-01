@@ -82,7 +82,7 @@ values={[
 
 There are a couple of different ways to set the environment variable
 
-## Using Powershell
+## Using Powershell for COSMOSDB_KEY
 
 You can use `Powershell` with administrator privileges to execute the command below. Substitute `<PRIMARY-KEY-HERE>` with your own key.
 
@@ -90,7 +90,7 @@ You can use `Powershell` with administrator privileges to execute the command be
 [Environment]::SetEnvironmentVariable("COSMOSDB_KEY", "<PRIMARY-KEY-HERE>", [EnvironmentVariableTarget]::Machine)
 ```
 
-## Using Visual Studio
+## Using Visual Studio for COSMOSDB_KEY
 
 1. Open the project in Visual Studio. The solution file is located at `src/api/xxAMIDOxx.xxSTACKSxx.API.sln`.
 
@@ -111,7 +111,7 @@ You can use `Powershell` with administrator privileges to execute the command be
 }
 ```
 
-## Using VSCode
+## Using VSCode for COSMOSDB_KEY
 
 If you're using VSCode that means you'll have a `launch.json` file generated when you try to run the project. In that file there's an `env` section where you can put environment variables for the current session.
 
@@ -144,7 +144,7 @@ The variable is referenced in **appsettings.json**. As mentioned in the beginnin
 
 There are a couple of different ways to set the environment variable
 
-## Using terminal
+## Using terminal for COSMOSDB_KEY
 
 You can use the `terminal` to execute the command below. Substitute `<PRIMARY-KEY-HERE>` with your own key. This will set the environment variable only for the current session of your terminal.
 
@@ -158,7 +158,7 @@ To set the environment variable permanently on your system you'll have to edit y
 echo 'export COSMOSDB_KEY=<PRIMARY-KEY-HERE>' >> ~/.zshenv
 ```
 
-## Using Visual Studio Code
+## Using Visual Studio Code for COSMOSDB_KEY
 
 If you're using VSCode that means you'll have a `launch.json` file generated when you try to run the project. In that file there's an `env` section where you can put environment variables for the current session.
 
@@ -270,7 +270,7 @@ values={[
 
 There are a couple of different ways to set the environment variable
 
-## Using Powershell
+## Using Powershell for SQS-QUEUE-URL
 
 You can use `Powershell` with administrator privileges to execute the command below. Substitute `<SQS-QUEUE-URL-HERE>` with your own key.
 
@@ -278,7 +278,7 @@ You can use `Powershell` with administrator privileges to execute the command be
 [Environment]::SetEnvironmentVariable("SQS_QUEUE_URL", "<SQS-QUEUE-URL-HERE>", [EnvironmentVariableTarget]::Machine)
 ```
 
-## Using Visual Studio
+## Using Visual Studio for SQS-QUEUE-URL
 
 1. Open the project in Visual Studio. The solution file is located at `src/api/xxAMIDOxx.xxSTACKSxx.API.sln`.
 
@@ -299,7 +299,7 @@ You can use `Powershell` with administrator privileges to execute the command be
 }
 ```
 
-## Using VSCode
+## Using VSCode for SQS-QUEUE-URL
 
 If you're using VSCode that means you'll have a `launch.json` file generated when you try to run the project. In that file there's an `env` section where you can put environment variables for the current session.
 
@@ -328,7 +328,7 @@ The variable is referenced in **appsettings.json**. As mentioned in the beginnin
 
 There are a couple of different ways to set the environment variable
 
-## Using terminal
+## Using terminal for SQS-QUEUE-URL
 
 You can use the `terminal` to execute the command below. Substitute `<SQS-QUEUE-URL-HERE>` with your own key. This will set the environment variable only for the current session of your terminal.
 
@@ -342,7 +342,7 @@ To set the environment variable permanently on your system you'll have to edit y
 echo 'export SQS_QUEUE_URL=<SQS-QUEUE-URL-HERE>' >> ~/.zshenv
 ```
 
-## Using Visual Studio Code
+## Using Visual Studio Code for SQS-QUEUE-URL
 
 If you're using VSCode that means you'll have a `launch.json` file generated when you try to run the project. In that file there's an `env` section where you can put environment variables for the current session.
 
