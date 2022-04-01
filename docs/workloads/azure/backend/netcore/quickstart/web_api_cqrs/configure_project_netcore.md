@@ -216,3 +216,32 @@ Aside from setting the `COSMOSDB_KEY` as an environment variable (described in t
 
 </div>
 </details>
+
+### Configuring DynamoDB
+
+You need a DynamoDB instance in order to configure the API to work with it. You can follow the official instructions provided by AWS [here](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/SettingUp.DynamoWebService.html).
+
+The domain object in Stacks is using the [Object Persistence Model](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DotNetSDKHighLevel.html) provided by the AWS SDK.
+
+The DynamoDB table has to have the same name as your domain object. If you leave the default domain object then the table name for Dynamo will be set as `Menu`. If you set your domain object as `Foo` then the DynamoDB table will be set as `Foo`.
+
+:::note IMPORTANT
+The DynamoDB table must have the same name as your Domain. If your domain is `Menu` then table created in AWS has to have the same name.
+:::
+
+
+<details>
+<summary>Configuration of DynamoDB</summary>
+
+<div>
+
+Relevant documentation pages that you can follow to set up your profile:
+
+- [Configuration and credential file settings](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html)
+
+- [Named profiles](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html)
+
+The project assumes you'll use the `AWS CLI` tools and will have configured your access keys via the `aws configure` command.
+
+</div>
+</details>
