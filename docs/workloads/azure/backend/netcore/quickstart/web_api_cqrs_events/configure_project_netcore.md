@@ -227,7 +227,10 @@ You will also be required to set the `SQS_QUEUE_URL` as an environment variable 
 
 ```json title="<PROJECT-NAME>/src/api/xxAMIDOxx.xxSTACKSxx.API/appsettings.json"
 "AwsSqsConfiguration": {
-  "QueueUrl": "SQS_QUEUE_URL"
+  "QueueUrl": {
+		"Identifier": "SQS_QUEUE_URL",
+	...
+	}
 }
 ```
 
@@ -317,7 +320,10 @@ The variable is referenced in **appsettings.json**. As mentioned in the beginnin
 
 ```json title="src/api/xxAMIDOxx.xxSTACKSxx.API/appsettings.json"
 "AwsSqsConfiguration": {
-  "QueueUrl": "SQS_QUEUE_URL"
+  "QueueUrl": {
+		"Identifier": "SQS_QUEUE_URL",
+	...
+	}
 }
 ```
 
@@ -360,7 +366,10 @@ The variable is referenced in **appsettings.json**. As mentioned in the beginnin
 
 ```json title="src/api/xxAMIDOxx.xxSTACKSxx.API/appsettings.json"
 "AwsSqsConfiguration": {
-  "QueueUrl": "SQS_QUEUE_URL"
+  "QueueUrl": {
+		"Identifier": "SQS_QUEUE_URL",
+	...
+	}
 }
 ```
 
