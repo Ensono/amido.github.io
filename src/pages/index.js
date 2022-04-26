@@ -111,31 +111,44 @@ function Picker() {
 
   const baseUrl = useBaseUrl("docs/");
   const OptionMapper = {
-    "Azure Cloud Services [Azure]": {
+    "Microsoft Azure [Azure]": {
       "Server Side Rendered Web Application": {
         "Node JS / React": "workloads/azure/frontend/SSR/ide_setup_ssr",
       },
-      "Client Side Rendered Web Application": {
-        "Node JS / React": "workloads/azure/frontend/CSR/ide_setup_csr",
+        "Client Side Rendered Web Application": {
+          "Node JS / React": "workloads/azure/frontend/CSR/ide_setup_csr",
       },
       "REST Web API": {
         "Java Spring Boot": "workloads/azure/backend/java/intro_java",
         "C# / .NET Core":
-          "workloads/azure/backend/netcore/quickstart/web_api/create_project_netcore",
+            "workloads/azure/backend/netcore/quickstart/web_api/create_project_netcore",
       },
       "REST Web API with CQRS": {
-        "Java Spring Boot": "workloads/azure/backend/java_cqrs/intro_java_cqrs",
+        "Java Spring Boot": "workloads/azure/backend/java/intro_java",
         "C# / .NET Core":
           "workloads/azure/backend/netcore/quickstart/web_api_cqrs/create_project_netcore",
       },
       "REST Web API with CQRS and Events": {
-        "Java Spring Boot": "workloads/azure/backend/java_cqrs/intro_java_cqrs",
+        "Java Spring Boot": "workloads/azure/backend/java/intro_java",
+        "C# / .NET Core":
+          "workloads/azure/backend/netcore/quickstart/web_api_cqrs_events/create_project_netcore",
+      },
+    },
+    "Amazon Web Services [AWS]":{
+      "REST Web API": {
+        "C# / .NET Core":
+          "workloads/azure/backend/netcore/quickstart/web_api/create_project_netcore",
+      },
+      "REST Web API with CQRS": {
+        "C# / .NET Core":
+          "workloads/azure/backend/netcore/quickstart/web_api_cqrs/create_project_netcore",
+      },
+      "REST Web API with CQRS and Events": {
         "C# / .NET Core":
           "workloads/azure/backend/netcore/quickstart/web_api_cqrs_events/create_project_netcore",
       },
     },
     "Google Cloud Platform [GCP]": "workloads/gcp/workloads_gcp_readme",
-    "Amazon Web Services [AWS]": "workloads/aws/workloads_aws_readme",
   };
 
   const cloudProviders = Object.keys(OptionMapper).map((key) => ({
