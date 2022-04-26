@@ -111,31 +111,48 @@ function Picker() {
 
   const baseUrl = useBaseUrl("docs/");
   const OptionMapper = {
-    "Azure Cloud Services [Azure]": {
-      "Server Side Rendered Web Application": {
-        "Node JS / React": "workloads/azure/frontend/SSR/ide_setup_ssr",
-      },
-      "Client Side Rendered Web Application": {
-        "Node JS / React": "workloads/azure/frontend/CSR/ide_setup_csr",
-      },
+    "C# / .NET Core": {
       "REST Web API": {
-        "Java Spring Boot": "workloads/azure/backend/java/intro_java",
-        "C# / .NET Core":
+        "Microsoft Azure [Azure]":
+          "workloads/azure/backend/netcore/quickstart/web_api/create_project_netcore",
+        "Amazon Web Services [AWS]":
           "workloads/azure/backend/netcore/quickstart/web_api/create_project_netcore",
       },
       "REST Web API with CQRS": {
-        "Java Spring Boot": "workloads/azure/backend/java_cqrs/intro_java_cqrs",
-        "C# / .NET Core":
+        "Microsoft Azure [Azure]":
+          "workloads/azure/backend/netcore/quickstart/web_api_cqrs/create_project_netcore",
+        "Amazon Web Services [AWS]":
           "workloads/azure/backend/netcore/quickstart/web_api_cqrs/create_project_netcore",
       },
       "REST Web API with CQRS and Events": {
-        "Java Spring Boot": "workloads/azure/backend/java_cqrs/intro_java_cqrs",
-        "C# / .NET Core":
+        "Microsoft Azure [Azure]":
+          "workloads/azure/backend/netcore/quickstart/web_api_cqrs_events/create_project_netcore",
+        "Amazon Web Services [AWS]":
           "workloads/azure/backend/netcore/quickstart/web_api_cqrs_events/create_project_netcore",
       },
     },
-    "Google Cloud Platform [GCP]": "workloads/gcp/workloads_gcp_readme",
-    "Amazon Web Services [AWS]": "workloads/aws/workloads_aws_readme",
+    "Java Spring Boot": {
+      "REST Web API": {
+        "Microsoft Azure [Azure]":
+          "workloads/azure/backend/java/intro_java",
+      },
+      "REST Web API with CQRS": {
+        "Microsoft Azure [Azure]":
+          "workloads/azure/backend/java/intro_java",
+      },
+      "REST Web API with CQRS and Events": {
+        "Microsoft Azure [Azure]":
+          "workloads/azure/backend/java/intro_java",
+      },
+    },
+    "Node JS / React": {
+      "Server Side Rendered Web Application": {
+        "Microsoft Azure [Azure]": "workloads/azure/frontend/SSR/ide_setup_ssr",
+      },
+      "Client Side Rendered Web Application": {
+        "Microsoft Azure [Azure]": "workloads/azure/frontend/CSR/ide_setup_csr",
+      },
+    },
   };
 
   const cloudProviders = Object.keys(OptionMapper).map((key) => ({
@@ -161,7 +178,7 @@ function Picker() {
   return (
     <div className="container" style={{display:"flex", justifyContent:"center"}}>
       <div className={clsx("col", "col--6", styles.containerSelects)}>
-        <Select placeholder="Select Cloud Provider"
+        <Select placeholder="Select Language/Framework"
                 value={firstOption}
                 onChange={(selected) => {
                   setFirstOption(selected);
@@ -184,7 +201,7 @@ function Picker() {
         )}
 
         {languages.length > 0 && (
-          <Select placeholder="Select Language/Framework"
+          <Select placeholder="Select Cloud Provider"
                   value={thirdOption}
                   onChange={(selected) => {
                     setThirdOption(selected);
