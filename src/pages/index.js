@@ -123,13 +123,7 @@ function Picker() {
           "workloads/azure/backend/netcore/quickstart/web_api_cqrs/create_project_netcore",
         "Amazon Web Services [AWS]":
           "workloads/azure/backend/netcore/quickstart/web_api_cqrs/create_project_netcore",
-      },
-      "REST Web API with CQRS and Events": {
-        "Microsoft Azure [Azure]":
-          "workloads/azure/backend/netcore/quickstart/web_api_cqrs_events/create_project_netcore",
-        "Amazon Web Services [AWS]":
-          "workloads/azure/backend/netcore/quickstart/web_api_cqrs_events/create_project_netcore",
-      },
+      }
     },
     "Java Spring Boot": {
       "REST Web API": {
