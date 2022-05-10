@@ -144,15 +144,6 @@ module.exports = {
                           "workloads/azure/backend/netcore/quickstart/web_api_cqrs/build_and_run_project_netcore"
                         ],
                       },
-                      {
-                        type: "category",
-                        label: "REST API with CQRS and Events",
-                        items: [
-                          "workloads/azure/backend/netcore/quickstart/web_api_cqrs_events/create_project_netcore",
-                          "workloads/azure/backend/netcore/quickstart/web_api_cqrs_events/configure_project_netcore",
-                          "workloads/azure/backend/netcore/quickstart/web_api_cqrs_events/build_and_run_project_netcore"
-                        ],
-                      },
                     ]
                   },
                   {
