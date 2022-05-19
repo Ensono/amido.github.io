@@ -12,7 +12,7 @@ keywords:
   - azure
   - application insights
   - cosmos db
-  - aws sqs
+  - aws sns
   - build
   - run
   - application

@@ -103,7 +103,7 @@ dotnet new stacks-asb-worker -n Company.Project -do Menu
     - Configures the messaging service. Available services are:
         - ServiceBus
         - EventHub
-        - AwsSqs
+        - AwsSns
         - None
 - **-e:fw|--enableFunctionWorker**
     - Configures the messaging service
