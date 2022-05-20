@@ -220,6 +220,33 @@ Aside from setting the `COSMOSDB_KEY` as an environment variable (described in t
 
 <br />
 
+### Configuring DynamoDB
+
+You need a DynamoDB instance in order to connect the API to it. You can follow the official instructions provided by AWS [here](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/SettingUp.DynamoWebService.html).
+
+Relevant documentation pages that you can follow to set up your profile:
+
+- [Configuration and credential file settings](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html)
+
+- [Named profiles](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html)
+
+The template and NuGet package assumes you'll use the `AWS CLI` tools and will have configured your access keys via the `aws configure` command.
+
+Depending on your desired setup you'll have to provide some or all of the configuration in the `appsettings.json` file section showed below.
+
+```json title="<PROJECT-NAME>/src/api/xxAMIDOxx.xxSTACKSxx.API/appsettings.json"
+"DynamoDb": {
+    "TableName": "Menu",
+    "TablePrefix": ""
+}
+```
+
+### Amido.Stacks.DynamoDB package
+
+This template uses the [Amido.Stacks.DynamoDB](https://github.com/amido/stacks-dotnet-packages-dynamodb) package to connect and use DynamoDB.
+
+<br />
+
 ### Configuring AWS SNS
 
 The project can be set to use AWS **SNS** to publish and consume events. In order to publish messages to a Queue you will also require a version of AWS SQS running on AWS cloud. For SNS to work out the box with AWS you will have to provide some configuration in the `appsettings.json` file section showed below as well as subscribeaing your SNS topic to your SQS queue.
@@ -234,7 +261,7 @@ You will also be required to set the `TOPIC_ARN` as an environment variable (see
 	}
 },
 "AWS": {
-    "Region": "eu-west-2" 
+    "Region": "eu-west-2"
 }
 ```
 
