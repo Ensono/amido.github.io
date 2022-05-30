@@ -55,7 +55,7 @@ Once installed, you obtain 6 templates that can be used
 Navigate to the folder where you wish to create a new project on.
 
 ```bash title="Run the command to create the project"
-dotnet new stacks-cqrs-app -n Company.Project -do YourDomain -e MessagingProvider -db DatabaseOption
+dotnet new stacks-cqrs-app -n Company.Project -do YourDomain -e MessagingProvider -db DatabaseOption -cp CloudProvider
 ```
 
 The above command will create a folder and a repository called `Company.Project`.
@@ -114,6 +114,8 @@ dotnet new stacks-asb-worker -n Company.Project -do Menu
 - **-o|--output**
     - Sets the path to where the project is added
     - Omitting the parameter will result in the creation of a new folder
+- **-cp|--cloudProvider**
+    - Configures which cloud provider to be used
 :::
 
 Once installed you can either, create a new project or add CQRS to an existing project.
@@ -136,10 +138,10 @@ dotnet new --uninstall Amido.Stacks.CQRS.Templates
 Navigate to the folder where you wish to create a new project in. Then run the following command.
 
 ```bash title="Run the command to create the project"
-dotnet new stacks-cqrs-webapi -n Company.Project -do YourDomain
+dotnet new stacks-cqrs-webapi -n Company.Project -do YourDomain -cp AzureCloud
 ```
 
-The above command will create a folder and a repository called `Company.Project`.
+The above command will create a folder and a repository called `Company.Project` with DevOps build pipelines ready for Azure DevOps.
 
 ### Setting the database option
 
@@ -161,6 +163,8 @@ dotnet new stacks-cqrs-webapi -n Company.Project -do YourDomain -db CosmosDb
 - **-o|--output**
     - Sets the path to where the project is added
     - Omitting the parameter will result in the creation of a new folder
+- **-cp|--cloudProvider**
+    - Configures which cloud provider to be used
 :::
 
 <ResponsivePlayer url="https://vimeo.com/640289034" />
