@@ -44,10 +44,10 @@ dotnet new --install Amido.Stacks.Templates
 Navigate to the folder where you wish to create a new project in.
 
 ```bash title="Run the command to create the project"
-dotnet new stacks-webapi -n Company.Project -do YourDomain
+dotnet new stacks-webapi -n Company.Project -do YourDomain -cp AzureCloud
 ```
 
-The above command will create a folder called `Company.Project`.
+The above command will create a folder and a repository called `Company.Project` with DevOps build pipelines ready for Azure DevOps.
 
 ### Uninstalling a template
 
@@ -65,4 +65,6 @@ dotnet new --uninstall Amido.Stacks.Templates
 - **-o|--output**
     - Sets the path to where the project is added
     - Omitting the parameter will result in the creation of a new folder
+- **-cp|--cloudProvider**
+    - Configures which cloud provider to be used
 :::
