@@ -165,6 +165,8 @@ dotnet new stacks-cqrs-webapi -n Company.Project -do YourDomain -db CosmosDb
     - Omitting the parameter will result in the creation of a new folder
 - **-cp|--cloudProvider**
     - Configures which cloud provider to be used
+- **-cicd|--cicdProvider**
+    - Configures which cicd provider templates to be used
 :::
 
 <ResponsivePlayer url="https://vimeo.com/640289034" />
