@@ -34,7 +34,7 @@ manually written to support single objects or lists/collections of objects.
 
 ## Solution
 
-The Mapstruct project (see https://mapstruct.org/) is a code generator that greatly simplifies the implementation of mappings 
+The [Mapstruct](https://mapstruct.org/) open-source project is a code generator that greatly simplifies the implementation of mappings 
 between Java bean types based on a convention over configuration approach. 
 
 The generated mapping code uses plain method invocations and thus is fast, type-safe and easy to understand (this is important, 
