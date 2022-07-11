@@ -101,7 +101,7 @@ public class MapperUtils {
 
 ### Project Mapper Code
 
-**Example 1**
+#### Example 1
 
 Whenever a higher-level module (such as project code) requires a mapper between beans (or object-graphs) the implementation is a simple interface 
 that extends the base mapper and imports (or uses) the mapping utility class shown above.
@@ -119,7 +119,7 @@ uses the `MapperUtils` class that supports the conversion from UUID to String da
 public interface MenuMapper extends BaseMapper<MenuDTO, Menu> {}
 ```
 
-**Example 2**
+#### Example 2
 
 A more complex mapper is shown below. This mapper maps between a top-level Stacks `CreateMenuRequest` DTO and related domain object 
 called `CreateMenuCommand`. The name of fields differs between these two objects, so it is necessary in this instance to 
