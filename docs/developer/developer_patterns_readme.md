@@ -4,11 +4,10 @@ title: Development Patterns
 sidebar_label: Development Patterns
 description: Development Patterns
 keywords:
-  - workload
-  - gsp
-  - webapp
-  - server-side
-  - in progress
+- development
+- java
+- backend
+- server-side
 ---
 
 import HideNavigation  from "../../src/pages/HideNavigation";
