@@ -8,6 +8,23 @@ module.exports = {
     Architecture: [
       "workloads/azure/backend/architecture-overview",
     ],
+    "Development Support": [
+          "developer/developer_patterns_readme",
+          {
+            type: "category",
+            label: "Java Development Patterns",
+            items: [
+              "developer/java/patterns/java_mapstruct_mapping",
+              "developer/java/patterns/java_swagger_annotations"
+            ],
+          },
+          {
+            type: "category",
+            label: "Azure Development Patterns",
+            items: [
+            ],
+          },
+    ],
     Workloads: [
       "workloads/workloads",
       {
