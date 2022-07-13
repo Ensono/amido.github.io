@@ -35,7 +35,7 @@ to remove duplicated Swagger annotations from controller methods.
 We have defined custom java annotations per CRUD operation to be used by the controller classes. This will promote re-usability of the 
 swagger annotations rather than duplicating the code across multiple controller classes.
 
-Example of java custom annotation:
+**Example of java custom annotation:**
 
 In the below example, we are creating ReadAPIResponses annotation.
 
@@ -70,8 +70,7 @@ public @interface ReadAPIResponses {
 
 
 ```
-
-Using the custom Annotation @ReadAPIResponses:
+**Using the custom Annotation @ReadAPIResponses:**
 
 In the below code example, java custom annotation @ReadAPIResponses has been used.
 
@@ -92,7 +91,7 @@ public interface QueryMenuController {
 
 ```
 
-Overriding the custom annotations:
+**Overriding the custom annotations:**
 
 We can override the custom annotation entries by placing swagger annotation before the custom annotation.
 In the below example, @ApiResponse entry will override the 200 response code in @ReadAPIResponses custom annotation.
