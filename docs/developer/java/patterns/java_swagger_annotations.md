@@ -24,14 +24,14 @@ The exposed services are bound to change and the documentation needs to be updat
 If this is done manually, then it will become a complex process, and it will be prone to error, especially as the number of REST services increase. 
 This is where swagger helps to automate this documentation process.
 
+## Solution 
 
-## Solution
 The proliferation of Swagger annotation's means that there is a lot of duplication, and it makes it difficult to properly 
 compose the controller operations into a single class. To avoid this, we have opted to make use of Java annotation(s) 
 to remove duplicated Swagger annotations from controller methods.
 
-
 ## Implementation Examples
+
 We have defined custom java annotations per CRUD operation to be used by the controller classes. This will promote re-usability of the 
 swagger annotations rather than duplicating the code across multiple controller classes.
 
@@ -70,6 +70,7 @@ public @interface ReadAPIResponses {
 
 
 ```
+
 **Using the custom Annotation @ReadAPIResponses:**
 
 In the below code example, java custom annotation @ReadAPIResponses has been used.
