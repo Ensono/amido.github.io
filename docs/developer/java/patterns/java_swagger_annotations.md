@@ -19,16 +19,17 @@ The API documentation is an essential part of building REST APIs to make the ser
 This documentation should help consumers of the service know which all services are available and its fine details. 
 Also, there should be some simple way to test if the service is up. 
 
-SpringDoc simplifies the generation and maintenance of API docs based on the OpenAPI 3 specification for the spring boot applications. 
-The exposed services are bound to change and the documentation needs to be updated as the services change. 
-If this is done manually, then it will become a complex process, and it will be prone to error, especially as the number of REST services increase. 
-This is where swagger helps to automate this documentation process.
+SpringDoc simplifies the generation and maintenance of API docs based on the OpenAPI 3 specification for the spring boot applications.
+The exposed services are bound to change and the documentation needs to be updated as the services change.
+If this is done manually, then it will become a complex process, and it will be prone to error, especially as the number of REST services increase.
+This is where swagger helps to automate this documentation process and the consumers of this API would see the output of all of this in the swagger UI (for example, the Swagger API Doc Endpoint at _/swagger/index.html_).
 
-## Solution 
+The proliferation of Swagger annotation's means that there is a lot of duplicated APIResponse annotations that bloat the code and make it difficult to maintain and read.
 
-The proliferation of Swagger annotation's means that there is a lot of duplication, and it makes it difficult to properly 
-compose the controller operations into a single class. To avoid this, we have opted to make use of Java annotation(s) 
-to remove duplicated Swagger annotations from controller methods.
+## Solution
+
+To avoid the code duplication around swagger annotations, we have opted to use our own @interface Java annotation to "carry" these annotations and make them a reusable unit
+which will minimise the duplicated Swagger annotations from controller methods.
 
 ## Implementation Examples
 
@@ -36,6 +37,14 @@ We have defined custom java annotations per CRUD operation to be used by the con
 swagger annotations rather than duplicating the code across multiple controller classes.
 
 **Example of java custom annotation:**
+
+In the below example we have:
+
+- Added multiple Swagger REST response annotations to our own annotation 
+- Added the Security Requirement annotation
+
+This is so that we have a single annotation that a developer can use to easily apply all of these Swagger repetitive annotations
+across multiple classes using just a single annotation per class, therefore fixing the problem being addressed - annotation bloat.
 
 In the below example, we are creating ReadAPIResponses annotation.
 
@@ -94,10 +103,9 @@ public interface QueryMenuController {
 
 **Overriding the custom annotations:**
 
-We can override the custom annotation entries by placing swagger annotation before the custom annotation.
-In the below example, @ApiResponse entry will override the 200 response code in @ReadAPIResponses custom annotation.
-We just have to make that the annotations are placed in the right order when we specifically want to override anything in 
-the custom annotation.
+We can override our new custom annotation entries by placing the annotation **before the new custom annotation**.
+In the below example, @ApiResponse entry will **override** the 200 response code in @ReadAPIResponses custom annotation as the @ApiResponse comes **before**
+@ReadAPIResponses. We just have to make that the annotations are placed in the right order.
 
 ```java
 public interface QueryMenuController {
