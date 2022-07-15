@@ -75,7 +75,7 @@ In the below code example, java custom annotation @ReadAPIResponses has been use
 
 ```java
 @RestController
-public class QueryMenuController {
+public class MenuController {
 
   @GetMapping(value = "/{id}")
   @Operation(tags = "Menu", summary = "Get a menu", description = "By passing the menu id, ...")
@@ -98,7 +98,7 @@ In the below example, @ApiResponse entry will **override** the 200 response code
 
 ```java
 @RestController
-public class QueryMenuController {
+public class MenuController {
 
   @GetMapping(value = "/{id}")
   @Operation(tags = "Menu", summary = "Get a menu", description = "By passing the menu id, ...")
