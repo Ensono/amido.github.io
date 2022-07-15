@@ -14,6 +14,7 @@ module.exports = {
             type: "category",
             label: "Java Development Patterns",
             items: [
+              "developer/java/patterns/java_app_layering",
               "developer/java/patterns/java_mapstruct_mapping",
               "developer/java/patterns/java_swagger_annotations"
             ],

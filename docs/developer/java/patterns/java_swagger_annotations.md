@@ -8,7 +8,6 @@ keywords:
 - java
 - backend
 - server-side
-- in progress
 ---
 
 import HideNavigation  from "../../../../src/pages/HideNavigation";
@@ -52,32 +51,22 @@ In the below example, we are creating ReadAPIResponses annotation.
 @Target({ElementType.METHOD, ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
 @ApiResponses({@ApiResponse(
-  responseCode = "404",
-  description = "Resource not found",
-  content = {@Content(
-  mediaType = "application/json",
-  schema = @Schema(
-  implementation = ErrorResponse.class
-)
-)}
-), @ApiResponse(
-  responseCode = "400",
-  description = "Bad Request",
-  content = {@Content(
-  mediaType = "application/json",
-  schema = @Schema(
-  implementation = ErrorResponse.class
-)
-)}
-)})
-@SecurityRequirement(
-  name = "bearerAuth"
-)
-public @interface ReadAPIResponses {
-}
-
-
-
+    responseCode = "404",
+    description = "Resource not found",
+    content = {@Content(
+    mediaType = "application/json",
+    schema = @Schema(
+    implementation = ErrorResponse.class))}), 
+  @ApiResponse(
+    responseCode = "400",
+    description = "Bad Request",
+    content = {@Content(
+    mediaType = "application/json",
+    schema = @Schema(
+    implementation = ErrorResponse.class))}
+  )})
+@SecurityRequirement(name = "bearerAuth")
+public @interface ReadAPIResponses {}
 ```
 
 **Using the custom Annotation @ReadAPIResponses:**
@@ -85,20 +74,20 @@ public @interface ReadAPIResponses {
 In the below code example, java custom annotation @ReadAPIResponses has been used.
 
 ```java
-public interface QueryMenuController {
+@RestController
+public class QueryMenuController {
 
   @GetMapping(value = "/{id}")
-  @Operation(
-      tags = "Menu",
-      summary = "Get a menu",
-      description =
-          "By passing the menu id, you can get access to available categories and items in the menu")
+  @Operation(tags = "Menu", summary = "Get a menu", description = "By passing the menu id, ...")
   @ReadAPIResponses
   ResponseEntity<MenuDTO> getMenu(
-      @PathVariable(name = "id") UUID id,
-      @Parameter(hidden = true) @RequestAttribute("CorrelationId") String correlationId);
+    @PathVariable(name = "id") UUID id,
+    @Parameter(hidden = true) @RequestAttribute("CorrelationId") String correlationId) {
+      
+        // Code here
+      
+  }
 }
-
 ```
 
 **Overriding the custom annotations:**
@@ -108,14 +97,11 @@ In the below example, @ApiResponse entry will **override** the 200 response code
 @ReadAPIResponses. We just have to make that the annotations are placed in the right order.
 
 ```java
-public interface QueryMenuController {
+@RestController
+public class QueryMenuController {
 
   @GetMapping(value = "/{id}")
-  @Operation(
-      tags = "Menu",
-      summary = "Get a menu",
-      description =
-          "By passing the menu id, you can get access to available categories and items in the menu")
+  @Operation(tags = "Menu", summary = "Get a menu", description = "By passing the menu id, ...")
   @ApiResponse(
       responseCode = "200",
       description = "Menu",
@@ -126,10 +112,11 @@ public interface QueryMenuController {
   @ReadAPIResponses
   ResponseEntity<MenuDTO> getMenu(
       @PathVariable(name = "id") UUID id,
-      @Parameter(hidden = true) @RequestAttribute("CorrelationId") String correlationId);
+      @Parameter(hidden = true) @RequestAttribute("CorrelationId") String correlationId) {
+      
+        // Code here
+             
+  }
 }
-
 ```
 
-
-<HideNavigation prev />
