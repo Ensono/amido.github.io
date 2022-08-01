@@ -11,6 +11,7 @@ keywords:
 ---
 
 import HideNavigation  from "../../../../src/pages/HideNavigation";
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ## Context
 
@@ -40,7 +41,7 @@ another concern. Changing the user interface should not require changes to busin
 One common way to manage this in a Spring Boot application is to follow the Controller-Service-Repository pattern. One of the 
 big reasons this pattern is so popular is that it does a great job ensuring separation of concerns. 
 
-![Application Layers](images/Separation_of_concerns.png "Application Layers")
+<img alt="Application Layers" src={useBaseUrl('img/java_separation_of_concerns.png')} />
 
 The Controller layer, the top layer in the diagram above, is solely responsible for exposing the functionality so that it can be consumed 
 by external consumers (including, perhaps, a UI component). The Repository layer, at the bottom, is responsible for storing and retrieving 

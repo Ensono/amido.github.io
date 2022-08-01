@@ -6,9 +6,9 @@ hide_title: false
 hide_table_of_contents: false
 description: How to use AWS Secrets as properties
 keywords:
-- aws xray
-- daemon
+- aws 
+- xray
+- secrets
+- properties
 - settings
-- template
-- certificate
 ---
