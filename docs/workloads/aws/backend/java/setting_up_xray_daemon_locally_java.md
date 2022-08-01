@@ -87,7 +87,7 @@ It is possible to enable or disable AWS X-Ray support using the following enviro
 ```
 
 The AWS X-Ray SDK will fail quiescently if no authentication is provided, or if the Daemon is not running. Please check the output
-of the X-Ray daemon logs initially (see above) if traces do not seem to be arrving in CloudWatch.
+of the X-Ray daemon logs initially (see above) if traces do not seem to be arriving in CloudWatch.
 
 ## Viewing X-Ray Traces in the AWS Management Console
 
