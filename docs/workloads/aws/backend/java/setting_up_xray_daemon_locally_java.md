@@ -40,7 +40,7 @@ The X-Ray daemon uses the AWS SDK to upload trace data to X-Ray, and it needs AW
 On Amazon EC2, the daemon uses the instance's instance profile role automatically. Locally, save your access keys to a file 
 named `credentials` in your user directory under a folder named `.aws`.
 
-**Example ~/.aws/credentials**
+#### Example ~/.aws/credentials
 
 ```text
 [default]
@@ -55,7 +55,7 @@ page linked in the text above gives specific instructions on how to run the daem
 
 For the MacOS distribution, the command is as follows (assuming the AWS London region is being used): - 
 
-```
+```bash
 ~/Downloads$ ./xray_mac -o -n eu-west-2
 ```
 
@@ -83,7 +83,7 @@ manual intervention is necessary.
 It is possible to enable or disable AWS X-Ray support using the following environment variable prior to starting the application: -
 
 ```bash
-$ export AWS_XRAY_ENABLED=true
+~/Stacks$ export AWS_XRAY_ENABLED=true
 ```
 
 The AWS X-Ray SDK will fail quiescently if no authentication is provided, or if the Daemon is not running. Please check the output
@@ -102,8 +102,8 @@ been made - you can click on the **Traces** entry to see more detailed informati
 
 ### Example Service Map
 
-<img alt="Azure Core - Azure DevOps Pipeline" src={useBaseUrl('img/aws_java_xray_service_map.png')} />
+<img alt="Example X-Ray Service map" src={useBaseUrl('img/aws_java_xray_service_map.png')} />
 
 ### Example Trace
 
-<img alt="Azure Core - Azure DevOps Pipeline" src={useBaseUrl('img/aws_java_xray_trace.png')} />
+<img alt="Example X-Ray Trace" src={useBaseUrl('img/aws_java_xray_trace.png')} />
