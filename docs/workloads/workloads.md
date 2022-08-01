@@ -33,5 +33,15 @@ Workload options are broken down into the following types of workload:
 * Workloads for test, which covers all the workload options that run automated tests in the cloud;
 * Workloads for storage, which covers all the workload options that run in the cloud storage, such as relational and non-relational storage options.
 
+## Workload cloud capabilities
+
+One of the primary functions of Stacks is to demonstrate the use of different technologies across multiple cloud providers.
+
+Some aspects of stacks are shared and cloud-agnostic and as such are provided by common modules, whilst other capabilities are relevant to a specific cloud platform.
+
+This exhibits itself through the use of Cloud capability modules that provide the functionality pertaining to that provided by a specific cloud platform.
+
+Examples of this is the use of CosmosDB as persistence for Azure and DynamodDB for AWS; capabilities are more often than not provided as specific modules that can be selected at runtime.  
+
 <HideNavigation next />
 <HideNavigation prev />
