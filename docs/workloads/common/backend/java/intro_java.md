@@ -21,11 +21,14 @@ import ResponsivePlayer from "../../../../../src/pages/Components/ResponsivePlay
 
 ### Overview
 
-This is a sample Java REST API application with CQRS, showcasing best coding practices and integrating with Azure
+This is a sample Java REST API application with CQRS, showcasing best coding practices and integrating with Cloud services
 and scaffolding for Amido Stacks.
 
-The application implements Application Insights for performance management,
+When using Azure, the application implements Application Insights for performance management,
 and Cosmos DB is used for cloud persistence.
+
+When using AWS, the application implements AWS XRay for performance management,
+and DynamoDB is used for cloud persistence.
 
 The application is designed as a restaurant menu application. Users can create a Menu.
 Menus can hold one or more Categories, and a Category holds menu Items.

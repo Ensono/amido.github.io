@@ -67,7 +67,7 @@ We recommend that you install the following plugins:
    ![Run Configurations](/img/run_configuration.png)
    Click on Add new Configuration and choose Application/Spring boot
    ![Run Configurations_1](/img/run_configuration_1.png)
-   Choose the main class as "Application.java" and under environment set environment variable
+   Choose the main class as "Application.java" and set any relevant variables, such as to set environment variable
    for **AZURE_COSMOSDB_KEY** and set JRE to Java 11. Click OK
    ![Run Configurations_2](/img/run_configuration_2.png)
 

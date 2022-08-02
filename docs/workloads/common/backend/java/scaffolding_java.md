@@ -23,7 +23,7 @@ import ResponsivePlayer from "../../../../../src/pages/Components/ResponsivePlay
 <ResponsivePlayer url="https://vimeo.com/640390929" />
 
 :::caution
-Before starting, please make sure that your environment meets all the [requirements](requirements_java.md).
+Before starting, if using Azure please make sure that your environment meets all the [requirements](../../../azure/backend/java/requirements_java.md).
 :::
 
 You can customize the deployment of the project running a handful of command lines. Currently, scaffolding is handled by Maven and you can use it

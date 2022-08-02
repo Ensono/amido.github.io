@@ -30,6 +30,56 @@ module.exports = {
       "workloads/workloads",
       {
         type: "category",
+        label: "Common",
+        items: [
+          {
+            type: "category",
+            label: "Java Spring Boot REST API",
+            items: [
+              "workloads/common/backend/java/intro_java",
+              "workloads/common/backend/java/scaffolding_java",
+              "workloads/common/backend/java/ide_java",
+              "workloads/common/backend/java/maven_spring_profiles",
+              {
+                type: "category",
+                label: "Architecture",
+                items: [
+                  "workloads/common/backend/java/architecture/maven_modules_java",
+                  {
+                    type: "category",
+                    label: "Modules",
+                    items: [
+                      "workloads/common/backend/java/architecture/dependency_parent_java",
+                      "workloads/common/backend/java/architecture/dependency_commons_java",
+                      "workloads/common/backend/java/architecture/dependency_api_java",
+                      "workloads/common/backend/java/architecture/dependency_cqrs_java",
+                      "workloads/common/backend/java/architecture/dependency_messaging_java",
+                    ]
+                  },
+                  {
+                    type: "category",
+                    label: "Web API Architecture",
+                    items: [
+                      "workloads/common/backend/java/architecture/web_api/architecture_java",
+                      "workloads/common/backend/java/architecture/web_api/structure_java",
+                    ]
+                  },
+                  {
+                    type: "category",
+                    label: "Web API with CQRS and Events Architecture",
+                    items: [
+                      "workloads/common/backend/java/architecture/java_cqrs/architecture_java_cqrs",
+                      "workloads/common/backend/java/architecture/java_cqrs/structure_java_cqrs",
+                    ]
+                  },
+                ]
+              },
+            ],
+          },
+        ],
+      },
+      {
+        type: "category",
         label: "Azure",
         items: [
           {
@@ -53,7 +103,7 @@ module.exports = {
               },
               {
                 type: "category",
-                label: "Server  Side Rendering",
+                label: "Server Side Rendering",
                 items: [
                   "workloads/azure/frontend/SSR/ide_setup_ssr",
                   "workloads/azure/frontend/SSR/stacks_monorepo_ssr",
@@ -79,46 +129,26 @@ module.exports = {
                 type: "category",
                 label: "Java Spring Boot REST API",
                 items: [
-                  "workloads/azure/backend/java/intro_java",
+                  "workloads/common/backend/java/intro_java",
                   "workloads/azure/backend/java/requirements_java",
                   "workloads/azure/backend/java/setting_up_cosmos_db_locally_java",
                   "workloads/azure/backend/java/quickstart_java",
-                  "workloads/azure/backend/java/scaffolding_java",
-                  "workloads/azure/backend/java/ide_java",
+                  "workloads/common/backend/java/scaffolding_java",
+                  "workloads/common/backend/java/ide_java",
+                  "workloads/common/backend/java/maven_spring_profiles",
                   {
                     type: "category",
                     label: "Architecture",
                     items: [
-                      "workloads/azure/backend/java/architecture/maven_modules_java",
+                      "workloads/common/backend/java/architecture/maven_modules_java",
                       {
                         type: "category",
                         label: "Modules",
                         items: [
-                          "workloads/azure/backend/java/architecture/dependency_parent_java",
-                          "workloads/azure/backend/java/architecture/dependency_commons_java",
-                          "workloads/azure/backend/java/architecture/dependency_api_java",
-                          "workloads/azure/backend/java/architecture/dependency_cqrs_java",
-                          "workloads/azure/backend/java/architecture/dependency_messaging_java",
                           "workloads/azure/backend/java/architecture/dependency_cosmos_java",
                           "workloads/azure/backend/java/architecture/dependency_servicebus_java",
                         ]
                       },
-                      {
-                        type: "category",
-                        label: "Web API Architecture",
-                        items: [
-                          "workloads/azure/backend/java/architecture/web_api/architecture_java",
-                          "workloads/azure/backend/java/architecture/web_api/structure_java",
-                        ]
-                      },
-                      {
-                        type: "category",
-                        label: "Web API with CQRS and Events Architecture",
-                        items: [
-                          "workloads/azure/backend/java/architecture/java_cqrs/architecture_java_cqrs",
-                          "workloads/azure/backend/java/architecture/java_cqrs/structure_java_cqrs",
-                        ]
-                      }
                     ]
                   },
                   "workloads/azure/backend/java/infrastructure_java",
@@ -203,7 +233,44 @@ module.exports = {
       {
         type: "category",
         label: "Amazon Web Services",
-        items: ["workloads/aws/workloads_aws_readme"],
+        items: [
+          {
+            type: "category",
+            label: "Backend Services",
+            items: [
+              {
+                type: "category",
+                label: "Java Spring Boot REST API",
+                items: [
+                  "workloads/common/backend/java/intro_java",
+                  "workloads/aws/backend/java/setting_up_xray_daemon_locally_java",
+                  "workloads/aws/backend/java/define_aws_secrets_java",
+                  "workloads/common/backend/java/scaffolding_java",
+                  "workloads/common/backend/java/ide_java",
+                  "workloads/common/backend/java/maven_spring_profiles",
+                  {
+                    type: "category",
+                    label: "Architecture",
+                    items: [
+                      "workloads/common/backend/java/architecture/maven_modules_java",
+                      {
+                        type: "category",
+                        label: "Modules",
+                        items: [
+                          "workloads/aws/backend/java/architecture/dependency_dynamodb_java",
+                          "workloads/aws/backend/java/architecture/dependency_sqs_java",
+                        ]
+                      },
+                    ]
+                  },
+
+
+
+                ]
+              },
+            ]
+          },
+        ],
       },
     ],
     Infrastructure: [
