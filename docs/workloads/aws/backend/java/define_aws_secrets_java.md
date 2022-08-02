@@ -85,8 +85,14 @@ at startup (please adjust for your own specific use-case).
 
 ## Accessing Secret Values via Property Placeholders
 
+It is possible to enable (or disable) AWS Secrets Manager support using the following environment variable prior to starting the application: -
+
+```bash
+~/Stacks$ export AWS_SECRETS_ENABLED=true
+```
+
 Within the Java code, Spring Cloud now provides support for accessing secret values as any other property. This is through the use
-of standard property placeholders as follows: -
+of standard Spring `@Value` annotated property placeholders as follows: -
 
 ```java
   @Value(value = "${stacks-secret-1:secret-not-available}")
@@ -107,7 +113,7 @@ the configured secret values using a simple cURL command via a test controller e
 ```bash
 ~/Stacks$ curl http://localhost:9000/v1/secrets
 
-Secrets -> SECRET-VALUE-1, SECRET-VALUE-2, SECRET-VALUE-3, SECRET-VALUE-4
+  Secrets -> SECRET-VALUE-1, SECRET-VALUE-2, SECRET-VALUE-3, SECRET-VALUE-4
 ```
 
 As described above, if the values are not as seen here please check that the following are correct: -

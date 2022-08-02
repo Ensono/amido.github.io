@@ -80,7 +80,7 @@ that point a specific AWS module will need to be included.
 The code currently uses Spring AOP to add a pointcut to all Controller methods under the `com.amido.stacks` package so no 
 manual intervention is necessary.
 
-It is possible to enable or disable AWS X-Ray support using the following environment variable prior to starting the application: -
+It is possible to enable (or disable) AWS X-Ray support using the following environment variable prior to starting the application: -
 
 ```bash
 ~/Stacks$ export AWS_XRAY_ENABLED=true
