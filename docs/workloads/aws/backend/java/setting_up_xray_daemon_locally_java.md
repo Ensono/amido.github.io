@@ -83,7 +83,7 @@ manual intervention is necessary.
 It is possible to enable (or disable) AWS X-Ray support using the following environment variable prior to starting the application: -
 
 ```bash
-~/Stacks$ export AWS_XRAY_ENABLED=true
+export AWS_XRAY_ENABLED=true
 ```
 
 The AWS X-Ray SDK will fail quiescently if no authentication is provided, or if the Daemon is not running. Please check the output

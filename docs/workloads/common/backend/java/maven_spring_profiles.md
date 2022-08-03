@@ -60,7 +60,7 @@ An example of starting the application and specifying profiles is as follows - t
 switches on the `azure` profile: -
 
 ```bash
-~/Stacks$ mvn clean spring-boot:run -P-aws,azure
+mvn clean spring-boot:run -P-aws,azure
 ```
 
 ## Spring Profiles
@@ -152,7 +152,7 @@ switch off the profiles that aren't required and activate the ones that are. Rem
 off by prefixing with a `-` character) so these do not need to be explicitly specified: -
 
 ```bash
-~/Stacks$ mvn clean spring-boot:run -Pdynamodb,sqs,-cosmosdb,-servicebus
+mvn clean spring-boot:run -Pdynamodb,sqs,-cosmosdb,-servicebus
 ```
 
 Note that some profiles are mutually exclusive (the persistence and messaging handler profiles) so the application will fail at startup if
@@ -172,7 +172,7 @@ Spring Boot application with.
 After making their choices it will display the Maven command that will be executed, and then optionally run it for the user.
 
 ```bash
-~/Stacks$ sh run_scenario.sh
+sh run_scenario.sh
 
 1. Please select the Cloud required:
 
@@ -213,7 +213,7 @@ Spring Boot application with. After making their feature set choice it will alte
 multiple feature sets to being one that has the features baked-in.
 
 ```bash
-~/Stacks$ sh deploy_scenario.sh
+sh deploy_scenario.sh
 
 1. Please select the Cloud required:
 
