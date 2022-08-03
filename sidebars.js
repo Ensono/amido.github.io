@@ -243,6 +243,7 @@ module.exports = {
                 label: "Java Spring Boot REST API",
                 items: [
                   "workloads/common/backend/java/intro_java",
+                  "workloads/aws/backend/java/setting_up_dynamodb_locally_java",
                   "workloads/aws/backend/java/setting_up_xray_daemon_locally_java",
                   "workloads/aws/backend/java/define_aws_secrets_java",
                   "workloads/common/backend/java/scaffolding_java",

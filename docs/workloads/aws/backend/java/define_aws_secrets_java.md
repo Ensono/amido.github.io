@@ -88,7 +88,7 @@ at startup (please adjust for your own specific use-case).
 It is possible to enable (or disable) AWS Secrets Manager support using the following environment variable prior to starting the application: -
 
 ```bash
-~/Stacks$ export AWS_SECRETS_ENABLED=true
+export AWS_SECRETS_ENABLED=true
 ```
 
 Within the Java code, Spring Cloud now provides support for accessing secret values as any other property. This is through the use
@@ -111,7 +111,7 @@ Assuming the system has been configured properly, it should be possible to start
 the configured secret values using a simple cURL command via a test controller endpoint, as follows:
 
 ```bash
-~/Stacks$ curl http://localhost:9000/v1/secrets
+curl http://localhost:9000/v1/secrets
 
   Secrets -> SECRET-VALUE-1, SECRET-VALUE-2, SECRET-VALUE-3, SECRET-VALUE-4
 ```
