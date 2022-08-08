@@ -107,3 +107,27 @@ been made - you can click on the **Traces** entry to see more detailed informati
 ### Example Trace
 
 <img alt="Example X-Ray Trace" src={useBaseUrl('img/aws_java_xray_trace.png')} />
+
+## Handling X-Ray Segment Errors
+
+If the STS call is made before a request actually comes into the X-Ray enabled service (or out of band of the request), 
+this will cause a missing context exception. 
+
+AWS advise to either omit any calls that aren't part of the request path 
+(using an un-traced AWS client) or set the `AWS_XRAY_CONTEXT_MISSING` env variable to `LOG_ERROR` - see [X-Ray Env Vars](https://docs.aws.amazon.com/xray/latest/devguide/xray-sdk-java-configuration.html#xray-sdk-java-configuration-envvars).
+
+Normal calls to X-Ray as part of a request operations are not affected by this setting. 
+
+An example of this type of error is as follows: -
+
+```text
+08-08-2022 09:46:16.279 [main] |  |
+        WARN  i.a.c.s.AwsSecretsManagerPropertySources.logTo - Unable to load AWS secret from /stacks-secret/example-1/. 
+              Failed to begin subsegment named 'AWSSecretsManager': segment cannot be found.
+```
+
+The recommended course of action is to set the `AWS_XRAY_CONTEXT_MISSING` environment variable - if using Intellij IDE 
+this can be done by easily by setting the environment variable in the Maven Runner environment variables section. If using
+Docker or Kubernetes it is recommended that the relevant options be defined to set this variable.
+
+<img alt="Specifying X-Ray Environment Variables" src={useBaseUrl('img/aws_java_xray_environment_variables.png')} />
