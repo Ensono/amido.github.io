@@ -128,6 +128,6 @@ An example of this type of error is as follows: -
 
 The recommended course of action is to set the `AWS_XRAY_CONTEXT_MISSING` environment variable - if using Intellij IDE 
 this can be done by easily by setting the environment variable in the Maven Runner environment variables section. If using
-Docker or Kubernetes it is recommended that the relevant options be defined to set this variable.
+Docker or Kubernetes it is recommended that the relevant functionality be defined to set this variable (such as config maps).
 
-<img alt="Specifying X-Ray Environment Variables" src={useBaseUrl('img/aws_java_xray_environment_variables.png')} />
+<img alt="Specifying X-Ray Environment Variables" src={useBaseUrl('img/aws_java_xray_environment_variables_secure.png')} />
