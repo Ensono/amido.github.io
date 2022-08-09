@@ -199,19 +199,26 @@ To build, install and use the archetype follow these steps:
 >-  Re-create the relevant `import` statements to use the new-made module instead
 >-  If you plan to use this with Amido Stacks, include your namespace in the `@ComponentScan` annotation of the `Application` class.
 
-## Accessing Artifactory
+## Accessing Sonatype OSSRH
 
-Our artefacts and archetypes get hosted on an Artifactory repository. To use either, from a project
-other than Amido Stacks, you will need to add that repo in your `pom.xml`:
+Our artefacts and archetypes get hosted on Sonatype OSSRH  then to  maven central . to access artifact from OSSRH before it get published to maven central update  `pom.xml`:
 
 ```xml
 <repositories>
-    <repository>
-        <snapshots />
-        <id>snapshots</id>
-        <name>default-maven-virtual</name>
-        <url>https://amidostacks.jfrog.io/artifactory/default-maven-virtual</url>
-    </repository>
+  <repository>
+    <snapshots/>
+    <id>snapshots</id>
+    <name>default-maven-virtual</name>
+    <url>https://s01.oss.sonatype.org/content/repositories/snapshots/</url>
+  </repository>
+  <repository>
+    <releases>
+      <enabled>true</enabled>
+    </releases>
+    <id>releases</id>
+    <name>default-maven-staging</name>
+    <url>https://s01.oss.sonatype.org/content/repositories/releases/</url>
+  </repository>
 </repositories>
 ```
 
@@ -220,20 +227,30 @@ in the `.m2` folder in your home directory (any OS):
 
 ```xml
 <profiles>
-    <profile>
-        <repositories>
-            <repository>
-                <snapshots/>
-                <id>snapshots</id>
-                <name>default-maven-virtual</name>
-                <url>https://amidostacks.jfrog.io/artifactory/default-maven-virtual</url>
-            </repository>
-        </repositories>
-        <id>artifactory</id>
-    </profile>
+  <profile>
+    <repositories>
+      <repository>
+        <snapshots/>
+        <id>snapshots</id>
+        <name>default-maven-virtual</name>
+        <url>https://s01.oss.sonatype.org/content/repositories/snapshots/</url>
+      </repository>
+      <repository>
+        <releases>
+          <enabled>true</enabled>
+        </releases>
+        <id>releases</id>
+        <name>default-maven-staging</name>
+        <url>https://s01.oss.sonatype.org/content/repositories/releases/</url>
+      </repository>
+    </repositories>
+    <id>nexus</id>
+  </profile>
 </profiles>
 
 <activeProfiles>
-    <activeProfile>artifactory</activeProfile>
+<activeProfile>nexus</activeProfile>
 </activeProfiles>
+
 ```
+
