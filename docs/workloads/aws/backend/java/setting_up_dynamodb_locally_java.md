@@ -128,6 +128,30 @@ aws dynamodb list-tables --endpoint-url http://localhost:8000 | cat
 }
 ```
 
+After data has been added to the Menu table using the workload APIs it is possible to scan the records using the following command: -
+
+```bash
+aws dynamodb scan --consistent-read --table-name Menu --endpoint-url http://localhost:8000 | cat
+
+{
+    "Items": [
+        {
+            "name": {
+                "S": "Test Menu 1"
+            },
+            "description": {
+                "S": "Test menu no. 1"
+            },
+            "id": {
+                "S": "7a994352-dc9e-4b11-8c0f-36792489f112"
+            },
+            "categories": {
+                "L": [
+            ...
+```
+
+Additional [DynamoDB API query examples](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithItems.html) can be found online. 
+
 ## Executing Stacks Workload using DynamoDB rather than CosmosDB
 
 TODO: **Move this to a better area once the DynamoDB work is completed**
