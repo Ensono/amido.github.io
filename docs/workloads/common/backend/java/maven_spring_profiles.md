@@ -162,6 +162,9 @@ invalid (overlapping) profiles are specified.
 
 A number of support scripts are included in the projects that aid in the use of profiles.
 
+> :warning: The Cloud-related profiles (**AWS & Azure**) do not currently provide as clean a separation of dependencies as possible - 
+> all library dependencies will be included irrespective of whether they are selected or not - this issue will be fixed in a later release.
+
 ### run_scenario.sh
 
 This script is aimed at **Stacks developers & testers**.
