@@ -25,7 +25,7 @@ There are two options for running the DynamoDB emulator, these are as follows: -
 
 If you would like to run it as a JAR, follow the instructions here: [Deploying DynamoDB locally on your computer](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DynamoDBLocal.DownloadingAndRunning.html)
 
-If you would prefer to use Docker, there is a `docker-compose.yml` file within the `stacks-aws-dynamodb` GitHub project. This 
+If you prefer to use Docker, there is a `docker-compose.yml` file within the `stacks-java-aws-dynamodb` GitHub project. This 
 is replicated below for convenience: -
 
 ```yaml
