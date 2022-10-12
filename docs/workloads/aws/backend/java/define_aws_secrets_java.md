@@ -121,3 +121,38 @@ As described above, if the values are not as seen here please check that the fol
 1. AWS Credentials are correct
 2. User/Role being used has been granted permission to read AWS Secrets 
 3. AWS Secret Manager for the Organisation used contains the named secrets being accessed
+
+### Reloading Secrets after modification
+
+If any of the secrets have been changed by an administrator in the AWS Secrets Manager console an already running 
+application will not see these changes unless it is restarted or refreshed. Support for online refresh is provided via 
+Spring Actuator. There are two development activities to allow for this: -
+
+Add the `refresh` option to the Actuator management preferences: -
+
+```yaml
+management:
+  endpoints:
+    web:
+      base-path: /
+      exposure:
+        include: health, info, beans, refresh
+```
+
+and to annotate any Spring Beans that read properties with the `@RefreshScope` annotation: -
+
+```java
+@Service
+@RefreshScope
+public class SecretsService { ... }
+```
+
+It is then possible to `POST` a request to the actuator endpoint to request a refresh: -
+
+```bash
+curl -X POST http://localhost:9000/refresh
+
+[stacks-secret-1,stacks-secret-2]
+```
+
+Any property values that were detected as having changed are returned as an array in the response.
