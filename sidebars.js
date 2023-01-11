@@ -309,6 +309,13 @@ module.exports = {
     ],
     "Quality Assurance": [
       "testing/cli_testing_frameworks",
+      {
+        type: "category",
+        label: "NX - Frontend Testing",
+        items: [
+          "testing/testing_in_nx/frontend_testing_in_nx",
+        ],
+      },
       "testing/testing_java_serenity_bdd",
       "testing/testing_dotnet_selenium",
       "testing/cypress_functional_testing",
