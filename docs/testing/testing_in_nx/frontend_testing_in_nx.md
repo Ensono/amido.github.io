@@ -9,9 +9,6 @@ keywords:
   - COMPLETE-THIS-SECTION
 ---
 
-import Tabs from "@theme/Tabs";
-import TabItem from "@theme/TabItem";
-
 Using [NX](https://nx.dev/) provides many benefits when working with SSR or CSR frontend applications. When using stacks to scaffold an NX monorepo (INSERT LINK HERE TO GARETH DOCUMENTATION) you will be provided with several options to assure quality in your development process.
 
 
@@ -24,7 +21,7 @@ As part of the scaffolding process, you will be presented with the option to sca
 
 Understanding the importance of choice, previous experience, and preference, we provide the option to scaffold without our recommended framework(s), allowing you to implement a testing framework of your choice without the need to remove redundant code and libraries which you do not need from your scaffolded application. 
 
-### Accesiblity Testing 
+### Accessibility Testing 
 #### Why accessibility test? 
 Accessibility testing is a critical aspect of website and application development that ensures that everyone, including those with disabilities or impairments, can fully access and use the site or app. It is not only a legal requirement, but also a moral and ethical one, to ensure that digital products are inclusive and usable by all. 
 This type of testing identifies and addresses any barriers that would make it difficult or impossible for some users to access the site or app, such as poor contrast, small text, or lack of alternative text for images. By catching these issues early in the development process, developers can ensure that their website or application is user-friendly for everyone and compliant with the regulations like WCAG and Section 508 that are legally binding in certain regions. 
@@ -33,9 +30,9 @@ Automated accessibility tooling can consistently and efficiently check for acces
 ##### Stacks Support
 When scaffolding your application, you will be presented with the following options:
 -	Playwright with Axe:
-  -	Preconfigures an axe implementation / configuration, axe being the standard toolset in accessibility testing. See Accessibility testing | Playwright for more information using @axe-core/playwright - npm (npmjs.com)
+    -	Preconfigures an axe implementation / configuration, axe being the standard toolset in accessibility testing. See Accessibility testing | Playwright for more information using @axe-core/playwright - npm (npmjs.com)
 - None:
-  -	If you would prefer an alternative to playwright with axe, then the none option allows you to scaffold your project without these libraries being bundled in. 
+    -	If you would prefer an alternative to playwright with axe, then the none option allows you to scaffold your project without these libraries being bundled in. 
 
 ### Visual Regression Testing
 #### Why visual regression test?
