@@ -303,6 +303,7 @@ module.exports = {
         label: "NX - Frontend Testing",
         items: [
           "testing/testing_in_nx/frontend_testing_in_nx",
+          "testing/testing_in_nx/testing_with_playwright",
         ],
       },
       "testing/testing_java_serenity_bdd",
