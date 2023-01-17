@@ -17,7 +17,7 @@ Playwright is a relatively new testing framework, which is developed and support
 ## Getting Started
 Upon scaffolding your application with the playwright testing framework, you will be presented with an example test suite and playwright configuration. The [@mands/nx-playwright](https://github.com/marksandspencer/nx-plugins/tree/main/packages/nx-playwright) NX plugin is used as a base for the Playwright/NX integration. 
 
-#### Base configuration
+### Base configuration
 The base configuration has been created with CI in mind, meaning the default configuration (shared across all projects) considers requirements for reporting and pipeline efficiency out of the box! 
 
 ```typescript title="playwright.config.base.ts"
@@ -49,7 +49,7 @@ export const baseConfig: PlaywrightTestConfig = {
   },
 };
 ```
-#### Project based configuration.
+### Project based configuration
 Individual project configuration has been created with our own recommendations to get the most out of playwright’s capabilities, targeting multiple browsers and devices. From this example, you can tailor it to suit your specific needs! See the [docs](https://playwright.dev/docs/test-configuration) for more information! 
 ```typescript title="playwright.config.ts"
 import { type PlaywrightTestConfig, devices } from '@playwright/test';
@@ -105,7 +105,7 @@ const config: PlaywrightTestConfig = {
 
 export default config;
 ```
-#### Browsers and Devices
+### Browsers and Devices
 The scaffolded project configuration by default uses Desktop Chrome, Firefox and WebKit. Upon package install or test execution Playwright will automatically install the browsers defined within the running project. Other browsers are available, such as Microsoft Edge and HiDPI browsers. Additionally, the scaffolded project configuration contains two examples for mobile devices, Mobile Chrome on the Pixel 5, and WebKit on the iPhone 12.
 
 Playwright has an extensive library of browsers and devices which can be found in the [device descriptors list](https://github.com/microsoft/playwright/blob/main/packages/playwright-core/src/server/deviceDescriptorsSource.json). An example of a mobile emulation device is found below, showcasing how Playwright emulates the devices through **userAgent** and **viewport** configuration, alongside mobile properties such as **isMobile**/**hasTouch**. By default, each emulated device will have a **defaultBrowserType**, in this example the iPhone12 uses webkit.
