@@ -20,7 +20,7 @@ Upon scaffolding your application with the playwright testing framework, you wil
 #### Base configuration
 The base configuration has been created with CI in mind, meaning the default configuration (shared across all projects) considers requirements for reporting and pipeline efficiency out of the box! 
 
-```jsx title="playwright.config.base.ts"
+```typescript title="playwright.config.base.ts"
 import { PlaywrightTestConfig } from '@playwright/test';
 
 const baseURL = process.env.BASE_URL || 'http://localhost:4200/';
@@ -50,8 +50,8 @@ export const baseConfig: PlaywrightTestConfig = {
 };
 ```
 #### Project based configuration.
-Individual project configuration has been created with our own recommendations to get the most out of playwright’s capabilities, targeting multiple browsers and devices. From this example, you can tailor it to suit your specific needs! See the [docs](https://playwright.dev/docs/test-configuration) for more information!
-```jsx title="playwright.config.ts"
+Individual project configuration has been created with our own recommendations to get the most out of playwright’s capabilities, targeting multiple browsers and devices. From this example, you can tailor it to suit your specific needs! See the [docs](https://playwright.dev/docs/test-configuration) for more information! 
+```typescript title="playwright.config.ts"
 import { type PlaywrightTestConfig, devices } from '@playwright/test';
 //Extends the base configuration for playwright which is shared across all projects
 import { baseConfig } from '../../playwright.config.base';
@@ -105,21 +105,46 @@ const config: PlaywrightTestConfig = {
 
 export default config;
 ```
+#### Browsers and Devices
+The scaffolded project configuration by default uses Desktop Chrome, Firefox and WebKit. Upon package install or test execution Playwright will automatically install the browsers defined within the running project. Other browsers are available, such as Microsoft Edge and HiDPI browsers. Additionally, the scaffolded project configuration contains two examples for mobile devices, Mobile Chrome on the Pixel 5, and WebKit on the iPhone 12.
+
+Playwright has an extensive library of browsers and devices which can be found in the [device descriptors list](https://github.com/microsoft/playwright/blob/main/packages/playwright-core/src/server/deviceDescriptorsSource.json). An example of a mobile emulation device is found below, showcasing how Playwright emulates the devices through **userAgent** and **viewport** configuration, alongside mobile properties such as **isMobile**/**hasTouch**. By default, each emulated device will have a **defaultBrowserType**, in this example the iPhone12 uses webkit.
+```json title="deviceDescriptorsSource.json"
+"iPhone 12": {
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 14_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.4 Mobile/15E148 Safari/604.1",
+    "screen": {
+      "width": 390,
+      "height": 844
+    },
+    "viewport": {
+      "width": 390,
+      "height": 664
+    },
+    "deviceScaleFactor": 3,
+    "isMobile": true,
+    "hasTouch": true,
+    "defaultBrowserType": "webkit"
+  }
+```
 
 ### Running your playwright tests
 Using NX we can very easily run our tests, either for the a specific project, or against any affected projects. NX will handle provisioning and tearing down of the webserver automatically!
 Using the NX ‘affected’ capability allows you to run only the tests within a mono repo where the codebase has changes since the ‘master’ commit. (See the [docs](https://nx.dev/concepts/affected) for more information)
 
-<Tabs>
-    <TabItem value="project" label="Current Project" default>
-    ```bash
-    # example-test-project-e2e = name of test project
-    nx e2e example-test-project-e2e
-    ```
+
+ <Tabs>
+  <TabItem value="current" label="Current">
+
+  ```bash
+  nx e2e example-test-project-e2e
+  ```
+
   </TabItem>
   <TabItem value="affected" label="Affected">
-    ```bash
-    nx affected:e2e
-    ```
+
+  ```bash
+  nx affected:e2e
+  ```
+
   </TabItem>
-</Tabs>
+ </Tabs>
