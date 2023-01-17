@@ -318,7 +318,8 @@ module.exports = {
             type: "category",
             label: "Playwright Information",
             items: [
-              "testing/testing_in_nx/testing_with_playwright",,
+              "testing/testing_in_nx/testing_with_playwright",
+              "testing/testing_in_nx/playwright_accessibility_testing",
             ],
           },
         ],
