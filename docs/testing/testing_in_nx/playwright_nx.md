@@ -148,3 +148,18 @@ Using the NX ‘affected’ capability allows you to run only the tests within a
 
   </TabItem>
  </Tabs>
+
+#### Run specific tests
+Looking at the following example, we have tagged the test with **@smoke-test** within the test case name
+```typescript
+test('App should be up and running @smoke-test', async ({ page }) => {
+    const status: string = await page.locator('#hero >> span').textContent();
+    expect(status).toBe("You're up and running");
+});
+```
+To run specific this specific test you can use the grep parameter alongside your run command, similarly, if multiple tests contain **@smoke-test** within their name, they will also be executed 
+```bash
+  nx e2e example-test-project-e2e --grep @smoke-test
+```
+ ### Viewing your test results
+ COMPLETE THIS SECTION
