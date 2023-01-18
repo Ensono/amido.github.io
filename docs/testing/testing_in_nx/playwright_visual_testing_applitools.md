@@ -26,7 +26,7 @@ Overall, Applitools Eyes is a more powerful and flexible solution for visual tes
 
 ## Applitools eyes with Playwright
 
-When scaffolding your application with Applitools Eyes the [@applitools/eyes-playwright](https://www.npmjs.com/package/@applitools/eyes-playwright) plugin will be added to your dependancy list, additionally the following updates will be applied to the playwright configuration file:
+When scaffolding your application with Applitools Eyes the [@applitools/eyes-playwright](https://www.npmjs.com/package/@applitools/eyes-playwright) plugin will be added to your dependency list, additionally the following updates will be applied to the playwright configuration file:
 
 ```typescript title="playwright.config.ts"
   grepInvert: /.*@visual-regression/,
@@ -42,7 +42,7 @@ When scaffolding your application with Applitools Eyes the [@applitools/eyes-pla
 
 As playwright executes each test once per project and the _playwright.config.ts_ contains multiple project definitions this would result in the visual regression tests being ran multiple times within the Applitools cloud.
 
-As browser/device requirements are specified within the eyes `Configuration()` object this would result in redunant tests runs, unnecessarily consuming your snapshot allowance. To mitigate this we make use of **_grep_** and **_grepInvert_** to isolate Applitools visual regression tests into their own project with unique configuration. 
+As browser/device requirements are specified within the eyes `Configuration()` object this would result in redundant tests runs, unnecessarily consuming your snapshot allowance. To mitigate this we make use of **_grep_** and **_grepInvert_** to isolate Applitools visual regression tests into their own project with unique configuration. 
 
 :::caution
 

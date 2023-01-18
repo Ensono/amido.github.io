@@ -15,7 +15,7 @@ keywords:
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
-Accesibility testing with Playwright is very simple and ensures that everyone, including those with disabilities or impairments can fully access and use the site or app. It is not only a legal requirement, but also a moral and ethical one, to ensure that digital products are inclusive and usable by all.
+Accessibility testing with Playwright is very simple and ensures that everyone, including those with disabilities or impairments can fully access and use the site or app. It is not only a legal requirement, but also a moral and ethical one, to ensure that digital products are inclusive and usable by all.
 
 ## Axe: Accessibility testing
 
@@ -47,7 +47,7 @@ test.describe('NextJs example accessibility tests @accessibility', () => {
   });
 });
 ```
-Using the AxeBuilder, a chainable API for playwright, we automatically inject axe into all frames. Using the optional `withTags()` function we can specify the WCAG guidlines we want to verify our application conforms to. 
+Using the AxeBuilder, a chainable API for playwright, we automatically inject axe into all frames. Using the optional `withTags()` function we can specify the WCAG guidelines we want to verify our application conforms to. 
 ```typescript
 // highlight-next-line
 await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa']).analyze()
@@ -59,7 +59,7 @@ await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21
         expect(results.violations,'No violations should be present, see console log').toHaveLength(0)
       });
 ```
-Upon axe analysis we then pass the results object to the `then()` function. In here we use the axe-result-pretty-print to view the accessibliity test results in a readable format.
+Upon axe analysis we then pass the results object to the `then()` function. In here we use the axe-result-pretty-print to view the accessibility test results in a readable format.
 ```typescript
 await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa']).analyze()
       .then((results) => {
@@ -72,7 +72,7 @@ await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21
         expect(results.violations,'No violations should be present, see console log').toHaveLength(0)
       });
 ```
-The violations array within the results object detail any elements of the application which have breached the specified/default web content accessibility guidlines. As such, we assert that there are no entries in the array, if there are more than one elements then the test will fail.
+The violations array within the results object detail any elements of the application which have breached the specified/default web content accessibility guidelines. As such, we assert that there are no entries in the array, if there are more than one elements then the test will fail.
 ```typescript
 await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa']).analyze()
       .then((results) => {

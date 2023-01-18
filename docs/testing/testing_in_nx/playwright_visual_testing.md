@@ -45,11 +45,11 @@ As part of native visual comparisons with playwright the following recommended c
   - Description: Whether to update expected snapshots with the actual results produced by the test run.
   - Value: **'missing'** - Missing snapshots are created, for example when authoring a new test and running it for the first time.
 - toHaveScreenshot::threshold
-  - Description: an acceptable perceived color difference in the YIQ color space between the same pixel in compared images, between zero (strict) and one (lax).
+  - Description: an acceptable perceived colour difference in the YIQ colour space between the same pixel in compared images, between zero (strict) and one (lax).
   - Value: **0.2** - Any pixel with > 20% variance will be flagged
 - toHaveScreenshot::animations
   - Description: whether to enable or disable CSS animations, CSS transitions and Web Animations
-  - Value: **disabled** - finite animations are fast-forwarded to completion and infinite animations are canceled to initial state.
+  - Value: **disabled** - finite animations are fast-forwarded to completion and infinite animations are cancelled to initial state.
 
   
 :::info
@@ -86,18 +86,18 @@ test.describe('Native @visual-regression', () => {
 
 ```
 
-The sample contains two tests, showcasing playwrights ability to perform full page comparisons, or target specific areas of the webpage. 
+The sample contains two tests, showcasing playwrights ability to perform full page comparisons, or target specific areas of the web page. 
 Upon first run of the test(s) Playwright will capture a baseline image, the name will vary depending on whether a value is passed to the `toHaveScreenshot()` method:
 - Default: auto-generated name consisting of `desribe block name`-`test case name`-`browser`-`operating system`.png
 - Defined: user specified name resulting in `user defined name`-`browser`-`operating system`.png
 
 :::caution
 
-Images captured on different operating systems will result in multiple versions of a screenshot file. It is worthwhile to standardise snapshopt capturing to reduce the number of screenshots captured and allow users on different operating systems to use baseline images captured by other users or in the CI/vice versa. See the following [section](./invalid_link_please_update) 
+Images captured on different operating systems will result in multiple versions of a screenshot file. It is worthwhile to standardise snapshot capturing to reduce the number of screenshots captured and allow users on different operating systems to use baseline images captured by other users or in the CI/vice versa. See the following [section](./invalid_link_please_update) 
 
 :::
 
-As indicated by the below folder structure, a `playwright-visual-regression.spec.ts-snapshots` folder will be generated for the `playwright-visual-regression.spec.ts` file to house all associated baseline images. Using the [project based conguration](././playwright_nx.md#project-based-configuration) multiple screenshots will be captured for each device, in this example capturing the snapshots on windows results in each image being appended with _'win32'_
+As indicated by the below folder structure, a `playwright-visual-regression.spec.ts-snapshots` folder will be generated for the `playwright-visual-regression.spec.ts` file to house all associated baseline images. Using the [project based configuration](././playwright_nx.md#project-based-configuration) multiple screenshots will be captured for each device, in this example capturing the snapshots on windows results in each image being appended with _'win32'_
 
 ```text title="Output from running the playwright-visual-regression.spec.ts example"
 .
