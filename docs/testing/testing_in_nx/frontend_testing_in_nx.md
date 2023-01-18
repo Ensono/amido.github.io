@@ -17,7 +17,11 @@ Using [NX](https://nx.dev/) provides many benefits when working with SSR or CSR 
 
 ## Getting Started
 
-COMPLETE THIS SECTION WITH INFORMATION ON THE CLI FOR TESTING
+:::danger 
+
+**UPDATE THIS SECTION ONCE WE HAVE ALL INFORMATION ON THE CLI**
+
+:::
 
 ### Selecting your test framework
 As part of the scaffolding process, you will be presented with the option to scaffold your test framework. We recommend and currently support Playwright within the stacks workflow, with it’s Microsoft backing, extensive feature set and fast cross-browser web automation capability, it is our preferred tooling choice. Cypress is also a powerful testing framework which has a significant user base, as such this is currently road mapped and will be supported in a future release.  
@@ -41,28 +45,13 @@ Find out more about testing with [`Playwright`](./playwright_nx.md) using stacks
   </div>
 </details>
 
-:::danger 
-
-**UPDATE THIS SECTION AS WE WONT KNOW THE FRAMEWORK**
-
-:::
-
-
 When scaffolding your application, you will be presented with the following options:
--	Playwright with Axe:
-    -	Preconfigures an axe implementation / configuration, axe being the standard toolset in accessibility testing. See Accessibility testing | Playwright for more information using @axe-core/playwright - npm (npmjs.com)
+-	Axe:
+    -	Preconfigures an axe implementation / configuration, axe being the standard toolset in accessibility testing.
 - None:
-    -	If you would prefer an alternative to playwright with axe, then the none option allows you to scaffold your project without these libraries being bundled in. 
+    -	If you would prefer an alternative to axe, then the none option allows you to scaffold your project without these libraries being bundled in. 
 
 ### Visual Regression Testing
-
-
-:::danger 
-
-**UPDATE THIS SECTION AS WE WONT KNOW THE FRAMEWORK**
-
-:::
-
 
 <details>
   <summary>Why visual regression test?</summary>
@@ -76,7 +65,7 @@ When scaffolding your application, you will be presented with the following opti
 Alongside scaffolding your test framework you will be presented with the opportunity to integrate the following into your project:
 -	Applitools eyes
     -	A powerful visual regression testing tool that detects visual changes, updates of browsers or OS, and integrates with popular testing frameworks and CI/CD pipelines, making it easy to automate visual regression testing and improve the quality and user-friendliness of digital products. Our community of experts recommend this software as the best approach, to decide if it is right for you, please visit [Applitools Eyes!](https://applitools.com/platform/eyes/)
--	Native with Playwright
-    - A free alternative to cloud-based providers which enables developers to perform automated visual regression testing using the latest web platform features, in addition, Playwrights browser support allows you to easily test cross-browser compatibility and identify visual bugs that may only appear on specific browsers or devices. See Visual comparisons | Playwright for more information
+-	Native
+    - A free alternative to cloud-based providers which enables developers to perform automated visual regression testing using the latest web platform features in their chosen testing framework.
 -	None
     -	If neither option meets your requirements, or visual regression testing is not something you are considering, then this can be omitted during the scaffolding process. 
