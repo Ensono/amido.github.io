@@ -19,7 +19,7 @@ Accesibility testing with Playwright is very simple and ensures that everyone, i
 
 ## Axe: Accessibility testing
 
-From the Dequeue family of products, we are using [aXe](https://www.deque.com/axe/) for accessibility testing, specifically their Node.js plugin, [@axe-core/playwright](https://github.com/dequelabs/axe-core-npm/blob/develop/packages/playwright/README.md), for integration into the Playwright testing framework.
+From the Dequeue family of products, we are using [aXe](https://www.deque.com/axe/) for accessibility testing, specifically their Node.js plugin, [`@axe-core/playwright`](https://github.com/dequelabs/axe-core-npm/blob/develop/packages/playwright/README.md), for integration into the Playwright testing framework.
 
 ### Scaffolded Example
 When accessibility tests are scaffolded into your project you will see the following example:
@@ -47,7 +47,7 @@ test.describe('NextJs example accessibility tests @accessibility', () => {
   });
 });
 ```
-Using the AxeBuilder, a chainable API for playwright, we automatically inject axe into all frames. Using the optional **withTags()** function we can specify the WCAG guidlines we want to verify our application conforms to. 
+Using the AxeBuilder, a chainable API for playwright, we automatically inject axe into all frames. Using the optional `withTags()` function we can specify the WCAG guidlines we want to verify our application conforms to. 
 ```typescript
 // highlight-next-line
 await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa']).analyze()
@@ -59,7 +59,7 @@ await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21
         expect(results.violations,'No violations should be present, see console log').toHaveLength(0)
       });
 ```
-Upon axe analysis we then pass the results object to the **then()** function. In here we use the axe-result-pretty-print to view the accessibliity test results in a readable format.
+Upon axe analysis we then pass the results object to the `then()` function. In here we use the axe-result-pretty-print to view the accessibliity test results in a readable format.
 ```typescript
 await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa']).analyze()
       .then((results) => {
@@ -87,7 +87,7 @@ await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21
 ```
 ### Running your accessibility tests
 
-We reccommend tagging your Playwright accessibility tests so that you can target these specific tests if required. In the below examples we have tagged the tests with **@accessibility** which enables us to target them through **grep** as seen in the ['Run specific tests'](./playwright_nx.md#run-specific-tests) example
+We recommend tagging your Playwright accessibility tests so that you can target these specific tests if required. In the below examples we have tagged the tests with **@accessibility** which enables us to target them through **grep** as seen in the ['Run specific tests'](./playwright_nx.md#run-specific-tests) example
 
 <Tabs>
  <TabItem value="grouped" label="Grouped">

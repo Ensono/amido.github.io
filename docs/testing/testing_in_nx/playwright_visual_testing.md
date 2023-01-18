@@ -87,9 +87,9 @@ test.describe('Native @visual-regression', () => {
 ```
 
 The sample contains two tests, showcasing playwrights ability to perform full page comparisons, or target specific areas of the webpage. 
-Upon first run of the test(s) Playwright will capture a baseline image, the name will vary depending on whether a value is passed to the **toHaveScreenshot()** method:
-- Default: auto-generated name consisting of [desribe block name]-[test case name]-[browser]-[operating system].png
-- Defined: user specified name resulting in [user defined name]-[browser]-[operating system].png
+Upon first run of the test(s) Playwright will capture a baseline image, the name will vary depending on whether a value is passed to the `toHaveScreenshot()` method:
+- Default: auto-generated name consisting of `desribe block name`-`test case name`-`browser`-`operating system`.png
+- Defined: user specified name resulting in `user defined name`-`browser`-`operating system`.png
 
 :::caution
 
@@ -97,7 +97,7 @@ Images captured on different operating systems will result in multiple versions 
 
 :::
 
-As indicated by the below folder structure, a _'playwright-visual-regression.spec.ts-snapshots'_ folder will be generated for the _'playwright-visual-regression.spec.ts'_ file to house all associated baseline images. Using the [project based conguration](././playwright_nx.md#project-based-configuration) multiple screenshots will be captured for each device, in this example capturing the snapshots on windows results in each image being appended with _'win32'_
+As indicated by the below folder structure, a `playwright-visual-regression.spec.ts-snapshots` folder will be generated for the `playwright-visual-regression.spec.ts` file to house all associated baseline images. Using the [project based conguration](././playwright_nx.md#project-based-configuration) multiple screenshots will be captured for each device, in this example capturing the snapshots on windows results in each image being appended with _'win32'_
 
 ```text title="Output from running the playwright-visual-regression.spec.ts example"
 .
@@ -149,7 +149,6 @@ We recommend tagging your Playwright visual tests so that you can target these s
 
  </TabItem>
 </Tabs>
-
 
 ### CI
 

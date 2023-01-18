@@ -16,7 +16,7 @@ import TabItem from "@theme/TabItem";
 Playwright is a relatively new testing framework, which is developed and supported by Microsoft. Playwright was designed to enable cross-browser web automation that is reliable and fast, with support for multiple browsers, programming languages and test runners. With a vast array of growing capabilities, alongside Microsoft backing, we are supporting and recommending it as a test framework within stacks!
 
 ## Getting Started
-Upon scaffolding your application with the playwright testing framework, you will be presented with an example test suite and playwright configuration. The [@mands/nx-playwright](https://github.com/marksandspencer/nx-plugins/tree/main/packages/nx-playwright) NX plugin is used as a base for the Playwright/NX integration. 
+Upon scaffolding your application with the playwright testing framework, you will be presented with an example test suite and playwright configuration. The [`@mands/nx-playwright`](https://github.com/marksandspencer/nx-plugins/tree/main/packages/nx-playwright) NX plugin is used as a base for the Playwright/NX integration. 
 
 ### Base configuration
 The base configuration has been created with CI in mind, meaning the default configuration (shared across all projects) considers requirements for reporting and pipeline efficiency out of the box! 
@@ -109,7 +109,7 @@ export default config;
 ### Browsers and Devices
 The scaffolded project configuration by default uses Desktop Chrome, Firefox and WebKit. Upon package install or test execution Playwright will automatically install the browsers defined within the running project. Other browsers are available, such as Microsoft Edge and HiDPI browsers. Additionally, the scaffolded project configuration contains two examples for mobile devices, Mobile Chrome on the Pixel 5, and WebKit on the iPhone 12.
 
-Playwright has an extensive library of browsers and devices which can be found in the [device descriptors list](https://github.com/microsoft/playwright/blob/main/packages/playwright-core/src/server/deviceDescriptorsSource.json). An example of a mobile emulation device is found below, showcasing how Playwright emulates the devices through **userAgent** and **viewport** configuration, alongside mobile properties such as **isMobile**/**hasTouch**. By default, each emulated device will have a **defaultBrowserType**, in this example the iPhone12 uses webkit.
+Playwright has an extensive library of browsers and devices which can be found in the [device descriptors list](https://github.com/microsoft/playwright/blob/main/packages/playwright-core/src/server/deviceDescriptorsSource.json). An example of a mobile emulation device is found below, showcasing how Playwright emulates the devices through `userAgent` and `viewport` configuration, alongside mobile properties such as `isMobile`/`hasTouch`. By default, each emulated device will have a `defaultBrowserType`, in this example the iPhone12 uses webkit.
 ```json title="deviceDescriptorsSource.json"
 "iPhone 12": {
     "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 14_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.4 Mobile/15E148 Safari/604.1",
@@ -191,9 +191,9 @@ Running 30 tests using 8 workers
 Done in 56.75s.
 ```
 
-One recommendation for running locally is to utilise HTML reports, a visual report on the status of all executed tests. When viewing HTML reports, all artifacts such as screenshots can be found in one place, alongside trace reports which are very useful in debugging tests post execution. See the  for more information!
+One recommendation for running locally is to utilise HTML reports, a visual report on the status of all executed tests. When viewing HTML reports, all artifacts such as screenshots can be found in one place, alongside trace reports which are very useful in debugging tests post execution.
 
-To change the reporter being used locally you can amend the ['playwright.config.ts'](#project-based-configuration) or alternatively through the CLI. Through both options you can also enable the [trace viewer](https://playwright.dev/docs/trace-viewer-intro): 
+To change the reporter being used locally you can amend the [`playwright.config.ts`](#project-based-configuration) or alternatively through the CLI. Through both options you can also enable the [trace viewer](https://playwright.dev/docs/trace-viewer-intro): 
 
 ```bash
 nx e2e next-js-app-e2e --reporter=html --trace on

@@ -42,7 +42,7 @@ When scaffolding your application with Applitools Eyes the [@applitools/eyes-pla
 
 As playwright executes each test once per project and the _playwright.config.ts_ contains multiple project definitions this would result in the visual regression tests being ran multiple times within the Applitools cloud.
 
-As browser/device requirements are specified within the eyes **_Configuration()_** object this would result in redunant tests runs, unnecessarily consuming your snapshot allowance. To mitigate this we make use of **_grep_** and **_grepInvert_** to isolate Applitools visual regression tests into their own project with unique configuration. 
+As browser/device requirements are specified within the eyes `Configuration()` object this would result in redunant tests runs, unnecessarily consuming your snapshot allowance. To mitigate this we make use of **_grep_** and **_grepInvert_** to isolate Applitools visual regression tests into their own project with unique configuration. 
 
 :::caution
 
@@ -52,10 +52,150 @@ Tests using Applitools Eyes **MUST** be tagged with **@visual-regression** to av
 
 ### Sample tests
 
+Upon scaffolding your application with Playwright and Applitools eyes a sample test file will also be provided, demonstrating/describing how visual regression tests can be ran on the Applitools Eyes Grid.
+
+```typescript title="applitools-eyes-grid.spec.ts"
+import { test } from '@playwright/test';
+import {
+  BatchInfo,
+  Configuration,
+  VisualGridRunner,
+  BrowserType,
+  DeviceName,
+  ScreenOrientation,
+  Eyes,
+  Target,
+} from '@applitools/eyes-playwright';
+
+export let Batch: BatchInfo;
+export let Config: Configuration;
+export let Runner: VisualGridRunner;
+
+// This method sets up the configuration for running visual tests in the Ultrafast Grid.
+// The configuration is shared by all tests in a test suite, so it belongs in a `beforeAll` method.
+// If you have more than one test class, then you should abstract this configuration to avoid duplication.
+test.beforeAll(async () => {
+  // Concurrency refers to the number of visual checkpoints Applitools will perform in parallel.
+  // Warning: If you have a free account, then concurrency will be limited to 1.
+  Runner = new VisualGridRunner({ testConcurrency: 5 });
+
+  // Create a new batch for tests.
+  // A batch is the collection of visual checkpoints for a test suite.
+  // Batches are displayed in the dashboard, so use meaningful names.
+  Batch = new BatchInfo({
+    name: 'Example: Playwright TypeScript with the Ultrafast Grid',
+  });
+
+  // Create a configuration for Applitools Eyes.
+  Config = new Configuration();
+
+  // Set the batch for the config.
+  Config.setBatch(Batch);
+
+  // Add desktop browsers with different viewports for cross-browser testing in the Ultrafast Grid.
+  Config.addBrowser(1920, 1080, BrowserType.CHROME);
+  // Config.addBrowser(1366, 768, BrowserType.FIREFOX);
+  // Config.addBrowser(3840, 2160, BrowserType.SAFARI);
+
+  // Add mobile emulation devices with different orientations for cross-browser testing in the Ultrafast Grid.
+  Config.addDeviceEmulation(
+    DeviceName.iPhone_11_Pro_Max,
+    ScreenOrientation.LANDSCAPE
+  );
+  // Config.addDeviceEmulation(DeviceName.Galaxy_S22, ScreenOrientation.PORTRAIT);
+});
+
+// This "describe" method contains related test cases with per-test setup and cleanup.
+// In this example, there is only one test.
+test.describe('Applitools-eyes - ultrafast grid - @visual-regression', () => {
+  let eyes: Eyes;
+
+  // This method sets up each test with its own Applitools Eyes object.
+  test.beforeEach(async ({ page }) => {
+    //Navigate to the base page of the NextJs app
+    await page.goto('/');
+    // Create the Applitools Eyes object connected to the VisualGridRunner and set its configuration.
+    eyes = new Eyes(Runner, Config);
+
+    // Open Eyes to start visual testing.
+    // Each test should open its own Eyes for its own snapshots.
+    // It is a recommended practice to set all four inputs below:
+    await eyes.open(
+      page, // The Playwright page object to "watch"
+      'next-js-app', // The name of the app under test
+      test.info().title, // The name of the test case
+      { width: 1920, height: 1080 } // The viewport size for the local browser
+    );
+  });
+
+  // This test performs a simple visual regression test, capturing/comparing a screenshot of the full window.
+  // If the page ever changes, then Applitools will detect the changes and highlight them in the dashboard.
+  test('Check the main page', async () => {
+    // This snapshot uses STRICT match level to verify that the page content matches the baseline image closely enough that the human eye would not see any difference.
+    await eyes.check('Main page', Target.window().fully().strict());
+  });
+
+  test.afterEach(async () => {
+    // Close Eyes to tell the server it should display the results.
+    await eyes.close();
+  });
+});
+
+test.afterAll(async () => {
+  // Close the batch and report visual differences to the console.
+  // Note that it forces Playwright to wait synchronously for all visual checkpoints to complete.
+  // If any visual regressions are detected, the playwright test will fail
+  const results = await Runner.getAllTestResults();
+  console.log('Visual test results', results);
+});
+```
 
 ## Running your visual regression tests
 
+As a prerequisite to running Applitools Eyes tests, the API key must be set. The API key can be found by following ['How to retrieve your API key'](https://applitools.com/docs/topics/overview/obtain-api-key.html) guide.
+
 ### Locally
 
+As mentioned [above](#applitools-eyes-with-playwright), Applitools Eyes tests should be tagged with **@visual-regression** to ensure that we do not accidentally duplicate test runs, this also enables us to target these tests through **grep** as seen in the ['Run specific tests'](./playwright_nx.md#run-specific-tests) example.
+
+<Tabs>
+ <TabItem value="grouped" label="Grouped">
+
+ ```typescript
+ //multiple tests grouped in a describe block
+ test.describe('Applitools-eyes - ultrafast grid - @visual-regression', () => {   
+    test('visual test 1', async ({ page }) => {
+        //test code
+    });
+
+    test('visual test 2', async ({ page }) => {
+        //test code
+    });
+ }
+ ```
+
+ </TabItem>
+ <TabItem value="individual" label="Individual">
+
+ ```typescript
+ test('Example applitools eyes test @visual-regression', async ({ page }) => {
+    //test code
+ });
+ ```
+
+ </TabItem>
+</Tabs>
+
+:::note
+
+You must set your runner key API before running Applitools Eyes tests locally by following [this guide](https://help.applitools.com/hc/en-us/articles/360006914732-The-runner-key-API-Key-).
+
+:::
 
 ### CI
+
+:::danger
+
+This section is pending completion once TaskCTL and Pipelines are available!
+
+:::
