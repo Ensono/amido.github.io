@@ -109,7 +109,7 @@ export default config;
 ### Browsers and Devices
 The scaffolded project configuration by default uses Desktop Chrome, Firefox and WebKit. Upon package install or test execution Playwright will automatically install the browsers defined within the running project. Other browsers are available, such as Microsoft Edge and HiDPI browsers. Additionally, the scaffolded project configuration contains two examples for mobile devices, Mobile Chrome on the Pixel 5, and WebKit on the iPhone 12.
 
-Playwright has an extensive library of browsers and devices which can be found in the [device descriptors list](https://github.com/microsoft/playwright/blob/main/packages/playwright-core/src/server/deviceDescriptorsSource.json). An example of a mobile emulation device is found below, showcasing how Playwright emulates the devices through `userAgent` and `viewport` configuration, alongside mobile properties such as `isMobile`/`hasTouch`. By default, each emulated device will have a `defaultBrowserType`, in this example the iPhone12 uses webkit.
+Playwright has an extensive library of browsers and devices which can be found in the [device descriptors list](https://github.com/microsoft/playwright/blob/main/packages/playwright-core/src/server/deviceDescriptorsSource.json). An example of a mobile emulation device is found below, showcasing how Playwright emulates the devices through `userAgent` and `viewport` configuration, alongside mobile properties such as `isMobile`/`hasTouch`. By default, each emulated device will have a `defaultBrowserType`, in this example the iPhone12 uses WebKit.
 ```json title="deviceDescriptorsSource.json"
 "iPhone 12": {
     "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 14_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.4 Mobile/15E148 Safari/604.1",
@@ -129,7 +129,7 @@ Playwright has an extensive library of browsers and devices which can be found i
 ```
 
 ### Running your playwright tests
-Using NX we can very easily run our tests, either for the a specific project, or against any affected projects. NX will handle provisioning and tearing down of the webserver automatically!
+Using NX we can very easily run our tests, either for the a specific project, or against any affected projects. NX will handle provisioning and tearing down of the web server automatically!
 Using the NX ‘affected’ capability allows you to run only the tests within a mono repo where the codebase has changes since the ‘master’ commit. (See the [docs](https://nx.dev/concepts/affected) for more information)
 
 
@@ -191,7 +191,7 @@ Running 30 tests using 8 workers
 Done in 56.75s.
 ```
 
-One recommendation for running locally is to utilise HTML reports, a visual report on the status of all executed tests. When viewing HTML reports, all artifacts such as screenshots can be found in one place, alongside trace reports which are very useful in debugging tests post execution.
+One recommendation for running locally is to utilise HTML reports, a visual report on the status of all executed tests. When viewing HTML reports, all artefacts such as screenshots can be found in one place, alongside trace reports which are very useful in debugging tests post execution.
 
 To change the reporter being used locally you can amend the [`playwright.config.ts`](#project-based-configuration) or alternatively through the CLI. Through both options you can also enable the [trace viewer](https://playwright.dev/docs/trace-viewer-intro): 
 
