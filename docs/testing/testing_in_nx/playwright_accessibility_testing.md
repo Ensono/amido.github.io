@@ -87,7 +87,7 @@ await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21
 ```
 ### Running your accessibility tests
 
-We reccommend tagging your Playwright accessibility so that you can target these specific tests if required. In the below examples we have tagged the tests with **@accessibility** which enables us to target through **grep** as seen in the ['Run specific tests'](./playwright_nx.md#run-specific-tests) example
+We reccommend tagging your Playwright accessibility tests so that you can target these specific tests if required. In the below examples we have tagged the tests with **@accessibility** which enables us to target them through **grep** as seen in the ['Run specific tests'](./playwright_nx.md#run-specific-tests) example
 
 <Tabs>
  <TabItem value="grouped" label="Grouped">

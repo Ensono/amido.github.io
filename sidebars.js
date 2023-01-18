@@ -320,6 +320,14 @@ module.exports = {
             items: [
               "testing/testing_in_nx/testing_with_playwright",
               "testing/testing_in_nx/playwright_accessibility_testing",
+              {
+                type: "category",
+                label: "Visual Testing",
+                items: [
+                  "testing/testing_in_nx/playwright_visual_testing",
+                  "testing/testing_in_nx/playwright_visual_testing_applitools_eyes",
+                ],
+              },
             ],
           },
         ],
