@@ -24,6 +24,7 @@ Using [NX](https://nx.dev/) provides many benefits when working with SSR or CSR 
 :::
 
 ### Selecting your test framework
+
 As part of the scaffolding process, you will be presented with the option to scaffold your test framework. We recommend and currently support Playwright within the stacks workflow, with it’s Microsoft backing, extensive feature set and fast cross-browser web automation capability, it is our preferred tooling choice. Cypress is also a powerful testing framework which has a significant user base, as such this is currently road mapped and will be supported in a future release.  
 
 :::tip 
@@ -35,6 +36,7 @@ Find out more about testing with [`Playwright`](./playwright_nx.md) using stacks
 
 
 ### Accessibility Testing 
+
 <details>
   <summary>Why accessibility test?</summary>
   <div>
@@ -46,6 +48,7 @@ Find out more about testing with [`Playwright`](./playwright_nx.md) using stacks
 </details>
 
 When scaffolding your application, you will be presented with the following options:
+
 -	Axe:
     -	Preconfigures an axe implementation / configuration, axe being the standard toolset in accessibility testing.
 - None:
@@ -63,6 +66,7 @@ When scaffolding your application, you will be presented with the following opti
 </details>
 
 Alongside scaffolding your test framework you will be presented with the opportunity to integrate the following into your project:
+
 -	Applitools eyes
     -	A powerful visual regression testing tool that detects visual changes, updates of browsers or OS, and integrates with popular testing frameworks and CI/CD pipelines, making it easy to automate visual regression testing and improve the quality and user-friendliness of digital products. Our community of experts recommend this software as the best approach, to decide if it is right for you, please visit [Applitools Eyes!](https://applitools.com/platform/eyes/)
 -	Native

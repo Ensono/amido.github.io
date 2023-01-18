@@ -16,9 +16,11 @@ import TabItem from "@theme/TabItem";
 Playwright is a relatively new testing framework, which is developed and supported by Microsoft. Playwright was designed to enable cross-browser web automation that is reliable and fast, with support for multiple browsers, programming languages and test runners. With a vast array of growing capabilities, alongside Microsoft backing, we are supporting and recommending it as a test framework within stacks!
 
 ## Getting Started
+
 Upon scaffolding your application with the playwright testing framework, you will be presented with an example test suite and playwright configuration. The [`@mands/nx-playwright`](https://github.com/marksandspencer/nx-plugins/tree/main/packages/nx-playwright) NX plugin is used as a base for the Playwright/NX integration. 
 
 ### Base configuration
+
 The base configuration has been created with CI in mind, meaning the default configuration (shared across all projects) considers requirements for reporting and pipeline efficiency out of the box! 
 
 ```typescript title="playwright.config.base.ts"
@@ -50,8 +52,11 @@ export const baseConfig: PlaywrightTestConfig = {
   },
 };
 ```
+
 ### Project based configuration
+
 Individual project configuration has been created with our own recommendations to get the most out of playwright’s capabilities, targeting multiple browsers and devices. From this example, you can tailor it to suit your specific needs! See the [docs](https://playwright.dev/docs/test-configuration) for more information! 
+
 ```typescript title="playwright.config.ts"
 import { type PlaywrightTestConfig, devices } from '@playwright/test';
 //Extends the base configuration for playwright which is shared across all projects
@@ -106,10 +111,13 @@ const config: PlaywrightTestConfig = {
 
 export default config;
 ```
+
 ### Browsers and Devices
+
 The scaffolded project configuration by default uses Desktop Chrome, Firefox and WebKit. Upon package install or test execution Playwright will automatically install the browsers defined within the running project. Other browsers are available, such as Microsoft Edge and HiDPI browsers. Additionally, the scaffolded project configuration contains two examples for mobile devices, Mobile Chrome on the Pixel 5, and WebKit on the iPhone 12.
 
 Playwright has an extensive library of browsers and devices which can be found in the [device descriptors list](https://github.com/microsoft/playwright/blob/main/packages/playwright-core/src/server/deviceDescriptorsSource.json). An example of a mobile emulation device is found below, showcasing how Playwright emulates the devices through `userAgent` and `viewport` configuration, alongside mobile properties such as `isMobile`/`hasTouch`. By default, each emulated device will have a `defaultBrowserType`, in this example the iPhone12 uses WebKit.
+
 ```json title="deviceDescriptorsSource.json"
 "iPhone 12": {
     "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 14_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.4 Mobile/15E148 Safari/604.1",
@@ -129,6 +137,7 @@ Playwright has an extensive library of browsers and devices which can be found i
 ```
 
 ### Running your playwright tests
+
 Using NX we can very easily run our tests, either for the a specific project, or against any affected projects. NX will handle provisioning and tearing down of the web server automatically!
 Using the NX ‘affected’ capability allows you to run only the tests within a mono repo where the codebase has changes since the ‘master’ commit. (See the [docs](https://nx.dev/concepts/affected) for more information)
 
@@ -151,17 +160,22 @@ Using the NX ‘affected’ capability allows you to run only the tests within a
  </Tabs>
 
 #### Run specific tests
+
 Looking at the following example, we have tagged the test with **@smoke-test** within the test case name
+
 ```typescript
 test('App should be up and running @smoke-test', async ({ page }) => {
     const status: string = await page.locator('#hero >> span').textContent();
     expect(status).toBe("You're up and running");
 });
 ```
+
 To run specific this specific test you can use the grep parameter alongside your run command, similarly, if multiple tests contain **@smoke-test** within their name, they will also be executed 
+
 ```bash
 nx e2e example-test-project-e2e --grep @smoke-test
 ```
+
 ### Viewing your test results
 
 Playwright has many configuration options for test reporting which can be found in [the documentation](https://playwright.dev/docs/test-reporters).
@@ -169,6 +183,7 @@ Playwright has many configuration options for test reporting which can be found 
 #### Locally 
 
 Using the scaffolded [base configuration](#base-configuration) all test results will be output to the terminal using Playwrights **_list_** reporter, an example output can be seen below:
+
 ```bash
 Running 30 tests using 8 workers
 
@@ -202,6 +217,7 @@ nx e2e next-js-app-e2e --reporter=html --trace on
 #### CI
 
 When running in the CI three reporters are utilised:
+
 1. dot: Produces a single character per successful test run, keeping detail concise for CI reporting
 2. html: A self-contained folder that contains report for the test run that can be served as a web page.
 3. junit: A JUnit-style xml report which can be fed back into CI reports on the test run
