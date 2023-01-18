@@ -29,6 +29,7 @@ Scaffolding your project with a native configuration for visual regression testi
 ### Snapshot configuration
 
 As part of native visual comparisons with playwright the following recommended configuration is added into the projects config file during scaffolding:
+
 ```typescript title="playwright.config.ts"
 
   /* Configuration for visual regression checks */
@@ -41,15 +42,16 @@ As part of native visual comparisons with playwright the following recommended c
   }
 
 ```
+
 - updateSnapshots
-  - Description: Whether to update expected snapshots with the actual results produced by the test run.
-  - Value: **'missing'** - Missing snapshots are created, for example when authoring a new test and running it for the first time.
+    - Description: Whether to update expected snapshots with the actual results produced by the test run.
+    - Value: **'missing'** - Missing snapshots are created, for example when authoring a new test and running it for the first time.
 - toHaveScreenshot::threshold
-  - Description: an acceptable perceived colour difference in the YIQ colour space between the same pixel in compared images, between zero (strict) and one (lax).
-  - Value: **0.2** - Any pixel with > 20% variance will be flagged
+    - Description: an acceptable perceived colour difference in the YIQ colour space between the same pixel in compared images, between zero (strict) and one (lax).
+    - Value: **0.2** - Any pixel with > 20% variance will be flagged
 - toHaveScreenshot::animations
-  - Description: whether to enable or disable CSS animations, CSS transitions and Web Animations
-  - Value: **disabled** - finite animations are fast-forwarded to completion and infinite animations are cancelled to initial state.
+    - Description: whether to enable or disable CSS animations, CSS transitions and Web Animations
+    - Value: **disabled** - finite animations are fast-forwarded to completion and infinite animations are cancelled to initial state.
 
   
 :::info
@@ -88,6 +90,7 @@ test.describe('Native @visual-regression', () => {
 
 The sample contains two tests, showcasing playwrights ability to perform full page comparisons, or target specific areas of the web page. 
 Upon first run of the test(s) Playwright will capture a baseline image, the name will vary depending on whether a value is passed to the `toHaveScreenshot()` method:
+
 - Default: auto-generated name consisting of `desribe block name`-`test case name`-`browser`-`operating system`.png
 - Defined: user specified name resulting in `user defined name`-`browser`-`operating system`.png
 
@@ -172,6 +175,7 @@ However, to see the differences in images you should look within the **_test-res
         └── example-1-expected.png
 
 ```
+
 :::tip
 
 Use the [HTML reporter](./playwright_nx.md#viewing-your-test-results) to easily see the differences between snapshots which do not match their baseline images!
