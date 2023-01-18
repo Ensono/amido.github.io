@@ -6,7 +6,8 @@ description: Testing with playwright within an NX monorepo
 keywords:
   - NX
   - testing
-  - COMPLETE-THIS-SECTION
+  - playwright
+  - cross-browser
 ---
 
 import Tabs from "@theme/Tabs";
@@ -159,7 +160,54 @@ test('App should be up and running @smoke-test', async ({ page }) => {
 ```
 To run specific this specific test you can use the grep parameter alongside your run command, similarly, if multiple tests contain **@smoke-test** within their name, they will also be executed 
 ```bash
-  nx e2e example-test-project-e2e --grep @smoke-test
+nx e2e example-test-project-e2e --grep @smoke-test
 ```
- ### Viewing your test results
- COMPLETE THIS SECTION
+### Viewing your test results
+
+Playwright has many configuration options for test reporting which can be found in [the documentation](https://playwright.dev/docs/test-reporters).
+
+#### Locally 
+
+Using the scaffolded [base configuration](#base-configuration) all test results will be output to the terminal using Playwrights **_list_** reporter, an example output can be seen below:
+```bash
+Running 30 tests using 8 workers
+
+  ✓  3 [chromium] › src\example.spec.ts:23:3 › Playwright example tests @example-playwright › App should have 5 learning materials (7s)
+  -  4 [chromium] › src\example.spec.ts:39:3 › Playwright example tests @example-playwright › NX logo should be hidden on mobile
+  ✓  1 [chromium] › src\example.spec.ts:11:3 › Playwright example tests @example-playwright › clicking whats next should take the user to the next steps part of the page (7s)
+  ✓  2 [chromium] › src\example.spec.ts:18:3 › Playwright example tests @example-playwright › App should be up and running (7s)
+  ✓  6 [chromium] › src\example.spec.ts:49:3 › Playwright example tests @example-playwright › NX logo should be visible on desktop (7s)
+  ✓  5 [chromium] › src\example.spec.ts:27:3 › Playwright example tests @example-playwright › Clicking next steps should display information (7s)
+  ✓  7 [firefox] › src\example.spec.ts:18:3 › Playwright example tests @example-playwright › App should be up and running (7s)
+  ✓  8 [firefox] › src\example.spec.ts:11:3 › Playwright example tests @example-playwright › clicking whats next should take the user to the next steps part of the page (7s)
+  ✓  10 [webkit] › src\example.spec.ts:11:3 › Playwright example tests @example-playwright › clicking whats next should take the user to the next steps part of the page (8s)
+  ✓  29 [Mobile Safari] › src\example.spec.ts:39:3 › Playwright example tests @example-playwright › NX logo should be hidden on mobile (3s)
+  -  30 [Mobile Safari] › src\example.spec.ts:49:3 › Playwright example tests @example-playwright › NX logo should be visible on desktop
+  ✓  28 [Mobile Safari] › src\example.spec.ts:27:3 › Playwright example tests @example-playwright › Clicking next steps should display information (4s)
+
+
+  5 skipped
+  25 passed (55s)
+Done in 56.75s.
+```
+
+One recommendation for running locally is to utilise HTML reports, a visual report on the status of all executed tests. When viewing HTML reports, all artifacts such as screenshots can be found in one place, alongside trace reports which are very useful in debugging tests post execution. See the  for more information!
+
+To change the reporter being used locally you can amend the ['playwright.config.ts'](#project-based-configuration) or alternatively through the CLI. Through both options you can also enable the [trace viewer](https://playwright.dev/docs/trace-viewer-intro): 
+
+```bash
+nx e2e next-js-app-e2e --reporter=html --trace on
+```
+
+#### CI
+
+When running in the CI three reporters are utilised:
+1. dot: Produces a single character per successful test run, keeping detail concise for CI reporting
+2. html: A self-contained folder that contains report for the test run that can be served as a web page.
+3. junit: A JUnit-style xml report which can be fed back into CI reports on the test run
+
+:::danger
+
+This section is pending completion once TaskCTL and Pipelines are available!
+
+:::

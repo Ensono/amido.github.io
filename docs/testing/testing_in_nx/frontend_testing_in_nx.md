@@ -6,7 +6,10 @@ description: Considerations for testing within an NX monorepo
 keywords:
   - NX
   - testing
-  - COMPLETE-THIS-SECTION
+  - playwright
+  - accessibility testing
+  - visual regression testing
+  - monorepo
 ---
 
 Using [NX](https://nx.dev/) provides many benefits when working with SSR or CSR frontend applications. When using stacks to scaffold an NX monorepo (INSERT LINK HERE TO GARETH DOCUMENTATION) you will be provided with several options to assure quality in your development process.
