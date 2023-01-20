@@ -126,3 +126,32 @@ We recommend tagging your Playwright accessibility tests so that you can target 
 
  </TabItem>
 </Tabs>
+
+## Viewing your test results
+
+Further to the explanation given in the ['Testing with Playwright'](./playwright_nx.md#running-your-playwright-tests) page, accessibility test results can also be found in the console output post execution.
+
+```text title="Sample AXE report"
+
+Page passed 16 axe rules: aria-allowed-attr, aria-hidden-body, aria-required-attr, aria-roles, aria-valid-attr-value, aria-valid-attr, avoid-inline-spacing, bypass, color-contrast, document-title, duplicate-id-active, duplicate-id, link-name, meta-viewport, nested-interactive, svg-img-alt
+Axe core library found 3 violations
+┌─────────┬───────────────────────────────────────────────────────────────────────────────────────────────────────────┬──────────────────┬─────────────────────┬───────────┬───────┐
+│ (index) │                                                description                                                │        id        │        wcag         │  impact   │ nodes │
+├─────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────┼──────────────────┼─────────────────────┼───────────┼───────┤
+│    0    │ 'Ensures the contrast between foreground and background colors meets WCAG 2 AA contrast ratio thresholds' │ 'color-contrast' │ 'WCAG 2.0 Level AA' │ 'serious' │   1   │
+│    1    │                            'Ensures every HTML document has a lang attribute'                             │ 'html-has-lang'  │ 'WCAG 2.0 Level A'  │ 'serious' │   1   │
+│    2    │  'Ensures <svg> elements with an img, graphics-document or graphics-symbol role have an accessible text'  │  'svg-img-alt'   │ 'WCAG 2.0 Level A'  │ 'serious' │   1   │
+└─────────┴───────────────────────────────────────────────────────────────────────────────────────────────────────────┴──────────────────┴─────────────────────┴───────────┴───────┘
+1. id: 'color-contrast' learn more: https://dequeuniversity.com/rules/axe/4.6/color-contrast?application=playwright
+   name: Elements must have sufficient color contrast
+   description: Ensures the contrast between foreground and background colors meets WCAG 2 AA contrast ratio thresholds
+   WCAG: 'WCAG 2.0 Level AA'
+   Affected elements:
+		Selector: "#love"Source code: <p id="love">
+
+2. id: 'html-has-lang' learn more: https://dequeuniversity.com/rules/axe/4.6/html-has-lang?application=playwright
+   name: <html> element must have a lang attribute
+   description: Ensures every HTML document has a lang attribute
+   WCAG: 'WCAG 2.0 Level A'
+
+```

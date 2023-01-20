@@ -189,6 +189,7 @@ As mentioned [above](#applitools-eyes-with-playwright), Applitools Eyes tests sh
 :::note
 
 You must set your runner key API before running Applitools Eyes tests locally by following [this guide](https://help.applitools.com/hc/en-us/articles/360006914732-The-runner-key-API-Key-).
+It is reccomended to restart your machine to ensure that environment variable changes are registered!
 
 :::
 
@@ -197,5 +198,36 @@ You must set your runner key API before running Applitools Eyes tests locally by
 :::danger
 
 This section is pending completion once TaskCTL and Pipelines are available!
+
+:::
+
+## Viewing your test results and updating baseline images
+
+Similar to [viewing your test results](./playwright_nx.md#viewing-your-test-results) for standard tests, Applitools Eyes will also output test results to the console in the following format:
+```bash
+Visual test results TestResultsSummaryData {
+  _summary: {
+    results: [ [Object], [Object] ],
+    passed: 2,
+    unresolved: 0,
+    failed: 0,
+    exceptions: 0,
+    mismatches: 0,
+    missing: 0,
+    matches: 2
+  },
+  _deleteTest: [Function: deleteTest]
+}
+```
+
+If any test failures occur you should see the following message, allowing you to review the test failure and either accept or reject the difference(s) by navigating to the provided URL:
+
+```bash
+Error: Test 'Check the main page' of 'next-js-app' detected differences! See details at: https://eyes.applitools.com/app/batches/XXXXXXXXXXXXXXXXXXXX/XXXXXXXXXXXXXXXXXXXX?accountId=XXXXXXXXXXXXXXXXXXXXX
+```
+
+:::tip
+
+Take a look at '[Reviewing test results and updating the baseline](https://applitools.com/docs/topics/overview/overview-reviewing-test-results.html)' for a detailed guide.
 
 :::
