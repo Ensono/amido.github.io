@@ -30,6 +30,20 @@ module.exports = {
       "workloads/workloads",
       {
         type: "category",
+        label: "NX Monorepo (TEMP LOCATION)",
+        items: [
+          "workloads/nx/nx_monorepo",
+          {
+            type: "category",
+            label: "NX Plugins",
+            items: [
+              "workloads/nx/ensono-stacks-[plugin-name]",
+            ]
+          },
+        ]
+      },
+      {
+        type: "category",
         label: "Common",
         items: [
           {
@@ -83,8 +97,9 @@ module.exports = {
         label: "Azure",
         items: [
           {
+            //NOTE IF SEEN IN A PR: DO NOT APPROVE UNTIL THESE AREAS HAVE BEEN REVISTED AND ASSESSED FOR WHETHER THEY ARE KEPT/DELETED
             type: "category",
-            label: "Frontend Web Applications",
+            label: "Frontend Web Applications (TO ARCHIVE / REVISIT)",
             items: [
               {
                 type: "category",
