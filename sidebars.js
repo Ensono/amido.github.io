@@ -30,14 +30,14 @@ module.exports = {
       "workloads/workloads",
       {
         type: "category",
-        label: "NX Monorepo (TEMP LOCATION)",
+        label: "NX Build System (TEMP LOCATION)",
         items: [
-          "workloads/nx/nx_monorepo",
+          "workloads/nx/nx_stacks",
           {
             type: "category",
             label: "NX Plugins",
             items: [
-              "workloads/nx/ensono-stacks-[plugin-name]",
+              "workloads/nx/plugin-name/ensono-stacks-[plugin-name]",
             ]
           },
         ]
