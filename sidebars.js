@@ -30,20 +30,6 @@ module.exports = {
       "workloads/workloads",
       {
         type: "category",
-        label: "NX Build System (TEMP LOCATION)",
-        items: [
-          "workloads/nx/nx_stacks",
-          {
-            type: "category",
-            label: "NX Plugins",
-            items: [
-              "workloads/nx/plugin-name/ensono-stacks-[plugin-name]",
-            ]
-          },
-        ]
-      },
-      {
-        type: "category",
         label: "Common",
         items: [
           {
@@ -287,6 +273,16 @@ module.exports = {
             ]
           },
         ],
+      },
+    ],
+    "NX Monorepo": [ 
+      "nx/nx_stacks",
+      {
+        type: "category",
+        label: "Stacks Plugins",
+        items: [
+          "nx/plugin-name/ensono-stacks-[plugin-name]",
+        ]
       },
     ],
     Infrastructure: [

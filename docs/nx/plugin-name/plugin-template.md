@@ -12,7 +12,8 @@ keywords:
   - generator
   - executor
 ---
-
+import ExecutorName from './executor-generator-template.md'
+import GeneratorName from './executor-generator-template.md'
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -56,16 +57,11 @@ e.g
 
 ### Executors
 
-| Executor | Description |
-| :---   | :---   |
-| [`executor-name`](ensono-stacks-[plugin-name]-[generator-executor-name]) | Performs X/Y/Z |
-
+<ExecutorName />
 
 ### Generators
 
-| Generator | Description |
-| :---   | :---   |
-| [`generator-name`](ensono-stacks-[plugin-name]-[generator-executor-name]) | Performs X/Y/Z |
+<GeneratorName />
 
 
 
