@@ -60,13 +60,12 @@ e.g
 | :---   | :---   |
 | [`executor-name`](ensono-stacks-[plugin-name]-[generator-executor-name]) | Performs X/Y/Z |
 
+
 ### Generators
 
 | Generator | Description |
 | :---   | :---   |
 | [`generator-name`](ensono-stacks-[plugin-name]-[generator-executor-name]) | Performs X/Y/Z |
-
-
 
 
 
