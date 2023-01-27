@@ -1,7 +1,7 @@
 ---
 id: ensono-stacks-[plugin-name]
 title: "@ensono-stacks/[plugin-name]"
-sidebar_label: "[plugin-name]"
+sidebar_label: "@ensono-stacks/[plugin-name]"
 description: "Using the [plugin-name] with stacks!"
 keywords:
   - NX
@@ -22,22 +22,22 @@ What is it's purpose?
 
 What benefits does it give you?
 
-## Setting up [plugin-name]
+## Setting up @ensono-stacks/[plugin-name]
 
-Install the [plugin-name] with the following command:
+Install the @ensono-stacks/[plugin-name] with the following command:
 
  <Tabs>
   <TabItem value="npm" label="npm">
 
   ```bash
-  npm install --save-dev [plugin-name]
+  npm install --save-dev @ensono-stacks/[plugin-name]
   ```
 
   </TabItem>
   <TabItem value="yarn" label="yarn">
 
   ```bash
-  yarn add --dev [plugin-name]
+  yarn add --dev @ensono-stacks/[plugin-name]
   ```
 
   </TabItem>
@@ -55,11 +55,13 @@ e.g
   },
 ```  
 
-### Executors
+## Executors
 
 <ExecutorName />
+<ExecutorName />
+<ExecutorName />
 
-### Generators
+## Generators
 
 <GeneratorName />
 

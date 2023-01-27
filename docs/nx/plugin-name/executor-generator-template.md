@@ -1,5 +1,7 @@
+### @ensono-stacks/[plugin-name]:generator/executor name
+
 <details>
-<summary><b>[generator-executor-name]</b></summary>
+<summary>Very brief description (E.g Add Next Authentication to your next application)</summary>
 What does the generator/executor do?
 
 ## Usage
