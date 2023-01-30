@@ -55,13 +55,25 @@ e.g
   },
 ```  
 
-## Executors
+## Executors and Generators
+
+To see a list of the plugin capabilities run the following command:
+
+```bash
+nx list @ensono-stacks/[plugin-name]
+```
+
+View additional information about a plugin capability through the following command:
+```bash
+nx g @ensono-stacks/[plugin-name]:[generator-executor-name] --help
+```
+### Executors
 
 <ExecutorName />
 <ExecutorName />
 <ExecutorName />
 
-## Generators
+### Generators
 
 <GeneratorName />
 
