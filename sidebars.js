@@ -281,7 +281,7 @@ module.exports = {
         type: "category",
         label: "Stacks Plugins",
         items: [
-          "nx/plugin-name/ensono-stacks-[plugin-name]",
+          "nx/playwright/ensono-stacks-playwright",
         ]
       },
     ],
