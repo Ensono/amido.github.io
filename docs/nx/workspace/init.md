@@ -32,10 +32,10 @@ Interactive options can instead be passed via the command line:
 ### Generator Output
 ##### What is the output of the above commands?
 Files updated: package.json
+
 Files created:
 
-```text title="Files created"
-.
+```
 ├── workspace root
 │   ├── .husky
 │   ├── ├── commit-msg

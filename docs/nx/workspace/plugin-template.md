@@ -13,14 +13,12 @@ keywords:
   - executor
 ---
 import Init from './init.md'
-import GeneratorName from './executor-generator-template.md'
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Summary of the plugin
-What is its purpose?
+The `workspace` plugin contains executors and generators to manage the Nx workspace itself. These will often be useful in any workspace, regardless of the specific apps or libraries it contains.
 
-What benefits does it give you?
+Using a standard setup for workspaces ensures consistency across projects and allows developers to easily onboard onto new projects.
 
 ## Setting up @ensono-stacks/workspace
 
@@ -44,7 +42,7 @@ Install the @ensono-stacks/workspace with the following command:
  </Tabs>
 
 ##### Has it installed any additional plugins? 
-What are they? Can we link to docs about the additional plugins?
+`@ensono-stacks/workspace` depends on the `@ensono-stacks/core` plugin.
 
 ## Generators
 
