@@ -3,6 +3,7 @@
 <details>
 <summary>Initialise workspace</summary>
 Set up libraries to manage code & commit quality. These will help keep projects consistent and will generally be useful in any workspace.
+
 Choose your 3rd party provider options.
 
 ## Usage
@@ -66,7 +67,9 @@ Keeping commits well-structured and clear is key to enabling collaboration on a 
 It also adds commitizen to the git `prepare-commit-msg` script, and commitlint to the `commit-msg`. This means that you can simply run `git commit` and get the benefits of both tools.
 
 #### Code quality management
-// Add more information on these
+Stacks projects use ESLint and Typescript to help maintain code quality. Using the same config in every Stacks project ensures consistency and allows developers to more easily onboard onto new projects.
+
+This generator creates config files for both Typescript and ESLint and installs the relevant dependencies.
 
 
 </details>
