@@ -30,24 +30,8 @@ Interactive options can instead be passed via the command line:
 
 ### Generator Output
 ##### What is the output of the above commands?
-UPDATED: package.json
-
-// Add more information on these
-Generator adds husky and commitizen to package.json:
-```json title="Husky install script"
-"scripts": {
-    "prepare": "husky install"
-  },
-```  
-```json title="Commitizen config"
-"config": {
-    "commitizen": {
-        "path": "@commitlint/cz-commit-lint"
-    }
-  }
-```  
-
-Generator creates config files for workspace management libraries:
+Files updated: package.json
+Files created:
 
 ```text title="Files created"
 .
@@ -60,5 +44,29 @@ Generator creates config files for workspace management libraries:
 │   ├── commitlint.config.js
 │   ├── tsconfig.base.json__template__
 ```
+
+#### Commit management
+Keeping commits well-structured and clear is key to enabling collaboration on a project. This generator initialises three tools to empower consistent commits:
+- [Commitizen](https://www.npmjs.com/package/commitizen) - Interactive tool that helps to build constructive messages on commit. The generator adds commitizen config to the package.json:
+```json title="Commitizen config"
+"config": {
+    "commitizen": {
+        "path": "@commitlint/cz-commit-lint"
+    }
+  }
+```  
+
+- [Commitlint](https://commitlint.js.org/) - Standardised commit message format to make reading commit history easy. The generator installs commitlint and uses it for commitizen config.
+- [Husky](https://typicode.github.io/husky/#/) - Git hook management tool. The generator adds a `prepare` script to ensure husky is always installed:
+```json title="Husky install script"
+"scripts": {
+    "prepare": "husky install"
+  },
+```  
+It also adds commitizen to the git `prepare-commit-msg` script, and commitlint to the `commit-msg`. This means that you can simply run `git commit` and get the benefits of both tools.
+
+#### Code quality management
+// Add more information on these
+
 
 </details>
