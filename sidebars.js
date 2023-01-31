@@ -1,30 +1,23 @@
 module.exports = {
   docs: {
-    "Learn about Stacks": [
-      "index",
-      "contributions",
-      "code_of_conduct"
-    ],
-    Architecture: [
-      "workloads/azure/backend/architecture-overview",
-    ],
+    "Learn about Stacks": ["index", "contributions", "code_of_conduct"],
+    Architecture: ["workloads/azure/backend/architecture-overview"],
     "Development Support": [
-          "developer/developer_patterns_readme",
-          {
-            type: "category",
-            label: "Java Development Patterns",
-            items: [
-              "developer/java/patterns/java_app_layering",
-              "developer/java/patterns/java_mapstruct_mapping",
-              "developer/java/patterns/java_swagger_annotations"
-            ],
-          },
-          {
-            type: "category",
-            label: "Azure Development Patterns",
-            items: [
-            ],
-          },
+      "developer/developer_patterns_readme",
+      {
+        type: "category",
+        label: "Java Development Patterns",
+        items: [
+          "developer/java/patterns/java_app_layering",
+          "developer/java/patterns/java_mapstruct_mapping",
+          "developer/java/patterns/java_swagger_annotations",
+        ],
+      },
+      {
+        type: "category",
+        label: "Azure Development Patterns",
+        items: [],
+      },
     ],
     Workloads: [
       "workloads/workloads",
@@ -54,7 +47,7 @@ module.exports = {
                       "workloads/common/backend/java/architecture/dependency_api_java",
                       "workloads/common/backend/java/architecture/dependency_cqrs_java",
                       "workloads/common/backend/java/architecture/dependency_messaging_java",
-                    ]
+                    ],
                   },
                   {
                     type: "category",
@@ -62,7 +55,7 @@ module.exports = {
                     items: [
                       "workloads/common/backend/java/architecture/web_api/architecture_java",
                       "workloads/common/backend/java/architecture/web_api/structure_java",
-                    ]
+                    ],
                   },
                   {
                     type: "category",
@@ -70,9 +63,9 @@ module.exports = {
                     items: [
                       "workloads/common/backend/java/architecture/java_cqrs/architecture_java_cqrs",
                       "workloads/common/backend/java/architecture/java_cqrs/structure_java_cqrs",
-                    ]
+                    ],
                   },
-                ]
+                ],
               },
             ],
           },
@@ -99,7 +92,7 @@ module.exports = {
                   "workloads/azure/frontend/CSR/logging_and_instrumentation_csr",
                   "workloads/azure/frontend/CSR/infrastructure_csr",
                   "workloads/azure/frontend/CSR/pipeline_csr",
-                  "workloads/azure/frontend/CSR/browser_support_csr"
+                  "workloads/azure/frontend/CSR/browser_support_csr",
                 ],
               },
               {
@@ -117,7 +110,7 @@ module.exports = {
                   "workloads/azure/frontend/SSR/server_side_cache",
                   "workloads/azure/frontend/SSR/infrastructure_ssr",
                   "workloads/azure/frontend/SSR/pipeline_ssr",
-                  "workloads/azure/frontend/SSR/browser_support_ssr"
+                  "workloads/azure/frontend/SSR/browser_support_ssr",
                 ],
               },
             ],
@@ -148,9 +141,9 @@ module.exports = {
                         items: [
                           "workloads/azure/backend/java/architecture/dependency_cosmos_java",
                           "workloads/azure/backend/java/architecture/dependency_servicebus_java",
-                        ]
+                        ],
                       },
-                    ]
+                    ],
                   },
                   "workloads/azure/backend/java/infrastructure_java",
                   "workloads/azure/backend/java/pipeline_java",
@@ -162,7 +155,7 @@ module.exports = {
                       "workloads/azure/backend/java/testing/execute_serenity_api_tests",
                       "workloads/azure/backend/java/testing/execute_karate_api_tests",
                     ],
-                  }
+                  },
                 ],
               },
               {
@@ -180,20 +173,19 @@ module.exports = {
                         label: "REST API",
                         items: [
                           "workloads/azure/backend/netcore/quickstart/web_api/create_project_netcore",
-                          "workloads/azure/backend/netcore/quickstart/web_api/build_and_run_project_netcore"
+                          "workloads/azure/backend/netcore/quickstart/web_api/build_and_run_project_netcore",
                         ],
                       },
                       {
                         type: "category",
                         label: "REST API with CQRS",
                         items: [
-
                           "workloads/azure/backend/netcore/quickstart/web_api_cqrs/create_project_netcore",
                           "workloads/azure/backend/netcore/quickstart/web_api_cqrs/configure_project_netcore",
-                          "workloads/azure/backend/netcore/quickstart/web_api_cqrs/build_and_run_project_netcore"
+                          "workloads/azure/backend/netcore/quickstart/web_api_cqrs/build_and_run_project_netcore",
                         ],
                       },
-                    ]
+                    ],
                   },
                   {
                     type: "category",
@@ -261,21 +253,18 @@ module.exports = {
                         items: [
                           "workloads/aws/backend/java/architecture/dependency_dynamodb_java",
                           "workloads/aws/backend/java/architecture/dependency_sqs_java",
-                        ]
+                        ],
                       },
-                    ]
+                    ],
                   },
-
-
-
-                ]
+                ],
               },
-            ]
+            ],
           },
         ],
       },
     ],
-    "NX Monorepo": [ 
+    "NX Monorepo": [
       "nx/nx_stacks",
       {
         type: "category",
@@ -284,7 +273,8 @@ module.exports = {
           "nx/plugin-name/ensono-stacks-[plugin-name]",
           "nx/azure-node/ensono-stacks-azure-node",
           "nx/workspace/ensono-stacks-workspace",
-        ]
+          "nx/next/ensono-stacks-next",
+        ],
       },
     ],
     Infrastructure: [
@@ -297,9 +287,7 @@ module.exports = {
           {
             type: "category",
             label: "Pipelines",
-            items: [
-              "infrastructure/azure/pipelines/azure_devops",
-            ],
+            items: ["infrastructure/azure/pipelines/azure_devops"],
           },
         ],
       },
@@ -349,7 +337,7 @@ module.exports = {
       "stackscli/runtime_config",
       "stackscli/project_settings",
       "stackscli/examples",
-      "stackscli/troubleshooting"
-    ]
+      "stackscli/troubleshooting",
+    ],
   },
 };
