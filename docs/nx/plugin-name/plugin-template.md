@@ -24,6 +24,11 @@ What benefits does it give you?
 
 ## Setting up @ensono-stacks/[plugin-name]
 
+### Prerequisites
+
+Are there any prerequisites?
+
+### Installation 
 Install the @ensono-stacks/[plugin-name] with the following command:
 
  <Tabs>
