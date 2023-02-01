@@ -76,7 +76,7 @@ Upon running the above command you will be asked the following questions:
 | Plugin | Description |
 | :---   | :---   |
 | [`@ensono-stacks/create-stacks-workspace`](ensono-stacks-create-stacks-workspace) | Create an NX workspace using stacks! |
-| @ensono-stacks/workspace | Add stacks to your existing NX workspace | 
+| [`@ensono-stacks/workspace`](./workspace/plugin-template.md) | Add stacks to your existing NX workspace | 
 | @ensono-stacks/next | Add a Next.js project to your stacks workspace |
 | @ensono-stacks/azure-node | Add Azure app insights to a node project in your stacks workspace|
 | @ensono-stacks/rest-client | Add a rest client to a project in your stacks workspace |
