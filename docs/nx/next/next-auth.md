@@ -3,7 +3,7 @@
 <details>
 <summary>Add Next Authentication to your next application</summary>
 
-The Stacks next-auth generator will install and configure [NextAuth.js](https://next-auth.js.org/) into an existing Next application. It will add the initial configuration, add the session provider, setup an API endpoint and add local environmental variables. It will also configure NextAuth.js depending on the provider selected.
+The next-auth generator will install and configure [NextAuth.js](https://next-auth.js.org/) into an existing Next application. It will add the initial configuration, add the session provider, setup an API endpoint and add local environmental variables. It will also configure provider specific setup.
 
 
 ## Prerequisites

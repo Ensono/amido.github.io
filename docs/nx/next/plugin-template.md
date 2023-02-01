@@ -18,9 +18,9 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 
-The Ensono Stacks Next plugin augments existing next projects with a custom Ensono config. Adding testing options, enabling a custom eslint config as well as adding next auth to a project.
+The `next` plugin contains generators to augment existing NextJs projects. Adding eslint rules, testing configs as well as installing and configuring NextAuth.js in your NextJs app.
 
-What benefits does it give you?
+Using a standard setup for your Next app ensures consistency and code quality across multiple applications quickly. NextAuth can also be quickly added to a project without costly configuration and setup.
 
 ## Setting up @ensono-stacks/next
 
@@ -43,18 +43,6 @@ Install the @ensono-stacks/next with the following command:
   </TabItem>
  </Tabs>
 
-##### Has it installed any additional plugins? 
-What are they? Can we link to docs about the additional plugins?
-
-#### Has it created any scripts?
-How do we use them, what do those scripts do?
-e.g
-```json title="Example script that's created"
-"scripts": {
-    "prepare": "husky install"
-  },
-```  
-
 ## Generators
 
 To see a list of the plugin capabilities run the following command:
@@ -68,8 +56,6 @@ View additional information about a plugin capability through the following comm
 nx g @ensono-stacks/next:init --help
 nx g @ensono-stacks/next:next-auth --help
 ```
-
-### Generators
 
 <Init />
 <NextAuth />
