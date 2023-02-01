@@ -1,36 +1,29 @@
 ### @ensono-stacks/workspace:init
 
 <details>
-<summary>Initialise workspace</summary>
-Set up libraries to manage code & commit quality. These will help keep projects consistent and will generally be useful in any workspace.
+<summary>Set up libraries to manage code & commit quality</summary>
+Set up libraries to manage code & commit quality, keeping projects consistent and will generally be useful in any workspace.
 
-Choose your 3rd party provider options.
+Allows you to choose your recommended 3rd party provider options.
 
 ## Usage
 
+Initialise your nx workspace with stacks with the following command:
 ```bash
 nx g @ensono-stacks/workspace:init
-
-Follow interactive options:
-
-Which cloud provider should the workspace use? 
-- Azure
-
-Which CI/CD provider should the workspace use?
-- Azure Pipelines
 ```
 
 ### Command line arguments
 
 Interactive options can instead be passed via the command line:
 
-| Option             | Description    | Type   | Accepted Values | Default |
-|--------------------|----------------|--------|-----------------|---------|
-| --cloudProvider    | Cloud provider | string | azure           | azure   |
-| --pipelineProvider | CI/CD provider | string | azdo            | azdo    |
+| Option              | Description                     | Type    | Accepted Values | Default |
+|---------------------|---------------------------------|---------|-----------------|---------|
+| --husky             | Install & configure husky       | boolean | [true, false]   | true    |
+| --commitizen        | Install & configure commitizen  | boolean | [true, false]   | true    |
+| --eslint            | Install & configure eslint      | boolean | [true, false]   | true    | 
 
 ### Generator Output
-##### What is the output of the above commands?
 Files updated: package.json
 
 Files created:
@@ -43,7 +36,7 @@ Files created:
 │   ├── ├── prepare-commit-msg
 │   ├── .eslintrc.json
 │   ├── commitlint.config.js
-│   ├── tsconfig.base.json__template__
+│   ├── tsconfig.base.json
 ```
 
 #### Commit management
