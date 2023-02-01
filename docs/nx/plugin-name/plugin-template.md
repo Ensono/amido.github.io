@@ -18,7 +18,7 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 Summary of the plugin
-What is it's purpose?
+What is its purpose?
 
 What benefits does it give you?
 
