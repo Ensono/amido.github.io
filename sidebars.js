@@ -282,6 +282,7 @@ module.exports = {
         label: "Stacks Plugins",
         items: [
           "nx/plugin-name/ensono-stacks-[plugin-name]",
+          "nx/workspace/ensono-stacks-workspace",
         ]
       },
     ],
