@@ -108,6 +108,23 @@ COSMOSDB_KEY` is the value as desc
 version`
 api
 1.0.0.nupkg
+frontend
+preconfigures
+toolset
+Applitools
+TabItem
+scaffolded
+AxeBuilder
+chainable
+grep
+WebKit
+HiDPI
+iPhone12
+applitools
+grepInvert
+updateSnapshots
+toHaveScreenshot
+win32
  - ../docs/browser_support.md
 Polyfills
 eslint-plugin-compat
@@ -116,3 +133,5 @@ cli
 FlowSelector
 workflow.ts
 AzureDevops
+ - ./docs/testing/testing_in_nx/playwright_visual_testing.md
+diff.png

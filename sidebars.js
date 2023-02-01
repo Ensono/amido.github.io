@@ -310,6 +310,29 @@ module.exports = {
     ],
     "Quality Assurance": [
       "testing/cli_testing_frameworks",
+      {
+        type: "category",
+        label: "NX - Frontend Testing",
+        items: [
+          "testing/testing_in_nx/frontend_testing_in_nx",
+          {
+            type: "category",
+            label: "Playwright Information",
+            items: [
+              "testing/testing_in_nx/testing_with_playwright",
+              "testing/testing_in_nx/playwright_accessibility_testing",
+              {
+                type: "category",
+                label: "Visual Testing",
+                items: [
+                  "testing/testing_in_nx/playwright_visual_testing",
+                  "testing/testing_in_nx/playwright_visual_testing_applitools_eyes",
+                ],
+              },
+            ],
+          },
+        ],
+      },
       "testing/testing_java_serenity_bdd",
       "testing/testing_dotnet_selenium",
       "testing/cypress_functional_testing",

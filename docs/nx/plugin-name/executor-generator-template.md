@@ -4,6 +4,10 @@
 <summary>Very brief description (E.g Add Next Authentication to your next application)</summary>
 What does the generator/executor do?
 
+## Prerequisites
+
+Are there any prerequisites?
+
 ## Usage
 
 ```bash
