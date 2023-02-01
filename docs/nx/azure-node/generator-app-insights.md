@@ -7,30 +7,36 @@ This generator will add and configure [applicationinsights](https://www.npmjs.co
 
 ## Prerequisites
 
+
 Requires your NodeJS server to be implemented in a function called `main()`.
+
+:::tip
+
+Use the [`@nrwl/next:custom-server`](https://nx.dev/packages/next/generators/custom-server) generator which will have been added to your workspace by [`@ensono-stacks/workspace`](../workspace/plugin-template.md) to generate your NodeJS server!
+
+:::
 
 It requires the App Insights Access Key to be set in an env variable, from which it will be read.
 
 ## Usage
 
 ```bash
-nx generate @ensono-stacks/azure-node:app-insights --project=demo --appInsightsKey=APP_INSIGHTS_KEY --server=src/server.ts
+nx generate @ensono-stacks/azure-node:app-insights --project=<app-name> --appInsightsKey=<KEY_NAME> --server=<path to server ts file>
 ```
 
 ### Command line arguments
 
 The following command line arguments are available:
 
-| Option    | Description           | Type      | Accepted Values   | Default           |
-| ---       | -------------------   | ---       | ---               | ---               |
-| --project | Target project name.  | string    |                   |                   |
-| --appInsightsKey | The env variable that stores the app insights key. | string    |   |   |
-| --server         | Path to custom server file inside the project. | string  |   |   |
+| Option            | Description                                               | Type      | 
+| ---               | --------------------------------------------------------- | ---       | 
+| --project         | Target project name.                                      | string    | 
+| --appInsightsKey  | The env variable that stores the app insights key.        | string    | 
+| --server          | Path to custom server file inside the project.            | string    | 
 
 ### Generator Output
-##### What is the output of the above commands?
 
 - Adds `applicationinsights` dependency in `package.json`.
-- Extends `main()` function in the server file.
+- Extends `main()` function in the server file to initialise and configure app insights.
 
 </details>
