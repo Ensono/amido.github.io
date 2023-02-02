@@ -1,8 +1,8 @@
 ---
 id: nx_stacks
-title: Stacks with the NX build system
+title: Stacks with NX
 sidebar_label: Stacks with NX
-description: Using stacks with the NX build system
+description: Using stacks with NX build
 keywords:
   - NX
   - monorepo
@@ -16,7 +16,7 @@ This page is not complete
 
 :::
 
-The ideologies of Stacks and the [`NX`](https://nx.dev/) build system are aligned in their focus on providing businesses with the tools they need to optimize their IT infrastructure, while also saving them time and effort. Both Stacks and the NX build system are designed to make it easy for companies to manage and scale their IT infrastructure, and to help them improve their overall productivity. 
+The ideologies of Stacks and [`NX`](https://nx.dev/) are aligned in their focus on providing businesses with the tools they need to optimize their IT infrastructure, while also saving them time and effort. Both Stacks and the NX build system are designed to make it easy for companies to manage and scale their IT infrastructure, and to help them improve their overall productivity. 
 
 <details>
   <summary>What is NX?</summary>
@@ -55,31 +55,59 @@ Nx makes scaling easy. Modern techniques such as distributed task execution and 
 - Better code-sharing
   - NX provides powerful features for sharing code between different applications, which can help teams collaborate more effectively and reduce duplication of effort.
 
-## Scaffold your stacks workspace
+## Set up your stacks workspace
 
-*_To be completed with information on scaffolding the stacks workspace, alongside some example questions that the CLI would ask you_*
+There are three ways to scaffold you stacks workspace, we recommend using our Stacks CLI for the best experience!
 
-To scaffold your stacks workspace you can run the following command:
+### Stacks CLI
+
+:::danger
+
+TO BE COMPLETED PENDING STACKS CLI IMPLEMENTATION
+
+:::
+
+### Create stacks workspace generator
+
+You can scaffold a brand new Stacks and NX workspace through the __@ensono-stacks/create-stacks-workspace__ plugin.
+
+Follow the interactive questions with the below command to get started:
+
 ```bash
-Command to run 
+npx @ensono-stacks/create-stacks-workspace@latest
 ```
 
-Upon running the above command you will be asked the following questions:
+:::tip
+
+Visit the [@ensono-stacks/create-stacks-workspace](./azure-node/not-valid-link-update-when-available.md) docs for more information and setup instructions!
+
+:::
+
+### 'Stackify' your existing NX workspace
+
+If you already have an NX workspace, you can still utilise stacks!
+
+Use the following command to get started!
+```bash
+nx g @ensono-stacks/workspace:init
 ```
-√ Example Q1                            · Maps to --Option1
-√ Example Q2                            · Maps to --Option2
-```
+
+:::tip
+
+Visit the [@ensono-stacks/workspace](./workspace/plugin-information.md) docs for more information and setup instructions!
+
+:::
 
 ## Stacks Plugins
-
 
 | Plugin | Description |
 | :---   | :---   |
 | [`@ensono-stacks/create-stacks-workspace`](ensono-stacks-create-stacks-workspace) | Create an NX workspace using stacks! |
-| [`@ensono-stacks/workspace`](./workspace/plugin-template.md) | Add stacks to your existing NX workspace | 
+| [`@ensono-stacks/workspace`](./workspace/plugin-information.md) | 'Stackify' your existing NX workspace | 
 | @ensono-stacks/next | Add a Next.js project to your stacks workspace |
 | @ensono-stacks/azure-node | Add Azure app insights to a node project in your stacks workspace|
 | @ensono-stacks/rest-client | Add a rest client to a project in your stacks workspace |
+| @ensono-stacks/playwright | Add the playwright testing library and much more to your project! |
 
 To be added: 
 - Next SSR App
@@ -89,4 +117,3 @@ To be added:
 - React Azure App Insights
 - Localisation
 - Logging
-- Playwright
