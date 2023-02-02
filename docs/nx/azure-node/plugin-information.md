@@ -44,17 +44,6 @@ Install the `@ensono-stacks/azure-node` with the following command:
   </TabItem>
  </Tabs>
 
-<!-- ##### Has it installed any additional plugins?  -->
-
-<!-- #### Has it created any scripts?
-How do we use them, what do those scripts do?
-e.g
-```json title="Example script that's created"
-"scripts": {
-    "prepare": "husky install"
-  },
-```   -->
-
 ## Executors and Generators
 
 To see a list of the plugin capabilities run the following command:
@@ -67,8 +56,6 @@ View additional information about a plugin capability through the following comm
 ```bash
 nx g @ensono-stacks/azure-node:[generator-executor-name] --help
 ```
-
-<!-- ### Executors -->
 
 ### Generators
 
