@@ -30,7 +30,7 @@ The following command line arguments are available:
 ##### The next auth plugin will 
 
 - Create a new Next API endpoint with the file name `[...nextauth].ts`. This contains the dynamic route handler for NextAuth.js which will also contain all of your global NextAuth.js configurations. If you have specified a provider when running the generator this will be added to the providers array
-```
+```typescript title="/apps/appName/pages/api/[...nextauth].ts"
 import NextAuth from 'next-auth';
 import AzureADProvider from 'next-auth/providers/azure-ad';
 const nextAuth = NextAuth({
@@ -44,30 +44,32 @@ const nextAuth = NextAuth({
 });
 export default nextAuth;
 ```
-`/apps/appName/pages/api/[...nextauth].ts`
-
 
 - Install the next-auth package and add to package.json, unless the `--skipPackageJson` option was used
-```
+```json title="/package.json"
 "dependencies": {
     ...otherDependencies
     "next-auth": "4.18.8",
 },
 ```
-`/package.json`
 
-- Create or append an `.env.local` file. Adding required next auth environmental variables. These will vary depending on the provider chosen. Be sure to update these values with the values provided by your provider
-```
+- Create or append an `.env.local` file. Adding required next auth environmental variables. These will vary depending on the provider chosen. 
+```typescript title="/.env.local"
 NEXTAUTH_URL=http://localhost:4200
 NEXTAUTH_SECRET=secretValue
 AZURE_AD_CLIENT_ID=
 AZURE_AD_CLIENT_SECRET=
 AZURE_AD_TENANT_ID=
 ```
-`/.env.local`
+
+:::note
+
+Be sure to update the environmental variables with the values provided by your provider
+
+:::
 
 - Append the `_app.tsx` file with a [session provider](https://next-auth.js.org/getting-started/client#sessionprovider) 
-```
+```typescript title="/apps/appName/_app.tsx"
 import { AppProps } from 'next/app';
 import Head from 'next/head';
 import './styles.css';
@@ -89,7 +91,7 @@ function CustomApp({
 }
 export default CustomApp;
 ```
-`/apps/appName/_app.tsx`
+
 
 From here with the configuration complete it is now possible to access the [useSession](https://next-auth.js.org/getting-started/client#usesession) hook from next auth. For further information please see the [Getting Started Guide to Next Auth](https://next-auth.js.org/getting-started/example#frontend---add-react-hook)
 </details>

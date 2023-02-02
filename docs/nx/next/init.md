@@ -30,14 +30,12 @@ The following command line arguments are available:
 
 
 - Install [eslint-plugin-testing-library](https://github.com/testing-library/eslint-plugin-testing-library) to allow best practices and anticipate common mistakes when writing tests with Testing Library
-```
+```json title="/package.json"
 "dependencies": {
     ...otherDependencies
     "eslint-plugin-testing-library": "5.9.1",
 },
 ```
-`/package.json`
-
 
 - Update `project.json` NX test command with a custom test config to allow for coverage collection
 
