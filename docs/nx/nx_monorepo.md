@@ -104,7 +104,7 @@ Visit the [@ensono-stacks/workspace](./workspace/plugin-information.md) docs for
 | :---   | :---   |
 | [`@ensono-stacks/create-stacks-workspace`](ensono-stacks-create-stacks-workspace) | Create an NX workspace using stacks! |
 | [`@ensono-stacks/workspace`](./workspace/plugin-information.md) | 'Stackify' your existing NX workspace | 
-| @ensono-stacks/next | Add a Next.js project to your stacks workspace |
+| [`@ensono-stacks/next`](./next/plugin-information.md) | Add a Next.js project to your stacks workspace |
 | @ensono-stacks/azure-node | Add Azure app insights to a node project in your stacks workspace|
 | @ensono-stacks/rest-client | Add a rest client to a project in your stacks workspace |
 | @ensono-stacks/playwright | Add the playwright testing library and much more to your project! |
