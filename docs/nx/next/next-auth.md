@@ -22,7 +22,7 @@ The following command line arguments are available:
 
 | Option    | Description           | Type      | Accepted Values   |Default            |
 | ---       | -------------------   | ---       | ---               | ---               |
-| --project | The name of the project  | nameOfApplication   |  string       | projectName              |
+| --project | The name of the project  | nameOfApplication   |  string       | N/A              |
 | --provider | The provider to be installed  | string    | none/azureAd/azureAdB2C                   |none     |
 | --skipPackageJson | Do not add dependencies to `package.json`  | boolean    |  true/false                 |false     |
 
