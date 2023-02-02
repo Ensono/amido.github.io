@@ -12,8 +12,8 @@ An existing [Next](https://nextjs.org/) application
 
 ## Usage
 
-```
-nx @ensono-stacks/next:next-auth --project nameOfExistingNextProject --provider azureAdB2C --skipPackageJson false
+```bash
+nx g @ensono-stacks/next:next-auth
 ```
 
 ### Command line arguments

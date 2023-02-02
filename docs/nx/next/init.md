@@ -12,7 +12,7 @@ An existing [Next](https://nextjs.org/) application
 ## Usage
 
 ```bash
-nx @ensono-stacks/next:init --project nameOfExistingNextProject
+nx g @ensono-stacks/next:init
 ```
 
 ### Command line arguments

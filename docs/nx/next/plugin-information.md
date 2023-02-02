@@ -43,7 +43,7 @@ Install the @ensono-stacks/next with the following command:
   </TabItem>
  </Tabs>
 
-## Generators
+## Executors and Generators
 
 To see a list of the plugin capabilities run the following command:
 
@@ -53,9 +53,10 @@ nx list @ensono-stacks/next
 
 View additional information about a plugin capability through the following command:
 ```bash
-nx g @ensono-stacks/next:init --help
-nx g @ensono-stacks/next:next-auth --help
+nx g @ensono-stacks/azure-node:[generator-executor-name] --help
 ```
+
+### Generators
 
 <Init />
 <NextAuth />
