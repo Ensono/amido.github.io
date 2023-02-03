@@ -41,15 +41,15 @@ For the reasons listed above we have chosen to use NX within Stacks, capitalisin
 
 #### Why should you use the NX build system?
 
-Nx makes scaling easy. Modern techniques such as distributed task execution and computation caching make sure your CI times remain fast, even as you keep adding projects to your workspace.
+NX makes scaling easy. Modern techniques such as distributed task execution and computation caching make sure your CI times remain fast, even as you keep adding projects to your workspace.
 - Never rebuild the same code twice
-  - Nx is smart! It can figure out whether the same computation has run before and can restore the files and the terminal output from its cache.
+  - NX is smart! It can figure out whether the same computation has run before and can restore the files and the terminal output from its cache.
 - Distributed task execution (DTE)
   - Smart, automated, dynamic distribution of tasks across multiple machines to get maximum parallelization and CPU efficient CI runs.
 - Remote caching
   - Share your local computation cache with team mates and your CI system for maximum efficiency.
 - Only run what changed
-  - Nothing is faster than not running a task. Nx analyzes your project graph and can diff it against a baseline to determine which projects changed and what tasks need to be re-run.
+  - Nothing is faster than not running a task. NX analyses your project graph and can diff it against a baseline to determine which projects changed and what tasks need to be re-run.
 - Large community
   - NX is built on top of the popular Node.js platform, which has a large and active community of developers. This means that developers using NX can easily find support and resources online.
 - Better code-sharing
@@ -59,7 +59,7 @@ Nx makes scaling easy. Modern techniques such as distributed task execution and 
 
 There are three ways to scaffold you stacks workspace, we recommend using our Stacks CLI for the best experience!
 
-### Stacks CLI
+### Option 1: Stacks CLI
 
 :::danger
 
@@ -67,7 +67,7 @@ TO BE COMPLETED PENDING STACKS CLI IMPLEMENTATION
 
 :::
 
-### Create stacks workspace generator
+### Option 2: Create stacks workspace generator
 
 You can scaffold a brand new Stacks and NX workspace through the __@ensono-stacks/create-stacks-workspace__ plugin.
 
@@ -83,7 +83,7 @@ Visit the [@ensono-stacks/create-stacks-workspace](./azure-node/not-valid-link-u
 
 :::
 
-### 'Stackify' your existing NX workspace
+### Option 3: 'Stackify' your existing NX workspace
 
 If you already have an NX workspace, you can still utilise stacks!
 
@@ -100,6 +100,8 @@ Visit the [@ensono-stacks/workspace](./workspace/plugin-information.md) docs for
 
 ## Stacks Plugins
 
+To accelerate your project development and ensure consistency across those projects, we have several stacks plugins available!
+
 | Plugin | Description |
 | :---   | :---   |
 | [`@ensono-stacks/create-stacks-workspace`](ensono-stacks-create-stacks-workspace) | Create an NX workspace using stacks! |
@@ -109,9 +111,9 @@ Visit the [@ensono-stacks/workspace](./workspace/plugin-information.md) docs for
 | @ensono-stacks/rest-client | Add a rest client to a project in your stacks workspace |
 | [`@ensono-stacks/playwright`](./playwright/plugin-information.md) | Add the playwright testing library and much more to your project! |
 
-To be added: 
-- Next SSR App
-- React SSR App
+To be added (Dev note, to be removed): 
+- Next SSR App?
+- React SSR App?
 - NextAuth Azure AD
 - Rest client generator
 - React Azure App Insights

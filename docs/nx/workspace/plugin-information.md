@@ -16,7 +16,7 @@ import Init from './init.md'
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-The `@ensono-stacks/workspace` plugin contains generators to manage the Nx workspace itself. These will often be useful in any workspace, regardless of the specific apps or libraries it contains.
+The `@ensono-stacks/workspace` plugin contains generators to manage the NX workspace itself. These will often be useful in any workspace, regardless of the specific apps or libraries it contains.
 
 Using a standard setup for workspaces ensures consistency across projects and allows developers to easily onboard onto new projects.
 

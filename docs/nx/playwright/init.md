@@ -3,7 +3,7 @@
 <details>
 <summary>Initialises your playwright project with additional stacks configuration</summary>
 
-The _init_ executor initialises your playwright project with additional stacks congiguration, providing you with the option to scaffold example Visual regression and Accessibility tests and config. 
+The _init_ executor initialises your playwright project with additional stacks configuration, providing you with the option to scaffold example Visual regression and Accessibility tests and config. 
 
 ## Usage
 
@@ -15,7 +15,7 @@ Upon calling the _init_ generator you will be presented with a number of options
 - What is the name of the project for this component?
     - The name of the existing playwright test app to be enhanced
 - Would you like to install the scaffolding for accessibility testing?
-    - Whether to install [`@axe-core/playwright`](https://github.com/dequelabs/axe-core-npm/blob/develop/packages/playwright/README.md) and configure an example accesibility test
+    - Whether to install [`@axe-core/playwright`](https://github.com/dequelabs/axe-core-npm/blob/develop/packages/playwright/README.md) and configure an example accessibility test
 - What type of visual regression tests would you like to use?
     - none: Do not generate visual regression tests
     - native: Generate visual regression tests using Playwrights native [visual comparison api](https://playwright.dev/docs/test-snapshots)

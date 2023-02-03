@@ -24,7 +24,7 @@ Using a standard setup for your Next app ensures consistency and code quality ac
 
 ## Setting up @ensono-stacks/next
 
-Install the @ensono-stacks/next with the following command:
+Install the `@ensono-stacks/next` with the following command:
 
  <Tabs>
   <TabItem value="npm" label="npm">

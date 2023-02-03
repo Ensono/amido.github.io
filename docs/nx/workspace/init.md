@@ -8,7 +8,7 @@ Allows you to choose your recommended 3rd party provider options.
 
 ## Usage
 
-Initialise your nx workspace with stacks with the following command:
+Initialise your NX workspace with stacks with the following command:
 ```bash
 nx g @ensono-stacks/workspace:init
 ```
@@ -50,14 +50,14 @@ Keeping commits well-structured and clear is key to enabling collaboration on a 
   }
 ```  
 
-- [Commitlint](https://commitlint.js.org/) - Standardised commit message format to make reading commit history easy. The generator installs commitlint and uses it for commitizen config.
+- [Commitlint](https://commitlint.js.org/) - Standardised commit message format to make reading commit history easy. The generator installs Commitlint and uses it for commitizen config.
 - [Husky](https://typicode.github.io/husky/#/) - Git hook management tool. The generator adds a `prepare` script to ensure husky is always installed:
 ```json title="Husky install script"
 "scripts": {
     "prepare": "husky install"
   },
 ```  
-It also adds commitizen to the git `prepare-commit-msg` script, and commitlint to the `commit-msg`. This means that you can simply run `git commit` and get the benefits of both tools.
+It also adds commitizen to the git `prepare-commit-msg` script, and Commitlint to the `commit-msg`. This means that you can simply run `git commit` and get the benefits of both tools.
 
 #### Code quality management
 Stacks projects use ESLint and Typescript to help maintain code quality. Using the same config in every Stacks project ensures consistency and allows developers to more easily onboard onto new projects.

@@ -71,7 +71,7 @@ nx generate @mands/nx-playwright:project <APP-NAME>-e2e --project <APP-NAME>
  
 
 ### Installation 
-Install the @ensono-stacks/playwright with the following command:
+Install the `@ensono-stacks/playwright` plugin with the following command:
 
  <Tabs>
   <TabItem value="npm" label="npm">

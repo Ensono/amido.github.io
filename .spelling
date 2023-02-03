@@ -125,6 +125,17 @@ grepInvert
 updateSnapshots
 toHaveScreenshot
 win32
+ensono-stacks
+stackify
+nextauth
+init
+nx-playwright
+env
+project.json
+Ensono
+NextAuth.js
+package.json
+init.md
  - ../docs/browser_support.md
 Polyfills
 eslint-plugin-compat
@@ -135,3 +146,32 @@ workflow.ts
 AzureDevops
  - ./docs/testing/testing_in_nx/playwright_visual_testing.md
 diff.png
+ - ./docs/nx/playwright/init.md
+visualRegression
+playwright.config.base.ts
+playwright.config.ts
+spec.ts
+ - ./docs/nx/playwright/plugin-information.md
+InitGenerator
+init.md
+mands
+ - ./docs/nx/azure-node/generator-app-insights.md
+applicationinsights
+appInsightsKey
+ - ./docs/nx/azure-node/plugin-information.md
+GeneratorAppInsights
+md
+ - ./docs/nx/next/init.md
+nameOfApplication
+ - ./docs/nx/next/next-auth.md
+azureAd
+azureAdB2C
+skipPackageJson
+useSession
+ - ./docs/nx/next/plugin-information.md
+init.md
+md
+configs
+ - ./docs/nx/workspace/init.md
+commitizen
+Commitlint
