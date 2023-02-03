@@ -22,6 +22,14 @@ The `next` plugin contains generators to augment existing NextJs projects. Addin
 
 Using a standard setup for your Next app ensures consistency and code quality across multiple applications quickly. NextAuth can also be quickly added to a project without costly configuration and setup.
 
+## Prerequisites
+
+An existing [Next](https://nextjs.org/) application. Note the generator will fail if run in an empty workspace with no applications. To create a new Next application please run the NX Next generator with the following command including any relevant options. See [@nrwl/next plugin docs](https://nx.dev/packages/next)
+
+```
+nx g @nrwl/next:app my-new-app
+```
+
 ## Setting up @ensono-stacks/next
 
 Install the `@ensono-stacks/next` with the following command:
