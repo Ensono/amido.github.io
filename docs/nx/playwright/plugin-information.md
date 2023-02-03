@@ -20,7 +20,7 @@ Using the `@ensono-stacks/playwright` plugin can help you get started with testi
 
 :::tip
 
-Visit the [`Frontend Testing in an NX monorepo`](../../testing/testing_in_nx/frontend_testing_in_nx.md) and [`Testing with Playwright`](../../testing/testing_in_nx/playwright_nx.md) user guides for more information!
+Visit the [Frontend Testing in an NX monorepo](../../testing/testing_in_nx/frontend_testing_in_nx.md) and [Testing with Playwright](../../testing/testing_in_nx/playwright_nx.md) user guides for more information!
 
 :::
 
