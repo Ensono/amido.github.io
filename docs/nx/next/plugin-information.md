@@ -24,7 +24,11 @@ Using a standard setup for your Next app ensures consistency and code quality ac
 
 ## Prerequisites
 
-An existing [Next](https://nextjs.org/) application. Note the generator will fail if run in an empty workspace with no applications.
+An existing [Next](https://nextjs.org/) application. Note the generator will fail if run in an empty workspace with no applications. To create a new Next application please run the NX Next generator with the following command including any relevant options. See [@nrwl/next plugin docs](https://nx.dev/packages/next)
+
+```
+nx g @nrwl/next:app my-new-app
+```
 
 ## Setting up @ensono-stacks/next
 
