@@ -4,7 +4,7 @@ title: "@ensono-stacks/playwright"
 sidebar_label: "@ensono-stacks/playwright"
 description: "Using the playwright with stacks!"
 keywords:
-  - NX
+  - Nx
   - monorepo
   - stacks
   - ensono
@@ -20,7 +20,7 @@ Using the `@ensono-stacks/playwright` plugin can help you get started with testi
 
 :::tip
 
-Visit the [Frontend Testing in an NX monorepo](../../testing/testing_in_nx/frontend_testing_in_nx.md) and [Testing with Playwright](../../testing/testing_in_nx/playwright_nx.md) user guides for more information!
+Visit the [Frontend Testing in an Nx monorepo](../../testing/testing_in_nx/frontend_testing_in_nx.md) and [Testing with Playwright](../../testing/testing_in_nx/playwright_nx.md) user guides for more information!
 
 :::
 

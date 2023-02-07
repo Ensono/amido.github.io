@@ -227,3 +227,9 @@ When running in the CI three reporters are utilised:
 This section is pending completion once TaskCTL and Pipelines are available!
 
 :::
+
+:::caution HTML Report - Viewing Trace Views
+
+When downloading/viewing HTML reports uploaded as test artefacts to your pipeline, you may experience issues opening **[trace views](https://playwright.dev/docs/trace-viewer)** as these must be loaded over **http://** or **https://** protocols, please upload trace files to the **[playwright trace viewer](https://trace.playwright.dev/)** to load them in your browser.
+
+:::

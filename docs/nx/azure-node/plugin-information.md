@@ -4,7 +4,7 @@ title: "@ensono-stacks/azure-node"
 sidebar_label: "@ensono-stacks/azure-node"
 description: "Configure NodeJS application for Azure!"
 keywords:
-  - NX
+  - Nx
   - monorepo
   - stacks
   - ensono
