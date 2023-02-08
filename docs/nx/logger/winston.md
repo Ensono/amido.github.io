@@ -2,7 +2,7 @@
 
 <details>
 <summary>Add Winston to your project</summary>
-Generates a new Nx library which containing a Winston logger instance and associated config.
+Generates a new Nx library which contains a Winston logger instance and associated config.
 
 ## Prerequisites
 
@@ -61,5 +61,9 @@ The following command line arguments are available:
 └── tsconfig.base.json - adds new library into `paths` field
 
 ```
+
+### Other resources
+
+Documentation for Winston can be found [here](https://github.com/winstonjs/winston).
 
 </details>
