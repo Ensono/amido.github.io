@@ -17,15 +17,14 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 Summary of the plugin
-What is its purpose?
 
-What benefits does it give you?
+The `logger` plugin allows you to add industry standard logging functionality to your Stacks apps.
 
 ## Setting up @ensono-stacks/logger
 
 ### Prerequisites
 
-Are there any prerequisites?
+An existing Stacks workspace.
 
 ### Installation 
 Install the @ensono-stacks/logger with the following command:
@@ -47,17 +46,6 @@ Install the @ensono-stacks/logger with the following command:
   </TabItem>
  </Tabs>
 
-##### Has it installed any additional plugins? 
-What are they? Can we link to docs about the additional plugins?
-
-#### Has it created any scripts?
-How do we use them, what do those scripts do?
-e.g
-```json title="Example script that's created"
-"scripts": {
-    "prepare": "husky install"
-  },
-```  
 
 ## Executors and Generators
 

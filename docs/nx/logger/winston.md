@@ -6,7 +6,7 @@ Generates a new Nx library which containing a Winston logger instance and associ
 
 ## Prerequisites
 
-An existing app inside a Stacks workspace.
+An existing Stacks workspace.
 
 ## Usage
 
@@ -36,11 +36,6 @@ The following command line arguments are available:
 
 ### Generator Output
 ##### What is the output of the above commands?
-
-UPDATE .vscode/extensions.json
-UPDATE nx.json
-UPDATE package.json
-UPDATE tsconfig.base.json
 
 ```text title="Files generated"
 .
