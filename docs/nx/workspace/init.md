@@ -40,7 +40,7 @@ Files created:
 │   ├── tsconfig.base.json
 ```
 
-If `--pipelineRunner=true` is passed, the generator will also create a `build` directory:
+If `--pipelineRunner=taskctl` is passed, the generator will also create a `build` directory:
 
 ```
 ├── workspace root
