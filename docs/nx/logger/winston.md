@@ -36,7 +36,8 @@ The following command line arguments are available:
 
 ### Generator Output
 
-```text title="Files generated"
+The generator will create a new application within your libs folder with the following structure:
+```text
 .
 ├── libs/[libname]
 │   ├── src
@@ -54,48 +55,42 @@ The following command line arguments are available:
 
 ```
 
-```text title="Files modified"
+Additionally, the following files will be modified
+
+```
 .
-├── nx.json - Adds configuration for Jest tests if this has not already been done by another generator
-├── package.json - Adds winston as a dependency
-└── tsconfig.base.json - Adds new library into `paths` field
+├── nx.json // Adds configuration for Jest tests if this has not already been done by another generator
+├── package.json // Adds winston as a dependency
+└── tsconfig.base.json // Adds new library into `paths` field
 
 ```
 
-### Usage
+### Importing the logger into your app
 
-Create a new library using the generator:
+Having created a logger using the above [command](#usage), import the Winston logger instance from the newly created library (the import name can be found within the `tsconfig.base.json` files `paths` field) into your application:
 
-```bash title="At your workspace root"
-    nx @ensono-stacks/logger:winston --name=mynewlogger
-```
+```typescript
+import logger from '@workspace-name/mynewlogger'
 
-Then, import the Winston logger instance from the newly created library:
-
-```typescript title="In your app"
-    import logger from '@workspace-name/mynewlogger'
-    
-    logger.log({
-        level: 'info',
-        message: 'I love Ensono Stacks!', 
-    })
+logger.log({
+    level: 'info',
+    message: 'I love Ensono Stacks!', 
+})
 ```
 
 To change how Winston is configured, edit the created library:
 
-```typescript title="./libs/mynewlogger/src/index.ts
-    ...
-    
-    const logger = winston.createLogger(logConfiguration);
-    
-    // Custom transport for non-production
-    if (process.env.NODE_ENV !== 'production') {
-        logger.add(new winston.transports.Console({
-            format: winston.format.simple(), 
-        })) 
-    } 
-     
-    export default logger;
+```typescript title=./libs/mynewlogger/src/index.ts
+const logger = winston.createLogger(logConfiguration);
+
+// Custom transport for non-production
+if (process.env.NODE_ENV !== 'production') {
+    logger.add(new winston.transports.Console({
+        format: winston.format.simple(), 
+    })) 
+} 
+ 
+export default logger;
 ```
 
 ### Other resources
