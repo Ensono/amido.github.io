@@ -29,7 +29,7 @@ The following command line arguments are available:
 | --fileTransportPath | File path used for logs transport                                | string  |                 | N/A     |                                  |
 | --httpTransport     | Add a http transport                                             | boolean | true/false      | false   |                                  |
 | --httpTransportHost | Remote host of the HTTP logging endpoint                         | string  |                 | N/A     |                                  |
-| --httpTransportPort | Remote port of the HTTP logging endpoint                         | string  |                 | N/A     |                                  |
+| --httpTransportPort | Remote port of the HTTP logging endpoint                         | number  |                 | N/A     |                                  |
 | --httpTransportPath | Remote URI of the HTTP logging endpoint                          | string  |                 | N/A     |                                  |
 | --httpTransportSSL  | Use SSL for the HTTP logging endpoint                            | boolean | true/false      | false   |                                  |
 | --streamPath        | Stream transport path                                            | string  |                 | N/A     |                                  |
@@ -40,24 +40,25 @@ The following command line arguments are available:
 .
 ├── libs/[libname]
 │   ├── src
-│   ├── ├── index.ts
-│   ├── ├── index.test.ts
-│   ├── .eslintrc.json
-│   ├── jest.config.ts
-│   ├── project.json
-│   ├── tsconfig.json
-│   ├── tsconfig.lib.json
-│   ├── tsconfig.spec.json
-│   ├── README.md
-├── jest.config.ts
-└── jest.preset.ts
+│   ├── ├── index.ts // Contains the Winston configuration and creates the logger instance
+│   ├── ├── index.test.ts // Tests for the logger
+│   ├── .eslintrc.json // ESLint config - extends from workspace config
+│   ├── jest.config.ts // Jest config - extends from workspace config
+│   ├── project.json // Nx config file for the library
+│   ├── tsconfig.json // Main Typescript config for the library - extends workspace config & references the below two tsconfig files
+│   ├── tsconfig.lib.json // Typescript config for the library's source files (excluding tests)
+│   ├── tsconfig.spec.json // Typescript config for the library's test files
+│   ├── README.md // Information on the library and how to run scripts
+├── jest.config.ts // Workspace-level Jest config - created if this does not already exist
+└── jest.preset.ts // Workspace-leve Jest preset that extends `@nrwl/jest/preset` - created if this does not already exist.
 
 ```
 
 ```text title="Files modified"
 .
-├── package.json - adds winston as a dependency
-└── tsconfig.base.json - adds new library into `paths` field
+├── nx.json - Adds configuration for Jest tests if this has not already been done by another generator
+├── package.json - Adds winston as a dependency
+└── tsconfig.base.json - Adds new library into `paths` field
 
 ```
 
