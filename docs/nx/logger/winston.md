@@ -18,21 +18,21 @@ nx @ensono-stacks/logger:winston
 
 The following command line arguments are available:
 
-| Option              | Description                                                      | Type    | Accepted Values | Default | Required? | Available in interactive prompt? |
-|---------------------|------------------------------------------------------------------|---------|-----------------|---------|-----------|----------------------------------|
-| --name              | Name of the generated library                                    | string  |                 | N/A     | Yes       | Yes                              |
-| --tags              | Add tags to the project (used for linting)                       | string  |                 | N/A     |           |                                  |
-| --directory         | Directory where the project is placed (within Nx libs directory) | string  |                 | N/A     |           |                                  |
-| --skipFormat        | Skip formatting files                                            | boolean | true/false      | false   |           |                                  |
-| --logLevelType      | The type of log levels that will be used                         | enum    | cli/syslog/npm  | npm     |           | Yes                              |
-| --consoleLogs       | Output logs to the console                                       | boolean | true/false      | false   |           |                                  |
-| --fileTransportPath | File path used for logs transport                                | string  |                 | N/A     |           |                                  |
-| --httpTransport     | Add a http transport                                             | boolean | true/false      | false   |           |                                  |
-| --httpTransportHost | Remote host of the HTTP logging endpoint                         | string  |                 | N/A     |           |                                  |
-| --httpTransportPort | Remote port of the HTTP logging endpoint                         | string  |                 | N/A     |           |                                  |
-| --httpTransportPath | Remote URI of the HTTP logging endpoint                          | string  |                 | N/A     |           |                                  |
-| --httpTransportSSL  | Use SSL for the HTTP logging endpoint                            | boolean | true/false      | false   |           |                                  |
-| --streamPath        | Stream transport path                                            | string  |                 | N/A     |           |                                  |
+| Option              | Description                                                      | Type    | Accepted Values | Default | Available in interactive prompt? |
+|---------------------|------------------------------------------------------------------|---------|-----------------|---------|----------------------------------|
+| --name              | Name of the generated library                                    | string  |                 | N/A     | Yes                              |
+| --tags              | Add tags to the project (used for linting)                       | string  |                 | N/A     |                                  |
+| --directory         | Directory where the project is placed (within Nx libs directory) | string  |                 | N/A     |                                  |
+| --skipFormat        | Skip formatting files                                            | boolean | true/false      | false   |                                  |
+| --logLevelType      | The type of log levels that will be used                         | enum    | cli/syslog/npm  | npm     | Yes                              |
+| --consoleLogs       | Output logs to the console                                       | boolean | true/false      | false   |                                  |
+| --fileTransportPath | File path used for logs transport                                | string  |                 | N/A     |                                  |
+| --httpTransport     | Add a http transport                                             | boolean | true/false      | false   |                                  |
+| --httpTransportHost | Remote host of the HTTP logging endpoint                         | string  |                 | N/A     |                                  |
+| --httpTransportPort | Remote port of the HTTP logging endpoint                         | string  |                 | N/A     |                                  |
+| --httpTransportPath | Remote URI of the HTTP logging endpoint                          | string  |                 | N/A     |                                  |
+| --httpTransportSSL  | Use SSL for the HTTP logging endpoint                            | boolean | true/false      | false   |                                  |
+| --streamPath        | Stream transport path                                            | string  |                 | N/A     |                                  |
 
 ### Generator Output
 ##### What is the output of the above commands?
