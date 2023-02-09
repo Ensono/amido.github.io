@@ -16,7 +16,10 @@ import Winston from './winston.md'
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-The `logger` plugin allows you to add industry standard logging functionality to your Stacks apps.
+The `@ensono-stacks/logger` plugin allows you to add industry standard logging functionality to your Stacks apps.
+
+Currently, the following logging libraries are supported:
+- **[winston](https://github.com/winstonjs/winston)**
 
 ## Setting up @ensono-stacks/logger
 

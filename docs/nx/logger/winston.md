@@ -35,7 +35,6 @@ The following command line arguments are available:
 | --streamPath        | Stream transport path                                            | string  |                 | N/A     |                                  |
 
 ### Generator Output
-##### What is the output of the above commands?
 
 ```text title="Files generated"
 .
