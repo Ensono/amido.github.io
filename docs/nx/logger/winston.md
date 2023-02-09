@@ -61,6 +61,42 @@ The following command line arguments are available:
 
 ```
 
+### Usage
+
+Create a new library using the generator:
+
+```bash title="At your workspace root"
+    nx @ensono-stacks/logger:winston --name=mynewlogger
+```
+
+Then, import the Winston logger instance from the newly created library:
+
+```typescript title="In your app"
+    import logger from '@workspace-name/mynewlogger'
+    
+    logger.log({
+        level: 'info',
+        message: 'I love Ensono Stacks!', 
+    })
+```
+
+To change how Winston is configured, edit the created library:
+
+```typescript title="./libs/mynewlogger/src/index.ts
+    ...
+    
+    const logger = winston.createLogger(logConfiguration);
+    
+    // Custom transport for non-production
+    if (process.env.NODE_ENV !== 'production') {
+        logger.add(new winston.transports.Console({
+            format: winston.format.simple(), 
+        })) 
+    } 
+     
+    export default logger;
+```
+
 ### Other resources
 
 Documentation for Winston can be found [here](https://github.com/winstonjs/winston).
