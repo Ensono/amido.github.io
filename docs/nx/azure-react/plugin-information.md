@@ -25,7 +25,7 @@ Creates a ReactJS application and configures your ReactJS application to use var
 
 ## Setting up @ensono-stacks/azure-react
 
-Install the `@ensono-stacks/azure-react` with the following command:
+Install the `@ensono-stacks/azure-react` plugin with the following command:
 
  <Tabs>
   <TabItem value="npm" label="npm">
@@ -52,7 +52,7 @@ To see a list of the plugin capabilities run the following command:
 nx list @ensono-stacks/azure-react
 ```
 
-View additional information about a plugin capability through the following command:
+View additional information about a plugin capability through the following commands:
 ```bash
 nx g @ensono-stacks/azure-react:app-insights-web --help
 ```

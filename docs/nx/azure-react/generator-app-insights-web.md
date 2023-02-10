@@ -1,7 +1,7 @@
 ### @ensono-stacks/azure-react:app-insights-web
 
 <details>
-<summary>Installs and configures a react app using the NX/React plugin then adds App Insights into your ReactJS app.</summary>
+<summary>Installs and configures a ReactJS app with App Insights.</summary>
 
 This generator will add and configure [applicationinsights reactjs](https://www.npmjs.com/package/@microsoft/applicationinsights-react-js) and [applicationinsights web](https://www.npmjs.com/package/@microsoft/applicationinsights-web) npm packages for you.
 
@@ -32,7 +32,7 @@ The following command line arguments are available:
 
 ### Generator Output
 
-- Adds a app insights config file
+- Adds an app insights config file
 ```json title="/src/app-insights-config.ts"
 // eslint-disable-next-line import/no-extraneous-dependencies
 import {
@@ -97,4 +97,6 @@ export const TelemetryProvider: FC<{ children?: ReactNode }> = ({ children }) =>
   }
 }
 ```
+
+Full documentation and a getting started guide can be found at [React plug-in for Application Insights JavaScript SDK](https://learn.microsoft.com/en-gb/azure/azure-monitor/app/javascript-react-plugin)
 </details>
