@@ -102,14 +102,15 @@ Visit the [@ensono-stacks/workspace](./workspace/plugin-information.md) docs for
 
 To accelerate your project development and ensure consistency across those projects, we have several stacks plugins available!
 
-| Plugin | Description |
-| :---   | :---   |
-| [`@ensono-stacks/create-stacks-workspace`](ensono-stacks-create-stacks-workspace) | Create an Nx workspace using stacks! |
-| [`@ensono-stacks/workspace`](./workspace/plugin-information.md) | 'Stackify' your existing Nx workspace | 
-| [`@ensono-stacks/next`](./next/plugin-information.md) | Enhance your Next.js project with Stacks! |
-| [`@ensono-stacks/azure-node`](./azure-node/plugin-information.md) | Add Azure app insights to a node project in your stacks workspace|
-| @ensono-stacks/rest-client | Add a rest client to a project in your stacks workspace |
-| [`@ensono-stacks/playwright`](./playwright/plugin-information.md) | Add the playwright testing library and much more to your project! |
+| Plugin                                                                            | Description                                                       |
+|:----------------------------------------------------------------------------------|:------------------------------------------------------------------|
+| [`@ensono-stacks/create-stacks-workspace`](ensono-stacks-create-stacks-workspace) | Create an Nx workspace using stacks!                              |
+| [`@ensono-stacks/workspace`](./workspace/plugin-information.md)                   | 'Stackify' your existing Nx workspace                             | 
+| [`@ensono-stacks/next`](./next/plugin-information.md)                             | Enhance your Next.js project with Stacks!                         |
+| [`@ensono-stacks/azure-node`](./azure-node/plugin-information.md)                 | Add Azure app insights to a node project in your stacks workspace |
+| @ensono-stacks/rest-client                                                        | Add a rest client to a project in your stacks workspace           |
+| [`@ensono-stacks/playwright`](./playwright/plugin-information.md)                 | Add the playwright testing library and much more to your project! |
+| [`@ensono-stacks/logger`](./logger/plugin-information.md)                         | Add industry standard logging capabilities to your project        |
 
 To be added (Dev note, to be removed): 
 - Next SSR App?

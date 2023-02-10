@@ -12,7 +12,7 @@ keywords:
   - monorepo
 ---
 
-Using [NX](https://nx.dev/) provides many benefits when working with SSR or CSR frontend applications. When using stacks to scaffold an NX monorepo (INSERT LINK HERE TO GARETH DOCUMENTATION) you will be provided with several options to assure quality in your development process.
+Using [NX](https://nx.dev/) provides many benefits when working with SSR or CSR frontend applications. When using stacks to scaffold an NX monorepo **(INSERT LINK HERE TO GARETH DOCUMENTATION)** you will be provided with several options to assure quality in your development process.
 
 
 ## Getting Started
