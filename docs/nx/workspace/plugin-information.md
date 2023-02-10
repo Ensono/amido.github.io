@@ -20,6 +20,12 @@ The `@ensono-stacks/workspace` plugin contains generators to manage the Nx works
 
 Using a standard setup for workspaces ensures consistency across projects and allows developers to easily onboard onto new projects.
 
+:::caution
+
+This plugin will automatically be installed and configured if creating a stacks workspace with the [Stacks CLI](../nx_monorepo.md#option-1-stacks-cli) or [@ensono-stacks/create-stacks-workspace](../nx_monorepo.md#option-2-create-stacks-workspace-generator)
+
+:::
+
 ## Setting up @ensono-stacks/workspace
 
 Install the `@ensono-stacks/workspace` with the following command:

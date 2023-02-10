@@ -58,6 +58,12 @@ This sets up a CI/CD pipeline to provide a smooth collaborative workflow.
 
 Currently supported pipeline tools are [Azure Devops](https://azure.microsoft.com/en-gb/products/devops/) and [taskctl](https://github.com/taskctl/taskctl).
 
+:::caution
+
+The `build` files will only be generated if required project values have been collected from the [Stacks CLI](../nx_monorepo.md#option-1-stacks-cli) or through the [@ensono-stacks/create-stacks-workspace](../nx_monorepo.md#option-2-create-stacks-workspace-generator) plugin. 
+
+:::
+
 #### Commit management
 Keeping commits well-structured and clear is key to enabling collaboration on a project. This generator initialises three tools to empower consistent commits:
 - [Commitizen](https://www.npmjs.com/package/commitizen) - Interactive tool that helps to build constructive messages on commit. The generator adds commitizen config to the package.json:
