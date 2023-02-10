@@ -19,8 +19,8 @@ Create a new Stacks Nx workspace. Using the create-stacks-workspace script will 
 
 The Stacks `create-stacks-workspace` script will 
 - Run Nx [create-nx-workspace](https://nx.dev/packages/nx/documents/create-nx-workspace) command to setup a new NX workspace passing along any command line arguments provided 
-- Install any recommended plugin/generators/executors from Stacks (the exact plugins installed will depend on the preset selected see [presets](/docs/nx/create-stacks-workspace/ensono-stacks-create-stacks-workspace#presets))
-- Configure the NX workspace 
+- Install any recommended plugin/generators/executors from Stacks. If the `next` preset is selected the [Ensono Next plugin](/docs/nx/next/ensono-stacks-next) will be installed. With all presets the [Ensono Workspace Plugin](/docs/nx/workspace/ensono-stacks-workspace) will be installed. (see [presets](/docs/nx/create-stacks-workspace/ensono-stacks-create-stacks-workspace#presets))
+- Configure the NX workspace. This will involve updating the NX.json file with any information provided from the command line arguments
 - Execute recommended generators from Stacks to initialize the workspace/projects depending on the options provided. 
 
 ## Setting up @ensono-stacks/create-stacks-workspace
