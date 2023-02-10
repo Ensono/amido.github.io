@@ -14,7 +14,7 @@ This generator will create a new ReactJS Library with [applicationinsights react
 ## Usage
 
 ```bash
-nx generate @ensono-stacks/azure-react:app-insights-web --name=<app-name> --connectionString=<KEY_NAME> --directory=<directory where the lib is placed> --importPath=<import path for the library> --tags=<tags to the library>
+nx generate @ensono-stacks/azure-react:app-insights-web
 ```
 
 
