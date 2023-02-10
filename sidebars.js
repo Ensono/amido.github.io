@@ -285,6 +285,7 @@ module.exports = {
           "nx/workspace/ensono-stacks-workspace",
           "nx/next/ensono-stacks-next",
           "nx/azure-node/ensono-stacks-azure-node",
+          "nx/azure-react/ensono-stacks-azure-react",
           "nx/playwright/ensono-stacks-playwright",
           "nx/logger/ensono-stacks-logger"
         ]
