@@ -2,19 +2,14 @@
 id: nx_stacks
 title: Stacks with Nx
 sidebar_label: Stacks with Nx
-description: Using stacks with Nx build
+description: Using stacks with Nx
 keywords:
   - Nx
   - monorepo
   - stacks
-  - CompleteWithAdditonalKeywords
+  - Generator
+  - Executor
 ---
-
-:::caution
-
-This page is not complete
-
-:::
 
 The ideologies of Stacks and [`Nx`](https://nx.dev/) are aligned in their focus on providing businesses with the tools they need to optimize their IT infrastructure, while also saving them time and effort. Both Stacks and the Nx build system are designed to make it easy for companies to manage and scale their IT infrastructure, and to help them improve their overall productivity. 
 
@@ -57,13 +52,18 @@ Nx makes scaling easy. Modern techniques such as distributed task execution and 
 
 ## Set up your stacks workspace
 
-There are three ways to scaffold you stacks workspace, we recommend using our Stacks CLI for the best experience!
+There are three ways to scaffold you stacks workspace, we recommend using our _[Stacks CLI](../stackscli/usage.mdx)_ for the best experience!
 
 ### Option 1: Stacks CLI
 
-:::danger
+Once the Stacks CLI has been installed you can scaffold a brand new Stacks and Nx workspace through answering a set of interactive questions. Launch the Stacks CLI with the following command to get started:
+```bash
+stacks-cli interactive
+```
 
-TO BE COMPLETED PENDING STACKS CLI IMPLEMENTATION
+:::note Ensure you have the Stacks CLI installed!
+
+Visit the [Stacks CLI](../stackscli/usage.mdx) docs for more information and setup instructions!
 
 :::
 
@@ -113,10 +113,7 @@ To accelerate your project development and ensure consistency across those proje
 | [`@ensono-stacks/logger`](./logger/plugin-information.md)                         | Add industry standard logging capabilities to your project        |
 
 To be added (Dev note, to be removed): 
-- Next SSR App?
-- React SSR App?
-- NextAuth Azure AD
 - Rest client generator
 - React Azure App Insights
 - Localisation
-- Logging
+
