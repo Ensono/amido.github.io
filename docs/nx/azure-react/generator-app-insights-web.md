@@ -1,22 +1,28 @@
 ### @ensono-stacks/azure-react:app-insights-web
 
 <details>
-<summary>Installs and configures a ReactJS app with App Insights.</summary>
-
-This generator will add and configure [applicationinsights reactjs](https://www.npmjs.com/package/@microsoft/applicationinsights-react-js) and [applicationinsights web](https://www.npmjs.com/package/@microsoft/applicationinsights-web) npm packages for you.
+<summary>Installs and configures a ReactJS Library with App Insights.</summary>
 
 This enables the following:
 
 - Tracking of router changes
 - React components usage statistics
 
-It requires the connection string to be set in an env variable, from which it will be read.
+
+This generator will create a new ReactJS Library with [applicationinsights reactjs](https://www.npmjs.com/package/@microsoft/applicationinsights-react-js) and [applicationinsights web](https://www.npmjs.com/package/@microsoft/applicationinsights-web) npm packages installed and configured for you. This can then be imported an used in an existing ReactJs application.
 
 ## Usage
 
 ```bash
 nx generate @ensono-stacks/azure-react:app-insights-web --name=<app-name> --connectionString=<KEY_NAME> --directory=<directory where the lib is placed> --importPath=<import path for the library> --tags=<tags to the library>
 ```
+
+
+:::caution
+
+App insights requires the connection string environment variable to be set to the value set within Azure. The name of the connection string variable is set in the generator options `--connectionString`. Please see [documentation on connection strings](https://learn.microsoft.com/en-gb/azure/azure-monitor/app/sdk-connection-string?tabs=net) for more information
+
+:::
 
 ### Command line arguments
 
@@ -96,6 +102,49 @@ export const TelemetryProvider: FC<{ children?: ReactNode }> = ({ children }) =>
     "@microsoft/applicationinsights-web": "2.8.9",
   }
 }
+```
+
+### Using Application Insights 
+
+To use the Application Insights react hooks within your application please import the generated library and wrap your application in the TelemetryProvider installed by the generator for example 
+
+```json 
+import NxWelcome from './nx-welcome';
+import { TelemetryProvider } from 'packages/nameOfGeneratedAppInsightsLibrary/src';
+
+export function App() {
+    return (
+        <TelemetryProvider>
+            <NxWelcome title="welcome title" />
+            <div />
+        </TelemetryProvider>
+    );
+}
+
+export default App;
+
+```
+
+From here a `useAppInsightsContext` hook will be available to use anywhere within your ReactJs App. For example
+```json 
+import React from "react";
+import { useAppInsightsContext } from "@microsoft/applicationinsights-react-js";
+
+const MyComponent = () => {
+    const appInsights = useAppInsightsContext();
+    const metricData = {
+        average: engagementTime,
+        name: "React Component Engaged Time (seconds)",
+        sampleCount: 1
+      };
+    const additionalProperties = { "Component Name": 'MyComponent' };
+    appInsights.trackMetric(metricData, additionalProperties);
+    
+    return (
+        <h1>My Component</h1>
+    );
+}
+export default MyComponent;
 ```
 
 Full documentation and a getting started guide can be found at [React plug-in for Application Insights JavaScript SDK](https://learn.microsoft.com/en-gb/azure/azure-monitor/app/javascript-react-plugin)

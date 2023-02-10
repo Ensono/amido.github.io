@@ -18,7 +18,7 @@ import GeneratorAppInsights from './generator-app-insights-web.md';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Creates a ReactJS application and configures your ReactJS application to use various Azure services:
+Configures your ReactJS application to use various Azure services:
 
 - [App Insights](https://www.npmjs.com/package/applicationinsights)
 - ...more to come.
