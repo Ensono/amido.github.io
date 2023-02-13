@@ -21,7 +21,7 @@ It requires the App Insights Access Key to be set in an env variable, from which
 ## Usage
 
 ```bash
-nx generate @ensono-stacks/azure-node:app-insights --project=<app-name> --appInsightsKey=<KEY_NAME> --server=<path to server ts file>
+nx generate @ensono-stacks/azure-node:app-insights
 ```
 
 ### Command line arguments
