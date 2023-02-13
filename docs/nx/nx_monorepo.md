@@ -68,6 +68,12 @@ Visit the [Stacks CLI](../stackscli/usage.mdx) docs for more information and set
 
 :::
 
+:::tip
+
+Visit the [NX Example](../stackscli/examples.mdx#nx) for the complete instructions/example on using NX with the Stacks CLI!
+
+:::
+
 ### Option 2: Create stacks workspace generator
 
 You can scaffold a brand new Stacks and Nx workspace through the **@ensono-stacks/create-stacks-workspace** plugin.
