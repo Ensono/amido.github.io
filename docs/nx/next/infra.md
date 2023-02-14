@@ -3,7 +3,7 @@
 <details>
 <summary>Configure Infrastructure for your Next project</summary>
 
-The infrastructure generator will provide all the necessary tools and setup ready to configure your pipeline.
+The infrastructure generator will provide all the necessary tools and setup ready to host your application in a Kubernetes Cluster.
 
 ## Prerequisites
 
@@ -62,7 +62,7 @@ The following command line arguments are available:
 @jscutlery/semver
 ```
 
-- Adds `stacks` object to nx.json which is populated via interactive and pulled in various stages of the infra journey
+- It is a requirement for the `stacks` object to exist inside `nx.json`, as this is read to know how to scaffold the infrastructure as code values. This object will already be populated by this point via the previous project scaffolding steps.
 
 ```
 "stacks": {
@@ -152,7 +152,9 @@ The configuration files for Helm Charts live inside the build folder under direc
 
 `myproject/apps/myapp/build/helm`
 
-In the infra pipeline, the steps for Helm will being by linting, then upgrade existing instance before installaing the new chart. The remaining tasks are then carried out post versioning, covered in the next section.
+In the infra pipeline, the steps for Helm will begin by linting, followed by either an upgrade or install. If the Helm chart is already installed, then an upgrade occurs based on the given command. If it isn't installed, then an installation occurs instead. The command accepts a `--atomic` flag which will allow Helm to roll back to the previous release should a failure during upgrade occur. On install, this would cause the installation to fail if there were any issues.
+
+The remaining tasks are then carried out post versioning, covered in the next section.
 
 ### Versioning
 
@@ -169,5 +171,7 @@ Finally a Github release is tagged with relevant notes using jscutlery.
 ### Terraform
 
 This is the last group of tasks to run as part of the infrastructure. See `myproject/apps/myapp/build/terraform` for configuration files.
+
+One thing to highlight is that once the Terraform apply task is completed, a Helmm install will also be executed. As mentioned earlier, the default behaviour is to deploy a non-production instance when a PR is created and once the PR is merged, then the deployment is made to production.
 
 </details>
