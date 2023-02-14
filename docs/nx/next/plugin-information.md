@@ -12,11 +12,12 @@ keywords:
   - generator
   - executor
 ---
+
 import Init from './init.md'
 import NextAuth from './next-auth.md'
+import NextInfra from './infra.md'
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-
 
 The `next` plugin contains generators to augment existing NextJs projects. Adding eslint rules, testing configs as well as installing and configuring NextAuth.js in your NextJs app.
 
@@ -37,16 +38,16 @@ Install the `@ensono-stacks/next` with the following command:
  <Tabs>
   <TabItem value="npm" label="npm">
 
-  ```bash
-  npm install --save-dev @ensono-stacks/next
-  ```
+```bash
+npm install --save-dev @ensono-stacks/next
+```
 
   </TabItem>
   <TabItem value="yarn" label="yarn">
 
-  ```bash
-  yarn add --dev @ensono-stacks/next
-  ```
+```bash
+yarn add --dev @ensono-stacks/next
+```
 
   </TabItem>
  </Tabs>
@@ -60,6 +61,7 @@ nx list @ensono-stacks/next
 ```
 
 View additional information about a plugin capability through the following command:
+
 ```bash
 nx g @ensono-stacks/azure-node:[generator-executor-name] --help
 ```
@@ -68,3 +70,4 @@ nx g @ensono-stacks/azure-node:[generator-executor-name] --help
 
 <Init />
 <NextAuth />
+<NextInfra />
