@@ -24,7 +24,7 @@ Find out more about Nx through their official [documentation](https://nx.dev/get
 
 </details>
 
-For the reasons listed above we have chosen to use Nx within Stacks, capitalising on Nx generators and executors to streamline your development and testing processes.
+For the reasons listed above we have chosen to use Nx within Stacks for CSR and SSR frontend web applications, capitalising on Nx generators and executors to streamline your development and testing processes.
 
 <details>
   <summary>What are Nx Generators and Executors?</summary>
@@ -52,7 +52,13 @@ Nx makes scaling easy. Modern techniques such as distributed task execution and 
 
 ## Set up your stacks workspace
 
-There are three ways to scaffold you stacks workspace, we recommend using our _[Stacks CLI](../stackscli/usage.mdx)_ for the best experience!
+There are three ways to get started with building a **CSR (React)** or **SSR (Next JS)** frontend web application with stacks, we recommend using our _[Stacks CLI](../stackscli/usage.mdx)_ for the best experience!
+
+:::note
+
+CSR support is currently limited however we are actively working on this!
+
+:::
 
 ### Option 1: Stacks CLI
 
@@ -120,9 +126,3 @@ To accelerate your project development and ensure consistency across those proje
 | @ensono-stacks/rest-client                                                        | Add a rest client to a project in your stacks workspace                |
 | [`@ensono-stacks/playwright`](./playwright/plugin-information.md)                 | Add the playwright testing library and much more to your project!      |
 | [`@ensono-stacks/logger`](./logger/plugin-information.md)                         | Add industry standard logging capabilities to your project             |
-
-To be added (Dev note, to be removed):
-
-- Rest client generator
-- React Azure App Insights
-- Localisation

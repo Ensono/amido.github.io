@@ -83,44 +83,24 @@ module.exports = {
         label: "Azure",
         items: [
           {
-            //NOTE IF SEEN IN A PR: DO NOT APPROVE UNTIL THESE AREAS HAVE BEEN REVISTED AND ASSESSED FOR WHETHER THEY ARE KEPT/DELETED
             type: "category",
-            label: "Frontend Web Applications (TO ARCHIVE / REVISIT)",
+            label: "Frontend Web Applications",
             items: [
+              "nx/nx_stacks",
               {
                 type: "category",
-                label: "Client Side Rendering",
+                label: "Stacks Plugins",
                 items: [
-                  "workloads/azure/frontend/CSR/ide_setup_csr",
-                  "workloads/azure/frontend/CSR/stacks_monorepo_csr",
-                  "workloads/azure/frontend/CSR/state_management_csr",
-                  "workloads/azure/frontend/CSR/getting_started_csr",
-                  "workloads/azure/frontend/CSR/api_definition_csr",
-                  "workloads/azure/frontend/CSR/logging_and_instrumentation_csr",
-                  "workloads/azure/frontend/CSR/infrastructure_csr",
-                  "workloads/azure/frontend/CSR/pipeline_csr",
-                  "workloads/azure/frontend/CSR/browser_support_csr"
-                ],
+                  "nx/create-stacks-workspace/ensono-stacks-create-stacks-workspace",
+                  "nx/workspace/ensono-stacks-workspace",
+                  "nx/next/ensono-stacks-next",
+                  "nx/azure-node/ensono-stacks-azure-node",
+                  "nx/azure-react/ensono-stacks-azure-react",
+                  "nx/playwright/ensono-stacks-playwright",
+                  "nx/logger/ensono-stacks-logger"
+                ]
               },
-              {
-                type: "category",
-                label: "Server Side Rendering",
-                items: [
-                  "workloads/azure/frontend/SSR/ide_setup_ssr",
-                  "workloads/azure/frontend/SSR/stacks_monorepo_ssr",
-                  "workloads/azure/frontend/SSR/state_management_ssr",
-                  "workloads/azure/frontend/SSR/getting_started_ssr",
-                  "workloads/azure/frontend/SSR/contentful_integration",
-                  "workloads/azure/frontend/SSR/identity",
-                  "workloads/azure/frontend/SSR/api_definition_ssr",
-                  "workloads/azure/frontend/SSR/logging_and_instrumentation_ssr",
-                  "workloads/azure/frontend/SSR/server_side_cache",
-                  "workloads/azure/frontend/SSR/infrastructure_ssr",
-                  "workloads/azure/frontend/SSR/pipeline_ssr",
-                  "workloads/azure/frontend/SSR/browser_support_ssr"
-                ],
-              },
-            ],
+            ]
           },
           {
             type: "category",
@@ -273,22 +253,6 @@ module.exports = {
             ]
           },
         ],
-      },
-    ],
-    "NX Monorepo": [ 
-      "nx/nx_stacks",
-      {
-        type: "category",
-        label: "Stacks Plugins",
-        items: [
-          "nx/create-stacks-workspace/ensono-stacks-create-stacks-workspace",
-          "nx/workspace/ensono-stacks-workspace",
-          "nx/next/ensono-stacks-next",
-          "nx/azure-node/ensono-stacks-azure-node",
-          "nx/azure-react/ensono-stacks-azure-react",
-          "nx/playwright/ensono-stacks-playwright",
-          "nx/logger/ensono-stacks-logger"
-        ]
       },
     ],
     Infrastructure: [
