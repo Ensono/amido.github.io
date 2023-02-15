@@ -29,7 +29,7 @@ The Stacks `create-stacks-workspace` script will
 Run the @ensono-stacks/create-stacks-workspace with the following command including any options see [command line arguments](/docs/nx/create-stacks-workspace/ensono-stacks-create-stacks-workspace#command-line-arguments):
 
  ```bash
- npx @ensono-stacks/create-stacks-workspace
+ npx @ensono-stacks/create-stacks-workspace@latest
   ```
 
 ### Presets

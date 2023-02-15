@@ -31,14 +31,14 @@ Install the `@ensono-stacks/azure-node` with the following command:
   <TabItem value="npm" label="npm">
 
   ```bash
-  npm install --save-dev @ensono-stacks/azure-node
+  npm install --save-dev @ensono-stacks/azure-node@latest
   ```
 
   </TabItem>
   <TabItem value="yarn" label="yarn">
 
   ```bash
-  yarn add --dev @ensono-stacks/azure-node
+  yarn add --dev @ensono-stacks/azure-node@latest
   ```
 
   </TabItem>

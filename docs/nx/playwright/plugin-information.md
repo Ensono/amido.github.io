@@ -77,14 +77,14 @@ Install the `@ensono-stacks/playwright` plugin with the following command:
   <TabItem value="npm" label="npm">
 
   ```bash
-  npm install --save-dev @ensono-stacks/playwright
+  npm install --save-dev @ensono-stacks/playwright@latest
   ```
 
   </TabItem>
   <TabItem value="yarn" label="yarn">
 
   ```bash
-  yarn add --dev @ensono-stacks/playwright
+  yarn add --dev @ensono-stacks/playwright@latest
   ```
 
   </TabItem>

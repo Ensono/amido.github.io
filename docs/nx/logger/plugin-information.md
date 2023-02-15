@@ -34,14 +34,14 @@ Install the @ensono-stacks/logger with the following command:
   <TabItem value="npm" label="npm">
 
   ```bash
-  npm install --save-dev @ensono-stacks/logger
+  npm install --save-dev @ensono-stacks/logger@latest
   ```
 
   </TabItem>
   <TabItem value="yarn" label="yarn">
 
   ```bash
-  yarn add --dev @ensono-stacks/logger
+  yarn add --dev @ensono-stacks/logger@latest
   ```
 
   </TabItem>

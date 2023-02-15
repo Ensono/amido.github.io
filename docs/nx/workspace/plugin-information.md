@@ -34,14 +34,14 @@ Install the `@ensono-stacks/workspace` with the following command:
   <TabItem value="npm" label="npm">
 
   ```bash
-  npm install --save-dev @ensono-stacks/workspace
+  npm install --save-dev @ensono-stacks/workspace@latest
   ```
 
   </TabItem>
   <TabItem value="yarn" label="yarn">
 
   ```bash
-  yarn add --dev @ensono-stacks/workspace
+  yarn add --dev @ensono-stacks/workspace@latest
   ```
 
   </TabItem>

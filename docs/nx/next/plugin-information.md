@@ -39,14 +39,14 @@ Install the `@ensono-stacks/next` with the following command:
   <TabItem value="npm" label="npm">
 
 ```bash
-npm install --save-dev @ensono-stacks/next
+npm install --save-dev @ensono-stacks/next@latest
 ```
 
   </TabItem>
   <TabItem value="yarn" label="yarn">
 
 ```bash
-yarn add --dev @ensono-stacks/next
+yarn add --dev @ensono-stacks/next@latest
 ```
 
   </TabItem>
