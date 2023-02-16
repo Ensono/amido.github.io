@@ -63,7 +63,7 @@ nx list @ensono-stacks/next
 View additional information about a plugin capability through the following command:
 
 ```bash
-nx g @ensono-stacks/azure-node:[generator-executor-name] --help
+nx g @ensono-stacks/next:[generator-executor-name] --help
 ```
 
 ### Generators
