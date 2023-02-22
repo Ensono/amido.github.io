@@ -3,7 +3,7 @@
 <details>
 <summary>Adds custom config and developer tools to an existing next application</summary>
 
-The next init generator will add a custom ESlint config to an existing NextJs application, install `eslint-plugin-testing-library` to the project. as well as update project.json with a custom test config to allow coverage collection from [jest](https://jestjs.io/). 
+The next init generator will add a custom ESlint config to an existing NextJs application, install `eslint-plugin-testing-library` to the project. as well as update project.json with a custom test config to allow coverage collection from [jest](https://jestjs.io/).
 
 ## Prerequisites
 
