@@ -23,6 +23,8 @@ The `next` plugin contains generators to augment existing NextJs projects. Addin
 
 Using a standard setup for your Next app ensures consistency and code quality across multiple applications quickly. NextAuth can also be quickly added to a project without costly configuration and setup.
 
+Using the infrastructure generator you can setup your application with the necessary infrastructure config to host it in k8s, with optional OpenTelemetry auto instrumentation.
+
 ## Prerequisites
 
 An existing [Next](https://nextjs.org/) application. Note the generator will fail if run in an empty workspace with no applications. To create a new Next application please run the NX Next generator with the following command including any relevant options. See [@nrwl/next plugin docs](https://nx.dev/packages/next)
