@@ -8,11 +8,11 @@ This generator will add and configure [applicationinsights](https://www.npmjs.co
 ## Prerequisites
 
 
-Requires your NodeJS server to be implemented in a function called `main()`.
+Requires a NodeJs server for application insights to hook into.
 
 :::tip
 
-Use the [`@nrwl/next:custom-server`](https://nx.dev/packages/next/generators/custom-server) generator which will have been added to your workspace by [`@ensono-stacks/workspace`](../workspace/plugin-information.md) to generate your NodeJS server!
+Use the [@nrwl/next:custom-server](https://nx.dev/packages/next/generators/custom-server) generator which will have been added to your workspace by [`@ensono-stacks/workspace`](../workspace/plugin-information.md) to generate your NodeJS server!
 
 :::
 

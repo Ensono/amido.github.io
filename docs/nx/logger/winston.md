@@ -11,7 +11,7 @@ An existing Stacks workspace.
 ## Usage
 
 ```bash
-nx @ensono-stacks/logger:winston
+nx g @ensono-stacks/logger:winston
 ```
 
 ### Command line arguments

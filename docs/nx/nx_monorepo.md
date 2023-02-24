@@ -11,6 +11,9 @@ keywords:
   - Executor
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 The ideologies of Stacks and [`Nx`](https://nx.dev/) are aligned in their focus on providing businesses with a framework that accelerates development, allowing you to focus on business objectives with best practice code. Leveraging Nx allows us to build upon that work and to fill the gaps with infrastructure, pipelines and the integration with other Stacks subsystems. Leveraging Nx allows a common developer experience, global communities of support, and an enterprise ready base.
 
 <details>
@@ -52,6 +55,28 @@ Nx makes scaling easy. Modern techniques such as distributed task execution and 
 
 ## Set up your stacks workspace
 
+##### Prerequisites
+
+We recommend installing Nx globally, all nx based commands in this guide are based upon a globally installed nx package.
+
+<Tabs>
+  <TabItem value="npm" label="npm">
+
+  ```bash
+  npm install -g nx
+  ```
+
+  </TabItem>
+  <TabItem value="yarn" label="yarn">
+
+  ```bash
+  yarn global add nx
+  ```
+
+  </TabItem>
+</Tabs>
+
+### Get Started
 There are three ways to get started with building a **CSR (React)** or **SSR (Next JS)** frontend web application with stacks, we recommend using our _[Stacks CLI](../stackscli/usage.mdx)_ for the best experience!
 
 :::note
