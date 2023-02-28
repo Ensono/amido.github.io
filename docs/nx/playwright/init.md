@@ -38,8 +38,10 @@ By default the _init_ generator will configure both a baseline playwright config
 │   │   │   ├── example.spec.ts #Example tests using playwright
 │   │   ├── playwright.config.ts #Example playwright configuration catering for multiple browsers and devices
 │   │   ├── project.json #Configuration for the project, including various NX targets
-│   │   ├── tsconfig.e2e.json #Example playwright configuration catering for multiple browsers and devices
-│   │   ├── tsconfig.json #Example playwright configuration catering for multiple browsers and devices
+│   │   ├── tsconfig.e2e.json #E2E typscript config file
+│   │   ├── tsconfig.json #typscript config file
+│   │   ├── tsconfig.json #typscript config file
+│   │   ├── .eslintrc.json #Linting configuration for the e2e project
 └── playwright.config.base.ts
 ```
 

@@ -31,6 +31,7 @@ The following command line arguments are available:
 Opting to scaffold *native* visual testing will make a number of amendments to your test projects configuration:
 1. [playwright.config.ts snapshot configuration](../../testing/testing_in_nx/playwright_visual_testing#snapshot-configuration): Configuration for your visual tests
 2. [playwright-visual-regression.spec.ts](../../testing/testing_in_nx/playwright_visual_testing#sample-tests): Sample test showcasing how to perform visual testing using playwrights native [visual comparison api](https://playwright.dev/docs/test-snapshots).
+3. project.json: Additional task set up to enable you to run your visual regression tests using the playwright:jammy container
 ```text title="Generated files"
 .
 ├── apps
