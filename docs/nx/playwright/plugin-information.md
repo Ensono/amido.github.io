@@ -62,14 +62,15 @@ View additional information about a plugin capability through the following comm
 ```bash
 nx g @ensono-stacks/playwright:[generator-executor-name] --help
 ```
-### Executors
-
-<Executor/>
 
 ### Generators
 
 <InitGenerator />
 <AccessibilityGenerator />
 <Visual />
+
+### Executors
+
+<Executor/>
 
 

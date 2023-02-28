@@ -22,6 +22,7 @@ The Stacks `create-stacks-workspace` script will
 - Install any recommended plugin/generators/executors from Stacks. If the `next` preset is selected the [Ensono Next plugin](/docs/nx/next/ensono-stacks-next) will be installed. With all presets the [Ensono Workspace Plugin](/docs/nx/workspace/ensono-stacks-workspace) will be installed. (see [presets](/docs/nx/create-stacks-workspace/ensono-stacks-create-stacks-workspace#presets))
 - Configure the NX workspace. This will involve updating the NX.json file with any information provided from the command line arguments
 - Execute recommended generators from Stacks to initialize the workspace/projects depending on the options provided. 
+- Create an e2e test project if this option was selected
 
 ## Setting up @ensono-stacks/create-stacks-workspace
 
@@ -43,6 +44,10 @@ next.js           [a monorepo with a single Next.js application]
 
 Each preset will install, configure and run any recommended plugins for that specific preset. For example the next.js preset will run the [NX NextJS](https://nx.dev/packages/next) plugin application generator as well as the [Ensonso stacks NextJS](/docs/nx/next/ensono-stacks-next) init plugin generator.
 
+**You will then be asked which test runner to include for e2e testing:**
+1. none: Creates your application without an e2e test project     
+2. playwright: Installs the [@ensono-stacks/playwright](../playwright/plugin-information.md) plugin and creates an e2e test project for your application using playwright.
+
 ### Command line arguments
 
 The following command line arguments are available:
@@ -53,6 +58,7 @@ The following command line arguments are available:
 | --preset | Customizes the initial content of your workspace  | string    | apps/ts/next/react-monorepo                   |     |
 | --dir | The directory to install to  | string   |  /path/to/dir       | ./              |
 | --appName | The name of the application when a preset with pregenerated app is selected  | string    | nameOfApplication                  |      |
+| --e2eTestRunner | Test runner to use in generating an e2e test project | string | ["none", "playwright"] | none | 
 | --nxVersion | Set the version of Nx you want installed  | string    |                   |latest    |
 | --packageManager | Package manager to use  | string    | pnpm/npm/yarn                  | npm     |
 | --interactive | Enable interactive mode  | boolean    |  true/false                 | true     |
