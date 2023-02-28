@@ -141,10 +141,10 @@ function Picker() {
     },
     "Node JS / React": {
       "Server Side Rendered Web Application": {
-        "Microsoft Azure [Azure]": "workloads/azure/frontend/SSR/ide_setup_ssr",
+        "Microsoft Azure [Azure]": "nx/nx_stacks",
       },
       "Client Side Rendered Web Application": {
-        "Microsoft Azure [Azure]": "workloads/azure/frontend/CSR/ide_setup_csr",
+        "Microsoft Azure [Azure]": "nx/nx_stacks",
       },
     },
   };

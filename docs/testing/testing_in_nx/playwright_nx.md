@@ -136,6 +136,29 @@ Playwright has an extensive library of browsers and devices which can be found i
   }
 ```
 
+### Writing tests
+
+When building your playwright tests it helps to have a version of the application deployed for capturing locators and verifying your tests function as intended.
+
+You can serve your required application to localhost on port 4200 through the following command:
+
+```bash
+nx serve <app-name>
+```
+
+NX will then build and host your application, from here you can build/run your tests against a usable version of the application
+
+```log title="Example"
+nx serve next-app
+
+> nx run next-app:serve:development
+
+  info  - automatically enabled Fast Refresh for 1 custom loader
+  event - compiled client and server successfully in 8.5s (166 modules)
+  [ ready ] on http://localhost:4200
+```
+
+
 ### Running your playwright tests
 
 Using NX we can very easily run our tests, either for the a specific project, or against any affected projects. NX will handle provisioning and tearing down of the web server automatically!
@@ -225,5 +248,11 @@ When running in the CI three reporters are utilised:
 :::danger
 
 This section is pending completion once TaskCTL and Pipelines are available!
+
+:::
+
+:::caution HTML Report - Viewing Trace Views
+
+When downloading/viewing HTML reports uploaded as test artefacts to your pipeline, you may experience issues opening **[trace views](https://playwright.dev/docs/trace-viewer)** as these must be loaded over **http://** or **https://** protocols, please upload trace files to the **[playwright trace viewer](https://trace.playwright.dev/)** to load them in your browser.
 
 :::

@@ -1,47 +1,45 @@
 ---
 id: nx_stacks
-title: Stacks with the NX build system
-sidebar_label: Stacks with NX
-description: Using stacks with the NX build system
+title: Stacks with Nx
+sidebar_label: Stacks with Nx
+description: Using stacks with Nx
 keywords:
-  - NX
+  - Nx
   - monorepo
   - stacks
-  - CompleteWithAdditonalKeywords
+  - Generator
+  - Executor
 ---
 
-:::caution
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
-This page is not complete
-
-:::
-
-The ideologies of Stacks and the [`NX`](https://nx.dev/) build system are aligned in their focus on providing businesses with the tools they need to optimize their IT infrastructure, while also saving them time and effort. Both Stacks and the NX build system are designed to make it easy for companies to manage and scale their IT infrastructure, and to help them improve their overall productivity. 
+The ideologies of Stacks and [`Nx`](https://nx.dev/) are aligned in their focus on providing businesses with a framework that accelerates development, allowing you to focus on business objectives with best practice code. Leveraging Nx allows us to build upon that work and to fill the gaps with infrastructure, pipelines and the integration with other Stacks subsystems. Leveraging Nx allows a common developer experience, global communities of support, and an enterprise ready base.
 
 <details>
-  <summary>What is NX?</summary>
-    <p>The NX build system is a powerful tool that allows developers to easily build, test, and deploy their applications. It is built on top of the popular open-source Node.js platform, and provides a streamlined and efficient workflow for building and deploying applications. With NX, developers can easily manage their dependencies, automate tasks, and quickly test their applications in different environments.</p> 
-    <p>Additionally, NX provides powerful features such as code-sharing, optimized builds, and real-time feedback, making it an ideal choice for any developer looking to streamline their development process and improve their productivity.</p>
+  <summary>What is Nx?</summary>
+    <p>The Nx framework is a powerful tool that allows developers to easily build, test, and automate their applications. It is built on top of the popular open-source Node.js platform, and provides a streamlined and efficient workflow for building apps. With Nx, developers can easily manage their dependencies, automate tasks, and quickly test their applications.</p> 
+    <p>Additionally, Nx provides powerful features such as code-sharing, optimized builds, and real-time feedback, making it an ideal choice for any developer looking to streamline their development process and improve their productivity.</p>
 
 :::tip Find out more!
-Find out more about NX through their official [documentation](https://nx.dev/getting-started/intro)!
+Find out more about Nx through their official [documentation](https://nx.dev/getting-started/intro)!
 :::
 
 </details>
 
-For the reasons listed above we have chosen to use NX within Stacks, capitalising on NX generators and executors to streamline your development and testing processes. 
+For the reasons listed above we have chosen to use Nx within Stacks for CSR and SSR frontend web applications, capitalising on Nx generators and executors to streamline your development and testing processes.
 
 <details>
-  <summary>What are NX Generators and Executors?</summary>
-    <p>NX generators and executors are two powerful features of the NX build system that allow developers to quickly and easily generate new code and files for their projects, as well as to automate common tasks.</p>
-    <p>NX generators are templates that can be used to quickly generate new code and files for different types of projects, such as Angular applications, React components, and Node.js services. Developers can use these generators to quickly create the code and files they need, based on pre-defined templates, saving them time and effort.</p>
-    <p>NX executors, on the other hand, are scripts that can be used to automate common tasks, such as building, testing, and deploying code. Developers can use these executors to automate repetitive tasks and to streamline their workflow. Executors can also be customized to suit the specific needs of a project, making them a highly versatile tool.</p>
-    <p>Both generators and executors are integrated with the NX build system, which enables developers to easily build, test and deploy their application. They also allow for consistent patterns to be followed in the project, making it easier for developers to understand the project structure and for maintainability.</p>
+  <summary>What are Nx Generators and Executors?</summary>
+    <p>Nx generators and executors are two powerful features of the Nx build system that allow developers to quickly and easily generate new code and files for their projects, as well as to automate common tasks.</p>
+    <p>Nx generators are templates that can be used to quickly generate new code and files for different types of projects, such as Angular applications, React components, and Node.js services. Developers can use these generators to quickly create the code and files they need, based on pre-defined templates, saving them time and effort.</p>
+    <p>Nx executors, on the other hand, are scripts that can be used to automate common tasks, such as building, testing, and deploying code. Developers can use these executors to automate repetitive tasks and to streamline their workflow. Executors can also be customized to suit the specific needs of a project, making them a highly versatile tool.</p>
 </details>
 
-#### Why should you use the NX build system?
+#### Why should you use the Nx build system?
 
 Nx makes scaling easy. Modern techniques such as distributed task execution and computation caching make sure your CI times remain fast, even as you keep adding projects to your workspace.
+
 - Never rebuild the same code twice
   - Nx is smart! It can figure out whether the same computation has run before and can restore the files and the terminal output from its cache.
 - Distributed task execution (DTE)
@@ -49,44 +47,107 @@ Nx makes scaling easy. Modern techniques such as distributed task execution and 
 - Remote caching
   - Share your local computation cache with team mates and your CI system for maximum efficiency.
 - Only run what changed
-  - Nothing is faster than not running a task. Nx analyzes your project graph and can diff it against a baseline to determine which projects changed and what tasks need to be re-run.
+  - Nothing is faster than not running a task. Nx analyses your project graph and can diff it against a baseline to determine which projects changed and what tasks need to be re-run.
 - Large community
-  - NX is built on top of the popular Node.js platform, which has a large and active community of developers. This means that developers using NX can easily find support and resources online.
+  - Nx is built on top of the popular Node.js platform, which has a large and active community of developers. This means that developers using Nx can easily find support and resources online.
 - Better code-sharing
-  - NX provides powerful features for sharing code between different applications, which can help teams collaborate more effectively and reduce duplication of effort.
+  - Nx provides powerful features for sharing code between different applications, which can help teams collaborate more effectively and reduce duplication of effort.
 
-## Scaffold your stacks workspace
+## Set up your stacks workspace
 
-*_To be completed with information on scaffolding the stacks workspace, alongside some example questions that the CLI would ask you_*
+##### Prerequisites
 
-To scaffold your stacks workspace you can run the following command:
+We recommend installing Nx globally, all nx based commands in this guide are based upon a globally installed nx package.
+
+<Tabs>
+  <TabItem value="npm" label="npm">
+
+  ```bash
+  npm install -g nx
+  ```
+
+  </TabItem>
+  <TabItem value="yarn" label="yarn">
+
+  ```bash
+  yarn global add nx
+  ```
+
+  </TabItem>
+</Tabs>
+
+### Get Started
+There are three ways to get started with building a **CSR (React)** or **SSR (Next JS)** frontend web application with stacks, we recommend using our _[Stacks CLI](../stackscli/usage.mdx)_ for the best experience!
+
+:::note
+
+CSR support is currently limited however we are actively working on this!
+
+:::
+
+### Option 1: Stacks CLI
+
+Once the Stacks CLI has been installed you can scaffold a brand new Stacks and Nx workspace through answering a set of interactive questions. Launch the Stacks CLI with the following command to get started:
+
 ```bash
-Command to run 
+stacks-cli interactive
 ```
 
-Upon running the above command you will be asked the following questions:
+:::note Ensure you have the Stacks CLI installed!
+
+Visit the [Stacks CLI](../stackscli/usage.mdx) docs for more information and setup instructions!
+
+:::
+
+:::tip
+
+Visit the [NX Example](../stackscli/examples.mdx#nx) for the complete instructions/example on using NX with the Stacks CLI!
+
+:::
+
+### Option 2: Create stacks workspace generator
+
+You can scaffold a brand new Stacks and Nx workspace through the **@ensono-stacks/create-stacks-workspace** plugin.
+
+Follow the interactive questions with the below command to get started:
+
+```bash
+npx @ensono-stacks/create-stacks-workspace@latest
 ```
-√ Example Q1                            · Maps to --Option1
-√ Example Q2                            · Maps to --Option2
+
+:::tip
+
+Visit the [@ensono-stacks/create-stacks-workspace](/docs/nx/create-stacks-workspace/ensono-stacks-create-stacks-workspace) docs for more information and setup instructions!
+
+:::
+
+### Option 3: 'Stackify' your existing Nx workspace
+
+If you already have an Nx workspace, you can still utilise stacks!
+
+Use the following command to get started!
+
+```bash
+nx g @ensono-stacks/workspace:init
 ```
+
+:::tip
+
+Visit the [@ensono-stacks/workspace](./workspace/plugin-information.md) docs for more information and setup instructions!
+
+:::
 
 ## Stacks Plugins
 
+To accelerate your project development and ensure consistency across those projects, we have several stacks plugins available!
 
-| Plugin | Description |
-| :---   | :---   |
-| [`@ensono-stacks/create-stacks-workspace`](ensono-stacks-create-stacks-workspace) | Create an NX workspace using stacks! |
-| @ensono-stacks/workspace | Add stacks to your existing NX workspace | 
-| @ensono-stacks/next | Add a Next.js project to your stacks workspace |
-| @ensono-stacks/azure-node | Add Azure app insights to a node project in your stacks workspace|
-| @ensono-stacks/rest-client | Add a rest client to a project in your stacks workspace |
-
-To be added: 
-- Next SSR App
-- React SSR App
-- NextAuth Azure AD
-- Rest client generator
-- React Azure App Insights
-- Localisation
-- Logging
-- Playwright
+| Plugin                                                                            | Description                                                            |
+| :-------------------------------------------------------------------------------- | :--------------------------------------------------------------------- |
+| [`@ensono-stacks/create-stacks-workspace`](ensono-stacks-create-stacks-workspace) | Create an Nx workspace using stacks!                                   |
+| [`@ensono-stacks/workspace`](./workspace/plugin-information.md)                   | 'Stackify' your existing Nx workspace                                  |
+| [`@ensono-stacks/next`](./next/plugin-information.md)                             | Enhance your Next.js project with Stacks!                              |
+| [`@ensono-stacks/azure-node`](./azure-node/plugin-information.md)                 | Add Azure app insights to a node project in your stacks workspace      |
+| [`@ensono-stacks/azure-react`](./azure-react/plugin-information.md)               | Creates an Azure app insights ReactJs library in your stacks workspace |
+| @ensono-stacks/rest-client                                                        | Add a rest client to a project in your stacks workspace                |
+| [`@ensono-stacks/playwright`](./playwright/plugin-information.md)                 | Add the playwright testing library and much more to your project!      |
+| [`@ensono-stacks/logger`](./logger/plugin-information.md)                         | Add industry standard logging capabilities to your project             |

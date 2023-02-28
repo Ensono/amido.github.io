@@ -1,10 +1,10 @@
 ---
 id: frontend_testing_in_nx
-title: Frontend Testing in an NX monorepo
-sidebar_label: Frontend Testing in an NX monorepo
-description: Considerations for testing within an NX monorepo
+title: Frontend Testing in an Nx monorepo
+sidebar_label: Frontend Testing in an Nx monorepo
+description: Considerations for testing within an Nx monorepo
 keywords:
-  - NX
+  - Nx
   - testing
   - playwright
   - accessibility testing
@@ -12,24 +12,20 @@ keywords:
   - monorepo
 ---
 
-Using [NX](https://nx.dev/) provides many benefits when working with SSR or CSR frontend applications. When using stacks to scaffold an NX monorepo (INSERT LINK HERE TO GARETH DOCUMENTATION) you will be provided with several options to assure quality in your development process.
+Using [Nx](https://nx.dev/) provides many benefits when working with SSR or CSR frontend applications. When using [stacks to scaffold an Nx monorepo](../../nx/nx_monorepo.md) you will be provided with several options to assure quality in your development process.
 
 
 ## Getting Started
 
-:::danger 
-
-**UPDATE THIS SECTION ONCE WE HAVE ALL INFORMATION ON THE CLI**
-
-:::
+To leverage stacks and accelerate your testing process within your Nx monorepo you need to have a preexisting Nx workspace. See the **["Setting up your stacks workspace"](../../nx/nx_monorepo.md#set-up-your-stacks-workspace)** to get started!
 
 ### Selecting your test framework
 
-As part of the scaffolding process, you will be presented with the option to scaffold your test framework. We recommend and currently support Playwright within the stacks workflow, with it’s Microsoft backing, extensive feature set and fast cross-browser web automation capability, it is our preferred tooling choice. Cypress is also a powerful testing framework which has a significant user base, as such this is currently road mapped and will be supported in a future release.  
+We recommend and currently support Playwright within the stacks workflow, with it’s Microsoft backing, extensive feature set and fast cross-browser web automation capability, it is our preferred tooling choice. Cypress is also a powerful testing framework which has a significant user base, as such this is currently road mapped and will be supported in a future release.  
 
 :::tip 
 
-Find out more about testing with [`Playwright`](./playwright_nx.md) using stacks! 
+Visit the [`Playwright`](../../nx/playwright/plugin-information.md) Stacks plugin to start testing with Playwright!
 
 :::
 

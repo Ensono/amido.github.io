@@ -2,47 +2,26 @@
 
 The Stacks CLI is built using Go, which means that it is a single binary which can be downloaded and run without the need to run an installer. It is currently built for the following platforms
 
-  - ![windows](./images/icons/windows.png) Windows
+- ![windows](./images/icons/windows.png) Windows
 
-  - ![apple](./images/icons/apple.png) Mac OS
+- ![apple](./images/icons/apple.png) Mac OS
 
-  - ![linux](./images/icons/linux.png) Linux
+- ![linux](./images/icons/linux.png) Linux
 
 The CLI will download the specified projects and run a series of operations to customise them according to the user’s requirements. The steps that are to be performed in each project is governed by a project settings file, which by default is called `stackscli.yml`.
 
 ## Installation
 
-As the CLI is a single binary the quickest way to install it is to download it and put it somewhere in your PATH. The following code snippets show how this can be achieved using Bash and PowerShell.
+Visit the [Stacks CLI](https://github.com/amido/stacks-cli/releases) release page and download the latest version for your machine
 
-### Linux and Mac OS
-
-``` bash
-# Download the binary to a location in the PATH
-## Mac OS
-wget https://github.com/amido/stacks-cli/releases/download/v0.0.218/stacks-cli-darwin-amd64-0.0.218 -O /usr/local/bin/stacks-cli
-
-## Linux
-wget https://github.com/amido/stacks-cli/releases/download/v0.0.218/stacks-cli-linux-amd64-0.0.218 -O /usr/local/bin/stacks-cli
-
-## Ensure that the command is executable
-chmod +x /usr//local/bin/stacks-cli
-```
-
-### Windows
-
-The following PowerShell snippet will download the application to the user’s Downloads directory. It is up to the user to put it somewhere that is accessible on the PATH or use the full path to the app when using it.
-
-``` powershell
-# Download the binary
-Invoke-RestMethod -Uri https://github.com/amido/stacks-cli/releases/download/v0.0.218/stacks-cli-windows-amd64-0.0.218.exe -OutFile $env:USERPROFILE\Downloads\stacks-cli.exe
-```
+Once this has been downloaded, the quickest way to get started is to place the binary somewhere on your system PATH
 
 ## Commands
 
 The CLI has a number of commands and various options. The easiest way to see what is available it to run the `stacks-cli` command, which will display the help page.
 
 > **Note**
-> 
+>
 > The operation of the Stacks CLI is identical on every platform
 
 ![Stacks CLI Help](images/stackscli-global-help.png)
@@ -51,19 +30,19 @@ The CLI has a number of commands and various options. The easiest way to see wha
 
 The completion command adds completion scripts to any of the following shells:
 
-  - bash
+- bash
 
-  - fish
+- fish
 
-  - powershell
+- powershell
 
-  - zsh
+- zsh
 
 By adding the completion to the shell, it allows the \[TAB\] key to be used to cycle through the options of any command, making discovery of options easier and increase efficiency.
 
 The following command shows the help for configuring auto-completion for PowerShell.
 
-``` bash
+```bash
 stacks-cli completion powershell -h
 ```
 
@@ -75,7 +54,7 @@ As can be seen from the output, the command required to load the completion scri
 
 The interactive command will ask several questions about the required projects, what platform it is being run on and cloud configuration. It will then save the output of these details to a configuration file that can then be read in by the `scaffold` command. This file can also be reused if the projects need to be recreated from scratch again.
 
-``` bash
+```bash
 stacks-cli interactive
 ```
 
@@ -87,7 +66,7 @@ The CLI allows properties to be set that influence the way that the project is s
 
 The `scaffold` command is the main command that will be used. This downloads the specified projects, customises them and sets them up in the specified directory. To see the help for this command run the following:
 
-``` bash
+```bash
 stacks-cli scaffold -h
 ```
 
@@ -101,11 +80,11 @@ The CLI will validate certain inputs to make sure that they are valid for use wi
 
 In some cases the CLI will modify the inputs, for example if a space is present in the company name it will be replaced with an underscore:
 
-  - "My Company" → "My\_Company"
+- "My Company" → "My_Company"
 
-  - "My Fantastic Company" → "My\_Fantastic\_Company"
+- "My Fantastic Company" → "My_Fantastic_Company"
 
-  - "My Company" → "My\_Company"
+- "My Company" → "My_Company"
 
 ## Command Availability Checks
 
@@ -114,15 +93,16 @@ Each framework has a list of commands associated with it. This denotes the list 
 When the application runs, it will determine the frameworks that have been selected in the projects and perform a check to see if those commands are available on the machine. It does this by checking the PATH variable for the command. This check is performed very early on in the process so it does not cause an issue when iterating around the projects that need to be setup.
 
 > **Note**
-> 
+>
 > It is not possible for the Stacks project to specify the full path to the command because it can be different on each and every machine that the Stacks CLI will run on.
 
 The commands for each of the supported frameworks are as follows:
 
-| Framework | Commands |
-| --------- | -------- |
-| dotnet    | `dotnet` |
-| java      | `java`   |
+| Framework | Commands      |
+| --------- | ------------- |
+| dotnet    | `dotnet`      |
+| java      | `java`        |
+| Nx        | `node`, `npx` |
 
 Framework Commands
 
@@ -135,7 +115,7 @@ The following screenshot shows the output of a scaffolding run where the "dotnet
 If multiple frameworks have been set, by specifying multiple projects, each framework’s commands will be checked for availability.
 
 > **Note**
-> 
+>
 > Although the screenshot shows the detection of the framework commands when running from a configuration file, the same checks are performed when with arguments on the command line.
 
 ## Logging
@@ -161,12 +141,11 @@ As the CLI relies heavily on being able to contact GitHub, it checks to see if t
 The Stacks CLI is constantly evolving and as such there are new versions being released frequently. To help ensure that you are running the most up to date version, it will check the releases for the CLI and compare that version against the one that you are running. If there is a mismatch then the CLI will inform you of the newer version.
 
 > **Note**
-> 
-> This check does not prevent normal operation if you have an older version. However you *may* find that some things do not work as you intend.
+>
+> This check does not prevent normal operation if you have an older version. However you _may_ find that some things do not work as you intend.
 
 ![Stacks CLI version check](images/stackscli-version-check.png)
 
 This is a simple version check, it does not update the CLI for you, but does provide a link to the latest version for download and information purposes.
 
 The version check can be turned off using the `--nocliversion` option or the `options.nocliversion` in a configuration file or using the `AMIDOSTACKS_OPTIONS_NOCLIVERSION` environment variable.
-
