@@ -38,6 +38,9 @@ Opting to scaffold *native* visual testing will make a number of amendments to y
 │   ├── <app-name>-e2e
 │   │   ├── src
 │   │   │   ├── playwright-visual-regression.spec.ts #Example visual test using playwright
+├── build
+│   ├── azDevOps
+│   │   ├── azuredevops-updatesnapshots.yaml #Pipeline to capture and update baseline images within the CI
 └──────────
 ```
 :::note

@@ -26,18 +26,35 @@ With Playwright this can be achieved natively through it's visual comparisons ap
 
 Scaffolding your project with a native configuration for visual regression testing will generate a sample set of tests and update your project configuration.
 
+### CI strategy for visual comparison
+
+When working with visual comparisons using playwright and your own CI system there are a number of challenges:
+1. Users may have different browsers and dependency versions installed locally when capturing images, leading to pixel variance during image comparison. 
+2. Images captured on different operating systems can lead to pixel variance
+3. Images captured on different CPU architecture can lead to pixel variance
+
+One possible solution to this is to utilise the [Playwright Docker](https://playwright.dev/docs/docker) container, however, through extensive testing we still found significant differences when comparing images captured on docker containers for alternative architecture. 
+
+Our strategy is to have the CI as the one and only 'source of truth', this means that any visual comparisons will be skipped locally, consequently, no baseline images will be captured on any local systems. See the [Updating your baseline images](#updating-your-baseline-images) section to understand how we capture baseline images in the CI.
+
 ### Snapshot configuration
 
 As part of native visual comparisons with playwright the following recommended configuration is added into the projects config file during scaffolding:
 
-```typescript title="playwright.config.ts"
+```typescript title="playwright.config.base.ts"
 
-  /* Configuration for visual regression checks */
+  /* Visual regression config */
   updateSnapshots: 'missing',
+  ignoreSnapshots: !process.env.CI,
   expect: {
     toHaveScreenshot: {
+      maxDiffPixelRatio: 0.05,
       threshold: 0.2,
       animations: 'disabled',
+    },
+    toMatchSnapshot: {
+      maxDiffPixelRatio: 0.05,
+      threshold: 0.2,
     },
   }
 
@@ -46,7 +63,13 @@ As part of native visual comparisons with playwright the following recommended c
 - updateSnapshots
     - Description: Whether to update expected snapshots with the actual results produced by the test run.
     - Value: **'missing'** - Missing snapshots are created, for example when authoring a new test and running it for the first time.
-- toHaveScreenshot::threshold
+- ignoreSnapshots
+    - Description: Whether to skip snapshot expectations, such as expect(value).toMatchSnapshot() and await expect(page).toHaveScreenshot()..
+    - Value: **!process.env.CI** - Any snapshot checks are skipped unless the test is being ran within the CI. 
+- toHaveScreenshot/toMatchSnapshot::maxDiffPixelRatio
+    - Description: an acceptable ratio of pixels that are different to the total amount of pixels, between 0 and 1.
+    - Value: **0.05** - Any images with > 0.05% pixel variance will be flagged.
+- toHaveScreenshot/toMatchSnapshot::threshold
     - Description: an acceptable perceived colour difference in the YIQ colour space between the same pixel in compared images, between zero (strict) and one (lax).
     - Value: **0.2** - Any pixel with > 20% variance will be flagged
 - toHaveScreenshot::animations
@@ -68,37 +91,37 @@ import { test, expect } from '@playwright/test';
 
 test.describe('Native @visual-regression', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/');
+    // Wait for network and body to be visible to ensure app is loaded
+    await page.goto('/', { waitUntil: 'networkidle' });
+    await page.waitForSelector('body', { state: 'visible' });
   });
 
   test('main page to have no visual regressions', async ({ page }) => {
-    //body to capture full page screenshot
-    await expect(page.locator('body')).toHaveScreenshot();
+    const screenshot = await page.screenshot({ fullPage: true });
+    await expect(screenshot).toMatchSnapshot('main-page.png');
   });
 
-  test('Expanded information blocks have no visual regressions', async ({ page }) => {
+  test('Expanded information blocks have no visual regressions', async ({
+    page,
+  }) => {
+    // eslint-disable-next-line no-restricted-syntax
     for (const information of await page
       .locator('#commands >> details')
       .elementHandles()) {
+      /* eslint-disable no-await-in-loop */
       await information.click();
     }
-    await expect(page.locator('#commands')).toHaveScreenshot('main-page-expanded-blocks.png');
+    await expect(page.locator('#commands')).toHaveScreenshot('info-blocks.png');
   });
 });
 
 ```
 
 The sample contains two tests, showcasing playwrights ability to perform full page comparisons, or target specific areas of the web page. 
-Upon first run of the test(s) Playwright will capture a baseline image, the name will vary depending on whether a value is passed to the `toHaveScreenshot()` method:
+Upon first run of the test(s) Playwright will capture a baseline image, the name will vary depending on whether a value is passed to the `toHaveScreenshot()`/`toMatchScreenshot()` methods:
 
 - Default: auto-generated name consisting of `desribe block name`-`test case name`-`browser`-`operating system`.png
 - Defined: user specified name resulting in `user defined name`-`browser`-`operating system`.png
-
-:::caution
-
-Images captured on different operating systems will result in multiple versions of a screenshot file. It is worthwhile to standardise snapshot capturing to reduce the number of screenshots captured and allow users on different operating systems to use baseline images captured by other users or in the CI/vice versa. See the following [section](./invalid_link_please_update) 
-
-:::
 
 As indicated by the below folder structure, a `playwright-visual-regression.spec.ts-snapshots` folder will be generated for the `playwright-visual-regression.spec.ts` file to house all associated baseline images. Using the [project based configuration](././playwright_nx.md#project-based-configuration) multiple screenshots will be captured for each device, in this example capturing the snapshots on windows results in each image being appended with _'win32'_
 
@@ -184,9 +207,12 @@ Use the [HTML reporter](./playwright_nx.md#viewing-your-test-results) to easily 
 
 ## Updating your baseline images
 
-:::danger
+When the [@ensono-stacks/playwright:visualRegression](../../nx/playwright/plugin-information.md#generators) is executed an **azuredevops-updatesnapshots.yaml** pipeline is added to your build directory. 
 
-This section is pending completion once TaskCTL and Pipelines are available!
+In any pull requests where you have visual regression tests to capture images for, or if you want to update baseline images, the following comment can be added to the pull request. This will automatically trigger the updatesnapshots pipeline, running through all tests tagged with **@visual-regression** and capturing/recapturing their baseline images.
 
-:::
+```bash
+/azp run <pipeline-name>.updatesnapshots
+```
 
+Following this, the build for the PR will be automatically restarted, using the newly captured baseline images for comparison.
