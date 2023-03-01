@@ -148,6 +148,6 @@ To accelerate your project development and ensure consistency across those proje
 | [`@ensono-stacks/next`](./next/plugin-information.md)                             | Enhance your Next.js project with Stacks!                              |
 | [`@ensono-stacks/azure-node`](./azure-node/plugin-information.md)                 | Add Azure app insights to a node project in your stacks workspace      |
 | [`@ensono-stacks/azure-react`](./azure-react/plugin-information.md)               | Creates an Azure app insights ReactJs library in your stacks workspace |
-| @ensono-stacks/rest-client                                                        | Add a rest client to a project in your stacks workspace                |
+| [`@ensono-stacks/rest-client`](./rest-client/plugin-information.md)               | Add a rest client to a project in your stacks workspace                |
 | [`@ensono-stacks/playwright`](./playwright/plugin-information.md)                 | Add the playwright testing library and much more to your project!      |
 | [`@ensono-stacks/logger`](./logger/plugin-information.md)                         | Add industry standard logging capabilities to your project             |
