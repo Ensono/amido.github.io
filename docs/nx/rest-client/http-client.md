@@ -5,14 +5,10 @@
 
 This plugin installs Axios and configures a new instance of the provider ready to be customised and consumed via your project.
 
-## Prerequisites
-
-This generator requires no prerequisites.
-
 ## Usage
 
 ```bash
-nx @ensono-stacks/rest-client:http-client --name http-client --directory libs/http-client --importPath @httpClient --tags http_client
+nx g @ensono-stacks/rest-client:http-client
 ```
 
 ### Command line arguments
@@ -29,25 +25,37 @@ The following command line arguments are available:
 
 ### Generator Output
 
+The http-client will create a new library within your libs folder for the axios http client:
 ```text title="Generated files"
 
-└── http-client
-    ├── README.md
-    └── src
-        ├── index.ts
-        └── index.test.ts
-    ├── tsconfig.json
-    ├── tsconfig.lib.json
-    ├── project.json
-    ├── .eslintrc.json
-    ├── jest.config.ts
-    └── tsconfig.spec.json
+├── http-client
+│   ├──  src
+│   │   ├── index.ts
+│   │   ├── index.test.ts
+│   ├──  README.md
+│   ├── tsconfig.json
+│   ├── tsconfig.lib.json
+│   ├── project.json
+│   ├── .eslintrc.json
+│   ├── jest.config.ts
+└── └── tsconfig.spec.json
 ```
 
+Additionally, the package.json will be updated with the axios dependency.
 ```text title="Modified files"
-└── root
-    ├── tsconfig.base.json
-    └── package.json
+├── root
+│   ├── tsconfig.base.json
+└── └──package.json
+```
+
+In order to import the http-client into your application a new entry for the client is added to the tsconfig.base.json "paths"
+
+```json
+"paths": {
+      "@<workspace-name>/http-client": [
+        "libs/http-client/src/index.ts"
+      ]
+    }
 ```
 
 </details>

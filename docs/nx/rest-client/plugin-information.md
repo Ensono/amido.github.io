@@ -19,11 +19,9 @@ import BumpVersion from './bump-version.md'
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Plugin Summary
+This plugin provides the ability to quickly get up and running with http clients and endpoints. One can generate the basic HTTP methods required to start building out a project.
 
-- This plugin provides the ability to quickly get up and running with http clients and endpoints. One can generate the basic HTTP methods required to start building out a project.
-
-What benefits does it give you?
+**What benefits does it give you?**
 
 - Helps track versioning and easily bump versions of endpoints using one of the plugins.
 - Ensure solid foundational syntax accuracy
@@ -31,19 +29,13 @@ What benefits does it give you?
 
 ## Setting up @ensono-stacks/rest-client
 
-### Prerequisites
-
-This plugin requires no prerequisites.
-
-### Installation
-
 Install the @ensono-stacks/rest-client with the following command:
 
  <Tabs>
   <TabItem value="npm" label="npm">
 
 ```bash
-npm install --save-dev @ensono-stacks/rest-client
+npm install --save-dev @ensono-stacks/rest-client@latest
 ```
 
   </TabItem>
@@ -55,14 +47,6 @@ yarn add --dev @ensono-stacks/rest-client
 
   </TabItem>
  </Tabs>
-
-##### Has it installed any additional plugins?
-
-This plugin doesn't install any additional plugins
-
-#### Has it created any scripts?
-
-This plugin doesn't create any scripts.
 
 ## Executors and Generators
 
@@ -77,10 +61,6 @@ View additional information about a plugin capability through the following comm
 ```bash
 nx g @ensono-stacks/rest-client:[generator-executor-name] --help
 ```
-
-### Executors
-
-No executors exist for this plugin.
 
 ### Generators
 

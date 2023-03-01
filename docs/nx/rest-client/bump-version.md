@@ -26,55 +26,52 @@ The following command line arguments are available:
 
 ### Generator Output
 
-```text title="Generated files"
+The generator will take a copy of your **latest** endpoint and bump it to the next version (unless overwridden through the --endpointVersion argument)
 
-└── client-endpoint
-    └── v2
-        ├── README.md
-            └── src
-                ├── index.ts
-                └── index.test.ts
-                └── index.types.ts
-            ├── tsconfig.json
-            ├── tsconfig.lib.json
-            ├── project.json
-            ├── .eslintrc.json
-            ├── jest.config.ts
-            └── tsconfig.spec.json
+```text title="V1 endpoint"
+
+├── client-endpoint
+│   ├── v1
+│   │   ├── README.md
+│   │   │   ├──  src
+│   │   │   │   ├── index.ts
+│   │   │   │   ├── index.test.ts
+│   │   │   │   ├── index.types.ts
+│   │   │   ├── tsconfig.json
+│   │   │   ├── tsconfig.lib.json
+│   │   │   ├── project.json
+│   │   │   ├── .eslintrc.json
+│   │   │   ├── jest.config.ts
+└───└───└───└── tsconfig.spec.json
+```
+Once the `bump-version` generator has been used, your library structure will look similar to the following:
+```text title="Bumped endpoint structure"
+
+├── client-endpoint
+│   ├── v1
+│   │   ├── [...]
+│   ├── v2
+│   │   ├── README.md
+│   │   │   ├──  src
+│   │   │   │   ├── index.ts
+│   │   │   │   ├── index.test.ts
+│   │   │   │   ├── index.types.ts
+│   │   │   ├── tsconfig.json
+│   │   │   ├── tsconfig.lib.json
+│   │   │   ├── project.json
+│   │   │   ├── .eslintrc.json
+│   │   │   ├── jest.config.ts
+└───└───└───└── tsconfig.spec.json
 ```
 
-```text title="Modified files"
-└── root
-    └── tsconfig.base.json
-```
+In order to import the bumped client-endpoint into your application a new entry for the client is added to the tsconfig.base.json "paths"
 
-```text title="Updated file structure after new files are generated"
-
-└── client-endpoint
-    └── v1
-        ├── README.md
-            └── src
-                ├── index.ts
-                └── index.test.ts
-                └── index.types.ts
-            ├── tsconfig.json
-            ├── tsconfig.lib.json
-            ├── project.json
-            ├── .eslintrc.json
-            ├── jest.config.ts
-            └── tsconfig.spec.json
-    └── v2
-        ├── README.md
-            └── src
-                ├── index.ts
-                └── index.test.ts
-                └── index.types.ts
-            ├── tsconfig.json
-            ├── tsconfig.lib.json
-            ├── project.json
-            ├── .eslintrc.json
-            ├── jest.config.ts
-            └── tsconfig.spec.json
+```json
+"paths": {
+      "@<workspace-name>/client-endpoint/v2": [
+        "libs/client-endpoint/v2/src/index.ts"
+      ]
+    }
 ```
 
 </details>

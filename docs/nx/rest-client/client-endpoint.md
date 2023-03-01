@@ -12,7 +12,7 @@ This generator requires a _http-client_ project to be available.
 ## Usage
 
 ```bash
-nx @ensono-stacks/rest-client:client-endpoint --name client-endpoint --httpClient @ensono-stacks/http-clients --envVar API_URL --endpointVersion 2 --methods get post patch --directory libs --tags client_endpoint
+nx @ensono-stacks/rest-client:client-endpoint
 ```
 
 ### Command line arguments
@@ -31,28 +31,36 @@ The following command line arguments are available:
 
 ### Generator Output
 
+The client-endpoint will create a new library within your libs folder, using your answer to the 'What is the import path of your previously generated http-client library?' to import the previously created http-client into your client endpoint: 
+
 ```text title="Example of files being generated"
 
 └── libs
-    └── client-endpoint
-        └── V1
-            ├── README.md
-            └── src
-                ├── index.ts
-                └── index.test.ts
-                └── index.types.ts
-            ├── tsconfig.json
-            ├── tsconfig.lib.json
-            ├── project.json
-            ├── .eslintrc.json
-            ├── jest.config.ts
-            └── tsconfig.spec.json
+│   ├── client-endpoint
+│   │   ├── V1
+│   │   │   ├── README.md
+│   │   │   ├── src
+│   │   │   │   ├── index.ts
+│   │   │   │   ├── index.test.ts
+│   │   │   │   ├── index.types.ts
+│   │   │   ├── tsconfig.json
+│   │   │   ├── tsconfig.lib.json
+│   │   │   ├── project.json
+│   │   │   ├── .eslintrc.json
+│   │   │   ├── jest.config.ts
+└───└───└───└── tsconfig.spec.json
 └── .env.local
 ```
+Be sure to add the API_URL as an environment variable to the created .env.local file for local development 
 
-```text title="Example of files being modified"
-└── root
-    └── tsconfig.base.json
+In order to import the client-endpoint into your application a new entry for the client is added to the tsconfig.base.json "paths"
+
+```json
+"paths": {
+      "@<workspace-name>/client-endpoint/v1": [
+        "libs/client-endpoint/v1/src/index.ts"
+      ]
+    }
 ```
 
 </details>
