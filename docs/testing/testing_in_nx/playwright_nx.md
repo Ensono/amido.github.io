@@ -19,6 +19,7 @@ Playwright is a relatively new testing framework, which is developed and support
 
 Upon scaffolding your application with the playwright testing framework, you will be presented with an example test suite and playwright configuration. The [`@mands/nx-playwright`](https://github.com/marksandspencer/nx-plugins/tree/main/packages/nx-playwright) NX plugin is used as a base for the Playwright/NX integration. 
 
+## Playwright Configuration
 ### Base configuration
 
 The base configuration has been created with CI in mind, meaning the default configuration (shared across all projects) considers requirements for reporting and pipeline efficiency out of the box! 
@@ -27,6 +28,8 @@ The base configuration has been created with CI in mind, meaning the default con
 import { PlaywrightTestConfig } from '@playwright/test';
 
 const baseURL = process.env.BASE_URL || 'http://localhost:4200/';
+const appName = process.env.NX_TASK_TARGET_PROJECT || 'test-project';
+const outputFolderForProject = process.env.CI ? '../../test-results/' + appName : 'test-results';
 
 export const baseConfig: PlaywrightTestConfig = {
   /* Run tests in files in parallel */
@@ -39,12 +42,14 @@ export const baseConfig: PlaywrightTestConfig = {
   maxFailures: process.env.CI ? 10 : undefined,
   /* Timeout for each test in ms */
   timeout: 30000,
+  /* The output directory for files created during test execution. */
+  outputDir: outputFolderForProject, 
   /* Reporter to use. */
   reporter: process.env.CI
     ? [
         ['dot'],
-        ['html', { open: 'never' }],
-        ['junit', { outputFile: 'test-results/junit-report.xml' }],
+        ['html', { open: 'never', outputFolder: outputFolderForProject.concat('/html-report') } ],
+        ['junit', { outputFile: outputFolderForProject.concat('/', appName, '.xml') }],
       ]
     : 'list',
   use: {
@@ -136,6 +141,7 @@ Playwright has an extensive library of browsers and devices which can be found i
   }
 ```
 
+## Testing
 ### Writing tests
 
 When building your playwright tests it helps to have a version of the application deployed for capturing locators and verifying your tests function as intended.
@@ -199,6 +205,7 @@ To run specific this specific test you can use the grep parameter alongside your
 nx e2e example-test-project-e2e --grep @smoke-test
 ```
 
+## Testing Output
 ### Viewing your test results
 
 Playwright has many configuration options for test reporting which can be found in [the documentation](https://playwright.dev/docs/test-reporters).
@@ -237,22 +244,36 @@ To change the reporter being used locally you can amend the [`playwright.config.
 nx e2e next-js-app-e2e --reporter=html --trace on
 ```
 
-#### CI
+### Output in CI
+
+If your test project and application has been scaffolded with infrastructure ([@ensono-stacks/workspace:init](../../nx/workspace/plugin-information.md#generators) and [@ensono-stacks/next:infrastructure](../../nx/next/plugin-information.md#generators)) the [@ensono-stacks/playwright:init](../../nx/playwright/plugin-information.md#generators) generator will add e2e tasks to your taskctl.yaml file.
+
+Upon a pull request being made this will automatically trigger a build pipeline for your application whereby the e2e test project will be ran.
+
+**Output** 
+
+As defined in the [base configuration](#base-configuration) all test artefacts are output to 'test-results/<app-name\>'
 
 When running in the CI three reporters are utilised:
 
-1. dot: Produces a single character per successful test run, keeping detail concise for CI reporting
-2. html: A self-contained folder that contains report for the test run that can be served as a web page.
-3. junit: A JUnit-style xml report which can be fed back into CI reports on the test run
+1. dot: Produces a single character per successful test run, keeping detail concise for CI reporting.
+2. html: A self-contained folder that contains report for the test run that can be served as a web page. Output to 'test-results/<app-name\>/html-report'.
+3. junit: A JUnit-style xml report which can be fed back into CI reports on the test run. Output to 'test-results/<app-name\>/<app-name\>.xml'
 
-:::danger
+**Build summary:** You can view a summary of your build by viewing the pipeline which was ran upon pull request creation.
 
-This section is pending completion once TaskCTL and Pipelines are available!
+![Azure Pipeline Summary](/img/azure-test-pipeline-summary.png)
 
-:::
+**Test results:** As part of your generated pipelines test results will be automatically displayed within the summary tab for the build.
+
+![Azure Pipeline Test Results](/img/azure-test-pipeline-test-results.png)
+
+**Test artefacts:** To download the test artefacts captured by playwright select the _build_ job on the summary page, within the build log click on the 'artifact produced' link, from here you can then download the 'testresults' folder for the test run. 
+
+![Azure Pipeline Build log](/img/azure-test-pipeline-build-log.png)
 
 :::caution HTML Report - Viewing Trace Views
 
-When downloading/viewing HTML reports uploaded as test artefacts to your pipeline, you may experience issues opening **[trace views](https://playwright.dev/docs/trace-viewer)** as these must be loaded over **http://** or **https://** protocols, please upload trace files to the **[playwright trace viewer](https://trace.playwright.dev/)** to load them in your browser.
+When downloading/viewing HTML reports uploaded as test artefacts to your pipeline, you may experience issues opening **[trace views](https://playwright.dev/docs/trace-viewer)** as these must be loaded over **http://** or **https://** protocols, we recommend copying the 'testresult' folder into your local workspace and then using **npx playwright show-report 'html-report path'** to serve the report to localhost
 
 :::

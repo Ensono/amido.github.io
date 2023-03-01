@@ -12,6 +12,12 @@ keywords:
   - configure the cypress tests
 ---
 
+:::danger
+
+Cypress support will soon be moving into NX. See [NX - Frontend Testing](./testing_in_nx/frontend_testing_in_nx.md) for more information!
+
+:::
+
 ## Cypress: Functional tests
 
 We are using [Cypress](https://docs.cypress.io/) for functional testing as much

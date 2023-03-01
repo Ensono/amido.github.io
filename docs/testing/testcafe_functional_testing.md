@@ -17,6 +17,12 @@ keywords:
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
+:::danger
+
+TestCafe is no longer supported by stacks. However this is still part of the scaffolding cli for testing and may be removed at a later date
+
+:::
+
 [TestCafe](https://devexpress.github.io/testcafe/) is a Node.js end-to-end open source automation tool that is used to test web applications. It can run your tests on any browser without having to download separate drivers for each browser.
 It is easy to install, configure and get started without any external libraries or plugins required.
 

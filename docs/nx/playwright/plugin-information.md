@@ -13,6 +13,9 @@ keywords:
   - executor
 ---
 import InitGenerator from './init.md'
+import AccessibilityGenerator from './accessibility.md'
+import Visual from './visualRegression.md'
+import Executor from './executor.md'
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -28,51 +31,6 @@ Visit the [Frontend Testing in an Nx monorepo](../../testing/testing_in_nx/front
 
 ## Setting up @ensono-stacks/playwright
 
-### Prerequisites
-
-To get started with `@ensono-stacks/playwright`, there are a number of prerequisite items:
-
-1. The [`@mands/nx-playwright`](https://github.com/marksandspencer/nx-plugins/tree/main/packages/nx-playwright) plugin is installed
-2. Playwright and it's dependencies have been installed
-3. A playwright test app exists
-
-<details>
-<summary>How to install @mands/nx-playwright and playwright</summary>
-
-<Tabs>
-  <TabItem value="npm" label="npm">
-
-  ```bash
-  npm install --save-dev @mands/nx-playwright
-  npm install --save-dev playwright
-  npx playwright install --with-deps
-  ```
-
-  </TabItem>
-  <TabItem value="yarn" label="yarn">
-
-  ```bash
-  yarn add --dev @mands/nx-playwright
-  yarn add --dev playwright
-  yarn playwright install --with-deps
-  ```
-
-  </TabItem>
- </Tabs>
-
-</details>
-
-<details>
-<summary>How to create a playwright test app</summary>
-
-```bash
-nx generate @mands/nx-playwright:project <APP-NAME>-e2e --project <APP-NAME>
-```
-
-</details>
- 
-
-### Installation 
 Install the `@ensono-stacks/playwright` plugin with the following command:
 
  <Tabs>
@@ -108,6 +66,11 @@ nx g @ensono-stacks/playwright:[generator-executor-name] --help
 ### Generators
 
 <InitGenerator />
+<AccessibilityGenerator />
+<Visual />
 
+### Executors
+
+<Executor/>
 
 
