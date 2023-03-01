@@ -19,20 +19,17 @@ nx @ensono-stacks/rest-client:http-client --name http-client --directory libs/ht
 
 The following command line arguments are available:
 
-| Option       | Description                                            | Type   | Accepted Values | Default | Required |
-| ------------ | ------------------------------------------------------ | ------ | --------------- | ------- | -------- |
-| --name       | Library name                                           | string |                 |         | true     |
-| --directory  | A directory where the lib is placed                    | string |                 |         |          |
-| --importPath | What import path would you like to use for the library | string |                 |         |          |
-| --tags       | Add tags to the library (used for linting)             | string |                 |         |          |
+| Option       | Description                                                     | Type    | Accepted Values | Default | Required |
+| ------------ | --------------------------------------------------------------- | ------- | --------------- | ------- | -------- |
+| --name       | Library name                                                    | string  |                 |         | true     |
+| --directory  | Subdirectory inside libs/ where the generated library is placed | string  |                 |         |          |
+| --importPath | What import path would you like to use for the library          | string  |                 |         |          |
+| --tags       | Add tags to the library (used for linting)                      | string  |                 |         |          |
+| --skipFormat | Skip formatting files                                           | boolean |                 | false   |          |
 
 ### Generator Output
 
-##### What is the output of the above commands?
-
-Will it create new files, will it manipulate existing ones?
-
-```text title="Example of files being generated"
+```text title="Generated files"
 
 └── http-client
     ├── README.md
@@ -47,7 +44,7 @@ Will it create new files, will it manipulate existing ones?
     └── tsconfig.spec.json
 ```
 
-```text title="Example of files being modified"
+```text title="Modified files"
 └── root
     ├── tsconfig.base.json
     └── package.json

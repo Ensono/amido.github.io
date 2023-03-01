@@ -6,48 +6,75 @@ This plugin reads any existing endpoints and creates a new directory for the spe
 
 ## Prerequisites
 
-This generator requires no prerequisites.
+This generator requires a _client-endpoint_ project to be available.
 
 ## Usage
 
 ```bash
-nx @ensono-stacks/rest-client:bump-version --endpoint client-endpoint --endpointPath libs --endpointVersion 2
+nx @ensono-stacks/rest-client:bump-version --name client-endpoint --directory libs --endpointVersion 2
 ```
 
 ### Command line arguments
 
 The following command line arguments are available:
 
-| Option            | Description                                            | Type   | Accepted Values | Default | Required |
-| ----------------- | ------------------------------------------------------ | ------ | --------------- | ------- | -------- |
-| --endpoint        | The endpoint you want to bump to the specified version | string |                 |         | true     |
-| --endpointPath    | The path to your endpoint (parent directory)           | string |                 |         | true     |
-| --endpointVersion | The version you want to bump your endpoint             | number |                 |         | true     |
+| Option            | Description                                                                                   | Type   | Accepted Values | Default | Required |
+| ----------------- | --------------------------------------------------------------------------------------------- | ------ | --------------- | ------- | -------- |
+| --name            | The endpoint name you want to bump                                                            | string |                 |         | true     |
+| --directory       | Subdirectory inside libs/ where the generated endpoint is placed                              | string |                 |         |          |
+| --endpointVersion | The version you want to bump your endpoint. Omitting this value will bump latest version + 1. | number |                 |         |          |
 
 ### Generator Output
 
-##### What is the output of the above commands?
-
-```text title="Example of existing file structure"
+```text title="Generated files"
 
 └── client-endpoint
-    └── V1
-        ├── index.ts
-        ├── index.test.ts
-        └── index.types.ts
+    └── v2
+        ├── README.md
+            └── src
+                ├── index.ts
+                └── index.test.ts
+                └── index.types.ts
+            ├── tsconfig.json
+            ├── tsconfig.lib.json
+            ├── project.json
+            ├── .eslintrc.json
+            ├── jest.config.ts
+            └── tsconfig.spec.json
 ```
 
-```text title="Example of updated file structure after new files being generated"
+```text title="Modified files"
+└── root
+    └── tsconfig.base.json
+```
+
+```text title="Updated file structure after new files are generated"
 
 └── client-endpoint
-    └── V1
-        ├── index.ts
-        ├── index.test.ts
-        └── index.types.ts
-    └── V2
-        ├── index.ts
-        ├── index.test.ts
-        └── index.types.ts`
+    └── v1
+        ├── README.md
+            └── src
+                ├── index.ts
+                └── index.test.ts
+                └── index.types.ts
+            ├── tsconfig.json
+            ├── tsconfig.lib.json
+            ├── project.json
+            ├── .eslintrc.json
+            ├── jest.config.ts
+            └── tsconfig.spec.json
+    └── v2
+        ├── README.md
+            └── src
+                ├── index.ts
+                └── index.test.ts
+                └── index.types.ts
+            ├── tsconfig.json
+            ├── tsconfig.lib.json
+            ├── project.json
+            ├── .eslintrc.json
+            ├── jest.config.ts
+            └── tsconfig.spec.json
 ```
 
 </details>
