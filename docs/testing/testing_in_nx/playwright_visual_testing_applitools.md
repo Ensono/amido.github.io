@@ -154,6 +154,7 @@ test.afterAll(async () => {
 
 As a prerequisite to running Applitools Eyes tests, the API key must be set. The API key can be found by following ['How to retrieve your API key'](https://applitools.com/docs/topics/overview/obtain-api-key.html) guide.
 
+
 ### Locally
 
 As mentioned [above](#applitools-eyes-with-playwright), Applitools Eyes tests should be tagged with **@visual-regression** to ensure that we do not accidentally duplicate test runs, this also enables us to target these tests through **grep** as seen in the ['Run specific tests'](./playwright_nx.md#run-specific-tests) example.
@@ -189,16 +190,16 @@ As mentioned [above](#applitools-eyes-with-playwright), Applitools Eyes tests sh
 :::note
 
 You must set your runner key API before running Applitools Eyes tests locally by following [this guide](https://help.applitools.com/hc/en-us/articles/360006914732-The-runner-key-API-Key-).
-It is reccomended to restart your machine to ensure that environment variable changes are registered!
+It is recommended to restart your machine to ensure that environment variable changes are registered!
 
 :::
 
 ### CI
 
-:::danger
+Using the preconfigured pipelines your playwright visual comparison tests will be ran automatically as part of the deployment process (As long as the API key has been set as an environment variable in the CI).
 
-This section is pending completion once TaskCTL and Pipelines are available!
-
+:::tip
+Visit the [CI docs](../testing_in_nx/playwright_nx.md#output-in-ci) for more information
 :::
 
 ## Viewing your test results and updating baseline images

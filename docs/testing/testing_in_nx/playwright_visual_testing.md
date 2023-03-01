@@ -222,3 +222,20 @@ In any pull requests where you have visual regression tests to capture images fo
 ```
 
 Following this, the build for the PR will be automatically restarted, using the newly captured baseline images for comparison.
+
+:::info Make sure you have enabled triggers for the update snapshots pipeline
+<details>
+  <summary><b>Enable the updatesnapshots pipeline</b></summary>
+  <div>
+  <p>In order for the pipeline to be automatically triggered through comments to your pull requests, please enable triggers</p> 
+  <p>1. Click the options menu and select 'Triggers'</p>
+
+  ![Trigger menu](/img/azure-pipeline-triggers.png)
+
+  <p>2. Under the pull request validation section ensure the following values are selected</p>
+
+  ![Trigger setup](/img/azure-pipeline-trigger-setup.png)
+  
+  </div>
+</details>
+:::
