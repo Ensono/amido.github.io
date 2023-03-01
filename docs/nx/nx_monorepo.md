@@ -57,7 +57,7 @@ Nx makes scaling easy. Modern techniques such as distributed task execution and 
 
 ##### Prerequisites
 
-We recommend installing Nx globally, all nx based commands in this guide are based upon a globally installed nx package.
+We recommend installing Nx globally, all Nx based commands in this guide are based upon a globally installed Nx package.
 
 <Tabs>
   <TabItem value="npm" label="npm">

@@ -21,7 +21,7 @@ import NextAuthRedis from './next-auth-redis.md'
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-The `next` plugin contains generators to augment existing NextJs projects. Adding eslint rules, testing configs as well as installing and configuring NextAuth.js in your NextJs app.
+The `next` plugin contains generators to augment existing NextJs projects. Adding eslint rules, testing config as well as installing and configuring NextAuth.js in your NextJs app.
 
 Using a standard setup for your Next app ensures consistency and code quality across multiple applications quickly. NextAuth (alongside Redis) can also be quickly added to a project without costly configuration and setup.
 
