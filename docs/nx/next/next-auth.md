@@ -23,13 +23,12 @@ The following command line arguments are available:
 | Option    | Description           | Type      | Accepted Values   |Default            |
 | ---       | -------------------   | ---       | ---               | ---               |
 | --project | The name of the project  | nameOfApplication   |  string       | N/A              |
-| --provider | The provider to be installed  | string    | none/azureAd/azureAdB2C                   |none     |
+| --provider | The provider to be installed  | string    | none/azureAd                   |none     |
 | --skipPackageJson | Do not add dependencies to `package.json`  | boolean    |  true/false                 |false     |
 
 ### Generator Output
-##### The next auth plugin will 
 
-- Create a new Next API endpoint with the file name `[...nextauth].ts`. This contains the dynamic route handler for NextAuth.js which will also contain all of your global NextAuth.js configurations. If you have specified a provider when running the generator this will be added to the providers array
+- Creates a new Next API endpoint with the file name `[...nextauth].ts`. This contains the dynamic route handler for NextAuth.js which will also contain all of your global NextAuth.js configurations. If you have specified a provider when running the generator this will be added to the providers array
 ```typescript title="/apps/appName/pages/api/[...nextauth].ts"
 import NextAuth from 'next-auth';
 import AzureADProvider from 'next-auth/providers/azure-ad';
