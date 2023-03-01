@@ -89,6 +89,7 @@ module.exports = {
                   "nx/next/ensono-stacks-next",
                   "nx/azure-node/ensono-stacks-azure-node",
                   "nx/azure-react/ensono-stacks-azure-react",
+                  "nx/rest-client/ensono-stacks-rest-client",
                   "nx/playwright/ensono-stacks-playwright",
                   "nx/logger/ensono-stacks-logger",
                 ],
