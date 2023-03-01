@@ -12,7 +12,7 @@ This generator requires a _http-client_ project to be available.
 ## Usage
 
 ```bash
-nx @ensono-stacks/rest-client:client-endpoint
+nx g @ensono-stacks/rest-client:client-endpoint
 ```
 
 ### Command line arguments

@@ -11,7 +11,7 @@ This generator requires a _client-endpoint_ project to be available.
 ## Usage
 
 ```bash
-nx @ensono-stacks/rest-client:bump-version --name client-endpoint --directory libs --endpointVersion 2
+nx g @ensono-stacks/rest-client:bump-version
 ```
 
 ### Command line arguments
