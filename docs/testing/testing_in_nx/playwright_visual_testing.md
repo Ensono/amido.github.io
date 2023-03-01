@@ -145,7 +145,7 @@ As indicated by the below folder structure, a `playwright-visual-regression.spec
 
 ### Locally
 
-We recommend tagging your Playwright visual tests so that you can target these specific tests if required. In the below examples we have tagged the tests with **@visual-regression** which enables us to target them through **grep** as seen in the ['Run specific tests'](./playwright_nx.md#run-specific-tests) example
+Playwright visual tests must be tagged with **@visual-regression** which enables us to target them through **grep** as seen in the ['Run specific tests'](./playwright_nx.md#run-specific-tests) example
 
 <Tabs>
  <TabItem value="grouped" label="Grouped">
@@ -176,12 +176,18 @@ We recommend tagging your Playwright visual tests so that you can target these s
  </TabItem>
 </Tabs>
 
+:::caution
+
+Tests using playwright visual comparisons **MUST** be tagged with **@visual-regression** in order for the 'update snapshots' pipeline to pick up these tests.
+
+:::
+
 ### CI
 
-:::danger
+Using the preconfigured pipelines your playwright tests will be ran automatically as part of the deployment process.
 
-This section is pending completion once TaskCTL and Pipelines are available!
-
+:::tip
+Visit the [CI docs](../testing_in_nx/playwright_nx.md#output-in-ci) for more information
 :::
 
 ## Viewing your test results
