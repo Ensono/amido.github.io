@@ -18,15 +18,16 @@ nx @ensono-stacks/[plugin-name]:generator/executor --Option1 Option1Value --Opti
 
 The following command line arguments are available:
 
-| Option    | Description           | Type      | Accepted Values   |Default            |
-| ---       | -------------------   | ---       | ---               | ---               |
-| --Option1 | Option 1 description  | boolean   |  true/false       | true              |
-| --Option2 | Option 2 description  | string    |                   |default-string     |
+| Option    | Description          | Type    | Accepted Values | Default        |
+| --------- | -------------------- | ------- | --------------- | -------------- |
+| --Option1 | Option 1 description | boolean | true/false      | true           |
+| --Option2 | Option 2 description | string  |                 | default-string |
 
 ### Generator Output
-##### What is the output of the above commands?
-Will it create new files, will it manipulate existing ones?
 
+##### What is the output of the above commands?
+
+Will it create new files, will it manipulate existing ones?
 
 ```text title="Example of files being generated"
 .
