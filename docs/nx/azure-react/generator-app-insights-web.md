@@ -1,7 +1,7 @@
 ### @ensono-stacks/azure-react:app-insights-web
 
 <details>
-<summary>Installs and configures a ReactJs Library with App Insights.</summary>
+<summary>Installs and configures a ReactJS Library with App Insights.</summary>
 
 This enables the following:
 
@@ -9,7 +9,7 @@ This enables the following:
 - React components usage statistics
 
 
-This generator will create a new ReactJs Library with [applicationinsights reactjs](https://www.npmjs.com/package/@microsoft/applicationinsights-react-js) and [applicationinsights web](https://www.npmjs.com/package/@microsoft/applicationinsights-web) npm packages installed and configured for you. This can then be imported an used in an existing ReactJs application.
+This generator will create a new ReactJS Library with [applicationinsights reactjs](https://www.npmjs.com/package/@microsoft/applicationinsights-react-js) and [applicationinsights web](https://www.npmjs.com/package/@microsoft/applicationinsights-web) npm packages installed and configured for you. This can then be imported an used in an existing ReactJS application.
 
 ## Usage
 
@@ -125,7 +125,7 @@ export default App;
 
 ```
 
-From here a `useAppInsightsContext` hook will be available to use anywhere within your ReactJs App. For example
+From here a `useAppInsightsContext` hook will be available to use anywhere within your ReactJS App. For example
 ```json 
 import React from "react";
 import { useAppInsightsContext } from "@microsoft/applicationinsights-react-js";

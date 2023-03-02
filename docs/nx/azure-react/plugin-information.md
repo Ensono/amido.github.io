@@ -2,7 +2,7 @@
 id: ensono-stacks-azure-react
 title: "@ensono-stacks/azure-react"
 sidebar_label: "@ensono-stacks/azure-react"
-description: "Configures a ReactJs application for Azure!"
+description: "Configures a ReactJS application for Azure!"
 keywords:
   - Nx
   - monorepo
