@@ -57,7 +57,7 @@ The following command line arguments are available:
 | --name | Workspace name (e.g. org name)  | string   |  nameOfWorkspace       |               |
 | --preset | Customizes the initial content of your workspace  | string    | apps/ts/next/react-monorepo                   |     |
 | --dir | The directory to install to  | string   |  /path/to/dir       | ./              |
-| --appName | The name of the application when a preset with pregenerated app is selected  | string    | nameOfApplication                  |      |
+| --appName | The name of the application when a preset with pre-generated app is selected  | string    | nameOfApplication                  |      |
 | --e2eTestRunner | Test runner to use in generating an e2e test project | string | ["none", "playwright"] | none | 
 | --nxVersion | Set the version of Nx you want installed  | string    |                   |latest    |
 | --packageManager | Package manager to use  | string    | pnpm/npm/yarn                  | npm     |

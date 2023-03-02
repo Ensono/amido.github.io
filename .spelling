@@ -136,6 +136,30 @@ Ensono
 NextAuth.js
 package.json
 init.md
+Nx
+Redis
+ReactJS
+Axios
+md
+microsoft
+TelemetryProvider
+e2e
+Ensonso
+org
+pnpm
+nonprod
+github
+url
+winston
+enum
+OpenTelemetry
+taskctl
+SDKs
+next-auth-redis
+redis
+azureAd
+axios
+HttpClient
  - ../docs/browser_support.md
 Polyfills
 eslint-plugin-compat
@@ -174,4 +198,104 @@ md
 configs
  - ./docs/nx/workspace/init.md
 commitizen
+Commitlint
+ - docs/nx/azure-node/generator-app-insights.md
+applicationinsights
+nrwl
+appInsightsKey
+ - docs/nx/azure-node/plugin-information.md
+GeneratorAppInsights
+ - docs/nx/azure-react/generator-app-insights-web.md
+reactjs
+connectionString
+importPath
+ - docs/nx/create-stacks-workspace/plugin-information.md
+create-nx-workspace
+NX.json
+next.js
+nameOfWorkspace
+dir
+appName
+nameOfApplication
+e2eTestRunner
+nxVersion
+packageManager
+cloudplatform
+cloud.region
+euw
+azdo
+business.company
+business.domain
+business.component
+domain.internal
+domain.external
+terraform.group
+terraform.container
+terraform.storage
+vcs.type
+vcs.url
+ts
+ - docs/nx/logger/plugin-information.md
+winston.md
+ - docs/nx/logger/winston.md
+skipFormat
+logLevelType
+syslog
+consoleLogs
+fileTransportPath
+httpTransport
+httpTransportHost
+httpTransportPort
+httpTransportPath
+httpTransportSSL
+streamPath
+ - docs/nx/next/infra.md
+openTelemetry
+azDevOps
+project.json.
+jscutlery
+semver
+ - docs/nx/next/next-auth-redis.md
+adapterName
+envVar
+REDIS_URL
+tsconfig.base.json
+ - docs/nx/next/next-auth.md
+skipPackageJson
+useSession
+ - docs/nx/next/plugin-information.md
+NextInfra
+infra.md
+NextAuthRedis
+ - docs/nx/playwright/executor.md
+mands
+ - docs/nx/playwright/plugin-information.md
+InitGenerator
+AccessibilityGenerator
+accessibility.md
+visualRegression.md
+executor.md
+ - docs/nx/playwright/visualRegression.md
+visualRegression
+playwright.config.ts
+spec.ts
+jammy
+ - docs/nx/plugin-name/executor-generator-template.md
+Option1
+Option2
+ - docs/nx/plugin-name/plugin-information.md
+ExecutorName
+GeneratorName
+ - docs/nx/rest-client/bump-version.md
+endpointVersion
+ - docs/nx/rest-client/client-endpoint.md
+httpClient
+API_URL
+env.local
+ - docs/nx/rest-client/plugin-information.md
+ClientEndpoint
+BumpVersion
+ - docs/nx/workspace/init.md
+commitizen
+pipelineRunner
 Commitlint

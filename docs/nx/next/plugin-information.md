@@ -11,17 +11,19 @@ keywords:
   - "next"
   - generator
   - executor
+  - redis
 ---
 
 import Init from './init.md'
 import NextAuth from './next-auth.md'
 import NextInfra from './infra.md'
+import NextAuthRedis from './next-auth-redis.md'
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-The `next` plugin contains generators to augment existing NextJs projects. Adding eslint rules, testing configs as well as installing and configuring NextAuth.js in your NextJs app.
+The `next` plugin contains generators to augment existing NextJs projects. Adding eslint rules, testing config as well as installing and configuring NextAuth.js in your NextJs app.
 
-Using a standard setup for your Next app ensures consistency and code quality across multiple applications quickly. NextAuth can also be quickly added to a project without costly configuration and setup.
+Using a standard setup for your Next app ensures consistency and code quality across multiple applications quickly. NextAuth (alongside Redis) can also be quickly added to a project without costly configuration and setup.
 
 Using the infrastructure generator you can setup your application with the necessary infrastructure config to host it in k8s, with optional OpenTelemetry auto instrumentation.
 
@@ -72,4 +74,5 @@ nx g @ensono-stacks/next:[generator-executor-name] --help
 
 <Init />
 <NextAuth />
+<NextAuthRedis />
 <NextInfra />

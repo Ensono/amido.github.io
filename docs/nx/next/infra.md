@@ -101,7 +101,7 @@ Azure devops configuration exists within the build folder for each new generated
 
 `azuredevops-runner.yaml`
 
-Here you will find the actions for triggering the pipelines. Basically, creating a PR will build as a non prod artefact and merging into main branch will build as a prod artefact, with the relevant paramater specified.
+Here you will find the actions for triggering the pipelines. Basically, creating a PR will build as a non prod artefact and merging into main branch will build as a prod artefact, with the relevant parameter specified.
 
 `azuredevops-stages.yaml`
 
@@ -173,11 +173,11 @@ Finally a Github release is tagged with relevant notes using jscutlery.
 
 This is the last group of tasks to run as part of the infrastructure. See `myproject/apps/myapp/build/terraform` for configuration files.
 
-One thing to highlight is that once the Terraform apply task is completed, a Helmm install will also be executed. As mentioned earlier, the default behaviour is to deploy a non-production instance when a PR is created and once the PR is merged, then the deployment is made to production.
+One thing to highlight is that once the Terraform apply task is completed, a Helm install will also be executed. As mentioned earlier, the default behaviour is to deploy a non-production instance when a PR is created and once the PR is merged, then the deployment is made to production.
 
 ### OpenTelemetry
 
-OpenTelemetry is a collection of tools, APIs, and SDKs. Use it to instrument, generate, collect, and export telemetry data (metrics, logs, and traces) to help you analyze your software’s performance and behavior.
+OpenTelemetry is a collection of tools, APIs, and SDKs. Use it to instrument, generate, collect, and export telemetry data (metrics, logs, and traces) to help you analyse your software’s performance and behaviour.
 
 If the generator is used with the openTelemetry option it will add auto instrumentation to the pods, and the application will start exporting default node metrics and traces.
 ```

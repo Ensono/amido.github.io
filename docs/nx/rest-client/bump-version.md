@@ -11,7 +11,7 @@ This generator requires a _client-endpoint_ project to be available.
 ## Usage
 
 ```bash
-nx @ensono-stacks/rest-client:bump-version --name client-endpoint --directory libs --endpointVersion 2
+nx g @ensono-stacks/rest-client:bump-version
 ```
 
 ### Command line arguments
@@ -26,7 +26,7 @@ The following command line arguments are available:
 
 ### Generator Output
 
-The generator will take a copy of your **latest** endpoint and bump it to the next version (unless overwridden through the --endpointVersion argument)
+The generator will take a copy of your **latest** endpoint and bump it to the next version (unless overridden through the --endpointVersion argument)
 
 ```text title="V1 endpoint"
 
