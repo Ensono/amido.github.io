@@ -439,7 +439,7 @@ div details summary {
   cursor: pointer;
 }
 
-div details div {
+div details > div {
   padding-top: 20px;
   padding-left: 20px;
 }

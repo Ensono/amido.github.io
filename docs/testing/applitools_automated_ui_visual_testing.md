@@ -10,6 +10,13 @@ keywords:
   - applitools
   - visual analysis
 ---
+
+:::danger
+
+We recommend and already have support within [Playwright for Applitools](./testing_in_nx/playwright_visual_testing_applitools.md)! Cypress support will also be moving to NX in the near future!
+
+:::
+
 Visual Regression testing or Visual testing in software is a quality assurance activity of verifying if the visual aspects of the application’s user interface seem appropriate to the user. It is also known as Visual Validation Testing.
 
 Visual Regression testing can be implemented using a variety of tools and languages and is a fast way of checking defects of front end applications. For more information on Visual Regression testing you can look at this article [Here](https://www.softwaretestinghelp.com/visual-validation-testing/)
