@@ -63,7 +63,7 @@ The following command line arguments are available:
 | --packageManager | Package manager to use  | string    | pnpm/npm/yarn                  | npm     |
 | --interactive | Enable interactive mode  | boolean    |  true/false                 | true     |
 | --overwrite | Overwrite the target directory on install  | boolean    |  true/false                 | false     |
-| --cloudplatform | Name of the cloud provider  | string    | azure                  | azure     |
+| --cloud.platform | Name of the cloud provider  | string    | azure                  | azure     |
 | --cloud.region | Region name where resources should be created  | string    | string                  | euw     |
 | --pipeline | Name of the pipeline provider  | string    | azdo                  | azdo     |
 | --business.company | Company Name  | string    | string                  |     |
