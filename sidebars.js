@@ -88,7 +88,7 @@ module.exports = {
                   "nx/workspace/ensono-stacks-workspace",
                   "nx/next/ensono-stacks-next",
                   "nx/azure-node/ensono-stacks-azure-node",
-                  "nx/azure-react/ensono-stacks-azure-react",
+                  //"nx/azure-react/ensono-stacks-azure-react", Temporarily removed, add back in Cycle 11
                   "nx/rest-client/ensono-stacks-rest-client",
                   "nx/playwright/ensono-stacks-playwright",
                   "nx/logger/ensono-stacks-logger",

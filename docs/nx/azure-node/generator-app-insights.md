@@ -16,7 +16,7 @@ Use the [@nrwl/next:custom-server](https://nx.dev/packages/next/generators/custo
 
 :::
 
-- It requires the App Insights Access Key to be set in an env variable, from which it will be read.
+- It requires the APPLICATIONINSIGHTS_CONNECTION_STRING environment variable to be set.
 
 :::warning
 
