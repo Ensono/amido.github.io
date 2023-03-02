@@ -77,7 +77,7 @@ We recommend installing Nx globally, all Nx based commands in this guide are bas
 </Tabs>
 
 ### Get Started
-There are three ways to get started with building a **CSR (React)** or **SSR (Next JS)** frontend web application with stacks, we recommend using our _[Stacks CLI](../stackscli/usage.mdx)_ for the best experience!
+There are three ways to get started with building a **CSR (React)** or **SSR (Next JS)** frontend web application with stacks, we recommend using our _[Stacks CLI](../stackscli/about.md)_ for the best experience!
 
 :::note
 
@@ -95,13 +95,13 @@ stacks-cli interactive
 
 :::note Ensure you have the Stacks CLI installed!
 
-Visit the [Stacks CLI](../stackscli/usage.mdx) docs for more information and setup instructions!
+Visit the [Stacks CLI](../stackscli/about.md) docs for more information and setup instructions!
 
 :::
 
 :::tip
 
-Visit the [NX Example](../stackscli/examples.mdx#nx) for the complete instructions/example on using NX with the Stacks CLI!
+Visit the [NX Example](../stackscli/about.md) for the complete instructions/example on using NX with the Stacks CLI!
 
 :::
 

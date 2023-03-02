@@ -301,11 +301,12 @@ module.exports = {
       "testing/performance_testing_gatling",
     ],
     "Stacks CLI": [
-      "stackscli/usage",
-      "stackscli/runtime_config",
-      "stackscli/project_settings",
-      "stackscli/examples",
-      "stackscli/troubleshooting",
+      "stackscli/about"
+      // "stackscli/usage",
+      // "stackscli/runtime_config",
+      // "stackscli/project_settings",
+      // "stackscli/examples",
+      // "stackscli/troubleshooting",
     ],
   },
 };
