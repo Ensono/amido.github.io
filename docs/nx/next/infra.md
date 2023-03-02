@@ -1,3 +1,4 @@
+<!-- markdownlint-disable MD041 -->
 ### @ensono-stacks/next:infrastructure
 
 <details>
@@ -26,7 +27,7 @@ The following command line arguments are available:
 
 ### Generator Output
 
-```
+```text
 ├── workspace root
     ├── apps
         ├── myapp
@@ -35,13 +36,11 @@ The following command line arguments are available:
                 ├── terraform
 ```
 
-##### The next auth plugin will
-
-- Create numerous files under the two folders, helm and terraform. You can then go in and update relevant parts for your use case.
+- Creates numerous files under the two folders, helm and terraform. You can then go in and update relevant parts for your use case.
 
 - Adds following files to .gitignore
 
-```
+```text
 '**/.terraform/*',
 '*.tfstate',
 '*.tfstate.*',
@@ -57,7 +56,7 @@ The following command line arguments are available:
 
 - installs following dev dependencies
 
-```
+```text
 @nx-tools/nx-container
 @nx-tools/container-metadata
 @jscutlery/semver
@@ -65,7 +64,7 @@ The following command line arguments are available:
 
 - It is a requirement for the `stacks` object to exist inside `nx.json`, as this is read to know how to scaffold the infrastructure as code values. This object will already be populated by this point via the previous project scaffolding steps.
 
-```
+```json
 "stacks": {
     "business": {
       "company": "Amido",
@@ -115,7 +114,7 @@ As a rule of thumb, each task here references a target execution via Nx defined 
 
 `build/taskctl/tasks.yaml`
 
-```
+```yaml
 helm:
     description: Lint Helm Charts
     command:
@@ -124,7 +123,7 @@ helm:
 
 `apps/myapp/project.json`
 
-```
+```yaml
 "helm-lint": {
     "executor": "nx:run-commands",
     "options": {
@@ -141,7 +140,7 @@ helm:
 
 Hence, running the following will trigger the intended execution. The pipeline takes care of this for us.
 
-```
+```bash
 npx nx affected --base="$BASE_SHA" --target=helm-lint
 ```
 
@@ -180,7 +179,8 @@ One thing to highlight is that once the Terraform apply task is completed, a Hel
 OpenTelemetry is a collection of tools, APIs, and SDKs. Use it to instrument, generate, collect, and export telemetry data (metrics, logs, and traces) to help you analyse your software’s performance and behaviour.
 
 If the generator is used with the openTelemetry option it will add auto instrumentation to the pods, and the application will start exporting default node metrics and traces.
-```
+
+```yaml
 podAnnotations:
     instrumentation.opentelemetry.io/inject-nodejs: 'true'
 ```

@@ -1,3 +1,4 @@
+<!-- markdownlint-disable MD041 -->
 ### @ensono-stacks/[plugin-name]:generator/executor name
 
 <details>
@@ -25,7 +26,7 @@ The following command line arguments are available:
 
 ### Generator Output
 
-##### What is the output of the above commands?
+#### What is the output of the above commands
 
 Will it create new files, will it manipulate existing ones?
 

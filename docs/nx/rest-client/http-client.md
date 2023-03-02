@@ -1,3 +1,4 @@
+<!-- markdownlint-disable MD041 -->
 ### @ensono-stacks/rest-client:http-client
 
 <details>
@@ -26,6 +27,7 @@ The following command line arguments are available:
 ### Generator Output
 
 The http-client will create a new library within your libs folder for the axios http client:
+
 ```text title="Generated files"
 
 ├── http-client
@@ -42,6 +44,7 @@ The http-client will create a new library within your libs folder for the axios 
 ```
 
 Additionally, the package.json will be updated with the axios dependency.
+
 ```text title="Modified files"
 ├── root
 │   ├── tsconfig.base.json

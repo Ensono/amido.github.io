@@ -1,3 +1,4 @@
+<!-- markdownlint-disable MD041 -->
 ### @ensono-stacks/next:init
 
 <details>
@@ -30,7 +31,7 @@ The following command line arguments are available:
 
 The following files will be updated if no workspace infrastructure information is present, or if the `--infra` flag is set to false
 
-```bash
+```text
 UPDATE apps/baseline-next-app/project.json #Updated with custom test config to allow for coverage collection
 UPDATE apps/baseline-next-app/.eslintrc.json #Ehanced with additional linting rules
 UPDATE apps/baseline-next-app/tsconfig.json #Minor enhancements

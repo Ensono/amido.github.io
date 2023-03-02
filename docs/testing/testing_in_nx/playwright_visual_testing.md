@@ -29,6 +29,7 @@ Scaffolding your project with a native configuration for visual regression testi
 ### CI strategy for visual comparison
 
 When working with visual comparisons using playwright and your own CI system there are a number of challenges:
+
 1. Users may have different browsers and dependency versions installed locally when capturing images, leading to pixel variance during image comparison. 
 2. Images captured on different operating systems can lead to pixel variance
 3. Images captured on different CPU architecture can lead to pixel variance

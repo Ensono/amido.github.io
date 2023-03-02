@@ -31,7 +31,7 @@ Using the infrastructure generator you can setup your application with the neces
 
 An existing [Next](https://nextjs.org/) application. Note the generator will fail if run in an empty workspace with no applications. To create a new Next application please run the NX Next generator with the following command including any relevant options. See [@nrwl/next plugin docs](https://nx.dev/packages/next)
 
-```
+```bash
 nx g @nrwl/next:app my-new-app
 ```
 
@@ -71,7 +71,7 @@ nx g @ensono-stacks/next:[generator-executor-name] --help
 ```
 
 ### Generators
-
+<!-- markdownlint-disable MD033 -->
 <Init />
 <NextAuth />
 <NextAuthRedis />

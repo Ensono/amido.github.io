@@ -205,6 +205,7 @@ Visit the [CI docs](../testing_in_nx/playwright_nx.md#output-in-ci) for more inf
 ## Viewing your test results and updating baseline images
 
 Similar to [viewing your test results](./playwright_nx.md#viewing-your-test-results) for standard tests, Applitools Eyes will also output test results to the console in the following format:
+
 ```bash
 Visual test results TestResultsSummaryData {
   _summary: {

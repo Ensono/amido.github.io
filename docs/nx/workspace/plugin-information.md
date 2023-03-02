@@ -47,7 +47,6 @@ Install the `@ensono-stacks/workspace` with the following command:
   </TabItem>
  </Tabs>
 
-##### Has it installed any additional plugins? 
 `@ensono-stacks/workspace` depends on the `@ensono-stacks/core` plugin.
 
 ## Executors and Generators
@@ -59,11 +58,13 @@ nx list @ensono-stacks/workspace
 ```
 
 View additional information about a plugin capability through the following command:
+
 ```bash
 nx g @ensono-stacks/workspace:[generator-executor-name] --help
 ```
-### Generators
 
+### Generators
+<!-- markdownlint-disable MD033 -->
 <Init />
 
 

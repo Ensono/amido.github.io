@@ -1,3 +1,4 @@
+<!-- markdownlint-disable MD041 -->
 ### @ensono-stacks/rest-client:client-endpoint
 
 <details>
@@ -51,6 +52,7 @@ The client-endpoint will create a new library within your libs folder, using you
 └───└───└───└── tsconfig.spec.json
 └── .env.local
 ```
+
 Be sure to add the API_URL as an environment variable to the created .env.local file for local development 
 
 In order to import the client-endpoint into your application a new entry for the client is added to the tsconfig.base.json "paths"

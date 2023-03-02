@@ -19,6 +19,7 @@ import TabItem from '@theme/TabItem';
 The `@ensono-stacks/logger` plugin allows you to add industry standard logging functionality to your Stacks apps.
 
 Currently, the following logging libraries are supported:
+
 - **[winston](https://github.com/winstonjs/winston)**
 
 ## Setting up @ensono-stacks/logger
@@ -28,6 +29,7 @@ Currently, the following logging libraries are supported:
 An existing Stacks workspace.
 
 ### Installation 
+
 Install the @ensono-stacks/logger with the following command:
 
  <Tabs>
@@ -57,11 +59,13 @@ nx list @ensono-stacks/logger
 ```
 
 View additional information about a plugin capability through the following command:
+
 ```bash
 nx g @ensono-stacks/logger:[generator-executor-name] --help
 ```
-### Generators
 
+### Generators
+<!-- markdownlint-disable MD033 -->
 <Winston />
 
 

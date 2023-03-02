@@ -53,12 +53,13 @@ nx list @ensono-stacks/azure-react
 ```
 
 View additional information about a plugin capability through the following commands:
+
 ```bash
 nx g @ensono-stacks/azure-react:app-insights-web --help
 ```
 
 ### Generators
-
+<!-- markdownlint-disable MD033 -->
 <GeneratorAppInsights />
 
 

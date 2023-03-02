@@ -53,12 +53,13 @@ nx list @ensono-stacks/azure-node
 ```
 
 View additional information about a plugin capability through the following command:
+
 ```bash
 nx g @ensono-stacks/azure-node:[generator-executor-name] --help
 ```
 
 ### Generators
-
+<!-- markdownlint-disable MD033 -->
 <GeneratorAppInsights />
 
 

@@ -20,6 +20,7 @@ Playwright is a relatively new testing framework, which is developed and support
 Upon scaffolding your application with the playwright testing framework, you will be presented with an example test suite and playwright configuration. The [`@mands/nx-playwright`](https://github.com/marksandspencer/nx-plugins/tree/main/packages/nx-playwright) NX plugin is used as a base for the Playwright/NX integration. 
 
 ## Playwright Configuration
+
 ### Base configuration
 
 The base configuration has been created with CI in mind, meaning the default configuration (shared across all projects) considers requirements for reporting and pipeline efficiency out of the box! 
@@ -142,6 +143,7 @@ Playwright has an extensive library of browsers and devices which can be found i
 ```
 
 ## Testing
+
 ### Writing tests
 
 When building your playwright tests it helps to have a version of the application deployed for capturing locators and verifying your tests function as intended.
@@ -206,6 +208,7 @@ nx e2e example-test-project-e2e --grep @smoke-test
 ```
 
 ## Testing Output
+
 ### Viewing your test results
 
 Playwright has many configuration options for test reporting which can be found in [the documentation](https://playwright.dev/docs/test-reporters).
@@ -250,8 +253,6 @@ If your test project and application has been scaffolded with infrastructure ([@
 
 Upon a pull request being made this will automatically trigger a build pipeline for your application whereby the e2e test project will be ran.
 
-**Output** 
-
 As defined in the [base configuration](#base-configuration) all test artefacts are output to 'test-results/<app-name\>'
 
 When running in the CI three reporters are utilised:
@@ -272,6 +273,7 @@ When running in the CI three reporters are utilised:
 
 ![Azure Pipeline Build log](/img/azure-test-pipeline-build-log.png)
 
+<!-- markdownlint-disable MD034 -->
 :::caution HTML Report - Viewing Trace Views
 
 When downloading/viewing HTML reports uploaded as test artefacts to your pipeline, you may experience issues opening **[trace views](https://playwright.dev/docs/trace-viewer)** as these must be loaded over **http://** or **https://** protocols, we recommend copying the 'testresult' folder into your local workspace and then using **npx playwright show-report 'html-report path'** to serve the report to localhost

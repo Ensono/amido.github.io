@@ -1,3 +1,4 @@
+<!-- markdownlint-disable MD041 -->
 ### @ensono-stacks/azure-node:app-insights
 
 <details>
@@ -23,8 +24,6 @@ Use the [@nrwl/next:custom-server](https://nx.dev/packages/next/generators/custo
 There is a known issue with the [`@nrwl/next:custom-server`](https://nx.dev/packages/next/generators/custom-server) impacting _customServerTarget_ when typescript libraries are present in the monorepo. Please check the following [Github Issue](https://github.com/nrwl/nx/issues/12032) for the status of this issue.
 
 :::
-
-
 
 ## Usage
 

@@ -29,6 +29,7 @@ What benefits does it give you?
 Are there any prerequisites?
 
 ### Installation 
+
 Install the @ensono-stacks/[plugin-name] with the following command:
 
  <Tabs>
@@ -48,12 +49,15 @@ Install the @ensono-stacks/[plugin-name] with the following command:
   </TabItem>
  </Tabs>
 
-##### Has it installed any additional plugins? 
+#### Has it installed any additional plugins 
+
 What are they? Can we link to docs about the additional plugins?
 
-#### Has it created any scripts?
+#### Has it created any scripts
+
 How do we use them, what do those scripts do?
 e.g
+
 ```json title="Example script that's created"
 "scripts": {
     "prepare": "husky install"
@@ -69,11 +73,13 @@ nx list @ensono-stacks/[plugin-name]
 ```
 
 View additional information about a plugin capability through the following command:
+
 ```bash
 nx g @ensono-stacks/[plugin-name]:[generator-executor-name] --help
 ```
-### Executors
 
+### Executors
+<!-- markdownlint-disable MD033 -->
 <ExecutorName />
 <ExecutorName />
 <ExecutorName />

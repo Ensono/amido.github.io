@@ -1,3 +1,4 @@
+<!-- markdownlint-disable MD041 -->
 ### @ensono-stacks/playwright:init
 
 <details>
@@ -12,6 +13,7 @@ nx g @ensono-stacks/playwright:init
 ```
 
 Upon calling the _init_ generator you will be presented with the following question:
+
 - What app would you like to generate a test project for?
     - The name of the existing application to generate a test project for (named <app-name\>-e2e)
 
@@ -26,6 +28,7 @@ The following command line arguments are available:
 ### Generator Output
 
 #### Default Output
+
 The _init_ generator will create a new test project for your chosen application containing an example test and predefined configuration for the monorepo and the individual test projects. 
 By default the _init_ generator will configure both a baseline playwright configuration and an individual project base playwright configuration.
 

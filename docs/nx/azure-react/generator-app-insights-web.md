@@ -1,3 +1,4 @@
+<!-- markdownlint-disable MD041 -->
 ### @ensono-stacks/azure-react:app-insights-web
 
 <details>
@@ -39,6 +40,7 @@ The following command line arguments are available:
 ### Generator Output
 
 - Adds an app insights config file
+
 ```json title="/src/app-insights-config.ts"
 // eslint-disable-next-line import/no-extraneous-dependencies
 import {
@@ -62,6 +64,7 @@ export default appInsightConfig;
 ```
 
 - Adds a telemetry provider 
+
 ```json title="/src/telemetry-provider.tsx"
 import {
   ReactPlugin,
@@ -95,6 +98,7 @@ export const TelemetryProvider: FC<{ children?: ReactNode }> = ({ children }) =>
 ```
 
 - Installs and adds microsoft applicationinsights packages to package.json
+
 ```json title="/package.json"
   "dependencies": {
     ...OtherDependencies
@@ -126,6 +130,7 @@ export default App;
 ```
 
 From here a `useAppInsightsContext` hook will be available to use anywhere within your ReactJS App. For example
+
 ```json 
 import React from "react";
 import { useAppInsightsContext } from "@microsoft/applicationinsights-react-js";

@@ -1,3 +1,4 @@
+<!-- markdownlint-disable MD041 -->
 ### @ensono-stacks/logger:winston
 
 <details>
@@ -37,6 +38,7 @@ The following command line arguments are available:
 ### Generator Output
 
 The generator will create a new application within your libs folder with the following structure:
+
 ```text
 .
 ├── libs/[libname]
@@ -57,7 +59,7 @@ The generator will create a new application within your libs folder with the fol
 
 Additionally, the following files will be modified
 
-```
+```text
 .
 ├── nx.json // Adds configuration for Jest tests if this has not already been done by another generator
 ├── package.json // Adds winston as a dependency

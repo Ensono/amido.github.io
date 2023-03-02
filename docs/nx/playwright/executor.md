@@ -1,4 +1,6 @@
+<!-- markdownlint-disable MD041 -->
 ### @mands/nx-playwright:playwright-executor
+
 <details>
 <summary>Enables you to execute your playwright tests</summary>
 

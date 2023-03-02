@@ -1,3 +1,4 @@
+<!-- markdownlint-disable MD041 -->
 ### @ensono-stacks/rest-client:bump-version
 
 <details>
@@ -44,7 +45,9 @@ The generator will take a copy of your **latest** endpoint and bump it to the ne
 │   │   │   ├── jest.config.ts
 └───└───└───└── tsconfig.spec.json
 ```
+
 Once the `bump-version` generator has been used, your library structure will look similar to the following:
+
 ```text title="Bumped endpoint structure"
 
 ├── client-endpoint

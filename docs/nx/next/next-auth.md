@@ -1,3 +1,4 @@
+<!-- markdownlint-disable MD041 -->
 ### @ensono-stacks/next:next-auth
 
 <details>
@@ -29,6 +30,7 @@ The following command line arguments are available:
 ### Generator Output
 
 - Creates a new Next API endpoint with the file name `[...nextauth].ts`. This contains the dynamic route handler for NextAuth.js which will also contain all of your global NextAuth.js configurations. If you have specified a provider when running the generator this will be added to the providers array
+
 ```typescript title="/apps/appName/pages/api/[...nextauth].ts"
 import NextAuth from 'next-auth';
 import AzureADProvider from 'next-auth/providers/azure-ad';
@@ -45,6 +47,7 @@ export default nextAuth;
 ```
 
 - Install the next-auth package and add to package.json, unless the `--skipPackageJson` option was used
+
 ```json title="/package.json"
 "dependencies": {
     ...otherDependencies
@@ -53,6 +56,7 @@ export default nextAuth;
 ```
 
 - Create or append an `.env.local` file. Adding required next auth environmental variables. These will vary depending on the provider chosen. 
+
 ```typescript title="/.env.local"
 NEXTAUTH_URL=http://localhost:4200
 NEXTAUTH_SECRET=secretValue
@@ -68,6 +72,7 @@ Be sure to update the environmental variables with the values provided by your p
 :::
 
 - Append the `_app.tsx` file with a [session provider](https://next-auth.js.org/getting-started/client#sessionprovider) 
+
 ```typescript title="/apps/appName/_app.tsx"
 import { AppProps } from 'next/app';
 import Head from 'next/head';
