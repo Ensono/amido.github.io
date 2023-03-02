@@ -8,15 +8,23 @@ This generator will add and configure [applicationinsights](https://www.npmjs.co
 ## Prerequisites
 
 
-Requires a NodeJs server for application insights to hook into.
+- Requires a NodeJs server for application insights to hook into.
 
 :::tip
 
-Use the [@nrwl/next:custom-server](https://nx.dev/packages/next/generators/custom-server) generator which will have been added to your workspace by [`@ensono-stacks/workspace`](../workspace/plugin-information.md) to generate your NodeJS server!
+Use the [@nrwl/next:custom-server](https://nx.dev/packages/next/generators/custom-server) generator which will have been added to your workspace by [@ensono-stacks/workspace`](../workspace/plugin-information.md) to generate your NodeJS server!
 
 :::
 
-It requires the App Insights Access Key to be set in an env variable, from which it will be read.
+- It requires the App Insights Access Key to be set in an env variable, from which it will be read.
+
+:::warning
+
+There is a known issue with the [`@nrwl/next:custom-server`](https://nx.dev/packages/next/generators/custom-server) impacting _customServerTarget_ when typescript libraries are present in the monorepo. Please check the following [Github Issue](https://github.com/nrwl/nx/issues/12032) for the status of this issue.
+
+:::
+
+
 
 ## Usage
 
