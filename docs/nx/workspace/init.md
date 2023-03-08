@@ -9,8 +9,8 @@ Allows you to choose your recommended 3rd party provider options.
 
 ## Prerequisites
 
-This generator depends on the `stacks` field within `nx.json`.
-If you have already run Stacks CLI or `create-stacks-workspace`, this field will automatically be populated.
+To scaffold your workspace with infrastructure there is a dependency on the `stacks` field within `nx.json`.
+If you have already run the Stacks CLI these fields will be automatically populated. Alternatively, if you created your workspace with `create-stacks-workspace`, these fields will have been populated if you passed in the relevant CLI arguments.
 If you are Stackifying an existing Nx workspace, this must be added manually - an example `stacks` field can be seen here:
 
 ```json
