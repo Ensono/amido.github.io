@@ -7,6 +7,42 @@ Set up libraries to manage code & commit quality, keeping projects consistent an
 
 Allows you to choose your recommended 3rd party provider options.
 
+## Prerequisites
+
+This generator depends on the `stacks` field within `nx.json`.
+If you have already run Stacks CLI or `create-stacks-workspace`, this field will automatically be populated.
+If you are Stackifying an existing Nx workspace, this must be added manually - an example `stacks` field can be seen here:
+
+```json
+{
+  "stacks": {
+    "business": {
+      "company": "Ensono",
+      "domain": "stacks",
+      "component": "nx"
+    },
+    "domain": {
+      "internal": "test.com",
+      "external": "test.dev"
+    },
+    "cloud": {
+      "platform": "azure",
+      "region": "euw"
+    },
+    "pipeline": "azdo",
+    "terraform": {
+      "group": "terraform-group",
+      "storage": "terraform-storage",
+      "container": "terraform-container"
+    },
+    "vcs": {
+      "type": "github",
+      "url": "remote.git"
+    }
+  }
+}
+```
+
 ## Usage
 
 Initialise your NX workspace with stacks with the following command:
