@@ -59,11 +59,11 @@ In order for Redis to be used within next-auth a new entry for the redis library
 Your `[...nextauth].ts` file within the Next application will be updated to use the new Redis adapter:
 
 ```typescript
-import { Redis } from "ioredis";
-import NextAuth from "next-auth";
-import AzureADProvider from "next-auth/providers/azure-ad";
+import { Redis } from 'ioredis';
+import NextAuth from 'next-auth';
+import AzureADProvider from 'next-auth/providers/azure-ad';
 
-import { IORedisAdapter } from "@0-5-23-next-with-test-app/next-auth-redis";
+import { IORedisAdapter } from '@0-5-23-next-with-test-app/next-auth-redis';
 
 const nextAuth = NextAuth({
   providers: [

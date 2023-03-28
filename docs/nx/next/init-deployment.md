@@ -87,9 +87,9 @@ As a rule of thumb, each task here references a target execution via Nx defined 
 
 ```yaml
 helm:
-  description: Lint Helm Charts
-  command:
-    - npx nx affected --base="$BASE_SHA" --target=helm-lint
+    description: Lint Helm Charts
+    command:
+      - npx nx affected --base="$BASE_SHA" --target=helm-lint
 ```
 
 `apps/myapp/project.json`
@@ -150,7 +150,7 @@ If the generator is used with the openTelemetry option it will add auto instrume
 
 ```yaml
 podAnnotations:
-  instrumentation.opentelemetry.io/inject-nodejs: "true"
+    instrumentation.opentelemetry.io/inject-nodejs: 'true'
 ```
 
 :::caution
