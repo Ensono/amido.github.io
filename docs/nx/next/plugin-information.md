@@ -15,9 +15,10 @@ keywords:
 ---
 
 import Init from './init.md'
+import NextInitDeployment from './init-deployment.md'
 import NextAuth from './next-auth.md'
-import NextInfra from './infra.md'
 import NextAuthRedis from './next-auth-redis.md'
+import NextAuthRedisDeployment from './next-auth-redis-deployment.md'
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -25,7 +26,7 @@ The `next` plugin contains generators to augment existing NextJs projects. Addin
 
 Using a standard setup for your Next app ensures consistency and code quality across multiple applications quickly. NextAuth (alongside Redis) can also be quickly added to a project without costly configuration and setup.
 
-Using the infrastructure generator you can setup your application with the necessary infrastructure config to host it in k8s, with optional OpenTelemetry auto instrumentation.
+Using the deployment generator you can setup your application with the necessary infrastructure config to host it in k8s, with optional OpenTelemetry auto instrumentation.
 
 ## Prerequisites
 
@@ -34,6 +35,12 @@ An existing [Next](https://nextjs.org/) application. Note the generator will fai
 ```bash
 nx g @nrwl/next:app my-new-app
 ```
+
+Ensure the `stacks` -> `executedGenerators` fields are present within `nx.json` for FE code generation.
+
+Ensure the `stacks` -> `config` fields are present and populated within `nx.json` for deployment/infra generation.
+
+An example of the expected structure can be [seen here](/docs/nx/workspace/ensono-stacks-workspace#prerequisites) under `@ensono-stacks/workspace:init`​ prerequisites.
 
 ## Setting up @ensono-stacks/next
 
@@ -71,8 +78,11 @@ nx g @ensono-stacks/next:[generator-executor-name] --help
 ```
 
 ### Generators
+
 <!-- markdownlint-disable MD033 -->
 <Init />
+<NextInitDeployment />
+
 <NextAuth />
 <NextAuthRedis />
-<NextInfra />
+<NextAuthRedisDeployment/>

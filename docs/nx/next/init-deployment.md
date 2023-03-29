@@ -1,10 +1,11 @@
 <!-- markdownlint-disable MD041 -->
-### @ensono-stacks/next:infrastructure
+
+### @ensono-stacks/next:init-deployment
 
 <details>
-<summary>Configure Infrastructure for your Next project</summary>
+<summary>Configure Deployment & Infra for your Next project</summary>
 
-The infrastructure generator will provide all the necessary tools and setup ready to host your application in a Kubernetes Cluster. You can also choose to opt in to OpenTelemetry auto instrumentation.
+The deployment generator will provide all the necessary tools and setup ready to host your application in a Kubernetes Cluster. You can also choose to opt in to OpenTelemetry auto instrumentation.
 
 ## Prerequisites
 
@@ -13,7 +14,7 @@ An existing [Next](https://nextjs.org/) application. This may already exist if y
 ## Usage
 
 ```bash
-nx g @ensono-stacks/next:infrastructure
+nx g @ensono-stacks/next:init-deployment
 ```
 
 ### Command line arguments
@@ -62,36 +63,6 @@ The following command line arguments are available:
 @jscutlery/semver
 ```
 
-- It is a requirement for the `stacks` object to exist inside `nx.json`, as this is read to know how to scaffold the infrastructure as code values. This object will already be populated by this point via the previous project scaffolding steps.
-
-```json
-"stacks": {
-    "business": {
-      "company": "Amido",
-      "domain": "stacks",
-      "component": "nx"
-    },
-    "domain": {
-      "internal": "test.com",
-      "external": "test.dev"
-    },
-    "cloud": {
-      "platform": "azure",
-      "region": "euw"
-    },
-    "pipeline": "azdo",
-    "terraform": {
-      "group": "terraform-group",
-      "storage": "terraform-storage",
-      "container": "terraform-container"
-    },
-    "vcs": {
-      "type": "github",
-      "url": "remote.git"
-    }
-  }
-```
-
 ## Understanding the Infrastructure
 
 Azure devops configuration exists within the build folder for each new generated app project. This folder lives at root.
@@ -124,18 +95,15 @@ helm:
 `apps/myapp/project.json`
 
 ```yaml
-"helm-lint": {
+"helm-lint":
+  {
     "executor": "nx:run-commands",
-    "options": {
-        "commands": [
-            {
-                "command": "helm lint",
-                "forwardAllArgs": false
-            }
-        ],
-        "cwd": "apps/myapp/build/helm"
-    }
-}
+    "options":
+      {
+        "commands": [{ "command": "helm lint", "forwardAllArgs": false }],
+        "cwd": "apps/myapp/build/helm",
+      },
+  }
 ```
 
 Hence, running the following will trigger the intended execution. The pipeline takes care of this for us.
