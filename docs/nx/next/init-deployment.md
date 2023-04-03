@@ -103,8 +103,8 @@ helm:
     "executor": "nx:run-commands",
     "options":
       {
-        "commands": [{ "command": "lint", "forwardAllArgs": false }],
-        "cwd": "apps/myapp/build/helm",
+        "commands": [{ "command": "helm lint", "forwardAllArgs": false }],
+        "cwd": "libs/next-helm-chart/build/helm",
       },
   }
 ```
