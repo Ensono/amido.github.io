@@ -87,20 +87,20 @@ As a rule of thumb, each task here references a target execution via Nx defined 
 
 ```yaml
 helm:
-    description: Lint Helm Charts
-    command:
-      - npx nx affected --base="$BASE_SHA" --target=helm-lint
+  description: Lint Helm Charts
+  command:
+    - npx nx affected --base="$BASE_SHA" --target=lint
 ```
 
 `apps/myapp/project.json`
 
 ```yaml
-"helm-lint":
+"lint":
   {
     "executor": "nx:run-commands",
     "options":
       {
-        "commands": [{ "command": "helm lint", "forwardAllArgs": false }],
+        "commands": [{ "command": "lint", "forwardAllArgs": false }],
         "cwd": "apps/myapp/build/helm",
       },
   }
@@ -109,7 +109,7 @@ helm:
 Hence, running the following will trigger the intended execution. The pipeline takes care of this for us.
 
 ```bash
-npx nx affected --base="$BASE_SHA" --target=helm-lint
+npx nx affected --base="$BASE_SHA" --target=lint
 ```
 
 Following on from this, we can see various steps such as linting, building, running helm, versioning and terraform are subsequently executed.
@@ -150,7 +150,7 @@ If the generator is used with the openTelemetry option it will add auto instrume
 
 ```yaml
 podAnnotations:
-    instrumentation.opentelemetry.io/inject-nodejs: 'true'
+  instrumentation.opentelemetry.io/inject-nodejs: "true"
 ```
 
 :::caution
