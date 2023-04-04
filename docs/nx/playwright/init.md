@@ -4,8 +4,7 @@
 <details>
 <summary>Create a playwright test project for your chosen application</summary>
 
-The _init_ generator creates a playwright project for the application you choose. Additionally it initialises your playwright project with additional stacks configuration and adds playwright tests to your pipeline if present.
-
+The _init_ generator creates a playwright project for the application you choose.
 ## Usage
 
 ```bash

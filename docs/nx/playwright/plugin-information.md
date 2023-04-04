@@ -13,8 +13,10 @@ keywords:
   - executor
 ---
 import InitGenerator from './init.md'
+import InitDeploy from './init-deployment.md'
 import AccessibilityGenerator from './accessibility.md'
-import Visual from './visualRegression.md'
+import Visual from './visual-regression.md'
+import VisualDeploy from './visual-regression-deployment.md'
 import Executor from './executor.md'
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -67,8 +69,10 @@ nx g @ensono-stacks/playwright:[generator-executor-name] --help
 ### Generators
 <!-- markdownlint-disable MD033 -->
 <InitGenerator />
+<InitDeploy />
 <AccessibilityGenerator />
 <Visual />
+<VisualDeploy />
 
 ### Executors
 
