@@ -23,7 +23,7 @@ import TabItem from '@theme/TabItem';
 
 Using the `@ensono-stacks/playwright` plugin can help you get started with testing using playwright, with it's comprehensive feature set this plugin helps you capitalise on those features by accelerating your setup process and providing examples to get you started. 
 
-Additionally, if infrastructure has been generated through the [`@ensono-stacks/next:infrastructure`](../next/plugin-information.md#ensono-stacksnextinfrastructure) then Playwright E2E tests will be added to your pipelines!
+Additionally, playwright tests can be added to your deployment pipelines through the various deployment generators.
 
 :::tip
 
