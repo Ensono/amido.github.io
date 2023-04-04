@@ -13,6 +13,7 @@ keywords:
   - executor
 ---
 import Init from './init.md'
+import InitDeployment from './init-deployment.md'
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -66,6 +67,4 @@ nx g @ensono-stacks/workspace:[generator-executor-name] --help
 ### Generators
 <!-- markdownlint-disable MD033 -->
 <Init />
-
-
-
+<InitDeployment />
