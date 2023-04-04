@@ -153,6 +153,6 @@ To accelerate your project development and ensure consistency across those proje
 | [`@ensono-stacks/playwright`](./playwright/plugin-information.md)                 | Add the playwright testing library and much more to your project!<li>Create a playwright testing project for your application</li><li>Add accessibility testing to your test project</li><li>Add native visual testing with playwright</li><li>Add visual testing with Applitools eyes</li><li>Add playwright testing and reporting automatically to your build pipelines</li>              |
 | [`@ensono-stacks/logger`](./logger/plugin-information.md)                         | Add industry standard logging capabilities to your project<li>Add Winston to your project</li>                |
 
-### Further Notes:
+### Further Notes
 
 Quite a few of our generators have a safeguard of sorts to prevent running them subsequent times. This has been implemented to prevent accidental overwriting of further developed custom code following an understanding that most likely multiple runs would not be required anyway. However, if for your own reasons you would like to re-run such a generator, then you are simply required to remove the relevant project/generator or workspace/generator name entry within the `stacks` -> `executedGenerators` fields within `nx.json`.
