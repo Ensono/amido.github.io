@@ -43,12 +43,7 @@ Visit the [`Playwright`](../../nx/playwright/plugin-information.md) Stacks plugi
   </div>
 </details>
 
-When scaffolding your application, you will be presented with the following options:
-
--	Axe:
-    -	Preconfigures an axe implementation / configuration, axe being the standard toolset in accessibility testing.
-- None:
-    -	If you would prefer an alternative to axe, then the none option allows you to scaffold your project without these libraries being bundled in. 
+The [`@ensono-stacks/playwright:accessibility`](../../nx/playwright/plugin-information.md#ensono-stacksplaywrightaccessibility) generator enables you to add Axe accessibility tests to your application, if you would prefer an alternative to axe, then simply use an alternative plugin within your workspace!
 
 ### Visual Regression Testing
 
@@ -61,11 +56,9 @@ When scaffolding your application, you will be presented with the following opti
   </div>
 </details>
 
-Alongside scaffolding your test framework you will be presented with the opportunity to integrate the following into your project:
+If you are considering adding visual regression tests to your application, then we provide two options with the [`@ensono-stacks/playwright:visual-regression`](../../nx/playwright/plugin-information.md#ensono-stacksplaywrightvisual-regression) generator:
 
 -	Applitools eyes
     -	A powerful visual regression testing tool that detects visual changes, updates of browsers or OS, and integrates with popular testing frameworks and CI/CD pipelines, making it easy to automate visual regression testing and improve the quality and user-friendliness of digital products. Our community of experts recommend this software as the best approach, to decide if it is right for you, please visit [Applitools Eyes!](https://applitools.com/platform/eyes/)
 -	Native
     - A free alternative to cloud-based providers which enables developers to perform automated visual regression testing using the latest web platform features in their chosen testing framework.
--	None
-    -	If neither option meets your requirements, or visual regression testing is not something you are considering, then this can be omitted during the scaffolding process. 

@@ -139,7 +139,7 @@ function Picker() {
           "workloads/azure/backend/java/intro_java",
       },
     },
-    "Node JS / React": {
+    "Nx / Typescript": {
       "Server Side Rendered Web Application": {
         "Microsoft Azure [Azure]": "nx/nx_stacks",
       },
