@@ -32,12 +32,15 @@ The following command line arguments are available:
 ├── workspace root
     ├── apps
         ├── myapp
-            ├── build
+            ├── deploy
                 ├── helm
                 ├── terraform
+            ├── Dockerfile
+    ├── libs
+        ├── next-helm-chart
 ```
 
-- Creates numerous files under the two folders, helm and terraform. You can then go in and update relevant parts for your use case.
+- Creates numerous files; main helm config as a library `next-helm-chart` under libs and terraform config under the `deploy` folder within the app. You can then go in and update relevant parts for your use case.
 
 - Adds following files to .gitignore
 
@@ -106,19 +109,21 @@ helm:
   }
 ```
 
+### Helm
+
+The configuration files for Helm Charts live inside the libs folder under directory for your app, contained as its own library
+
+`myproject/apps/myapp/libs/next-helm-chart/build/helm`
+
+As a rule of thumb, target execution is defined via Nx inside project.json. The flag --target is used to pass in the appropriate values for each intended target run.
+
+`libs/next-helm-chart/project.json`
+
 Hence, running the following will trigger the intended execution. The pipeline takes care of this for us.
 
 ```bash
 npx nx affected --base="$BASE_SHA" --target=lint
 ```
-
-Following on from this, we can see various steps such as linting, building, running helm, versioning and terraform are subsequently executed.
-
-### Helm
-
-The configuration files for Helm Charts live inside the build folder under directory for your app, within the project
-
-`myproject/apps/myapp/build/helm`
 
 In the infra pipeline, the steps for Helm will begin by linting, followed by either an upgrade or install. If the Helm chart is already installed, then an upgrade occurs based on the given command. If it isn't installed, then an installation occurs instead. The command accepts a `--atomic` flag which will allow Helm to roll back to the previous release should a failure during upgrade occur. On install, this would cause the installation to fail if there were any issues.
 
@@ -138,7 +143,7 @@ Finally a Github release is tagged with relevant notes using jscutlery.
 
 ### Terraform
 
-This is the last group of tasks to run as part of the infrastructure. See `myproject/apps/myapp/build/terraform` for configuration files.
+This is the last group of tasks to run as part of the infrastructure. See `myproject/apps/myapp/deploy/terraform` for configuration files.
 
 One thing to highlight is that once the Terraform apply task is completed, a Helm install will also be executed. As mentioned earlier, the default behaviour is to deploy a non-production instance when a PR is created and once the PR is merged, then the deployment is made to production.
 
