@@ -17,7 +17,7 @@ Use the [@nrwl/next:custom-server](https://nx.dev/packages/next/generators/custo
 
 :::
 
-- It requires the APPLICATIONINSIGHTS_CONNECTION_STRING environment variable to be set.
+- Requires the APPLICATIONINSIGHTS_CONNECTION_STRING environment variable to be set.
 
 :::warning
 
@@ -35,11 +35,11 @@ nx generate @ensono-stacks/azure-node:app-insights
 
 The following command line arguments are available:
 
-| Option            | Description                                               | Type      | 
-| ---               | --------------------------------------------------------- | ---       | 
-| --project         | Target project name.                                      | string    | 
-| --appInsightsKey  | The env variable that stores the app insights key.        | string    | 
-| --server          | Path to custom server file inside the project.            | string    | 
+| Option                                 | Description                                                             | Type      | 
+| ---                                    | ---------------------------------------------------------               | ---       | 
+| --project                              | Target project name.                                                    | string    | 
+| --applicationinsightsConnectionString  | The env variable that stores the app insights connection string.        | string    | 
+| --server                               | Path to custom server file inside the project.                          | string    | 
 
 ### Generator Output
 

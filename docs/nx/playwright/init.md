@@ -4,7 +4,7 @@
 <details>
 <summary>Create a playwright test project for your chosen application</summary>
 
-The _init_ generator creates a playwright project for the application you choose. Additionally it initialises your playwright project with additional stacks configuration and adds playwright tests to your pipeline if present.
+The _init_ generator creates a playwright project for the application you choose.
 
 ## Usage
 
@@ -26,8 +26,6 @@ The following command line arguments are available:
 | --project             | The name of the application to generate a test project for      | string   |  
 
 ### Generator Output
-
-#### Default Output
 
 The _init_ generator will create a new test project for your chosen application containing an example test and predefined configuration for the monorepo and the individual test projects. 
 By default the _init_ generator will configure both a baseline playwright configuration and an individual project base playwright configuration.

@@ -1,43 +1,48 @@
 <!-- markdownlint-disable MD041 -->
+
 ### @ensono-stacks/workspace:init
 
 <details>
 <summary>Set up libraries to manage code & commit quality</summary>
 Set up libraries to manage code & commit quality, keeping projects consistent and will generally be useful in any workspace.
 
-Allows you to choose your recommended 3rd party provider options.
-
 ## Prerequisites
 
-To scaffold your workspace with infrastructure there is a dependency on the `stacks` field within `nx.json`.
+To scaffold your workspace with FE and deployment/infrastructure there is a dependency on the `stacks` -> `config` & `executedGenerators` fields within `nx.json`.
 If you have already run the Stacks CLI these fields will be automatically populated. Alternatively, if you created your workspace with `create-stacks-workspace`, these fields will have been populated if you passed in the relevant CLI arguments.
 If you are Stackifying an existing Nx workspace, this must be added manually - an example `stacks` field can be seen here:
 
 ```json
 {
   "stacks": {
-    "business": {
-      "company": "Ensono",
-      "domain": "stacks",
-      "component": "nx"
+    "config": {
+      "business": {
+        "company": "Ensono",
+        "domain": "stacks",
+        "component": "nx"
+      },
+      "domain": {
+        "internal": "test.com",
+        "external": "test.dev"
+      },
+      "cloud": {
+        "platform": "azure",
+        "region": "euw"
+      },
+      "pipeline": "azdo",
+      "terraform": {
+        "group": "terraform-group",
+        "storage": "terraform-storage",
+        "container": "terraform-container"
+      },
+      "vcs": {
+        "type": "github",
+        "url": "remote.git"
+      }
     },
-    "domain": {
-      "internal": "test.com",
-      "external": "test.dev"
-    },
-    "cloud": {
-      "platform": "azure",
-      "region": "euw"
-    },
-    "pipeline": "azdo",
-    "terraform": {
-      "group": "terraform-group",
-      "storage": "terraform-storage",
-      "container": "terraform-container"
-    },
-    "vcs": {
-      "type": "github",
-      "url": "remote.git"
+    "executedGenerators": {
+      "project": {},
+      "workspace": []
     }
   }
 }
@@ -57,12 +62,11 @@ nx g @ensono-stacks/workspace:init
 
 Interactive options can instead be passed via the command line:
 
-| Option           | Description                    | Type    | Accepted Values | Default |
-|------------------|--------------------------------|---------|-----------------|---------|
-| --husky          | Install & configure husky      | boolean | [true, false]   | true    |
-| --commitizen     | Install & configure commitizen | boolean | [true, false]   | true    |
-| --eslint         | Install & configure eslint     | boolean | [true, false]   | true    | 
-| --pipelineRunner | Which pipeline runner to use   | enum    | [taskctl, none] | taskctl | 
+| Option       | Description                    | Type    | Accepted Values | Default |
+| ------------ | ------------------------------ | ------- | --------------- | ------- |
+| --husky      | Install & configure husky      | boolean | [true, false]   | true    |
+| --commitizen | Install & configure commitizen | boolean | [true, false]   | true    |
+| --eslint     | Install & configure eslint     | boolean | [true, false]   | true    |
 
 ### Generator Output
 
@@ -81,30 +85,6 @@ Files created:
 │   ├── tsconfig.base.json
 ```
 
-If `--pipelineRunner=taskctl` is passed, the generator will also create a `build` directory:
-
-```cs
-├── workspace root
-│   ├── build
-│   ├── ├── azDevOps
-│   ├── ├── ├── azuredevops-runner.yaml - Azure Devops pipeline definition. Consumes `stages` and `vars` files in this directory
-│   ├── ├── ├── azuredevops-stages.yaml - Azure Devops pipeline stages
-│   ├── ├── ├── azuredevops-vars.yaml - Azure Devops variable definitions required by the pipeline
-│   ├── ├── taskctl
-│   ├── ├── ├── contexts.yaml - Context definitions for taskctl
-│   ├── ├── ├── tasks.yaml - Task definitions for taskctl to be consumed by the pipeline
-```
-
-This sets up a CI/CD pipeline to provide a smooth collaborative workflow.
-
-Currently supported pipeline tools are [Azure Devops](https://azure.microsoft.com/en-gb/products/devops/) and [taskctl](https://github.com/taskctl/taskctl).
-
-:::caution
-
-The `build` files will only be generated if required project values have been collected from the [Stacks CLI](../nx_monorepo.md#option-1-stacks-cli) or through the [@ensono-stacks/create-stacks-workspace](../nx_monorepo.md#option-2-create-stacks-workspace-generator) plugin. 
-
-:::
-
 #### Commit management
 
 Keeping commits well-structured and clear is key to enabling collaboration on a project. This generator initialises three tools to empower consistent commits:
@@ -117,7 +97,7 @@ Keeping commits well-structured and clear is key to enabling collaboration on a 
         "path": "@commitlint/cz-commit-lint"
     }
   }
-```  
+```
 
 - [Commitlint](https://commitlint.js.org/) - Standardised commit message format to make reading commit history easy. The generator installs Commitlint and uses it for commitizen config.
 - [Husky](https://typicode.github.io/husky/#/) - Git hook management tool. The generator adds a `prepare` script to ensure husky is always installed:
@@ -126,7 +106,7 @@ Keeping commits well-structured and clear is key to enabling collaboration on a 
 "scripts": {
     "prepare": "husky install"
   },
-```  
+```
 
 It also adds commitizen to the git `prepare-commit-msg` script, and Commitlint to the `commit-msg`. This means that you can simply run `git commit` and get the benefits of both tools.
 
@@ -135,6 +115,5 @@ It also adds commitizen to the git `prepare-commit-msg` script, and Commitlint t
 Stacks projects use ESLint and Typescript to help maintain code quality. Using the same config in every Stacks project ensures consistency and allows developers to more easily onboard onto new projects.
 
 This generator creates config files for both Typescript and ESLint and installs the relevant dependencies.
-
 
 </details>
