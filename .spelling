@@ -179,9 +179,9 @@ spec.ts
 InitGenerator
 init.md
 mands
- - ./docs/nx/azure-node/generator-app-insights.md
+ - ./docs/nx/azure-node/app-insights.md
 applicationinsights
-appInsightsKey
+applicationinsightsConnectionString
  - ./docs/nx/azure-node/plugin-information.md
 GeneratorAppInsights
 md
@@ -199,13 +199,13 @@ configs
  - ./docs/nx/workspace/init.md
 commitizen
 Commitlint
- - docs/nx/azure-node/generator-app-insights.md
+ - docs/nx/azure-node/app-insights.md
 applicationinsights
 nrwl
-appInsightsKey
+applicationinsightsConnectionString
  - docs/nx/azure-node/plugin-information.md
 GeneratorAppInsights
- - docs/nx/azure-react/generator-app-insights-web.md
+ - docs/nx/azure-react/app-insights-web.md
 reactjs
 connectionString
 importPath

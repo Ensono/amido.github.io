@@ -14,7 +14,8 @@ keywords:
   - appinsights
 ---
 
-import GeneratorAppInsights from './generator-app-insights.md';
+import GeneratorAppInsights from './app-insights.md';
+import GeneratorAppInsightsDeployment from './app-insights-deployment.md';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -61,6 +62,7 @@ nx g @ensono-stacks/azure-node:[generator-executor-name] --help
 ### Generators
 <!-- markdownlint-disable MD033 -->
 <GeneratorAppInsights />
+<GeneratorAppInsightsDeployment />
 
 
 
