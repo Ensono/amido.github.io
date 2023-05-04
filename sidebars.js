@@ -75,6 +75,7 @@ module.exports = {
         type: "category",
         label: "Azure",
         items: [
+
           {
             type: "category",
             label: "Frontend Web Applications",
@@ -195,6 +196,14 @@ module.exports = {
                   "workloads/azure/backend/netcore/security_netcore",
                 ],
               },
+            ],
+          },
+          {
+            type: "category",
+            label: "Data Platform",
+            items: [
+              "workloads/azure/data_platform/data_platform_overview",
+              "workloads/azure/data_platform/data_platform_getting_started",
             ],
           },
         ],
