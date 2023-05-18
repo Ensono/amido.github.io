@@ -16,6 +16,7 @@ keywords:
 import HttpClient from './http-client.md'
 import ClientEndpoint from './client-endpoint.md'
 import BumpVersion from './bump-version.md'
+import OpenapiClient from './openapi-client.md'
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -63,7 +64,9 @@ nx g @ensono-stacks/rest-client:[generator-executor-name] --help
 ```
 
 ### Generators
+
 <!-- markdownlint-disable MD033 -->
 <HttpClient />
 <ClientEndpoint />
 <BumpVersion />
+<OpenapiClient />
