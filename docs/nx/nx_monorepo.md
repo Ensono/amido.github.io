@@ -62,16 +62,16 @@ We recommend installing Nx globally, all Nx based commands in this guide are bas
 <Tabs>
   <TabItem value="npm" label="npm">
 
-  ```bash
-  npm install -g nx
-  ```
+```bash
+npm install -g nx
+```
 
   </TabItem>
   <TabItem value="yarn" label="yarn">
 
-  ```bash
-  yarn global add nx
-  ```
+```bash
+yarn global add nx
+```
 
   </TabItem>
 </Tabs>
@@ -142,16 +142,16 @@ Visit the [@ensono-stacks/workspace](./workspace/plugin-information.md) docs for
 
 To accelerate your project development and ensure consistency across those projects, we have several stacks plugins available!
 
-| Plugin                                                                            | Description                                                            |
-| :-------------------------------------------------------------------------------- | :--------------------------------------------------------------------- |
-| [`@ensono-stacks/create-stacks-workspace`](./create-stacks-workspace/plugin-information.md) | Create an Nx workspace using stacks!<li>Create an Nx workspace for a Next application with your choice of testing framework!</li><li>Create a testing project for the generated Next application. Supported: Playwright</li>                                   |
-| [`@ensono-stacks/workspace`](./workspace/plugin-information.md)                   | 'Stackify' your existing Nx workspace<li>Add build and deploy infrastructure to your workspace</li><li>Set up libraries to manage code & commit quality</li>                                  |
-| [`@ensono-stacks/next`](./next/plugin-information.md)                             | Enhance your Next.js project with Stacks!<li>Add stacks configuration and developer tools to an existing next application</li><li>Add NextAuth.js to your next application</li><li>Add Redis for session management with NextAuth.js</li><li>Add build and deploy infrastructure to your next application</li>                             |
-| [`@ensono-stacks/azure-node`](./azure-node/plugin-information.md)                 | <li>Add Azure app insights to a node project in your stacks workspace</li>      |
-| `@ensono-stacks/azure-react`              | <li><b>Coming soon!</b></li><li>Install and configure a ReactJS library with app insights</li> |
-| [`@ensono-stacks/rest-client`](./rest-client/plugin-information.md)               | Add a rest client to a project in your stacks workspace<li>Create an Axios http-client with custom configuration</li><li>Create a client endpoint with Axios HTTP methods for your application</li><li>Bump existing endpoints to new versions</li>                |
-| [`@ensono-stacks/playwright`](./playwright/plugin-information.md)                 | Add the playwright testing library and much more to your project!<li>Create a playwright testing project for your application</li><li>Add accessibility testing to your test project</li><li>Add native visual testing with playwright</li><li>Add visual testing with Applitools eyes</li><li>Add playwright testing and reporting automatically to your build pipelines</li>              |
-| [`@ensono-stacks/logger`](./logger/plugin-information.md)                         | Add industry standard logging capabilities to your project<li>Add Winston to your project</li>                |
+| Plugin                                                                                      | Description                                                                                                                                                                                                                                                                                                                                                                    |
+| :------------------------------------------------------------------------------------------ | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [`@ensono-stacks/create-stacks-workspace`](./create-stacks-workspace/plugin-information.md) | Create an Nx workspace using stacks!<li>Create an Nx workspace for a Next application with your choice of testing framework!</li><li>Create a testing project for the generated Next application. Supported: Playwright</li>                                                                                                                                                   |
+| [`@ensono-stacks/workspace`](./workspace/plugin-information.md)                             | 'Stackify' your existing Nx workspace<li>Add build and deploy infrastructure to your workspace</li><li>Set up libraries to manage code & commit quality</li>                                                                                                                                                                                                                   |
+| [`@ensono-stacks/next`](./next/plugin-information.md)                                       | Enhance your Next.js project with Stacks!<li>Add stacks configuration and developer tools to an existing next application</li><li>Add NextAuth.js to your next application</li><li>Add Redis for session management with NextAuth.js</li><li>Add build and deploy infrastructure to your next application</li>                                                                 |
+| [`@ensono-stacks/azure-node`](./azure-node/plugin-information.md)                           | <li>Add Azure app insights to a node project in your stacks workspace</li>                                                                                                                                                                                                                                                                                                     |
+| `@ensono-stacks/azure-react`                                                                | <li><b>Coming soon!</b></li><li>Install and configure a ReactJS library with app insights</li>                                                                                                                                                                                                                                                                                 |
+| [`@ensono-stacks/rest-client`](./rest-client/plugin-information.md)                         | Add a rest client to a project in your stacks workspace<li>Create an Axios http-client with custom configuration</li><li>Create a client endpoint with Axios HTTP methods for your application</li><li>Bump existing endpoints to new versions</li><li>Create code implementation from an openapi schema using Orval</li>                                                      |
+| [`@ensono-stacks/playwright`](./playwright/plugin-information.md)                           | Add the playwright testing library and much more to your project!<li>Create a playwright testing project for your application</li><li>Add accessibility testing to your test project</li><li>Add native visual testing with playwright</li><li>Add visual testing with Applitools eyes</li><li>Add playwright testing and reporting automatically to your build pipelines</li> |
+| [`@ensono-stacks/logger`](./logger/plugin-information.md)                                   | Add industry standard logging capabilities to your project<li>Add Winston to your project</li>                                                                                                                                                                                                                                                                                 |
 
 ### Further Notes
 
