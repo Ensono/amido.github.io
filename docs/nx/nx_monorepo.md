@@ -41,17 +41,17 @@ For the reasons listed above we have chosen to use Nx within Stacks for CSR and 
 Nx makes scaling easy. Modern techniques such as distributed task execution and computation caching make sure your CI times remain fast, even as you keep adding projects to your workspace.
 
 - Never rebuild the same code twice
-  - Nx is smart! It can figure out whether the same computation has run before and can restore the files and the terminal output from its cache.
+    - Nx is smart! It can figure out whether the same computation has run before and can restore the files and the terminal output from its cache.
 - Distributed task execution (DTE)
-  - Smart, automated, dynamic distribution of tasks across multiple machines to get maximum parallelization and CPU efficient CI runs.
+    - Smart, automated, dynamic distribution of tasks across multiple machines to get maximum parallelization and CPU efficient CI runs.
 - Remote caching
-  - Share your local computation cache with team mates and your CI system for maximum efficiency.
+    - Share your local computation cache with team mates and your CI system for maximum efficiency.
 - Only run what changed
-  - Nothing is faster than not running a task. Nx analyses your project graph and can diff it against a baseline to determine which projects changed and what tasks need to be re-run.
+    - Nothing is faster than not running a task. Nx analyses your project graph and can diff it against a baseline to determine which projects changed and what tasks need to be re-run.
 - Large community
-  - Nx is built on top of the popular Node.js platform, which has a large and active community of developers. This means that developers using Nx can easily find support and resources online.
+    - Nx is built on top of the popular Node.js platform, which has a large and active community of developers. This means that developers using Nx can easily find support and resources online.
 - Better code-sharing
-  - Nx provides powerful features for sharing code between different applications, which can help teams collaborate more effectively and reduce duplication of effort.
+    - Nx provides powerful features for sharing code between different applications, which can help teams collaborate more effectively and reduce duplication of effort.
 
 ## Set up your stacks workspace
 
