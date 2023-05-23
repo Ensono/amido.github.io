@@ -5,7 +5,7 @@
 <details>
 <summary>Configure Deployment & Infra for your Next project</summary>
 
-The deployment generator will provide all the necessary tools and setup ready to host your application in a Kubernetes Cluster. You can also choose to opt in to OpenTelemetry auto instrumentation.
+The deployment generator will provide all the necessary tools and setup ready to host your application in a Kubernetes Cluster.
 
 ## Prerequisites
 
@@ -24,7 +24,6 @@ The following command line arguments are available:
 | Option          | Description                            | Type              | Accepted Values | Default |
 | --------------- | -------------------------------------- | ----------------- | --------------- | ------- |
 | --project       | The name of the project                | nameOfApplication | string          | N/A     |
-| --openTelemetry | Add OpenTelemetry auto instrumentation | boolean           | true/false      | false   |
 
 ### Generator Output
 
@@ -146,20 +145,5 @@ Finally a Github release is tagged with relevant notes using jscutlery.
 This is the last group of tasks to run as part of the infrastructure. See `myproject/apps/myapp/deploy/terraform` for configuration files.
 
 One thing to highlight is that once the Terraform apply task is completed, a Helm install will also be executed. As mentioned earlier, the default behaviour is to deploy a non-production instance when a PR is created and once the PR is merged, then the deployment is made to production.
-
-### OpenTelemetry
-
-OpenTelemetry is a collection of tools, APIs, and SDKs. Use it to instrument, generate, collect, and export telemetry data (metrics, logs, and traces) to help you analyse your software’s performance and behaviour.
-
-If the generator is used with the openTelemetry option it will add auto instrumentation to the pods, and the application will start exporting default node metrics and traces.
-
-```yaml
-podAnnotations:
-  instrumentation.opentelemetry.io/inject-nodejs: "true"
-```
-
-:::caution
-OpenTelemetry logs are in an experimental phase, this means there is no node support at the moment, and there is no known ETA either.
-:::
 
 </details>
