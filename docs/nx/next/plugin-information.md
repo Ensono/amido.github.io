@@ -26,7 +26,7 @@ The `next` plugin contains generators to augment existing NextJs projects. Addin
 
 Using a standard setup for your Next app ensures consistency and code quality across multiple applications quickly. NextAuth (alongside Redis) can also be quickly added to a project without costly configuration and setup.
 
-Using the deployment generator you can setup your application with the necessary infrastructure config to host it in k8s, with optional OpenTelemetry auto instrumentation.
+Using the deployment generator you can setup your application with the necessary infrastructure config to host it in k8s.
 
 ## Prerequisites
 
