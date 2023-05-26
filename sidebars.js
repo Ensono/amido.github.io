@@ -91,6 +91,7 @@ module.exports = {
                   //"nx/azure-react/ensono-stacks-azure-react", Temporarily removed, add back in Cycle 11
                   "nx/rest-client/ensono-stacks-rest-client",
                   "nx/playwright/ensono-stacks-playwright",
+                  "nx/cypress/ensono-stacks-cypress",
                   "nx/logger/ensono-stacks-logger",
                 ],
               },
@@ -286,6 +287,14 @@ module.exports = {
                   "testing/testing_in_nx/playwright_visual_testing_applitools_eyes",
                 ],
               },
+            ],
+          },
+          {
+            type: "category",
+            label: "Cypress Information",
+            items: [
+              "testing/testing_in_nx/testing_with_cypress",
+              "testing/testing_in_nx/cypress_accessibility_testing",
             ],
           },
         ],
