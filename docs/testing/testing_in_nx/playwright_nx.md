@@ -169,7 +169,7 @@ nx serve next-app
 
 ### Running your playwright tests
 
-Using NX we can very easily run our tests, either for the a specific project, or against any affected projects. NX will handle provisioning and tearing down of the web server automatically!
+Using NX we can very easily run our tests, either for a specific project, or against any affected projects. NX will handle provisioning and tearing down of the web server automatically!
 Using the NX ‘affected’ capability allows you to run only the tests within a mono repo where the codebase has changes since the ‘master’ commit. (See the [docs](https://nx.dev/concepts/affected) for more information)
 
 
