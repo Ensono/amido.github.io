@@ -4,7 +4,7 @@
 <details>
 <summary>Add cypress E2E tests to your deployment pipelines</summary>
 
-The _init-deployment_ generator adds e2e testing to preexisting deployment pipelines, including test reporting and artefact uploads.
+The _init-deployment_ generator adds e2e testing to pre-existing deployment pipelines, including test reporting and artefact uploads.
 
 ## Prerequisites
 

@@ -176,7 +176,7 @@ Cypress has many configuration options for test reporting which can be found in 
 
 #### Locally 
 
-Using the scaffolded [base configuration](#base-configuration) all test results will be output to the terminal using cypresss **_spec_** reporter, an example output can be seen below:
+Using the scaffolded [base configuration](#base-configuration) all test results will be output to the terminal using cypress **_spec_** reporter, an example output can be seen below:
 
 ```bash
   Cypress example tests @example-cypress
@@ -225,7 +225,7 @@ The following plugins are dependencies for adding cypress to your build and depl
 
 :::
 
-- Running the [`@ensono-stacks/cypress:init-deployment`](../../nx/cypress/plugin-information.md#ensono-stackscypressinit-deployment) generator will configure your taskctl pipelines with the relevent test/reporting tasks.
+- Running the [`@ensono-stacks/cypress:init-deployment`](../../nx/cypress/plugin-information.md#ensono-stackscypressinit-deployment) generator will configure your taskctl pipelines with the relevant test/reporting tasks.
 - Upon a pull request being made this will automatically trigger a build pipeline for your application whereby the e2e tests for the application will be ran.
 - As defined in the [base configuration](#base-configuration) all test artefacts are output to 'test-results/<app-name\>'
 
@@ -243,6 +243,6 @@ When running in the CI three reporters are utilised:
 
 ![Azure Pipeline Test Results](/img/azure-test-pipeline-test-results-cypress.png)
 
-**Test artefacts:** To download the test artefacts captured by Cypress select the _build_ job on the summary page, within the build log click on the 'artifact produced' link, from here you can then download the 'testresults' folder for the test run. 
+**Test artefacts:** To download the test artefacts captured by Cypress select the _build_ job on the summary page, within the build log click on the 'artefact produced' link, from here you can then download the 'testresults' folder for the test run. 
 
 ![Azure Pipeline Build log](/img/azure-test-pipeline-build-log.png)
