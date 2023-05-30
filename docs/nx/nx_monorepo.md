@@ -108,7 +108,7 @@ Visit the [NX Example](../stackscli/about.md) for the complete instructions/exam
 
 ### Option 2: Create stacks workspace generator
 
-You can scaffold a brand new Stacks and Nx workspace through the **@ensono-stacks/create-stacks-workspace** plugin.
+You can scaffold a brand new Stacks and Nx workspace through the **@ensono-stacks/create-stacks-workspace** package.
 
 Follow the interactive questions with the below command to get started:
 
@@ -151,6 +151,7 @@ To accelerate your project development and ensure consistency across those proje
 | `@ensono-stacks/azure-react`                                                                | <li><b>Coming soon!</b></li><li>Install and configure a ReactJS library with app insights</li>                                                                                                                                                                                                                                                                                 |
 | [`@ensono-stacks/rest-client`](./rest-client/plugin-information.md)                         | Add a rest client to a project in your stacks workspace<li>Create an Axios http-client with custom configuration</li><li>Create a client endpoint with Axios HTTP methods for your application</li><li>Bump existing endpoints to new versions</li><li>Create code implementation from an openapi schema using Orval</li>                                                      |
 | [`@ensono-stacks/playwright`](./playwright/plugin-information.md)                           | Add the playwright testing library and much more to your project!<li>Create a playwright testing project for your application</li><li>Add accessibility testing to your test project</li><li>Add native visual testing with playwright</li><li>Add visual testing with Applitools eyes</li><li>Add playwright testing and reporting automatically to your build pipelines</li> |
+| [`@ensono-stacks/cypress`](./cypress/plugin-information.md)                           | Add the cypress testing library and much more to your project!<li>Add accessibility testing to your test project</li><li>Add cypress testing and reporting automatically to your build pipelines</li> |
 | [`@ensono-stacks/logger`](./logger/plugin-information.md)                                   | Add industry standard logging capabilities to your project<li>Add Winston to your project</li>                                                                                                                                                                                                                                                                                 |
 
 ### Further Notes

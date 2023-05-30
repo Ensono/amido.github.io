@@ -4,7 +4,7 @@
 <details>
 <summary>Adds axe accessibility tests to your test project</summary>
 
-The _accessibility_ generator installs the required plugins for conducting accessibility tests with cypress. Additionally, this will configure your test project to enable proper test reporting from `axe` while providing you with an example set of test cases.
+The _accessibility_ generator installs the required plugins for conducting accessibility testing with cypress. Additionally, this will configure your test project to enable proper test reporting from `axe` while providing you with an example set of test cases.
 
 ## Usage
 
