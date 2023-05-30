@@ -172,7 +172,7 @@ nx e2e <app-name> --env.grep="@smoke-test"
 
 ### Viewing your test results
 
-Cypress has many configuration options for test reporting which can be found in [the documentation](https://Cypress.dev/docs/test-reporters).
+Cypress has many configuration options for test reporting which can be found in [the documentation](https://docs.cypress.io/guides/tooling/reporters).
 
 #### Locally 
 
@@ -217,43 +217,32 @@ To change the reporter being used locally you can amend the [`cypress.config.ts`
 
 ### Output in CI
 
+:::info
 The following plugins are dependencies for adding cypress to your build and deployment pipelines:
 
 - [`@ensono-stacks/workspace:init`](../../nx/workspace/plugin-information.md#generators)
 - [`@ensono-stacks/next:init-deployment`](../../nx/next/plugin-information.md#ensono-stacksnextinit-deployment)
 
-Running the [`@ensono-stacks/cypress:init-deployment`](../../nx/cypress/plugin-information.md#ensono-stackscypressinit-deployment) generator will then configure your taskctl pipelines with the relevent test/reporting tasks.
+:::
 
-Upon a pull request being made this will automatically trigger a build pipeline for your application whereby the e2e test project will be ran.
-
-As defined in the [base configuration](#base-configuration) all test artefacts are output to 'test-results/<app-name\>'
+- Running the [`@ensono-stacks/cypress:init-deployment`](../../nx/cypress/plugin-information.md#ensono-stackscypressinit-deployment) generator will configure your taskctl pipelines with the relevent test/reporting tasks.
+- Upon a pull request being made this will automatically trigger a build pipeline for your application whereby the e2e tests for the application will be ran.
+- As defined in the [base configuration](#base-configuration) all test artefacts are output to 'test-results/<app-name\>'
 
 When running in the CI three reporters are utilised:
 
-// Spec: CI/Local (Default logging to console)
-  // mocha-junit-reporter: CI (JUnit XML reports for CI reporting)
-  // mochawesome: CI (Used for HTML report generation)
-
-
 1. spec: Default cypress console reporting.
-2. ???: A self-contained folder that contains report for the test run that can be served as a web page. Output to 'test-results/<app-name\>/html-report'.
-3. ???: A JUnit-style xml report which can be fed back into CI reports on the test run. Output to 'test-results/<app-name\>/<app-name\>.xml'
+2. mocha-junit-reporter: A JUnit-style xml reports which are fed back into CI reports on the test run. Output to 'test-results/<app-name\>/downloads/junit-report'.
+3. mochawesome: Reports for each test which are used as the basis for html report generation. Output to 'test-results/<app-name\>/downloads/reports-json-file'.
 
 **Build summary:** You can view a summary of your build by viewing the pipeline which was ran upon pull request creation.
 
-![Azure Pipeline Summary](/img/azure-test-pipeline-summary.png)
+![Azure Pipeline Summary](/img/azure-test-pipeline-summary-cypress.png)
 
 **Test results:** As part of your generated pipelines test results will be automatically displayed within the summary tab for the build.
 
-![Azure Pipeline Test Results](/img/azure-test-pipeline-test-results.png)
+![Azure Pipeline Test Results](/img/azure-test-pipeline-test-results-cypress.png)
 
 **Test artefacts:** To download the test artefacts captured by Cypress select the _build_ job on the summary page, within the build log click on the 'artifact produced' link, from here you can then download the 'testresults' folder for the test run. 
 
 ![Azure Pipeline Build log](/img/azure-test-pipeline-build-log.png)
-
-<!-- markdownlint-disable MD034 -->
-:::caution HTML Report - Viewing Trace Views
-
-When downloading/viewing HTML reports uploaded as test artefacts to your pipeline, you may experience issues opening **[trace views](https://Cypress.dev/docs/trace-viewer)** as these must be loaded over **http://** or **https://** protocols, we recommend copying the 'testresult' folder into your local workspace and then using **npx Cypress show-report 'html-report path'** to serve the report to localhost
-
-:::
