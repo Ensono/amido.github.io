@@ -15,101 +15,144 @@ keywords:
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
-Accessibility testing with Playwright is very simple and ensures that everyone, including those with disabilities or impairments can fully access and use the site or app. It is not only a legal requirement, but also a moral and ethical one, to ensure that digital products are inclusive and usable by all.
+Accessibility testing with Cypress is very simple and ensures that everyone, including those with disabilities or impairments can fully access and use the site or app. It is not only a legal requirement, but also a moral and ethical one, to ensure that digital products are inclusive and usable by all.
 
 ## Axe: Accessibility testing
 
-From the Dequeue family of products, we are using [aXe](https://www.deque.com/axe/) for accessibility testing, specifically their Node.js plugin, [`@axe-core/playwright`](https://github.com/dequelabs/axe-core-npm/blob/develop/packages/playwright/README.md), for integration into the Playwright testing framework.
+From the Dequeue family of products, we are using [aXe](https://www.deque.com/axe/) for accessibility testing. Using their Node.js plugin, [`axe-core`](https://www.npmjs.com/package/axe-core), we also utilise [`cypress-axe`](https://www.npmjs.com/package/cypress-axe) for integration into the Cypress testing framework.
 
 ### Scaffolded Example
 
 When accessibility tests are scaffolded into your project you will see the following example:
 
-```typescript title="axe-accessibility.spec.ts"
-import { test, expect } from '@playwright/test';
-import AxeBuilder from '@axe-core/playwright';
-import { prettyPrintAxeReport } from 'axe-result-pretty-print';
+```typescript title="axe-accessibility.cy.ts"
+import 'cypress-axe';
+import { terminalLogAxe } from '../support/e2e';
 
-test.describe('NextJs example accessibility tests @accessibility', () => {
-  
-  test('should not have any automatically detectable WCAG A or AA violations', async ({
-    page,
-  }) => {
-    await page.goto('/');
-    await new AxeBuilder({ page })
-      .withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'])
-      .analyze()
-      .then((results) => {
-        prettyPrintAxeReport({
-          violations: results.violations,
-          passes: results.passes,
-        });
-        expect(results.violations,'No violations should be present, see console log').toHaveLength(0)
-      });
+describe('@accessibility-tests', () => {
+  beforeEach(() => {
+    cy.visit('/');
+    cy.injectAxe();
   });
+
+  it('Has no detectable a11y violations on load (with custom parameters)', () => {
+    // Test the page at initial load (with context and options)
+    cy.checkA11y(
+      null,
+      {
+        runOnly: {
+          type: 'tag',
+          values: ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'],
+        },
+      },
+      terminalLogAxe
+    );
+  });
+
+  it('Has no detectable a11y violations on load (filtering to only include critical impact violations)', () => {
+    // Test on initial load, only report and assert for critical impact items
+    cy.checkA11y(
+      null,
+      {
+        includedImpacts: ['critical'],
+      },
+      terminalLogAxe
+    );
+  });
+
+  // Basic usage after interacting with the page
+  it('Has no a11y violations after button click', () => {
+    // Interact with the page, then check for a11y issues
+    cy.contains('a', "What's next?").click();
+    cy.checkA11y(null, undefined, terminalLogAxe);
+  });
+
+  it('Only logs a11y violations while allowing the test to pass', () => {
+    // Do not fail the test when there are accessibility failures
+    cy.checkA11y(null, undefined, terminalLogAxe, true);
+  });
+
+  it('Has no a11y violations after asynchronous load', () => {
+    // Retry the check if there are initial failures
+    cy.checkA11y(
+      null,
+      {
+        retries: 3,
+        interval: 100,
+      },
+      terminalLogAxe
+    );
+  });
+});
+
+```
+
+Using `cypress-axe` we first inject `axe-core` into the webpage within our _beforeEach_ hook, this ensures that each test in the spec file has been set up to run tests using the axe testing engine.
+
+```typescript
+beforeEach(() => {
+  cy.visit('/');
+  // highlight-next-line
+  cy.injectAxe();
 });
 ```
 
-Using the AxeBuilder, a chainable API for playwright, we automatically inject axe into all frames. Using the optional `withTags()` function we can specify the WCAG guidelines we want to verify our application conforms to. 
+Using the `cy.checkA11y()` function ([see docs for usage](https://github.com/component-driven/cypress-axe/blob/master/README.md)) we then test the webpage against various accessibility rules.
 
 ```typescript
-// highlight-next-line
-await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa']).analyze()
-      .then((results) => {
-        prettyPrintAxeReport({
-          violations: results.violations,
-          passes: results.passes,
-        });
-        expect(results.violations,'No violations should be present, see console log').toHaveLength(0)
-      });
-```
-
-Upon axe analysis we then pass the results object to the `then()` function. In here we use the axe-result-pretty-print to view the accessibility test results in a readable format.
-
-```typescript
-await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa']).analyze()
-      .then((results) => {
+it('Has no detectable a11y violations on load (with custom parameters)', () => {
+    // Test the page at initial load (with context and options)
+    cy.checkA11y(
+      null,
+      {
         // highlight-start
-        prettyPrintAxeReport({
-          violations: results.violations,
-          passes: results.passes,
-        });
+        runOnly: {
+          type: 'tag',
+          values: ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'],
+        },
         // highlight-end
-        expect(results.violations,'No violations should be present, see console log').toHaveLength(0)
-      });
+      },
+      terminalLogAxe
+    );
+    
+});
 ```
 
-The violations array within the results object detail any elements of the application which have breached the specified/default web content accessibility guidelines. As such, we assert that there are no entries in the array, if there are more than one elements then the test will fail.
+Passing the `terminalLogAxe` function as a callback to `cy.checkA11y()` then creates and prints a readable table of accessibility violations to the console. (The `terminalLogAxe` function has been added to your _app-name/cypress/support/e2e.ts_ file)
 
 ```typescript
-await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa']).analyze()
-      .then((results) => {
-        // highlight-start
-        prettyPrintAxeReport({
-          violations: results.violations,
-          passes: results.passes,
-        });
-        // highlight-next-line
-        expect(results.violations,'No violations should be present, see console log').toHaveLength(0)
-      });
+it('Has no detectable a11y violations on load (with custom parameters)', () => {
+    // Test the page at initial load (with context and options)
+    cy.checkA11y(
+      null,
+      {
+        runOnly: {
+          type: 'tag',
+          values: ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'],
+        },
+      },
+      // highlight-next-line
+      terminalLogAxe
+    );
+});
 ```
 
 ### Running your accessibility tests
 
-We recommend tagging your Playwright accessibility tests so that you can target these specific tests if required. In the below examples we have tagged the tests with **@accessibility** which enables us to target them through **grep** as seen in the ['Run specific tests'](./playwright_nx.md#run-specific-tests) example
+We recommend tagging your Cypress accessibility tests so that you can target these specific tests if required. In the below examples we have tagged the tests with **@accessibility** which enables us to target them through **grep** as seen in the ['Run specific tests'](./cypress_nx.md#run-specific-tests) example
 
 <Tabs>
  <TabItem value="grouped" label="Grouped">
 
  ```typescript
  //multiple tests grouped in a describe block
- test.describe('Example test group @accessibility', () => {
+ describe('Example test group @accessibility', () => {
             
-    test('accessibility test 1', async ({ page }) => {
+    it('accessibility test 1', async ({ page }) => {
         //test code
     });
 
-    test('accessibility test 2', async ({ page }) => {
+    it('accessibility test 2', async ({ page }) => {
         //test code
     });
  }
@@ -119,8 +162,8 @@ We recommend tagging your Playwright accessibility tests so that you can target 
  <TabItem value="individual" label="Individual">
 
  ```typescript
- test('Example individual test @accessibility', async ({ page }) => {
-    //Accessibility test with AxeBuilder
+ it('Example individual test @accessibility', () => {
+    //Accessibility test with axe
  });
  ```
 
@@ -129,29 +172,16 @@ We recommend tagging your Playwright accessibility tests so that you can target 
 
 ## Viewing your test results
 
-Further to the explanation given in the ['Testing with Playwright'](./playwright_nx.md#running-your-playwright-tests) page, accessibility test results can also be found in the console output post execution.
+Further to the explanation given in the ['Testing with Cypress'](./cypress_nx.md#running-your-cypress-tests) page, accessibility test results can also be found in the console output post execution.
 
 ```text title="Sample AXE report"
-
-Page passed 16 axe rules: aria-allowed-attr, aria-hidden-body, aria-required-attr, aria-roles, aria-valid-attr-value, aria-valid-attr, avoid-inline-spacing, bypass, color-contrast, document-title, duplicate-id-active, duplicate-id, link-name, meta-viewport, nested-interactive, svg-img-alt
-Axe core library found 3 violations
-┌─────────┬───────────────────────────────────────────────────────────────────────────────────────────────────────────┬──────────────────┬─────────────────────┬───────────┬───────┐
-│ (index) │                                                description                                                │        id        │        wcag         │  impact   │ nodes │
-├─────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────┼──────────────────┼─────────────────────┼───────────┼───────┤
-│    0    │ 'Ensures the contrast between foreground and background colors meets WCAG 2 AA contrast ratio thresholds' │ 'color-contrast' │ 'WCAG 2.0 Level AA' │ 'serious' │   1   │
-│    1    │                            'Ensures every HTML document has a lang attribute'                             │ 'html-has-lang'  │ 'WCAG 2.0 Level A'  │ 'serious' │   1   │
-│    2    │  'Ensures <svg> elements with an img, graphics-document or graphics-symbol role have an accessible text'  │  'svg-img-alt'   │ 'WCAG 2.0 Level A'  │ 'serious' │   1   │
-└─────────┴───────────────────────────────────────────────────────────────────────────────────────────────────────────┴──────────────────┴─────────────────────┴───────────┴───────┘
-1. id: 'color-contrast' learn more: https://dequeuniversity.com/rules/axe/4.6/color-contrast?application=playwright
-   name: Elements must have sufficient color contrast
-   description: Ensures the contrast between foreground and background colors meets WCAG 2 AA contrast ratio thresholds
-   WCAG: 'WCAG 2.0 Level AA'
-   Affected elements:
-		Selector: "#love"Source code: <p id="love">
-
-2. id: 'html-has-lang' learn more: https://dequeuniversity.com/rules/axe/4.6/html-has-lang?application=playwright
-   name: <html> element must have a lang attribute
-   description: Ensures every HTML document has a lang attribute
-   WCAG: 'WCAG 2.0 Level A'
-
+1) Has no detectable a11y violations on load (with custom parameters)
+3 accessibility violations were detected
+┌─────────┬──────────────────┬───────────┬───────────────────────────────────────────────────────────────────────────────────────────────────────────────────┬───────┐
+│ (index) │        id        │  impact   │                                                    description                                                    │ nodes │
+├─────────┼──────────────────┼───────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────┼───────┤
+│    0    │ 'color-contrast' │ 'serious' │ 'Ensures the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds' │   1   │
+│    1    │ 'html-has-lang'  │ 'serious' │                                'Ensures every HTML document has a lang attribute'                                 │   1   │
+│    2    │  'svg-img-alt'   │ 'serious' │      'Ensures <svg> elements with an img, graphics-document or graphics-symbol role have an accessible text'      │   3   │
+└─────────┴──────────────────┴───────────┴───────────────────────────────────────────────────────────────────────────────────────────────────────────────────┴───────┘
 ```
