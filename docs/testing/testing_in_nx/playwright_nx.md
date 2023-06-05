@@ -169,7 +169,7 @@ nx serve next-app
 
 ### Running your playwright tests
 
-Using NX we can very easily run our tests, either for the a specific project, or against any affected projects. NX will handle provisioning and tearing down of the web server automatically!
+Using NX we can very easily run our tests, either for a specific project, or against any affected projects. NX will handle provisioning and tearing down of the web server automatically!
 Using the NX ‘affected’ capability allows you to run only the tests within a mono repo where the codebase has changes since the ‘master’ commit. (See the [docs](https://nx.dev/concepts/affected) for more information)
 
 
@@ -269,7 +269,7 @@ When running in the CI three reporters are utilised:
 
 ![Azure Pipeline Test Results](/img/azure-test-pipeline-test-results.png)
 
-**Test artefacts:** To download the test artefacts captured by playwright select the _build_ job on the summary page, within the build log click on the 'artifact produced' link, from here you can then download the 'testresults' folder for the test run. 
+**Test artefacts:** To download the test artefacts captured by playwright select the _build_ job on the summary page, within the build log click on the 'artefact produced' link, from here you can then download the 'testresults' folder for the test run. 
 
 ![Azure Pipeline Build log](/img/azure-test-pipeline-build-log.png)
 

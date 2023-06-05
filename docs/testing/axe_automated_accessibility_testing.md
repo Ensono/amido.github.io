@@ -16,7 +16,7 @@ keywords:
 
 :::danger
 
-We recommend and already have support within [Playwright for Axe](./testing_in_nx/playwright_accessibility_testing.md)! Cypress support will also be moving to NX in the near future!
+We recommend and already have support within [Playwright for Axe](./testing_in_nx/playwright_accessibility_testing.md) and [Cypress for Axe](./testing_in_nx/cypress_accessibility_testing.md)!
 
 :::
 

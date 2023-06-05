@@ -14,7 +14,7 @@ keywords:
 
 :::danger
 
-Cypress support will soon be moving into NX. See [NX - Frontend Testing](./testing_in_nx/frontend_testing_in_nx.md) for more information!
+Cypress support has moved into NX. See [NX - Frontend Testing](./testing_in_nx/frontend_testing_in_nx.md) for more information!
 
 :::
 

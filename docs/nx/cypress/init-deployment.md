@@ -1,10 +1,10 @@
 <!-- markdownlint-disable MD041 -->
-### @ensono-stacks/playwright:init-deployment
+### @ensono-stacks/cypress:init-deployment
 
 <details>
-<summary>Add Playwright E2E tests to your deployment pipelines</summary>
+<summary>Add cypress E2E tests to your deployment pipelines</summary>
 
-The _init-deployment_ generator adds e2e testing to preexisting deployment pipelines, including test reporting and artefact uploads.
+The _init-deployment_ generator adds e2e testing to pre-existing deployment pipelines, including test reporting and artefact uploads.
 
 ## Prerequisites
 
@@ -13,7 +13,7 @@ The _init-deployment_ generator adds e2e testing to preexisting deployment pipel
 ## Usage
 
 ```bash
-nx g @ensono-stacks/playwright:init-deployment
+nx g @ensono-stacks/cypress:init-deployment
 ```
 
 ### Generator Output
@@ -30,15 +30,18 @@ e2e:ci:
 # New e2e:ci task will be added to the taskctl pipeline, adding e2e tests following unit testing
 - task: e2e:ci
     depends_on: test:ci
-- task: version:prod
-    depends_on: e2e:ci
 ```
 
 ```yaml build/azDevOps/azuredevops-stages.yaml
+# Generate HTML report for all affected projects
+- task: Bash@3
+            condition: and(succeededOrFailed(),eq(variables.HASTESTRESULTS, 'true'))
+            displayName: Generate Reports
+            inputs:
+              targetType: inline
+              script: npx nx affected --base="$BASE_SHA" --target=html-report
+                --configuration=ci --parallel=1
 # New test reporting steps will be added to the azuredevops pipeline
-- script: |-
-    # Install playwright added to setup step 
-    npx playwright install --with-deps
 - task: PublishTestResults@2
     # Configuration for publishing test results
 - task: PublishPipelineArtifact@1
