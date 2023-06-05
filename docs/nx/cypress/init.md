@@ -41,8 +41,9 @@ The _init_ generator will create a new test project within your chosen applicati
 │   │   │   ├── support
 │   │   │   │   ├── commands.ts #Example custom commands for cypress
 │   │   │   │   ├── e2e.ts #Configuration for cypress and test reporting
+│   │   │   ├── tsconfig.json #Typescript configuration for cypress
 │   │   ├── project.json #Updated with target for cypress and reporting
-│   │   ├── tsconfig.cy.json #Typescript configuration for cypress
+│   │   ├── tsconfig.json #Typescript configuration updated for cypress exclusions
 └── cypress.config.base.ts #Shared cypress configuration across projects
 ```
 
