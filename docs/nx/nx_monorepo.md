@@ -122,15 +122,9 @@ Visit the [@ensono-stacks/create-stacks-workspace](/docs/nx/create-stacks-worksp
 
 :::
 
-### Option 3: 'Stackify' your existing Nx workspace
+### Option 3: 'Stackify' your existing Nx monorepo
 
-If you already have an Nx workspace, you can still utilise stacks!
-
-Use the following command to get started!
-
-```bash
-nx g @ensono-stacks/workspace:init
-```
+If you already have an Nx monorepo, you can still utilise stacks!
 
 :::tip
 
@@ -144,9 +138,9 @@ To accelerate your project development and ensure consistency across those proje
 
 | Plugin                                                                                      | Description                                                                                                                                                                                                                                                                                                                                                                    |
 | :------------------------------------------------------------------------------------------ | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [`@ensono-stacks/create-stacks-workspace`](./create-stacks-workspace/plugin-information.md) | Create an Nx workspace using stacks!<li>Create an Nx workspace for a Next application with your choice of testing framework!</li><li>Create a testing project for the generated Next application. Supported: Playwright</li>                                                                                                                                                   |
+| [`@ensono-stacks/create-stacks-workspace`](./create-stacks-workspace/plugin-information.md) | Create an Nx workspace using stacks!<li>Create an Nx workspace for a Next application with your choice of testing framework!</li><li>Create a testing project for the generated Next application. Supported: Playwright & Cypress</li>                                                                                                                                                   |
 | [`@ensono-stacks/workspace`](./workspace/plugin-information.md)                             | 'Stackify' your existing Nx workspace<li>Add build and deploy infrastructure to your workspace</li><li>Set up libraries to manage code & commit quality</li>                                                                                                                                                                                                                   |
-| [`@ensono-stacks/next`](./next/plugin-information.md)                                       | Enhance your Next.js project with Stacks!<li>Add stacks configuration and developer tools to an existing next application</li><li>Add NextAuth.js to your next application</li><li>Add Redis for session management with NextAuth.js</li><li>Add build and deploy infrastructure to your next application</li>                                                                 |
+| [`@ensono-stacks/next`](./next/plugin-information.md)                                       | Enhance your Next.js project with Stacks!<li>Add stacks configuration and developer tools to an existing next application</li><li>Add NextAuth.js to your next application</li><li>Add build and deploy infrastructure to your next application</li>                                                                 |
 | [`@ensono-stacks/azure-node`](./azure-node/plugin-information.md)                           | <li>Add Azure app insights to a node project in your stacks workspace</li>                                                                                                                                                                                                                                                                                                     |
 | `@ensono-stacks/azure-react`                                                                | <li><b>Coming soon!</b></li><li>Install and configure a ReactJS library with app insights</li>                                                                                                                                                                                                                                                                                 |
 | [`@ensono-stacks/rest-client`](./rest-client/plugin-information.md)                         | Add a rest client to a project in your stacks workspace<li>Create an Axios http-client with custom configuration</li><li>Create a client endpoint with Axios HTTP methods for your application</li><li>Bump existing endpoints to new versions</li><li>Create code implementation from an OpenApi schema using Orval</li>                                                      |

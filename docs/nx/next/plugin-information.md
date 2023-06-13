@@ -17,8 +17,6 @@ keywords:
 import Init from './init.md'
 import NextInitDeployment from './init-deployment.md'
 import NextAuth from './next-auth.md'
-import NextAuthRedis from './next-auth-redis.md'
-import NextAuthRedisDeployment from './next-auth-redis-deployment.md'
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -84,5 +82,3 @@ nx g @ensono-stacks/next:[generator-executor-name] --help
 <NextInitDeployment />
 
 <NextAuth />
-<NextAuthRedis />
-<NextAuthRedisDeployment/>
