@@ -25,14 +25,14 @@ library, an open-source Python-based library, to perform these checks.
 
 The design of the Data Quality processing is outlined in the following diagram.
 
-![ADF_Ingest_AzureSql_Example_DQ.png](../../images/ADF_DataQualityDesign.png?raw=true)
+![ADF_Ingest_AzureSql_Example_DQ.png](../../images/ADF_DataQualityDesign.png)
 
 
 ## ADF Pipelines with DQ
 
 ### Ingest
 
-![ADF_Ingest_AzureSql_Example_DQ.png](../../images/ADF_Ingest_AzureSql_Example_DQ.png?raw=true)
+![ADF_Ingest_AzureSql_Example_DQ.png](../../images/ADF_Ingest_AzureSql_Example_DQ.png)
 
 ### Silver
 

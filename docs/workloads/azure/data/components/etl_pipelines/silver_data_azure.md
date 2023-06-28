@@ -23,7 +23,7 @@ our data processing.
 
 The diagram below gives an overview of the Silver pipeline design.
 
-![ADF_SilverPipelineDesign.png](../../images/ADF_SilverPipelineDesign.png?raw=true)
+![ADF_SilverPipelineDesign.png](../../images/ADF_SilverPipelineDesign.png)
 
 
 Silver processing is executed as Python Databricks job with the data transformation logic
