@@ -74,7 +74,7 @@ python pysparkle_cli.py data-quality --config-path "data_quality/silver_dq.json"
 ## Prerequisites
 
 Spark runs on Java 8/11/17, Java 8 prior to version 8u362 support is deprecated
-as of Spark 3.4.0. For details see: https://spark.apache.org/docs/latest/.
+as of Spark 3.4.0. For details see: [Spark Documentation](https://spark.apache.org/docs/latest/).
 
 ## Local execution
 

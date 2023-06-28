@@ -44,4 +44,4 @@ transformations from 'Bronze to Silver' layer and from 'Silver to Gold' layer, r
 * Azure Key Vault
 * Log Analytics Workspace
 * Databricks Workspace
-  * Azure Key Vault-backed secret scope
+    * Azure Key Vault-backed secret scope

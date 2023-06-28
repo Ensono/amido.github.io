@@ -31,6 +31,7 @@ This should be an extension to [intro_data_azure.md](../../intro_data_azure.md).
 * Azure Key Vault
 * Log Analytics Workspace
 * Databricks Workspace
-  * Azure Key Vault-backed secret scope
+    * Azure Key Vault-backed secret scope
 
-+ Networking, VNet, any additional security info
+
+& Networking, VNet, any additional security info
