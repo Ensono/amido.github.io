@@ -2,15 +2,13 @@
 id: data_quality_azure
 title: Data Quality
 sidebar_label: Data Quality
-hide_title: true
+hide_title: false
 hide_table_of_contents: false
 description: Approach to DQ validations
 keywords:
   - data quality
   - great expectations
 ---
-
-# Data Quality
 
 [stacks-azure-data](https://github.com/amido/stacks-azure-data) ETL pipelines in Azure Data Factory
 can be deployed with additional 'Data Quality' checks. These checks validate that the outputs of

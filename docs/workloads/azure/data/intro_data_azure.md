@@ -1,8 +1,8 @@
 ---
 id: intro_data_azure
-title: Architecture Overview
+title: Stacks Azure Data Platform – Architecture Overview
 sidebar_label: Architecture Overview
-hide_title: true
+hide_title: false
 hide_table_of_contents: false
 description: Architecture overview for the deployed solution
 keywords:
@@ -13,10 +13,6 @@ keywords:
   - azure
   - adf
 ---
-
-# Stacks Azure Data Platform
-
-## Overview
 
 The [Stacks Azure Data Platform](https://github.com/amido/stacks-azure-data) solution provides
 a template for deploying a production-ready data platform, including **Azure Data Factory** for data
@@ -40,6 +36,7 @@ transformations from 'Bronze to Silver' layer and from 'Silver to Gold' layer, r
 ![High-level architecture](images/Stacks_Azure_Data_Platform-HLD.png)
 
 ### Infrastructure deployed
+
 * Resource Group
 * Azure Data Factory
 * Azure Data Lake Storage Gen2

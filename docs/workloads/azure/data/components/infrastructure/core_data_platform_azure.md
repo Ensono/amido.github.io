@@ -2,7 +2,7 @@
 id: core_data_platform_azure
 title: Infrastructure
 sidebar_label: Infrastructure
-hide_title: true
+hide_title: false
 hide_table_of_contents: false
 description: Infrastructure overview
 keywords:
@@ -14,7 +14,7 @@ keywords:
   - key vault
 ---
 
-# Infrastructure - TODO
+## TODO
 
 Documentation on the Infrastructure used and (maybe) the high level deployment approach.
 Deployment details (usage manual, CLI commands) should be captured in
@@ -22,8 +22,8 @@ Deployment details (usage manual, CLI commands) should be captured in
 
 This should be an extension to [intro_data_azure.md](../../intro_data_azure.md).
 
-**TODO**: elaborate
 ### Infrastructure deployed
+
 * Resource Group
 * Azure Data Factory
 * Azure Data Lake Storage Gen2

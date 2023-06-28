@@ -2,7 +2,7 @@
 id: ingest_data_azure
 title: Data Ingestion
 sidebar_label: Data Ingestion
-hide_title: true
+hide_title: false
 hide_table_of_contents: false
 description: Data ingestion pipeline
 keywords:
@@ -11,7 +11,6 @@ keywords:
   - etl
 ---
 
-# Data Ingestion
 The solution contains a sample Azure Data Factory pipeline for ingesting data from a sample data
 source (Azure SQL) and loading data into the data lake 'landing' zone.
 
@@ -24,6 +23,7 @@ The diagram below gives an overview of the ingestion pipeline design.
 ![ADF_IngestPipelineDesign.png](../../images/ADF_IngestPipelineDesign.png)
 
 ## Configuration
+
 The ingest process is designed around reusable pipelines which are metadata-driven. This means once
 an initial data pipeline is created for a given data source, additional entities from the same data
 source can be added or modified just by updating a configuration file. These configuration files are
@@ -41,7 +41,7 @@ the keys required for a SQL database source).
 are provided to ensure the config files remain valid against the schema. See the descriptions of the
 example JSON config file below:
 
-```
+```bash
 {
     "data_source_name": "example_azuresql_1",  # Identifier of the data source - must be unique
     "data_source_type": "azure_sql",           # Data source type
@@ -68,6 +68,7 @@ source or entitiy without removing it, you can set `"enabled": false` – these 
 the Data Factory pipeline.
 
 ### Data Factory pipeline design
+
 The provided sample pipelines give an example of a data ingest process from source to the data lake.
 The pipelines folder is structured as follows:
 

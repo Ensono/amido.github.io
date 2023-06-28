@@ -2,7 +2,7 @@
 id: silver_data_azure
 title: Silver Pipeline
 sidebar_label: Silver Pipeline
-hide_title: true
+hide_title: false
 hide_table_of_contents: false
 description: Silver processing pipeline
 keywords:
@@ -11,8 +11,6 @@ keywords:
   - etl
   - databricks
 ---
-
-# Silver processing
 
 Silver processing represents the 'Bronze to Silver' layer transformations. It accepts raw data
 (e.g. CSV files) as an input and converts it into a more structured delta format.
@@ -48,6 +46,7 @@ which is an entrypoint to the PySparkle library. PySparkle is attached to a clus
 to its location in DBFS.
 
 Contents of `dbfs:/FileStore/scripts/silver.py`:
+
 ```python
 from pysparkle.pysparkle_cli import cli
 

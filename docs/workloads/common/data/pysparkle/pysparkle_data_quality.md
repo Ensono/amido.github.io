@@ -2,7 +2,7 @@
 id: pysparkle_data_quality
 title: PySparkle Data Quality
 sidebar_label: Data Quality
-hide_title: true
+hide_title: false
 hide_table_of_contents: false
 description: PySparkle Data Quality overview
 keywords:
@@ -13,7 +13,6 @@ keywords:
   - data quality
 ---
 
-# PySparkle Data Quality
 PySparkle performs data quality checks based on the user-provided configurations. At its core, it
 utilises the capabilities of the [Great Expectations](https://greatexpectations.io/) platform.
 
@@ -33,6 +32,7 @@ in the main README file.
 
 
 ## JSON Configuration File for Great Expectations
+
 This section describes the structure of the JSON configuration file used in our system.
 The configuration is defined using Python's Pydantic library for data validation.
 
@@ -60,7 +60,9 @@ Here is the description of the main elements:
         4. `expectation_kwargs`: The keyword arguments to pass to the expectation class.
 
 ### Example
+
 Here's a minimal example of a configuration file:
+
 ```json
 {
     "gx_directory_path": "/dbfs/great_expectations/",
@@ -92,6 +94,7 @@ Here's a minimal example of a configuration file:
 ```
 
 ### Using environment variables in configuration files
+
 It is possible to use environment variables in a configuration file for Data Quality.
 Placeholders in the form of `{ENV_VAR_NAME}` will be replaced with the corresponding environment
 variable values. For example, you can pass the ADLS name using an environment variable:
