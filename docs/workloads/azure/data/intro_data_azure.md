@@ -37,7 +37,7 @@ transformations from 'Bronze to Silver' layer and from 'Silver to Gold' layer, r
 
 ### High-level architecture
 
-![High-level architecture](images/Stacks_Azure_Data_Platform-HLD.png?raw=true)
+![High-level architecture](images/Stacks_Azure_Data_Platform-HLD.png)
 
 ### Infrastructure deployed
 * Resource Group
