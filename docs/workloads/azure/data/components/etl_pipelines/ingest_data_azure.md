@@ -48,7 +48,7 @@ example JSON config file below:
     "enabled": true,                           # Boolean flag to enable / disable the data source from being ingested
     "ingest_entities": [                       # Array of entities to be ingested from the source
         {
-            "version": 1,                      # Version number - increment this if the entitiy's schema changes
+            "version": 1,                      # Version number - increment this if the entity's schema changes
             "display_name": "SalesLT.Product", # Name to identify the entity - must be unique per data source
             "enabled": true,                   # Boolean flag to enable / disable the entity from being ingested
             "schema": "SalesLT",               # (SQL sources only) Database schema
@@ -64,7 +64,7 @@ example JSON config file below:
 
 These configuration files will be loaded in for a given data source every time an ingestion pipeline
 is triggered in Data Factory, and all entities will be ingested. To disable a particular ingest
-source or entitiy without removing it, you can set `"enabled": false` – these will be ignored by
+source or entity without removing it, you can set `"enabled": false` – these will be ignored by
 the Data Factory pipeline.
 
 ### Data Factory pipeline design
