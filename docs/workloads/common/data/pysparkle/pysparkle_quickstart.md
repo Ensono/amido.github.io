@@ -27,12 +27,12 @@ including nested datatypes and arrays, which give us enough complexity for trans
 ## Key components
 
 The naming convention for the data pipelines originates in Databricks' Medallion Architecture, which
-emphasizes structured data transformation layers. The key components of PySparkle include:
+emphasises structured data transformation layers. The key components of PySparkle include:
 
 - **Silver processing**: This represents the 'Bronze to Silver' layer transformations. It accepts
 raw data (CSV files) as an input and converts it into a more structured delta format.
 - **Gold processing**: This embodies the 'Silver to Gold' layer transformations. It performs
-advanced transformations, creating optimized, aggregated data sets for downstream consumption.
+advanced transformations, creating optimised, aggregated data sets for downstream consumption.
 - **Data Quality**: PySparkle performs data quality checks according to user-provided
 configurations, ensuring the reliability and accuracy of the data.
 
@@ -44,7 +44,7 @@ data processing workflows.
 
 > ℹ️ PySparkle Silver processing requires the following environment variables to be set
 > to access Azure Data Lake Storage (ADLS Gen2):
-> 
+>
 > - AZURE_TENANT_ID - Directory ID for Azure Active Directory application,
 > - AZURE_CLIENT_ID - Application ID for Azure Active Directory application,
 > - AZURE_CLIENT_SECRET - Service Principal Secret,
@@ -80,7 +80,7 @@ as of Spark 3.4.0. For details see: [Spark Documentation](https://spark.apache.o
 
 The current setup of PySparkle doesn't include the required libraries to connect
 to Azure Data Lake Storage (they are pre-installed and configured in Azure Databricks
-environment. To run the application locally, appropriate jar files would have to be
+environment). To run the application locally, appropriate jar files would have to be
 included in the Spark session (`spark.jars.packages` configuration parameter).
 
 ## Azure Data Factory setup
