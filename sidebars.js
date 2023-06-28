@@ -208,6 +208,7 @@ module.exports = {
                 type: "category",
                 label: "Components",
                 items: [
+                  "workloads/azure/data/components/infrastructure/core_data_platform_azure",
                   {
                     type: "category",
                     label: "ETL Pipelines",
@@ -225,7 +226,6 @@ module.exports = {
                       "workloads/common/data/pysparkle/pysparkle_data_quality",
                     ],
                   },
-                  "workloads/azure/data/components/infrastructure/core_data_platform_azure",
                 ],
               },
               {
