@@ -139,11 +139,8 @@ function Picker() {
           "workloads/azure/backend/java/intro_java",
       },
     },
-    "Nx / Typescript": {
-      "Server Side Rendered Web Application": {
-        "Microsoft Azure [Azure]": "nx/nx_stacks",
-      },
-      "Client Side Rendered Web Application": {
+    "Typescript / Nx": {
+      "Client Side or Server Side Rendered Web Application": {
         "Microsoft Azure [Azure]": "nx/nx_stacks",
       },
     },
