@@ -11,6 +11,7 @@
 - [Stacks Pipeline Templates](https://github.com/amido/stacks-pipeline-templates)
 - [Stacks Terraform](https://github.com/amido/stacks-terraform)
 - [Stacks Azure Infrastructure](https://github.com/amido/stacks-infrastructure-aks)
+- [Stacks Azure Data Platform](https://github.com/amido/stacks-azure-data)
 
 ### Packages
 

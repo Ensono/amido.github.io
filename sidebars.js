@@ -198,6 +198,47 @@ module.exports = {
               },
             ],
           },
+          {
+            type: "category",
+            label: "Data Platform",
+            items: [
+              "workloads/azure/data/intro_data_azure",
+              "workloads/azure/data/repository_data_azure",
+              {
+                type: "category",
+                label: "Components",
+                items: [
+                  "workloads/azure/data/components/infrastructure/core_data_platform_azure",
+                  {
+                    type: "category",
+                    label: "ETL Pipelines",
+                    items: [
+                      "workloads/azure/data/components/etl_pipelines/ingest_data_azure",
+                      "workloads/azure/data/components/etl_pipelines/silver_data_azure",
+                      "workloads/azure/data/components/etl_pipelines/data_quality_azure",
+                    ],
+                  },
+                  {
+                    type: "category",
+                    label: "PySparkle",
+                    items: [
+                      "workloads/common/data/pysparkle/pysparkle_quickstart",
+                      "workloads/common/data/pysparkle/pysparkle_data_quality",
+                    ],
+                  },
+                ],
+              },
+              {
+                type: "category",
+                label: "Getting Started",
+                items: [
+                  "workloads/azure/data/getting_started/requirements_data_azure",
+                  "workloads/azure/data/getting_started/core_data_platform_deployment_azure",
+                  "workloads/azure/data/getting_started/etl_pipelines_deployment_azure",
+                ],
+              },
+            ],
+          },
         ],
       },
       {
