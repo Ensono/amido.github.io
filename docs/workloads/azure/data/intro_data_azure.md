@@ -38,7 +38,7 @@ transformations from 'Bronze to Silver' layer and from 'Silver to Gold' layer, r
 ### Infrastructure deployed
 
 * Resource Group
-* MS SQL Database
+* Azure SQL Database
 * Key Vault
 * Azure Data Lake Storage Gen2
 * Azure Blob Storage

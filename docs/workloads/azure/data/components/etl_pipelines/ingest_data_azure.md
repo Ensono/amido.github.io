@@ -96,7 +96,7 @@ This will return the configuration required for the given data source.
        * Delta queries contain a `WHERE` clause to restrict the date range loaded.
     2. `SQL_to_ADLS`: Execute the SQL query against the data source, and copy the results to the
     Azure Data Lake storage landing container under the appropriate path (data is validated using
-    ADF`s built-in data validation capability).
+    ADF's built-in data validation capability).
 
 The following picture shows the two possibilities of full vs delta extraction in `Generate_Ingest_Query`:
 

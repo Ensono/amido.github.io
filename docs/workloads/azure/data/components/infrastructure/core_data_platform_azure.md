@@ -30,7 +30,7 @@ There are two subfolders in this directory:
 `infra` subfolder contains the following definitions:
 
 1. **Resource Group**
-2. **MS SQL Database** instance with database schemas
+2. **Azure SQL Database** sample instance with database schemas
 3. **Key Vault**
 4. **Key Vault Secrets**:
     * Connection strings for the created SQL databases
@@ -49,13 +49,13 @@ There are two subfolders in this directory:
     * **Managed identity** for the service instance;
     * **Managed virtual network** enabled by default. Creating an integration runtime within
     a managed virtual network ensures the data integration process is isolated and secure.
-9. **Managed private endpoints** created in the Data Factory managed virtual network that establish
-   private links to Azure resources, such as:
+9. **Managed private endpoints** created in the Data Factory managed virtual network, these
+   establish private links to Azure resources, such as:
     * Blob Storage
     * Azure Data Lake Storage
     * Key Vault
     * SQL Database
-10. **Role assignments** that assign an ADF managed identity roles to access the resources linked by
+10. **Role assignments** that assign ADF managed identity roles to access the resources linked by
    the private endpoints, as well as the Databricks workspace.
 11. **Log Analytics Workspace**
 
@@ -78,16 +78,16 @@ The following diagram shows network configuration in all three environments:
 
 Stacks Azure Data Platform uses VNet injection to deploy Databricks to a custom virtual network.
 
-We recommend that Azure Databricks is deployed in a fully secure manner using secure cluster
-connectivity and disabling public workspace access. This means that Databricks can only be accessed
-over a private endpoint from within the private network. This also means that projects would need to
-have networking prerequisites such as ExpressRoute or VPNs in order to access the workspace. If this
-is not possible, then a virtual machine will need to be set up within the transit subnet. Users will
-then need to RDP into the VM and access the workspace via that.
+In most scenarios, we would recommend that Azure Databricks is deployed in a fully secure manner
+using secure cluster connectivity and disabling public workspace access. This means that Databricks
+can only be accessed over a private endpoint from within the private network. This also means that
+projects would need to have networking prerequisites such as ExpressRoute or VPNs in order to access
+the workspace. If this is not possible, then a virtual machine will need to be set up within the
+transit subnet. Users will then need to RDP into the VM and access the workspace via that.
 
-Within Stacks setup, we provision Databricks with VNet injection, but leave the workspace UI open.
-This is to improve developer experience as there is no networking/VPN set up within stacks. If we
-lock down the workspace, then we would require extra virtual machines.
+Within the default Stacks deployment, Databricks is provisioned with VNet injection while leaving
+the workspace UI open. This is to improve developer experience in case there is no networking/VPN
+set up properly configured in the target subscription.
 
-Enabling public workspace access only opens the UI via public internet. Access is still restricted
-based on the IAM policy.
+Enabling public workspace access only opens access to the UI via public internet. Access is still
+restricted based on the IAM policy.
