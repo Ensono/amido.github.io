@@ -94,11 +94,10 @@ This will return the configuration required for the given data source.
     below will be applied:
        * Full extraction loads all available data for a given set of columns,
        * Delta queries contain a `WHERE` clause to restrict the date range loaded.
-
-       The following picture shows these two possibilities:
-
-       ![ADF_IngestGenerateIngestQuery.png](../../images/ADF_IngestGenerateIngestQuery.png)
-
     2. `SQL_to_ADLS`: Execute the SQL query against the data source, and copy the results to the
     Azure Data Lake storage landing container under the appropriate path (data is validated using
     ADF`s built-in data validation capability).
+
+The following picture shows the two possibilities of full vs delta extraction in `Generate_Ingest_Query`:
+
+![ADF_IngestGenerateIngestQuery.png](../../images/ADF_IngestGenerateIngestQuery.png)

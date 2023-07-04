@@ -33,7 +33,6 @@ There are two subfolders in this directory:
 2. **MS SQL Database** instance with database schemas
 3. **Key Vault**
 4. **Key Vault Secrets**:
-
     * Connection strings for the created SQL databases
     * Passwords to the SQL Databases
     * Service Principal Secret
@@ -42,30 +41,22 @@ There are two subfolders in this directory:
     * Names of the ADLS and Blob storage accounts
     * Other secret names with empty values to be replaced manually. Existing secrets are not
     overwritten.
-
 5. **Azure Data Lake Storage Gen2**
 6. **Azure Blob Storage**
 7. **Databricks Workspace** including:
-
     * **Key Vault-backed secret scope**
-
 8. **Azure Data Factory** including:
-
     * **Managed identity** for the service instance;
     * **Managed virtual network** enabled by default. Creating an integration runtime within
     a managed virtual network ensures the data integration process is isolated and secure.
-
 9. **Managed private endpoints** created in the Data Factory managed virtual network that establish
    private links to Azure resources, such as:
-
     * Blob Storage
     * Azure Data Lake Storage
     * Key Vault
     * SQL Database
-
 10. **Role assignments** that assign an ADF managed identity roles to access the resources linked by
    the private endpoints, as well as the Databricks workspace.
-
 11. **Log Analytics Workspace**
 
 ## Networking
