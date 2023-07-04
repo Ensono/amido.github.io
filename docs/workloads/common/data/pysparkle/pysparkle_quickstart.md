@@ -76,13 +76,6 @@ python pysparkle_cli.py data-quality --config-path "data_quality/silver_dq.json"
 Spark runs on Java 8/11/17, Java 8 prior to version 8u362 support is deprecated
 as of Spark 3.4.0. For details see: [Spark Documentation](https://spark.apache.org/docs/latest/).
 
-## Local execution
-
-The current setup of PySparkle doesn't include the required libraries to connect
-to Azure Data Lake Storage (they are pre-installed and configured in Azure Databricks
-environment). To run the application locally, appropriate jar files would have to be
-included in the Spark session (`spark.jars.packages` configuration parameter).
-
 ## Azure Data Factory setup
 
 Example setup for running PySparkle from ADF.

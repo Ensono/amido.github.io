@@ -1,6 +1,6 @@
 ---
 id: intro_data_azure
-title: Stacks Azure Data Platform – Architecture Overview
+title: Stacks Azure Data Platform
 sidebar_label: Architecture Overview
 hide_title: false
 hide_table_of_contents: false
@@ -38,10 +38,12 @@ transformations from 'Bronze to Silver' layer and from 'Silver to Gold' layer, r
 ### Infrastructure deployed
 
 * Resource Group
-* Azure Data Factory
+* Azure SQL Database
+* Key Vault
 * Azure Data Lake Storage Gen2
-* Azure Blob Storage (for config files)
-* Azure Key Vault
-* Log Analytics Workspace
+* Azure Blob Storage
 * Databricks Workspace
-    * Azure Key Vault-backed secret scope
+* Azure Data Factory
+* Log Analytics Workspace
+
+For details please see [Infrastructure](components/infrastructure/core_data_platform_azure.md).

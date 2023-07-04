@@ -232,6 +232,7 @@ module.exports = {
                 type: "category",
                 label: "Getting Started",
                 items: [
+                  "workloads/azure/data/getting_started/deployment_workflow",
                   "workloads/azure/data/getting_started/requirements_data_azure",
                   "workloads/azure/data/getting_started/core_data_platform_deployment_azure",
                   "workloads/azure/data/getting_started/etl_pipelines_deployment_azure",

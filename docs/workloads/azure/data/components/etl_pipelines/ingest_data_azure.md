@@ -86,19 +86,18 @@ The `Ingest_AzureSql_Example` pipeline consists of the following steps:
 
 ![ADF_Ingest_AzureSql_Example.png](../../images/ADF_Ingest_AzureSql_Example.png)
 
-1. **Get_Ingest_Config**: Calls the utility pipeline, passing the data source name as a parameter.
+1. `Get_Ingest_Config`: Calls the utility pipeline, passing the data source name as a parameter.
 This will return the configuration required for the given data source.
-2. **For_Each_Ingest_Entity**: Loop through each ingest entity performing the following steps:
-   1. **Generate_Ingest_Query**: Generates a SQL query to extract the data from a required time
-   range, according to the provided configuration. Depending on the load type, one of the two
-   scenarios below will be apploed:
+2. `For_Each_Ingest_Entity`: Loop through each ingest entity performing the following steps:
+    1. `Generate_Ingest_Query`: Generates a SQL query to extract the data from a required time range,
+    according to the provided configuration. Depending on the load type, one of the two scenarios
+    below will be applied:
        * Full extraction loads all available data for a given set of columns,
        * Delta queries contain a `WHERE` clause to restrict the date range loaded.
+    2. `SQL_to_ADLS`: Execute the SQL query against the data source, and copy the results to the
+    Azure Data Lake storage landing container under the appropriate path (data is validated using
+    ADF's built-in data validation capability).
 
-       The following picture shows these two possibilities:
+The following picture shows the two possibilities of full vs delta extraction in `Generate_Ingest_Query`:
 
-       <img src="../../images/ADF_IngestGenerateIngestQuery.png" alt="drawing" width="300"/>
-
-   2. **SQL_to_ADLS**: Execute the SQL query against the data source, and copy the results to the
-   Azure Data Lake storage landing container under the appropriate path (data is validated using
-   ADF`s built-in data validation capability).
+![ADF_IngestGenerateIngestQuery.png](../../images/ADF_IngestGenerateIngestQuery.png)
