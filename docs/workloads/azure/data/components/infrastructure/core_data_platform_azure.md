@@ -26,6 +26,7 @@ There are two subfolders in this directory:
 * `networking`
 
 ## Infra
+
 `infra` subfolder contains the following definitions:
 
 1. **Resource Group**
