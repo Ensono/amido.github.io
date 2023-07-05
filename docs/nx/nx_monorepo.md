@@ -57,6 +57,7 @@ Nx makes scaling easy. Modern techniques such as distributed task execution and 
 
 ### Prerequisites
 
+#### Nx
 We recommend installing Nx globally, all Nx based commands in this guide are based upon a globally installed Nx package.
 
 <Tabs>
@@ -75,6 +76,10 @@ yarn global add nx
 
   </TabItem>
 </Tabs>
+
+#### Node
+We recommend using the latest LTS version of Node, you can find the latest LTS version [here](https://nodejs.org/en/).
+
 
 ### Get Started
 
