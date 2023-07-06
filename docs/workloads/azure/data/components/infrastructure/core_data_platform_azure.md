@@ -38,7 +38,6 @@ There are two subfolders in this directory:
     * Service Principal Secret
     * Azure Tenant ID – Directory ID for Azure Active Directory application
     * Azure Client ID – Application ID for Azure Active Directory application
-    * Names of the ADLS and Blob storage accounts
     * Other secret names with empty values to be replaced manually. Existing secrets are not
     overwritten.
 5. **Azure Data Lake Storage Gen2**

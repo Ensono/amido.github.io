@@ -32,9 +32,12 @@ stacks-azure-data
 │   │   ├── Ingest_AzureSql_Example # Data ingestion pipeline with optional Data Quality checks
 ├── pysparkle       # Python library built to streamline data processing; packaged and uploaded to DBFS
 ├── utils           # Python utilities package used across solution for local testing
-├── .flake8                 # Configuration for Flake8 linting
-├── .pre-commit-config.yaml # Configuration for pre-commit hooks
-├── Makefile                # Includes commands for environment setup
-├── pyproject.toml          # Project dependencies
-└── README.md               # This file.
+├── .flake8         # Configuration for Flake8 linting
+├── .pre-commit-config.yaml         # Configuration for pre-commit hooks
+├── Makefile        # Includes commands for environment setup
+├── pyproject.toml  # Project dependencies
+├── README.md       # This file
+├── stackscli.yml   # Tells the Stacks CLI what operations to perform when the project is scaffolded
+├── taskctl.yaml    # Controls the independent runner
+└── yamllint.conf   # Linter configuration for YAML files used by the independent runner
 ```
