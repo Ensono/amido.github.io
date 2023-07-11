@@ -53,7 +53,7 @@ The generator will create a new application within your libs folder with the fol
 │   ├── tsconfig.spec.json // Typescript config for the library's test files
 │   ├── README.md // Information on the library and how to run scripts
 ├── jest.config.ts // Workspace-level Jest config - created if this does not already exist
-└── jest.preset.ts // Workspace-leve Jest preset that extends `@nrwl/jest/preset` - created if this does not already exist.
+└── jest.preset.ts // Workspace-leve Jest preset that extends `@nx/jest/preset` - created if this does not already exist.
 
 ```
 

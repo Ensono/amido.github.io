@@ -1,10 +1,10 @@
 <!-- markdownlint-disable MD041 -->
-### @nrwl/cypress:cypress
+### @nx/cypress:cypress
 
 <details>
 <summary>Enables you to execute your cypress tests</summary>
 
-The _cypress_ executor is an executor provided by `@nrwl/cypress` and enables you to run your e2e tests. 
+The _cypress_ executor is an executor provided by `@nx/cypress` and enables you to run your e2e tests. 
 
 ## Usage
 
@@ -16,7 +16,7 @@ nx e2e <app-name>
 
 ### Command line arguments
 
-See the [@nrwl/cypress](https://nx.dev/packages/cypress/executors/cypress) plugin page for a list of up to date command line arguments
+See the [@nx/cypress](https://nx.dev/packages/cypress/executors/cypress) plugin page for a list of up to date command line arguments
 
 
 </details>

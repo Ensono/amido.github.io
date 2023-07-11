@@ -17,7 +17,7 @@ Cypress is a powerful testing framework that has gained popularity for its robus
 
 ## Getting Started
 
-Upon scaffolding your application with the Cypress testing framework, you will be presented with an example test suite and cypress configuration. The [`@nrwl/cypress`](https://www.npmjs.com/package/@nrwl/cypress) NX plugin is used as a base for the Cypress/NX integration. 
+Upon scaffolding your application with the Cypress testing framework, you will be presented with an example test suite and cypress configuration. The [`@nx/cypress`](https://www.npmjs.com/package/@nx/cypress) NX plugin is used as a base for the Cypress/NX integration. 
 
 ## Cypress Configuration
 
@@ -26,7 +26,7 @@ Upon scaffolding your application with the Cypress testing framework, you will b
 The base configuration has been created with CI in mind, meaning the default configuration (shared across all projects) considers requirements for reporting and pipeline efficiency out of the box! This is created at the root of the project workspace and is used as the basis for each applications unique configuration. 
 
 ```typescript title="cypress.config.base.ts"
-import { nxE2EPreset } from '@nrwl/cypress/plugins/cypress-preset';
+import { nxE2EPreset } from '@nx/cypress/plugins/cypress-preset';
 
 const appName = process.env.NX_TASK_TARGET_PROJECT as string;
 const outputFolderForProject = process.env.CI
