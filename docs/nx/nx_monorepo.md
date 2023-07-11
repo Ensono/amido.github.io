@@ -87,6 +87,7 @@ CSR support is currently limited however we are actively working on this!
 :::
 
 #### Option 1: Stacks CLI
+
 The Stacks CLI is a command line interface that allows you to scaffold a brand new Stacks and Nx workspace. This is the recommended approach if you are planning to use Stacks to build your infrastructure as well as your frontend web applications.
 
 Once the Stacks CLI has been installed you can scaffold a brand new Stacks and Nx workspace through answering a set of interactive questions. Launch the Stacks CLI with the following command to get started:
@@ -111,7 +112,7 @@ Visit the [NX Example](../stackscli/about.md) for the complete instructions/exam
 
 You can scaffold a brand-new Stacks and Nx workspace using the **@ensono-stacks/create-stacks-workspace** package.
 
-This approach is ideal if you want to use Stacks to build your frontend web applications but already have an existing infrastructure set up without Stacks as it's not mandatory to provide any infrastructure details.
+This approach is ideal if you want to use Stacks to build your frontend web applications but already have an existing infrastructure set up without Stacks as it's not mandatory to provide any infrastructure details. However, it is still possible to use Option 2 for infrastructure and deployment through passing the required CLI arguments!
 
 Follow the interactive questions with the below command to get started:
 
