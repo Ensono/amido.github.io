@@ -42,8 +42,18 @@ transformations from 'Bronze to Silver' layer and from 'Silver to Gold' layer, r
 * Key Vault
 * Azure Data Lake Storage Gen2
 * Azure Blob Storage
-* Databricks Workspace
+* Databricks Workspace (optional)
 * Azure Data Factory
 * Log Analytics Workspace
 
 For details please see [Infrastructure](components/infrastructure/core_data_platform_azure.md).
+
+### Data Engineering workloads
+
+Example data engineering workloads are provided, which run within a deployed Stacks Azure Data Platform. These are categorised as follows:
+
+* [Ingest](components/etl_pipelines/ingest_data_azure.md)
+* [Data Processing](components/etl_pipelines/silver_data_azure.md)
+* Shared resources - to be referenced by multiple workloads (for example, common Data Factory linked services or datasets)
+
+Each of the ingest and data processing workloads may optionally include [Data Quality checks](components/etl_pipelines/data_quality_azure.md).
