@@ -14,7 +14,7 @@ keywords:
 The solution contains a sample Azure Data Factory pipeline for ingesting data from a sample data
 source (Azure SQL) and loading data into the data lake 'landing' zone.
 
-Link to the pipeline: [stacks-azure-data/ingest](https://github.com/amido/stacks-azure-data/tree/main/ingest).
+Link to the pipeline: [stacks-azure-data/de_workloads/ingest](https://github.com/amido/stacks-azure-data/tree/main/de_workloads/ingest/Ingest_AzureSql_Example).
 
 ## Pipeline overview
 
@@ -24,20 +24,19 @@ The diagram below gives an overview of the ingestion pipeline design.
 
 ## Configuration
 
-The ingest process is designed around reusable pipelines which are metadata-driven. This means once
+The ingest process is designed around reusable, metadata-driven pipelines. This means once
 an initial data pipeline is created for a given data source, additional entities from the same data
 source can be added or modified just by updating a configuration file. These configuration files are
-stored in the [config](https://github.com/amido/stacks-azure-data/tree/main/ingest/config) directory.
+stored in the pipeline's [config](https://github.com/amido/stacks-azure-data/tree/main/de_workloads/ingest/Ingest_AzureSql_Example/config) directory.
 
-JSON format is used for the configuration files. A common schema is to be used for all data ingest
-sources – our blueprint includes a sample configuration definition for the data ingestion sources
-([example_azuresql_1.json](https://github.com/amido/stacks-azure-data/blob/main/ingest/config/ingest_sources/example_azuresql_1.json))
-and its schema ([ingest_config_schema.json](https://github.com/amido/stacks-azure-data/blob/main/ingest/config/ingest_sources/schema/ingest_config_schema.json)).
+JSON format is used for the configuration files. Our blueprint includes a sample configuration definition for the data ingestion sources
+([Ingest_AzureSql_Example.json](https://github.com/amido/stacks-azure-data/blob/main/de_workloads/ingest/Ingest_AzureSql_Example/config/ingest_sources/Ingest_AzureSql_Example.json))
+and its schema ([ingest_config_schema.json](https://github.com/amido/stacks-azure-data/blob/main/de_workloads/ingest/Ingest_AzureSql_Example/config/schema/ingest_config_schema.json)).
 
-All data ingest sources are expected to have the same JSON keys, except for under `ingest_entities`,
-where different keys will be required dependent on the data source type (the example provided are
-the keys required for a SQL database source).
-[Tests](https://github.com/amido/stacks-azure-data/tree/main/ingest/jobs/Ingest_AzureSql_Example/tests/unit)
+The sample ingest pipeline is based around an Azure SQL data source, however the approach used should be adaptable for most other data source types with minimal modifications. Different data data source types would be expected to have the same JSON keys, except for under `ingest_entities`,
+where different keys will be required dependent on the data source type.
+
+[Unit tests](https://github.com/amido/stacks-azure-data/tree/main/de_workloads/ingest/Ingest_AzureSql_Example/tests/unit)
 are provided to ensure the config files remain valid against the schema. See the descriptions of the
 example JSON config file below:
 
@@ -62,7 +61,7 @@ example JSON config file below:
 }
 ```
 
-These configuration files will be loaded in for a given data source every time an ingestion pipeline
+These configuration files will be referenced each time an ingestion pipeline
 is triggered in Data Factory, and all entities will be ingested. To disable a particular ingest
 source or entity without removing it, you can set `"enabled": false` – these will be ignored by
 the Data Factory pipeline.
@@ -74,13 +73,13 @@ The pipelines folder is structured as follows:
 
 ![ADF_IngestPipelinesList.png](../../images/ADF_IngestPipelinesList.png)
 
-* `Ingest` contains ingest pipelines specific to the given data source. These are the parent
-pipelines that would be triggered on a recurring basis to ingest from a data source. All pipelines
-have their equivalents that include Data Quality validations. Depending on your particular needs,
-you can deploy each of the pipelines with or without this additional Data Quality step. More on
-Data Quality can be found [here](data_quality_azure.md).
+* `Ingest` contains ingest pipelines specific to the given data source. The naming convention for
+these pipelines is `Ingest_{SourceType}_{SourceName}`. These are the parent pipelines that would be
+triggered on a recurring basis to ingest from a data source. All pipelines have their equivalents
+that include Data Quality validations. Depending on your particular needs, you can deploy each of
+the pipelines with or without this additional Data Quality step. [Further information on Data Quality](data_quality_azure.md).
 * The pipelines within `Utilities` are reusable and referenced by other pipelines. They are not
-meant to be triggered independently.
+meant to be triggered independently. These are defined within the [shared_resources](https://github.com/amido/stacks-azure-data/tree/main/de_workloads/shared_resources) for the project.
 
 The `Ingest_AzureSql_Example` pipeline consists of the following steps:
 
