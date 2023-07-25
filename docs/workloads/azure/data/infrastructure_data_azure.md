@@ -84,7 +84,7 @@ projects would need to have networking prerequisites such as ExpressRoute or VPN
 the workspace. If this is not possible, then a virtual machine will need to be set up within the
 transit subnet. Users will then need to RDP into the VM and access the workspace via that.
 
-Even without public IPs and with the data plane deployed into our VNETs, there is still the option
+Even without public IPs and with the data plane deployed into our VNet, there is still the option
 to toggle access to the Workspace UI via public networks. The default configuration disallows access
 to the Databricks workspace over the public internet in production environments, while leaving it
 open in development environments. This approach enhances the developer experience in case there is
