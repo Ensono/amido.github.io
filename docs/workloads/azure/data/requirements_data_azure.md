@@ -6,7 +6,7 @@ hide_title: false
 hide_table_of_contents: false
 description: Requirements
 keywords:
-  - data cli
+  - requirements
 ---
 
 ## TODO

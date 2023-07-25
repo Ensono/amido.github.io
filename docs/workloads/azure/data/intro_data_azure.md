@@ -46,7 +46,7 @@ transformations from 'Bronze to Silver' layer and from 'Silver to Gold' layer, r
 * Azure Data Factory
 * Log Analytics Workspace
 
-For details please see [Infrastructure](components/infrastructure/core_data_platform_azure.md).
+For details please see [Infrastructure](infrastructure_data_azure.md).
 
 ### Data Engineering workloads
 

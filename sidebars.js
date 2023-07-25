@@ -204,11 +204,12 @@ module.exports = {
             items: [
               "workloads/azure/data/intro_data_azure",
               "workloads/azure/data/repository_data_azure",
+              "workloads/azure/data/requirements_data_azure",
+              "workloads/azure/data/infrastructure_data_azure",
               {
                 type: "category",
                 label: "Components",
                 items: [
-                  "workloads/azure/data/components/infrastructure/core_data_platform_azure",
                   {
                     type: "category",
                     label: "ETL Pipelines",
@@ -233,7 +234,6 @@ module.exports = {
                 label: "Getting Started",
                 items: [
                   "workloads/azure/data/getting_started/deployment_workflow",
-                  "workloads/azure/data/getting_started/requirements_data_azure",
                   "workloads/azure/data/getting_started/core_data_platform_deployment_azure",
                   "workloads/azure/data/getting_started/etl_pipelines_deployment_azure",
                 ],
