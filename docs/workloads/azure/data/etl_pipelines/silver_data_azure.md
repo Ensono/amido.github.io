@@ -21,17 +21,17 @@ our data processing.
 
 The diagram below gives an overview of the Silver pipeline design.
 
-![ADF_SilverPipelineDesign.png](../../images/ADF_SilverPipelineDesign.png)
+![ADF_SilverPipelineDesign.png](../images/ADF_SilverPipelineDesign.png)
 
 
 Silver processing is executed as Python Databricks job with the data transformation logic
-packaged within our [PySparkle](../../../../common/data/pysparkle/pysparkle_quickstart.md) library.
+packaged within our [PySparkle](../../../common/data/pysparkle/pysparkle_quickstart.md) library.
 
 ## Data Factory pipeline design
 
 The pipelines folder is structured as follows:
 
-![ADF_SilverPipelinesList.png](../../images/ADF_SilverPipelinesList.png)
+![ADF_SilverPipelinesList.png](../images/ADF_SilverPipelinesList.png)
 
 Similar to other ETL pipelines, Silver can optionally include a Data Quality validations step.
 Depending on your particular needs, you can deploy each of the pipelines with or without a Data
@@ -39,7 +39,7 @@ Quality step. More on Data Quality can be found [here](data_quality_azure.md).
 
 In ADF the base Silver pipeline is as simple as this:
 
-![ADF_Silver.png](../../images/ADF_silver.png)
+![ADF_Silver.png](../images/ADF_silver.png)
 
 It contains just one step - Python Databricks, configured to run a simple script (`silver.py`),
 which is an entrypoint to the PySparkle library. PySparkle is attached to a cluster by pointing

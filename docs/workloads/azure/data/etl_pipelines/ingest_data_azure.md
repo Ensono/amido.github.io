@@ -20,7 +20,7 @@ Link to the pipeline: [stacks-azure-data/de_workloads/ingest](https://github.com
 
 The diagram below gives an overview of the ingestion pipeline design.
 
-![ADF_IngestPipelineDesign.png](../../images/ADF_IngestPipelineDesign.png)
+![ADF_IngestPipelineDesign.png](../images/ADF_IngestPipelineDesign.png)
 
 ## Configuration
 
@@ -71,7 +71,7 @@ the Data Factory pipeline.
 The provided sample pipelines give an example of a data ingest process from source to the data lake.
 The pipelines folder is structured as follows:
 
-![ADF_IngestPipelinesList.png](../../images/ADF_IngestPipelinesList.png)
+![ADF_IngestPipelinesList.png](../images/ADF_IngestPipelinesList.png)
 
 * `Ingest` contains ingest pipelines specific to the given data source. The naming convention for
 these pipelines is `Ingest_{SourceType}_{SourceName}`. These are the parent pipelines that would be
@@ -83,7 +83,7 @@ meant to be triggered independently. These are defined within the [shared_resour
 
 The `Ingest_AzureSql_Example` pipeline consists of the following steps:
 
-![ADF_Ingest_AzureSql_Example.png](../../images/ADF_Ingest_AzureSql_Example.png)
+![ADF_Ingest_AzureSql_Example.png](../images/ADF_Ingest_AzureSql_Example.png)
 
 1. `Get_Ingest_Config`: Calls the utility pipeline, passing the data source name as a parameter.
 This will return the configuration required for the given data source.
@@ -99,4 +99,4 @@ This will return the configuration required for the given data source.
 
 The following picture shows the two possibilities of full vs delta extraction in `Generate_Ingest_Query`:
 
-![ADF_IngestGenerateIngestQuery.png](../../images/ADF_IngestGenerateIngestQuery.png)
+![ADF_IngestGenerateIngestQuery.png](../images/ADF_IngestGenerateIngestQuery.png)

@@ -1,10 +1,10 @@
 ---
 id: intro_data_azure
 title: Stacks Azure Data Platform
-sidebar_label: Architecture Overview
+sidebar_label: Introduction
 hide_title: false
 hide_table_of_contents: false
-description: Architecture overview for the deployed solution
+description: Introduction to Stacks Azure Data Platform
 keywords:
   - data
   - python
@@ -12,6 +12,7 @@ keywords:
   - databricks
   - azure
   - adf
+  - template
 ---
 
 The [Stacks Azure Data Platform](https://github.com/amido/stacks-azure-data) solution provides
@@ -22,12 +23,13 @@ Medallion Architecture, a system emphasising structured data transformation laye
 
 Key elements of the solution include:
 
-* Infrastructure as code (IaC) for all infrastructure components (Terraform & ARM Templates);
-* Azure Data Factory (ADF) resources and a sample ingest pipeline that transfers data from a sample
-source into a landing (Bronze) data lake zone;
-* Sample data processing pipelines named Silver and Gold. These are responsible for data
-transformations from 'Bronze to Silver' layer and from 'Silver to Gold' layer, respectively;
+* Infrastructure as code (IaC) for all infrastructure components (Terraform);
+* A sample ingest pipeline that transfers data from a source into a landing (Bronze) data lake zone;
+* Sample data processing pipelines named Silver and Gold. Silver is responsible for data transformations from Bronze
+to Silver layer, while Gold handles transformations from Silver to Gold layer;
 * Data Quality validations;
+* Datastacks CLI and templates, which allow generation of new ingestion or data processing pipelines based
+on the provided configuration;
 * Deployment pipelines to enable CI/CD and DataOps for all components;
 * Automated tests to ensure quality assurance and operational efficiency.
 
@@ -38,22 +40,22 @@ transformations from 'Bronze to Silver' layer and from 'Silver to Gold' layer, r
 ### Infrastructure deployed
 
 * Resource Group
-* Azure SQL Database
 * Key Vault
 * Azure Data Lake Storage Gen2
 * Azure Blob Storage
-* Databricks Workspace (optional)
 * Azure Data Factory
 * Log Analytics Workspace
+* Azure SQL Database (optional)
+* Databricks Workspace (optional)
 
 For details please see [Infrastructure](infrastructure_data_azure.md).
 
 ### Data Engineering workloads
 
-Example data engineering workloads are provided, which run within a deployed Stacks Azure Data Platform. These are categorised as follows:
+Example data engineering workloads are provided, which run within a deployed Stacks Azure Data Platform.
+These are categorised as follows:
 
-* [Ingest](components/etl_pipelines/ingest_data_azure.md)
-* [Data Processing](components/etl_pipelines/silver_data_azure.md)
-* Shared resources - to be referenced by multiple workloads (for example, common Data Factory linked services or datasets)
+* [Ingest](etl_pipelines/ingest_data_azure.md)
+* [Bronze to Silver](etl_pipelines/silver_data_azure.md)
 
-Each of the ingest and data processing workloads may optionally include [Data Quality checks](components/etl_pipelines/data_quality_azure.md).
+Each of the ingest and data processing workloads may optionally include [Data Quality checks](etl_pipelines/data_quality_azure.md).
