@@ -17,11 +17,9 @@ keywords:
 
 ## Azure
 
-* Azure subscription
-* Azure DevOps
-
-Stacks Azure Data Platform uses Azure DevOps to run CI/CD pipelines. An existing Azure DevOps project in your
-organization is a pre-requisite to work with our solution.
+* Azure subscription - for deploying the solution into
+* Azure service principal - needs permissions to deploy and configure all required resources into the target subscription
+* Azure DevOps project - for running CI/CD pipelines and storing project variables
 
 ### Azure Pipelines variable groups
 

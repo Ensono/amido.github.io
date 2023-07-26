@@ -1,12 +1,13 @@
 ---
-id: quickstart_data_azure
-title: Quickstart
-sidebar_label: Quickstart
+id: dev_quickstart_data_azure
+title: Development Quickstart
+sidebar_label: Development Quickstart
 hide_title: false
 hide_table_of_contents: false
 description: Quickstart for local development
 keywords:
   - quickstart
+  - development
 ---
 
 Please execute the following steps to start working locally with Stacks Azure Data Platform:
