@@ -203,22 +203,24 @@ module.exports = {
             label: "Data Platform",
             items: [
               "workloads/azure/data/intro_data_azure",
-              "workloads/azure/data/repository_data_azure",
+              {
+                type: "category",
+                label: "Architecture",
+                items: [
+                  "workloads/azure/data/architecture/architecture_data_azure",
+                  "workloads/azure/data/architecture/repository_data_azure",
+                  "workloads/azure/data/architecture/deployment_arch_data_azure",
+                ],
+              },
               "workloads/azure/data/requirements_data_azure",
               "workloads/azure/data/infrastructure_data_azure",
               {
                 type: "category",
-                label: "Components",
+                label: "ETL Pipelines",
                 items: [
-                  {
-                    type: "category",
-                    label: "ETL Pipelines",
-                    items: [
-                      "workloads/azure/data/components/etl_pipelines/ingest_data_azure",
-                      "workloads/azure/data/components/etl_pipelines/silver_data_azure",
-                      "workloads/azure/data/components/etl_pipelines/data_quality_azure",
-                    ],
-                  },
+                  "workloads/azure/data/etl_pipelines/ingest_data_azure",
+                  "workloads/azure/data/etl_pipelines/silver_data_azure",
+                  "workloads/azure/data/etl_pipelines/data_quality_azure",
                   {
                     type: "category",
                     label: "PySparkle",
@@ -233,11 +235,12 @@ module.exports = {
                 type: "category",
                 label: "Getting Started",
                 items: [
-                  "workloads/azure/data/getting_started/deployment_workflow",
+                  "workloads/azure/data/getting_started/dev_quickstart_data_azure",
                   "workloads/azure/data/getting_started/core_data_platform_deployment_azure",
                   "workloads/azure/data/getting_started/etl_pipelines_deployment_azure",
                 ],
               },
+              "workloads/azure/data/security_data_azure",
             ],
           },
         ],

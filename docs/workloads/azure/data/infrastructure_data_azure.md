@@ -65,11 +65,11 @@ subfolder contains configurations for the created network and subnetworks, at it
 [azurerm-hub-spoke](https://github.com/amido/stacks-terraform/tree/master/azurerm/modules/azurerm-hub-spoke)
 Stacks Terraform module.
 
-The following diagram shows network configuration in all three environments:
+The following diagram shows network configuration for the two default environments:
 
-* dev (`is_hub: true`)
-* nonprod (`is_hub: false`)
-* prod (`is_hub: false`)
+* Hub network (`is_hub: true`)
+* Nonprod (`is_hub: false`)
+* Prod (`is_hub: false`)
 
 ![network_hub_spoke.png](images/network_hub_spoke.png)
 

@@ -1,7 +1,7 @@
 ---
 id: repository_data_azure
-title: Repository structure
-sidebar_label: Repository
+title: Repository Structure
+sidebar_label: Repository Structure
 hide_title: false
 hide_table_of_contents: false
 description: Repository structure explained
@@ -17,6 +17,7 @@ Structure of [stacks-azure-data](https://github.com/amido/stacks-azure-data) rep
 stacks-azure-data
 ├── build           # Deployment pipeline configuration for building and deploying the core infrastructure
 ├── de_build        # Deployment pipeline configuration for building and deploying data engineering resources
+├── de_templates    # Data engineering workload templates, including data pipelines, tests and deployment configuration
 ├── de_workloads    # Data engineering workload resources, including data pipelines, tests and deployment configuration
 │   ├── data_processing         # Data processing and transformation workloads
 │   ├── ingest                  # Data ingestion workloads

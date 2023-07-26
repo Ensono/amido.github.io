@@ -17,21 +17,21 @@ you to assert expectations about your data, which can help catch any discrepanci
 errors in your data as early in the pipeline as possible.
 
 Data Quality checks are executed as Python Databricks jobs with the quality validation logic
-packaged within our [PySparkle](../../../../common/data/pysparkle/pysparkle_data_quality.md) library.
+packaged within our [PySparkle](../../../common/data/pysparkle/pysparkle_data_quality.md) library.
 Internally, PySparkle leverages the capabilities of the [Great Expectations](https://greatexpectations.io/)
 library, an open-source Python-based library, to perform these checks.
 
 The design of the Data Quality processing is outlined in the following diagram.
 
-![ADF_Ingest_AzureSql_Example_DQ.png](../../images/ADF_DataQualityDesign.png)
+![ADF_Ingest_AzureSql_Example_DQ.png](../images/ADF_DataQualityDesign.png)
 
 
 ## ADF Pipelines with DQ
 
 ### Ingest
 
-![ADF_Ingest_AzureSql_Example_DQ.png](../../images/ADF_Ingest_AzureSql_Example_DQ.png)
+![ADF_Ingest_AzureSql_Example_DQ.png](../images/ADF_Ingest_AzureSql_Example_DQ.png)
 
 ### Silver
 
-![ADF_silver_dq.png](../../images/ADF_silver_dq.png)
+![ADF_silver_dq.png](../images/ADF_silver_dq.png)
