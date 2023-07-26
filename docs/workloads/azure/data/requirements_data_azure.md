@@ -12,8 +12,8 @@ keywords:
 ## Local development
 
 * Python 3.9+
-* Poetry https://python-poetry.org/docs/
-* (Windows users) A Linux distribution, e.g. WSL2 https://docs.microsoft.com/en-us/windows/wsl/install
+* [Poetry](https://python-poetry.org/docs/)
+* (Windows users) A Linux distribution, e.g. [WSL2](https://docs.microsoft.com/en-us/windows/wsl/install)
 
 ## Azure
 
