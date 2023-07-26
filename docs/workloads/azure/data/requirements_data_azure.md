@@ -27,13 +27,13 @@ Our blueprint solution expects the following [variable groups](https://learn.mic
 to exist in your Azure DevOps project's Pipelines Library:
 
 * Nonprod Environment:
-  * amido-stacks-de-pipeline-nonprod
-  * amido-stacks-infra-credentials-nonprod
-  * stacks-credentials-nonprod-kv
+    * amido-stacks-de-pipeline-nonprod
+    * amido-stacks-infra-credentials-nonprod
+    * stacks-credentials-nonprod-kv
 * Prod Environment:
-  * amido-stacks-de-pipeline-prod
-  * amido-stacks-infra-credentials-prod
-  * stacks-credentials-prod-kv
+    * amido-stacks-de-pipeline-prod
+    * amido-stacks-infra-credentials-prod
+    * stacks-credentials-prod-kv
 
 Please see [Azure DevOps Pipelines](https://stacks.amido.com/docs/infrastructure/azure/pipelines/azure_devops)
 for details on using Azure Pipelines in Stacks.
