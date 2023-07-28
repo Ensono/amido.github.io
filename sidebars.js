@@ -209,7 +209,6 @@ module.exports = {
                 items: [
                   "workloads/azure/data/architecture/architecture_data_azure",
                   "workloads/azure/data/architecture/repository_data_azure",
-                  "workloads/azure/data/architecture/deployment_arch_data_azure",
                 ],
               },
               "workloads/azure/data/requirements_data_azure",
@@ -238,6 +237,7 @@ module.exports = {
                   "workloads/azure/data/getting_started/dev_quickstart_data_azure",
                   "workloads/azure/data/getting_started/core_data_platform_deployment_azure",
                   "workloads/azure/data/getting_started/etl_pipelines_deployment_azure",
+                  "workloads/azure/data/getting_started/testing_data_azure",
                 ],
               },
               "workloads/azure/data/security_data_azure",
