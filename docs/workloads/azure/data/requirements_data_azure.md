@@ -39,44 +39,44 @@ Please expand the following lists to see the required variables.
 <details>
   <summary>amido-stacks-de-pipeline-env</summary>
 
-  * ADLS_DataLake_URL: Azure Data Lake Storage Gen2 URL
-  * azure_subscription_id
-  * azure-client-secret
-  * blob_adls_storage: Azure Data Lake Storage Gen2 name
-  * blob_configStorage: Blob storage name
-  * Blob_ConfigStore_serviceEndpoint: Blob service URL
-  * databricksHost: Databricks UI URL
-  * databricksWorkspaceResourceId
-  * datafactoryname
-  * github_token
-  * integration_runtime_name
-  * KeyVault_baseURL: Vault URI
-  * keyvault_name: Key Vault name
-  * location: Azure region
-  * pe_subnet_prefix: Subnet CIDR, e.g. ["10.3.1.0/24"]
-  * private_subnet_prefix: Subnet CIDR, e.g. ["10.3.1.0/24"]
-  * public_subnet_prefix: Subnet CIDR, e.g. ["10.3.1.0/24"]
-  * resource_group: Name of the resource group
-  * sql_connection: Connection string to Azure SQL database
+* ADLS_DataLake_URL: Azure Data Lake Storage Gen2 URL
+* azure_subscription_id
+* azure-client-secret
+* blob_adls_storage: Azure Data Lake Storage Gen2 name
+* blob_configStorage: Blob storage name
+* Blob_ConfigStore_serviceEndpoint: Blob service URL
+* databricksHost: Databricks UI URL
+* databricksWorkspaceResourceId
+* datafactoryname
+* github_token
+* integration_runtime_name
+* KeyVault_baseURL: Vault URI
+* keyvault_name: Key Vault name
+* location: Azure region
+* pe_subnet_prefix: Subnet CIDR, e.g. ["10.3.1.0/24"]
+* private_subnet_prefix: Subnet CIDR, e.g. ["10.3.1.0/24"]
+* public_subnet_prefix: Subnet CIDR, e.g. ["10.3.1.0/24"]
+* resource_group: Name of the resource group
+* sql_connection: Connection string to Azure SQL database
 
 </details>
 
 <details>
   <summary>amido-stacks-euw-de-env-network</summary>
 
-  * pe_resource_group_name: Name of the resource group to provision private VNet to
-  * pe_vnet_name: Private VNet name
-  * pe_subnet_name: Name of the subnet to provision private endpoints into
+* pe_resource_group_name: Name of the resource group to provision private VNet to
+* pe_vnet_name: Private VNet name
+* pe_subnet_name: Name of the subnet to provision private endpoints into
 
 </details>
 
 <details>
   <summary>stacks-credentials-env-kv</summary>
 
-  * azure-client-id
-  * azure-client-secret
-  * azure-subscription-id
-  * azure-tenant-id
+* azure-client-id
+* azure-client-secret
+* azure-subscription-id
+* azure-tenant-id
 
 </details>
 
