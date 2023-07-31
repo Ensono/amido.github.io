@@ -220,6 +220,7 @@ module.exports = {
                   "workloads/azure/data/etl_pipelines/ingest_data_azure",
                   "workloads/azure/data/etl_pipelines/silver_data_azure",
                   "workloads/azure/data/etl_pipelines/data_quality_azure",
+                  "workloads/azure/data/etl_pipelines/datastacks",
                   {
                     type: "category",
                     label: "PySparkle",
