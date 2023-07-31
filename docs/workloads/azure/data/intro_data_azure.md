@@ -31,7 +31,10 @@ to Silver layer, while Gold handles transformations from Silver to Gold layer;
 * Datastacks CLI and templates, which allow generation of new ingestion or data processing pipelines based
 on the provided configuration;
 * Deployment pipelines to enable CI/CD and DataOps for all components;
-* Automated tests to ensure quality assurance and operational efficiency.
+* Automated tests to ensure quality assurance and operational efficiency;
+* [Datastacks](etl_pipelines/datastacks.md) - a library and CLI built to accelerate the development of data engineering
+workloads in the data platform;
+* [Pysparkle](../../common/data/pysparkle/pysparkle_quickstart.md) - a library built to streamline data processing activities running in Apache Spark.
 
 ### High-level architecture
 
@@ -45,8 +48,8 @@ on the provided configuration;
 * Azure Blob Storage
 * Azure Data Factory
 * Log Analytics Workspace
-* Azure SQL Database (optional)
 * Databricks Workspace (optional)
+* Azure SQL Database (optional)
 
 For details please see [Infrastructure](infrastructure_data_azure.md).
 

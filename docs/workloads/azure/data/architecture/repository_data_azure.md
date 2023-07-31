@@ -16,6 +16,7 @@ Structure of [stacks-azure-data](https://github.com/amido/stacks-azure-data) rep
 ```md
 stacks-azure-data
 ├── build           # Deployment pipeline configuration for building and deploying the core infrastructure
+├── datastacks      # Python library and CLI to accelerate the development of data engineering workloads
 ├── de_build        # Deployment pipeline configuration for building and deploying data engineering resources
 ├── de_templates    # Data engineering workload templates, including data pipelines, tests and deployment configuration
 ├── de_workloads    # Data engineering workload resources, including data pipelines, tests and deployment configuration
