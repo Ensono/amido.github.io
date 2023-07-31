@@ -104,11 +104,12 @@ Once reviewed, commit the resources and push the branch to the remote project re
 
 The generated workload will contain a YAML file containing a template Azure DevOps CI/CD pipeline for the workload, named `de-ingest-ado-pipeline.yaml`. This can be added as the definition for a new pipeline in Azure DevOps.
 
-1. Sign-in to your Azure DevOps organization and go to your project.
-2. Go to Pipelines, and then select New pipeline.
+1. Sign-in to your Azure DevOps organization and go to your project
+2. Go to Pipelines, and then select New pipeline
 3. Name the new pipeline to match the name of your new workload, e.g. `de-ingest-azuresql-mynewexample`
-4. For the pipeline definition, specify the YAML file in the project repository feature branch (e.g. `de-ingest-ado-pipeline.yaml`)
-5. Save and run the pipeline.
+4. For the pipeline definition, specify the YAML file in the project repository feature branch (e.g. `de-ingest-ado-pipeline.yaml`) and save
+5. The new pipeline will require access to any Azure DevOps pipeline variable groups specified in the config file. Under each variable group, go to 'Pipeline permissions' and add the new pipeline.
+6. Run the new pipeline
 
 Running this pipeline in Azure DevOps will deploy the artifacts into the non-production (nonprod) environment and run tests. If successful, the generated resources will now be available in the nonprod Stacks environment.
 
