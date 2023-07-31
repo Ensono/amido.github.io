@@ -34,7 +34,11 @@ to exist in your Azure DevOps project's Pipelines Library:
 
 Where _env_ can be either `nonprod` or `prod`.
 
-Please expand the following lists to see the required variables.
+Please refer to the following lists to identify the necessary variables for your project.
+The specifics regarding when each variable is required have also been provided. Generally,
+the variables fall into one of two categories based on the time of requirement: 'Project Start',
+denoting variables required at the very outset of the project, and 'After Core Infrastructure
+Deployment', referring to variables required after the fundamental infrastructure has been deployed.
 
 <details>
   <summary>amido-stacks-de-pipeline-env</summary>
