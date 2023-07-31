@@ -100,7 +100,7 @@ This should add new project artifacts for the workload under `de_workloads/inges
 
 Once reviewed, commit the resources and push the branch to the remote project repository.
 
-## Deploy new workload in non-prod environment
+## Deploy new workload in non-production environment
 
 The generated workload will contain a YAML file containing a template Azure DevOps CI/CD pipeline for the workload, named `de-ingest-ado-pipeline.yaml`. This can be added as the definition for a new pipeline in Azure DevOps.
 
@@ -110,7 +110,7 @@ The generated workload will contain a YAML file containing a template Azure DevO
 4. For the pipeline definition, specify the YAML file in the project repository feature branch (e.g. `de-ingest-ado-pipeline.yaml`)
 5. Save and run the pipeline.
 
-Running this pipeline in Azure DevOps will deploy the artifacts into the non-prod environment and run tests. If successful, the generated resources will now be available in the non-prod Stacks environment.
+Running this pipeline in Azure DevOps will deploy the artifacts into the non-production (nonprod) environment and run tests. If successful, the generated resources will now be available in the nonprod Stacks environment.
 
 Continue to make any further amendments required to the new workload, re-running the pipeline as required - for example:
 
@@ -120,9 +120,9 @@ Continue to make any further amendments required to the new workload, re-running
 
 ## Deploy new workload in further environments
 
-It is recommended in any Stacks data platform that processes for deploying and releasing to further should be agreed and documented, ensuring sufficient review and quality assurance of any new workloads. The template CI/CD pipelines provided are based upon two platform environments (non-prod and prod) - but these may be amended depending upon the specific requirements of your project and organisation.
+It is recommended in any Stacks data platform that processes for deploying and releasing to further should be agreed and documented, ensuring sufficient review and quality assurance of any new workloads. The template CI/CD pipelines provided are based upon two platform environments (nonprod and prod) - but these may be amended depending upon the specific requirements of your project and organisation.
 
 In the example pipeline templates:
 
-* Deployment to the non-prod environment is triggered on a feature branch when a pull request is open
-* Deployment to the prod environment is triggered on merging to the `main` branch, followed by manual approval of the release step.
+* Deployment to the non-production (nonprod) environment is triggered on a feature branch when a pull request is open
+* Deployment to the production (prod) environment is triggered on merging to the `main` branch, followed by manual approval of the release step.
