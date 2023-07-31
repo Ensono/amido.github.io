@@ -19,6 +19,7 @@ Datastacks is a utility built to support various functions within the Ensono Sta
 ## Using the Datastacks CLI
 
 * [Setup project environment](../getting_started/dev_quickstart_data_azure.md)
+
 ```bash
 # Initiate Datastacks using poetry:
 poetry run datastacks
@@ -39,9 +40,9 @@ See [ETL Pipeline Deployment](../getting_started/etl_pipelines_deployment_azure.
 
 ### Commands
 
-- **`generate`**: This command contains subcommands which generate components for the data platform given a config file.
+* **`generate`**: This command contains subcommands which generate components for the data platform given a config file.
 
-  - **`ingest`**: This subcommand utilises the template for ingest data pipelines, and uses a given config file to generate the required code for a new ingest pipeline ready for use. A flag can be included to specify whether or not to include data quality components in the pipeline.
+    * **`ingest`**: This subcommand utilises the template for ingest data pipelines, and uses a given config file to generate the required code for a new ingest pipeline ready for use. A flag can be included to specify whether or not to include data quality components in the pipeline.
 
 ### Examples
 

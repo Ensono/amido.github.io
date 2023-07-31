@@ -19,19 +19,21 @@ keywords:
 This section provides an overview of generating a new ETL ingest pipeline / data engineering workload and deploying it into a Stacks Data Platform, using the [Datastacks](../etl_pipelines/datastacks.md) utility.
 This aligns to the workflow shown in the [deployment architecture](../architecture/architecture_data_azure.md#data-engineering-workloads) section.
 It assumes all prerequisites are in place, including:
+
 * A [deployed Stacks data platform](core_data_platform_deployment_azure.md)
 * [Development environment set up](dev_quickstart_data_azure.md)
 
 This process will deploy the following resources into the project:
- * Azure Data Factory resources (defined in Terraform / ARM)
-   - Linked service
-   - Dataset
-   - Pipeline
- * Data ingest config files (JSON)
- * Azure DevOps CI/CD pipeline (YAML)
- * (optional) Spark jobs for data quality tests (Python)
- * Template unit tests (Python)
- * Template end-to-end tests (Python, Behave)
+
+* Azure Data Factory resources (defined in Terraform / ARM)
+    * Linked service
+    * Dataset
+    * Pipeline
+* Data ingest config files (JSON)
+* Azure DevOps CI/CD pipeline (YAML)
+* (optional) Spark jobs for data quality tests (Python)
+* Template unit tests (Python)
+* Template end-to-end tests (Python, Behave)
 
 ## Create feature branch
 
@@ -101,6 +103,7 @@ Once reviewed, commit the resources and push the branch to the remote project re
 ## Deploy new workload in non-prod environment
 
 The generated workload will contain a YAML file containing a template Azure DevOps CI/CD pipeline for the workload, named `de-ingest-ado-pipeline.yaml`. This can be added as the definition for a new pipeline in Azure DevOps.
+
 1. Sign-in to your Azure DevOps organization and go to your project.
 2. Go to Pipelines, and then select New pipeline.
 3. Name the new pipeline to match the name of your new workload, e.g. `de-ingest-azuresql-mynewexample`
@@ -110,6 +113,7 @@ The generated workload will contain a YAML file containing a template Azure DevO
 Running this pipeline in Azure DevOps will deploy the artifacts into the non-prod environment and run tests. If successful, the generated resources will now be available in the non-prod Stacks environment.
 
 Continue to make any further amendments required to the new workload, re-running the pipeline as required - for example:
+
 * Update the (`ingest_config`) file with details of the data required from the new data source
 * (If including DQ) update the (`ingest_dq`) file with details of data quality checks required on the data
 * Update end-to-end tests, to ensure test coverage of the new data pipeline
@@ -119,5 +123,6 @@ Continue to make any further amendments required to the new workload, re-running
 It is recommended in any Stacks data platform that processes for deploying and releasing to further should be agreed and documented, ensuring sufficient review and quality assurance of any new workloads. The template CI/CD pipelines provided are based upon two platform environments (non-prod and prod) - but these may be amended depending upon the specific requirements of your project and organisation.
 
 In the example pipeline templates:
+
 * Deployment to the non-prod environment is triggered on a feature branch when a pull request is open
 * Deployment to the prod environment is triggered on merging to the `main` branch, followed by manual approval of the release step.
