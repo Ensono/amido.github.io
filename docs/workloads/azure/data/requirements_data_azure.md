@@ -20,7 +20,7 @@ keywords:
 
 * Azure subscription – for deploying the solution into
 * Azure service principal (Application) – needs permissions to deploy and configure all required
-resources into the target subscription
+  resources into the target subscription
 * Azure DevOps project – for running CI/CD pipelines and storing project variables
 
 ### Azure Pipelines variable groups
@@ -39,44 +39,51 @@ Please expand the following lists to see the required variables.
 <details>
   <summary>amido-stacks-de-pipeline-env</summary>
 
-* ADLS_DataLake_URL: Azure Data Lake Storage Gen2 URL
-* azure_subscription_id
-* azure-client-secret
-* blob_adls_storage: Azure Data Lake Storage Gen2 name
-* blob_configStorage: Blob storage name
-* Blob_ConfigStore_serviceEndpoint: Blob service URL
-* databricksHost: Databricks UI URL
-* databricksWorkspaceResourceId
-* datafactoryname
-* github_token
-* integration_runtime_name
-* KeyVault_baseURL: Vault URI
-* keyvault_name: Key Vault name
-* location: Azure region
-* pe_subnet_prefix: Subnet CIDR, e.g. ["10.3.1.0/24"]
-* private_subnet_prefix: Subnet CIDR, e.g. ["10.3.1.0/24"]
-* public_subnet_prefix: Subnet CIDR, e.g. ["10.3.1.0/24"]
-* resource_group: Name of the resource group
-* sql_connection: Connection string to Azure SQL database
+| Variable Name                    | When Needed      | Description                                 |
+|----------------------------------|------------------|---------------------------------------------|
+| ADLS_DataLake_URL                | After core infra | Azure Data Lake Storage Gen2 URL            |
+| azure_subscription_id            | Project start    | Subscription ID                             |
+| azure-client-secret              | Project start    | Service principal secret                    |
+| blob_adls_storage                | After core infra | Azure Data Lake Storage Gen2 name           |
+| blob_configStorage               | After core infra | Blob storage name                           |
+| Blob_ConfigStore_serviceEndpoint | After core infra | Blob service URL                            |
+| databricksHost                   | After core infra | Databricks URL                              |
+| databricksWorkspaceResourceId    | After core infra | Databricks workspace resource id            |
+| datafactoryname                  | After core infra | Azure Data Factory name                     |
+| github_token                     | After core infra | Github token                                |
+| integration_runtime_name         | After core infra | Azure Data Factory integration runtime name |
+| KeyVault_baseURL                 | After core infra | Vault URI                                   |
+| keyvault_name                    | After core infra | Key Vault name                              |
+| location                         | Project start    | Azure region                                |
+| pe_subnet_prefix                 | Project start    | Subnet CIDR, e.g. ["10.3.1.0/24"]           |
+| private_subnet_prefix            | Project start    | Subnet CIDR, e.g. ["10.3.1.0/24"]           |
+| public_subnet_prefix             | Project start    | Subnet CIDR, e.g. ["10.3.1.0/24"]           |
+| resource_group                   | Project start    | Name of the resource group                  |
+| sql_connection                   | After core infra | Connection string to Azure SQL database     |
 
 </details>
 
 <details>
   <summary>amido-stacks-euw-de-env-network</summary>
 
-* pe_resource_group_name: Name of the resource group to provision private VNet to
-* pe_vnet_name: Private VNet name
-* pe_subnet_name: Name of the subnet to provision private endpoints into
+
+| Variable Name          | When Needed   | Description                                             |
+|------------------------|---------------|---------------------------------------------------------|
+| pe_resource_group_name | Project start | Name of the resource group to provision private VNet to |
+| pe_vnet_name           | Project start | Private VNet name                                       |
+| pe_subnet_name         | Project start | Name of the subnet to provision private endpoints into  |
 
 </details>
 
 <details>
   <summary>stacks-credentials-env-kv</summary>
 
-* azure-client-id
-* azure-client-secret
-* azure-subscription-id
-* azure-tenant-id
+| Variable Name         | When Needed   | Description                                           |
+|-----------------------|---------------|-------------------------------------------------------|
+| azure-client-id       | Project start | Application ID for Azure Active Directory application |
+| azure-client-secret   | Project start | Service principal secret                              |
+| azure-subscription-id | Project start | Subscription ID                                       |
+| azure-tenant-id       | Project start | Directory ID for Azure Active Directory application   |
 
 </details>
 
