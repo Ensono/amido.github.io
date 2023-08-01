@@ -20,7 +20,7 @@ keywords:
 
 * Azure subscription – for deploying the solution into
 * Azure service principal (Application) – needs permissions to deploy and configure all required
-  resources into the target subscription
+resources into the target subscription
 * Azure DevOps project – for running CI/CD pipelines and storing project variables
 
 ### Azure Pipelines variable groups

@@ -25,7 +25,13 @@ Stacks Azure Data Platform serves two primary functions:
 
 ## Deployment workflow
 
-The following activity diagram depicts the steps to create the core Data Platform, as well as the
-customisable data engineering workloads:
+The following activity diagrams depicts the steps to create the Core Data Platform, as well as additional
+data engineering workloads:
 
-![DeploymentWorkflow.png](../images/deployment_workflow.png)
+### Data platform deployment
+
+![Data platform deployment](../images/workflow-core-platform.png)
+
+### Data engineering workloads
+
+![Data engineering workload generation and deployment](../images/workflow-de-workloads.png)
