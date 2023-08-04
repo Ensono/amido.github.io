@@ -238,6 +238,7 @@ module.exports = {
                   "workloads/azure/data/getting_started/dev_quickstart_data_azure",
                   "workloads/azure/data/getting_started/core_data_platform_deployment_azure",
                   "workloads/azure/data/getting_started/etl_pipelines_deployment_azure",
+                  "workloads/azure/data/getting_started/example_data_source",
                   "workloads/azure/data/getting_started/testing_data_azure",
                 ],
               },
