@@ -37,7 +37,7 @@ UPDATE apps/baseline-next-app/tsconfig.spec.json #Updates for monorepo structure
 UPDATE apps/baseline-next-app/specs/index.spec.tsx #Formatting changes
 ```
 
-The generator will also add [react-axe]() (version 4.7.3) into the app via the following:
+The generator will also add [react-axe](https://github.com/dequelabs/axe-core-npm/blob/develop/packages/react/README.md) (version 4.7.3) into the app via the following:
 
 ```typescript title="...app.tsx"
 // @ts-ignore
