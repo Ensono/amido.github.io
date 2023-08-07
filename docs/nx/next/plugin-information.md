@@ -82,3 +82,4 @@ nx g @ensono-stacks/next:[generator-executor-name] --help
 <NextInitDeployment />
 
 <NextAuth />
+<ReactQuery />
