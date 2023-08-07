@@ -25,8 +25,8 @@ The naming convention for the data pipelines originates in Databricks' Medallion
 structured data transformation layers:
 
 * [Data Ingestion](ingest_data_azure.md): The initial stage of data collection.
-* [Silver Pipeline](silver_data_azure.md): Intermediate processing and transformation stage.
-* Gold Pipeline: The refined and processed data ready for analytics.
+* [Silver Pipeline](silver_data_azure.md): Conformance, cleansing and data quality processing stage.
+* Gold Pipeline: Involves data aggregations, refinement and enrichment, producing datasets optimized for analytics.
 
 ### ETL utilities
 
@@ -38,8 +38,8 @@ This section also introduces several auxiliary utilities to complement the main 
 
 ## Dataset
 
-The platform leverages [The Movies Dataset](https://www.kaggle.com/datasets/rounakbanik/the-movies-dataset) from Kaggle,
-which contains metadata and ratings for approximately 45,000 movies released on or before July 2017.
+The platform leverages [The Movies Dataset](../getting_started/example_data_source.md#example-dataset), which contains
+metadata and ratings for approximately 45,000 movies released on or before July 2017.
 
 **The Movies Dataset** contains a number of CSV files and includes values of different types, including nested datatypes
 and arrays, which give us enough complexity for transformations.

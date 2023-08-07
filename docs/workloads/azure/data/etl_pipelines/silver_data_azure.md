@@ -14,6 +14,23 @@ keywords:
 
 Silver processing represents the 'Bronze to Silver' layer transformations. It accepts raw data of various formats
 (e.g. CSV, Parquet, JSON, Delta) as an input and converts it into a more structured Delta format.
+
+The transformation from Bronze to Silver is crucial for filtering out the noise from raw data. It ensures that analysts
+and data scientists work with a consistent, clean, and dependable dataset that can be trusted for downstream analytics.
+
+As data moves to the Silver layer, it undergoes a series of transformations:
+
+* **Conformance**: At this stage, inconsistencies in data representation are ironed out. For instance, disparate date
+formats, value representations, or units from different data sources are standardized to a common format.
+* **Cleansing**: Data errors, such as outliers, missing values, or duplicates, are identified and rectified. This
+ensures that downstream analytics are based on clean and reliable data.
+* **Enrichment**: Data from various sources might be combined or enriched with additional information to provide a more
+holistic dataset.
+* **Structuring**: While the Bronze layer often holds semi-structured or unstructured data, the Silver layer typically
+structures this data into a more query-friendly format, enabling efficient data analysis.
+* **Data Quality Checks**: This stage ensures that the data conforms to predefined quality standards, making sure it's
+reliable and accurate.
+
 Azure Data Lake Storage (ADLS Gen2) has been chosen as both the source and destination system for our data processing.
 
 ## Pipeline overview
