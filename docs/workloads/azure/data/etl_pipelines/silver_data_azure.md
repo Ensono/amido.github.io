@@ -12,10 +12,9 @@ keywords:
   - databricks
 ---
 
-Silver processing represents the 'Bronze to Silver' layer transformations. It accepts raw data
-(e.g. CSV files) as an input and converts it into a more structured delta format.
-Azure Data Lake Storage (ADLS Gen2) has been chosen as both the source and destination system for
-our data processing.
+Silver processing represents the 'Bronze to Silver' layer transformations. It accepts raw data of various formats
+(e.g. CSV, Parquet, JSON, Delta) as an input and converts it into a more structured Delta format.
+Azure Data Lake Storage (ADLS Gen2) has been chosen as both the source and destination system for our data processing.
 
 ## Pipeline overview
 
@@ -24,8 +23,8 @@ The diagram below gives an overview of the Silver pipeline design.
 ![ADF_SilverPipelineDesign.png](../images/ADF_SilverPipelineDesign.png)
 
 
-Silver processing is executed as Python Databricks job with the data transformation logic
-packaged within our [PySparkle](../../../common/data/pysparkle/pysparkle_quickstart.md) library.
+Silver processing is executed as Python Databricks job with the data transformation logic packaged within our
+[PySparkle](../../../common/data/pysparkle/pysparkle_quickstart.md) library.
 
 ## Data Factory pipeline design
 
