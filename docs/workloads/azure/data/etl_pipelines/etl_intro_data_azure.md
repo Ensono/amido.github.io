@@ -30,7 +30,7 @@ delivers a lakehouse solution, with the following structured data transformation
 * [Silver](silver_data_azure.md): Conformance, cleansing and data quality processing stage.
 * Gold: Data aggregations, refinement and enrichment, producing datasets optimised for analytics and visualisation.
 
-### ETL utilities
+## ETL utilities
 
 Stacks data platform features several auxiliary utilities to enhance the process for developing and deploying
 production-ready data pipelines and workloads.
