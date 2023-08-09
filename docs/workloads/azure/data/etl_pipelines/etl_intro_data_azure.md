@@ -15,22 +15,25 @@ keywords:
   - medallion
 ---
 
-Stacks Data Platform showcases an array of integrated data processing pipelines, designed to demonstrate its full
-spectrum of capabilities. Our goal is to offer a comprehensive user journey that begins at the data source and travels
-through multiple transformations within the data lake layers, culminating in visualizations on graphical dashboards.
+Stacks Data Platform contains a range of example data workloads and pipelines, designed to demonstrate its capabilities
+for delivering production ready data engineering and analytics solutions. These example workloads cover all stages from
+ingesting data from source, applying data transformations across data lake layers, ultimately enabling end-user data
+visualisations and analytics.
 
 ## Data pipelines
 
-The naming convention for the data pipelines originates in Databricks' Medallion Architecture, which emphasises
-structured data transformation layers:
+The data lake structure and approach used in Stacks is based upon the
+[medallion architecture](https://www.databricks.com/glossary/medallion-architecture) design pattern. This approach
+delivers a lakehouse solution, with the following structured data transformation layers:
 
-* [Data Ingestion](ingest_data_azure.md): The initial stage of data collection.
-* [Silver Pipeline](silver_data_azure.md): Conformance, cleansing and data quality processing stage.
-* Gold Pipeline: Involves data aggregations, refinement and enrichment, producing datasets optimized for analytics.
+* [Bronze (data ingestion)](ingest_data_azure.md): Landing of raw data from source.
+* [Silver](silver_data_azure.md): Conformance, cleansing and data quality processing stage.
+* Gold: Data aggregations, refinement and enrichment, producing datasets optimised for analytics and visualisation.
 
 ### ETL utilities
 
-This section also introduces several auxiliary utilities to complement the main data pipelines:
+Stacks data platform features several auxiliary utilities to enhance the process for developing and deploying
+production-ready data pipelines and workloads.
 
 * [Data Quality](data_quality_azure.md): An optional step incorporated into all ETL pipelines to ensure data integrity.
 * [Datastacks](datastacks.md): A CLI tool designed to facilitate the creation of custom pipelines using predefined templates.
@@ -38,8 +41,6 @@ This section also introduces several auxiliary utilities to complement the main 
 
 ## Dataset
 
-The platform leverages [The Movies Dataset](../getting_started/example_data_source.md#example-dataset), which contains
-metadata and ratings for approximately 45,000 movies released on or before July 2017.
-
-**The Movies Dataset** contains a number of CSV files and includes values of different types, including nested datatypes
-and arrays, which give us enough complexity for transformations.
+The example workloads included in the solution are based upon an
+[example Azure SQL data source and dataset](../getting_started/example_data_source.md). This data source may optionally
+be deployed as part of the data platform, to allow full demonstration testing of these example workloads.

@@ -14,25 +14,19 @@ keywords:
 ---
 
 [PySparkle](https://github.com/amido/stacks-azure-data/tree/main/pysparkle) is a Python library built to streamline
-data processing workflows with Apache Spark.
-
-As an integral component of the Stacks Data Platform, PySparkle is our example of data transformation in action.
-It's designed to showcase the capabilities of our platform.
+data processing workflows with Apache Spark, and is an integral part of the Stacks Data Platform.
 
 ## Key components
 
-The naming convention for the data pipelines originates in Databricks' Medallion Architecture, which emphasises
-structured data transformation layers. The key components of PySparkle include:
+PySparkle is designed to assist implementing a [medallion data lake](../../../azure/data/etl_pipelines/etl_intro_data_azure.md#data-pipelines).
+The key components of PySparkle include:
 
-- **Silver processing**: This represents the 'Bronze to Silver' layer transformations. It accepts raw data of various
-formats (e.g. CSV, Parquet, JSON, Delta) as an input and converts it into a more structured Delta format.
-- **Gold processing**: This embodies the 'Silver to Gold' layer transformations. It performs advanced transformations,
-creating optimised, aggregated data sets for downstream consumption.
+- **Silver processing**: Capabilities for performing 'Bronze to Silver' layer transformations. It accepts raw data of
+various formats (e.g. CSV, Parquet, JSON, Delta) as an input and converts it into a more structured Delta format.
+- **Gold processing**: Capabilities for performing 'Silver to Gold' layer transformations. Supports additional
+transformations and aggregations of data, creating data sets optimised for downstream consumption.
 - **Data Quality**: PySparkle performs data quality checks according to user-provided configurations, ensuring the
 reliability and accuracy of the data.
-
-We have chosen Azure Data Lake Storage (ADLS Gen2) as both the source and destination systems for our data processing
-due to its scalability, security features, and seamless integration with our data processing workflows.
 
 ## PySparkle Usage
 

@@ -12,8 +12,9 @@ keywords:
   - databricks
 ---
 
-Silver processing represents the 'Bronze to Silver' layer transformations. It accepts raw data of various formats
-(e.g. CSV, Parquet, JSON, Delta) as an input and converts it into a more structured Delta format.
+The Stacks data platform contains an example 'Silver' data processing workload, performing Bronze to Silver layer
+transformations. It accepts raw data of various formats (e.g. CSV, Parquet, JSON, Delta) as an input and converts it
+into a more structured Delta format.
 
 The transformation from Bronze to Silver is crucial for filtering out the noise from raw data. It ensures that analysts
 and data scientists work with a consistent, clean, and dependable dataset that can be trusted for downstream analytics.
@@ -22,8 +23,8 @@ As data moves to the Silver layer, it undergoes a series of transformations:
 
 * **Conformance**: At this stage, inconsistencies in data representation are ironed out. For instance, disparate date
 formats, value representations, or units from different data sources are standardized to a common format.
-* **Cleansing**: Data errors, such as outliers, missing values, or duplicates, are identified and rectified. This
-ensures that downstream analytics are based on clean and reliable data.
+* **Cleansing**: Data errors, missing values, or duplicates, are identified and rectified. This ensures that downstream
+analytics are based on clean and reliable data.
 * **Enrichment**: Data from various sources might be combined or enriched with additional information to provide a more
 holistic dataset.
 * **Structuring**: While the Bronze layer often holds semi-structured or unstructured data, the Silver layer typically
@@ -40,8 +41,8 @@ The diagram below gives an overview of the Silver pipeline design.
 ![ADF_SilverPipelineDesign.png](../images/ADF_SilverPipelineDesign.png)
 
 
-Silver processing is executed as Python Databricks job with the data transformation logic packaged within our
-[PySparkle](../../../common/data/pysparkle/pysparkle_quickstart.md) library.
+Silver processing is executed as Python Databricks job, with repeatable data transformation processes packaged within
+our [PySparkle](../../../common/data/pysparkle/pysparkle_quickstart.md) library.
 
 ## Data Factory pipeline design
 
