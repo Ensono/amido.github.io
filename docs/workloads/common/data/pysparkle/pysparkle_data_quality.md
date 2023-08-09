@@ -42,7 +42,7 @@ Here is the description of the main elements:
 2. `dataset_name`: Name of the dataset that is being processed.
 3. `datasource_config`: List of datasource configurations where each configuration contains the following fields:
     1. `datasource_name`: Name of the data asset, e.g., table or file name.
-    2. `datasource_type`: Source system type that Spark can read from, e.g. table, parquet, csv.
+    2. `datasource_type`: Source system type that Spark can read from, e.g. table, parquet, csv, delta.
     3. `data_location`: Location of the given data asset. It can either be a path to the data file
     or a fully qualified table name, depending on the data source. Expectations for each scenario:
        * **File Path**: If the data is stored in a file, like a Parquet file on ADLS, you should

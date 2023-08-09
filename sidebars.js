@@ -217,6 +217,7 @@ module.exports = {
                 type: "category",
                 label: "ETL Pipelines",
                 items: [
+                  "workloads/azure/data/etl_pipelines/etl_intro_data_azure",
                   "workloads/azure/data/etl_pipelines/ingest_data_azure",
                   "workloads/azure/data/etl_pipelines/silver_data_azure",
                   "workloads/azure/data/etl_pipelines/data_quality_azure",
