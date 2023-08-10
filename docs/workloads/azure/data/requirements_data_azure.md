@@ -46,8 +46,6 @@ Deployment', referring to variables required after the fundamental infrastructur
 | Variable Name                    | When Needed      | Description                                 |
 |----------------------------------|------------------|---------------------------------------------|
 | ADLS_DataLake_URL                | After core infra | Azure Data Lake Storage Gen2 URL            |
-| azure_subscription_id            | Project start    | Subscription ID                             |
-| azure-client-secret              | Project start    | Service principal secret                    |
 | blob_adls_storage                | After core infra | Azure Data Lake Storage Gen2 name           |
 | blob_configStorage               | After core infra | Blob storage name                           |
 | Blob_ConfigStore_serviceEndpoint | After core infra | Blob service URL                            |
@@ -59,9 +57,6 @@ Deployment', referring to variables required after the fundamental infrastructur
 | KeyVault_baseURL                 | After core infra | Vault URI                                   |
 | keyvault_name                    | After core infra | Key Vault name                              |
 | location                         | Project start    | Azure region                                |
-| pe_subnet_prefix                 | Project start    | Subnet CIDR, e.g. ["10.3.1.0/24"]           |
-| private_subnet_prefix            | Project start    | Subnet CIDR, e.g. ["10.3.1.0/24"]           |
-| public_subnet_prefix             | Project start    | Subnet CIDR, e.g. ["10.3.1.0/24"]           |
 | resource_group                   | Project start    | Name of the resource group                  |
 | sql_connection                   | After core infra | Connection string to Azure SQL database     |
 
@@ -70,12 +65,16 @@ Deployment', referring to variables required after the fundamental infrastructur
 <details>
   <summary>amido-stacks-euw-de-env-network</summary>
 
-
-| Variable Name          | When Needed   | Description                                             |
-|------------------------|---------------|---------------------------------------------------------|
-| pe_resource_group_name | Project start | Name of the resource group to provision private VNet to |
-| pe_vnet_name           | Project start | Private VNet name                                       |
-| pe_subnet_name         | Project start | Name of the subnet to provision private endpoints into  |
+| Variable Name                  | When Needed   | Description                                             |
+|--------------------------------|---------------|---------------------------------------------------------|
+| databricks_private_subnet_name | Project start | Name of the private databricks subnet                   |
+| databricks_public_subnet_name  | Project start | Name of the public databricks subnet                    |
+| pe_resource_group_name         | Project start | Name of the resource group to provision private VNet to |
+| pe_subnet_name                 | Project start | Name of the subnet to provision private endpoints into  |
+| pe_subnet_prefix               | Project start | Subnet CIDR, e.g. ["10.3.1.0/24"]                       |
+| pe_vnet_name                   | Project start | Private VNet name                                       |
+| private_subnet_prefix          | Project start | Subnet CIDR, e.g. ["10.3.4.0/24"]                       |
+| public_subnet_prefix           | Project start | Subnet CIDR, e.g. ["10.3.3.0/24"]                       |
 
 </details>
 

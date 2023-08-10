@@ -76,12 +76,10 @@ data_source_connection_string_variable_name: sql_connection
 
 ado_variable_groups_nonprod:
   - amido-stacks-de-pipeline-nonprod
-  - amido-stacks-infra-credentials-nonprod
   - stacks-credentials-nonprod-kv
 
 ado_variable_groups_prod:
   - amido-stacks-de-pipeline-prod
-  - amido-stacks-infra-credentials-prod
   - stacks-credentials-prod-kv
 
 # Datalake containers
@@ -97,8 +95,8 @@ gold_container: curated
 # Deployment mode for terraform; if not set, the default is Incremental
 default_arm_deployment_mode: Incremental
 
-# Workload config; if not set, the default values are 2020-01-01 and 2020-01-31 resp.
+# Workload config; if not set, the default values are 2010-01-01 and 2010-01-31 resp.
 # These are used to set the default time window in the pipeline and in the corresponding e2e tests
-window_start_default: 2020-01-01
-window_end_default: 2020-01-31
+window_start_default: 2010-01-01
+window_end_default: 2010-01-31
 ```
