@@ -83,12 +83,10 @@ data_source_connection_string_variable_name: sql_connection
 
 ado_variable_groups_nonprod:
   - amido-stacks-de-pipeline-nonprod
-  - amido-stacks-infra-credentials-nonprod
   - stacks-credentials-nonprod-kv
 
 ado_variable_groups_prod:
   - amido-stacks-de-pipeline-prod
-  - amido-stacks-infra-credentials-prod
   - stacks-credentials-prod-kv
 
 # Datalake containers
