@@ -20,7 +20,7 @@ This section provides an overview of generating a new [ETL ingest pipeline](../e
 This aligns to the workflow shown in the [deployment architecture](../architecture/architecture_data_azure.md#data-engineering-workloads) section.
 It assumes all prerequisites are in place, including:
 
-* A [deployed Stacks data platform](core_data_platform_deployment_azure.md)
+* A [deployed Stacks data platform](requirements_data_azure.md)
 * [Development environment set up](dev_quickstart_data_azure.md)
 * A data source to ingest from. The steps below are based on using the [Azure SQL example data source](example_data_source.md)
 
