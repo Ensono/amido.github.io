@@ -80,6 +80,7 @@ module.exports = {
             label: "Frontend Web Applications",
             items: [
               "nx/nx_stacks",
+              "module_federation/nextjs_plugin",
               {
                 type: "category",
                 label: "Stacks Plugins",
