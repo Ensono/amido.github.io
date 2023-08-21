@@ -24,6 +24,8 @@ Module Federation is a feature introduced in Webpack 5, it enables developers to
 
 It aims to enable a federated modules architecture in NextJs, enabling you to split a monolithic NextJs application into smaller, independently deployable parts.
 
+The following guide details the steps of how to set up Module Federation with a Stacks NextJs application. You can also visit this [GitHub repo](https://github.com/amido/stacks-nextjs-federated-modules-example) to view an existing example application
+
 ## NextJs Module Federation with Stacks
 
 ### Prerequisites
@@ -245,3 +247,6 @@ nx run-many --target=serve
 
 We can then visit <b>http://localhost:4200/</b> and see the <b>header</b> module running inside the <b>host</b> application.
 Or we can visit <b>http://localhost:4300/</b> and see the <b>header</b> module hosted independently.
+ 
+
+
