@@ -90,6 +90,7 @@ npm add @module-federation/nextjs-mf
 ```bash
 yarn add @module-federation/nextjs-mf
 ```
+
   </TabItem>
 </Tabs>
 
@@ -99,6 +100,7 @@ Create a new <b>header</b> application which will be our remote module, we can d
 ```bash
 nx g @nx/next:app header
 ```
+
 Now we have both our <b>host</b> and <b>header</b> modules, we need to update various config in each application to enable module federation.
 
 Let's update the header `next.config` with details of our remote <b>header</b> module.
@@ -198,6 +200,7 @@ As with the <b>header</b> module, we also need to add a new env file to the <b>h
 STACKS_PUBLIC_HOST_URL="http://localhost:4200"
 STACKS_PUBLIC_HEADER_URL="http://localhost:4300"
 ```
+
 Also updating the <b>host</b> modules `project.json` with the correct port number
 
 ```json
@@ -213,6 +216,7 @@ Also updating the <b>host</b> modules `project.json` with the correct port numbe
     }
 }
 ```
+
 We can then import the <b>header</b> module into the <b>host</b> in the `_app.tsx` file
 <b>host/pages/_app.tsx</b>:
 
@@ -245,8 +249,8 @@ Now run the app with the following command
 nx run-many --target=serve
 ```
 
-We can then visit <b>http://localhost:4200/</b> and see the <b>header</b> module running inside the <b>host</b> application.
-Or we can visit <b>http://localhost:4300/</b> and see the <b>header</b> module hosted independently.
+We can then visit [localhost:4200](http://localhost:4200/) and see the <b>header</b> module running inside the <b>host</b> application.
+Or we can visit [localhost:4300](http://localhost:4300/) and see the <b>header</b> module hosted independently.
  
 
 
