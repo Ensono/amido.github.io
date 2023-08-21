@@ -14,7 +14,7 @@ Please execute the following steps to start working locally with Stacks Azure Da
 
 1. Make sure you have installed the applications from the "Local development" section listed in
 [Requirements](../requirements_data_azure.md).
-2. Ensure that Poetry is added to your `$PATH`.
+2. Ensure that Poetry is added to your `$PATH`. If this results in errors whilst running the tests, we recommend installing Poetry using the [pip CLI](https://pypi.org/project/pip/).
 
 ## Environment setup
 
@@ -55,7 +55,7 @@ To run the E2E tests, you need to set up the following environment variables:
 - `AZURE_STORAGE_ACCOUNT_NAME`
 
 The E2E tests may require additional permissions as we are editing data in ADLS during the E2E tests. If the tests fail
-whilst clearing up directories please check you have the necessary permissions to read, write and execute against ADLS.
+whilst clearing up directories you will need to have [Storage Blob Data Contributor](https://learn.microsoft.com/en-us/azure/role-based-access-control/built-in-roles#storage-blob-data-contributor) access applied to your Azure Active Directory subscription. You may also be required to configure the [firewall rules](https://learn.microsoft.com/en-us/azure/storage/common/storage-network-security) for the storage account to whitelist your IP address.
 
 To run the E2E tests run:
 
