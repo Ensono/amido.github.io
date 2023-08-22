@@ -67,7 +67,7 @@ YAML file containing a template Azure DevOps CI/CD pipeline for building and dep
 YAML file `air-infrastructure-data.yml` should be added as the definition for a new pipeline in Azure DevOps.
 
 1. Sign-in to your Azure DevOps organization and go to your project
-2. Go to Pipelines, and then select New pipeline
+2. Go to Pipelines, and then select **New pipeline**
 3. Name the new pipeline, e.g. `amido.stacks-data-infrastructure`
 4. For the pipeline definition, specify the YAML file in the project repository feature branch (`air-infrastructure-data.yml`) and save
 5. The new pipeline will require access to any Azure DevOps pipeline variable groups specified in the pipeline YMAL. Under each variable group, go to 'Pipeline permissions' and add the pipeline.
