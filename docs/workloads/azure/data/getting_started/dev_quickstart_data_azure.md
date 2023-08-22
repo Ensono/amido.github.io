@@ -49,16 +49,21 @@ az account set --subscription <name or id>
 To run the E2E tests, you need to set up the following environment variables:
 
 - `AZURE_SUBSCRIPTION_ID`
-- `RESOURCE_GROUP_NAME`
-- `DATA_FACTORY_NAME`
-- `REGION_NAME`
+- `AZURE_RESOURCE_GROUP_NAME`
+- `AZURE_DATA_FACTORY_NAME`
+- `AZURE_REGION_NAME`
 - `AZURE_STORAGE_ACCOUNT_NAME`
-
-The E2E tests may require additional permissions as we are editing data in ADLS during the E2E tests. If the tests fail
-whilst clearing up directories please check you have the necessary permissions to read, write and execute against ADLS.
 
 To run the E2E tests run:
 
 ```bash
 make test_e2e
 ```
+
+### Troubleshooting
+
+ℹ️ If you encounter PATH-related issues with Poetry when running the tests, we recommend installing Poetry using
+[pipx](https://python-poetry.org/docs/#installing-with-pipx) rather than the official installer.
+
+ℹ️ The E2E tests may require additional permissions as we are editing data in ADLS during the E2E tests. If the tests fail
+whilst clearing up directories, ensure that you have [Storage Blob Data Contributor](https://learn.microsoft.com/en-us/azure/role-based-access-control/built-in-roles#storage-blob-data-contributor) access applied to your Azure Active Directory subscription. You may also be required to configure the [firewall rules](https://learn.microsoft.com/en-us/azure/storage/common/storage-network-security) for the storage account to whitelist your IP address.
