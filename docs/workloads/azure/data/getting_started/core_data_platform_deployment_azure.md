@@ -24,7 +24,7 @@ It assumes all prerequisites are in place, including:
 
 The [Stacks CLI](../../../../stackscli/about) will help you get started with scaffolding your applications and workspaces using Stacks. Through a series of questions the CLI will determine how and what to build for your workspace, helping to accelerate your development process.
 
-Download and install the stacks-cli using [Stacks CLI](../../../../stackscli/about). Please refer **Stacks.CLI.Manual** in the latest stacks-cli release for detailed instruction.
+Download and install the `stacks-cli` using [Stacks CLI](../../../../stackscli/about) page. Please refer to the **Stacks.CLI.Manual** in the latest `stacks-cli` release for detailed instruction.
 
 To construct a Data Platform project, two primary cli commands are required: `stacks-cli interactive` and `stacks-cli scaffold`.
 
