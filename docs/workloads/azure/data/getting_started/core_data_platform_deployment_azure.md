@@ -22,7 +22,7 @@ It assumes all prerequisites are in place, including:
 
 ## Step 1: Create/Generate Data Platform project using Stacks CLI
 
-The [Stacks CLI](../../../../stackscli/about) will help you get started with scaffolding your applications and workspaces using Stacks! Through a series of questions the CLI will determine how and what to build for your workspace, helping to accelerate your development process.
+The [Stacks CLI](../../../../stackscli/about) will help you get started with scaffolding your applications and workspaces using Stacks. Through a series of questions the CLI will determine how and what to build for your workspace, helping to accelerate your development process.
 
 Download and install the stacks-cli using [Stacks CLI](../../../../stackscli/about). Please refer **Stacks.CLI.Manual** in the latest stacks-cli release for detailed instruction.
 
