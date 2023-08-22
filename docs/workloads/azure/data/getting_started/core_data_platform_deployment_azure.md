@@ -68,7 +68,7 @@ YAML file `air-infrastructure-data.yml` should be added as the definition for a 
 
 1. Sign-in to your Azure DevOps organization and go to your project
 2. Go to Pipelines, and then select New pipeline
-3. Name the new pipeline eg `amido.stacks-data-infrastructure`
+3. Name the new pipeline, e.g. `amido.stacks-data-infrastructure`
 4. For the pipeline definition, specify the YAML file in the project repository feature branch (e.g. `air-infrastructure-data.yml`) and save
 5. The new pipeline will require access to any Azure DevOps pipeline variable groups specified in the pipeline YMAL. Under each variable group, go to 'Pipeline permissions' and add the pipeline.
 
