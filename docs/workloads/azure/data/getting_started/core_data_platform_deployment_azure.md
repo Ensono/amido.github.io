@@ -26,7 +26,7 @@ The [Stacks CLI](../../../../stackscli/about) will help you get started with sca
 
 Download and install the stacks-cli using [Stacks CLI](../../../../stackscli/about). Please refer **Stacks.CLI.Manual** in the latest stacks-cli release for detailed instruction.
 
-To construct a Data platform project, two primary cli commands are required: `stacks-cli interactive` and `stacks-cli scaffold`.
+To construct a Data Platform project, two primary cli commands are required: `stacks-cli interactive` and `stacks-cli scaffold`.
 
 The interactive command is designed to ask questions on the command line about the configuration
 required for setting up Ensono Digital Stacks. It will then save this configuration out to a file that can be
