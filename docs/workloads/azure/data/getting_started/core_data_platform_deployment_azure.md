@@ -36,7 +36,7 @@ read in using the scaffold command.
 stacks-cli interactive
 ```
 
-The majority of the questions are self-explanatory; please refer to the **Stacks.CLI.Manual** for further detail, however the following two will define the type of target project. 
+The majority of the questions are self-explanatory; please refer to the **Stacks.CLI.Manual** for further detail, however the following two will define the type of the target project. 
 
 | Question                                      | Required value for data project |
 |-----------------------------------------------|---------------------------------|
