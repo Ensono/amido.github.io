@@ -69,7 +69,7 @@ YAML file `air-infrastructure-data.yml` should be added as the definition for a 
 1. Sign-in to your Azure DevOps organization and go to your project
 2. Go to Pipelines, and then select New pipeline
 3. Name the new pipeline, e.g. `amido.stacks-data-infrastructure`
-4. For the pipeline definition, specify the YAML file in the project repository feature branch (e.g. `air-infrastructure-data.yml`) and save
+4. For the pipeline definition, specify the YAML file in the project repository feature branch (`air-infrastructure-data.yml`) and save
 5. The new pipeline will require access to any Azure DevOps pipeline variable groups specified in the pipeline YMAL. Under each variable group, go to 'Pipeline permissions' and add the pipeline.
 
 The `build/azDevOps/azure/network` folder has a YAML file entitled `air-infrastructure-data-network.yml` that contains a template Azure DevOps CI/CD pipeline for networking and self-hosted agent infrastructure. If the client/user does not have their own network and self-hosted agent, then we must establish the networking pipeline in Azure Devops following the procedures outlined above and it must before the core infrasturcture pipeline. The `build/azDevOps/azure/network` folder also contains a YAML file called `air-infrastructure-data-network-vars.yml` that contains the variables used in the networking pipeline. These variables must be updated as well as the project requirements.
