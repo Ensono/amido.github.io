@@ -81,7 +81,7 @@ If the client/user has their own network and self-hosted agent, then the network
 
 Run the pipeline configured in Step 2 to commence the build and deployment process.
 
-Running this pipeline in Azure DevOps will initiate the deployment of artifacts into the non-production (nonprod) environment.It's important to monitor the progress of this deployment to ensure its success. You can track the progress and status of the deployment within the Pipelines section of Azure DevOps.
+Running this pipeline in Azure DevOps will initiate the deployment of artifacts into the non-production (nonprod) environment. It's important to monitor the progress of this deployment to ensure its success. You can track the progress and status of the deployment within the Pipelines section of Azure DevOps.
 
 If successful, the core infrasturcture resources will now be available in the nonprod Stacks environment. To view these deployed resources, navigate to the Azure portal and search for the resource group associated with the deployment. This resource group is named based values provided during step 1, such as company name, project name,region,component. Within the resource group, you'll find a list of the resources that were deployed.
 
