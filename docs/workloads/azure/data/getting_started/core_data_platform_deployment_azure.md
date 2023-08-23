@@ -89,7 +89,7 @@ Run the pipeline configured in Step 2 to commence the build and deployment proce
 
 Running this pipeline in Azure DevOps will initiate the deployment of artifacts into the non-production (nonprod) environment. It's important to monitor the progress of this deployment to ensure its success. You can track the progress and status of the deployment within the Pipelines section of Azure DevOps.
 
-If successful, the core infrasturcture resources will now be available in the nonprod Stacks environment. To view these deployed resources, navigate to the Azure portal (https://portal.azure.com/) and search for the resource group associated with the deployment. This resource group is named based upon values provided during step 1 in the pattern
+If successful, the core infrasturcture resources will now be available in the nonprod Stacks environment. To view these deployed resources, navigate to the [Azure portal](https://portal.azure.com/) and search for the resource group associated with the deployment. This resource group is named based upon values provided during step 1 in the pattern
 `companyname-projectname-stage-region-component` (for example: `amido-stacks-dev-euw-de`). Within the resource group, you'll find a list of the resources that were deployed.
 
 Once core infrasturcture resources are deployed in nonprod environment, values will need adding into the nonprod variable group to reflect the deployed resources (e.g. `amido-stacks-de-pipeline-nonprod`). For additional information, see [Pipelines variable groups](../requirements_data_azure.md#azure-pipelines-variable-groups).
