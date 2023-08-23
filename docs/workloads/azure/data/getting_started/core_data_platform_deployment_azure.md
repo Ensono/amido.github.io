@@ -53,7 +53,7 @@ The CLI can be used with a configuration file to generate the Ensono Digital Sta
 stacks-cli scaffold -c ./stacks.yml
 ```
 
-Open the project locally and push the generated project to target repository in `main/master` branch.
+Open the project locally and push the generated project to the target remote repository's `main` branch.
 
 ## Step 2: Add Infrastructure pipeline in Azure Devops
 
