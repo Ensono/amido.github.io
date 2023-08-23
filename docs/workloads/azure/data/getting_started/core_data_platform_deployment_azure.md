@@ -17,8 +17,9 @@ This section provides an overview of generating a new Data Platform project and 
 This aligns to the workflow shown in the [deployment architecture](../architecture/architecture_data_azure.md#data-engineering-workloads) section.
 It assumes all prerequisites are in place, including:
 
-* [Azure](../requirements_data_azure.md#azure)
-* [Azure Pipelines variable groups](../requirements_data_azure.md#azure-pipelines-variable-groups)
+* Azure subscription and service principal
+* Azure DevOps project with [Pipelines variable groups](../requirements_data_azure.md#azure-pipelines-variable-groups)
+* A remote git repository for hosting the generated project (this guide assumes `main` is the primary branch in this repo)
 
 ## Step 1: Create/Generate Data Platform project using Stacks CLI
 
