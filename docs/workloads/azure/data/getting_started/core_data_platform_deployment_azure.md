@@ -79,7 +79,7 @@ If the client/user has their own network and self-hosted agent, then the network
 
 ## Step 3: Deploy Infrastructure in non-production environment
 
-Run the  pipeline configured in Step 2
+Run the pipeline configured in Step 2 to commence the build and deployment process.
 
 Running this pipeline in Azure DevOps will deploy the artifacts into the non-production (nonprod) environment. If successful, the generated resources will now be available in the nonprod Stacks environment.
 
