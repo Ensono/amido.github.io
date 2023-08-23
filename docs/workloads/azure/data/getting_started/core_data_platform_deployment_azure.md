@@ -44,7 +44,7 @@ The majority of the questions are self-explanatory; please refer to the **Stacks
 | What framework should be used for the project?| infra                           |
 | Which type of infrastructure is required?     | data                            |
 
-The resulting configuration file named stacks.yml contains all of the configuration that was used to generate the projects,
+The resulting configuration file named `stacks.yml` contains all of the configuration that was used to generate the project,
 which means it can be used to produce the same project stack again.
 
 The CLI can be used with a configuration file to generate the Ensono Digital Stacks based projects using `stacks-cli scaffold`.
