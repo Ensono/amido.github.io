@@ -86,4 +86,4 @@ Running this pipeline in Azure DevOps will deploy the artifacts into the non-pro
 ## Step 4: Deploy Infrastructure in further environments 
 
 * Deployment to the non-production (nonprod) environment is triggered on a feature branch when a pull request is open
-* Deployment to the production (prod) environment is triggered on merging to the `main/master` branch, followed by manual approval of the release step.
+* Deployment to the production (prod) environment is triggered on merging to the `main` branch, followed by manual approval of the release step.
