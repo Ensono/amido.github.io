@@ -15,7 +15,7 @@ keywords:
 
 This section provides an overview of generating a new Data Platform project and deploying core infrastructure for Stacks Data Platform.
 This aligns to the workflow shown in the [deployment architecture](../architecture/architecture_data_azure.md#data-engineering-workloads) section.
-It assumes all prerequisites are in place, including:
+It assumes all [prerequisites](../requirements_data_azure.md#azure) are in place, including:
 
 * Azure subscription and service principal
 * Azure DevOps project with [Pipelines variable groups](../requirements_data_azure.md#azure-pipelines-variable-groups)
