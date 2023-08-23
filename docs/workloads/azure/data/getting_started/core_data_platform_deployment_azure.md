@@ -81,9 +81,20 @@ If the client/user has their own network and self-hosted agent, then the network
 
 Run the pipeline configured in Step 2 to commence the build and deployment process.
 
-Running this pipeline in Azure DevOps will deploy the artifacts into the non-production (nonprod) environment. If successful, the generated resources will now be available in the nonprod Stacks environment.
+Running this pipeline in Azure DevOps will initiate the deployment of artifacts into the non-production (nonprod) environment.It's important to monitor the progress of this deployment to ensure its success. You can track the progress and status of the deployment within the Pipelines section of Azure DevOps.
 
-## Step 4: Deploy Infrastructure in further environments 
+If successful, the core infrasturcture resources will now be available in the nonprod Stacks environment. To view these deployed resources, navigate to the Azure portal and search for the resource group associated with the deployment. This resource group is named based values provided during step 1, such as company name, project name,region,component. Within the resource group, you'll find a list of the resources that were deployed.
+
+Name Format for Resource Groups  - companyname-projectname-stage-region-component eg amido-stacks-dev-euw-de
+
+Once core infrasturcture resources are deployed in nonprod environment,please add the required variable values in `amido-stacks-de-pipeline-nonprod` variable group. For additional information, see [Pipelines variable groups](../requirements_data_azure.md#azure-pipelines-variable-groups).
+
+## Step 4: Deploy Infrastructure in further environments
 
 * Deployment to the non-production (nonprod) environment is triggered on a feature branch when a pull request is open
 * Deployment to the production (prod) environment is triggered on merging to the `main` branch, followed by manual approval of the release step.
+
+Once core infrasturcture resources are deployed in nonprod environment,please add the required variable values in `amido-stacks-de-pipeline-prod` variable group.For additional information, see [Pipelines variable groups](../requirements_data_azure.md#azure-pipelines-variable-groups).
+
+By default Stacks provides a framework for managing the platform across two environments - nonprod and prod.
+The template CI/CD pipelines provided are based upon these two platform environments (nonprod and prod) - but these may be amended depending upon the specific requirements of your project and organisation.
