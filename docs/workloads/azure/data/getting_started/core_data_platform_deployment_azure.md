@@ -88,7 +88,7 @@ If successful, the core infrasturcture resources will now be available in the no
 
 Name Format for Resource Groups  - companyname-projectname-stage-region-component eg amido-stacks-dev-euw-de
 
-Once core infrasturcture resources are deployed in nonprod environment,please add the required variable values in `amido-stacks-de-pipeline-nonprod` variable group. For additional information, see [Pipelines variable groups](../requirements_data_azure.md#azure-pipelines-variable-groups).
+Once core infrasturcture resources are deployed in nonprod environment, values will need adding into the nonprod variable group to reflect the deployed resources (e.g. `amido-stacks-de-pipeline-nonprod`). For additional information, see [Pipelines variable groups](../requirements_data_azure.md#azure-pipelines-variable-groups).
 
 ## Step 4: Deploy Infrastructure in further environments
 
