@@ -55,7 +55,7 @@ stacks-cli scaffold -c ./stacks.yml
 
 Open the project locally and push the generated project to the target remote repository's `main` branch.
 
-## Step 2: Add Infrastructure pipeline in Azure Devops
+## Step 2: Add Infrastructure pipeline in Azure DevOps
 
 Open the project locally and create a new feature branch e.g.:
 
