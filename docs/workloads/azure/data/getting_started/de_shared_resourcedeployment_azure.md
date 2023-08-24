@@ -30,7 +30,6 @@ Open the project locally and create a new feature branch e.g.:
 ```bash
 git checkout -b feat/de-shared-pipeline
 ```
-
 The `de_build` folder includes YAML file called `job-pipeline-vars` that contains the variables used in the DE shared reource pipeline. These variables must be updated as per the project requirements.
 
 ## Step 2: Add DE shared resource pipeline in Azure DevOps
@@ -46,7 +45,7 @@ YAML file `de-shared-resources.yml` should be added as the definition for a new 
 5. The new pipeline will require access to any Azure DevOps pipeline variable groups specified in the pipeline YMAL. Under each variable group, go to 'Pipeline permissions' and add the pipeline.
 
 
-## Step 3: Deploy Infrastructure in non-production environment
+## Step 3: Deploy DE shared reource in non-production environment
 
 Run the pipeline configured in Step 2 to commence the build and deployment process.
 
@@ -54,7 +53,7 @@ Running this pipeline in Azure DevOps will initiate the deployment of artifacts 
 
 If successful, the core DE shared reource will now be available in the nonprod Stacks environment. To view these deployed resources, navigate to the [Azure portal](https://portal.azure.com/) and search for the resource group and ope ADF. Within the ADF, you'll find the shared resources that were deployed.
 
-## Step 4: Deploy Infrastructure in further environments
+## Step 4: Deploy DE shared reource in further environments
 
 By default Stacks provides a framework for managing the platform across two environments - nonprod and prod.
 The template CI/CD pipelines provided are based upon these two platform environments (nonprod and prod) - but these may be amended depending upon the specific requirements of your project and organisation.
