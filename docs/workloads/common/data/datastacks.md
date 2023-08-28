@@ -103,8 +103,6 @@ window_end_default: 2010-01-31
 
 Datastacks provides a CLI to conduct data quality checks using [PySparkle](pysparkle/pysparkle_quickstart.md) library as a backend.
 
-### Examples
-
 ```bash
 datastacks dq --help
 datastacks dq --config-path "ingest/Ingest_AzureSql_Example/data_quality/ingest_dq.json" --container config

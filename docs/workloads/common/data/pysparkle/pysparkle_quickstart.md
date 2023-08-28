@@ -18,14 +18,14 @@ data processing workflows with Apache Spark, and is an integral part of the Stac
 
 ## Key components
 
-PySparkle is designed to assist implementing data lakes based on the [medallion architecture](../docs/workloads/azure/data/etl_pipelines/etl_intro_data_azure.md#data-pipelines).
+PySparkle is designed to assist implementing a [medallion data lake](../../../azure/data/etl_pipelines/etl_intro_data_azure.md#data-pipelines).
 The key components of PySparkle include:
 
 - **ETL Transformation Utilities** which streamline Data Pipelines by:
-  - Offering PySpark utility functions. They accept raw data in various formats (e.g., CSV, Parquet, JSON, Delta)
-  and convert it into a structured Delta format. PySparkle also facilitates pre-defined or user-defined transformations
-  on dataframes.
-  - Providing storage utilities that ensure a smooth interaction with ADLS and Blob storage.
+    - Offering PySpark utility functions. They accept raw data in various formats (e.g., CSV, Parquet, JSON, Delta)
+    and convert it into a structured Delta format. PySparkle also facilitates pre-defined or user-defined transformations
+    on dataframes.
+    - Providing storage utilities that ensure a smooth interaction with ADLS and Blob storage.
 - **[Data Quality](pysparkle_data_quality.md)**: PySparkle performs data quality checks according to
   user-provided configurations, ensuring the reliability and accuracy of the data.
 
@@ -33,11 +33,11 @@ The key components of PySparkle include:
 
 To use PySparkle with Azure Data Lake Storage (ADLS Gen2), ensure that you have the following environment variables set:
 
-* `AZURE_TENANT_ID`: Directory ID for Azure Active Directory application.
-* `AZURE_CLIENT_ID`: Application ID for Azure Active Directory application.
-* `AZURE_CLIENT_SECRET`: Service Principal Secret.
-* `ADLS_ACCOUNT`: ADLS account name.
-* `BLOB_ACCOUNT`: Blob Storage account name.
+- `AZURE_TENANT_ID`: Directory ID for Azure Active Directory application.
+- `AZURE_CLIENT_ID`: Application ID for Azure Active Directory application.
+- `AZURE_CLIENT_SECRET`: Service Principal Secret.
+- `ADLS_ACCOUNT`: ADLS account name.
+- `BLOB_ACCOUNT`: Blob Storage account name.
 
 To perform data quality checks with PySparkle, you can use the [Datastacks](../datastacks.md) CLI:
 
