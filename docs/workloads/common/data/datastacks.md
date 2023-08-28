@@ -40,8 +40,8 @@ See [ETL Pipeline Deployment](../../azure/data/getting_started/etl_pipelines_dep
 
 ### Commands
 
-* **`generate`**: This command contains subcommands which generate components for the data platform given a config file.
-    * **`ingest`**: This subcommand utilises the template for ingest data pipelines, and uses a given config file to generate the required code for a new ingest pipeline ready for use. A flag can be included to specify whether or not to include data quality components in the pipeline.
+- **`generate`**: This command contains subcommands which generate components for the data platform given a config file.
+    - **`ingest`**: This subcommand utilises the template for ingest data pipelines, and uses a given config file to generate the required code for a new ingest pipeline ready for use. A flag can be included to specify whether or not to include data quality components in the pipeline.
 
 ### Examples
 
