@@ -40,9 +40,11 @@ The diagram below gives an overview of the Silver pipeline design.
 
 ![ADF_SilverPipelineDesign.png](../images/ADF_SilverPipelineDesign.png)
 
-
 Silver processing is executed as Python Databricks job, with repeatable data transformation processes packaged within
 our [PySparkle](../../../common/data/pysparkle/pysparkle_quickstart.md) library.
+
+The logic specific to a particular pipeline is kept inside a `spark_jobs` directory together with all the other pipeline
+definitions. For details please review the contents of [silver.py](https://github.com/amido/stacks-azure-data/blob/main/de_workloads/data_processing/silver/spark_jobs/silver.py).
 
 ## Data Factory pipeline design
 
@@ -58,18 +60,6 @@ In ADF the base Silver pipeline is as simple as this:
 
 ![ADF_Silver.png](../images/ADF_silver.png)
 
-It contains just one step - Python Databricks, configured to run a simple script (`silver.py`),
-which is an entrypoint to the PySparkle library. PySparkle is attached to a cluster by pointing
-to its location in DBFS.
-
-Contents of `dbfs:/FileStore/scripts/silver.py`:
-
-```python
-from pysparkle.pysparkle_cli import cli
-
-def call_pysparkle_entrypoint():
-    cli(["silver", "--dataset-name", "movies_dataset"], standalone_mode=False)
-
-if __name__ == "__main__":
-    call_pysparkle_entrypoint()
-```
+It contains just one step - Python Databricks, configured to run a `silver.py` script, which gets deployed to DBFS
+(`dbfs:/FileStore/scripts/silver/silver.py`). Datastacks library with PySparkle package is attached to a cluster by
+pointing to its location in DBFS.
