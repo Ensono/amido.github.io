@@ -53,7 +53,7 @@ Running this pipeline in Azure DevOps will initiate the deployment of artifacts 
 
 If successful, the core DE shared reource will now be available in the nonprod Stacks environment. To view these deployed resources, navigate to the [Azure portal](https://portal.azure.com/), and go to your Azure Data Factory UI in the proper resource group. Within the ADF, you'll find the shared resources that were deployed.
 
-## Step 4: Deploy DE shared reource in further environments
+## Step 4: Deploy shared resources in further environments
 
 By default Stacks provides a framework for managing the platform across two environments - nonprod and prod.
 The template CI/CD pipelines provided are based upon these two platform environments (nonprod and prod) - but these may be amended depending upon the specific requirements of your project and organisation.
