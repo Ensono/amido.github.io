@@ -41,67 +41,9 @@ import GoogleCloudStorageLogo from "./Logos/GoogleCloudStorageLogo";
 import BddfyLogo from "./Logos/BDDfyLogo";
 
 import AmidoStacksLogo from "./Logos/AmidoStacksLogo"
-import ResponsivePlayerWithLinks from "../../src/pages/Components/ResponsivePlayerWithLinks/ResponsivePlayerWithLinks"
 
-const features = [
-  {
-    title: "Infrastructure",
-    link: "infrastructure/azure/core_infrastructure",
-    color: "#25CEB6",
-    justification: "center",
-    description: (
-      <>
-        Find out how to configure your cloud provider and other core
-        infrastructure to make Stacks work for you.
-      </>
-    ),
-  },
-  {
-    title: "Test Framework",
-    link: "testing/cli_testing_frameworks",
-    color: "#FE6D6A",
-    justification: "center",
-    description: (
-      <>
-        With just one command, discover how to tailor your project with Stacks’
-        front-end focused opinionated test frameworks.
-      </>
-    ),
-  },
-];
-
-const features2 = [
-  {
-    title: "Contribute to Stacks",
-    link: "contributions",
-    description: (
-      <>
-        As an open source project, you can be a part of the Github community
-        shaping Amido Stacks
-      </>
-    ),
-  },
-  {
-    title: "Business benefit with Stacks",
-    link: "https://www.amido.com/approach/amido-stacks",
-    description: (
-      <>
-        Stacks de-risks your project and accelerates your architecture,
-        giving you a platform-agnostic, tried-and-tested route to faster business benefit
-      </>
-    ),
-  },
-  {
-    title: "Careers at Amido",
-    link: "https://amido.com/careers/",
-    description: (
-      <>
-        As the go-to partner for cloud-native transformation, we’re always
-        looking for fresh new talent
-      </>
-    ),
-  },
-];
+import features from "./Constants/StacksFeatures.constants"
+import contribute from "./Constants/Contribute.constants"
 
 function Picker() {
   const [firstOption, setFirstOption] = useState(undefined);
@@ -203,11 +145,11 @@ function Picker() {
         )}
 
         <div className={styles.buttons} style={{ marginTop: 40 }}>
-            <Link className={clsx("button button--outline button--lg", styles.blackButton, isFinalChoice ? "" : styles.disabledButton )}
+            <Link className={clsx("button button--primary button--lg", isFinalChoice ? "" : styles.disabledButton )}
                   to={ isFinalChoice ? (baseUrl + (thirdOption ? thirdOption.value : firstOption ? firstOption.value : "")) : "" }
                   { ...isFinalChoice ? "" : "disabled"}
             >
-              GET STARTED WITH STACKS
+              LET'S GO!
             </Link>
         </div>
       </div>
@@ -238,6 +180,7 @@ function Home() {
       input.dispatchEvent(event);
     }, 100);
   };
+
   return (
     <Layout
       title={`${siteConfig.title}`}
@@ -245,24 +188,19 @@ function Home() {
       keywords={siteConfig.customFields.keywords}
     >
       <main>
-        <section className={styles.logocontainer}>
-          <div>
-            <AmidoStacksLogo />
-          </div>
+        <section>
+          <h1>TODO: ENSONO STACKS IMAGE</h1>
+            {/* <AmidoStacksLogo /> TODO: replace with the new ensono Stacks */}
         </section>
-        <section className={styles.definition}>
-          <div className="container">
-            <h3>Get started with Amido Stacks</h3>
-
-            <p>
-              Stacks is the cloud-native software factory for digital transformations that work.
-              Increase project predictability with reliable,
-              tried and tested code that slashes configuration time and speeds up deployment. <br />
-              Amido Stacks is a catalogue of {" "} <a href={workloadsUrl}> workload</a> templates, package management and example implementations that act as a foundation for you to springboard into build.  <br />
-            </p>
-            <p>
-              Brought to you by <a href={amidoEnsonoUrl}>Amido, an Ensono company. </a>
-            </p>
+        <section className={styles.introductionSection}>
+          <div className={styles.intro}>
+            <h3>Stacks is the <span className={styles.primaryColour}>cloud-native software factory</span> for digital transformations that work.</h3>
+            <ul>
+              <li>Increase project predictability with reliable, tried and tested code.</li>
+              <li>Slash configuration time and speeds up deployment.</li>
+              <li>An ever-growing calalogue of workload templates, package management and example implementations.</li>
+              <li>A solid foundation for you to springboard into build.</li>
+            </ul>
             <div className={styles.buttons} style={{ marginTop: 20 }}>
               <Link
                 className={clsx(
@@ -271,31 +209,26 @@ function Home() {
                 )}
                 to={baseUrl}
               >
-                LEARN ABOUT AMIDO STACKS
+                Tell me more
               </Link>
             </div>
           </div>
-        </section>
-
-        <section id="stacks-selector" className={styles.heroBanner}>
-          <div className="container">
-            <h1  className="hero__title">What can you do with Stacks?</h1>
-            <p className="hero__subtitle">
-              Choose a{" "}
-              <a
-                href={baseUrl}
-              >
-                {" "}
-                workload</a>{" "} below and you can be up- <br />
-              and-running with a project in less than an hour:
-            </p>
-            <div className={styles.buttons}>
-              <Picker />
+          <div>
+            <span className={styles.primaryColour}><i style={{display: 'inline-block'}} className={styles.textCenter}>"Ensono Stacks made our transformation significantly easier and gave us confidence right from day one" - <strong>Ensono Client</strong></i></span>
+            <div className={"container " + styles.heroBanner} id="stacks-selector">
+              <h3>What can you do with Stacks?</h3>
+              <p className="hero__subtitle">
+                Choose a <a href={baseUrl}> workload</a> below and you can be up-and-running with a project in less than an hour:
+              </p>
+              <div className={styles.buttons}>
+                <Picker />
+              </div>
             </div>
           </div>
         </section>
 
-        <section className={styles.videoSection}>
+        {/* TODO: ENSONO: This video still required? */}
+        {/* <section className={styles.videoSection}>
           <div className="container">
             <ResponsivePlayerWithLinks url="https://vimeo.com/486755315"
                                        links={[
@@ -305,7 +238,7 @@ function Home() {
                                        ]}
             />
           </div>
-        </section>
+        </section> */}
 
         <div className={styles.mainHolder}>
           <div className={styles.main}>
@@ -375,10 +308,6 @@ function Home() {
         <section className={styles.features}>
           {features.map((feature) => (
             <div className={clsx(styles.feature)}
-                 style={{
-                   justifyContent: feature.justification,
-                   backgroundColor: feature.color,
-                 }}
             >
               <div>
                 <h3>{feature.title}</h3>
@@ -399,10 +328,9 @@ function Home() {
         <div className={styles.mainHolder}>
           <div className={styles.main}>
             <section className={styles.features2}>
-              {features2.map((feature) => (
                 <div className={clsx(styles.feature)}>
-                  <h3> {feature.title}</h3>
-                  <p>{feature.description}</p>
+                  <h3> {contribute.title}</h3>
+                  <p>{contribute.description}</p>
 
                   <div className={styles.buttons} style={{ marginTop: 40 }}>
                     <Link
@@ -410,13 +338,12 @@ function Home() {
                         "button button button--primary button--lg",
                         styles.getStarted
                       )}
-                      to={ feature.link.startsWith("http") ? feature.link  : baseUrl + feature.link}
+                      to={ contribute.link.startsWith("http") ? contribute.link  : baseUrl + contribute.link}
                     >
-                      {feature.title}
+                      {contribute.title}
                     </Link>
                   </div>
                 </div>
-              ))}
             </section>
           </div>
         </div>

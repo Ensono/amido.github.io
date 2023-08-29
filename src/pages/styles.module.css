@@ -53,7 +53,7 @@ article a:hover,
 }
 
 :root {
-  --ifm-button-border-radius: 36px;
+  --ifm-button-border-radius: 0.3rem;
   font-family: "Karla", sans-serif;
 }
 
@@ -65,7 +65,7 @@ article a:hover,
 }
 
 .buttons > .button {
-  border-radius: 36px;
+  /* border-radius: 36px; */
 }
 
 .features {
@@ -193,22 +193,7 @@ article a:hover,
   color: black;
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-
-@media (min-width: 320px) {
-  .containerSelects {
-    width: 100%;
-  }
-}
-
-@media (min-width: 900px) {
-  .containerSelects {
-    width: 40%;
-  }
+  width: 100%;
 }
 
 .containerSelects2 {
@@ -255,23 +240,18 @@ article a:hover,
 .learnAboutStacks {
   margin-top: 30px;
   margin-bottom: 30px;
-  color: black;
 }
 
 .heroBanner {
-  padding: 4rem 0;
+  margin-top: 1rem;
+  padding: 1rem;
   text-align: center;
   position: relative;
-  background-color: #ffc410;
-}
-
-.heroBanner h1 {
-  font-size: max(28px, min(3vw, 44px));
-
+  border: 1px solid #000;
 }
 
 .heroBanner p {
-  font-size: max(18px, min(3vw, 30px));
+  font-size: 1rem;
 }
 
 .logocontainer {
@@ -470,4 +450,29 @@ html[data-theme="dark"] .getStarted:hover {
   cursor: default;
   color: white;
   background-color: black;
+}
+
+.primaryColour {
+  color: var(--ifm-color-primary)
+}
+
+.textCenter { 
+  text-align: center;
+}
+
+.introductionSection {
+  display: flex;
+  padding: 1.5rem;
+  gap: 3.5rem;
+}
+
+.introductionSection ul li {
+  padding: 0.5rem 0;
+}
+
+
+.intro {
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: 55%;
 }

@@ -7,15 +7,17 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-navbar-background-color: #242526;
-  --ifm-color-primary: #fecb02;
-  --ifm-color-primary-dark: #e5b701;
+  --ifm-navbar-background-color: #fff;
+  --ifm-color-primary: #6941EB;
+  --ifm-color-lead-accent-primary: #6941EB;
+  --ifm-color-lead-brand-primary: #6941EB;
+  --ifm-code-font-size: 95%;
+  /* --ifm-color-primary-dark: #e5b701; // TODO: ENSONO BRAND: Find out if this is used
   --ifm-color-primary-darker: #d9ad01;
   --ifm-color-primary-darkest: #b28f01;
   --ifm-color-primary-light: #fed01b;
   --ifm-color-primary-lighter: #fed328;
-  --ifm-color-primary-lightest: #fedb4e;
-  --ifm-code-font-size: 95%;
+  --ifm-color-primary-lightest: #fedb4e; */
 }
 
 :root {
@@ -45,12 +47,12 @@ html[data-theme="dark"] {
 }
 
 .navbar {
-  background-color: #242526;
-  color: white !important;
+  background-color: var(--ifm-navbar-background-color);
+  color: #000;
 }
 
 .navbar__link {
-  color: white !important;
+  color: #000;
 }
 
 .navbar__link:hover {
