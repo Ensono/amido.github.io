@@ -34,9 +34,8 @@ The `de_build` folder includes YAML file called `job-pipeline-vars` that contain
 
 ## Step 2: Add a shared resources pipeline in Azure DevOps
 
-YAML file containing a template Azure DevOps CI/CD pipeline for building and deploying the DE shared reource, named `de-shared-resources.yml` is configured in the `de_workloads/shared_resources`
-
-YAML file `de-shared-resources.yml` should be added as the definition for a new pipeline in Azure DevOps.
+YAML file containing a template Azure DevOps CI/CD pipeline for building and deploying the shared resources, named `de-shared-resources.yml` is configured in the [de_workloads/shared_resources](https://github.com/amido/stacks-azure-data/tree/main/de_workloads/shared_resources).
+This YAML file should be added as the definition for a new pipeline in Azure DevOps.
 
 1. Sign-in to your Azure DevOps organization and go to your project
 2. Go to Pipelines, and then select **New pipeline**
