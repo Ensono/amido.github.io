@@ -44,7 +44,7 @@ This YAML file should be added as the definition for a new pipeline in Azure Dev
 5. The new pipeline will require access to any Azure DevOps pipeline variable groups specified in the pipeline YMAL. Under each variable group, go to 'Pipeline permissions' and add the pipeline.
 
 
-## Step 3: Deploy DE shared reource in non-production environment
+## Step 3: Deploy shared resources in non-production environment
 
 Run the pipeline configured in Step 2 to commence the build and deployment process.
 
