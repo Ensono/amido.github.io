@@ -30,6 +30,7 @@ This process will deploy the following resources into the project:
     * Linked service
     * Dataset
     * Pipeline
+    * Trigger
 * Data ingest config files (JSON)
 * Azure DevOps CI/CD pipeline (YAML)
 * (optional) Spark jobs for data quality tests (Python)
@@ -170,9 +171,17 @@ The generated workload contains a YAML file containing a template Azure DevOps C
 
 Running this pipeline in Azure DevOps will deploy the artifacts into the non-production (nonprod) environment and run tests. If successful, the generated resources will now be available in the nonprod Stacks environment.
 
-Continue to make any further amendments required to the new workload, re-running the pipeline as required. If including data quality checks, update the (`ingest_dq`) file with details of checks required on the data.
+## Step 7: Review deployed resources
 
-## Step 7: Deploy new workload in further environments
+If successful, the new resources will now be deployed into the non-production resource group in Azure - these can be viewed through the [Azure Portal](https://portal.azure.com/#home) or CLI.
+
+The Azure Data Factory resources can be viewed through the [Data Factory UI](https://adf.azure.com/). You may also wish to run/debug the newly generated pipeline from here (see [Microsoft documentation](https://learn.microsoft.com/en-us/azure/data-factory/iterative-development-debugging)).
+
+ℹ️ Note: The structure of the data platform and Data Factory resources are defined in the project's code repository, and deployed through the Azure DevOps pipelines. Changes to Data Factory resources directly through the UI will lead to them be overwritten when pipelines are next run. If you wish to update Data Factory resources, update the appropriate files within the workload (under the `data_factory` path).
+
+Continue to make any further amendments required to the new workload, re-running the DevOps pipeline as required. If including data quality checks, update the (`ingest_dq`) file in the repository with details of checks required on the data.
+
+## Step 8: Deploy new workload in further environments
 
 In the example pipeline templates:
 
