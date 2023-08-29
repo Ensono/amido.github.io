@@ -4,7 +4,7 @@ title: Shared Resources Deployment
 sidebar_label: Shared Resources Deployment
 hide_title: false
 hide_table_of_contents: false
-description: DE shared resource deployment
+description: Deployment of common Azure Data Factory resources shared by data pipelines
 keywords:
   - DE
   - data
