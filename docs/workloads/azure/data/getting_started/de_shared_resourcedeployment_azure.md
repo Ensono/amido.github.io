@@ -13,7 +13,7 @@ keywords:
   - cicd
 ---
 
-This section provides an overview of deploying Data Platform shared resources for Stacks Data Platform.
+This section provides an overview of deploying the shared resources for Stacks Data Platform.
 This aligns to the workflow shown in the [deployment architecture](../architecture/architecture_data_azure.md#data-engineering-workloads) section.
 Data Plaform shared resources include the ADF resources which are shared in various ADF pipelines.
 
