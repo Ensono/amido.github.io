@@ -15,7 +15,19 @@ keywords:
 
 This section provides an overview of deploying the shared resources for Stacks Data Platform.
 This aligns to the workflow shown in the [deployment architecture](../architecture/architecture_data_azure.md#data-engineering-workloads) section.
-Data Plaform shared resources include the ADF resources which are shared in various ADF pipelines.
+Data Plaform shared resources include the ADF resources which are shared in various ADF pipelines.These are as follow:-
+* Linked services
+    * ls_Blob_ConfigStore
+    * ls_KeyVault
+    * ls_ADLS_DataLake
+    * ls_Databricks_Small
+    * ls_Blob_ConfigStore
+* Datasets
+    * ds_dp_ConfigStore_Json
+    * ds_dp_DataLake_Parquet
+* Pipelines
+    * pipeline_Get_Ingest_Config
+    * pipeline_Generate_Ingest_Query
 
 It assumes all [prerequisites](../requirements_data_azure.md#azure) are in place, including:
 
