@@ -1,7 +1,7 @@
 ---
 id: de_shared_resourcedeployment_azure
-title: DE shared resource Deployment
-sidebar_label: DE shared resource Deployment
+title: Shared Resources Deployment
+sidebar_label: Shared Resources Deployment
 hide_title: false
 hide_table_of_contents: false
 description: DE shared resource deployment
