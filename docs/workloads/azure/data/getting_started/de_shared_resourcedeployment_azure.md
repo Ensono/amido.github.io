@@ -32,7 +32,7 @@ git checkout -b feat/de-shared-pipeline
 ```
 The `de_build` folder includes YAML file called `job-pipeline-vars` that contains the variables used in the DE shared reource pipeline. These variables must be updated as per the project requirements.
 
-## Step 2: Add DE shared resource pipeline in Azure DevOps
+## Step 2: Add a shared resources pipeline in Azure DevOps
 
 YAML file containing a template Azure DevOps CI/CD pipeline for building and deploying the DE shared reource, named `de-shared-resources.yml` is configured in the `de_workloads/shared_resources`
 
