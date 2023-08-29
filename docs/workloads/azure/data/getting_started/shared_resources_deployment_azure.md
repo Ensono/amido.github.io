@@ -16,6 +16,7 @@ keywords:
 This section provides an overview of deploying the shared resources for Stacks Data Platform.
 This aligns to the workflow shown in the [deployment architecture](../architecture/architecture_data_azure.md#data-engineering-workloads) section.
 Data Plaform shared resources include the ADF resources which are shared in various ADF pipelines.These are as follows:
+
 * Linked services
     * ls_Blob_ConfigStore
     * ls_KeyVault
@@ -42,6 +43,7 @@ Open the project locally and create a new feature branch, e.g.:
 ```bash
 git checkout -b feat/de-shared-pipeline
 ```
+
 The `de_build` folder includes YAML file called `job-pipeline-vars` that contains the variables used in the DE shared reource pipeline. These variables must be updated as per the project requirements.
 
 ## Step 2: Add a shared resources pipeline in Azure DevOps
