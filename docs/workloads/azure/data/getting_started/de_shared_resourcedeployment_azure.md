@@ -1,5 +1,5 @@
 ---
-id: de_shared_resourcedeployment_azure
+id: shared_resources_deployment_azure
 title: Shared Resources Deployment
 sidebar_label: Shared Resources Deployment
 hide_title: false
