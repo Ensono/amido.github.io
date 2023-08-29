@@ -25,7 +25,7 @@ It assumes all [prerequisites](../requirements_data_azure.md#azure) are in place
 
 ## Step 1: Create feature branch
 
-Open the project locally and create a new feature branch e.g.:
+Open the project locally and create a new feature branch, e.g.:
 
 ```bash
 git checkout -b feat/de-shared-pipeline
