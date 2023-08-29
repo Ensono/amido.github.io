@@ -9,8 +9,8 @@ keywords:
   - DE
   - data
   - infrastructure
-  - azure
-  - template
+  - adf
+  - cicd
 ---
 
 This section provides an overview of deploying Data Platform shared resources for Stacks Data Platform.
