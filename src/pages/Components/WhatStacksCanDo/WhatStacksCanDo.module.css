@@ -1,0 +1,39 @@
+
+.heroBanner {
+    margin-top: 1rem;
+    padding: 1rem;
+    text-align: center;
+    position: relative;
+}
+
+.heroBanner p {
+    font-size: 1rem;
+}
+
+.heroBanner p > a {
+    color: var(--ifm-link-color);
+    text-decoration-style: var(--ifm-text-decoration-style);
+    text-decoration-color: var(--ifm-link-color);
+    text-decoration-line: var(--ifm-link-decoration-line);
+  }
+
+.heroBanner p>a:hover {
+    cursor: pointer;
+    color: var(--ifm-link-hover-color);
+    opacity: var(--ifm-link-hover-opacity);
+    text-decoration-style: var(--ifm-text-hover-decoration-style);
+    text-decoration-line: var(--ifm-link-hover-decoration-line);
+    transition-duration: var(--ifm-transition-duration);
+    transition-property: var(--ifm-transition-property);
+    transition-delay: var(--ifm-transition-delay);
+    transition-timing-function: var(--ifm-transition-timing-function);
+    text-decoration-color: var(--ifm-link-hover-color);
+} 
+  
+  
+
+@media (min-width: 768px) {
+    .heroBanner{
+        border: 1px solid #000;
+    }
+}

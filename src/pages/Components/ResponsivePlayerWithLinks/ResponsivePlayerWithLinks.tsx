@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import ReactPlayer from "react-player";
+
 import styles from "./styles.module.css";
 
 const ResponsivePlayerWithLinks = ({url, links}) => {

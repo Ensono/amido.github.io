@@ -1,0 +1,17 @@
+.containerSelects {
+    color: black;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .disabledButton {
+    cursor: default;
+  }
+  
+  .disabledButton:hover {
+    cursor: default;
+    color: white;
+    background-color: black;
+  }
+  
