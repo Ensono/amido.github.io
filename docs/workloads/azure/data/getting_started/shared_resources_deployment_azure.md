@@ -31,7 +31,7 @@ The shared resources include Azure Data Factory resources which are shared acros
 
 For details of how these resources are used in ingest pipelines, see [data ingestion](../etl_pipelines/ingest_data_azure.md).
 
-It assumes all [prerequisites](../requirements_data_azure.md#azure) are in place, including:
+This guide assumes all [prerequisites](../requirements_data_azure.md#azure) are in place, including:
 
 * Azure subscription and service principal
 * Azure DevOps project with [Pipelines variable groups](../requirements_data_azure.md#azure-pipelines-variable-groups)
