@@ -74,5 +74,3 @@ The template CI/CD pipelines provided are based upon these two platform environm
 
 * Deployment to the non-production (nonprod) environment is triggered on a feature branch when a pull request is open
 * Deployment to the production (prod) environment is triggered on merging to the `main` branch, followed by manual approval of the release step.
-
-
