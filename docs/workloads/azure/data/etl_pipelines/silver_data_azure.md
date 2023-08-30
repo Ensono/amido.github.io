@@ -43,8 +43,8 @@ The diagram below gives an overview of the Silver pipeline design.
 Silver processing is executed as Python Databricks job, with repeatable data transformation processes packaged within
 our [PySparkle](../../../common/data/pysparkle/pysparkle_quickstart.md) library.
 
-The logic specific to a particular pipeline is kept inside a `spark_jobs` directory together with all the other pipeline
-definitions. For details please review the contents of [silver.py](https://github.com/amido/stacks-azure-data/blob/main/de_workloads/data_processing/silver/spark_jobs/silver.py).
+Transformation and processing logic specific to particular datasets is kept inside the `spark_jobs` directory.
+For an example of this, please review [silver.py](https://github.com/amido/stacks-azure-data/blob/main/de_workloads/data_processing/silver/spark_jobs/silver.py).
 
 ## Data Factory pipeline design
 
