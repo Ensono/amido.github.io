@@ -45,7 +45,7 @@ Open the project locally and create a new feature branch, e.g.:
 git checkout -b feat/de-shared-pipeline
 ```
 
-The `de_build` folder includes YAML file called `job-pipeline-vars` that contains the variables used in the DE shared reource pipeline. These variables must be updated as per the project requirements.
+The `de_build` folder includes YAML file called `job-pipeline-vars` that contains the variables used in the DE shared resource pipeline. These variables must be updated as per the project requirements.
 
 ## Step 2: Add a shared resources pipeline in Azure DevOps
 
