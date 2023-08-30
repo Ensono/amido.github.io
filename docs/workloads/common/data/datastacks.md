@@ -41,7 +41,7 @@ See [ETL Pipeline Deployment](../../azure/data/getting_started/etl_pipelines_dep
 ### Commands
 
 * **`generate`**: This command contains subcommands which generate components for the data platform given a config file.
-    * **`ingest`**: This subcommand utilises the template for ingest data pipelines, and uses a given config file to generate the required code for a new ingest pipeline ready for use. A flag can be included to specify whether or not to include data quality components in the pipeline.
+    * **`ingest`**: This subcommand utilises the template for ingest data pipelines, and uses a given config file to generate the required code for a new ingest pipeline ready for use. A flag can be included to specify whether to include data quality components in the pipeline.
 
 ### Examples
 
@@ -101,7 +101,7 @@ window_end_default: 2010-01-31
 
 ## Performing data quality checks
 
-Datastacks provides a CLI to conduct data quality checks using [PySparkle](pysparkle/pysparkle_quickstart.md) library as a backend.
+Datastacks provides a CLI to conduct data quality checks using the [PySparkle](pysparkle/pysparkle_quickstart.md) library as a backend.
 
 ```bash
 datastacks dq --help

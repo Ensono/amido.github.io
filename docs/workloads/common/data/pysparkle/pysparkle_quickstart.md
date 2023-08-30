@@ -22,10 +22,10 @@ PySparkle is designed to assist implementing a [medallion data lake](../../../az
 The key components of PySparkle include:
 
 - **ETL Transformation Utilities** which streamline Data Pipelines by:
-    - Offering PySpark utility functions. They accept raw data in various formats (e.g., CSV, Parquet, JSON, Delta)
+    - Offering PySpark utility functions. They accept raw data in various formats (e.g. CSV, Parquet, JSON, Delta)
     and convert it into a structured Delta format. PySparkle also facilitates pre-defined or user-defined transformations
     on dataframes.
-    - Providing storage utilities that ensure a smooth interaction with ADLS and Blob storage.
+    - Providing storage utilities that ensure smooth and secure interaction with Azure Data Lake and Blob storage.
 - **[Data Quality](pysparkle_data_quality.md)**: PySparkle performs data quality checks according to
   user-provided configurations, ensuring the reliability and accuracy of the data.
 
