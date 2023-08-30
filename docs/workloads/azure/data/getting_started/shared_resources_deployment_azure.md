@@ -56,7 +56,7 @@ This YAML file should be added as the definition for a new pipeline in Azure Dev
 2. Go to Pipelines, and then select **New pipeline**
 3. Name the new pipeline, e.g. `de-shared-resources`
 4. For the pipeline definition, specify the YAML file in the project repository feature branch (`de-shared-resources.yml`) and save
-5. The new pipeline will require access to any Azure DevOps pipeline variable groups specified in the pipeline YMAL. Under each variable group, go to 'Pipeline permissions' and add the pipeline.
+5. The new pipeline will require access to any Azure DevOps pipeline variable groups specified in the pipeline YAML. Under each variable group, go to 'Pipeline permissions' and add the pipeline.
 
 
 ## Step 3: Deploy shared resources in non-production environment
