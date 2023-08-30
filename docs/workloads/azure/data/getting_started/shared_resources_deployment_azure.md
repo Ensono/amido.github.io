@@ -18,17 +18,18 @@ This aligns to the workflow shown in the [deployment architecture](../architectu
 The shared resources include Azure Data Factory resources which are shared across pipelines. These are as follows:
 
 * Linked services
-    * ls_Blob_ConfigStore
-    * ls_KeyVault
-    * ls_ADLS_DataLake
-    * ls_Databricks_Small
-    * ls_Blob_ConfigStore
+    * _ls_ADLS_DataLake_ - Connection to the Data Lake
+    * _ls_Blob_ConfigStore_ - Connection to the config storage location
+    * _ls_Databricks_Small_ - Connection to Databricks job cluster (default 2 fixed workers)
+    * _ls_KeyVault_ - Connection to Azure Key Vault
 * Datasets
-    * ds_dp_ConfigStore_Json
-    * ds_dp_DataLake_Parquet
+    * _ds_dp_ConfigStore_Json_ - For reading JSON data from ls_Blob_ConfigStore
+    * _ds_dp_DataLake_Parquet_ - For writing Parquet data to ls_ADLS_DataLake
 * Pipelines
-    * pipeline_Get_Ingest_Config
-    * pipeline_Generate_Ingest_Query
+    * _pipeline_Get_Ingest_Config_ - To retrieve config data for use in a pipeline
+    * _pipeline_Generate_Ingest_Query_ - To generate a query for ingesting data
+
+For details of how these resources are used in ingest pipelines, see [data ingestion](../etl_pipelines/ingest_data_azure.md).
 
 It assumes all [prerequisites](../requirements_data_azure.md#azure) are in place, including:
 
