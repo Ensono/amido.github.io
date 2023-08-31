@@ -16,7 +16,7 @@ keywords:
   - get started
 ---
 
-import ResponsivePlayer from "../../../../../src/pages/Components/ResponsivePlayer/ResponsivePlayer";
+import ResponsivePlayer from "../../../../../src/pages/_Components/ResponsivePlayer/ResponsivePlayer";
 
 ## Create a custom Java project template from the command line
 

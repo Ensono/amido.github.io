@@ -1,0 +1,57 @@
+.ensonoStacksImageContainer {
+    position: relative;
+    min-height: 35rem;
+    color: #fff;
+}
+
+
+.ensonoStacksImageContainer h1 {
+    font-size: 4rem;
+}
+
+.ensonoStacksImageContainer p {
+    font-size: 1.5rem;
+    width: 300px;
+    text-align: center;
+}
+
+.ensonoStacksImageContainer img {
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -1;
+}
+
+.ensonoStacksImageContainer svg {
+   position: relative;
+   width: 4rem;
+   height: 4rem;
+}
+
+@media only screen and (min-width: 768px) {
+    .ensonoStacksImageContainer svg {
+        width: 20rem;
+        height: 20rem;
+     }
+
+     .ensonoStacksImageContainer h1 {
+        font-size: 4rem;
+    }
+    
+    .ensonoStacksImageContainer p {
+        font-size: 1.5rem;
+        width: 300px;
+        text-align: center;
+    }
+}
+
+.ensonoStacksImageContainer .wrapper {
+    position: absolute;
+    left: 3rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}

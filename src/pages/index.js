@@ -3,10 +3,11 @@ import Layout from "@theme/Layout";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import styles from "./styles.module.css";
 
-import Introduction from "./Components/Introduction/Introduction";
-import WhatStacksCanDo from "./Components/WhatStacksCanDo/WhatStacksCanDo";
-import TechSupportedByStacks from "./Components/TechSupportedByStacks/TechSupportedByStacks";
-import Features from "./Components/Features/Features";
+import EnsonoStacksImage from "./_Components/EnsonoStacksImage/EnsonoStacksImage";
+import Introduction from "./_Components/Introduction/Introduction";
+import WhatStacksCanDo from "./_Components/WhatStacksCanDo/WhatStacksCanDo";
+import TechSupportedByStacks from "./_Components/TechSupportedByStacks/TechSupportedByStacks";
+import Features from "./_Components/Features/Features";
 
 
 function Home() {
@@ -20,19 +21,14 @@ function Home() {
       keywords={siteConfig.customFields.keywords}
     >
       <main>
-        <section>
-          <h1>TODO: ENSONO STACKS IMAGE</h1>
-            {/* <AmidoStacksLogo /> TODO: replace with the new ensono Stacks */}
-        </section>
-        <section className={styles.section}>
+        <EnsonoStacksImage/>
+        <div className={styles.section}>
           <div className={styles.introductionSection}>
             <Introduction />
             <WhatStacksCanDo />
           </div>
-        </section>
-
+        </div>
         <TechSupportedByStacks />
-
        <Features/>
       </main>
     </Layout>

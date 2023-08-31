@@ -16,7 +16,7 @@ keywords:
   - serenity report
 ---
 
-import ResponsivePlayer from "../../src/pages/Components/ResponsivePlayer/ResponsivePlayer";
+import ResponsivePlayer from "../../src/pages/_Components/ResponsivePlayer/ResponsivePlayer";
 
 In the Java world there are few tools that provide an easier experience with adding behaviour driven development to your automated testing better than [Serenity BDD](http://serenity-bdd.info/#/).  Not only is it very easy to use but it also adds a rich layer of reporting to your automated testing framework which is crucial for project management and keeping your stakeholders informed.
 

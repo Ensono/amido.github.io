@@ -22,7 +22,7 @@ keywords:
 
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
-import ResponsivePlayer from "../../../../../../src/pages/Components/ResponsivePlayer/ResponsivePlayer";
+import ResponsivePlayer from "../../../../../../src/pages/_Components/ResponsivePlayer/ResponsivePlayer";
 
 [Serenity BDD](https://serenity-bdd.github.io/theserenitybook/latest/index.html) is an open source library that aims to make the idea of living documentation a reality.
 It also uses the test results to produce illustrated, narrative reports that document and describe what your application does and how it works.
