@@ -18,6 +18,12 @@ Code linting is the process of using automated tools called linters to analyse s
 
 By using code linting tools, development teams can catch errors early, maintain coding standards, and produce high-quality, consistent code. This leads to more efficient development, easier collaboration, and reduced chances of introducing bugs and other issues into the codebase.
 
+:::info
+
+Linting tools in Stacks for CI/CD are setup and configured by the [@ensono-stacks/workspace:init](https://stacks.amido.com/docs/nx/workspace/ensono-stacks-workspace#ensono-stacksworkspaceinit) and [@ensono-stacks/workspace:init-deployment](https://stacks.amido.com/docs/nx/workspace/ensono-stacks-workspace#ensono-stacksworkspaceinit-deployment) generators.
+
+:::
+
 ## ESlint
 
 Stacks Nx applications use ESlint to analyse our code and find potential issues, errors, and stylistic problems. This helps developers identify and fix issues in the code by enforcing a set of coding rules and conventions.
