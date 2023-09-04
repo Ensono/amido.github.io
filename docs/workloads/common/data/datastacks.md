@@ -61,12 +61,12 @@ In order to generate a new data engineering workload the Datastacks CLI takes a 
 | --------------------------------------------- | ----------------------------------------------------------------- | --------------- | ------------ | ------------------- | ------------------- |
 | dataset_name | Dataset name, used to derive pipeline and linked service names. | Yes | String | _n/a_ | AzureSql_Demo |
 | pipeline_description | Description of the pipeline to be created. | Yes | String | _n/a_ | "Ingest from demo Azure SQL database using ingest config file." |
-| data_source_type | Datasource type, at present this must be azure_sql. | Yes | String<br>Allowed values:<br>"azure_sql" | _n/a_ | azure_sql |
+| data_source_type | Datasource type, at present this must be azure_sql. | Yes | String<br />Allowed values:<br />"azure_sql" | _n/a_ | azure_sql |
 | key_vault_linked_service_name | Name of the Key Vault linked service in Data Factory. | Yes | String | _n/a_ | ls_KeyVault |
 | data_source_password_key_vault_secret_name | Secret name of the data source password in Key Vault. | Yes | String | _n/a_ | sql-password |
 | data_source_connection_string_variable_name | Variable name for the connection string. | Yes | String | _n/a_ | sql_connection |
-| ado_variable_groups_nonprod | List of required variable groups in non-production environment. | Yes | List[String] | _n/a_ | - amido-stacks-de-pipeline-nonprod<br>- stacks-credentials-nonprod-kv |
-| ado_variable_groups_prod | List of required variable groups in production environment. | Yes | List[String] | _n/a_ | - amido-stacks-de-pipeline-prod<br>- stacks-credentials-prod-kv |
+| ado_variable_groups_nonprod | List of required variable groups in non-production environment. | Yes | List[String] | _n/a_ | - amido-stacks-de-pipeline-nonprod<br />- stacks-credentials-nonprod-kv |
+| ado_variable_groups_prod | List of required variable groups in production environment. | Yes | List[String] | _n/a_ | - amido-stacks-de-pipeline-prod<br />- stacks-credentials-prod-kv |
 | default_arm_deployment_mode | Deployment mode for terraform. | No | String | "Incremental" | Incremental |
 | window_start_default | Date to set as start of default time window. | No | Date | "2010-01-01" | 2010-01-01 |
 | window_end_default | Date to set as end of default time window. | No | Date | "2010-01-31" | 2010-01-31 |
@@ -75,7 +75,7 @@ In order to generate a new data engineering workload the Datastacks CLI takes a 
 | gold_container | Name of container for Gold data | No | String | None | curated |
 | trigger_start | Datetime to set as start time for pipeline trigger. | No | Datetime | _n/a_ | 2010-01-01T00:00:00Z |
 | trigger_end | Datetime to set as end time for pipeline trigger. | No | Datetime | _n/a_ | 2011-12-31T23:59:59Z |
-| trigger_frequency | Frequency for the trigger. | No | String<br>Allowed values:<br>"Minute"<br>"Hour"<br>"Day"<br>"Week"<br>"Month" | "Month" | Month |
+| trigger_frequency | Frequency for the trigger. | No | String<br />Allowed values:<br />"Minute"<br />"Hour"<br />"Day"<br />"Week"<br />"Month" | "Month" | Month |
 | trigger_interval | Interval value for the trigger. | No | Integer | 1 | 1 |
 | trigger_delay | Delay between triggered runs, formatted HH:mm:ss | No | String | "02:00:00" | 02:00:00 |
 
