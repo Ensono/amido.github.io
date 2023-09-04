@@ -34,26 +34,26 @@ ESLint also supports various plugins that provide additional rules, configuratio
 
 These plugins allow developers to enforce specific coding standards, best practices, and conventions beyond what is included in ESLint's core rule set.
 
-#### Formatting
+### Formatting
 
 Stacks uses Prettier which focuses solely on code formatting and style, ensuring that your code is aesthetically pleasing, consistent and easy to read without needing to configure numerous formatting rules.
 
 Prettier runs as an ESLint rule and reports differences as individual ESLint issues.
 
-#### Typescript
+### Typescript
 
 Along side ESlints standard linting rules Stacks also provides ESLint support for TypeScript.
 
 It includes a set of ESLint rules that use TypeScript's type information and provides a large list of lint rules that are specific to TypeScript and/or use that type information.
 
-#### Testing
+### Testing
 
 Stacks also supports linting for both React Testing Library and Jest.
 
 It extends ESLint's capabilities to include rules that are tailored for test files written with Jest and React Testing Library.
 These rules help users follow best practices and anticipate common mistakes when writing tests.
 
-#### Security
+### Security
 
 Stacks includes plugins that help find security issues with both NodeJs and browser based code.
 These help identify potential security hotspots and provide a set of rules to disallow unsafe coding practices that may result in security vulnerabilities.
