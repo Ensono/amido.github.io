@@ -9,7 +9,6 @@ import WhatStacksCanDo from "./_Components/WhatStacksCanDo/WhatStacksCanDo";
 import TechSupportedByStacks from "./_Components/TechSupportedByStacks/TechSupportedByStacks";
 import Features from "./_Components/Features/Features";
 
-
 function Home() {
   const context = useDocusaurusContext();
   const { siteConfig = {} } = context;
