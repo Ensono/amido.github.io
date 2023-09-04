@@ -80,6 +80,7 @@ module.exports = {
             label: "Frontend Web Applications",
             items: [
               "nx/nx_stacks",
+              "module_federation/nextjs_plugin",
               {
                 type: "category",
                 label: "Stacks Plugins",
@@ -221,7 +222,7 @@ module.exports = {
                   "workloads/azure/data/etl_pipelines/ingest_data_azure",
                   "workloads/azure/data/etl_pipelines/silver_data_azure",
                   "workloads/azure/data/etl_pipelines/data_quality_azure",
-                  "workloads/azure/data/etl_pipelines/datastacks",
+                  "workloads/common/data/datastacks",
                   {
                     type: "category",
                     label: "PySparkle",
@@ -238,6 +239,7 @@ module.exports = {
                 items: [
                   "workloads/azure/data/getting_started/dev_quickstart_data_azure",
                   "workloads/azure/data/getting_started/core_data_platform_deployment_azure",
+                  "workloads/azure/data/getting_started/shared_resources_deployment_azure",
                   "workloads/azure/data/getting_started/etl_pipelines_deployment_azure",
                   "workloads/azure/data/getting_started/example_data_source",
                   "workloads/azure/data/getting_started/testing_data_azure",

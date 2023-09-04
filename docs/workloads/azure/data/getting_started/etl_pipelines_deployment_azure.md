@@ -14,13 +14,13 @@ keywords:
   - azure
   - template
 ---
----
 
-This section provides an overview of generating a new [ETL ingest pipeline](../etl_pipelines/ingest_data_azure.md) workload and deploying it into a Stacks Data Platform, using the [Datastacks](../etl_pipelines/datastacks.md) utility.
+This section provides an overview of generating a new [ETL ingest pipeline](../etl_pipelines/ingest_data_azure.md) workload and deploying it into a Stacks Data Platform, using the [Datastacks](../../../common/data/datastacks.md) utility.
 This aligns to the workflow shown in the [deployment architecture](../architecture/architecture_data_azure.md#data-engineering-workloads) section.
 It assumes all prerequisites are in place, including:
 
 * A [deployed Stacks data platform](core_data_platform_deployment_azure.md)
+* [Deployed shared resources](shared_resources_deployment_azure.md)
 * [Development environment set up](dev_quickstart_data_azure.md)
 * A data source to ingest from. The steps below are based on using the [Azure SQL example data source](example_data_source.md)
 
@@ -30,6 +30,7 @@ This process will deploy the following resources into the project:
     * Linked service
     * Dataset
     * Pipeline
+    * Trigger
 * Data ingest config files (JSON)
 * Azure DevOps CI/CD pipeline (YAML)
 * (optional) Spark jobs for data quality tests (Python)
@@ -153,7 +154,7 @@ Configuration of the data that the workload will ingest from the source is speci
 
 The end-to-end tests are designed to run the ingest pipeline in a controlled fashion to ensure it functions as expected. Open the test feature file for the workload (`tests/end_to_end/features/azure_data_ingest.feature`) and update the parameters to reflect the data entities expected to be ingested. In our example, we will use the entities specified in the config file above, i.e.:
 
-```python
+```gherkin
 |{"window_start" : "2010-01-01", "window_end": "2010-01-31"}|["movies.keywords", "movies.links", "movies.movies_metadata", "movies.ratings_small"]|
 ```
 
@@ -170,9 +171,17 @@ The generated workload contains a YAML file containing a template Azure DevOps C
 
 Running this pipeline in Azure DevOps will deploy the artifacts into the non-production (nonprod) environment and run tests. If successful, the generated resources will now be available in the nonprod Stacks environment.
 
-Continue to make any further amendments required to the new workload, re-running the pipeline as required. If including data quality checks, update the (`ingest_dq`) file with details of checks required on the data.
+## Step 7: Review deployed resources
 
-## Step 7: Deploy new workload in further environments
+If successful, the new resources will now be deployed into the non-production resource group in Azure - these can be viewed through the [Azure Portal](https://portal.azure.com/#home) or CLI.
+
+The Azure Data Factory resources can be viewed through the [Data Factory UI](https://adf.azure.com/). You may also wish to run/debug the newly generated pipeline from here (see [Microsoft documentation](https://learn.microsoft.com/en-us/azure/data-factory/iterative-development-debugging)).
+
+ℹ️ Note: The structure of the data platform and Data Factory resources are defined in the project's code repository, and deployed through the Azure DevOps pipelines. Changes to Data Factory resources directly through the UI will lead to them be overwritten when pipelines are next run. If you wish to update Data Factory resources, update the appropriate files within the workload (under the `data_factory` path).
+
+Continue to make any further amendments required to the new workload, re-running the DevOps pipeline as required. If including data quality checks, update the (`ingest_dq`) file in the repository with details of checks required on the data.
+
+## Step 8: Deploy new workload in further environments
 
 In the example pipeline templates:
 
