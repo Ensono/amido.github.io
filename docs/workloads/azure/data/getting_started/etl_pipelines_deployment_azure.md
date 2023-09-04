@@ -1,10 +1,10 @@
 ---
 id: etl_pipelines_deployment_azure
-title: ETL Pipeline Deployment
-sidebar_label: ETL Pipeline Deployment
+title: Data Ingest Pipeline Deployment
+sidebar_label: 5. Data Ingest Pipeline Deployment
 hide_title: false
 hide_table_of_contents: false
-description: Data pipelines development & deployment
+description: Data ingest pipelines development & deployment
 keywords:
   - datastacks
   - data
@@ -15,13 +15,14 @@ keywords:
   - template
 ---
 
-This section provides an overview of generating a new [ETL ingest pipeline](../etl_pipelines/ingest_data_azure.md) workload and deploying it into a Stacks Data Platform, using the [Datastacks](../../../common/data/datastacks.md) utility.
+This section provides an overview of generating a new [data ingest pipeline](../etl_pipelines/ingest_data_azure.md) workload and deploying it into a Stacks Data Platform, using the [Datastacks](../../../common/data/datastacks.md) utility.
 This aligns to the workflow shown in the [deployment architecture](../architecture/architecture_data_azure.md#data-engineering-workloads) section.
-It assumes all prerequisites are in place, including:
+
+This guide assumes the following are in place:
 
 * A [deployed Stacks data platform](core_data_platform_deployment_azure.md)
-* [Deployed shared resources](shared_resources_deployment_azure.md)
 * [Development environment set up](dev_quickstart_data_azure.md)
+* [Deployed shared resources](shared_resources_deployment_azure.md)
 * A data source to ingest from. The steps below are based on using the [Azure SQL example data source](example_data_source.md)
 
 This process will deploy the following resources into the project:
