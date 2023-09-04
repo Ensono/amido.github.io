@@ -41,7 +41,6 @@ On running the script you will be asked for a monorepo preset with the following
 
 ```bash
 apps              [an empty monorepo with no plugins with a layout that works best for building apps]
-react             [a monorepo with a single React application]
 next.js           [a monorepo with a single Next.js application]
 ```
 
