@@ -16,8 +16,10 @@ const EnsonoStacksImage = () => {
 
     return (
         <div className={customStyle.ensonoStacksImageContainer}>
-            <img src={useBaseUrl('img/ensonoImage.png')} alt="Ensono Image"/>
-                <div className={customStyle.wrapper}>
+            <div className={customStyle.wrapperImage}>
+                <img src={useBaseUrl('img/ensonoImage.png')} alt="Ensono Image"/>
+            </div>
+            <div className={customStyle.wrapper}>
                 <AmidoStacksLogo/>
                 {/* <h1>{text.title}</h1> */}
                 <p>{text.description}</p>
@@ -27,7 +29,7 @@ const EnsonoStacksImage = () => {
                         to={baseUrl}
                     >{text.buttonText}</Link>
                 </div>
-            </div>
+            </div> 
         </div>
     )
 }

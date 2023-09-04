@@ -34,8 +34,8 @@ const Features = () => {
         <div>
             <section className={styles.section}>
                 <div className={customStyle.features}>
-                    {features.map((feature) => (
-                        <div className={clsx(customStyle.feature)}>
+                    {features.map((feature, key) => (
+                        <div key={key} className={clsx(customStyle.feature)}>
                             <h3>{feature.title}</h3>
                             <p>{feature.description}</p>
 

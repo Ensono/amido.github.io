@@ -21,8 +21,8 @@ const Introduction = () => {
         <div className={customStyles.intro}>
             <h3>Stacks is the <span className={styles.primaryColour}>cloud-native software factory</span> for digital transformations that work.</h3>
             <ul>
-            {text.benefitsList.map((benefit) => (
-                <li>{benefit}</li>
+            {text.benefitsList.map((benefit, key) => (
+                <li key={key}>{benefit}</li>
             ))}
             </ul>
             <div className={styles.buttons} style={{ marginTop: 20 }}>

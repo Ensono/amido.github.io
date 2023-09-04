@@ -11,7 +11,5 @@
   
   .disabledButton:hover {
     cursor: default;
-    color: white;
-    background-color: black;
   }
   

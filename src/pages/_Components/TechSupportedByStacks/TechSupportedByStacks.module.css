@@ -6,13 +6,13 @@
     background-color: #f4f4f4;
   }
   
-  .main {
-    width: 100%;
-    max-width: 1600px;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-  }
+.main {
+  width: 100%;
+  max-width: 1600px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
 
 .tableContainer {
     display: flex;

@@ -27,11 +27,11 @@ html {
 }
 
 :root {
-  --ifm-button-border-radius: 0.3rem;
+  --ifm-button-border-radius: 0;
   font-family: "Karla", sans-serif;
 }
 /* Switch light and dark mode */
-html[data-theme="light"] .learnAboutStacks:hover,
+/* html[data-theme="light"] .learnAboutStacks:hover,
 html[data-theme="light"] .getStarted:hover {
   background-color: black;
   color: white;
@@ -40,8 +40,8 @@ html[data-theme="light"] .getStarted:hover {
 html[data-theme="dark"] .learnAboutStacks:hover,
 html[data-theme="dark"] .getStarted:hover {
   background-color: white;
-  color: black;
-}
+  color: black; */
+/* } */
 
 .buttons {
   display: flex;

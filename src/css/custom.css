@@ -12,9 +12,9 @@
   --ifm-color-lead-accent-primary: #6941EB;
   --ifm-color-lead-brand-primary: #6941EB;
   --ifm-code-font-size: 95%;
-  /* --ifm-color-primary-dark: #e5b701; // TODO: ENSONO BRAND: Find out if this is used
-  --ifm-color-primary-darker: #d9ad01;
-  --ifm-color-primary-darkest: #b28f01;
+  --ifm-color-primary-dark: var(--ifm-color-primary);
+  --ifm-color-primary-darker: var(--ifm-color-primary);
+  /* --ifm-color-primary-darkest: #b28f01;
   --ifm-color-primary-light: #fed01b;
   --ifm-color-primary-lighter: #fed328;
   --ifm-color-primary-lightest: #fedb4e; */
@@ -89,4 +89,12 @@ html[data-theme="dark"] .DocSearch-Hit[aria-selected="true"] mark {
 
 .pagination-nav__label {
   color: var(--ifm-color-primary);
+}
+
+
+/* Override docusarus theme to match up with Ensono brand */
+.button--primary:hover,
+.button--primary:active {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0,0,0,.1);
 }

@@ -1,5 +1,7 @@
 .intro {
-    width: 100%;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid black;
 }
 
 .intro ul li {
@@ -7,7 +9,10 @@
 }
 
 @media (min-width: 768px) {
-    flex-grow: 0;
-    flex-shrink: 0;
-    flex-basis: 55%;
+    .intro {
+        border: 0;
+        width: 100%;
+        padding-bottom: 0;
+        margin-bottom: 0;
+    }
 }

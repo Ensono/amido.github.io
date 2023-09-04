@@ -24,13 +24,14 @@ const ResponsivePlayerWithLinks = ({url, links}) => {
 
     let linksToRender;
     if (links) {
-        linksToRender = links.map((link) => (
-                            <a className={styles.playlistItem}
-                               onClick={() => jumpToTime(link.time)}
-                            >
-                                {link.time} - {link.title}
-                            </a>
-                        )
+        linksToRender = links.map((link, key) => (
+                <a className={styles.playlistItem}
+                    onClick={() => jumpToTime(link.time)}
+                    key={key}
+                >
+                    {link.time} - {link.title}
+                </a>
+            )
         )
     }
 
@@ -38,20 +39,20 @@ const ResponsivePlayerWithLinks = ({url, links}) => {
         <div className={styles.playerSection}>
             <div className={styles.playerWrapper}>
                 <ReactPlayer className={styles.player}
-                             ref={playerRef}
-                             url={url}
-                             playing={state.playing}
-                             controls={true}
-                             width='100%'
-                             height='100%'
-                             config={{
-                                youtube: {
-                                  playerVars: {
-                                    modestbranding: 1,
-                                    controlsList: 'nodownload',
-                                  }
-                                }
-                              }}
+                    ref={playerRef}
+                    url={url}
+                    playing={state.playing}
+                    controls={true}
+                    width='100%'
+                    height='100%'
+                    config={{
+                    youtube: {
+                        playerVars: {
+                        modestbranding: 1,
+                        controlsList: 'nodownload',
+                        }
+                    }
+                    }}
                 />
             </div>
             <div className={styles.playlistWrapper}>
