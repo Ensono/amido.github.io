@@ -36,7 +36,7 @@ Stacks data platform features several auxiliary utilities to enhance the process
 production-ready data pipelines and workloads.
 
 * [Data Quality](data_quality_azure.md): An optional step incorporated into all ETL pipelines to ensure data integrity.
-* [Datastacks](datastacks.md): A CLI tool designed to facilitate the creation of custom pipelines using predefined templates.
+* [Datastacks](../../../common/data/datastacks.md): A CLI tool designed to facilitate the creation of custom pipelines using predefined templates.
 * [PySparkle](../../../common/data/pysparkle/pysparkle_quickstart.md): A versatile library equipped with reusable data processing components.
 
 ## Dataset
