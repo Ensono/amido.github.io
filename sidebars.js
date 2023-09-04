@@ -81,6 +81,7 @@ module.exports = {
             items: [
               "nx/nx_stacks",
               "module_federation/nextjs_plugin",
+              "linting/eslint",
               {
                 type: "category",
                 label: "Stacks Plugins",
