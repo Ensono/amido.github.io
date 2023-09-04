@@ -20,7 +20,7 @@ By using code linting tools, development teams can catch errors early, maintain 
 
 :::info
 
-Linting tools in Stacks for CI/CD are setup and configured by the [@ensono-stacks/workspace:init](https://stacks.amido.com/docs/nx/workspace/ensono-stacks-workspace#ensono-stacksworkspaceinit) and [@ensono-stacks/workspace:init-deployment](https://stacks.amido.com/docs/nx/workspace/ensono-stacks-workspace#ensono-stacksworkspaceinit-deployment) generators.
+Linting tools in Stacks are setup and configured by the [@ensono-stacks/workspace:init](https://stacks.amido.com/docs/nx/workspace/ensono-stacks-workspace#ensono-stacksworkspaceinit) generator. Linting in CI/CD is configured by the [@ensono-stacks/workspace:init-deployment](https://stacks.amido.com/docs/nx/workspace/ensono-stacks-workspace#ensono-stacksworkspaceinit-deployment) generator.
 
 :::
 
