@@ -64,9 +64,9 @@ git checkout -b feat/my-new-data-pipeline
 
 ## Step 2: Prepare the Datastacks config file
 
-Datastacks requires a config file for generating a new ingest workload. This config file should be a yaml file. A sample config file is included in the [de_templates](https://github.com/amido/stacks-azure-data/tree/main/de_templates) folder.
+Datastacks requires a YAML config file for generating a new ingest workload - see [Datastacks configuration](../etl_pipelines/datastacks.md#configuration) for further details.
 
-Create a new config file and populate the values relevant to your new ingest pipeline. The example below will create an ingest workload named **Ingest_AzureSql_MyNewExample**, and connect using the data source connection details as specified in [Data source pre-requisites](#data-source-pre-requisites) above.
+Create a new YAML file and populate the values relevant to your new ingest pipeline. The example below will create an ingest workload named **Ingest_AzureSql_MyNewExample**, and connect using the data source connection details as specified in [Data source pre-requisites](#data-source-pre-requisites) above.
 
 ```yaml
 # `dataset_name` parameter is used to determine names of the following ADF resources:
