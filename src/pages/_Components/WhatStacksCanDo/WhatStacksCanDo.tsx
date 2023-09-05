@@ -14,7 +14,9 @@ const WhatStacksCanDo = () => {
 
     return (
         <div>
-            <span className={styles.primaryColour}><i style={{display: 'inline-block'}} className={styles.textCenter}>{text.clientFeedbackMessage}<strong>Ensono Client</strong></i></span>
+            <span className={styles.primaryColour}>
+                <i className={`${styles.textCenter} ${styles.displayInlineBlock}`}>{text.clientFeedbackMessage}<strong>Ensono Client</strong></i>
+            </span>
             <div className={"container " + customStyle.heroBanner} id="stacks-selector">
                 <h3>What can you do with Stacks?</h3>
                 <p className="hero__subtitle">

@@ -29,16 +29,6 @@
     margin-top: 30px;
     margin-bottom: 30px;
   }
-  
-  .supportedTechs h3 {
-    font-size: max(28px, min(3vw, 44px));
-    font-weight: 700;
-    margin-bottom: 60px;
-  }
-  
-  .supportedTechs p {
-    font-size: max(18px, min(2vw, 30px));
-  }
 
   .flexTable {
     display: flex;

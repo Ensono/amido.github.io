@@ -1,6 +1,5 @@
 
 .feature h3 {
-  font-size: max(28px, min(3vw, 44px));
   text-align: center;
 }
 
@@ -41,7 +40,6 @@
     width: calc(50% - 15px);
     flex-grow: 1;
     padding: 30px 0px 0px;
-    font-size: max(18px, min(2vw, 30px));
   }
 
   .features .feature div {

@@ -18,6 +18,19 @@
   --ifm-color-primary-light: #fed01b;
   --ifm-color-primary-lighter: #fed328;
   --ifm-color-primary-lightest: #fedb4e; */
+  --ifm-heading-font-family: PlusJakartaSans-SemiBold;
+  --ifm-font-family-base: Inter-Light, sans-serif;
+}
+
+:root {
+  --ifm-h1-font-size: 2.813rem; /*45px - matching with Ensono.com*/
+  --ifm-h2-font-size: 2.375rem; /*38px - matching with Ensono.com*/
+  --ifm-h3-font-size: 1.75rem; /*28px - matching with Ensono.com*/
+  --ifm-h4-font-size: 1.125rem; /*18px - matching with Ensono.com*/
+  --ifm-h5-font-size: var(--ifm-h4-font-size);
+  --ifm-h6-font-size: var(--ifm-h4-font-size);
+
+  --ifm-font-size-base:  1.125rem; /*18px - matching with Ensono.com*/
 }
 
 :root {
@@ -93,6 +106,10 @@ html[data-theme="dark"] .DocSearch-Hit[aria-selected="true"] mark {
 
 
 /* Override docusarus theme to match up with Ensono brand */
+.button--primary {
+  font-size: 16px;
+  font-weight: 600;
+}
 .button--primary:hover,
 .button--primary:active {
   transform: scale(1.05);

@@ -5,7 +5,44 @@
  * and scoped locally.
  */
 
-@import url("https://fonts.googleapis.com/css2?family=Karla&display=swap");
+
+ /**
+  Set up Ensono fonts
+ */
+ @font-face {
+  font-family: 'PlusJakartaSans-Regular';
+  font-style: normal;
+  src: url('/fonts/PlusJakartaSans-Regular.ttf') format('woff')
+ }
+ @font-face {
+  font-family: 'PlusJakartaSans-SemiBold';
+  font-weight: bold;
+  font-style: normal;
+  src: url('/fonts/PlusJakartaSans-SemiBold.ttf') format('woff')
+ }
+ @font-face {
+  font-family: 'PlusJakartaSans-SemiBoldItalic';
+  font-weight: bold;
+  font-style: italic;
+  src: url('/fonts/PlusJakartaSans-SemiBoldItalic.ttf') format('woff')
+ }
+ @font-face {
+  font-family: 'PlusJakartaSans-Italic';
+  font-style: italic;
+  src: url('/fonts/PlusJakartaSans-Italic.ttf') format('woff')
+ }
+
+ @font-face {
+  font-family: 'Inter-Light';
+  font-style: normal;
+  src: url('/fonts/Inter-Light.ttf') format('woff')
+ }
+ @font-face {
+  font-family: 'Inter-SemiBold';
+  font-weight: bold;
+  font-style: normal;
+  src: url('/fonts/Inter-SemiBold.ttf') format('woff')
+ }
 
 html {
   min-width: 320px;
@@ -24,11 +61,6 @@ html {
     padding: 1.5rem;
     gap: 3.5rem;
   }
-}
-
-:root {
-  --ifm-button-border-radius: 0;
-  font-family: "Karla", sans-serif;
 }
 /* Switch light and dark mode */
 /* html[data-theme="light"] .learnAboutStacks:hover,
@@ -56,7 +88,10 @@ html[data-theme="dark"] .getStarted:hover {
 
 .textCenter { 
   text-align: center;
+}
 
+.displayInlineBlock {
+  display: inline-block;
 }
 
 /* For STYLING TESTS? */

@@ -21,14 +21,11 @@ const EnsonoStacksImage = () => {
             </div>
             <div className={customStyle.wrapper}>
                 <AmidoStacksLogo/>
-                {/* <h1>{text.title}</h1> */}
                 <p>{text.description}</p>
-                <div style={{ marginTop: 20 }}>
-                    <Link
-                        className="button button--primary button--lg"
-                        to={baseUrl}
-                    >{text.buttonText}</Link>
-                </div>
+                <Link
+                    className="button button--primary button--lg"
+                    to={baseUrl}
+                >{text.buttonText}</Link>
             </div> 
         </div>
     )
