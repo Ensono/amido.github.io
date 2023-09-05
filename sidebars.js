@@ -13,11 +13,6 @@ module.exports = {
           "developer/java/patterns/java_swagger_annotations",
         ],
       },
-      {
-        type: "category",
-        label: "Azure Development Patterns",
-        items: [],
-      },
     ],
     Workloads: [
       "workloads/workloads",
@@ -310,11 +305,6 @@ module.exports = {
             items: ["infrastructure/azure/pipelines/azure_devops"],
           },
         ],
-      },
-      {
-        type: "category",
-        label: "Google Cloud Platform",
-        items: [],
       },
     ],
     "Quality Assurance": [

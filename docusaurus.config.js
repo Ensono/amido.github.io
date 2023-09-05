@@ -45,15 +45,8 @@ module.exports = {
     ],
   },
   themeConfig: {
-    gtag: {
-      trackingID: 'G-EKCQBC5CSJ',
-      anonymizeIP: true, // Should IPs be anonymized? (optional)
-    },
-    googleAnalytics: {
-      trackingID: 'G-EKCQBC5CSJ',
-      anonymizeIP: true, // Should IPs be anonymized?
-    },
     algolia: {
+      appId: "HZJPMBSKK3",
       apiKey: "56a3097b6350cd2363a8746a98c6c278",
       indexName: "amido_stacks",
 
@@ -140,7 +133,15 @@ module.exports = {
         sitemap: {
           changefreq: "weekly",
           priority: 0.5
-        }
+        },
+        gtag: {
+          trackingID: 'G-EKCQBC5CSJ',
+          anonymizeIP: true, // Should IPs be anonymized? (optional)
+        },
+        googleAnalytics: {
+          trackingID: 'G-EKCQBC5CSJ',
+          anonymizeIP: true, // Should IPs be anonymized?
+        },
       }
     ]
   ]
