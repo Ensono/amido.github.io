@@ -5,57 +5,75 @@
  * and scoped locally.
  */
 
-@import url("https://fonts.googleapis.com/css2?family=Karla&display=swap");
+
+ /**
+  Set up Ensono fonts
+ */
+ @font-face {
+  font-family: 'PlusJakartaSans-Regular';
+  font-style: normal;
+  src: url('/fonts/PlusJakartaSans-Regular.ttf') format('woff')
+ }
+ @font-face {
+  font-family: 'PlusJakartaSans-SemiBold';
+  font-weight: bold;
+  font-style: normal;
+  src: url('/fonts/PlusJakartaSans-SemiBold.ttf') format('woff')
+ }
+ @font-face {
+  font-family: 'PlusJakartaSans-SemiBoldItalic';
+  font-weight: bold;
+  font-style: italic;
+  src: url('/fonts/PlusJakartaSans-SemiBoldItalic.ttf') format('woff')
+ }
+ @font-face {
+  font-family: 'PlusJakartaSans-Italic';
+  font-style: italic;
+  src: url('/fonts/PlusJakartaSans-Italic.ttf') format('woff')
+ }
+
+ @font-face {
+  font-family: 'Inter-Light';
+  font-style: normal;
+  src: url('/fonts/Inter-Light.ttf') format('woff')
+ }
+ @font-face {
+  font-family: 'Inter-SemiBold';
+  font-weight: bold;
+  font-style: normal;
+  src: url('/fonts/Inter-SemiBold.ttf') format('woff')
+ }
 
 html {
   min-width: 320px;
 }
 
-
-
-article a,
-.definition p>a,
-.heroBanner p>a {
-  color: var(--ifm-link-color);
-  text-decoration-style: var(--ifm-text-decoration-style);
-  text-decoration-color: var(--ifm-link-color);
-  text-decoration-line: var(--ifm-link-decoration-line);
-}
-
-article a:hover,
-.definition p>a:hover,
-.heroBanner p>a:hover {
-  cursor: pointer;
-  color: var(--ifm-link-hover-color);
-  opacity: var(--ifm-link-hover-opacity);
-  text-decoration-style: var(--ifm-text-hover-decoration-style);
-  text-decoration-line: var(--ifm-link-hover-decoration-line);
-  transition-duration: var(--ifm-transition-duration);
-  transition-property: var(--ifm-transition-property);
-  transition-delay: var(--ifm-transition-delay);
-  transition-timing-function: var(--ifm-transition-timing-function);
-  text-decoration-color: var(--ifm-link-hover-color);
-}
-
-.mainHolder {
+.section {
   width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
+  padding: 2rem 3rem; 
+  margin: 2.4rem auto;
+  max-width: 75rem;
 }
 
-.main {
-  width: 100%;
-  max-width: 1600px;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
+@media only screen and (min-width: 768px) {
+  .introductionSection {
+    display: flex;
+    padding: 1.5rem;
+    gap: 3.5rem;
+  }
+}
+/* Switch light and dark mode */
+/* html[data-theme="light"] .learnAboutStacks:hover,
+html[data-theme="light"] .getStarted:hover {
+  background-color: black;
+  color: white;
 }
 
-:root {
-  --ifm-button-border-radius: 36px;
-  font-family: "Karla", sans-serif;
-}
+html[data-theme="dark"] .learnAboutStacks:hover,
+html[data-theme="dark"] .getStarted:hover {
+  background-color: white;
+  color: black; */
+/* } */
 
 .buttons {
   display: flex;
@@ -64,236 +82,19 @@ article a:hover,
   width: 100%;
 }
 
-.buttons > .button {
-  border-radius: 36px;
+.primaryColour {
+  color: var(--ifm-color-primary)
 }
 
-.features {
-  padding: 0px;
-  display: flex;
-  align-items: center;
-  width: 100%;
-  flex-direction: row;
-  gap: 30px;
-  flex-wrap: wrap;
-}
-
-.features .feature {
-  display: flex;
-  width: calc(50% - 15px);
-  flex-grow: 1;
-  padding: 30px 0px 60px 0px;
-  font-size: max(18px, min(2vw, 30px));
-  color: black;
-  min-height: 400px;
-  min-width: 320px;
-  align-self: stretch;
-}
-
-.features .feature div {
-  max-width: 480px;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-self: stretch;
-}
-
-.features .feature p {
-  display: flex;
-  flex: 1;
+.textCenter { 
   text-align: center;
-  align-self: stretch;
-  padding: 0px 30px 0px 30px;
 }
 
-.features > .feature .buttons {
-  justify-self: end;
-  height: 46px;
+.displayInlineBlock {
+  display: inline-block;
 }
 
-.feature h3 {
-  font-size: max(28px, min(3vw, 44px));
-  text-align: center;
-  padding: 30px 0px 30px 0px;
-}
-
-.features2 {
-  flex-wrap: wrap;
-  display: flex;
-  align-items: center;
-  padding: 1rem 0;
-  width: 100%;
-  flex-direction: row;
-  gap: 30px;
-  justify-content: center;
-}
-
-
-.features2 .feature {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  width: calc(33% - 30px);
-  flex-grow: 1;
-  padding: 30px 15px 30px 15px;
-  min-height: min(530px, vw/3);
-  min-width: 320px;
-  max-width: 590px;
-  font-size: 18px;
-}
-
-.features2 .feature p {
-  display: flex;
-  flex-grow: 1;
-  color: var(--ifm-font-color-base);
-  font-size: max(18px, min(2vw, 30px));
-  padding: 0px 15px 0px 15px;
-  align-self: stretch;
-}
-
-.features2 .feature h3 {
-  display: flex;
-  justify-content: center;
-  color: var(--ifm-heading-color);
-}
-
-@media (min-width: 1035px) {
-  .features2 .feature h3 {
-    min-height: 175px;
-  }
-}
-
-.features2 .buttons a {
-  color:black;
-}
-
-.features2 .buttons a:hover, 
-.definition .buttons a:hover {
-  color: white;
-}
-.blackButton {
-  background-color: black;
-  color: white;
-  border-color: black;
-  height: 46px;
-}
-
-.blackButton:hover {
-  color: black;
-  background-color: #e6e6e6;
-  cursor: pointer;
-}
-
-.feature .feature-body {
-  padding: 20px;
-}
-
-.containerSelects {
-  color: black;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-
-@media (min-width: 320px) {
-  .containerSelects {
-    width: 100%;
-  }
-}
-
-@media (min-width: 900px) {
-  .containerSelects {
-    width: 40%;
-  }
-}
-
-.containerSelects2 {
-  display: flex;
-  justify-self: center;
-  flex-direction: column;
-  width: 55%;
-}
-
-.definition {
-  text-align: center;
-  padding: 30px;
-  box-shadow: 0px 5px 0px 0px rgba(0, 0, 0, 0.15);
-  z-index: 5000;
-}
-
-.definition h3 {
-  font-size: max(28px, min(3vw, 44px));
-  font-weight: 700;
-}
-
-.definition p {
-  font-size: max(18px, min(2vw, 30px));
-}
-
-.supportedTechs {
-  color: var(--ifm-heading-color);
-  text-align: center;
-  padding-top: 30px;
-  margin-top: 30px;
-  margin-bottom: 30px;
-}
-
-.supportedTechs h3 {
-  font-size: max(28px, min(3vw, 44px));
-  font-weight: 700;
-  margin-bottom: 60px;
-}
-
-.supportedTechs p {
-  font-size: max(18px, min(2vw, 30px));
-}
-
-.learnAboutStacks {
-  margin-top: 30px;
-  margin-bottom: 30px;
-  color: black;
-}
-
-.heroBanner {
-  padding: 4rem 0;
-  text-align: center;
-  position: relative;
-  background-color: #ffc410;
-}
-
-.heroBanner h1 {
-  font-size: max(28px, min(3vw, 44px));
-
-}
-
-.heroBanner p {
-  font-size: max(18px, min(3vw, 30px));
-}
-
-.logocontainer {
-  margin-left: auto;
-  margin-right: auto;
-  padding: 50px 15px 50px 15px;
-  justify-content: center;
-  max-width: 378px;
-}
-
-.logocontainer > div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
-
-.logocontainer > div > svg > g > path {
-  color: var(--ifm-heading-color);
-  fill: currentColor;
-}
-
+/* For STYLING TESTS? */
 .xunit > svg > g > path,
 .xunit > svg > g > g > path,
 .azureBlob > path,
@@ -321,118 +122,10 @@ article a:hover,
   fill: currentColor;
 }
 
-.tableContainer {
-  display: flex;
-  justify-content: center;
-  padding-left: 20px;
-  padding-right: 20px;
-  flex-direction: column;
-}
-
-.flexTable {
-  display: flex;
-  flex-flow: row wrap;
-  flex-direction: row;
-  justify-content: space-between;
-  gap: 20px;
-  height: 80px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
-.flexTable>div {
-  display: flex;
-  height: 100%;
-  width: calc(100% / 3 - 40px);
-  align-items: center;
-}
-
-.flexTable>div * {
-  height: 100%;
-}
-
-.flexTable>div>div {
-  justify-content: center;
-  align-items: center;
-}
-
-.flexTable>div:nth-child(1) {
-  justify-content: flex-start;
-  margin-right: auto;
-  flex-grow: 1;
-}
-.flexTable>div:nth-child(2) {
-  justify-content: center;
-  margin-left: auto;
-  margin-right: auto;
-  flex-grow: 2;
-}
-.flexTable>div:nth-child(3) {
-  justify-content: flex-end;
-  margin-left: auto;
-  flex-grow: 1;
-}
-
-.flexTable:last-child>div:nth-child(2) {
-  justify-content: flex-end;
-  margin-left: auto;
-  flex-grow: 1;
-}
-
-.flexRow {
-  height: 100%;
-  max-width: 100%;
-  flex-grow: 1;
-  cursor: pointer;
-  transition-duration: 0.25s;
-  transition-timing-function: ease-in;
-}
-
-.flexRow:hover {
-  transform: scale(1.25);
-  transition-duration: 0.25s;
-  transition-timing-function: ease-out;
-}
+/* Not sure what this is used for */
 
 div details summary:focus {
   outline-width: 0px;
-}
-
-
-.flexRow10Sm {
-  padding-top: 5px;
-  padding-bottom: 5px;
-}
-
-img.flexRow10Sm {
-  height: calc(100% - 10px);
-}
-
-.flexRow20Sm {
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-
-img.flexRow20Sm {
-  height: calc(100% - 20px);
-}
-
-.flexRow30Sm {
-  padding-top: 15px;
-  padding-bottom: 15px;
-}
-
-img.flexRow30Sm {
-  height: calc(100% - 30px);
-}
-
-.flexRow40Sm {
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
-
-img.flexRow40Sm {
-  height: calc(100% - 40px);
 }
 
 div details summary {
@@ -442,32 +135,4 @@ div details summary {
 div details > div {
   padding-top: 20px;
   padding-left: 20px;
-}
-
-html[data-theme="light"] .learnAboutStacks:hover,
-html[data-theme="light"] .getStarted:hover {
-  background-color: black;
-  color: white;
-}
-
-html[data-theme="dark"] .learnAboutStacks:hover,
-html[data-theme="dark"] .getStarted:hover {
-  background-color: white;
-  color: black;
-}
-
-.videoSection {
-  padding: 30px;
-  width: 100%;
-  background-color: #18191a;
-}
-
-.disabledButton {
-  cursor: default;
-}
-
-.disabledButton:hover {
-  cursor: default;
-  color: white;
-  background-color: black;
 }

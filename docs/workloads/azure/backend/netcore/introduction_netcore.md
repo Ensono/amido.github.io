@@ -15,7 +15,7 @@ keywords:
   - cosmos db
 ---
 
-import HideNavigation  from "../../../../../src/pages/HideNavigation";
+import HideNavigation  from "../../../../../src/pages/_HideNavigation";
 
 Stacks is a collection of sample .NET 6 template projects that contain
 

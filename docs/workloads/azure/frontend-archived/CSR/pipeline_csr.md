@@ -20,7 +20,7 @@ keywords:
   - rendering
   - client side rendering
 ---
-import HideNavigation  from "../../../../../src/pages/HideNavigation";
+import HideNavigation  from "../../../../../src/pages/_HideNavigation";
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

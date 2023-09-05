@@ -14,7 +14,7 @@ keywords:
   - open-source
 ---
 
-import HideNavigation  from "../src/pages/HideNavigation";
+import HideNavigation  from "../src/pages/_HideNavigation";
 
 ## Code of conduct
 

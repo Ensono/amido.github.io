@@ -12,7 +12,7 @@ keywords:
   - resources
 ---
 
-import HideNavigation  from "../../../src/pages/HideNavigation";
+import HideNavigation  from "../../../src/pages/_HideNavigation";
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The core infrastructure is the foundation for all other Stacks Workloads. As, in most cases, this will be the first part of Stacks that you deploy we will also cover bootstrapping your Azure tenant.

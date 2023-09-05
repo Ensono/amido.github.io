@@ -10,7 +10,7 @@ keywords:
   - pipeline template
 ---
 
-import HideNavigation  from "../../../../src/pages/HideNavigation";
+import HideNavigation  from "../../../../src/pages/_HideNavigation";
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The pipeline will automate provisioning and updating the core infrastructure in Azure. This page assumes you have already completed the steps on the [core infrastructure page](../core_infrastructure.md).

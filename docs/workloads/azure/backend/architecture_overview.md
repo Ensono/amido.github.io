@@ -11,6 +11,6 @@ keywords:
 - architecture
 ---
 
-import ResponsivePlayer from "../../../../src/pages/Components/ResponsivePlayer/ResponsivePlayer";
+import ResponsivePlayer from "../../../../src/pages/_Components/ResponsivePlayer/ResponsivePlayer";
 
 <ResponsivePlayer url="https://vimeo.com/658523841" />

@@ -19,8 +19,8 @@ keywords:
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import HideNavigation  from "../../../../../src/pages/HideNavigation";
-import ResponsivePlayer from "../../../../../src/pages/Components/ResponsivePlayer/ResponsivePlayer";
+import HideNavigation  from "../../../../../src/pages/_HideNavigation";
+import ResponsivePlayer from "../../../../../src/pages/_Components/ResponsivePlayer/ResponsivePlayer";
 
 The pipeline will automate provisioning and updating the server-side rendering infrastructure and application in Azure.
 
