@@ -1,6 +1,8 @@
 const remarkImages = require('remark-images');
 const rehypeTruncate = require('rehype-truncate');
 
+require('dotenv').config();
+
 module.exports = {
   title: "Amido Stacks ",
   tagline:
@@ -43,28 +45,13 @@ module.exports = {
       "Cypress",
       "OWASP",
     ],
+    docSearch: {
+      appId: process.env.DOCSEARCH_APP_ID,
+      apiKey: process.env.DOCSEARCH_API_KEY,
+      indexName: process.env.DOCSEARCH_INDEX_NAME,
+    }
   },
   themeConfig: {
-    gtag: {
-      trackingID: 'G-EKCQBC5CSJ',
-      anonymizeIP: true, // Should IPs be anonymized? (optional)
-    },
-    googleAnalytics: {
-      trackingID: 'G-EKCQBC5CSJ',
-      anonymizeIP: true, // Should IPs be anonymized?
-    },
-    algolia: {
-      apiKey: "56a3097b6350cd2363a8746a98c6c278",
-      indexName: "amido_stacks",
-
-      // Optional: see doc section bellow
-      contextualSearch: true,
-
-      // Optional: Algolia search parameters
-      searchParameters: {},
-
-      //... other Algolia params
-    },
     prism: {
       theme: require('prism-react-renderer/themes/github'),
       darkTheme: require('prism-react-renderer/themes/vsDark'),
@@ -140,7 +127,15 @@ module.exports = {
         sitemap: {
           changefreq: "weekly",
           priority: 0.5
-        }
+        },
+        gtag: {
+          trackingID: 'G-EKCQBC5CSJ',
+          anonymizeIP: true, // Should IPs be anonymized? (optional)
+        },
+        googleAnalytics: {
+          trackingID: 'G-EKCQBC5CSJ',
+          anonymizeIP: true, // Should IPs be anonymized?
+        },
       }
     ]
   ]

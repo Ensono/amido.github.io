@@ -72,7 +72,7 @@ function Picker() {
   
     return (
       <div className="container" style={{display:"flex", justifyContent:"center"}}>
-        <div className={clsx("col", "col--6", customStyle.containerSelects)}>
+        <div className={clsx("col", "col--12", customStyle.containerSelects)}>
           <Select placeholder="Select Language/Framework"
                   value={firstOption}
                   onChange={(selected) => {
@@ -109,7 +109,7 @@ function Picker() {
           <div className={styles.buttons} style={{ marginTop: 40 }}>
               <Link className={clsx("button button--primary button--lg", isFinalChoice ? "" : customStyle.disabledButton )}
                     to={ isFinalChoice ? (baseUrl + (thirdOption ? thirdOption.value : firstOption ? firstOption.value : "")) : "" }
-                    { ...isFinalChoice ? "" : "disabled"}
+                    disabled={!isFinalChoice}
               >
                 LET'S GO!
               </Link>

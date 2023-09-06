@@ -1,15 +1,15 @@
 .containerSelects {
-    color: black;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-  }
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 1rem;
+}
 
-  .disabledButton {
-    cursor: default;
-  }
+.disabledButton {
+  cursor: default;
+}
   
-  .disabledButton:hover {
-    cursor: default;
-  }
+.disabledButton:hover {
+  cursor: default;
+}
   
