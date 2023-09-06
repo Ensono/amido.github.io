@@ -14,7 +14,7 @@ keywords:
 The solution contains a sample Azure Data Factory pipeline for ingesting data from a sample data
 source (Azure SQL) and loading data into the data lake 'landing' zone.
 
-Link to the pipeline: [stacks-azure-data/de_workloads/ingest](https://github.com/amido/stacks-azure-data/tree/main/de_workloads/ingest/Ingest_AzureSql_Example).
+Link to the pipeline: [stacks-azure-data/de_workloads/ingest](https://github.com/ensono/stacks-azure-data/tree/main/de_workloads/ingest/Ingest_AzureSql_Example).
 
 ## Pipeline overview
 
@@ -27,16 +27,16 @@ The diagram below gives an overview of the ingestion pipeline design.
 The ingest process is designed around reusable, metadata-driven pipelines. This means once
 an initial data pipeline is created for a given data source, additional entities from the same data
 source can be added or modified just by updating a configuration file. These configuration files are
-stored in the pipeline's [config](https://github.com/amido/stacks-azure-data/tree/main/de_workloads/ingest/Ingest_AzureSql_Example/config) directory.
+stored in the pipeline's [config](https://github.com/ensono/stacks-azure-data/tree/main/de_workloads/ingest/Ingest_AzureSql_Example/config) directory.
 
 JSON format is used for the configuration files. Our blueprint includes a sample configuration definition for the data ingestion sources
-([Ingest_AzureSql_Example.json](https://github.com/amido/stacks-azure-data/blob/main/de_workloads/ingest/Ingest_AzureSql_Example/config/ingest_sources/Ingest_AzureSql_Example.json))
-and its schema ([ingest_config_schema.json](https://github.com/amido/stacks-azure-data/blob/main/de_workloads/ingest/Ingest_AzureSql_Example/config/schema/ingest_config_schema.json)).
+([Ingest_AzureSql_Example.json](https://github.com/ensono/stacks-azure-data/blob/main/de_workloads/ingest/Ingest_AzureSql_Example/config/ingest_sources/Ingest_AzureSql_Example.json))
+and its schema ([ingest_config_schema.json](https://github.com/ensono/stacks-azure-data/blob/main/de_workloads/ingest/Ingest_AzureSql_Example/config/schema/ingest_config_schema.json)).
 
 The sample ingest pipeline is based around an Azure SQL data source, however the approach used should be adaptable for most other data source types with minimal modifications. Different data data source types would be expected to have the same JSON keys, except for under `ingest_entities`,
 where different keys will be required dependent on the data source type.
 
-[Unit tests](https://github.com/amido/stacks-azure-data/tree/main/de_workloads/ingest/Ingest_AzureSql_Example/tests/unit)
+[Unit tests](https://github.com/ensono/stacks-azure-data/tree/main/de_workloads/ingest/Ingest_AzureSql_Example/tests/unit)
 are provided to ensure the config files remain valid against the schema. See the descriptions of the
 example JSON config file below:
 
@@ -79,7 +79,7 @@ triggered on a recurring basis to ingest from a data source. All pipelines have 
 that include Data Quality validations. Depending on your particular needs, you can deploy each of
 the pipelines with or without this additional Data Quality step. [Further information on Data Quality](data_quality_azure.md).
 * The pipelines within `Utilities` are reusable and referenced by other pipelines. They are not
-meant to be triggered independently. These are defined within the [shared_resources](https://github.com/amido/stacks-azure-data/tree/main/de_workloads/shared_resources) for the project.
+meant to be triggered independently. These are defined within the [shared_resources](https://github.com/ensono/stacks-azure-data/tree/main/de_workloads/shared_resources) for the project.
 
 The `Ingest_AzureSql_Example` pipeline consists of the following steps:
 

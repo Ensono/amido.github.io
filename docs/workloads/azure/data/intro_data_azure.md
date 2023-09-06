@@ -15,7 +15,7 @@ keywords:
   - template
 ---
 
-The [Stacks Azure Data Platform](https://github.com/amido/stacks-azure-data) solution provides
+The [Stacks Azure Data Platform](https://github.com/ensono/stacks-azure-data) solution provides
 a template for deploying a production-ready data platform, including **Azure Data Factory** for data
 ingestion and orchestration, **Databricks** for data processing and **Azure Data Lake Storage Gen2**
 for data lake storage. The solution's data workload naming convention originates from Databricks'

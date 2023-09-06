@@ -48,7 +48,7 @@ The `de_build` folder includes YAML file called `job-pipeline-vars` that contain
 
 ## Step 2: Add a shared resources pipeline in Azure DevOps
 
-The default shared resources for the Stacks Data Platform are found under [de_workloads/shared_resources](https://github.com/amido/stacks-azure-data/tree/main/de_workloads/shared_resources). This directory contains a YAML file `de-shared-resources.yml` containing a template Azure DevOps CI/CD pipeline for building and deploying the shared resources.
+The default shared resources for the Stacks Data Platform are found under [de_workloads/shared_resources](https://github.com/ensono/stacks-azure-data/tree/main/de_workloads/shared_resources). This directory contains a YAML file `de-shared-resources.yml` containing a template Azure DevOps CI/CD pipeline for building and deploying the shared resources.
 This YAML file should be added as the definition for a new pipeline in Azure DevOps.
 
 1. Sign-in to your Azure DevOps organization and go to your project

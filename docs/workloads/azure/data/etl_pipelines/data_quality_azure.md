@@ -10,7 +10,7 @@ keywords:
   - great expectations
 ---
 
-[stacks-azure-data](https://github.com/amido/stacks-azure-data) ETL pipelines in Azure Data Factory
+[stacks-azure-data](https://github.com/ensono/stacks-azure-data) ETL pipelines in Azure Data Factory
 can be deployed with additional Data Quality checks. These checks validate that the outputs of
 a pipeline meet specified requirements, expressed in a simple, human-readable language. It allows
 you to assert expectations about your data, which can help catch any discrepancies, anomalies, or
