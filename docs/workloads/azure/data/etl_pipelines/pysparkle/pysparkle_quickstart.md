@@ -18,7 +18,7 @@ data processing workflows with Apache Spark, and is an integral part of the Stac
 
 ## Key components
 
-PySparkle is designed to assist implementing a [medallion data lake](../etl_pipelines/etl_intro_data_azure.md#data-pipelines).
+PySparkle is designed to assist implementing a [medallion data lake](../etl_intro_data_azure.md#data-pipelines).
 The key components of PySparkle include:
 
 - **ETL Transformation Utilities** which streamline Data Pipelines by:
