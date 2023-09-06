@@ -223,13 +223,13 @@ module.exports = {
                   "workloads/azure/data/etl_pipelines/ingest_data_azure",
                   "workloads/azure/data/etl_pipelines/silver_data_azure",
                   "workloads/azure/data/etl_pipelines/data_quality_azure",
-                  "workloads/common/data/datastacks",
+                  "workloads/azure/data/etl_pipelines/datastacks",
                   {
                     type: "category",
                     label: "PySparkle",
                     items: [
-                      "workloads/common/data/pysparkle/pysparkle_quickstart",
-                      "workloads/common/data/pysparkle/pysparkle_data_quality",
+                      "workloads/azure/data/etl_pipelines/pysparkle/pysparkle_quickstart",
+                      "workloads/azure/data/etl_pipelines/pysparkle/pysparkle_data_quality",
                     ],
                   },
                 ],

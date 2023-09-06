@@ -19,7 +19,7 @@ A more [detailed workflow diagram](../architecture/architecture_data_azure.md#de
 
 ## Steps
 
-1. [Infrastructure Deployment](core_data_platform_deployment.md) - Generate and deploy a new Stacks Data platform
+1. [Infrastructure Deployment](core_data_platform_deployment_azure.md) - Generate and deploy a new Stacks Data platform
 2. [Local Development Quickstart](dev_quickstart_data_azure.md) - Once your project has been generated, setup your local environment to start developing
 3. [Shared Resources Deployment](shared_resources_deployment_azure.md) - Deploy common resources to be shared across data pipelines
 4. (Optional) [Example Data Source](example_data_source.md) - To assist with the 'Getting Started' steps, you may wish to setup the Example Data Source

@@ -18,7 +18,7 @@ Datastacks is a utility built to support various functions within the Ensono Sta
 
 ## Using the Datastacks CLI
 
-* [Setup project environment](../../azure/data/getting_started/dev_quickstart_data_azure.md)
+* [Setup project environment](../getting_started/dev_quickstart_data_azure.md)
 
 ```bash
 # Initiate Datastacks using poetry:
@@ -33,10 +33,10 @@ python datastacks/datastacks_cli.py --help
 
 ## Generating data workloads
 
-Datastacks can be used to generate all the resources required for a new data engineering workload - for example a data ingest pipeline. This will create all resources required for the workload, based upon templates within the [de_templates](https://github.com/amido/stacks-azure-data/tree/main/de_templates) directory.
+Datastacks can be used to generate all the resources required for a new data engineering workload - for example a data ingest pipeline. This will create all resources required for the workload, based upon templates within the [de_templates](https://github.com/ensono/stacks-azure-data/tree/main/de_templates) directory.
 
-The [deployment architecture](../../azure/data/architecture/architecture_data_azure.md#data-engineering-workloads) section shows the workflow for using Datastacks to generate a new workload.
-See [ETL Pipeline Deployment](../../azure/data/getting_started/etl_pipelines_deployment_azure.md) for a step-by-step guide on deploying a new workload using Datastacks.
+The [deployment architecture](../architecture/architecture_data_azure.md#data-engineering-workloads) section shows the workflow for using Datastacks to generate a new workload.
+See [ETL Pipeline Deployment](../getting_started/etl_pipelines_deployment_azure.md) for a step-by-step guide on deploying a new workload using Datastacks.
 
 ### Commands
 
@@ -55,7 +55,7 @@ datastacks generate ingest --config="de_templates/test_config_ingest.yaml" --dat
 
 ### Configuration
 
-In order to generate a new data engineering workload the Datastacks CLI takes a path to a config file. This config file should be YAML format, and contain configuration values as specified in the table below. A sample config file is included in the [de_templates](https://github.com/amido/stacks-azure-data/tree/main/de_templates) folder. The structure of config is [validated using Pydantic](https://github.com/amido/stacks-azure-data/tree/main/datastacks/datastacks/config.py).
+In order to generate a new data engineering workload the Datastacks CLI takes a path to a config file. This config file should be YAML format, and contain configuration values as specified in the table below. A sample config file is included in the [de_templates](https://github.com/ensono/stacks-azure-data/tree/main/de_templates) folder. The structure of config is [validated using Pydantic](https://github.com/ensono/stacks-azure-data/tree/main/datastacks/datastacks/config.py).
 
 | Config field | Description | Required? | Format | Default value | Example value |
 | --------------------------------------------- | ----------------------------------------------------------------- | --------------- | ------------ | ------------------- | ------------------- |

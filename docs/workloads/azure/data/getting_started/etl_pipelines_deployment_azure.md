@@ -15,7 +15,7 @@ keywords:
   - template
 ---
 
-This section provides an overview of generating a new [data ingest pipeline](../etl_pipelines/ingest_data_azure.md) workload and deploying it into a Stacks Data Platform, using the [Datastacks](../../../common/data/datastacks.md) utility.
+This section provides an overview of generating a new [data ingest pipeline](../etl_pipelines/ingest_data_azure.md) workload and deploying it into a Stacks Data Platform, using the [Datastacks](../etl_pipelines/datastacks.md) utility.
 This aligns to the workflow shown in the [deployment architecture](../architecture/architecture_data_azure.md#data-engineering-workloads) section.
 
 This guide assumes the following are in place:
