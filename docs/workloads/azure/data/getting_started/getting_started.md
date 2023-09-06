@@ -11,7 +11,13 @@ keywords:
   - azure
 ---
 
-This _Getting Started_ section provides the steps needed to get up and running with Stacks Data:
+This _Getting Started_ section provides the steps needed to get up and running with Stacks Data. It follows the [Stacks Data deployment workflow](../architecture/architecture_data_azure.md).
+
+![Stacks Data workflow - high-level](../images/stacks-data-workflow-high-level.png)
+
+A more [detailed workflow diagram](../architecture/architecture_data_azure.md#detailed-workflow) is also available.
+
+## Steps
 
 1. [Infrastructure Deployment](core_data_platform_deployment.md) - Generate and deploy a new Stacks Data platform
 2. [Local Development Quickstart](dev_quickstart_data_azure.md) - Once your project has been generated, setup your local environment to start developing
