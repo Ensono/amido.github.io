@@ -16,7 +16,7 @@ keywords:
 ---
 
 Core data platform resources are defined within Terraform templates and grouped inside
-[deploy/azure](https://github.com/amido/stacks-azure-data/tree/main/deploy/azure) directory.
+[deploy/azure](https://github.com/ensono/stacks-azure-data/tree/main/deploy/azure) directory.
 There are two subfolders in this directory:
 
 * `infra`

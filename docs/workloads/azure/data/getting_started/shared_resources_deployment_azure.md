@@ -1,7 +1,7 @@
 ---
 id: shared_resources_deployment_azure
 title: Shared Resources Deployment
-sidebar_label: Shared Resources Deployment
+sidebar_label: 3. Shared Resources Deployment
 hide_title: false
 hide_table_of_contents: false
 description: Deployment of common Azure Data Factory resources shared by data pipelines
@@ -31,11 +31,10 @@ The shared resources include Azure Data Factory resources which are shared acros
 
 For details of how these resources are used in ingest pipelines, see [data ingestion](../etl_pipelines/ingest_data_azure.md).
 
-This guide assumes all [prerequisites](../requirements_data_azure.md#azure) are in place, including:
+This guide assumes the following are in place:
 
-* Azure subscription and service principal
-* Azure DevOps project with [Pipelines variable groups](../requirements_data_azure.md#azure-pipelines-variable-groups)
 * A [deployed Stacks data platform](core_data_platform_deployment_azure.md)
+* [Development environment set up](dev_quickstart_data_azure.md)
 
 ## Step 1: Create feature branch
 
@@ -49,7 +48,7 @@ The `de_build` folder includes YAML file called `job-pipeline-vars` that contain
 
 ## Step 2: Add a shared resources pipeline in Azure DevOps
 
-The default shared resources for the Stacks Data Platform are found under [de_workloads/shared_resources](https://github.com/amido/stacks-azure-data/tree/main/de_workloads/shared_resources). This directory contains a YAML file `de-shared-resources.yml` containing a template Azure DevOps CI/CD pipeline for building and deploying the shared resources.
+The default shared resources for the Stacks Data Platform are found under [de_workloads/shared_resources](https://github.com/ensono/stacks-azure-data/tree/main/de_workloads/shared_resources). This directory contains a YAML file `de-shared-resources.yml` containing a template Azure DevOps CI/CD pipeline for building and deploying the shared resources.
 This YAML file should be added as the definition for a new pipeline in Azure DevOps.
 
 1. Sign-in to your Azure DevOps organization and go to your project
@@ -76,3 +75,8 @@ The template CI/CD pipelines provided are based upon these two platform environm
 
 * Deployment to the non-production (nonprod) environment is triggered on a feature branch when a pull request is open
 * Deployment to the production (prod) environment is triggered on merging to the `main` branch, followed by manual approval of the release step.
+
+
+## Next steps
+
+Once the shared resources are deployed you may now [generate a new Data Ingest Pipeline](etl_pipelines_deployment_azure.md) (optionally implementing the [Example Data Source](example_data_source.md) beforehand).

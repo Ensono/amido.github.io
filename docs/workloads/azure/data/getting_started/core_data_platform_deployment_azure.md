@@ -1,7 +1,7 @@
 ---
 id: core_data_platform_deployment_azure
 title: Infrastructure Deployment
-sidebar_label: Infrastructure Deployment
+sidebar_label: 1. Infrastructure Deployment
 hide_title: false
 hide_table_of_contents: false
 description: Infrastructure deployment
@@ -15,7 +15,7 @@ keywords:
 
 This section provides an overview of generating a new Data Platform project and deploying core infrastructure for Stacks Data Platform.
 This aligns to the workflow shown in the [deployment architecture](../architecture/architecture_data_azure.md#data-engineering-workloads) section.
-It assumes all [prerequisites](../requirements_data_azure.md#azure) are in place, including:
+It assumes the [Azure requirements](../requirements_data_azure.md#azure) are in place, including:
 
 * Azure subscription and service principal
 * Azure DevOps project with [Pipelines variable groups](../requirements_data_azure.md#azure-pipelines-variable-groups)
@@ -63,7 +63,7 @@ Open the project locally and create a new feature branch e.g.:
 git checkout -b feat/infra-pipeline
 ```
 
-YAML file containing a template Azure DevOps CI/CD pipeline for building and deploying the core infrastructure, named `air-infrastructure-data.yml` is configured in the `build/azDevOps/azurefolder`
+YAML file containing a template Azure DevOps CI/CD pipeline for building and deploying the core infrastructure is provided in `build/azDevOps/azure/air-infrastructure-data.yml`.
 
 YAML file `air-infrastructure-data.yml` should be added as the definition for a new pipeline in Azure DevOps.
 
@@ -103,3 +103,7 @@ The template CI/CD pipelines provided are based upon these two platform environm
 * Deployment to the production (prod) environment is triggered on merging to the `main` branch, followed by manual approval of the release step.
 
 Once core infrastructure resources are deployed in prod environment, values will need adding into the prod variable group to reflect the deployed resources (e.g. `amido-stacks-de-pipeline-prod`). For additional information, see [Pipelines variable groups](../requirements_data_azure.md#azure-pipelines-variable-groups).
+
+## Next steps
+
+Now you have generated and deployed a new Stacks data platform, [setup your local development environment](dev_quickstart_data_azure.md).

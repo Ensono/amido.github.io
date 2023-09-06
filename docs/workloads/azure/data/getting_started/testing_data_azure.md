@@ -9,4 +9,5 @@ keywords:
   - testing
 ---
 
-## TODO
+Information on the testing approach used in Stacks.
+[to be added]
