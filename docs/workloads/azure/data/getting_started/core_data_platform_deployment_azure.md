@@ -19,7 +19,7 @@ It assumes the [Azure requirements](../requirements_data_azure.md#azure) are in 
 
 * Azure subscription and service principal
 * If you want to provision infrastructure within a private network, then the Azure spoke virtual network and subnet for private endpoints must be provisioned for each environment. The hub network must contain a self-hosted agent. Please refer [Hub-Spoke network topology](https://learn.microsoft.com/en-us/azure/architecture/reference-architectures/hybrid-networking/hub-spoke?tabs=cli) for more details on Hub-spoke network topology in Azure.
-* Azure DevOps project with [Pipelines variable groups](../requirements_data_azure.md#azure-pipelines-variable-groups)
+* Azure DevOps project with [Pipelines variable groups](../requirements_data_azure.md#azure-pipelines-variable-groups). The variable group named `amido-stacks-euw-de-env-network` is only required if you want to provision infrastructure within a private network.
 * A remote git repository for hosting the generated project (this guide assumes `main` is the primary branch in this repo)
 
 ## Step 1: Create/Generate Data Platform project using Stacks CLI
