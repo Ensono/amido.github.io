@@ -1,0 +1,56 @@
+.wrapper {
+  flex-wrap: wrap;
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: #f4f4f4;
+}
+
+.imageWrapper img {
+  width: 5rem;
+  height: 5rem;
+}
+
+.textWrapper {
+  text-align: center;
+}
+
+.getStartedLink {
+  display: flex;
+  justify-content: center;
+}
+
+@media (min-width: 768px) { 
+  .wrapper {
+    flex-wrap: nowrap;
+    justify-content: normal;
+  }
+  .imageWrapper img {
+    width: 4rem;
+    height: 4rem;
+    min-width: 4rem;
+    min-height: 4rem;
+  }
+
+  .textWrapper {
+    text-align: initial;
+  }
+
+  .textWrapper p {
+    width: 600px;
+  }
+
+  .getStartedLink {
+    display: flex;
+    justify-content: flex-end;
+  }
+}

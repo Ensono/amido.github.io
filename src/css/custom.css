@@ -52,6 +52,11 @@
 }
 
 :root {
+  --ifm-button-border-radius: 0;
+  --ifm-button-font-weight: 600;
+  --ifm-button-border-width: 0;
+}
+:root {
   --docsearch-hit-active-color: var(--docsearch-hit-color) !important;
 }
 
@@ -108,7 +113,6 @@ html[data-theme="dark"] .DocSearch-Hit[aria-selected="true"] mark {
 /* Override docusarus theme to match up with Ensono brand */
 .button--primary {
   font-size: 16px;
-  font-weight: 600;
 }
 .button--primary:hover,
 .button--primary:active {

@@ -50,15 +50,17 @@ html {
 
 .section {
   width: 100%;
-  padding: 2rem 3rem; 
+  padding: 2rem; 
   margin: 2.4rem auto;
   max-width: 75rem;
 }
 
 @media only screen and (min-width: 768px) {
+  .section {
+    padding: 0 3rem; 
+  }
   .introductionSection {
     display: flex;
-    padding: 1.5rem;
     gap: 3.5rem;
   }
 }

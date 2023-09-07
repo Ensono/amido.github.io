@@ -3,6 +3,8 @@
   flex-direction: column;
   width: 100%;
   gap: 1rem;
+  padding: 0;
+  max-width: 300px;
 }
 
 .disabledButton {
@@ -12,4 +14,9 @@
 .disabledButton:hover {
   cursor: default;
 }
-  
+
+@media (min-width: 768px) { 
+  .containerSelects {
+    gap: 0;
+  }
+}

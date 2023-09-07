@@ -8,6 +8,7 @@ import Introduction from "./_Components/Introduction/Introduction";
 import WhatStacksCanDo from "./_Components/WhatStacksCanDo/WhatStacksCanDo";
 import TechSupportedByStacks from "./_Components/TechSupportedByStacks/TechSupportedByStacks";
 import Features from "./_Components/Features/Features";
+import ContributeToStacks from "./_Components/ContributeToStacks/ContributeToStacks";
 
 function Home() {
   const context = useDocusaurusContext();
@@ -28,7 +29,8 @@ function Home() {
           </div>
         </div>
         <TechSupportedByStacks />
-       <Features/>
+        <Features/>
+        <ContributeToStacks/>
       </main>
     </Layout>
   );
