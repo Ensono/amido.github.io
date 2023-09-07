@@ -13,12 +13,12 @@ keywords:
   - etl
 ---
 
-[PySparkle](https://github.com/amido/stacks-azure-data/tree/main/pysparkle) is a Python library built to streamline
+[PySparkle](https://github.com/ensono/stacks-azure-data/tree/main/pysparkle) is a Python library built to streamline
 data processing workflows with Apache Spark, and is an integral part of the Stacks Data Platform.
 
 ## Key components
 
-PySparkle is designed to assist implementing a [medallion data lake](../../../azure/data/etl_pipelines/etl_intro_data_azure.md#data-pipelines).
+PySparkle is designed to assist implementing a [medallion data lake](../etl_intro_data_azure.md#data-pipelines).
 The key components of PySparkle include:
 
 - **ETL Transformation Utilities** which streamline Data Pipelines by:

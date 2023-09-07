@@ -16,7 +16,7 @@ resources:
   repositories:
     - repository: templates
       type: github
-      name: amido/stacks-pipeline-templates
+      name: ensono/stacks-pipeline-templates
       ref: refs/tags/v1.1.0
       endpoint: amidostacks
 

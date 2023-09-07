@@ -1,7 +1,7 @@
 ---
 id: shared_resources_deployment_azure
 title: Shared Resources Deployment
-sidebar_label: Shared Resources Deployment
+sidebar_label: 3. Shared Resources Deployment
 hide_title: false
 hide_table_of_contents: false
 description: Deployment of common Azure Data Factory resources shared by data pipelines
@@ -31,11 +31,10 @@ The shared resources include Azure Data Factory resources which are shared acros
 
 For details of how these resources are used in ingest pipelines, see [data ingestion](../etl_pipelines/ingest_data_azure.md).
 
-This guide assumes all [prerequisites](../requirements_data_azure.md#azure) are in place, including:
+This guide assumes the following are in place:
 
-* Azure subscription and service principal
-* Azure DevOps project with [Pipelines variable groups](../requirements_data_azure.md#azure-pipelines-variable-groups)
 * A [deployed Stacks data platform](core_data_platform_deployment_azure.md)
+* [Development environment set up](dev_quickstart_data_azure.md)
 
 ## Step 1: Create feature branch
 
@@ -45,11 +44,11 @@ Open the project locally and create a new feature branch, e.g.:
 git checkout -b feat/de-shared-pipeline
 ```
 
-The `de_build` folder includes YAML file called `job-pipeline-vars` that contains the variables used in the DE shared reource pipeline. These variables must be updated as per the project requirements.
+The `de_build` folder includes YAML file called `job-pipeline-vars` that contains the variables used in the DE shared resource pipeline. These variables must be updated as per the project requirements.
 
 ## Step 2: Add a shared resources pipeline in Azure DevOps
 
-The default shared resources for the Stacks Data Platform are found under [de_workloads/shared_resources](https://github.com/amido/stacks-azure-data/tree/main/de_workloads/shared_resources). This directory contains a YAML file `de-shared-resources.yml` containing a template Azure DevOps CI/CD pipeline for building and deploying the shared resources.
+The default shared resources for the Stacks Data Platform are found under [de_workloads/shared_resources](https://github.com/ensono/stacks-azure-data/tree/main/de_workloads/shared_resources). This directory contains a YAML file `de-shared-resources.yml` containing a template Azure DevOps CI/CD pipeline for building and deploying the shared resources.
 This YAML file should be added as the definition for a new pipeline in Azure DevOps.
 
 1. Sign-in to your Azure DevOps organization and go to your project
@@ -67,6 +66,8 @@ Running this pipeline in Azure DevOps will initiate the deployment of artifacts 
 
 If successful, the core DE shared resources will now be available in the nonprod Stacks environment. To view the deployed resources, navigate to the relevant resource group in the [Azure portal](https://portal.azure.com/). The deployed Data Factory resources can be viewed through the [Data Factory UI](https://adf.azure.com/).
 
+ℹ️ Note: The structure of the data platform and Data Factory resources are defined in the project's code repository, and deployed through the Azure DevOps pipelines. Changes to Data Factory resources directly through the UI will lead to them be overwritten when pipelines are next run. If you wish to update shared Data Factory resources, update the appropriate files under the path `de_workloads/shared_resources/data_factory`.
+
 ## Step 4: Deploy shared resources in further environments
 
 By default Stacks provides a framework for managing the platform across two environments - nonprod and prod.
@@ -74,3 +75,8 @@ The template CI/CD pipelines provided are based upon these two platform environm
 
 * Deployment to the non-production (nonprod) environment is triggered on a feature branch when a pull request is open
 * Deployment to the production (prod) environment is triggered on merging to the `main` branch, followed by manual approval of the release step.
+
+
+## Next steps
+
+Once the shared resources are deployed you may now [generate a new Data Ingest Pipeline](etl_pipelines_deployment_azure.md) (optionally implementing the [Example Data Source](example_data_source.md) beforehand).
