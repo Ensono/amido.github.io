@@ -30,7 +30,7 @@
 
 .features .feature .button {
   display: flex;
-  align-items: end;
+  align-items: flex-end;
 }
 
 @media (min-width: 768px) { 

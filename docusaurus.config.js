@@ -4,7 +4,7 @@ const rehypeTruncate = require('rehype-truncate');
 require('dotenv').config();
 
 module.exports = {
-  title: "Amido Stacks ",
+  title: "Ensono Stacks",
   tagline:
     "Helping projects gain momentum on digital transformation, with opinionated and modular boilerplate solutions",
   url: "https://stacks.amido.com",
@@ -15,7 +15,7 @@ module.exports = {
   organizationName: "Amido", // Usually your GitHub org/user name.
   projectName: "Stacks", // Usually your repo name.
   customFields: {
-    description: 'Amido Stacks is a catalogue of workload templates that\n' +
+    description: 'Ensono Stacks is a catalogue of workload templates that\n' +
         'instantly scaffold and deploy boilerplate software projects. Slash the time it takes to get productive on your software project.',
     keywords: [
       "Microsoft Azure",
@@ -60,7 +60,7 @@ module.exports = {
     navbar: {
       title: "",
       logo: {
-        alt: "Amido Stacks Logo",
+        alt: "Ensono Stacks Logo",
         src: "img/logo_wide.svg",
       },
       items: [
@@ -71,7 +71,7 @@ module.exports = {
           position: "right",
         },
         {
-          href: "https://github.com/amido/amido.github.io",
+          href: "https://github.com/Ensono/amido.github.io",
           label: "GitHub",
           position: "right",
         },
@@ -93,8 +93,8 @@ module.exports = {
           title: "About Us",
           items: [
             {
-              label: "Amido",
-              href: "https://amido.com/",
+              label: "Ensono",
+              href: "https://ensono.com/",
             },
           ],
         },
@@ -103,12 +103,12 @@ module.exports = {
           items: [
             {
               label: "GitHub",
-              to: "https://github.com/amido/amido.github.io",
+              to: "https://github.com/Ensono/amido.github.io",
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Amido Ltd`,
+      copyright: `Copyright © ${new Date().getFullYear()} Ensono Ltd`,
     },
   },
   presets: [

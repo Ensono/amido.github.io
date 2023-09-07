@@ -9,7 +9,7 @@ const text = {
     contribute: {
       title: "Contribute to Stacks",
       link: "contributions",
-      description: "As an open source project, you can be a part of the Github community shaping Amido Stacks",
+      description: "As an open source project, you can be a part of the Github community shaping Ensono Stacks",
       img: '/img/icons/ensono-icon_puzzle-v_0222.png'
     }
   }
