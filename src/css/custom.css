@@ -19,7 +19,7 @@
   --ifm-color-primary-lighter: #fed328;
   --ifm-color-primary-lightest: #fedb4e; */
   --ifm-heading-font-family: PlusJakartaSans-SemiBold;
-  --ifm-font-family-base: Inter-Light, sans-serif;
+  --ifm-font-family-base: Inter-Regular, sans-serif;
 }
 
 :root {

@@ -33,13 +33,22 @@
  }
 
  @font-face {
+  font-family: 'Inter-Regular';
+  font-style: normal;
+  src: url('/fonts/Inter-Regular.ttf') format('woff')
+ }
+ @font-face {
+  font-family: 'Inter-Bold';
+  font-style: normal;
+  src: url('/fonts/Inter-Bold.ttf') format('woff')
+ }
+ @font-face {
   font-family: 'Inter-Light';
   font-style: normal;
   src: url('/fonts/Inter-Light.ttf') format('woff')
  }
  @font-face {
   font-family: 'Inter-SemiBold';
-  font-weight: bold;
   font-style: normal;
   src: url('/fonts/Inter-SemiBold.ttf') format('woff')
  }
