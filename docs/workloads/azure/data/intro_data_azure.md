@@ -15,7 +15,7 @@ keywords:
   - template
 ---
 
-The [Stacks Azure Data Platform](https://github.com/amido/stacks-azure-data) solution provides
+The [Stacks Azure Data Platform](https://github.com/ensono/stacks-azure-data) solution provides
 a template for deploying a production-ready data platform, including **Azure Data Factory** for data
 ingestion and orchestration, **Databricks** for data processing and **Azure Data Lake Storage Gen2**
 for data lake storage. The solution's data workload naming convention originates from Databricks'
@@ -32,9 +32,9 @@ to Silver layer, while Gold handles transformations from Silver to Gold layer;
 on the provided configuration;
 * Deployment pipelines to enable CI/CD and DataOps for all components;
 * Automated tests to ensure quality assurance and operational efficiency;
-* [Datastacks](../../common/data/datastacks.md) - a library and CLI built to accelerate the development of data engineering
+* [Datastacks](etl_pipelines/datastacks.md) - a library and CLI built to accelerate the development of data engineering
 workloads in the data platform;
-* [Pysparkle](../../common/data/pysparkle/pysparkle_quickstart.md) - a library built to streamline data processing activities running in Apache Spark.
+* [Pysparkle](etl_pipelines/pysparkle/pysparkle_quickstart.md) - a library built to streamline data processing activities running in Apache Spark.
 
 ### High-level architecture
 

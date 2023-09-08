@@ -40,6 +40,8 @@ the variables fall into one of two categories based on the time of requirement: 
 denoting variables required at the very outset of the project, and 'After Core Infrastructure
 Deployment', referring to variables required after the fundamental infrastructure has been deployed.
 
+ℹ️ The variables under `amido-stacks-euw-de-env-network` are only required if you want to provision the infrastructure within a private network.
+
 <details>
   <summary>amido-stacks-de-pipeline-env</summary>
 

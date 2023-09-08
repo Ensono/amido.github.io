@@ -16,7 +16,7 @@ keywords:
 ---
 
 Core data platform resources are defined within Terraform templates and grouped inside
-[deploy/azure](https://github.com/amido/stacks-azure-data/tree/main/deploy/azure) directory.
+[deploy/azure](https://github.com/ensono/stacks-azure-data/tree/main/deploy/azure) directory.
 There are two subfolders in this directory:
 
 * `infra`
@@ -63,7 +63,7 @@ There are two subfolders in this directory:
 Using a private network is the default behaviour in Stacks Azure Data Platform. `networking`
 subfolder contains configurations for the created network and subnetworks, at its core using
 [azurerm-hub-spoke](https://github.com/amido/stacks-terraform/tree/master/azurerm/modules/azurerm-hub-spoke)
-Stacks Terraform module.
+Stacks Terraform module. See [Microsoft documentation](https://learn.microsoft.com/en-us/azure/architecture/reference-architectures/hybrid-networking/hub-spoke?tabs=cli) for more details on implementing Hub-spoke network topology in Azure.
 
 The following diagram shows network configuration for the two default environments:
 
