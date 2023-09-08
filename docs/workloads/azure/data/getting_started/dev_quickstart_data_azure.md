@@ -58,8 +58,8 @@ make test_e2e
 
 When developing with PySpark, you may wish to either:
 
-* Run scripts locally using a local Spark installation, or
-* Run scripts on a Databricks cluster, through [Databricks Repos](https://learn.microsoft.com/en-us/azure/databricks/repos/).
+- Run scripts locally using a local Spark installation, or
+- Run scripts on a Databricks cluster, through [Databricks Repos](https://learn.microsoft.com/en-us/azure/databricks/repos/).
 
 To run scripts within a Databricks cluster, you will need to:
 
