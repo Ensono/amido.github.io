@@ -69,20 +69,18 @@ Datastacks requires a YAML config file for generating a new ingest workload - se
 Create a new YAML file and populate the values relevant to your new ingest pipeline. The example below will create an ingest workload named **Ingest_AzureSql_MyNewExample**, and connect using the data source connection details as specified in [Data source pre-requisites](#data-source-pre-requisites) above.
 
 ```yaml
-# `dataset_name` parameter is used to determine names of the following ADF resources:
-# - pipeline: Ingest_<dataset_name>
-# - dataset: ds_<dataset_name>
-# - linked service: ls_<dataset_name>
+#######################
+# Required parameters #
+#######################
+
+# Data pipeline configurations
 dataset_name: AzureSql_MyNewExample
 pipeline_description: "Ingest from demo Azure SQL database using ingest config file."
 data_source_type: azure_sql
-
-key_vault_linked_service_name: ls_KeyVault
 data_source_password_key_vault_secret_name: sql-password
 data_source_connection_string_variable_name: sql_connection
 
 # Azure DevOps configurations
-
 ado_variable_groups_nonprod:
   - amido-stacks-de-pipeline-nonprod
   - stacks-credentials-nonprod-kv
@@ -91,11 +89,14 @@ ado_variable_groups_prod:
   - amido-stacks-de-pipeline-prod
   - stacks-credentials-prod-kv
 
-# Datalake containers
+#######################
+# Optional parameters #
+#######################
 
-bronze_container: raw
-silver_container: staging
-gold_container: curated
+# Workload config
+window_start_default: 2010-01-01
+window_end_default: 2010-01-31
+
 ```
 
 ## Step 3: Generate project artifacts using Datastacks
