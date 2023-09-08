@@ -84,10 +84,6 @@ html[data-theme="dark"] {
   padding: 0 var(--ifm-pre-padding);
 }
 
-.navbar__logo {
-  height: 150% !important;
-}
-
 .DocSearch-Hit-source {
   color: var(--docsearch-hit-color) !important;
 }
@@ -118,4 +114,10 @@ html[data-theme="dark"] .DocSearch-Hit[aria-selected="true"] mark {
 .button--primary:active {
   transform: scale(1.05);
   box-shadow: 0 10px 20px rgba(0,0,0,.1);
+}
+
+
+/* Remove the icon from nav external links */
+.navbar__item > svg {
+  display: none;
 }

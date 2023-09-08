@@ -11,8 +11,8 @@ module.exports = {
   baseUrl: "/",
   trailingSlash: false,
   onBrokenLinks: "warn",
-  favicon: "img/thumbnail_stacks.png",
-  organizationName: "Amido", // Usually your GitHub org/user name.
+  favicon: "img/icons/stacks-logo.svg",
+  organizationName: "Ensono", // Usually your GitHub org/user name.
   projectName: "Stacks", // Usually your repo name.
   customFields: {
     description: 'Ensono Stacks is a catalogue of workload templates that\n' +
@@ -52,6 +52,9 @@ module.exports = {
     }
   },
   themeConfig: {
+    colorMode: {
+      disableSwitch: true,
+    },
     prism: {
       theme: require('prism-react-renderer/themes/github'),
       darkTheme: require('prism-react-renderer/themes/vsDark'),
@@ -61,19 +64,33 @@ module.exports = {
       title: "",
       logo: {
         alt: "Ensono Stacks Logo",
-        src: "img/logo_wide.svg",
+        src: "img/icons/ensono-logo.svg",
+        href: "https://www.ensono.com/",
+        width: 150,
+        height: 36,
       },
       items: [
         {
+          href: "https://github.com/Ensono/amido.github.io",
+          label: "Ensono Stacks benefits",
+        },
+        {
+          href: "https://github.com/Ensono/amido.github.io",
+          label: "Stacks blog",
+        },
+        {
           to: "docs/",
           activeBasePath: "docs",
-          label: "Docs",
-          position: "right",
+          label: "Developer documentation",
         },
         {
           href: "https://github.com/Ensono/amido.github.io",
           label: "GitHub",
-          position: "right",
+        },
+        {
+          href: "https://www.ensono.com/company/lets-connect/",
+          label: "Let's connect",
+          position: 'right'
         },
       ],
     },
@@ -117,7 +134,6 @@ module.exports = {
       {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-
           remarkPlugins: [remarkImages],
           rehypePlugins: [rehypeTruncate],
         },
