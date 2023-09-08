@@ -11,6 +11,8 @@
   --ifm-color-primary: #6941EB;
   --ifm-color-lead-accent-primary: #6941EB;
   --ifm-color-lead-brand-primary: #6941EB;
+  --igm-color-dark-grey: #262626;
+  --igm-color-light-grey: #e1e1e1;
   --ifm-code-font-size: 95%;
   --ifm-color-primary-dark: var(--ifm-color-primary);
   --ifm-color-primary-darker: var(--ifm-color-primary);
@@ -20,6 +22,10 @@
   --ifm-color-primary-lightest: #fedb4e; */
   --ifm-heading-font-family: PlusJakartaSans-SemiBold;
   --ifm-font-family-base: Inter-Regular, sans-serif;
+
+  --ifm-menu-color:  var(--igm-color-dark-grey);
+  --ifm-footer-link-color: var(--igm-color-dark-grey);
+  --ifm-footer-background-color:  #fff;
 }
 
 :root {
@@ -116,8 +122,37 @@ html[data-theme="dark"] .DocSearch-Hit[aria-selected="true"] mark {
   box-shadow: 0 10px 20px rgba(0,0,0,.1);
 }
 
-
-/* Remove the icon from nav external links */
+/* Remove the icon from nav and footer external links */
+.menu__link > svg,
+.footer__link-item > svg,
 .navbar__item > svg {
   display: none;
+}
+
+/* overwrite the fontsize on the header and footer */
+.navbar__link,
+.footer__title,
+.footer__link-item {
+  font-size: 0.8335rem;
+}
+
+/* Prevent the whole width being clickable */
+.footer__link-item {
+  display: inline-block;
+}
+
+/* Make the logo center on mobile */
+@media (max-width: 996px) {
+  .navbar__brand {
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* reset the css on the menu */
+  .navbar-sidebar__brand .navbar__brand {
+    width: initial;
+    justify-content: unset;
+    flex-direction: unset;
+  }
 }

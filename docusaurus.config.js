@@ -68,20 +68,21 @@ module.exports = {
         href: "https://www.ensono.com/",
         width: 150,
         height: 36,
+        className: "custom-navbar-logo-class"
       },
       items: [
         {
           href: "https://github.com/Ensono/amido.github.io",
-          label: "Ensono Stacks benefits",
+          label: "Benefits",
         },
         {
           href: "https://github.com/Ensono/amido.github.io",
-          label: "Stacks blog",
+          label: "Blog",
         },
         {
           to: "docs/",
           activeBasePath: "docs",
-          label: "Developer documentation",
+          label: "Documentation",
         },
         {
           href: "https://github.com/Ensono/amido.github.io",
@@ -89,19 +90,22 @@ module.exports = {
         },
         {
           href: "https://www.ensono.com/company/lets-connect/",
-          label: "Let's connect",
+          label: "Connect",
           position: 'right'
         },
       ],
     },
-    footer: {
-      style: "dark",
+    footer: {      
       links: [
         {
-          title: "Docs",
+          title: "Documentation",
           items: [
             {
               label: "Getting Started",
+              to: "docs/",
+            },
+            {
+              label: "Stacks blogs",
               to: "docs/",
             },
           ],
@@ -112,6 +116,14 @@ module.exports = {
             {
               label: "Ensono",
               href: "https://ensono.com/",
+            },
+            {
+              label: "Get in touch",
+              href: "https://ensono.com/",
+            },
+            {
+              label: "Careers at Ensono",
+              href: "https://www.ensono.com/company/careers/",
             },
           ],
         },
@@ -125,7 +137,6 @@ module.exports = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Ensono Ltd`,
     },
   },
   presets: [
