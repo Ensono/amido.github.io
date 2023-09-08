@@ -11,7 +11,7 @@ keywords:
   - cli
 ---
 
-import HideNavigation  from "../../src/pages/_HideNavigation";
+import HideNavigation  from "../../src/components/HideNavigation/HideNavigation";
 
 Building testing frameworks from scratch requires a lot of boilerplate code. It is also hard to know how to get started without examples.
 

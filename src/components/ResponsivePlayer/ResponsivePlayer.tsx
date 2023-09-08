@@ -3,7 +3,7 @@ import ReactPlayer from "react-player";
 
 import styles from "./styles.module.css";
 
-function ResponsivePlayer({url}) {
+export function ResponsivePlayer({url}) {
     return (
         <div className={styles.playerSection}>
             <div className={styles.playerWrapper}>

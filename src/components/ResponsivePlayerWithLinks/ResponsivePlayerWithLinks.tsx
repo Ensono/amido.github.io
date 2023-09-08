@@ -3,7 +3,7 @@ import ReactPlayer from "react-player";
 
 import styles from "./styles.module.css";
 
-const ResponsivePlayerWithLinks = ({url, links}) => {
+export const ResponsivePlayerWithLinks = ({url, links}) => {
 
     const playerRef = React.createRef()
 
@@ -61,5 +61,3 @@ const ResponsivePlayerWithLinks = ({url, links}) => {
         </div>
     )
 }
-
-export default ResponsivePlayerWithLinks;

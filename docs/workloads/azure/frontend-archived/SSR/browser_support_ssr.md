@@ -6,7 +6,7 @@ hide_title: false
 hide_table_of_contents: true
 ---
 
-import HideNavigation  from "../../../../../src/pages/_HideNavigation";
+import HideNavigation  from "../../../../../src/components/HideNavigation/HideNavigation";
 
 Given we provide boilerplate WebApps designing for accessibility, we would
 like to have optionality to support broad range of browsers. We look to

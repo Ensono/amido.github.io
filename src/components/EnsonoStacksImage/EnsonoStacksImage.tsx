@@ -10,7 +10,7 @@ const text = {
     buttonText: 'Show me how'
 }
 
-const EnsonoStacksImage = () => {
+export const EnsonoStacksImage = () => {
     const baseUrl = useBaseUrl("docs/");
 
     return (
@@ -32,6 +32,3 @@ const EnsonoStacksImage = () => {
         </div>
     )
 }
-
-
-export default EnsonoStacksImage;

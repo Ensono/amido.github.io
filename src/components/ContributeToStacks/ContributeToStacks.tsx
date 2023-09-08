@@ -4,7 +4,7 @@ import Link from "@docusaurus/Link";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
 import customStyle from "./ContributeToStacks.module.css";
-import styles from "../../styles.module.css";
+import styles from "@site/src/pages/styles.module.css";
 const text = {
     contribute: {
       title: "Contribute to Stacks",
@@ -15,9 +15,8 @@ const text = {
   }
 const { contribute: {title, link, description, img} } = text;
 
-const ContributeToStacks = () => {
+export const ContributeToStacks = () => {
     const baseUrl = useBaseUrl("docs/");
-
     
     return (
         <div className={customStyle.container}>
@@ -46,7 +45,4 @@ const ContributeToStacks = () => {
         </div>
     )
 }
-   
 
-
-export default ContributeToStacks;

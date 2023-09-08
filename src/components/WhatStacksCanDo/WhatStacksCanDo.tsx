@@ -1,15 +1,15 @@
 import React from "react";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
-import Picker from "../Picker/Picker";
-import styles from "../../styles.module.css";
+import {Picker} from "../";
+import styles from "@site/src/pages/styles.module.css";
 import customStyle from "./WhatStacksCanDo.module.css";
 
 const text = {
     clientFeedbackMessage: '"Ensono Stacks made our transformation significantly easier and gave us confidence right from day one" - '
 }
 
-const WhatStacksCanDo = () => {
+export const WhatStacksCanDo = () => {
     const baseUrl = useBaseUrl("docs/");
 
     return (
@@ -29,6 +29,3 @@ const WhatStacksCanDo = () => {
         </div>
     )
 }
-
-
-export default WhatStacksCanDo;

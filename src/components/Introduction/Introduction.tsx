@@ -2,7 +2,7 @@ import React from "react";
 import Link from "@docusaurus/Link";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
-import styles from "../../styles.module.css";
+import styles from "@site/src/pages/styles.module.css";
 import customStyles from "./Introduction.module.css";
 
 const text = {
@@ -14,7 +14,7 @@ const text = {
     ],
 }
 
-const Introduction = () => {
+export const Introduction = () => {
     const baseUrl = useBaseUrl("docs/");
 
     return (
@@ -36,6 +36,3 @@ const Introduction = () => {
         </div>
     )
 }
-
-
-export default Introduction;

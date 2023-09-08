@@ -4,7 +4,7 @@ import Link from "@docusaurus/Link";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
 import customStyle from "./Features.module.css";
-import styles from "../../styles.module.css";
+import styles from "@site/src/pages/styles.module.css";
 const text = {
     features: [
         {
@@ -23,7 +23,7 @@ const text = {
   }
 const { features } = text;
 
-const Features = () => {
+export const Features = () => {
     const baseUrl = useBaseUrl("docs/");
     
     return (
@@ -54,6 +54,3 @@ const Features = () => {
     )
 }
    
-
-
-export default Features;

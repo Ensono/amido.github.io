@@ -1,9 +1,13 @@
+// @ts-check
+// Note: type annotations allow type checking and IDEs autocompletion
+
 const remarkImages = require('remark-images');
 const rehypeTruncate = require('rehype-truncate');
 
 require('dotenv').config();
+/** @type {import('@docusaurus/types').Config} */
 
-module.exports = {
+const config = {
   title: "Ensono Stacks",
   tagline:
     "Helping projects gain momentum on digital transformation, with opinionated and modular boilerplate solutions",
@@ -167,3 +171,5 @@ module.exports = {
     ]
   ]
 };
+
+module.exports = config;

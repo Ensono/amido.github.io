@@ -4,10 +4,10 @@ import Select from "react-select";
 import Link from "@docusaurus/Link";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
-import styles from "../../styles.module.css";
+import styles from "@site/src/pages/styles.module.css";
 import customStyle from "./Picker.module.css";
 
-function Picker() {
+export const Picker = () => {
     const [firstOption, setFirstOption] = useState(undefined);
     const [secondOption, setSecondOption] = useState(undefined);
     const [thirdOption, setThirdOption] = useState(undefined);
@@ -118,5 +118,3 @@ function Picker() {
       </div>
     );
   }
-
-export default Picker;

@@ -2,7 +2,7 @@ import React from "react";
 import clsx from "clsx";
 
 import customStyle from "./TechSupportedByStacks.module.css";
-import styles from "../../styles.module.css";
+import styles from "@site/src/pages/styles.module.css";
 
 import CSharpLogo from "./Logos/CSharpLogo";
 import SpringBootLogo from "./Logos/SpringBootLogo";
@@ -38,7 +38,7 @@ import GoogleCloudStorageLogo from "./Logos/GoogleCloudStorageLogo";
 import BddfyLogo from "./Logos/BDDfyLogo";
 
 
-const TechSupportedByStacks = () => {
+export const TechSupportedByStacks = () => {
     const triggerSearch = (term) => {
         document.querySelector(".DocSearch-Button").click();
         setTimeout(() => {
@@ -123,7 +123,3 @@ const TechSupportedByStacks = () => {
     </div>    
     )
 }
-
-
-
-export default TechSupportedByStacks;
