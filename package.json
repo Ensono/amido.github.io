@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "@analytics/google-analytics": "^0.5.2",
-    "@docusaurus/core": "2.0.0-beta.9",
+    "@docusaurus/core": "2.4.1",
     "@docusaurus/mdx-loader": "^2.0.0-beta.9",
     "@docusaurus/plugin-google-analytics": "^2.0.0-beta.9",
     "@docusaurus/plugin-google-gtag": "2.0.0-beta.9",
