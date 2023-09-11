@@ -33,13 +33,22 @@
  }
 
  @font-face {
+  font-family: 'Inter-Regular';
+  font-style: normal;
+  src: url('/fonts/Inter-Regular.ttf') format('woff')
+ }
+ @font-face {
+  font-family: 'Inter-Bold';
+  font-style: normal;
+  src: url('/fonts/Inter-Bold.ttf') format('woff')
+ }
+ @font-face {
   font-family: 'Inter-Light';
   font-style: normal;
   src: url('/fonts/Inter-Light.ttf') format('woff')
  }
  @font-face {
   font-family: 'Inter-SemiBold';
-  font-weight: bold;
   font-style: normal;
   src: url('/fonts/Inter-SemiBold.ttf') format('woff')
  }
@@ -50,30 +59,16 @@ html {
 
 .section {
   width: 100%;
-  padding: 2rem 3rem; 
+  padding: 2rem; 
   margin: 2.4rem auto;
   max-width: 75rem;
 }
 
 @media only screen and (min-width: 768px) {
-  .introductionSection {
-    display: flex;
-    padding: 1.5rem;
-    gap: 3.5rem;
+  .section {
+    padding: 0 3rem; 
   }
 }
-/* Switch light and dark mode */
-/* html[data-theme="light"] .learnAboutStacks:hover,
-html[data-theme="light"] .getStarted:hover {
-  background-color: black;
-  color: white;
-}
-
-html[data-theme="dark"] .learnAboutStacks:hover,
-html[data-theme="dark"] .getStarted:hover {
-  background-color: white;
-  color: black; */
-/* } */
 
 .buttons {
   display: flex;
@@ -88,10 +83,6 @@ html[data-theme="dark"] .getStarted:hover {
 
 .textCenter { 
   text-align: center;
-}
-
-.displayInlineBlock {
-  display: inline-block;
 }
 
 /* For STYLING TESTS? */

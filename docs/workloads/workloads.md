@@ -11,7 +11,7 @@ keywords:
   - scaffolding cli
 ---
 
-import HideNavigation  from "../../src/pages/_HideNavigation";
+import HideNavigation  from "../../src/components/HideNavigation/HideNavigation";
 
 What you can do with Stacks is described in the [About Stacks](../) section.
 

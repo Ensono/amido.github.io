@@ -1,0 +1,130 @@
+.mainHolder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: var(--igm-color-silver);
+  }
+  
+.main {
+  width: 100%;
+  max-width: 1600px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.tableContainer {
+    display: flex;
+    justify-content: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    flex-direction: column;
+  }
+
+.supportedTechs {
+    color: var(--ifm-heading-color);
+    text-align: center;
+    padding-top: 30px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  .flexTable {
+    display: flex;
+    flex-flow: row wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+    height: 80px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .flexTable>div {
+    display: flex;
+    height: 100%;
+    width: calc(100% / 3 - 40px);
+    align-items: center;
+  }
+  
+  .flexTable>div * {
+    height: 100%;
+  }
+  
+  .flexTable>div>div {
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .flexTable>div:nth-child(1) {
+    justify-content: flex-start;
+    margin-right: auto;
+    flex-grow: 1;
+  }
+  .flexTable>div:nth-child(2) {
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    flex-grow: 2;
+  }
+  .flexTable>div:nth-child(3) {
+    justify-content: flex-end;
+    margin-left: auto;
+    flex-grow: 1;
+  }
+  
+  .flexTable:last-child>div:nth-child(2) {
+    justify-content: flex-end;
+    margin-left: auto;
+    flex-grow: 1;
+  }
+
+
+.flexRow {
+    height: 100%;
+    max-width: 100%;
+    flex-grow: 1;
+    cursor: pointer;
+    transition-duration: 0.25s;
+    transition-timing-function: ease-in;
+  }
+  
+  .flexRow:hover {
+    transform: scale(1.25);
+    transition-duration: 0.25s;
+    transition-timing-function: ease-out;
+  }
+
+
+.flexRow10Sm {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+  
+  img.flexRow10Sm {
+    height: calc(100% - 10px);
+  }
+  
+  .flexRow20Sm {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  
+  img.flexRow20Sm {
+    height: calc(100% - 20px);
+  }
+  
+  .flexRow30Sm {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+  
+  img.flexRow30Sm {
+    height: calc(100% - 30px);
+  }
+  
+  .flexRow40Sm {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }

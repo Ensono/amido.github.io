@@ -11,7 +11,7 @@ keywords:
   - in progress
 ---
 
-import HideNavigation  from "../../../src/pages/_HideNavigation";
+import HideNavigation  from "../../../src/components/HideNavigation/HideNavigation";
 
 We're working on adding workloads for GCP at the moment. Currently there is one available:
 

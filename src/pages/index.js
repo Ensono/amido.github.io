@@ -1,13 +1,14 @@
 import React from "react";
 import Layout from "@theme/Layout";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import styles from "./styles.module.css";
 
-import EnsonoStacksImage from "./_Components/EnsonoStacksImage/EnsonoStacksImage";
-import Introduction from "./_Components/Introduction/Introduction";
-import WhatStacksCanDo from "./_Components/WhatStacksCanDo/WhatStacksCanDo";
-import TechSupportedByStacks from "./_Components/TechSupportedByStacks/TechSupportedByStacks";
-import Features from "./_Components/Features/Features";
+import {
+  EnsonoStacksImage, 
+  Introduction, 
+  TechSupportedByStacks, 
+  Features, 
+  ContributeToStacks 
+} from "@site/src/components";
 
 function Home() {
   const context = useDocusaurusContext();
@@ -21,14 +22,10 @@ function Home() {
     >
       <main>
         <EnsonoStacksImage/>
-        <div className={styles.section}>
-          <div className={styles.introductionSection}>
-            <Introduction />
-            <WhatStacksCanDo />
-          </div>
-        </div>
+        <Introduction />
         <TechSupportedByStacks />
-       <Features/>
+        <Features/>
+        <ContributeToStacks/>
       </main>
     </Layout>
   );

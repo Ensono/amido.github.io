@@ -25,7 +25,7 @@ keywords:
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-import HideNavigation  from "../../../../../src/pages/_HideNavigation";
+import HideNavigation  from "../../../../../src/components/HideNavigation/HideNavigation";
 
 Web applications require a lot of boilerplate. It's also hard to know how to get started without examples.
 We offer both server side rendered (SSR) and client side rendered (CSR) solutions that can be

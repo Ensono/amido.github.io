@@ -17,16 +17,16 @@ Once you are happy with your changes, you can commit them to a new branch and op
 
 ### Stacks Repositories
 These are the repositories that make up the Stacks platform:
-- [Stacks Webapp Template](https://github.com/amido/stacks-webapp-template)
-- [Stacks .NET](https://github.com/amido/stacks-dotnet)
-- [Stacks Java](https://github.com/amido/stacks-java)
-- [Stacks Java with CQRS](https://github.com/amido/stacks-java-cqrs)
-- [Stacks Java with CQRS and Events](https://github.com/amido/stacks-java-cqrs-events)
-- [Stacks Frontend](https://github.com/amido/stacks-nx-plugins)
-- [Stacks Pipeline Templates](https://github.com/amido/stacks-pipeline-templates)
-- [Stacks Terraform](https://github.com/amido/stacks-terraform)
-- [Stacks Azure Infrastructure](https://github.com/amido/stacks-infrastructure-aks)
-- [Stacks Azure Data Platform](https://github.com/amido/stacks-azure-data)
+- [Stacks Webapp Template](https://github.com/Ensono/stacks-webapp-template)
+- [Stacks .NET](https://github.com/Ensono/stacks-dotnet)
+- [Stacks Java](https://github.com/Ensono/stacks-java)
+- [Stacks Java with CQRS](https://github.com/Ensono/stacks-java-cqrs)
+- [Stacks Java with CQRS and Events](https://github.com/Ensono/stacks-java-cqrs-events)
+- [Stacks Frontend](https://github.com/Ensono/stacks-nx-plugins)
+- [Stacks Pipeline Templates](https://github.com/Ensono/stacks-pipeline-templates)
+- [Stacks Terraform](https://github.com/Ensono/stacks-terraform)
+- [Stacks Azure Infrastructure](https://github.com/Ensono/stacks-infrastructure-aks)
+- [Stacks Azure Data Platform](https://github.com/Ensono/stacks-azure-data)
 
 ### Packages
 - [NuGet](https://www.nuget.org/profiles/amidostacks)

@@ -23,7 +23,7 @@ keywords:
   - github
 ---
 
-import ResponsivePlayer from "../../../../../../../src/pages/_Components/ResponsivePlayer/ResponsivePlayer";
+import ResponsivePlayer from "../../../../../../../src/components/ResponsivePlayer/ResponsivePlayer";
 
 ## Create a project
 
