@@ -68,23 +68,7 @@ html {
   .section {
     padding: 0 3rem; 
   }
-  .introductionSection {
-    display: flex;
-    gap: 3.5rem;
-  }
 }
-/* Switch light and dark mode */
-/* html[data-theme="light"] .learnAboutStacks:hover,
-html[data-theme="light"] .getStarted:hover {
-  background-color: black;
-  color: white;
-}
-
-html[data-theme="dark"] .learnAboutStacks:hover,
-html[data-theme="dark"] .getStarted:hover {
-  background-color: white;
-  color: black; */
-/* } */
 
 .buttons {
   display: flex;
@@ -99,10 +83,6 @@ html[data-theme="dark"] .getStarted:hover {
 
 .textCenter { 
   text-align: center;
-}
-
-.displayInlineBlock {
-  display: inline-block;
 }
 
 /* For STYLING TESTS? */

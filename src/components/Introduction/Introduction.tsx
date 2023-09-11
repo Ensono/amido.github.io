@@ -5,6 +5,8 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 import styles from "@site/src/pages/styles.module.css";
 import customStyles from "./Introduction.module.css";
 
+import {WhatStacksCanDo} from "../";
+
 const text = {
     title: (
         <>Stacks is the <span className={styles.primaryColour}>cloud-native software factory</span> for digital transformations that work.</>
@@ -24,15 +26,21 @@ export const Introduction = () => {
     const baseUrl = useBaseUrl("docs/");
 
     return (
-        <div className={customStyles.intro}>
-            <h3>{title}</h3>
-            <ul>
-                {benefitsList.map((benefit, key) => (
-                    <li key={key}>{benefit}</li>
-                ))}
-            </ul>
-            <div className={styles.buttons}>
-                <Link className="button button--primary button--lg" to={baseUrl}>{buttonText}</Link>
+        <div className={styles.section}>
+            <div className={customStyles.introductionSection}>
+                <div className={customStyles.intro}>
+                <h2 className="margin-bottom--lg">{title}</h2>
+                    <ul>
+                        {benefitsList.map((benefit, key) => (
+                            <li key={key}>{benefit}</li>
+                        ))}
+                    </ul>
+                    <div className={styles.buttons}>
+                        <Link className="button button--primary button--lg" to={baseUrl}>{buttonText}</Link>
+                    </div>
+                </div>
+
+                <WhatStacksCanDo />
             </div>
         </div>
     )

@@ -1,14 +1,12 @@
 .intro {
     margin-bottom: 2rem;
     padding-bottom: 2rem;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid var(--igm-color-dark-grey);
 }
 
 .intro ul li {
     padding: 0.5rem 0;
 }
-
-
 
 @media (min-width: 768px) {
     .intro {
@@ -16,5 +14,11 @@
         width: 100%;
         padding-bottom: 0;
         margin-bottom: 0;
+    }
+
+    .introductionSection {
+        display: flex;
+        gap: 3.5rem;
+        align-items: center;
     }
 }

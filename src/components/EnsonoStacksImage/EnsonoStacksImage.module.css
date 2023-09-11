@@ -1,12 +1,10 @@
 .ensonoStacksImageContainer {
     position: relative;
     min-height: 20rem;
-    color: #fff;
 }
 
-
-.ensonoStacksImageContainer h2 {
-    font-size: 2rem;
+.ensonoStacksImageContainer h2, p {
+    color: #fff;
 }
 
 .ensonoStacksImageContainer p {
@@ -64,10 +62,6 @@
         width: auto;
         height: auto;
      }
-
-     .ensonoStacksImageContainer h1 {
-        font-size: 4rem;
-    }
     
     .ensonoStacksImageContainer p {
         width: 300px;

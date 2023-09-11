@@ -106,12 +106,8 @@ const config = {
           items: [
             {
               label: "Getting Started",
-              to: "docs/",
-            },
-            {
-              label: "Stacks blogs",
-              to: "docs/",
-            },
+              to: "http://github.com/ensono",
+            }
           ],
         },
         {
@@ -123,7 +119,7 @@ const config = {
             },
             {
               label: "Get in touch",
-              href: "https://ensono.com/",
+              href: "https://www.ensono.com/company/lets-connect/",
             },
             {
               label: "Careers at Ensono",

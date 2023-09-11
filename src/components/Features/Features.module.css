@@ -17,8 +17,8 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  border: 1px solid #000;
-  padding: 1rem;
+  border: 1px solid var(--igm-color-dark-grey);
+  padding: 2rem;
 }
 
 .feature:first-child {
@@ -37,7 +37,7 @@
 
 @media (min-width: 768px) { 
   .feature:first-child {
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid var(--igm-color-dark-grey);
   }
 
   .feature {
@@ -47,7 +47,6 @@
   .feature h3 {
     display: flex;
     align-items: center;
-    font-size: 1.25rem;
     margin: 0.9rem 0;
   }
   .feature .imageWrapper img {
@@ -91,7 +90,6 @@
 
 @media (min-width: 1024px) {
   .feature h3 {
-    font-size: 1.5rem;
     margin: 1.3rem 0;
   }
   .feature .imageWrapper img {

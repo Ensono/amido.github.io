@@ -1,13 +1,9 @@
 
 .heroBanner {
-    margin-top: 1rem;
-    padding: 1rem;
+    padding: 1.5rem;
     text-align: center;
     position: relative;
-}
-
-.heroBanner p {
-    font-size: 1rem;
+    border: 1px solid var(--igm-color-dark-grey);
 }
 
 .heroBanner p > a {
@@ -30,10 +26,12 @@
     text-decoration-color: var(--ifm-link-hover-color);
 } 
   
-  
+.displayInlineBlock {
+    display: inline-block;
+  }
 
 @media (min-width: 768px) {
-    .heroBanner{
-        border: 1px solid #000;
+    .heroBanner {
+        border: 1px solid var(--igm-color-dark-grey);
     }
 }

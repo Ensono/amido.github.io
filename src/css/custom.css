@@ -23,15 +23,17 @@
   --ifm-heading-font-family: PlusJakartaSans-SemiBold;
   --ifm-font-family-base: Inter-Regular, sans-serif;
 
+  --ifm-heading-color: var(--igm-color-dark-grey);
   --ifm-menu-color:  var(--igm-color-dark-grey);
   --ifm-footer-link-color: var(--igm-color-dark-grey);
   --ifm-footer-background-color:  #fff;
+  --ifm-footer-title-color:  var(--igm-color-dark-grey);
 }
 
 :root {
   --ifm-h1-font-size: 2.813rem; /*45px - matching with Ensono.com*/
-  --ifm-h2-font-size: 2.375rem; /*38px - matching with Ensono.com*/
-  --ifm-h3-font-size: 1.75rem; /*28px - matching with Ensono.com*/
+  --ifm-h2-font-size: 2.11rem; /*38px - matching with Ensono.com*/
+  --ifm-h3-font-size: 1.555rem; /*28px - matching with Ensono.com*/
   --ifm-h4-font-size: 1.125rem; /*18px - matching with Ensono.com*/
   --ifm-h5-font-size: var(--ifm-h4-font-size);
   --ifm-h6-font-size: var(--ifm-h4-font-size);
@@ -76,7 +78,7 @@ html[data-theme="dark"] {
 }
 
 .navbar__link {
-  color: #000;
+  color: var(--igm-color-dark-grey);
 }
 
 .navbar__link:hover {
