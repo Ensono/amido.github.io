@@ -76,14 +76,6 @@ const config = {
       },
       items: [
         {
-          href: "https://github.com/Ensono/amido.github.io",
-          label: "Benefits",
-        },
-        {
-          href: "https://github.com/Ensono/amido.github.io",
-          label: "Blog",
-        },
-        {
           to: "docs/",
           activeBasePath: "docs",
           label: "Documentation",
