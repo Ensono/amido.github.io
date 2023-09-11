@@ -14,9 +14,3 @@
 .disabledButton:hover {
   cursor: default;
 }
-
-@media (min-width: 768px) { 
-  .containerSelects {
-    gap: 0;
-  }
-}
