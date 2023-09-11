@@ -7,6 +7,55 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 import styles from "@site/src/pages/styles.module.css";
 import customStyle from "./Picker.module.css";
 
+const text = {
+  languageAndFramework: {
+    placeholder: 'Select Language/Framework'
+  },
+  solutionArchitecture: {
+    placeholder: 'Select Solution Architecture'
+  },
+  cloudProvider: {
+    placeholder: 'Select Cloud Provider'
+  },
+  optionMapper: {
+    "C# / .NET Core": {
+      "REST Web API": {
+        "Microsoft Azure [Azure]":
+          "workloads/azure/backend/netcore/quickstart/web_api/create_project_netcore",
+        "Amazon Web Services [AWS]":
+          "workloads/azure/backend/netcore/quickstart/web_api/create_project_netcore",
+      },
+      "REST Web API with CQRS": {
+        "Microsoft Azure [Azure]":
+          "workloads/azure/backend/netcore/quickstart/web_api_cqrs/create_project_netcore",
+        "Amazon Web Services [AWS]":
+          "workloads/azure/backend/netcore/quickstart/web_api_cqrs/create_project_netcore",
+      }
+    },
+    "Java Spring Boot": {
+      "REST Web API": {
+        "Microsoft Azure [Azure]":
+          "workloads/azure/backend/java/intro_java",
+      },
+      "REST Web API with CQRS": {
+        "Microsoft Azure [Azure]":
+          "workloads/azure/backend/java/intro_java",
+      },
+      "REST Web API with CQRS and Events": {
+        "Microsoft Azure [Azure]":
+          "workloads/azure/backend/java/intro_java",
+      },
+    },
+    "Typescript / Nx": {
+      "Client Side or Server Side Rendered Web Application": {
+        "Microsoft Azure [Azure]": "nx/nx_stacks",
+      },
+    },
+  }
+}
+
+const {languageAndFramework, solutionArchitecture, cloudProvider, optionMapper} = text
+
 export const Picker = () => {
     const [firstOption, setFirstOption] = useState(undefined);
     const [secondOption, setSecondOption] = useState(undefined);
@@ -14,44 +63,9 @@ export const Picker = () => {
     const [isFinalChoice, setFinalChoice] = useState(false);
   
     const baseUrl = useBaseUrl("docs/");
-    const OptionMapper = {
-      "C# / .NET Core": {
-        "REST Web API": {
-          "Microsoft Azure [Azure]":
-            "workloads/azure/backend/netcore/quickstart/web_api/create_project_netcore",
-          "Amazon Web Services [AWS]":
-            "workloads/azure/backend/netcore/quickstart/web_api/create_project_netcore",
-        },
-        "REST Web API with CQRS": {
-          "Microsoft Azure [Azure]":
-            "workloads/azure/backend/netcore/quickstart/web_api_cqrs/create_project_netcore",
-          "Amazon Web Services [AWS]":
-            "workloads/azure/backend/netcore/quickstart/web_api_cqrs/create_project_netcore",
-        }
-      },
-      "Java Spring Boot": {
-        "REST Web API": {
-          "Microsoft Azure [Azure]":
-            "workloads/azure/backend/java/intro_java",
-        },
-        "REST Web API with CQRS": {
-          "Microsoft Azure [Azure]":
-            "workloads/azure/backend/java/intro_java",
-        },
-        "REST Web API with CQRS and Events": {
-          "Microsoft Azure [Azure]":
-            "workloads/azure/backend/java/intro_java",
-        },
-      },
-      "Typescript / Nx": {
-        "Client Side or Server Side Rendered Web Application": {
-          "Microsoft Azure [Azure]": "nx/nx_stacks",
-        },
-      },
-    };
   
-    const cloudProviders = Object.keys(OptionMapper).map((key) => ({
-      value: OptionMapper[key],
+    const cloudProviders = Object.keys(optionMapper).map((key) => ({
+      value: optionMapper[key],
       label: key,
     }));
   
@@ -71,9 +85,9 @@ export const Picker = () => {
   
   
     return (
-      <div className="container" style={{display:"flex", justifyContent:"center"}}>
+      <div className={`container ${customStyle.pickerContainer}`}>
         <div className={clsx("col", "col--12", customStyle.containerSelects)}>
-          <Select placeholder="Select Language/Framework"
+          <Select placeholder={languageAndFramework.placeholder}
                   value={firstOption}
                   onChange={(selected) => {
                     setFirstOption(selected);
@@ -84,7 +98,7 @@ export const Picker = () => {
           />
   
           { applications.length > 0 && (
-            <Select placeholder="Select Solution Architecture"
+            <Select placeholder={solutionArchitecture.placeholder}
                     value={secondOption}
                     onChange={(selected) => {
                       setSecondOption(selected);
@@ -96,7 +110,7 @@ export const Picker = () => {
           )}
   
           {languages.length > 0 && (
-            <Select placeholder="Select Cloud Provider"
+            <Select placeholder={cloudProvider.placeholder}
                     value={thirdOption}
                     onChange={(selected) => {
                       setThirdOption(selected);
@@ -106,7 +120,7 @@ export const Picker = () => {
             />
           )}
   
-          <div className={styles.buttons} style={{ marginTop: 40 }}>
+          <div className={`${styles.buttons} margin-top--md`}>
               <Link className={clsx("button button--primary button--lg", isFinalChoice ? "" : customStyle.disabledButton )}
                     to={ isFinalChoice ? (baseUrl + (thirdOption ? thirdOption.value : firstOption ? firstOption.value : "")) : "" }
                     disabled={!isFinalChoice}
