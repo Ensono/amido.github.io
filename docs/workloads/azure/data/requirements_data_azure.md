@@ -14,7 +14,10 @@ keywords:
 * Python 3.9+
 * [Poetry](https://python-poetry.org/docs/)
 * (Windows users) A Linux distribution, e.g. [WSL2](https://docs.microsoft.com/en-us/windows/wsl/install)
-* Java 8/11/17 as in the [Spark documentation](https://spark.apache.org/docs/latest/)
+* (Optional: to develop using PySpark locally) Java 8/11/17 as in the [Spark documentation](https://spark.apache.org/docs/latest/)
+
+See [development quickstart](getting_started/dev_quickstart_data_azure.md) for further details on developing the solution.
+
 
 ## Azure
 
@@ -39,8 +42,6 @@ The specifics regarding when each variable is required have also been provided. 
 the variables fall into one of two categories based on the time of requirement: 'Project Start',
 denoting variables required at the very outset of the project, and 'After Core Infrastructure
 Deployment', referring to variables required after the fundamental infrastructure has been deployed.
-
-ℹ️ The variables under `amido-stacks-euw-de-env-network` are only required if you want to provision the infrastructure within a private network.
 
 <details>
   <summary>amido-stacks-de-pipeline-env</summary>
