@@ -3,8 +3,9 @@
     min-height: 20rem;
 }
 
-.ensonoStacksImageContainer h2, p {
-    color: #fff;
+.ensonoStacksImageContainer h2, 
+.ensonoStacksImageContainer p {
+ color: #fff;
 }
 
 .ensonoStacksImageContainer p {
