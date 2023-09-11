@@ -21,14 +21,16 @@ Datastacks is a utility built to support various functions within the Ensono Sta
 * [Setup project environment](../getting_started/dev_quickstart_data_azure.md)
 
 ```bash
-# Initiate Datastacks using poetry:
-poetry run datastacks
+# Option 1: Run Datastacks CLI using poetry run (preferred)
+poetry run datastacks --help
 
-# Run Datastacks from the command line
+# Option 2: Run Datastacks CLI using poetry's interactive shell
+poetry shell
 datastacks --help
+exit
 
-# Alternatively, run using entrypoint script
-python datastacks/datastacks_cli.py --help
+# Option 3: Run Datastacks CLI using poetry run and the entrypoint script
+python datastacks/datastacks/datastacks_cli.py --help
 ```
 
 ## Generating data workloads
@@ -47,10 +49,10 @@ See [ETL Pipeline Deployment](../getting_started/etl_pipelines_deployment_azure.
 
 ```bash
 # Generate resources for an ingest pipeline
-datastacks generate ingest --config="de_templates/test_config_ingest.yaml"
+poetry run datastacks generate ingest --config="de_templates/test_config_ingest.yaml"
 
 # Generate resources for an ingest pipeline, with added Data Quality steps
-datastacks generate ingest --config="de_templates/test_config_ingest.yaml" --data-quality
+poetry run datastacks generate ingest --config="de_templates/test_config_ingest.yaml" --data-quality
 ```
 
 ### Configuration
@@ -86,8 +88,8 @@ In order to generate a new data engineering workload the Datastacks CLI takes a 
 Datastacks provides a CLI to conduct data quality checks using the [PySparkle](pysparkle/pysparkle_quickstart.md) library as a backend.
 
 ```bash
-datastacks dq --help
-datastacks dq --config-path "ingest/Ingest_AzureSql_Example/data_quality/ingest_dq.json" --container config
+poetry run datastacks dq --help
+poetry run datastacks dq --config-path "ingest/Ingest_AzureSql_Example/data_quality/ingest_dq.json" --container config
 ```
 
 ### Required configuration

@@ -104,14 +104,11 @@ window_end_default: 2010-01-31
 Use the Datastacks CLI to generate the artifacts for the new workload, using the prepared config file (replacing `path_to_config_file/my_config.yaml` with the appropriate path). Note, a workload with Data Quality steps requires a data platform with a Databricks workspace:
 
 ```bash
-# Initiate Datastacks using poetry:
-poetry run datastacks
-
 # Generate resources for an ingest pipeline (without Data Quality steps)
-datastacks generate ingest --config="path_to_config_file/my_config.yaml"
+poetry run datastacks generate ingest --config="path_to_config_file/my_config.yaml"
 
 # Generate resources for an ingest pipeline (with added Data Quality steps)
-datastacks generate ingest --config="path_to_config_file/my_config.yaml" --data-quality
+poetry run datastacks generate ingest --config="path_to_config_file/my_config.yaml" --data-quality
 ```
 
 This should add new project artifacts for the workload under `de_workloads/ingest/Ingest_AzureSql_MyNewExample`, based on the ingest workload templates. Review the resources that have been generated.
