@@ -3,7 +3,7 @@
     height: 100%;
     display: flex;
     justify-content: center;
-    background-color: #f4f4f4;
+    background-color: var(--igm-color-silver);
   }
   
 .main {

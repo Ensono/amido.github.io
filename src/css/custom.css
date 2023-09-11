@@ -13,13 +13,11 @@
   --ifm-color-lead-brand-primary: #6941EB;
   --igm-color-dark-grey: #262626;
   --igm-color-light-grey: #e1e1e1;
-  --ifm-code-font-size: 95%;
+  --igm-color-silver: #f4f4f4;
   --ifm-color-primary-dark: var(--ifm-color-primary);
   --ifm-color-primary-darker: var(--ifm-color-primary);
-  /* --ifm-color-primary-darkest: #b28f01;
-  --ifm-color-primary-light: #fed01b;
-  --ifm-color-primary-lighter: #fed328;
-  --ifm-color-primary-lightest: #fedb4e; */
+  
+  --ifm-code-font-size: 95%;
   --ifm-heading-font-family: PlusJakartaSans-SemiBold;
   --ifm-font-family-base: Inter-Regular, sans-serif;
 
