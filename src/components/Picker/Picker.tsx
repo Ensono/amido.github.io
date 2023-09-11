@@ -111,7 +111,7 @@ export const Picker = () => {
                     to={ isFinalChoice ? (baseUrl + (thirdOption ? thirdOption.value : firstOption ? firstOption.value : "")) : "" }
                     disabled={!isFinalChoice}
               >
-                LET'S GO!
+                Let's go!
               </Link>
           </div>
         </div>

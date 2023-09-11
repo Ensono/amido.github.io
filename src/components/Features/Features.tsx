@@ -11,13 +11,15 @@ const text = {
           title: "Infrastructure",
           link: "infrastructure/azure/core_infrastructure",
           description: "Find out how to configure your cloud provider and other core infrastructure to make Stacks work for you.",
-          img: '/img/icons/ensono-icon_host-v_0222.png'
+          img: '/img/icons/ensono-icon_host-v_0222.png',
+          buttonText: 'Show me'
         },
         {
           title: "Test Framework",
           link: "testing/cli_testing_frameworks",
           description: "With just one command, discover how to tailor your project with Stacks’ front-end focused opinionated test frameworks.",
-          img: '/img/icons/ensono-icon_symbol-checkmark-v_0222.png'
+          img: '/img/icons/ensono-icon_symbol-checkmark-v_0222.png',
+          buttonText: 'Show me'
         },
     ]
   }
@@ -44,7 +46,7 @@ export const Features = () => {
                             <Link className={clsx("button button--primary button--lg")}
                                 to={baseUrl + feature.link}
                             >
-                            {feature.title}
+                            {feature.buttonText}
                             </Link>
                         </div>
                     </div>

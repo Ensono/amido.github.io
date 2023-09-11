@@ -10,10 +10,11 @@ const text = {
       title: "Contribute to Stacks",
       link: "contributions",
       description: "As an open source project, you can be a part of the Github community shaping Ensono Stacks",
-      img: '/img/icons/ensono-icon_puzzle-v_0222.png'
+      img: '/img/icons/ensono-icon_puzzle-v_0222.png',
+      buttonText: 'Contribute'
     }
   }
-const { contribute: {title, link, description, img} } = text;
+const { contribute: {title, link, description, img, buttonText} } = text;
 
 export const ContributeToStacks = () => {
     const baseUrl = useBaseUrl("docs/");
@@ -38,7 +39,7 @@ export const ContributeToStacks = () => {
                     )}
                     to={ link.startsWith("http") ? link  : baseUrl + link}
                     >
-                    {title}
+                    {buttonText}
                     </Link>
                 </div>
             </section>
