@@ -28,7 +28,7 @@ Please refer to the **Stacks.CLI.Manual** in the latest [stacks-cli release](htt
 
 We will be using the `stacks-cli scaffold` command to generate a new data project. The scaffold command takes a YAML configuration file, defining the project.
 
-A [sample data project config file](https://github.com/Ensono/stacks-azure-data/blob/feat/6809-stacks-cli-yaml-template/stacks-cli/data-scaffold-example.yml) is provided. Prepare a copy of this file, and update the following entries as required for your new project:
+A [sample data project config file](https://github.com/Ensono/stacks-azure-data/blob/main/stacks-cli/data-scaffold-example.yml) is provided. Prepare a copy of this file, and update the following entries as required for your new project:
 
 | Config field | Example value | Description |
 | ----- | ----- | ----- |
