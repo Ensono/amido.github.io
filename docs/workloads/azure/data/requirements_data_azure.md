@@ -11,20 +11,45 @@ keywords:
 
 ## Local development
 
-* Python 3.9+
-* [Poetry](https://python-poetry.org/docs/)
-* (Windows users) A Linux distribution, e.g. [WSL2](https://docs.microsoft.com/en-us/windows/wsl/install)
-* (Optional: to develop using PySpark locally) Java 8/11/17 as in the [Spark documentation](https://spark.apache.org/docs/latest/)
+The following tools are recommended for developing while using the Stacks data solution:
 
-See [development quickstart](getting_started/dev_quickstart_data_azure.md) for further details on developing the solution.
+| Tool | Notes |
+| ----- | ----- |
+| [Python 3.9+](https://www.python.org/downloads/) |  |
+| [Poetry](https://python-poetry.org/docs/) | Used for Python dependency management in Stacks. |
+| A Linux distribution, e.g. [WSL2](https://docs.microsoft.com/en-us/windows/wsl/install) | Optional: recommended for Windows users developing the solution. |
+| Java 8/11/17 | Optional: Java is required to develop and run tests using PySpark locally - see [Spark documentation](https://spark.apache.org/docs/latest/). |
+| [Azure CLI](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli) | Optional: Azure CLI allows you to interact with Azure resources locally, including running end-to-end tests. |
 
+See [development quickstart](getting_started/dev_quickstart_data_azure.md) for further details on getting start with developing the solution.
 
-## Azure
+## Git repository
 
-* Azure subscription – for deploying the solution into
-* Azure service principal (Application) – needs permissions to deploy and configure all required
-resources into the target subscription
-* Azure DevOps project – for running CI/CD pipelines and storing project variables
+A remote Git repository is required for storing and managing a data project's code. When scaffolding a new data project, you will need the HTTPS URL of the repo.
+
+The examples and quickstart documentation assume that `main` is the primary branch in the repo.
+
+## Azure subscription
+
+In order to deploy a Stacks data platform into Azure, you will need:
+
+* One or more Azure subscriptions – for deploying the solution into
+* Azure service principal (Application) – with permissions to deploy and configure all required
+resources into the target subscription(s)
+
+### Terraform state storage
+
+Deployment of Azure resources in Stacks is done through Terraform. Within your Azure subscription, you must provision a [storage container](https://learn.microsoft.com/en-us/azure/storage/blobs/blob-containers-portal) to hold [Terraform state data](https://developer.hashicorp.com/terraform/language/state). Details regarding this storage are required when you first scaffold the project using the Stacks CLI. Therefore, once you have provisioned the storage container, make note of the following:
+
+* Storage account name
+* Resource group name
+* Container name
+
+## Azure DevOps
+
+CI/CD processes within the Stacks data platform are designed to be run in Azure DevOps Pipelines[^1]. Therefore, it is a requirement to [create a project in Azure DevOps](https://learn.microsoft.com/en-us/azure/devops/organizations/projects/create-project?view=azure-devops&tabs=browser).
+
+[^1]: More general information on [using Azure Pipelines in Stacks](https://stacks.amido.com/docs/infrastructure/azure/pipelines/azure_devops) is also available.
 
 ### Azure Pipelines variable groups
 
@@ -42,6 +67,8 @@ The specifics regarding when each variable is required have also been provided. 
 the variables fall into one of two categories based on the time of requirement: 'Project Start',
 denoting variables required at the very outset of the project, and 'After Core Infrastructure
 Deployment', referring to variables required after the fundamental infrastructure has been deployed.
+
+ℹ️ The variables under `amido-stacks-euw-de-env-network` are only required if you want to provision the infrastructure within a private network.
 
 <details>
   <summary>amido-stacks-de-pipeline-env</summary>
@@ -92,6 +119,3 @@ Deployment', referring to variables required after the fundamental infrastructur
 | azure-tenant-id       | Project start | Directory ID for Azure Active Directory application   |
 
 </details>
-
-Please see [Azure DevOps Pipelines](https://stacks.amido.com/docs/infrastructure/azure/pipelines/azure_devops)
-for general information on using Azure Pipelines in Stacks.

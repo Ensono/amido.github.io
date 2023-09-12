@@ -1,7 +1,7 @@
 ---
 id: core_data_platform_deployment_azure
 title: Infrastructure Deployment
-sidebar_label: 1. Infrastructure Deployment
+sidebar_label: 2. Infrastructure Deployment
 hide_title: false
 hide_table_of_contents: false
 description: Infrastructure deployment
@@ -14,49 +14,14 @@ keywords:
 ---
 
 This section provides an overview of generating a new Data Platform project and deploying core infrastructure for Stacks Data Platform.
-This aligns to the workflow shown in the [deployment architecture](../architecture/architecture_data_azure.md#data-engineering-workloads) section.
-It assumes the [Azure requirements](../requirements_data_azure.md#azure) are in place, including:
 
-* Azure subscription and service principal
-* If you want to provision the infrastructure within a private network, this can be done as part of a [Hub-Spoke network topology](../infrastructure_data_azure#networking). Spoke virtual network and subnet for private endpoints must be provisioned for each environment. The hub network must contain a self-hosted agent. See [Microsoft documentation](https://learn.microsoft.com/en-us/azure/architecture/reference-architectures/hybrid-networking/hub-spoke?tabs=cli) for more details on implementing Hub-spoke network topology in Azure.
-* Azure DevOps project with [Pipelines variable groups](../requirements_data_azure.md#azure-pipelines-variable-groups).
-* A remote git repository for hosting the generated project (this guide assumes `main` is the primary branch in this repo)
+It assumes you have [generated a new data project using Stacks](generate_project.md), and that the following [requirements](../requirements_data_azure.md) are in place:
 
-## Step 1: Create/Generate Data Platform project using Stacks CLI
+* [Azure subscription and service principal](../requirements_data_azure.md#azure-subscription)
+    * If you want to provision the infrastructure within a private network, this can be done as part of a [Hub-Spoke network topology](../infrastructure_data_azure#networking). Spoke virtual network and subnet for private endpoints must be provisioned for each environment. The hub network must contain a self-hosted agent. See [Microsoft documentation](https://learn.microsoft.com/en-us/azure/architecture/reference-architectures/hybrid-networking/hub-spoke?tabs=cli) for more details on implementing Hub-spoke network topology in Azure.
+* [Azure DevOps project with Pipelines variable groups](../requirements_data_azure.md#azure-devops).
 
-The [Stacks CLI](../../../../stackscli/about) will help you get started with scaffolding your applications and workspaces using Stacks. Through a series of questions the CLI will determine how and what to build for your workspace, helping to accelerate your development process.
-
-Download and install the `stacks-cli` using [Stacks CLI](../../../../stackscli/about) page. Please refer to the **Stacks.CLI.Manual** in the latest `stacks-cli` release for detailed instruction.
-
-To construct a Data Platform project, two primary cli commands are required: `stacks-cli interactive` and `stacks-cli scaffold`.
-
-The interactive command is designed to ask questions on the command line about the configuration
-required for setting up Ensono Digital Stacks. It will then save this configuration out to a file that can be
-read in using the scaffold command.
-
-```cmd
-stacks-cli interactive
-```
-
-The majority of the questions are self-explanatory; please refer to the **Stacks.CLI.Manual** for further detail, however the following two will define the type of the target project.
-
-| Question                                      | Required value for data project |
-|-----------------------------------------------|---------------------------------|
-| What framework should be used for the project?| infra                           |
-| Which type of infrastructure is required?     | data                            |
-
-The resulting configuration file named `stacks.yml` contains all of the configuration that was used to generate the project,
-which means it can be used to produce the same project stack again.
-
-The CLI can be used with a configuration file to generate the Ensono Digital Stacks based projects using `stacks-cli scaffold`.
-
-```cmd
-stacks-cli scaffold -c ./stacks.yml
-```
-
-Open the project locally and push the generated project to the target remote repository's `main` branch.
-
-## Step 2: Add Infrastructure pipeline in Azure DevOps
+## Step 1: Create branch and set networking option
 
 Open the project locally and create a new feature branch e.g.:
 
@@ -64,13 +29,14 @@ Open the project locally and create a new feature branch e.g.:
 git checkout -b feat/infra-pipeline
 ```
 
-If you want to provision infrastructure within a private network, then make sure `enable_private_networks` in `deploy/azure/infra/vars.tf` is set to `true`.
+The file `deploy/azure/infra/vars.tf` contains a variable `enable_private_networks`:
 
-If you want to provision infrastructure with the default deployment model, then set `enable_private_networks` to `false`.
+* If you want to provision infrastructure within a [private network](../infrastructure_data_azure#networking), ensure this variable is set to `true`.
+* If you want to provision infrastructure with a default deployment model, ensure this variable is set to `false`.
 
-YAML file containing a template Azure DevOps CI/CD pipeline for building and deploying the core infrastructure is provided in `build/azDevOps/azure/air-infrastructure-data.yml`.
+## Step 2: Add Infrastructure pipeline in Azure DevOps
 
-YAML file `air-infrastructure-data.yml` should be added as the definition for a new pipeline in Azure DevOps.
+A YAML file containing a template Azure DevOps CI/CD pipeline for building and deploying the core infrastructure is provided in `build/azDevOps/azure/air-infrastructure-data.yml` - this should be added as the definition for a new pipeline in Azure DevOps.
 
 1. Sign-in to your Azure DevOps organization and go to your project
 2. Go to Pipelines, and then select **New pipeline**
