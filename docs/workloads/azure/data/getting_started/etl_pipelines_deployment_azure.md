@@ -101,7 +101,7 @@ window_end_default: 2010-01-31
 
 ## Step 3: Generate project artifacts using Datastacks
 
-Use the Datastacks CLI to generate the artifacts for the new workload, using the prepared config file (replacing `path_to_config_file/my_config.yaml` with the appropriate path). Note, a workload with Data Quality steps requires a data platform with a Databricks workspace:
+Use the [Datastacks CLI](../etl_pipelines/datastacks.md#using-the-datastacks-cli) to generate the artifacts for the new workload, using the prepared config file (replacing `path_to_config_file/my_config.yaml` with the appropriate path). Note, a workload with Data Quality steps requires a data platform with a Databricks workspace:
 
 ```bash
 # Activate virtual environment

@@ -21,12 +21,11 @@ Datastacks is a utility built to support various functions within the Ensono Sta
 * [Setup project environment](../getting_started/dev_quickstart_data_azure.md)
 
 ```bash
-# Option 1: Run Datastacks CLI using Poetry's interactive shell (preferred)
+# Option 1: Run Datastacks CLI using Poetry's interactive shell (recommended for local development)
 poetry shell
 datastacks --help
-exit
 
-# Option 2: Run Datastacks CLI using poetry run
+# Option 2: Run Datastacks CLI using poetry run (recommended where Poetry shell cannot be used, e.g. CI/CD pipelines)
 poetry run datastacks --help
 ```
 
@@ -88,8 +87,8 @@ In order to generate a new data engineering workload the Datastacks CLI takes a 
 Datastacks provides a CLI to conduct data quality checks using the [PySparkle](pysparkle/pysparkle_quickstart.md) library as a backend.
 
 ```bash
-poetry run datastacks dq --help
-poetry run datastacks dq --config-path "ingest/Ingest_AzureSql_Example/data_quality/ingest_dq.json" --container config
+datastacks dq --help
+datastacks dq --config-path "ingest/Ingest_AzureSql_Example/data_quality/ingest_dq.json" --container config
 ```
 
 ### Required configuration
