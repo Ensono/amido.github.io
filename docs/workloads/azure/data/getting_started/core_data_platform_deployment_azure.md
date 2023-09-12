@@ -18,7 +18,8 @@ This aligns to the workflow shown in the [deployment architecture](../architectu
 It assumes the [Azure requirements](../requirements_data_azure.md#azure) are in place, including:
 
 * Azure subscription and service principal
-* Azure DevOps project with [Pipelines variable groups](../requirements_data_azure.md#azure-pipelines-variable-groups)
+* If you want to provision the infrastructure within a private network, this can be done as part of a [Hub-Spoke network topology](../infrastructure_data_azure#networking). Spoke virtual network and subnet for private endpoints must be provisioned for each environment. The hub network must contain a self-hosted agent. See [Microsoft documentation](https://learn.microsoft.com/en-us/azure/architecture/reference-architectures/hybrid-networking/hub-spoke?tabs=cli) for more details on implementing Hub-spoke network topology in Azure.
+* Azure DevOps project with [Pipelines variable groups](../requirements_data_azure.md#azure-pipelines-variable-groups).
 * A remote git repository for hosting the generated project (this guide assumes `main` is the primary branch in this repo)
 
 ## Step 1: Create/Generate Data Platform project using Stacks CLI
@@ -63,6 +64,10 @@ Open the project locally and create a new feature branch e.g.:
 git checkout -b feat/infra-pipeline
 ```
 
+If you want to provision infrastructure within a private network, then make sure `enable_private_networks` in `deploy/azure/infra/vars.tf` is set to `true`.
+
+If you want to provision infrastructure with the default deployment model, then set `enable_private_networks` to `false`.
+
 YAML file containing a template Azure DevOps CI/CD pipeline for building and deploying the core infrastructure is provided in `build/azDevOps/azure/air-infrastructure-data.yml`.
 
 YAML file `air-infrastructure-data.yml` should be added as the definition for a new pipeline in Azure DevOps.
@@ -72,16 +77,6 @@ YAML file `air-infrastructure-data.yml` should be added as the definition for a 
 3. Name the new pipeline, e.g. `amido.stacks-data-infrastructure`
 4. For the pipeline definition, specify the YAML file in the project repository feature branch (`air-infrastructure-data.yml`) and save
 5. The new pipeline will require access to any Azure DevOps pipeline variable groups specified in the pipeline YAML. Under each variable group, go to 'Pipeline permissions' and add the pipeline.
-
-### Optional: Networking and self-hosted agent
-
-The `build/azDevOps/azure/network` folder contains a YAML file named `air-infrastructure-data-network.yml` that serves as a template for Azure DevOps CI/CD pipeline for networking and self-hosted agent infrastructure.
-
-If the client or user does not have their own network and self-hosted agent, they must establish the networking pipeline in Azure DevOps following the procedures outlined above. This setup should be completed before initiating the core infrastructure pipeline.
-
-The `build/azDevOps/azure/network` folder also includes another YAML file called `air-infrastructure-data-network-vars.yml` that contains the variables used in the networking pipeline. These variables must be updated as well as the project requirements.
-
-If the client/user has their own network and self-hosted agent, then the networking pipeline won't be required.
 
 ## Step 3: Deploy Infrastructure in non-production environment
 
