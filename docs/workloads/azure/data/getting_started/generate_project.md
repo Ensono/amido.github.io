@@ -32,17 +32,17 @@ A [sample data project config file](https://github.com/Ensono/stacks-azure-data/
 
 | Config field | Example value | Description |
 | ----- | ----- | ----- |
-| directory.working | stacks | Target directory for the scaffolded project. |
-| directory.export | "~" | Path to your Stacks CLI installation. |
-| business.company | mycompany | Used for resource naming. |
-| business.domain | mydomain | Used for environment & Terraform state key naming. |
-| project.name | stacks-data-platform | Name of project created & used for resource naming. |
-| project.sourcecontrol.type | github | Remote repository type. |
-| project.sourcecontrol.url | https&#58;&#47;&#47;github.com/mycompany/stacks-data-platform | Used for setting up the remote repository - see [Git repository](../requirements_data_azure.md#git-repository). |
-| project.cloud.region | ukwest | The Azure region you'll be deploying into. Using the Azure CLI, you can use `az account list-locations -o Table` to see available region names. |
-| terraform.backend.storage | tfstorage | Storage account name for Terraform state - see [Terraform state storage](../requirements_data_azure.md#terraform-state-storage). |
-| terraform.backend.group | tfgroup | Resource group account name for Terraform state. |
-| terraform.backend.container | tfcontainer | Container name account name for Terraform state. |
+| directory.working | `stacks` | Target directory for the scaffolded project. |
+| directory.export | `~` | Path to your Stacks CLI installation. |
+| business.company | `mycompany` | Used for resource naming. |
+| business.domain | `mydomain` | Used for environment & Terraform state key naming. |
+| project.name | `stacks-data-platform` | Name of project created & used for resource naming. |
+| project.sourcecontrol.type | `github` | Remote repository type. |
+| project.sourcecontrol.url | `https://github.com/mycompany/stacks-data-platform` | Used for setting up the remote repository - see [Git repository](../requirements_data_azure.md#git-repository). |
+| project.cloud.region | `ukwest` | The Azure region you'll be deploying into. Using the Azure CLI, you can use `az account list-locations -o Table` to see available region names. |
+| terraform.backend.storage | `tfstorage` | Storage account name for Terraform state - see [Terraform state storage](../requirements_data_azure.md#terraform-state-storage). |
+| terraform.backend.group | `tfgroup` | Resource group account name for Terraform state. |
+| terraform.backend.container | `tfcontainer` | Container name account name for Terraform state. |
 
 All other values can be left as they are. For full documentation of all fields in the config file, refer to the Stacks CLI documentation.
 
