@@ -82,6 +82,7 @@ module.exports = {
               "nx/nx_stacks",
               "module_federation/nextjs_plugin",
               "linting/eslint",
+              "storybook/storybook_stacks",
               "getting_started/setup",
               {
                 type: "category",
