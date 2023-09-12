@@ -1,12 +1,11 @@
 ---
 id: shared_resources_deployment_azure
 title: Shared Resources Deployment
-sidebar_label: 3. Shared Resources Deployment
+sidebar_label: 4. Shared Resources Deployment
 hide_title: false
 hide_table_of_contents: false
 description: Deployment of common Azure Data Factory resources shared by data pipelines
 keywords:
-  - DE
   - data
   - infrastructure
   - adf
@@ -14,7 +13,7 @@ keywords:
 ---
 
 This section provides an overview of deploying the shared resources for Stacks Data Platform.
-This aligns to the workflow shown in the [deployment architecture](../architecture/architecture_data_azure.md#data-engineering-workloads) section.
+
 The shared resources include Azure Data Factory resources which are shared across pipelines. These are as follows:
 
 * Linked services
