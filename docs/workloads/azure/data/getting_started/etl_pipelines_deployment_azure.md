@@ -1,7 +1,7 @@
 ---
 id: etl_pipelines_deployment_azure
 title: Data Ingest Pipeline Deployment
-sidebar_label: 5. Data Ingest Pipeline Deployment
+sidebar_label: 6. Data Ingest Pipeline Deployment
 hide_title: false
 hide_table_of_contents: false
 description: Data ingest pipelines development & deployment
@@ -16,7 +16,6 @@ keywords:
 ---
 
 This section provides an overview of generating a new [data ingest pipeline](../etl_pipelines/ingest_data_azure.md) workload and deploying it into a Stacks Data Platform, using the [Datastacks](../etl_pipelines/datastacks.md) utility.
-This aligns to the workflow shown in the [deployment architecture](../architecture/architecture_data_azure.md#data-engineering-workloads) section.
 
 This guide assumes the following are in place:
 
