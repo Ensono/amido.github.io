@@ -66,10 +66,6 @@
   --docsearch-hit-active-color: var(--docsearch-hit-color) !important;
 }
 
-html[data-theme="dark"] {
-  --docsearch-hit-active-color: black !important;
-}
-
 .navbar {
   background-color: var(--ifm-navbar-background-color);
   color: #000;
@@ -88,23 +84,6 @@ html[data-theme="dark"] {
   display: block;
   margin: 0 calc(-1 * var(--ifm-pre-padding));
   padding: 0 var(--ifm-pre-padding);
-}
-
-.DocSearch-Hit-source {
-  color: var(--docsearch-hit-color) !important;
-}
-
-.DocSearch-Hit mark {
-  text-decoration-line: underline !important;
-  color: var(--docsearch-hit-color) !important;
-}
-
-html[data-theme="dark"] .DocSearch-Hit[aria-selected="true"] .DocSearch-Hit-Title{
-  color: black !important;
-}
-
-html[data-theme="dark"] .DocSearch-Hit[aria-selected="true"] mark {
-  text-decoration-line: underline !important;
 }
 
 .pagination-nav__label {

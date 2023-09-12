@@ -85,34 +85,6 @@ html {
   text-align: center;
 }
 
-/* For STYLING TESTS? */
-.xunit > svg > g > path,
-.xunit > svg > g > g > path,
-.azureBlob > path,
-.googleKubernetes > path:first-child,
-.googleStorage > path:first-child,
-.cosmosdb > path:first-child,
-.azureKubernetes > path:first-child,
-.terraform > path:nth-child(1),
-.terraform > path:nth-child(2),
-.azurePipelines > path:first-child,
-.googleLighthouse > path:last-child,
-.testCafe > path,
-.karate > path,
-.cucumber > path:first-child,
-.xunit > g > path,
-.xunit > path,
-.jest > path:nth-child(3) {
-  color: var(--ifm-heading-color);
-  fill: currentColor;
-}
-
-.jest > path:nth-child(2) {
-  color: var(--ifm-heading-color);
-  stroke: var(--ifm-heading-color);
-  fill: currentColor;
-}
-
 /* Not sure what this is used for */
 
 div details summary:focus {
