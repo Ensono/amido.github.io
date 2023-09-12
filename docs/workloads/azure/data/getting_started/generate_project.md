@@ -36,6 +36,7 @@ A [sample data project config file](https://github.com/Ensono/stacks-azure-data/
 | directory.export | `~` | Path to your Stacks CLI installation. |
 | business.company | `mycompany` | Used for resource naming. |
 | business.domain | `mydomain` | Used for environment & Terraform state key naming. |
+| business.component | `data` | Used for resource naming. |
 | project.name | `stacks-data-platform` | Name of project created & used for resource naming. |
 | project.sourcecontrol.type | `github` | Remote repository type. |
 | project.sourcecontrol.url | `https://github.com/mycompany/stacks-data-platform` | Used for setting up the remote repository - see [Git repository](../requirements_data_azure.md#git-repository). |
