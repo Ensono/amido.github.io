@@ -1,7 +1,7 @@
 ---
 id: dev_quickstart_data_azure
 title: Local Development Quickstart
-sidebar_label: 2. Local Development Quickstart
+sidebar_label: 3. Local Development Quickstart
 hide_title: false
 hide_table_of_contents: false
 description: Quickstart for local development
@@ -12,8 +12,7 @@ keywords:
 
 This section covers the steps required to start developing a Stacks Azure Data Platform from your machine:
 
-1. Make sure you have installed the applications from the "Local development" section listed in
-[Requirements](../requirements_data_azure.md).
+1. Make sure you have installed the applications in [local development requirements](../requirements_data_azure.md#local-development).
 2. Ensure that Poetry is added to your `$PATH`.
 
 ## Environment setup
@@ -28,9 +27,8 @@ make setup_dev_environment
 
 In order to interact with Azure resources when developing, including running end-to-end tests, you must:
 
-1. [Install the Azure CLI](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli)
-2. [Sign in to the Azure CLI](https://learn.microsoft.com/en-us/cli/azure/authenticate-azure-cli)
-3. Set the following environment variables:
+1. [Sign in to the Azure CLI](https://learn.microsoft.com/en-us/cli/azure/authenticate-azure-cli)
+2. Set the following environment variables:
     - `AZURE_SUBSCRIPTION_ID`
     - `AZURE_RESOURCE_GROUP_NAME`
     - `AZURE_DATA_FACTORY_NAME`
