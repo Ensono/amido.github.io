@@ -40,7 +40,7 @@ Storybook can be added to Stacks using the Nx Storybook generator documented [he
 
 Storybook has a large ecosystem of addons that extend its core functionality. These addons can be used for things like showing component props, testing, accessibility and theming.
 
-#### storybook-addon-a11y
+### storybook-addon-a11y
 
 One of the addons we recommend using with Stacks is [storybook-addon-a11y](https://storybook.js.org/addons/@storybook/addon-a11y), this addon helps developers and designers identify and address accessibility issues in their UI components during the development and testing phase.
 
