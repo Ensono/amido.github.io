@@ -19,8 +19,8 @@ keywords:
 
 To develop and test using Pysparkle:
 
-* Install the [local development requirements](../../requirements_data_azure.md#local-development).
-* [Setup your local development environment](../../getting_started/dev_quickstart_data_azure.md).
+- Install the [local development requirements](../../requirements_data_azure.md#local-development).
+- [Setup your local development environment](../../getting_started/dev_quickstart_data_azure.md).
 
 ## Key components
 
