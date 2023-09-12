@@ -68,7 +68,7 @@ With owner privileges:
 
 ### Using the Scaffolding CLI
 
-The [Amido Stacks Scaffolding CLI](https://www.npmjs.com/package/@amidostacks/scaffolding-cli) can be used to create a project consisting of the core infrastructure as code scripts and the deployment pipeline.
+The [Ensono Stacks Scaffolding CLI](https://www.npmjs.com/package/@amidostacks/scaffolding-cli) can be used to create a project consisting of the core infrastructure as code scripts and the deployment pipeline.
 
 We are supporting and running [node@12](https://nodejs.org/en/about/releases/).
 Please ensure that your local environment has the correct version [installed](https://nodejs.org/en/download/).
@@ -104,7 +104,7 @@ Sample commands with example environment vars:
 # Navigate to the infra directory
 cd ${YOUR_DIRECTORY_PATH}/deploy/azure/infra
 
-# Run Amido Terraform Docker container
+# Run Ensono Terraform Docker container
 docker run -v $(pwd):/usr/data --rm -it amidostacks/ci-tf:0.0.4 /bin/bash
 
 ###########################################################################
@@ -122,18 +122,18 @@ ARM_TENANT_ID=1111-2222-3333-444
 
 # Export Terraform variables. Replace the example values.
 export TF_VAR_resource_group_location=uksouth \
-TF_VAR_name_company=amido \
+TF_VAR_name_company=ensono \
 TF_VAR_name_project=example \
 TF_VAR_name_component=core \
 TF_VAR_name_environment=nonprod \
 TF_VAR_create_acr=true \
-TF_VAR_acme_email=example@amidostacks.com \
+TF_VAR_acme_email=example@ensonostacks.com \
 TF_VAR_is_cluster_private=true \
 TF_VAR_cluster_version=1.17.11 \
 TF_VAR_stage=nonprod \
 TF_VAR_key_vault_name=example-core-nonprod \
-TF_VAR_dns_zone=nonprod.amidostacks.com \
-TF_VAR_internal_dns_zone=nonprod.amidostacks.internal
+TF_VAR_dns_zone=nonprod.ensonostacks.com \
+TF_VAR_internal_dns_zone=nonprod.ensonostacks.internal
 
 # Initial Terraform. Replace the example values.
 terraform init \

@@ -150,12 +150,27 @@
     align-items: center;
     display: flex;
     justify-content: center;
+    cursor: pointer;
+  }
+
+  .techListWrapper a img:hover {
+    -webkit-transform: scale(1.25);
+    transform: scale(1.25);
+    transition-duration: .25s;
+    transition-timing-function: ease-out;
   }
 
   @media (min-width: 768px) {
     .techListWrapper a:nth-child(-n + 3) {
       width: 33%;
     }
+    .techListWrapper a {
+      flex-grow: 1;
+      width: 25%;
+    }
+  }
+
+  @media (min-width: 1024px) {
     .techListWrapper a {
       flex-grow: 1;
       width: 20%;
