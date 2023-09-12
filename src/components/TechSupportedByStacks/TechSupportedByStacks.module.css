@@ -128,3 +128,36 @@
     padding-top: 20px;
     padding-bottom: 20px;
   }
+
+  .techListContainer {
+    padding: 2rem 1rem;
+    background-color: var(--igm-color-silver);
+  }
+
+  .techListWrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--igm-color-silver);
+  }
+
+  .techListWrapper a {
+    flex-grow: 1;
+    width: 33%;
+    padding: 1rem;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+
+  @media (min-width: 768px) {
+    .techListWrapper a:nth-child(-n + 3) {
+      width: 33%;
+    }
+    .techListWrapper a {
+      flex-grow: 1;
+      width: 20%;
+    }
+  }
