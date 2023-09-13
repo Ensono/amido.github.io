@@ -46,6 +46,8 @@ next.js           [a monorepo with a single Next.js application]
 
 Each preset will install, configure and run any recommended plugins for that specific preset. For example the next.js preset will run the [NX NextJS](https://nx.dev/packages/next) plugin application generator as well as the [Ensonso stacks NextJS](/docs/nx/next/ensono-stacks-next) init plugin generator.
 
+We do not support react and currently only support nextjs, therefore if you want to create a nextjs workspace with a client side rendered application, you must use Nx and not stacks.
+
 **You will then be asked which test runner to include for e2e testing:**
 
 1. none: Creates your application without an e2e test project     

@@ -77,6 +77,7 @@ module.exports = {
               "nx/nx_stacks",
               "module_federation/nextjs_plugin",
               "linting/eslint",
+              "storybook/storybook_stacks",
               "getting_started/setup",
               {
                 type: "category",
@@ -235,6 +236,7 @@ module.exports = {
                 label: "Getting Started",
                 items: [
                   "workloads/azure/data/getting_started/getting_started",
+                  "workloads/azure/data/getting_started/generate_project",
                   "workloads/azure/data/getting_started/core_data_platform_deployment_azure",
                   "workloads/azure/data/getting_started/dev_quickstart_data_azure",
                   "workloads/azure/data/getting_started/shared_resources_deployment_azure",

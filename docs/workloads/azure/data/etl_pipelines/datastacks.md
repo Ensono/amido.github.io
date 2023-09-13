@@ -21,14 +21,12 @@ Datastacks is a utility built to support various functions within the Ensono Sta
 * [Setup project environment](../getting_started/dev_quickstart_data_azure.md)
 
 ```bash
-# Initiate Datastacks using poetry:
-poetry run datastacks
-
-# Run Datastacks from the command line
+# Option 1: Run Datastacks CLI using Poetry's interactive shell (recommended for local development)
+poetry shell
 datastacks --help
 
-# Alternatively, run using entrypoint script
-python datastacks/datastacks_cli.py --help
+# Option 2: Run Datastacks CLI using poetry run (recommended where Poetry shell cannot be used, e.g. CI/CD pipelines)
+poetry run datastacks --help
 ```
 
 ## Generating data workloads
@@ -46,6 +44,9 @@ See [ETL Pipeline Deployment](../getting_started/etl_pipelines_deployment_azure.
 ### Examples
 
 ```bash
+# Activate virtual environment
+poetry shell
+
 # Generate resources for an ingest pipeline
 datastacks generate ingest --config="de_templates/test_config_ingest.yaml"
 

@@ -44,13 +44,7 @@ We recommend using the latest LTS version of Node, you can find the latest LTS v
 
 ### Get Started
 
-There are three ways to get started with building a **CSR (React)** or **SSR (Next JS)** frontend web application with Stacks, we recommend using our _[Stacks CLI](../stackscli/about.md)_ for the best experience!
-
-:::note
-
-CSR support is currently limited however we are actively working on this!
-
-:::
+There are three ways to get started with building an **SSR (Next JS)** frontend web application with Stacks, we recommend using our _[Stacks CLI](../stackscli/about.md)_ for the best experience!
 
 #### Option 1: Stacks CLI
 
