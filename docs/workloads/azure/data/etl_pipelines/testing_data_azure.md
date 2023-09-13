@@ -11,10 +11,10 @@ keywords:
 
 Data workloads generated in Stacks feature a framework for testing. Automated tests are essential at every stage of a data pipeline for reasons including:
 
- - Early detection of issues: Catch errors and issues early in the data pipeline development process.
- - Regression testing: As new code is added, ensure that changes do not introduce regressions or break existing functionality.
- - Support CI/CD: Running automated tests are an essential part of the CI/CD process.
- - Collaboration: A shared set of expectations and a common framework for testing can help collaboration between developers and end users.
+- Early detection of issues: Catch errors and issues early in the data pipeline development process.
+- Regression testing: As new code is added, ensure that changes do not introduce regressions or break existing functionality.
+- Support CI/CD: Running automated tests are an essential part of the CI/CD process.
+- Collaboration: A shared set of expectations and a common framework for testing can help collaboration between developers and end users.
 
 In addition to the automated tests below, Stacks also has a framework for [data quality testing](./data_quality_azure.md).
 
@@ -38,7 +38,7 @@ This framework allows test cases to be written in a natural language style. Data
 
 Example content of a `.feature` file is shown below:
 
-```
+```text
 Feature:Azure Data Ingest
   I want to ingest data
   so that it is available in Azure data lake storage
