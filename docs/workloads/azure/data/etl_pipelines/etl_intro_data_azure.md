@@ -15,7 +15,7 @@ keywords:
   - medallion
 ---
 
-The Stacks Data Platform solution accelerates the generation of production-ready ETL / ELT pipelines and workloads. New data engineering workloads can be generated through the [Datastacks] utility, while a range of example data workloads and pipelines are also proved. These workloads cover all stages from
+The Stacks Data Platform solution accelerates the generation of production-ready ETL / ELT pipelines and workloads. New data engineering workloads can be generated through the [Datastacks] utility, while a range of example data workloads and pipelines are also provided. These workloads cover all stages from
 ingesting data from source, applying data transformations across data lake layers, ultimately enabling end-user data
 visualisations and analytics.
 
