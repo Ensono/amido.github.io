@@ -11,10 +11,19 @@ keywords:
   - etl
 ---
 
-The solution contains a sample Azure Data Factory pipeline for ingesting data from a sample data
-source (Azure SQL) and loading data into the data lake 'landing' zone.
+Data ingest workloads in Stacks are jobs which:
 
-Link to the pipeline: [stacks-azure-data/de_workloads/ingest](https://github.com/ensono/stacks-azure-data/tree/main/de_workloads/ingest/Ingest_AzureSql_Example).
+1. Connect to an external data source
+2. Land the data in the Bronze (raw) layer of the data lake
+
+Data ingest workloads utilise [Azure Data Factory's inbuilt connectors](https://learn.microsoft.com/en-us/azure/data-factory/connector-overview) and [Copy activity](https://learn.microsoft.com/en-us/azure/data-factory/copy-activity-overview), to give the ability to easily ingest data from a wide range of data sources. The ingest process is designed around reusable, metadata-driven pipelines. This means once
+an initial data pipeline is created for a given data source, additional entities from the same data source can be added or modified just by updating a configuration file.
+
+Data ingest workloads may also optionally include a [Data Quality validations](./data_quality_azure.md) step, executed in Databricks.
+
+The solution contains a the following example data ingest workloads:
+
+ - [Ingest_AzureSql_Example](https://github.com/ensono/stacks-azure-data/tree/main/de_workloads/ingest/Ingest_AzureSql_Example): Ingests data from the [example Azure SQL source](../getting_started/example_data_source.md) and lands data into the data lake Bronze layer.
 
 ## Pipeline overview
 
@@ -24,9 +33,7 @@ The diagram below gives an overview of the ingestion pipeline design.
 
 ## Configuration
 
-The ingest process is designed around reusable, metadata-driven pipelines. This means once
-an initial data pipeline is created for a given data source, additional entities from the same data
-source can be added or modified just by updating a configuration file. These configuration files are
+The configuration files for the workload are
 stored in the pipeline's [config](https://github.com/ensono/stacks-azure-data/tree/main/de_workloads/ingest/Ingest_AzureSql_Example/config) directory.
 
 JSON format is used for the configuration files. Our blueprint includes a sample configuration definition for the data ingestion sources
@@ -36,9 +43,7 @@ and its schema ([ingest_config_schema.json](https://github.com/ensono/stacks-azu
 The sample ingest pipeline is based around an Azure SQL data source, however the approach used should be adaptable for most other data source types with minimal modifications. Different data data source types would be expected to have the same JSON keys, except for under `ingest_entities`,
 where different keys will be required dependent on the data source type.
 
-[Unit tests](https://github.com/ensono/stacks-azure-data/tree/main/de_workloads/ingest/Ingest_AzureSql_Example/tests/unit)
-are provided to ensure the config files remain valid against the schema. See the descriptions of the
-example JSON config file below:
+See the descriptions of the example JSON config file below:
 
 ```bash
 {
@@ -52,10 +57,10 @@ example JSON config file below:
             "enabled": true,                   # Boolean flag to enable / disable the entity from being ingested
             "schema": "SalesLT",               # (SQL sources only) Database schema
             "table": "Product",                # (SQL sources only) Database table
-            "columns": "*",                    # (SQL sources only) Columns to select
+            "columns": "*",                    # (SQL sources only) Columns to select. May also be a SQL-expression for a column.
             "load_type": "delta",              # (SQL sources only) Full or delta load. If delta load selected, then also include the following keys
-            "delta_date_column": "ModifiedDate",  # (SQL sources only, delta load) Date column to use for filtering the date range
-            "delta_upsert_key": "SalesOrderID"    # (SQL sources only, delta load) Primary key for determining updated columns in a delta load
+            "delta_date_column": "ModifiedDate",  # (SQL sources only, delta load) Date column to use for filtering the date range. May also be a SQL-expression for a column.
+            "delta_upsert_key": "SalesOrderID"    # (SQL sources only, delta load) Primary key for determining updated columns in a delta load. May also be a SQL-expression for a column.
         }
     ]
 }
@@ -65,6 +70,9 @@ These configuration files will be referenced each time an ingestion pipeline
 is triggered in Data Factory, and all entities will be ingested. To disable a particular ingest
 source or entity without removing it, you can set `"enabled": false` – these will be ignored by
 the Data Factory pipeline.
+
+[Unit tests](https://github.com/ensono/stacks-azure-data/tree/main/de_workloads/ingest/Ingest_AzureSql_Example/tests/unit)
+are provided to ensure the config files remain valid against the schema.
 
 ### Data Factory pipeline design
 

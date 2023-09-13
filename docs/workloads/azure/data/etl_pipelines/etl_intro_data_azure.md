@@ -20,14 +20,14 @@ for delivering production ready data engineering and analytics solutions. These 
 ingesting data from source, applying data transformations across data lake layers, ultimately enabling end-user data
 visualisations and analytics.
 
-## Data pipelines
+## Medallion architecture
 
 The data lake structure and approach used in Stacks is based upon the
 [medallion architecture](https://www.databricks.com/glossary/medallion-architecture) design pattern. This approach
 delivers a lakehouse solution, with the following structured data transformation layers:
 
 * [Bronze (data ingestion)](ingest_data_azure.md): Landing of raw data from source.
-* [Silver](silver_data_azure.md): Conformance, cleansing and data quality processing stage.
+* [Silver](data_processing.md): Conformance, cleansing and data quality processing stage.
 * Gold: Data aggregations, refinement and enrichment, producing datasets optimised for analytics and visualisation.
 
 ## ETL utilities
