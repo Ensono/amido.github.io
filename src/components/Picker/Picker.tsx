@@ -47,7 +47,7 @@ const text = {
       },
     },
     "Typescript / Nx": {
-      "Client Side or Server Side Rendered Web Application": {
+      "Server Side Rendered Web Application": {
         "Microsoft Azure [Azure]": "nx/nx_stacks",
       },
     },
