@@ -23,7 +23,7 @@ Data ingest workloads may also optionally include a [Data Quality validations](.
 
 The solution contains a the following example data ingest workloads:
 
- - [Ingest_AzureSql_Example](https://github.com/ensono/stacks-azure-data/tree/main/de_workloads/ingest/Ingest_AzureSql_Example): Ingests data from the [example Azure SQL source](../getting_started/example_data_source.md) and lands data into the data lake Bronze layer.
+- [Ingest_AzureSql_Example](https://github.com/ensono/stacks-azure-data/tree/main/de_workloads/ingest/Ingest_AzureSql_Example): Ingests data from the [example Azure SQL source](../getting_started/example_data_source.md) and lands data into the data lake Bronze layer.
 
 ## Pipeline overview
 
@@ -81,12 +81,12 @@ The pipelines folder is structured as follows:
 
 ![ADF_IngestPipelinesList.png](../images/ADF_IngestPipelinesList.png)
 
-* `Ingest` contains ingest pipelines specific to the given data source. The naming convention for
+- `Ingest` contains ingest pipelines specific to the given data source. The naming convention for
 these pipelines is `Ingest_{SourceType}_{SourceName}`. These are the parent pipelines that would be
 triggered on a recurring basis to ingest from a data source. All pipelines have their equivalents
 that include Data Quality validations. Depending on your particular needs, you can deploy each of
 the pipelines with or without this additional Data Quality step. [Further information on Data Quality](data_quality_azure.md).
-* The pipelines within `Utilities` are reusable and referenced by other pipelines. They are not
+- The pipelines within `Utilities` are reusable and referenced by other pipelines. They are not
 meant to be triggered independently. These are defined within the [shared_resources](https://github.com/ensono/stacks-azure-data/tree/main/de_workloads/shared_resources) for the project.
 
 The `Ingest_AzureSql_Example` pipeline consists of the following steps:
@@ -99,8 +99,8 @@ This will return the configuration required for the given data source.
     1. `Generate_Ingest_Query`: Generates a SQL query to extract the data from a required time range,
     according to the provided configuration. Depending on the load type, one of the two scenarios
     below will be applied:
-       * Full extraction loads all available data for a given set of columns,
-       * Delta queries contain a `WHERE` clause to restrict the date range loaded.
+       - Full extraction loads all available data for a given set of columns,
+       - Delta queries contain a `WHERE` clause to restrict the date range loaded.
     2. `SQL_to_ADLS`: Execute the SQL query against the data source, and copy the results to the
     Azure Data Lake storage landing container under the appropriate path (data is validated using
     ADF's built-in data validation capability).
