@@ -74,7 +74,31 @@ the Data Factory pipeline.
 [Unit tests](https://github.com/ensono/stacks-azure-data/tree/main/de_workloads/ingest/Ingest_AzureSql_Example/tests/unit)
 are provided to ensure the config files remain valid against the schema.
 
-### Data Factory pipeline design
+### Query generation
+
+Values from the config will be used to generate the logic for extracting from the data source. For an Azure SQL data source, an SQL query would be generated for each ingest_entity as follows:
+
+#### Full load
+
+```sql
+SELECT {columns}
+FROM {schema}.{table}
+;
+```
+
+#### Delta load
+
+Note: `run_window_start_date` and `run_window_end_date` are determined by the values passed at runtime, e.g. by the [tumbling window trigger](#data-factory-triggers).
+
+```sql
+SELECT {columns}
+FROM {schema}.{table}
+WHERE {delta_date_column} >= {run_window_start_date}
+  AND {delta_date_column} < {run_window_end_date}
+;
+```
+
+## Data Factory pipeline design
 
 The provided sample pipelines give an example of a data ingest process from source to the data lake.
 The pipelines folder is structured as follows:
@@ -108,3 +132,14 @@ This will return the configuration required for the given data source.
 The following picture shows the two possibilities of full vs delta extraction in `Generate_Ingest_Query`:
 
 ![ADF_IngestGenerateIngestQuery.png](../images/ADF_IngestGenerateIngestQuery.png)
+
+### Data Factory triggers
+
+An example Data Factory pipeline trigger is provided. This utilises the [tumbling window trigger](https://learn.microsoft.com/en-us/azure/data-factory/how-to-create-tumbling-window-trigger?tabs=data-factory) type.
+
+A tumbling window is a continuous and non-overlapping time interval. It allows reliable incremental data ingestion and, in Data Factory, allows re-running of specific windows later if an error happens and ensures that no data will be lost.
+
+The trigger can be setup to any granularity down to 5 minutes. Every time it triggers a pipeline, it automatically passes the windowStart and windowEnd parameters for the relevant time window.
+If any kind of incident happens, the missing or failed time windows will run retroactively as soon as possible, either sequentially or in parallel (following the Max concurrency option). The benefit of this behaviour it that it guaranties that no time windows are lost or forgotten even if ran days later. Data Factory allows us to re-run individual time windows at will, even if they succeeded.
+
+Other types of Data Factory triggers are available, including schedule or event-based - these may be utilised dependent on your requirements.
