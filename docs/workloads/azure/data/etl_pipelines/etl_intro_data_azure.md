@@ -25,7 +25,7 @@ The data lake structure and approach used in Stacks is based upon the
 [medallion architecture](https://www.databricks.com/glossary/medallion-architecture) design pattern. This approach
 delivers a lakehouse solution, with the following structured data transformation layers:
 
-* [Bronze (data ingestion)](ingest_data_azure.md): Landing of raw data from source.
+* [Bronze](ingest_data_azure.md): Landing of raw data from source.
 * [Silver](data_processing.md): Conformance, cleansing and data quality processing stage.
 * Gold: Data aggregations, refinement and enrichment, producing datasets optimised for analytics and visualisation.
 
