@@ -27,6 +27,7 @@
 }
 
 .techListWrapper a img {
+  min-height: 30px;
   max-height: 50px;
   max-width: 100px;
 }
