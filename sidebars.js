@@ -234,7 +234,7 @@ module.exports = {
                       "workloads/azure/data/etl_pipelines/pysparkle/pysparkle_data_quality",
                     ],
                   },
-                  "workloads/azure/data/getting_started/testing_data_azure",
+                  "workloads/azure/data/etl_pipelines/testing_data_azure",
                 ],
               },
               {
