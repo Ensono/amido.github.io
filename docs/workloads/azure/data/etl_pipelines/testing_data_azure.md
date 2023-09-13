@@ -32,9 +32,9 @@ make test
 
 ## End-to-end tests
 
-Template end-to-end tests are implemented for data workloads in Stacks. These tests are implemented in a behaviour-driven-development (BDD) style using [behave](https://behave.readthedocs.io/en/stable/). 
+Template end-to-end tests are implemented for data workloads in Stacks. These tests are implemented in a behaviour-driven-development (BDD) style using [behave](https://behave.readthedocs.io/en/stable/).
 
-This framework allows test cases to be written in a natural language style. Data workloads generated through Datastacks will have placeholder end-to-end BDD tests under `tests/end_to_end`. The `.feature` file located here contains the test cases in BDD style. The tests provided perform a number of actions to prepare a test scenario, execute the workload, check the results, and clean up. 
+This framework allows test cases to be written in a natural language style. Data workloads generated through Datastacks will have placeholder end-to-end BDD tests under `tests/end_to_end`. The `.feature` file located here contains the test cases in BDD style. The tests provided perform a number of actions to prepare a test scenario, execute the workload, check the results, and clean up.
 
 Example content of a `.feature` file is shown below:
 
