@@ -1,10 +1,10 @@
 ---
 id: ingest_data_azure
-title: Data Ingestion
-sidebar_label: Data Ingestion
+title: Data Ingest Workloads
+sidebar_label: Data Ingest Workloads
 hide_title: false
 hide_table_of_contents: false
-description: Data ingestion pipeline
+description: Data Ingest Workloads
 keywords:
   - ingest
   - adf
