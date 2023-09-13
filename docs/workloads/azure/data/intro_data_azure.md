@@ -26,7 +26,7 @@ a framework for accelerating the deployment of a production-ready data platform.
 
 The Stacks Data Platform utilises tools including **Azure Data Factory** for data
 ingestion and orchestration, **Databricks** for data processing and **Azure Data Lake Storage Gen2**
-for data lake storage. The solution is based around a [Medallion Architecture](etl_pipelines/etl_intro_data_azure.md#data-pipelines), with Bronze, Silver and Gold layers for various stages of data preparation.
+for data lake storage. The solution is based around a [Medallion Architecture](etl_pipelines/etl_intro_data_azure.md#medallion-architecture), with Bronze, Silver and Gold layers for various stages of data preparation.
 
 Key elements of the solution include:
 
@@ -62,6 +62,6 @@ The solution may be deployed within a secure private network. For details please
 Example data engineering workloads are provided, based upon the Datastacks templates:
 
 * [Ingest](etl_pipelines/ingest_data_azure.md)
-* [Bronze to Silver](etl_pipelines/silver_data_azure.md)
+* [Bronze to Silver](etl_pipelines/data_processing.md)
 
 Each of the ingest and data processing workloads may optionally include [Data Quality checks](etl_pipelines/data_quality_azure.md).
