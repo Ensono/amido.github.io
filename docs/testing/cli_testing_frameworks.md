@@ -15,12 +15,12 @@ import HideNavigation  from "../../src/components/HideNavigation/HideNavigation"
 
 Building testing frameworks from scratch requires a lot of boilerplate code. It is also hard to know how to get started without examples.
 
-As part of the Amido Stacks projects we have developed a range of testing frameworks for each part of our solutions that are already built in, which can be bootstrapped and tailored to your current project with just one command.
+As part of the Ensono Stacks projects we have developed a range of testing frameworks for each part of our solutions that are already built in, which can be bootstrapped and tailored to your current project with just one command.
  In addition they also exist as standalone solutions that can be run cloned and run without the need to build the entire solution can can be modified to applications and workloads outside of stacks.
 
 ## Bootstrap your framework
 
-The best way to get started, is bootstrapping the framework using the scaffolding-cli from Amido Stacks. By using it in interactive mode, you can simply answer 5 questions to get a bespoke framework, ready to go with an example test.
+The best way to get started, is bootstrapping the framework using the scaffolding-cli from Ensono Stacks. By using it in interactive mode, you can simply answer 5 questions to get a bespoke framework, ready to go with an example test.
 
 ```bash
 npx @amidostacks/scaffolding-cli test -i
@@ -56,7 +56,7 @@ npx @amidostacks/scaffolding-cli test -i
 | Screenshots +/- Videos | Yes | Yes | Yes | Yes | No |
 <!-- markdownlint-restore -->
 
-_\* Currently cannot be bootstrapped from [@amidostacks/scaffolding-cli](https://www.npmjs.com/package/@amidostacks/scaffolding-cli), but is available to clone from the [amido/stacks-webapp-template](https://github.com/amido/stacks-webapp-template) repository._
+_\* Currently cannot be bootstrapped from [@amidostacks/scaffolding-cli](https://www.npmjs.com/package/@amidostacks/scaffolding-cli), but is available to clone from the [amido/stacks-webapp-template](https://github.com/Ensono/stacks-webapp-template) repository._
 
 ### Get testing in just five questions
 

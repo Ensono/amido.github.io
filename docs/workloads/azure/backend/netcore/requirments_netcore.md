@@ -125,5 +125,5 @@ values={[
 </Tabs>
 
 :::note
-The current version of Amido Stacks are templates for .NET 6 (Current LTS, recommended).
+The current version of Ensono Stacks are templates for .NET 6 (Current LTS, recommended).
 :::

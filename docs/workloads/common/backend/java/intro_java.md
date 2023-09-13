@@ -22,7 +22,7 @@ import ResponsivePlayer from "../../../../../src/components/ResponsivePlayer/Res
 ### Overview
 
 This is a sample Java REST API application with CQRS, showcasing best coding practices and integrating with Cloud services
-and scaffolding for Amido Stacks.
+and scaffolding for Ensono Stacks.
 
 When using Azure, the application implements Application Insights for performance management,
 and Cosmos DB is used for cloud persistence.

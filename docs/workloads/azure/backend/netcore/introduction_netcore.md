@@ -23,7 +23,7 @@ Stacks is a collection of sample .NET 6 template projects that contain
 - A Web API application with CQRS functionality
 - A Web API application with CQRS and event sourcing functionality
 
-Stacks showcases best coding practices adopted throughout Amido and helps bootstrap client projects faster with already proven and tested code.
+Stacks showcases best coding practices adopted throughout Ensono and helps bootstrap client projects faster with already proven and tested code.
 
 All applications contain build and cloud infrastructure and are currently hosted on Azure. They use Application Insights for performance management, and different settings exist that can be set for cloud persistence.
 
