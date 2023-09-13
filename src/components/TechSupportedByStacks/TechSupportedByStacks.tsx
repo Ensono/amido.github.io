@@ -36,7 +36,7 @@ export const TechSupportedByStacks = () => {
 
     return (
         <div className={customStyle.techListContainer}>
-            <section className={styles.section}>
+            <section className={`${styles.section} ${customStyle.section}`}>
                 <h2 className={`${styles.textCenter} margin-bottom--lg`}>{title}</h2>
                 <div className={customStyle.techListWrapper}>
                     {technologiesSupported.map((tech) => {

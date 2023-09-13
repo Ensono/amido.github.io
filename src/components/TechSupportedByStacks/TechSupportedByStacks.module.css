@@ -1,5 +1,9 @@
+.section {
+  padding: 0;
+}
+
 .techListContainer {
-  padding: 2rem 1rem;
+  padding: 2rem 0.5rem;
   background-color: var(--igm-color-silver);
 }
 
@@ -15,11 +19,16 @@
 .techListWrapper a {
   flex-grow: 1;
   width: 33%;
-  padding: 1rem;
+  padding: 0.7rem;
   align-items: center;
   display: flex;
   justify-content: center;
   cursor: pointer;
+}
+
+.techListWrapper a img {
+  max-height: 50px;
+  max-width: 100px;
 }
 
 .techListWrapper a img:hover {
@@ -35,7 +44,12 @@
   }
   .techListWrapper a {
     flex-grow: 1;
-    width: 25%;
+    width: 20%;
+  }
+
+  .techListWrapper a img {
+    max-height: 150px;
+    max-width: 120px;
   }
 }
 
@@ -43,5 +57,10 @@
   .techListWrapper a {
     flex-grow: 1;
     width: 20%;
+  }
+
+  .techListWrapper a img {
+    max-height: 200px;
+    max-width: 170px;
   }
 }
