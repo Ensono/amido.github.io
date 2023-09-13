@@ -12,7 +12,7 @@ keywords:
   - databricks
 ---
 
-Data processing workloads in Stacks refers to jobs which:
+Data processing workloads in Stacks are jobs which:
 
 1. Take data in the data lake as input (this can be various formats e.g. CSV, Parquet, JSON, Delta).
 2. Perform some form of data transformation / cleansing / modelling over the data.
