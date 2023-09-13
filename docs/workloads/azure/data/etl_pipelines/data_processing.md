@@ -7,7 +7,6 @@ hide_table_of_contents: false
 description: Data Processing Workloads
 keywords:
   - silver
-  - silver
   - adf
   - etl
   - databricks
