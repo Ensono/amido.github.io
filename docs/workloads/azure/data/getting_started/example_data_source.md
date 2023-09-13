@@ -1,7 +1,7 @@
 ---
 id: example_data_source
 title: Example Data Source
-sidebar_label: 4. Example Data Source
+sidebar_label: 5. Example Data Source
 hide_title: false
 hide_table_of_contents: false
 description: Setting up and using the example data source
