@@ -92,7 +92,7 @@ export NEXT_PUBLIC_CONTENTFUL_SPACE_ID=
 
 ## Importing content with the Contentful CLI
 
-We have provided an example export of the Blog model used with Ensono Stacks,
+We have provided an example export of the Blog model used with Amido Stacks,
 supporting:
 
 - locals

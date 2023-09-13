@@ -1,9 +1,9 @@
 ---
 id: architecture-overview
-title: Ensono Stacks - Architecture Overview
+title: Amido Stacks - Architecture Overview
 sidebar_label: Architecture Overview
 hide_table_of_contents: true
-description: A short overview od Ensono Stacks architecture
+description: A short overview od Amido Stacks architecture
 keywords:
 - rest
 - api

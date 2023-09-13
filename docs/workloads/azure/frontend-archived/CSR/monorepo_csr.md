@@ -14,7 +14,7 @@ keywords:
 
 ## Description
 
-The Ensono stacks webapp template is a monorepo managed with
+The Amido stacks webapp template is a monorepo managed with
 [Lerna](https://lerna.js.org/)
 
 At the moment, the project is comprised of:

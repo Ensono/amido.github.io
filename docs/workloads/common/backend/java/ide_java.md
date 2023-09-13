@@ -38,7 +38,7 @@ We recommend that you install the following plugins:
 - Spring Assistant - An IntelliJ plugin for aiding Spring development projects (<https://plugins.jetbrains.com/plugin/10229-spring-assistant>)
 - Spring Tools - Adds Spring support for IDEs (<https://spring.io/tools>)
 - CheckStyle - Flags up issues with coding style (<https://checkstyle.sourceforge.io/>)
-- google-java-format Formatter - Formats code according to configuration (<https://github.com/Ensono/stacks-java/blob/master/tools/formatter/intellij-java-google-style.xml>)
+- google-java-format Formatter - Formats code according to configuration (<https://github.com/amido/stacks-java/blob/master/tools/formatter/intellij-java-google-style.xml>)
 
 ### Plugins used in POM
 
@@ -77,7 +77,7 @@ We recommend that you install the following plugins:
 
 #### Formatter
 
-Install the `intellij-java-google-style.xml` formatter configuration file into the IDE from [here](https://github.com/Ensono/stacks-java/blob/master/tools/formatter/intellij-java-google-style.xml).
+Install the `intellij-java-google-style.xml` formatter configuration file into the IDE from [here](https://github.com/amido/stacks-java/blob/master/tools/formatter/intellij-java-google-style.xml).
 
 The Java source code will automatically be reformatted to comply with the [Google Java Style](https://google.github.io/styleguide/javaguide.html).
 

@@ -49,6 +49,6 @@ keywords:
 
 There are 3 repositories available:
 
-[stacks-dotnet](https://github.com/Ensono/stacks-dotnet) for a simple web API <br/>
-[stacks-dotnet-cqrs](https://github.com/Ensono/stacks-dotnet-cqrs) for a web API with CQRS <br/>
-[stacks-dotnet-cqrs-events](https://github.com/Ensono/stacks-dotnet-cqrs-events) for a web API with CQRS and Event Listening (with function and worker service) <br/>
+[stacks-dotnet](https://github.com/amido/stacks-dotnet) for a simple web API <br/>
+[stacks-dotnet-cqrs](https://github.com/amido/stacks-dotnet-cqrs) for a web API with CQRS <br/>
+[stacks-dotnet-cqrs-events](https://github.com/amido/stacks-dotnet-cqrs-events) for a web API with CQRS and Event Listening (with function and worker service) <br/>

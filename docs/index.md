@@ -1,11 +1,11 @@
 ---
 id: index
-title: About Ensono Stacks
+title: About Amido Stacks
 sidebar_label: About Stacks
 slug: /
-description: What is Stacks and how does it work
+description: What is Stacks and ow does it work
 keywords:
-  - ensono
+  - amido
   - stacks
   - open-source
   - solution
@@ -14,7 +14,7 @@ keywords:
 
 ## What is Stacks
 
-Stacks is an Ensono open-source project that automates the setup of software development projects. Stacks is for software engineers of all kinds who want to create projects quickly.
+Stacks is an Amido open-source project that automates the setup of software development projects. Stacks is for software engineers of all kinds who want to create projects quickly.
 
 Setting up the infrastructure and frameworks necessary to deliver a software project takes time. A team might spend the first two weeks (sprint 0) making technical decisions and then provisioning and configuring environments, pipelines, compute, test frameworks and more. Stacks automates this setup using code-as-infrastructure to shrink your project's sprint 0 from two weeks to an hour or less.
 
@@ -46,7 +46,7 @@ Stacks currently offers 15 unique workload variations with another 40 roadmapped
 
 By massively shrinking sprint 0 Stacks gets you productive very quickly. First time users should be up and running in an hour. Familiar users, with all the required software installed and cloud accounts set up, can get a boilerplated solution up and running in the cloud in five minutes.
 
-But there's more to Stacks than saving time. Ensono has thought deeply about the technology choices Stacks offers. Our long experience of delivering successful projects means we know which technologies work well and which work best together. This experience has informed our choices of platforms, services and functions that Stacks offers, which means that using Stacks reduces risk. You can be totally confident that the test frameworks Stacks offers when you're building a REST API in Java, or the CI/ CD pipelines for your C# event listener, or the compute options for your Node SSR web app are going to work well.
+But there's more to Stacks than saving time. Amido has thought deeply about the technology choices Stacks offers. Our long experience of delivering successful projects means we know which technologies work well and which work best together. This experience has informed our choices of platforms, services and functions that Stacks offers, which means that using Stacks reduces risk. You can be totally confident that the test frameworks Stacks offers when you're building a REST API in Java, or the CI/ CD pipelines for your C# event listener, or the compute options for your Node SSR web app are going to work well.
 
 ## How does it work
 

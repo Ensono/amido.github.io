@@ -18,10 +18,10 @@ import {siteVariables} from '@site/versions';
 
 ## Module Overview
 
-This module provides common code used by more than one of the Stacks modules: Both [Events](https://github.com/Ensono/stacks-java-core-messaging/)
-and [CQRS Commands](https://github.com/Ensono/stacks-java-core-cqrs/) use the `OperationsContext` abstract
+This module provides common code used by more than one of the Stacks modules: Both [Events](https://github.com/amido/stacks-java-core-messaging/)
+and [CQRS Commands](https://github.com/amido/stacks-java-core-cqrs/) use the `OperationsContext` abstract
 class and `StacksPersistence` provides a basic CRUD repository interface used in persistence related
-modules like[Stacks Cosmos](https://github.com/Ensono/stacks-java-cosmos). Please refer to these
+modules like[Stacks Cosmos](https://github.com/amido/stacks-java-cosmos). Please refer to these
 modules as examples.
 
 ## Module Structure
@@ -83,7 +83,7 @@ Use it as you'd use any dependency in your build tool.
 
 ### Localized solution using Maven Archetypes
 
-If you wish to customise the module and use your organisation's namespaces instead of Ensono's. You can create a
+If you wish to customise the module and use your organisation's namespaces instead of Amido's. You can create a
 [Maven archetype](https://maven.apache.org/archetype/index.html). Archetype is Maven's tool for
 scaffolding and offers lots of extra functionality. We suggest spending some time looking into them. We use Archetype to create a template and enable you to adopt this module under your organisation's namespace.
 To use the deployed archetypes:
@@ -121,7 +121,7 @@ To use the deployed archetypes:
 >
 >-  Update them manually
 >-  Re-create the relevant `import` statements to use the new-made module instead
->-  If you plan to use this with Ensono Stacks, include your namespace in the `@ComponentScan` annotation of the `Application` class.
+>-  If you plan to use this with Amido Stacks, include your namespace in the `@ComponentScan` annotation of the `Application` class.
 
 ### Building the module locally from this repository
 
@@ -134,7 +134,7 @@ To build the module locally:
 
 ### Creating an Archetype from this repository
 
-If you wish to customise the module and use your organisation's namespaces instead of Ensono's. You can create a
+If you wish to customise the module and use your organisation's namespaces instead of Amido's. You can create a
 [Maven archetype](https://maven.apache.org/archetype/index.html). Archetype is Maven's tool for
 scaffolding and offers lots of extra functionality. We suggest spending some time looking into them. We use Archetype to create a template and enable you to adopt this module under your organisation's namespace.
 To use the deployed archetypes:
@@ -192,7 +192,7 @@ To build, install and use the archetype follow these steps:
 >
 >-  Update them manually
 >-  Re-create the relevant `import` statements to use the new-made module instead
->-  If you plan to use this with Ensono Stacks, include your namespace in the `@ComponentScan` annotation of the `Application` class.
+>-  If you plan to use this with Amido Stacks, include your namespace in the `@ComponentScan` annotation of the `Application` class.
 
 ## Accessing Sonatype OSSRH
 

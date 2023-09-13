@@ -1,6 +1,6 @@
 # Examples
 
-This section provides some examples on how to run the CLI to setup a project from the Ensono Stacks projects.
+This section provides some examples on how to run the CLI to setup a project from the Amido Stacks projects.
 
 > **Note**
 >
@@ -411,7 +411,7 @@ The resultant project, as stated by the `Project path:` statement in the screens
 
 ### .NET WebApi project using the interactive command
 
-The interactive command is designed to ask questions on the command line about the configuration required for setting up Ensono Stacks. It will then save this configuration out to a file that can be read in using the `scaffold` command.
+The interactive command is designed to ask questions on the command line about the configuration required for setting up Amido Stacks. It will then save this configuration out to a file that can be read in using the `scaffold` command.
 
 ```bash
 stacks-cli interactive
@@ -458,34 +458,34 @@ project:
 stacks:
   dotnet:
     webapi:
-      url: https://github.com/Ensono/stacks-dotnet
+      url: https://github.com/amido/stacks-dotnet
       trunk: master
     cqrs:
-      url: https://github.com/Ensono/stacks-dotnet-cqrs
+      url: https://github.com/amido/stacks-dotnet-cqrs
       trunk: master
     events:
-      url: https://github.com/Ensono/stacks-dotnet-cqrs-events
+      url: https://github.com/amido/stacks-dotnet-cqrs-events
       trunk: master
   java:
     webapi:
-      url: https://github.com/Ensono/stacks-java
+      url: https://github.com/amido/stacks-java
       trunk: master
     cqrs:
-      url: https://github.com/Ensono/stacks-java-cqrs
+      url: https://github.com/amido/stacks-java-cqrs
       trunk: main
     events:
-      url: https://github.com/Ensono/stacks-java-cqrs-events
+      url: https://github.com/amido/stacks-java-cqrs-events
       trunk: main
   nodejs:
     csr:
-      url: https://github.com/Ensono/stacks-typescript-csr
+      url: https://github.com/amido/stacks-typescript-csr
       trunk: master
     ssr:
-      url: https://github.com/Ensono/stacks-typescript-ssr
+      url: https://github.com/amido/stacks-typescript-ssr
       trunk: master
   infra:
     aks:
-      url: https://github.com/Ensono/stacks-infrastructure-aks
+      url: https://github.com/amido/stacks-infrastructure-aks
       trunk: master
 terraform:
   backend:
@@ -503,7 +503,7 @@ The command that needs to be run next is displayed at the end of the output.
 
 ### .NET WebApi project using a configuration file
 
-The CLI can be used with a configuration file to generate the Ensono Stacks based projects.
+The CLI can be used with a configuration file to generate the Amido Stacks based projects.
 
 > **Note**
 >
@@ -579,7 +579,7 @@ Java Specific settings
 
 ### Java WebApi project from command line
 
-Run the following command to scaffold a new Java project based on the Ensono WebApi Java project. The project will be created in the working directory, which in this case will be the directory that the command has is being run under.
+Run the following command to scaffold a new Java project based on the Amido WebApi Java project. The project will be created in the working directory, which in this case will be the directory that the command has is being run under.
 
 <table>
   <colgroup>
@@ -898,34 +898,34 @@ project:
 stacks:
   dotnet:
     webapi:
-      url: https://github.com/Ensono/stacks-dotnet
+      url: https://github.com/amido/stacks-dotnet
       trunk: master
     cqrs:
-      url: https://github.com/Ensono/stacks-dotnet-cqrs
+      url: https://github.com/amido/stacks-dotnet-cqrs
       trunk: master
     events:
-      url: https://github.com/Ensono/stacks-dotnet-cqrs-events
+      url: https://github.com/amido/stacks-dotnet-cqrs-events
       trunk: master
   java:
     webapi:
-      url: https://github.com/Ensono/stacks-java
+      url: https://github.com/amido/stacks-java
       trunk: master
     cqrs:
-      url: https://github.com/Ensono/stacks-java-cqrs
+      url: https://github.com/amido/stacks-java-cqrs
       trunk: main
     events:
-      url: https://github.com/Ensono/stacks-java-cqrs-events
+      url: https://github.com/amido/stacks-java-cqrs-events
       trunk: main
   nodejs:
     csr:
-      url: https://github.com/Ensono/stacks-typescript-csr
+      url: https://github.com/amido/stacks-typescript-csr
       trunk: master
     ssr:
-      url: https://github.com/Ensono/stacks-typescript-ssr
+      url: https://github.com/amido/stacks-typescript-ssr
       trunk: master
   infra:
     aks:
-      url: https://github.com/Ensono/stacks-infrastructure-aks/
+      url: https://github.com/amido/stacks-infrastructure-aks/
       trunk: master
 terraform:
   backend:
@@ -943,7 +943,7 @@ The command that needs to be run next is displayed at the end of the output.
 
 ### Java WebApi project using a configuration file
 
-The Ensono Stacks CLI can be used with a configuration file to setup multiple projects in one go.
+The Amido Stacks CLI can be used with a configuration file to setup multiple projects in one go.
 
 > **Note**
 >
@@ -1192,24 +1192,24 @@ stacks:
   java:
     webapi:
       version: master
-      name: https://github.com/Ensono/stacks-java
+      name: https://github.com/amido/stacks-java
     cqrs:
       version: main
-      name: https://github.com/Ensono/stacks-java-cqrs
+      name: https://github.com/amido/stacks-java-cqrs
     events:
       version: main
-      name: https://github.com/Ensono/stacks-java-cqrs-events
+      name: https://github.com/amido/stacks-java-cqrs-events
   nx:
     next:
       version: main
-      name: https://github.com/Ensono/stacks-nx
+      name: https://github.com/amido/stacks-nx
     apps:
       version: main
-      name: https://github.com/Ensono/stacks-nx
+      name: https://github.com/amido/stacks-nx
   infra:
     aks:
       version: master
-      name: https://github.com/Ensono/stacks-infrastructure-aks/
+      name: https://github.com/amido/stacks-infrastructure-aks/
 terraform:
   backend:
     storage: tf-storage
@@ -1291,24 +1291,24 @@ stacks:
   java:
     webapi:
       version: master
-      name: https://github.com/Ensono/stacks-java
+      name: https://github.com/amido/stacks-java
     cqrs:
       version: main
-      name: https://github.com/Ensono/stacks-java-cqrs
+      name: https://github.com/amido/stacks-java-cqrs
     events:
       version: main
-      name: https://github.com/Ensono/stacks-java-cqrs-events
+      name: https://github.com/amido/stacks-java-cqrs-events
   nx:
     next:
       version: main
-      name: https://github.com/Ensono/stacks-nx
+      name: https://github.com/amido/stacks-nx
     apps:
       version: main
-      name: https://github.com/Ensono/stacks-nx
+      name: https://github.com/amido/stacks-nx
   infra:
     aks:
       version: master
-      name: https://github.com/Ensono/stacks-infrastructure-aks/
+      name: https://github.com/amido/stacks-infrastructure-aks/
 terraform:
   backend:
     storage: tf-storage

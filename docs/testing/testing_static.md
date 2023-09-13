@@ -16,7 +16,7 @@ keywords:
   - static quality gates
 ---
 
-Ensono Stacks projects use [SonarQube](https://docs.sonarqube.org/) for static analysis.
+Amido Stacks projects use [SonarQube](https://docs.sonarqube.org/) for static analysis.
 
 To enable integrations with GitHub and for use in Azure DevOps CI, the results are then hosted and viewable on [SonarCloud](https://sonarcloud.io/).
 
@@ -91,7 +91,7 @@ sonar.exclusions=node_modules/**/*, dist/**/*, coverage/**/*, **/*.test.*, *.con
 
 ## amidostacks/ci-sonarscanner
 
-We can run this with Ensono Stacks custom container, supports running Sonar Scanner for .NET and NPM projects.
+We can run this with Amido Stacks custom container, supports running Sonar Scanner for .NET and NPM projects.
 
 See [amidostacks/ci-sonarscanner](https://hub.docker.com/repository/docker/amidostacks/ci-sonarscanner) for the open source image.
 
@@ -106,7 +106,7 @@ The `amidostacks/ci-sonarscanner` does not fail the pipeline if the quality gate
 :::
 
 * [SonarScanner for Azure Devops](https://docs.sonarqube.org/latest/analysis/scan/sonarscanner-for-azure-devops/) or your current pipeline
-    * Example usage in the open-source [build-dotnet.yml](https://github.com/Ensono/stacks-pipeline-templates/blob/831c46811abfeff30833ccb003305692cb7ad2af/azDevOps/azure/templates/jobs/build-dotnet.yml) template step
+    * Example usage in the open-source [build-dotnet.yml](https://github.com/amido/stacks-pipeline-templates/blob/831c46811abfeff30833ccb003305692cb7ad2af/azDevOps/azure/templates/jobs/build-dotnet.yml) template step
 
 * Using [SonarLint as an IDE extension](https://www.sonarlint.org) that helps you detect and fix quality issues as you write code.
     * See `[example workspace settings](../.vscode/settings.json)`
@@ -114,7 +114,7 @@ The `amidostacks/ci-sonarscanner` does not fail the pipeline if the quality gate
 * Using [amidostacks/ci-sonarscanner](https://hub.docker.com/repository/docker/amidostacks/ci-sonarscanner)
 * [Github Actions with SonarCloud](https://github.com/SonarSource/sonarcloud-github-action) to automatically run analysis triggered by Github
 
-Another option is to have a task running using the container, making static code analysis a breeze in the pipelines and easy to run locally. For an example on how to use the container to run you static code analysis, see [amido/stacks-pipeline-templates](https://github.com/Ensono/stacks-pipeline-templates/blob/feature/cycle2/azDevOps/azure/templates/v2/steps/test-static-code-sonar.yml)
+Another option is to have a task running using the container, making static code analysis a breeze in the pipelines and easy to run locally. For an example on how to use the container to run you static code analysis, see [amido/stacks-pipeline-templates](https://github.com/amido/stacks-pipeline-templates/blob/feature/cycle2/azDevOps/azure/templates/v2/steps/test-static-code-sonar.yml)
 
 ```yaml
 steps:

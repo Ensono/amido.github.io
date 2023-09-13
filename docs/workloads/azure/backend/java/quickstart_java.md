@@ -28,9 +28,9 @@ import TabItem from '@theme/TabItem';
 
 1. ### Clone one of the Java workloads to your local machine from one of the following repos
     
-    1. Simple web API: [stacks-java repository](https://github.com/Ensono/stacks-java)
-    2. Web API with CQRS: [stacks-java-cqrs repository](https://github.com/Ensono/stacks-java-cqrs)
-    3. Web API with CQRS and events: [stacks-java-cqrs-events repository](https://github.com/Ensono/stacks-java-cqrs-events)
+    1. Simple web API: [stacks-java repository](https://github.com/amido/stacks-java)
+    2. Web API with CQRS: [stacks-java-cqrs repository](https://github.com/amido/stacks-java-cqrs)
+    3. Web API with CQRS and events: [stacks-java-cqrs-events repository](https://github.com/amido/stacks-java-cqrs-events)
    
 2. ### Configure the application
 

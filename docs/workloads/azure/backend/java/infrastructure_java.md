@@ -70,7 +70,7 @@ Sample commands with example environment vars:
 # Navigate to the infra directory
 cd ${YOUR_DIRECTORY_PATH}/deploy/azure/app/kube
 
-# Run Ensono Terraform Docker container
+# Run Amido Terraform Docker container
 docker run -v $(pwd):/usr/data --rm -it amidostacks/ci-tf:0.0.4 /bin/bash
 
 ###########################################################################
