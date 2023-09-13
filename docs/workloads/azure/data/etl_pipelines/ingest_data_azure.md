@@ -57,10 +57,10 @@ See the descriptions of the example JSON config file below:
             "enabled": true,                   # Boolean flag to enable / disable the entity from being ingested
             "schema": "SalesLT",               # (SQL sources only) Database schema
             "table": "Product",                # (SQL sources only) Database table
-            "columns": "*",                    # (SQL sources only) Columns to select. May also be a SQL-expression for a column.
+            "columns": "*",                    # (SQL sources only) Columns to select. May also contain SQL-expressions for columns.
             "load_type": "delta",              # (SQL sources only) Full or delta load. If delta load selected, then also include the following keys
-            "delta_date_column": "ModifiedDate",  # (SQL sources only, delta load) Date column to use for filtering the date range. May also be a SQL-expression for a column.
-            "delta_upsert_key": "SalesOrderID"    # (SQL sources only, delta load) Primary key for determining updated columns in a delta load. May also be a SQL-expression for a column.
+            "delta_date_column": "ModifiedDate",  # (SQL sources only, delta load) Date column to use for filtering the date range. May also contain SQL-expressions for columns.
+            "delta_upsert_key": "SalesOrderID"    # (SQL sources only, delta load) Primary key for determining updated columns in a delta load. May also contain SQL-expressions for columns.
         }
     ]
 }
