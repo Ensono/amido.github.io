@@ -62,3 +62,9 @@ Once you have [set up your development environment](../getting_started/dev_quick
 ```bash
 make test
 ```
+
+## Code quality and linting
+
+Code quality and linting checks are also included as part of workload's CI/CD pipeline. This ensures consistent standards are maintained across the project.
+
+[Pre-commit](https://pre-commit.com/) is used to assist developers in this process. The `.pre-commit-config.yaml` file in the project defines the checks and standards used. This may be amended based on the agreed standards and requirements of your project. These checks can be run interactively - see [running pre-commit](../getting_started/dev_quickstart_data_azure.md#running-pre-commit).

@@ -51,6 +51,14 @@ Running the end-to-end tests will involve executing Data Factory pipelines in Az
 make test_e2e
 ```
 
+## Running pre-commit
+
+[Pre-commit](https://pre-commit.com/) is used for code quality and linting checks on the project. It can be run using:
+
+```bash
+make pre_commit
+```
+
 ## (Optional) PySpark development in Databricks
 
 When developing with PySpark, you may wish to either:
