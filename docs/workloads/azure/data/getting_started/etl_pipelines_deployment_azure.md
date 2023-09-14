@@ -153,7 +153,7 @@ Configuration of the data that the workload will ingest from the source is speci
 
 ## Step 5: Update end-to-end tests
 
-The end-to-end tests are designed to run the ingest pipeline in a controlled fashion to ensure it functions as expected. Open the test feature file for the workload (`tests/end_to_end/features/azure_data_ingest.feature`) and update the parameters to reflect the data entities expected to be ingested. In our example, we will use the entities specified in the config file above, i.e.:
+The [end-to-end tests](../etl_pipelines/testing_data_azure.md#end-to-end-tests) are designed to run the ingest pipeline in a controlled fashion to ensure it functions as expected. Open the test feature file for the workload (`tests/end_to_end/features/azure_data_ingest.feature`) and update the parameters to reflect the data entities expected to be ingested. In our example, we will use the entities specified in the config file above, i.e.:
 
 ```gherkin
 |{"window_start" : "2010-01-01", "window_end": "2010-01-31"}|["movies.keywords", "movies.links", "movies.movies_metadata", "movies.ratings_small"]|

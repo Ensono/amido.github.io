@@ -24,7 +24,7 @@ Unit tests are implemented throughout the Stacks solution and recommended for al
 
 Within a data workload generated through [Datastacks](./datastacks.md), a placeholder for unit tests is found under `tests/unit`. These tests will be executed as part of its Azure DevOps CI/CD pipeline.
 
-- [Run unit tests locally](../getting_started/dev_quickstart_data_azure.md#unit-tests).
+- [Run unit tests locally](../getting_started/dev_quickstart_data_azure.md#unit-tests)
 
 ## End-to-end tests
 
@@ -53,7 +53,7 @@ Feature:Azure Data Ingest
 
 The tests will be executed as part of the workload's Azure DevOps CI/CD pipeline. You may extend or change the test cases dependent on the particular requirements of you workload.
 
-- [Run end-to-end tests locally](../getting_started/dev_quickstart_data_azure.md#unit-tests).
+- [Run end-to-end tests locally](../getting_started/dev_quickstart_data_azure.md#unit-tests)
 
 ## Code quality and linting
 
