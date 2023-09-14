@@ -14,7 +14,6 @@ keywords:
 ---
 
 import HideNavigation  from "../../../../../src/components/HideNavigation/HideNavigation";
-import ResponsivePlayer from "../../../../../src/components/ResponsivePlayer/ResponsivePlayer";
 
 
 ## Stacks Java Spring Boot REST API Application
@@ -22,7 +21,7 @@ import ResponsivePlayer from "../../../../../src/components/ResponsivePlayer/Res
 ### Overview
 
 This is a sample Java REST API application with CQRS, showcasing best coding practices and integrating with Cloud services
-and scaffolding for Amido Stacks.
+and scaffolding for Ensono Stacks.
 
 When using Azure, the application implements Application Insights for performance management,
 and Cosmos DB is used for cloud persistence.
@@ -33,8 +32,6 @@ and DynamoDB is used for cloud persistence.
 The application is designed as a restaurant menu application. Users can create a Menu.
 Menus can hold one or more Categories, and a Category holds menu Items.
 The API provides an interface for clients to create/update and delete any or all of the menu components.
-
-<ResponsivePlayer url="https://vimeo.com/486755314" />
 
 As an example below is a Json response to illustrate the structure defined by the model.
 

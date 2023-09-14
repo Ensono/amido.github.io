@@ -1,7 +1,6 @@
 module.exports = {
   docs: {
     "Learn about Stacks": ["index", "contributions", "code_of_conduct"],
-    Architecture: ["workloads/azure/backend/architecture-overview"],
     "Development Support": [
       "developer/developer_patterns_readme",
       {

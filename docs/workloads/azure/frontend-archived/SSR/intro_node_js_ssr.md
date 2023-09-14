@@ -19,7 +19,7 @@ Traditional approaches require clients to use a single, specific templating
 model that is quick to set up but too rigid to allow development of the ideal
 solution.
 
-Amido Stacks brings 10 years of client expertise to every project, providing
+Ensono Stacks brings 10 years of client expertise to every project, providing
 fast, flexible, bespoke value in an accelerated environment.
 
 ## CSR vs SSR

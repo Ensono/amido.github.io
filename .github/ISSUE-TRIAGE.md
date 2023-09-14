@@ -19,7 +19,7 @@ If you don't have time to contribute or you are not an active maintainer, consid
 
 ## Classify the issue
 
-An issue can have one more [labels](https://github.com/amido/amido.github.io/labels), including:
+An issue can have one more [labels](https://github.com/Ensono/amido.github.io/labels), including:
 
 - One label identifying its kind (`kind/*`).
 - One or multiple labels identifying the functional areas of interest (`area/*`).
@@ -91,7 +91,7 @@ An issue can have one more [labels](https://github.com/amido/amido.github.io/lab
 
 
 ## Prioritising issues
-When an issue is raised, it should be [labelled](https://github.com/amido/amido.github.io/labels?utf8=%E2%9C%93&q=priority) with the following labels to indicate the degree of priority (from more urgent to less urgent).
+When an issue is raised, it should be [labelled](https://github.com/Ensono/amido.github.io/labels?utf8=%E2%9C%93&q=priority) with the following labels to indicate the degree of priority (from more urgent to less urgent).
 
 Please note that maintainers an contributors have the right to change the priority based on the issue description and supporting information therefore it's important to triage the issue appropriately. Any changes to priority will be transparent and communicated appropriately.
 

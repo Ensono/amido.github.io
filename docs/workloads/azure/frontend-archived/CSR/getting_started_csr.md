@@ -38,7 +38,7 @@ Brilliant.
 ## Bootstrap your framework
 
 Packages for templating SSR Node.js with React apps with little build configuration.
-The best way to get started, is bootstrap the framework using the scaffolding-cli from Amido Stacks.
+The best way to get started, is bootstrap the framework using the scaffolding-cli from Ensono Stacks.
 By using it in the interactive mode, you can simply answer few questions to get a bespoke framework,
 ready to go with an example test.
 
@@ -160,7 +160,7 @@ At the end of bootstrapping your example framework you'll have an output that wi
 
 ### Development
 
-If you like to view the github repository , the source code can be found [here](https://github.com/amido/stacks-typescript-csr)
+If you like to view the github repository , the source code can be found [here](https://github.com/Ensono/stacks-typescript-csr)
 
 Move to the `<PROJECT-NAME>/src` folder and run the next commands
 

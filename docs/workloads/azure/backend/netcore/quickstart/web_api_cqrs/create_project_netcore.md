@@ -23,8 +23,6 @@ keywords:
   - github
 ---
 
-import ResponsivePlayer from "../../../../../../../src/components/ResponsivePlayer/ResponsivePlayer";
-
 ## Create a project
 
 <details>
@@ -43,8 +41,6 @@ For example
 ```bash title="Run the command to install the package"
 dotnet new --install Amido.Stacks.CQRS.Templates
 ```
-
-<ResponsivePlayer url="https://vimeo.com/640289104" />
 
 Once installed, you obtain 6 templates that can be used
 
@@ -169,11 +165,8 @@ dotnet new stacks-cqrs-webapi -n Company.Project -do YourDomain -db CosmosDb
     - Configures which cicd provider templates to be used
 :::
 
-<ResponsivePlayer url="https://vimeo.com/640289034" />
 
 ### Setting event publishing options
-
-<ResponsivePlayer url="https://vimeo.com/640289070" />
 
 </details>
 
@@ -190,7 +183,7 @@ In order for the template to generate correctly you'll need to execute it in the
 % cd src
 
 % dotnet new stacks-add-cqrs -n Foo.Bar.CQRS -do Menu
-The template "Amido Stacks Web Api CQRS - Add to existing solution" was created successfully.
+The template "Ensono Stacks Web Api CQRS - Add to existing solution" was created successfully.
 ```
 
 If all is well, in the output you'll see that projects are being added as references to your `.sln` file. The list of projects that you'll get by installing this template are as follows (please note the prefix provided with the `-n` flag from above):
@@ -261,7 +254,5 @@ Rerun the command and pass --force to accept and create.
 This will happen if the newly generated template project names collide with your existing structure. It's up to you to decide if you want to use the `--force` flag and overwrite all collisions with the projects from the template. By doing so you might lose your custom logic in some places and you'll have to transfer things manually to the new projects by examining the diffs in your source control.
 
 If you don't want to do that you can generate the new projects with a different namespace (what was shown above) and then copy/remove the things you don't need.
-
-<ResponsivePlayer url="https://vimeo.com/640287397" />
 
 </details>

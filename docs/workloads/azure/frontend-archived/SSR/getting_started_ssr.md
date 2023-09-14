@@ -23,7 +23,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import HideNavigation from "../../../../../src/components/HideNavigation/HideNavigation";
-import ResponsivePlayer from "../../../../../src/components/ResponsivePlayer/ResponsivePlayer";
 
 Web applications require a lot of boilerplate. It's also hard to know how to get started without examples. We offer both server side rendered (SSR) and client side rendered (CSR) solutions that can be bootstrapped and tailored to your current project with just one command.
 
@@ -31,11 +30,9 @@ Oh, and they come complete with infrastructure as code so you can deploy on your
 
 Brilliant.
 
-<ResponsivePlayer url="https://vimeo.com/486755394" />
-
 ## Bootstrap your framework
 
-The best way to get started, is bootstrap the framework using the scaffolding-cli from Amido Stacks. By using it in interactive mode, you can simply answered 5 questions to get a bespoke framework, ready to go with an example test.
+The best way to get started, is bootstrap the framework using the scaffolding-cli from Ensono Stacks. By using it in interactive mode, you can simply answered 5 questions to get a bespoke framework, ready to go with an example test.
 
 ```bash title="Run to start configuring your solution"
 npx @amidostacks/scaffolding-cli run -i
@@ -145,8 +142,8 @@ At the end of bootstrapping your example framework, you will have an output that
 
 ### Development
 
-If you like to view the github repository , the source code can be found [here](https://github.com/amido/stacks-typescript-ssr)
-<https://github.com/amido/stacks-webapp-template/tree/master/packages/scaffolding-cli/templates/src/ssr>
+If you like to view the github repository , the source code can be found [here](https://github.com/Ensono/stacks-typescript-ssr)
+<https://github.com/Ensono/stacks-webapp-template/tree/master/packages/scaffolding-cli/templates/src/ssr>
 
 Move to the `<PROJECT-NAME>/src` folder and run the next commands
 
@@ -262,7 +259,7 @@ refer to:
 
 For general information about setting up and using SonarQube for static
 analysis, please refer to the
-[docs/test_static_code](https://github.com/amido/stacks-webapp-template/tree/master/docstest_static_code.md)
+[docs/test_static_code](https://github.com/Ensono/stacks-webapp-template/tree/master/docstest_static_code.md)
 
 ### Consumer driven contract testing with Pact
 

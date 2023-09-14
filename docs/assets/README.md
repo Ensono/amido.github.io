@@ -4,7 +4,7 @@ As per the [Docusaursus documentation](https://docusaurus.io/docs/en/doc-markdow
 
 To reduce the size of the monorepo, we instead insist on ALL assets to be hosted publically.
 
-## Amido Maintainers
+## Ensono Maintainers
 
 If you have access to the `Amido.Stacks` subscription in Azure, under the `amido-stacks-assets` resource group there is a Storage Account named `amidostacksassets`. This contains `docs` a _public read only storage container_ under which you may upload all static assets to the `assets` folder.
 

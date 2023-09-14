@@ -1,6 +1,6 @@
 ---
 name: Bug report
-about: Create a report to help us improve Amido Stacks
+about: Create a report to help us improve Ensono Stacks
 title: ''
 labels: ''
 assignees: ''
