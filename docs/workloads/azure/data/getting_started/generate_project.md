@@ -12,7 +12,7 @@ keywords:
   - template
 ---
 
-This section provides an overview of scaffolding and generating a new Data Platform project using the [Stacks CLI](https://stacks.amido.com/docs/stackscli/about).
+This section provides an overview of scaffolding and generating a new Data Platform project using the [Stacks CLI](../../../../stackscli/about).
 
 It assumes the following [requirements](../requirements_data_azure.md) are in place:
 
@@ -21,7 +21,7 @@ It assumes the following [requirements](../requirements_data_azure.md) are in pl
 
 ## Step 1: Install the Stacks CLI
 
-Download and install the [Stacks CLI](https://stacks.amido.com/docs/stackscli/about).
+Download and install the [Stacks CLI](../../../../stackscli/about).
 Please refer to the **Stacks.CLI.Manual** in the latest [stacks-cli release](https://github.com/ensono/stacks-cli/releases) for detailed instructions.
 
 ## Step 2: Prepare the project config
