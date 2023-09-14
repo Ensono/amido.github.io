@@ -55,17 +55,17 @@ Here is the description of the main elements:
 
 1. `gx_directory_path`: Path to the Great Expectations metadata store.
 2. `dataset_name`: Name of the dataset that is being processed.
-3. `datasource_config`: List of datasource configurations where each configuration contains the following fields:
-    1. `datasource_name`: Name of the data asset, e.g., table or file name.
-    2. `datasource_type`: Source system type that Spark can read from, e.g. table, parquet, csv, delta.
-    3. `data_location`: Location of the given data asset. It can either be a path to the data file
-    or a fully qualified table name, depending on the data source. Expectations for each scenario:
-       * **File Path**: If the data is stored in a file, like a Parquet file on ADLS, you should
+3. `datasource_config`: Configuration for the dataset being tested.
+    1. `datasource_name`: Name of the data asset, e.g. table or file name.
+    2. `datasource_type`: Data type of the asset - this can be any type that Spark can read from, e.g. table, parquet, csv, delta.
+    3. `data_location`: Location of the given data asset. It can either be a path to files in the data lake
+    or a fully qualified table name, depending on the data source:
+       * If the data is stored in a file, like a Parquet file on ADLS, you should
        provide the complete path to the file. Examples:
           * `"abfss://raw@accountname.dfs.core.windows.net/myfolder/mysubfolder/myfile.parquet"`,
           * `"abfss://raw@accountname.dfs.core.windows.net/myfolder/mysubfolder/*"`,
           * `"abfss://staging@{ADLS_ACCOUNT}.dfs.core.windows.net/myfolder/mysubfolder/*"`.
-       * **Table Name**: For tables with metadata managed by a data catalog, you should provide
+       * For tables with metadata managed by a data catalog, you should provide
        the database schema and the table name. For example, `staging.table_name`.
     4. `expectation_suite_name`: Name of the expectation suite associated with this data source.
     5. `validation_config`: A list of validation configurations where each configuration contains the following fields:
@@ -81,25 +81,21 @@ Here's a minimal example of a configuration file:
 ```json
 {
     "gx_directory_path": "/dbfs/great_expectations/",
-    "dataset_name": "movies_dataset",
-    "dq_output_path": "abfss://staging@{ADLS_ACCOUNT}.dfs.core.windows.net/Ingest_AzureSql_Example/",
+    "dataset_name": "movies",
+    "dq_output_path": "abfss://raw@{ADLS_ACCOUNT}.dfs.core.windows.net/Ingest_AzureSql_Example/",
     "datasource_config": [
         {
-            "datasource_name": "movies_metadata",
-            "datasource_type": "table",
-            "data_location": "staging.movies_metadata",
-            "expectation_suite_name": "movies_metadata_suite",
+            "datasource_name": "movies.movies_metadata",
+            "datasource_type": "parquet",
+            "data_location": "abfss://raw@{ADLS_ACCOUNT}.dfs.core.windows.net/Ingest_AzureSql_Example/movies.movies_metadata/v1/*/*/*",
+            "expectation_suite_name": "movies.movies_metadata_suite",
             "validation_config": [
                 {
-                    "column_name": "adult",
+                    "column_name": "status",
                     "expectations": [
                         {
-                            "expectation_type": "expect_column_values_to_not_be_null",
-                            "expectation_kwargs": {}
-                        },
-                        {
-                            "expectation_type": "expect_column_values_to_be_of_type",
-                            "expectation_kwargs": {"type_": "StringType"}
+                            "expectation_type": "expect_column_values_to_be_in_set",
+                            "expectation_kwargs": {"value_set": ["Canceled", "In Production", "Planned", "Post Production", "Released", "Rumored"]}
                         }
                     ]
                 }
