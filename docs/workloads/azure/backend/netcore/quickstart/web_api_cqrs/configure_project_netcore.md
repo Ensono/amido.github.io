@@ -23,7 +23,7 @@ keywords:
 
 ## Configuring the project
 
-All security sensitive information is passed as a secret in our configuration. We have a library called [Amido.Stacks.Configuration](https://github.com/amido/stacks-dotnet-packages-configuration) that reads secrets from the environment before the application starts and makes the needed substitutions in the configuration files.
+All security sensitive information is passed as a secret in our configuration. We have a library called [Ensono.Stacks.Configuration](https://github.com/Ensono/stacks-dotnet-packages-configuration) that reads secrets from the environment before the application starts and makes the needed substitutions in the configuration files.
 
 ### Configuring Cosmos DB
 
@@ -241,9 +241,9 @@ Depending on your desired setup you'll have to provide some or all of the config
 }
 ```
 
-### Amido.Stacks.DynamoDB package
+### Ensono.Stacks.DynamoDB package
 
-This template uses the [Amido.Stacks.DynamoDB](https://github.com/amido/stacks-dotnet-packages-dynamodb) package to connect and use DynamoDB.
+This template uses the [Ensono.Stacks.DynamoDB](https://github.com/Ensono/stacks-dotnet-packages-dynamodb) package to connect and use DynamoDB.
 
 <br />
 

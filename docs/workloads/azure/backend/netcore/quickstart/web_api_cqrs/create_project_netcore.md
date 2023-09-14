@@ -183,7 +183,7 @@ In order for the template to generate correctly you'll need to execute it in the
 % cd src
 
 % dotnet new stacks-add-cqrs -n Foo.Bar.CQRS -do Menu
-The template "Amido Stacks Web Api CQRS - Add to existing solution" was created successfully.
+The template "Ensono Stacks Web Api CQRS - Add to existing solution" was created successfully.
 ```
 
 If all is well, in the output you'll see that projects are being added as references to your `.sln` file. The list of projects that you'll get by installing this template are as follows (please note the prefix provided with the `-n` flag from above):

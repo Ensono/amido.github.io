@@ -19,7 +19,7 @@ import {siteVariables} from '@site/versions';
 
 ## Module Overview
 
-This module implements the `StacksPersistence` interface from the [commons module](https://github.com/amido/stacks-java-core-commons)
+This module implements the `StacksPersistence` interface from the [commons module](https://github.com/Ensono/stacks-java-core-commons)
 for the [Azure CosmosDb](https://docs.microsoft.com/en-us/azure/cosmos-db/). Simply extending the
 `StacksCosmosRepository` class gives you access to the Cosmos CRUD operations.
 
@@ -80,7 +80,7 @@ Use it as you'd use any dependency in your build tool.
 
 ### Localized solution using Maven Archetypes
 
-If you wish to customise the module and use your organisation's namespaces instead of Amido's. You can create a
+If you wish to customise the module and use your organisation's namespaces instead of Ensono's. You can create a
 [Maven archetype](https://maven.apache.org/archetype/index.html). Archetype is Maven's tool for
 scaffolding and offers lots of extra functionality. We suggest spending some time looking into them. We use Archetype to create a template and enable you to adopt this module under your organisation's namespace.
 To use the deployed archetypes:
@@ -118,7 +118,7 @@ To use the deployed archetypes:
 >
 >-  Update them manually
 >-  Re-create the relevant `import` statements to use the new-made module instead
->-  If you plan to use this with Amido Stacks, include your namespace in the `@ComponentScan` annotation of the `Application` class.
+>-  If you plan to use this with Ensono Stacks, include your namespace in the `@ComponentScan` annotation of the `Application` class.
 
 ### Building the module locally from this repository
 
@@ -131,7 +131,7 @@ To build the module locally:
 
 ### Creating an Archetype from this repository
 
-If you wish to customise the module and use your organisation's namespaces instead of Amido's. You can create a
+If you wish to customise the module and use your organisation's namespaces instead of Ensono's. You can create a
 [Maven archetype](https://maven.apache.org/archetype/index.html). Archetype is Maven's tool for
 scaffolding and offers lots of extra functionality. We suggest spending some time looking into them. We use Archetype to create a template and enable you to adopt this module under your organisation's namespace.
 To use the deployed archetypes:
@@ -189,7 +189,7 @@ To build, install and use the archetype follow these steps:
 >
 >-  Update them manually
 >-  Re-create the relevant `import` statements to use the new-made module instead
->-  If you plan to use this with Amido Stacks, include your namespace in the `@ComponentScan` annotation of the `Application` class.
+>-  If you plan to use this with Ensono Stacks, include your namespace in the `@ComponentScan` annotation of the `Application` class.
 
 ## Accessing Sonatype OSSRH
 

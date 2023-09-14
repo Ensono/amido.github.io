@@ -18,7 +18,7 @@ import HideNavigation  from "../src/components/HideNavigation/HideNavigation";
 
 ## Code of conduct
 
-[Amido](https://amido.com/about-us/) is a independent technical consultancy delivering intelligent solutions that drive growth, innovation, and operational efficiency.
+[Ensono](https://www.ensonodigital.com/about) is a independent technical consultancy delivering intelligent solutions that drive growth, innovation, and operational efficiency.
 
 ## Values
 
@@ -33,11 +33,11 @@ We have four key values in which we stand by:
 
 ### Purpose
 
-A primary goal of Amido Stacks is to be inclusive to the largest number of contributors, with the most varied and diverse backgrounds possible. As such, we are committed to providing a friendly, safe and welcoming environment for all, regardless of gender, sexual orientation, ability, ethnicity, socioeconomic status, and religion (or lack thereof).
+A primary goal of Ensono Stacks is to be inclusive to the largest number of contributors, with the most varied and diverse backgrounds possible. As such, we are committed to providing a friendly, safe and welcoming environment for all, regardless of gender, sexual orientation, ability, ethnicity, socioeconomic status, and religion (or lack thereof).
 
 This code of conduct outlines our expectations for all those who participate in our community, as well as the consequences for unacceptable behaviour.
 
-We invite all those who participate in Amido Stacks to help us create safe and positive experiences for everyone.
+We invite all those who participate in Ensono Stacks to help us create safe and positive experiences for everyone.
 
 ### Open source Citizenship
 
