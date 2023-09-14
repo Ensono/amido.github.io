@@ -21,8 +21,6 @@ keywords:
   - github
 ---
 
-import ResponsivePlayer from "../../../../../../../src/components/ResponsivePlayer/ResponsivePlayer";
-
 ## Create a project using the Nuget template package
 
 ### Install the package
@@ -36,8 +34,6 @@ Access Amido.Stacks.Templates package page in Nuget [here](https://www.nuget.org
 ```bash title="Run the command to install the package"
 dotnet new --install Amido.Stacks.Templates
 ```
-
-<ResponsivePlayer url="https://vimeo.com/640289104" />
 
 ### Create a new  project
 
