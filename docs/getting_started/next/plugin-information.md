@@ -38,7 +38,7 @@ Ensure the `stacks` -> `executedGenerators` fields are present within `nx.json` 
 
 Ensure the `stacks` -> `config` fields are present and populated within `nx.json` for deployment/infra generation.
 
-An example of the expected structure can be [seen here](/docs/nx/workspace/ensono-stacks-workspace#prerequisites) under `@ensono-stacks/workspace:init`​ prerequisites.
+An example of the expected structure can be [seen here](/docs/getting_started/workspace/ensono-stacks-workspace#prerequisites) under `@ensono-stacks/workspace:init`​ prerequisites.
 
 ## Setting up @ensono-stacks/next
 

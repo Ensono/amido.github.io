@@ -69,7 +69,7 @@ npx @ensono-stacks/create-stacks-workspace@latest
 
 :::tip
 
-Visit the [@ensono-stacks/create-stacks-workspace](/docs/nx/create-stacks-workspace/ensono-stacks-create-stacks-workspace) docs for more information and setup instructions!
+Visit the [@ensono-stacks/create-stacks-workspace](/docs/getting_started/create-stacks-workspace/ensono-stacks-create-stacks-workspace) docs for more information and setup instructions!
 
 :::
 
