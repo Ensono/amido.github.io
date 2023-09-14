@@ -24,7 +24,7 @@ To develop and test using Pysparkle:
 
 ## Key components
 
-PySparkle is designed to assist implementing a [medallion data lake](../etl_intro_data_azure.md#data-pipelines).
+PySparkle is designed to assist implementing a [medallion data lake](../etl_intro_data_azure.md#medallion-architecture).
 The key components of PySparkle include:
 
 - **ETL Transformation Utilities** which streamline Data Pipelines by:
