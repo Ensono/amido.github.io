@@ -23,15 +23,12 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import HideNavigation from "../../../../../src/components/HideNavigation/HideNavigation";
-import ResponsivePlayer from "../../../../../src/components/ResponsivePlayer/ResponsivePlayer";
 
 Web applications require a lot of boilerplate. It's also hard to know how to get started without examples. We offer both server side rendered (SSR) and client side rendered (CSR) solutions that can be bootstrapped and tailored to your current project with just one command.
 
 Oh, and they come complete with infrastructure as code so you can deploy on your cloud of choice.
 
 Brilliant.
-
-<ResponsivePlayer url="https://vimeo.com/486755394" />
 
 ## Bootstrap your framework
 

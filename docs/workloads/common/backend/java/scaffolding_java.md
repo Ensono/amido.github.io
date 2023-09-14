@@ -16,11 +16,7 @@ keywords:
   - get started
 ---
 
-import ResponsivePlayer from "../../../../../src/components/ResponsivePlayer/ResponsivePlayer";
-
 ## Create a custom Java project template from the command line
-
-<ResponsivePlayer url="https://vimeo.com/640390929" />
 
 :::caution
 Before starting, if using Azure please make sure that your environment meets all the [requirements](../../../azure/backend/java/requirements_java.md).
