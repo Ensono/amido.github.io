@@ -21,7 +21,7 @@ However, we have a few baselines worth noting:
 
 Please, don't use the issue tracker if your problem is not strictly Ensono Stacks specific. Stack Overflow or other sources are worth considering.
 
-_See the individual [Amido projects](./README.md) for in depth information about environment setup, testing, and code styles._
+_See the individual [Ensono projects](./README.md) for in depth information about environment setup, testing, and code styles._
 
 # First...
 Please read our [Code of Conduct](./CODE_OF_CONDUCT.md).
