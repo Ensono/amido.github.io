@@ -16,8 +16,8 @@ function Home() {
 
   return (
     <Layout
-      title={`${siteConfig.title}`}
-      description={`${siteConfig.customFields.description}`}
+      title={siteConfig.title}
+      description={siteConfig.customFields.description}
       keywords={siteConfig.customFields.keywords}
     >
       <main>
