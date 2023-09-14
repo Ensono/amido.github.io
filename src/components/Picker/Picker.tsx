@@ -82,41 +82,55 @@ export const Picker = () => {
             return { value: secondOption.value[key], label: key };
           })
         : [];
+
+    const selectMenuColourTheme = (theme) => ({
+      ...theme,
+      borderRadius: 0,
+      colors: {
+        ...theme.colors, 
+        primary50: '#f4f4f4',
+        primary25: '#f4f4f4',
+        primary: '#6941EB',
+      },
+    })
   
   
     return (
       <div className={`container ${customStyle.pickerContainer}`}>
         <div className={clsx("col", "col--12", customStyle.containerSelects)}>
           <Select placeholder={languageAndFramework.placeholder}
-                  value={firstOption}
-                  onChange={(selected) => {
-                    setFirstOption(selected);
-                    setSecondOption(null);
-                    setFinalChoice(typeof selected.value === "object" ? false : true);
-                  }}
-                  options={cloudProviders}
+              value={firstOption}
+              onChange={(selected) => {
+                setFirstOption(selected);
+                setSecondOption(null);
+                setFinalChoice(typeof selected.value === "object" ? false : true);
+              }}
+              options={cloudProviders}
+              theme={(theme) => selectMenuColourTheme(theme)}
           />
   
           { applications.length > 0 && (
             <Select placeholder={solutionArchitecture.placeholder}
-                    value={secondOption}
-                    onChange={(selected) => {
-                      setSecondOption(selected);
-                      setThirdOption(null);
-                      setFinalChoice(false);
-                    }}
-                    options={applications || []}
+                value={secondOption}
+                onChange={(selected) => {
+                  setSecondOption(selected);
+                  setThirdOption(null);
+                  setFinalChoice(false);
+                }}
+                options={applications || []}
+                theme={(theme) => selectMenuColourTheme(theme)}
             />
           )}
   
           {languages.length > 0 && (
             <Select placeholder={cloudProvider.placeholder}
-                    value={thirdOption}
-                    onChange={(selected) => {
-                      setThirdOption(selected);
-                      setFinalChoice(true);
-                    }}
-                    options={languages || []}
+                value={thirdOption}
+                onChange={(selected) => {
+                  setThirdOption(selected);
+                  setFinalChoice(true);
+                }}
+                options={languages || []}
+                theme={(theme) => selectMenuColourTheme(theme)}
             />
           )}
   
