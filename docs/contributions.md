@@ -86,7 +86,7 @@ We actively welcome your pull requests:
 
 #### Security first
 
-If you find a security vulnerability, do NOT open an [issue](https://github.com/Ensono/amido.github.io/issues/new/choose). Email [Ensono](mailto:stacks@amido.com) instead.
+If you find a security vulnerability, do NOT open an [issue](https://github.com/Ensono/amido.github.io/issues/new/choose). Email [Ensono](mailto:stacks@ensono.com) instead.
 
 If you aren't sure you've found an security issue, ask yourself the following:
 
