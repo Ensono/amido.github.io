@@ -239,17 +239,17 @@ The template is a Server Side Rendered (SSR) implementation using:
   `__tests__/__snapshots__`
 
 For more information using Cypress, see:
-[Testing and Quality]<https://stacks.amido.com/docs/testing/cypress_functional_testing>).
+[Testing and Quality]</docs/testing/cypress_functional_testing>).
 
 ### Visual Testing
 
 For more information using Applitools with Cypress, see:
-[Testing and Quality](https://stacks.amido.com/docs/testing/visual_analysis).
+[Testing and Quality](/docs/testing/visual_analysis).
 
 ### Accessibility Testing
 
 For more information using Axe with Jest and Cypress, see:
-[Testing and Quality](https://stacks.amido.com/docs/testing/accessibility_testing).
+[Testing and Quality](/docs/testing/accessibility_testing).
 
 ### Static Testing
 

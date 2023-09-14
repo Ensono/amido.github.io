@@ -49,7 +49,7 @@ Deployment of Azure resources in Stacks is done through Terraform. Within your A
 
 CI/CD processes within the Stacks data platform are designed to be run in Azure DevOps Pipelines[^1]. Therefore, it is a requirement to [create a project in Azure DevOps](https://learn.microsoft.com/en-us/azure/devops/organizations/projects/create-project?view=azure-devops&tabs=browser).
 
-[^1]: More general information on [using Azure Pipelines in Stacks](https://stacks.amido.com/docs/infrastructure/azure/pipelines/azure_devops) is also available.
+[^1]: More general information on [using Azure Pipelines in Stacks](/docs/infrastructure/azure/pipelines/azure_devops) is also available.
 
 ### Azure Pipelines variable groups
 
