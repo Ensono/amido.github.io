@@ -98,7 +98,7 @@ const config = {
           items: [
             {
               label: "Getting Started",
-              to: "http://github.com/ensono",
+              to: "docs/",
             }
           ],
         },
