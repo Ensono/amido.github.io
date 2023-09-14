@@ -226,14 +226,7 @@ module.exports = {
                   "workloads/azure/data/etl_pipelines/data_processing",
                   "workloads/azure/data/etl_pipelines/data_quality_azure",
                   "workloads/azure/data/etl_pipelines/datastacks",
-                  {
-                    type: "category",
-                    label: "PySparkle",
-                    items: [
-                      "workloads/azure/data/etl_pipelines/pysparkle/pysparkle_quickstart",
-                      "workloads/azure/data/etl_pipelines/pysparkle/pysparkle_data_quality",
-                    ],
-                  },
+                  "workloads/azure/data/etl_pipelines/pysparkle",
                   "workloads/azure/data/etl_pipelines/testing_data_azure",
                 ],
               },

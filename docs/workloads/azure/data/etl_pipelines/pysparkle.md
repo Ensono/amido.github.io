@@ -1,7 +1,7 @@
 ---
-id: pysparkle_quickstart
+id: pysparkle
 title: PySparkle
-sidebar_label: Quickstart
+sidebar_label: PySparkle
 hide_title: false
 hide_table_of_contents: false
 description: PySparkle library overview
@@ -19,12 +19,12 @@ keywords:
 
 To develop and test using Pysparkle:
 
-- Install the [local development requirements](../../requirements_data_azure.md#local-development).
-- [Setup your local development environment](../../getting_started/dev_quickstart_data_azure.md).
+- Install the [local development requirements](../requirements_data_azure.md#local-development).
+- [Setup your local development environment](../getting_started/dev_quickstart_data_azure.md).
 
 ## Key components
 
-PySparkle is designed to assist implementing a [medallion data lake](../etl_intro_data_azure.md#medallion-architecture).
+PySparkle is a library designed to assist implementing a [medallion data lake](./etl_intro_data_azure.md#medallion-architecture).
 The key components of PySparkle include:
 
 - **ETL Transformation Utilities** which streamline Data Pipelines by:
@@ -32,5 +32,5 @@ The key components of PySparkle include:
     and convert it into a structured Delta format. PySparkle also facilitates pre-defined or user-defined transformations
     on dataframes.
     - Providing storage utilities that ensure smooth and secure interaction with Azure Data Lake and Blob storage.
-- **[Data Quality](pysparkle_data_quality.md)**: PySparkle performs data quality checks according to
+- **[Data Quality](./data_quality_azure.md)**: PySparkle performs data quality checks according to
   user-provided configurations, ensuring the reliability and accuracy of the data.
