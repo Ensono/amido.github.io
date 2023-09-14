@@ -24,11 +24,7 @@ Unit tests are implemented throughout the Stacks solution and recommended for al
 
 Within a data workload generated through [Datastacks](./datastacks.md), a placeholder for unit tests is found under `tests/unit`. These tests will be executed as part of its Azure DevOps CI/CD pipeline.
 
-Once you have [set up your development environment](../getting_started/dev_quickstart_data_azure.md), you may run unit tests with the following command:
-
-```bash
-make test
-```
+- [Run unit tests locally](../getting_started/dev_quickstart_data_azure.md#unit-tests).
 
 ## End-to-end tests
 
@@ -57,14 +53,12 @@ Feature:Azure Data Ingest
 
 The tests will be executed as part of the workload's Azure DevOps CI/CD pipeline. You may extend or change the test cases dependent on the particular requirements of you workload.
 
-Once you have [set up your development environment](../getting_started/dev_quickstart_data_azure.md), you may run the end-to-end tests with the following command:
-
-```bash
-make test
-```
+- [Run end-to-end tests locally](../getting_started/dev_quickstart_data_azure.md#unit-tests).
 
 ## Code quality and linting
 
 Code quality and linting checks are also included as part of workload's CI/CD pipeline. This ensures consistent standards are maintained across the project.
 
-[Pre-commit](https://pre-commit.com/) is used to assist developers in this process. The `.pre-commit-config.yaml` file in the project defines the checks and standards used. This may be amended based on the agreed standards and requirements of your project. These checks can be run interactively - see [running pre-commit](../getting_started/dev_quickstart_data_azure.md#running-pre-commit).
+[Pre-commit](https://pre-commit.com/) is used to assist developers in this process. The `.pre-commit-config.yaml` file in the project defines the checks and standards used.
+
+- [Run code quality checks](../getting_started/dev_quickstart_data_azure.md#code-quality-checks)

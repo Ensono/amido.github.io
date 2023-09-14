@@ -35,7 +35,11 @@ In order to interact with Azure resources when developing, including running end
     - `AZURE_REGION_NAME`
     - `AZURE_STORAGE_ACCOUNT_NAME`
 
-## Running unit tests
+## Running tests
+
+`make` commands are provided to assist with running tests while developing locally. See [testing](../etl_pipelines/testing_data_azure.md) for further details on these tests.
+
+### Unit tests
 
 In order to run unit tests, run the following command:
 
@@ -43,7 +47,7 @@ In order to run unit tests, run the following command:
 make test
 ```
 
-## Running end-to-end tests
+### End-to-end tests
 
 Running the end-to-end tests will involve executing Data Factory pipelines in Azure. Ensure you have setup the [Azure connection](#optional-azure-connection) and run:
 
@@ -51,7 +55,7 @@ Running the end-to-end tests will involve executing Data Factory pipelines in Az
 make test_e2e
 ```
 
-## Running pre-commit
+### Code quality checks
 
 [Pre-commit](https://pre-commit.com/) is used for code quality and linting checks on the project. It can be run using:
 
