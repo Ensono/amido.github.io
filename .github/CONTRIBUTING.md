@@ -91,7 +91,7 @@ For versioning, we follow [Semantic Version 2.0.0](https://semver.org/).
 Code styling and practices depend on the project. Check the project repo for more information.
 
 # Community
-If you are interested in talking with Ensono on how accelerate your cloud adoption using Ensono Stacks then please reach out at [Ensono](mailto:london@amido.com).
+If you are interested in talking with Ensono on how accelerate your cloud adoption using Ensono Stacks then please reach out at [Ensono](mailto:stacks@ensono.com).
 
 *************************
 _Special thanks to the open-source inspirations we've loved and used to form our own documentation:

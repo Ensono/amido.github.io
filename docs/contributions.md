@@ -119,7 +119,7 @@ Code styling and practices depend on the project. Check the project repo for mor
 
 ## Community
 
-If you are interested in talking with Ensono on how accelerate your cloud adoption using Ensono Stacks then please reach out at [Ensono](mailto:london@amido.com).
+If you are interested in talking with Ensono on how accelerate your cloud adoption using Ensono Stacks then please reach out at [Ensono](mailto:stacks@ensono.com).
 
 ***
 
