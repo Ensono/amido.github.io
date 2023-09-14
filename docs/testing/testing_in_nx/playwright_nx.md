@@ -249,7 +249,7 @@ nx e2e next-js-app-e2e --reporter=html --trace on
 
 ### Output in CI
 
-If your test project and application has been scaffolded with infrastructure ([@ensono-stacks/workspace:init](../../nx/workspace/plugin-information.md#generators) and [@ensono-stacks/next:infrastructure](../../nx/next/plugin-information.md#generators)) the [@ensono-stacks/playwright:init](../../nx/playwright/plugin-information.md#generators) generator will add e2e tasks to your taskctl.yaml file.
+If your test project and application has been scaffolded with infrastructure ([@ensono-stacks/workspace:init](../../getting_started/workspace/plugin-information.md#generators) and [@ensono-stacks/next:infrastructure](../../getting_started/next/plugin-information.md#generators)) the [@ensono-stacks/playwright:init](../../getting_started/playwright/plugin-information.md#generators) generator will add e2e tasks to your taskctl.yaml file.
 
 Upon a pull request being made this will automatically trigger a build pipeline for your application whereby the e2e test project will be ran.
 

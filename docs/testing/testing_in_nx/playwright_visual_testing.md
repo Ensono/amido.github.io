@@ -214,7 +214,7 @@ Use the [HTML reporter](./playwright_nx.md#viewing-your-test-results) to easily 
 
 ## Updating your baseline images
 
-When the [@ensono-stacks/playwright:visual-regression-deployment](../../nx/playwright/plugin-information.md#ensono-stacksplaywrightvisual-regression-deployment) generator is executed an **azuredevops-updatesnapshots.yaml** pipeline is added to your **build/azDevOps** directory. 
+When the [@ensono-stacks/playwright:visual-regression-deployment](../../getting_started/playwright/plugin-information.md#ensono-stacksplaywrightvisual-regression-deployment) generator is executed an **azuredevops-updatesnapshots.yaml** pipeline is added to your **build/azDevOps** directory. 
 
 In any pull requests where you have visual regression tests to capture images for, or if you want to update baseline images, the following comment can be added to the pull request. This will automatically trigger the updatesnapshots pipeline, running through all tests tagged with **@visual-regression** and capturing/recapturing their baseline images.
 
