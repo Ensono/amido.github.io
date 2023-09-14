@@ -35,7 +35,6 @@ In order to interact with Azure resources when developing, including running end
     - `AZURE_REGION_NAME`
     - `AZURE_STORAGE_ACCOUNT_NAME`
 
-
 ## Running unit tests
 
 In order to run unit tests, run the following command:
@@ -64,7 +63,7 @@ To run scripts within a Databricks cluster, you will need to:
 - Install the Datastacks whl file on the cluster, either from:
     - The latest deployed version in `dbfs:/FileStore/jars/datastacks-latest-py3-none-any.whl`, or
     - Create a new whl file with the `poetry build` command.
-- Add Spark environment variables, as per the Data Factory linked service (see [adf_linked_services.tf](https://github.com/Ensono/stacks-azure-data/blob/main/de_workloads/shared_resources/data_factory/adf_linked_services.tf)).
+- Add the [Pysparkle environment variables](../etl_pipelines/pysparkle.md#pysparkle-environment-variables) - the values can be set as per the Data Factory linked service (see [adf_linked_services.tf](https://github.com/Ensono/stacks-azure-data/blob/main/de_workloads/shared_resources/data_factory/adf_linked_services.tf)).
 - Ensure the user has appropriate permissions for Azure resources required.
 
 ## Troubleshooting

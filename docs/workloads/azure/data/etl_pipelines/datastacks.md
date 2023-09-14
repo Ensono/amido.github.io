@@ -93,4 +93,4 @@ datastacks dq --config-path "ingest/Ingest_AzureSql_Example/data_quality/ingest_
 
 ### Required configuration
 
-For details regarding the required environment settings and the configuration file please read the [Data Quality](./data_quality_azure.md) section.
+For details regarding the required environment settings and the configuration file please read the [Data Quality](./data_quality_azure.md#usage) section.

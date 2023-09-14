@@ -37,14 +37,14 @@ The design of the Data Quality processing is outlined in the following diagram.
 
 ## Usage
 
-To perform data quality checks against a workload interactively, you can use the [Datastacks](./datastacks.md) CLI:
+To perform data quality checks against a workload interactively, you can use the [Datastacks](./datastacks.md) CLI. Note, this also requires that the [Pysparkle environment variables](./pysparkle.md#pysparkle-environment-variables) are set:
 
 ```bash
 datastacks dq --help
 datastacks dq --config-path "ingest/Ingest_AzureSql_Example/data_quality/ingest_dq.json" --container config
 ```
 
-`config-path` is a path to a JSON config inside an Azure Blob container, `container` is name of the container. The storage account used will be based upon the environment variables.
+`config-path` is a path to a JSON config inside the Azure Blob container, `container` is name of the container. The storage account used will be based upon the `BLOB_ACCOUNT` environment variable.
 
 ## JSON Configuration File for Great Expectations
 

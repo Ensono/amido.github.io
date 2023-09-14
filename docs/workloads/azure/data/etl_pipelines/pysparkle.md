@@ -22,6 +22,18 @@ To develop and test using Pysparkle:
 - Install the [local development requirements](../requirements_data_azure.md#local-development).
 - [Setup your local development environment](../getting_started/dev_quickstart_data_azure.md).
 
+### Pysparkle environment variables
+
+To interact with Azure resources through Pysparkle, the following additional environment variables are currently required:
+
+- `AZURE_TENANT_ID`: Directory ID for Azure Active Directory application.
+- `AZURE_CLIENT_ID`: Application ID for Azure Active Directory application.
+- `AZURE_CLIENT_SECRET`: Service Principal Secret.
+- `ADLS_ACCOUNT`: ADLS account name.
+- `BLOB_ACCOUNT`: Blob Storage account name.
+
+These are defined in Databricks clusters - see [development in Databricks](../getting_started/dev_quickstart_data_azure.md#optional-pyspark-development-in-databricks) for further details.
+
 ## Key components
 
 PySparkle is a library designed to assist implementing a [medallion data lake](./etl_intro_data_azure.md#medallion-architecture).
