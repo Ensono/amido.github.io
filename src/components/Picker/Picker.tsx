@@ -35,15 +35,15 @@ const text = {
     "Java Spring Boot": {
       "REST Web API": {
         "Microsoft Azure [Azure]":
-          "workloads/azure/backend/java/intro_java",
+          "workloads/common/backend/java/intro_java",
       },
       "REST Web API with CQRS": {
         "Microsoft Azure [Azure]":
-          "workloads/azure/backend/java/intro_java",
+          "workloads/common/backend/java/intro_java",
       },
       "REST Web API with CQRS and Events": {
         "Microsoft Azure [Azure]":
-          "workloads/azure/backend/java/intro_java",
+          "workloads/common/backend/java/intro_java",
       },
     },
     "Typescript / Nx": {
