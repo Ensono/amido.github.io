@@ -74,10 +74,10 @@ module.exports = {
             label: "Frontend Web Applications",
             items: [
               "nx/nx_stacks",
+              "getting_started/setup",
               "module_federation/nextjs_plugin",
               "linting/eslint",
               "storybook/storybook_stacks",
-              "getting_started/setup",
               {
                 type: "category",
                 label: "Stacks Plugins",
