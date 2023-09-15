@@ -34,7 +34,7 @@ Documentation, usage examples, and interactive demos can be added for each compo
 
 ## Storybook with Stacks
 
-Storybook can be added to Stacks using the Nx Storybook generator documented [here](https://nx.dev/packages/storybook)
+Storybook can be added to Stacks using the __[Nx Storybook generator](https://nx.dev/packages/storybook)__.
 
 ## Storybook Addons
 
