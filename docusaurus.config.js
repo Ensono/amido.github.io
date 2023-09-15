@@ -15,7 +15,7 @@ const config = {
   baseUrl: "/",
   trailingSlash: false,
   onBrokenLinks: "warn",
-  favicon: "img/icons/stacks-logo.svg",
+  favicon: "img/icons/favicon.ico",
   organizationName: "Ensono", // Usually your GitHub org/user name.
   projectName: "Stacks", // Usually your repo name.
   customFields: {
