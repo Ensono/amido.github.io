@@ -97,10 +97,8 @@ yarn add @module-federation/nextjs-mf
 
 Create a new <b>header</b> application which will be our remote module, we can do this manually or by using the Nx CLI.
 
-Make sure to select <b>No</b> when prompted to use the App Router.
-
 ```bash
-nx g @nrwl/next:app header
+nx g @nx/next:app header --no-appDir
 ```
 
 Now we have both our <b>host</b> and <b>header</b> modules, we need to update various config in each application to enable module federation.
@@ -233,7 +231,7 @@ Also updating the <b>host</b> modules `project.json` with the correct port numbe
 ```json
 {
     "serve": {
-        "executor": "@nrwl/next:server",
+        "executor": "@nx/next:server",
         "defaultConfiguration": "development",
         "options": {
             "buildTarget": "host:build",
