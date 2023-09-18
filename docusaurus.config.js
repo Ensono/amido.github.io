@@ -11,7 +11,7 @@ const config = {
   title: "Ensono Stacks",
   tagline:
     "Helping projects gain momentum on digital transformation, with opinionated and modular boilerplate solutions",
-  url: "https://stacks.amido.com",
+  url: "https://stacks.ensono.com",
   baseUrl: "/",
   trailingSlash: false,
   onBrokenLinks: "warn",
