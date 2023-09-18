@@ -15,7 +15,7 @@ keywords:
   - medallion
 ---
 
-The Stacks Data Platform solution accelerates the generation of production-ready ETL / ELT pipelines and workloads. New data engineering workloads can be generated through the [Datastacks] utility, while a range of example data workloads and pipelines are also provided. These workloads cover all stages from
+The Stacks Data Platform solution accelerates the generation of production-ready ETL / ELT pipelines and workloads. New data engineering workloads can be generated through the [Datastacks](./datastacks.md) utility, while a range of example data workloads and pipelines are also provided. These workloads cover all stages from
 ingesting data from source, applying data transformations across data lake layers, ultimately enabling end-user data
 visualisations and analytics.
 
@@ -35,7 +35,7 @@ Stacks data platform features several auxiliary utilities to enhance the process
 production-ready data pipelines and workloads.
 
 * [Datastacks](datastacks.md): A CLI tool designed to facilitate the creation of custom pipelines using predefined templates.
-* [PySparkle](pysparkle/pysparkle_quickstart.md): A versatile library equipped with reusable data processing components.
+* [PySparkle](pysparkle.md): A versatile library equipped with reusable data processing components.
 * [Data Quality](data_quality_azure.md): An optional step incorporated into all ETL pipelines to ensure data integrity.
 
 ## Dataset

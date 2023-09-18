@@ -54,7 +54,7 @@ The diagram below gives an overview of a data processing data pipeline in Data F
 ![ADF_SilverPipelineDesign.png](../images/ADF_SilverPipelineDesign.png)
 
 The processing is executed as Python Databricks job, with repeatable data transformation processes packaged within
-our [PySparkle](pysparkle/pysparkle_quickstart.md) library.
+our [PySparkle](pysparkle.md) library.
 
 Transformation and processing logic specific to particular datasets is kept inside the `spark_jobs` directory for the workload.
 

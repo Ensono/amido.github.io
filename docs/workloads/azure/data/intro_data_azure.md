@@ -33,7 +33,7 @@ Key elements of the solution include:
 * Infrastructure as code (IaC) for all infrastructure components (Terraform).
 * [Datastacks](etl_pipelines/datastacks.md) - a library and CLI built to accelerate the development of data engineering
 workloads in the data platform based upon templates.
-* [Pysparkle](etl_pipelines/pysparkle/pysparkle_quickstart.md) - a library built to streamline data processing activities running in Apache Spark.
+* [Pysparkle](etl_pipelines/pysparkle.md) - a library built to streamline data processing activities running in Apache Spark.
 * Sample ingest pipeline that transfers data from a source into a landing (Bronze) data lake zone.
 * Sample data processing pipelines performing data transformations from Bronze to Silver and Silver to Gold layers.
 * Data Quality validations.

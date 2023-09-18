@@ -84,7 +84,7 @@ In order to generate a new data engineering workload the Datastacks CLI takes a 
 
 ## Performing data quality checks
 
-Datastacks provides a CLI to conduct data quality checks using the [PySparkle](pysparkle/pysparkle_quickstart.md) library as a backend.
+Datastacks provides a CLI to conduct data quality checks using the [PySparkle](./pysparkle.md) library as a backend.
 
 ```bash
 datastacks dq --help
@@ -93,5 +93,4 @@ datastacks dq --config-path "ingest/Ingest_AzureSql_Example/data_quality/ingest_
 
 ### Required configuration
 
-For details regarding the required environment settings and the configuration file please read
-[PySparkle](pysparkle/pysparkle_quickstart.md) and [PySparkle Data Quality](pysparkle/pysparkle_data_quality.md) sections.
+For details regarding the required environment settings and the configuration file please read the [Data Quality](./data_quality_azure.md#usage) section.
