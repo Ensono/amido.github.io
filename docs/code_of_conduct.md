@@ -16,7 +16,7 @@ keywords:
 
 import HideNavigation  from "../src/components/HideNavigation/HideNavigation";
 
-## Code of conduct
+## Code of Conduct
 
 [Ensono](https://www.ensonodigital.com/about) is a independent technical consultancy delivering intelligent solutions that drive growth, innovation, and operational efficiency.
 
@@ -24,22 +24,22 @@ import HideNavigation  from "../src/components/HideNavigation/HideNavigation";
 
 We have four key values in which we stand by:
 
-1. **Start with the problem**: Working together to make sure that technology choices are business outcome-driven and not tech for tech’s sake. The magic is understanding what your users want, knowing what technology is out there and gluing these   technologies together in the most effective way.
-2. **Technology agnostic**: We are independent and not aligned to any product or solution (including the ones we open-source), allowing us to recommend what is right for our clients. With a plethora of cloud services in the marketplace, we will find the right mix of available solutions from the rich PaaS and SaaS market.
-3. **People-first**: As a people business, we place your customers and employees at the centre of any digital project or transformation. People are at the heart of everything we design and deliver.
+1. **Start with the problem**: Working together to make sure that technology choices are business outcome driven and not tech for tech’s sake. The magic is understanding what your users want, knowing what technology is out there and gluing these   technologies together in the most effective way.
+2. **Technology agnostic**: We are independent and not aligned to any product or solution (including the ones we open source), allowing us to recommend what is right for our clients. With a plethora of cloud services in the marketplace, we will find the right mix of available solutions from the rich PaaS and SaaS market.
+3. **People first**: As a people business, we place your customers and employees at the centre of any digital project or transformation. People are at the heart of everything we design and deliver.
 4. **Pragmatic**: All technology has its strengths but also its limitations. We focus on delivering solutions that work and on creating technology ecosystems that make the most of the technologies within them. We are honest about the value that can be delivered now but also work to ensure our solutions have the agility and scalability built in to meet the challenges of tomorrow.
 
-## Open-source conduct
+## Open source conduct
 
 ### Purpose
 
 A primary goal of Ensono Stacks is to be inclusive to the largest number of contributors, with the most varied and diverse backgrounds possible. As such, we are committed to providing a friendly, safe and welcoming environment for all, regardless of gender, sexual orientation, ability, ethnicity, socioeconomic status, and religion (or lack thereof).
 
-This code of conduct outlines our expectations for all those who participate in our community, as well as the consequences for unacceptable behaviour.
+This Code of Conduct outlines our expectations for all those who participate in our community, as well as the consequences for unacceptable behaviour.
 
 We invite all those who participate in Ensono Stacks to help us create safe and positive experiences for everyone.
 
-### Open source Citizenship
+### Open source citizenship
 
 A supplemental goal of this Code of Conduct is to increase open source citizenship by encouraging participants to recognize and strengthen the relationships between our actions and their effects on our community.
 
@@ -47,7 +47,7 @@ Communities mirror the societies in which they exist and positive action is esse
 
 If you see someone who is making an extra effort to ensure our community is welcoming, friendly, and encourages all participants to contribute to the fullest extent, we want to know.
 
-### Expected Behaviour
+### Expected behaviour
 
 The following behaviours are expected and requested of all community members:
 
@@ -76,9 +76,9 @@ The following behaviours are considered harassment and are unacceptable within o
 
 ### Scope
 
-We expect all community participants (contributors, paid or otherwise; sponsors; and other guests) to abide by this Code of Conduct in all community venues–online and in-person–as well as in all one-on-one communications pertaining to community business.
+We expect all community participants (contributors, paid or otherwise; sponsors; and other guests) to abide by this Code of Conduct in all community venues, online and in person, as well as in all one on one communications pertaining to community business.
 
-This code of conduct and its related procedures also applies to unacceptable behaviour occurring outside the scope of community activities when such behaviour has the potential to adversely affect the safety and well-being of community members.
+This Code of Conduct and its related procedures also applies to unacceptable behaviour occurring outside the scope of community activities when such behaviour has the potential to adversely affect the safety and well-being of community members.
 
 ***
 
