@@ -29,7 +29,7 @@ We have four key values in which we stand by:
 3. **People first**: As a people business, we place your customers and employees at the centre of any digital project or transformation. People are at the heart of everything we design and deliver.
 4. **Pragmatic**: All technology has its strengths but also its limitations. We focus on delivering solutions that work and on creating technology ecosystems that make the most of the technologies within them. We are honest about the value that can be delivered now but also work to ensure our solutions have the agility and scalability built in to meet the challenges of tomorrow.
 
-## Open source conduct
+## Open Source Conduct
 
 ### Purpose
 
@@ -39,7 +39,7 @@ This Code of Conduct outlines our expectations for all those who participate in 
 
 We invite all those who participate in Ensono Stacks to help us create safe and positive experiences for everyone.
 
-### Open source citizenship
+### Open Source Citizenship
 
 A supplemental goal of this Code of Conduct is to increase open source citizenship by encouraging participants to recognize and strengthen the relationships between our actions and their effects on our community.
 
@@ -47,7 +47,7 @@ Communities mirror the societies in which they exist and positive action is esse
 
 If you see someone who is making an extra effort to ensure our community is welcoming, friendly, and encourages all participants to contribute to the fullest extent, we want to know.
 
-### Expected behaviour
+### Expected Behaviour
 
 The following behaviours are expected and requested of all community members:
 
