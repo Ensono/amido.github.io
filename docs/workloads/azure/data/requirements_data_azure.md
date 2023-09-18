@@ -119,3 +119,12 @@ Deployment', referring to variables required after the fundamental infrastructur
 | azure-tenant-id       | Project start | Directory ID for Azure Active Directory application   |
 
 </details>
+
+### Azure Pipelines Service Connections
+Service Connections are used in Azure DevOps Pipelines to connect to external services, like Azure and GitHub.
+You must create the following Service Connections:
+
+| Name                  | When Needed   | Description                                           |
+|-----------------------|---------------|-------------------------------------------------------|
+| Stacks.Pipeline.Builds | Project start | The Service Connection to Azure |
+| GitHubReleases | Project start | The Service Connection to Github for releases |
