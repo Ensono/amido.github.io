@@ -80,6 +80,10 @@ logger.log({
 })
 ```
 
+:::note
+    You would need to change the `@workspace-name` to the name of your workspace
+:::
+
 To change how Winston is configured, edit the created library:
 
 ```typescript title=./libs/mynewlogger/src/index.ts
