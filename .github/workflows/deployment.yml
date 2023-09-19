@@ -37,9 +37,11 @@ jobs:
                 ALGOLIA_INDEX_NAME: ${{ secrets.ALGOLIA_INDEX_NAME }}
                 ALGOLIA_APP_ID: ${{ secrets.ALGOLIA_APP_ID }}
                 ALGOLIA_API_KEY: ${{ secrets.ALGOLIA_API_KEY }}
+        deploy:
+              environment:
+                name: github-pages
+              needs: build
+              steps: 
             # Deploy to GitHub Pages
-            - name: Deploy to GitHub Pages
-              uses: actions/deploy-pages@v2
-              with: 
-                folder: build
-                clean: true
+               - name: Deploy to GitHub Pages
+                 uses: actions/deploy-pages@v2
