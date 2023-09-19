@@ -35,6 +35,7 @@ jobs:
         uses: actions/upload-artifact@main
         with:
           name: github-pages
+          path: ./artifact.tar
           if-no-files-found: warn
   deploy:
     name: Deploy to Github pages
