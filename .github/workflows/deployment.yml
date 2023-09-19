@@ -14,7 +14,7 @@ on:
             - feat/ensono-rebrand
             - feat/testing-deployment
 jobs:
-    build-and-deploy:
+    build:
         name: Build and Deploy to GitHub Pages
         runs-on: ubuntu-latest
         steps:
@@ -37,11 +37,12 @@ jobs:
                 ALGOLIA_INDEX_NAME: ${{ secrets.ALGOLIA_INDEX_NAME }}
                 ALGOLIA_APP_ID: ${{ secrets.ALGOLIA_APP_ID }}
                 ALGOLIA_API_KEY: ${{ secrets.ALGOLIA_API_KEY }}
-        deploy:
-              environment:
-                name: github-pages
-              needs: build
-              steps: 
+                
+    deploy:
+        environment:
+          name: github-pages
+        needs: build
+        steps: 
             # Deploy to GitHub Pages
-               - name: Deploy to GitHub Pages
-                 uses: actions/deploy-pages@v2
+            - name: Deploy to GitHub Pages
+              uses: actions/deploy-pages@v2
