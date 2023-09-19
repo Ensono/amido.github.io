@@ -8,7 +8,7 @@ export default function FooterLegal() {
         <img src="/img/icons/ensono-logo.svg" alt="Ensono logo"/> 
       </div>
       <div>
-        <span>Privacy Policy © {new Date().getFullYear()} Ensono, LLC. All rights reserved</span>
+        <span>Privacy Policy &copy; {new Date().getFullYear()} Ensono, LLC. All rights reserved</span>
       </div>
       <div>
         {

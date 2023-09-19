@@ -44,7 +44,7 @@ export const Features = () => {
                         </div>
                         <div className={`${styles.buttons} ${customStyle.button}`}>
                             <Link className={clsx("button button--primary button--lg")}
-                                to={baseUrl + feature.link}
+                                to={`${baseUrl}${feature.link}`}
                             >
                             {feature.buttonText}
                             </Link>

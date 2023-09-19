@@ -1,6 +1,6 @@
 # Ensono Stacks Documentation Microsite
 This repository contains the documentation for the Ensono Stacks platform.
-The live site is hosted at [https://stacks.amido.com](https://stacks.amido.com).
+The live site is hosted at [https://stacks.ensono.com](https://stacks.ensono.com).
 
 This microsite is built using [Docusaurus 2](https://v2.docusaurus.io/), a modern static website generator.
 You can view their documentation [here](https://v2.docusaurus.io/docs/).
