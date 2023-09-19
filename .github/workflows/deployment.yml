@@ -34,8 +34,7 @@ jobs:
                 ALGOLIA_API_KEY: ${{ secrets.ALGOLIA_API_KEY }}
             # Deploy to GitHub Pages
             - name: Deploy to GitHub Pages
-              uses: JamesIves/github-pages-deploy-action@4.4.3
-              with:
-                branch: gh-pages
+              uses: actions/deploy-pages@v2
+              with: 
                 folder: build
                 clean: true
