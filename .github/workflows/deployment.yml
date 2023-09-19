@@ -1,0 +1,42 @@
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+name: stacks.website
+on: [push]
+jobs:
+  build:
+    name: Install packages and build application
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+      - name: Use NodeJS
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.14.x
+      - name: Install Dependencies
+        run: npm install
+      - name: Build application
+        run: npm run build
+        env:
+          ALGOLIA_INDEX_NAME: ${{ secrets.ALGOLIA_INDEX_NAME }}
+          ALGOLIA_APP_ID: ${{ secrets.ALGOLIA_APP_ID }}
+          ALGOLIA_API_KEY: ${{ secrets.ALGOLIA_API_KEY }}
+      - name: Upload Artifact
+        uses: actions/upload-artifact@main
+        with:
+          name: github-pages
+          path: ./build
+          if-no-files-found: warn
+  deploy:
+    name: Deploy to Github pages
+    runs-on: ubuntu-latest
+    needs: build
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2

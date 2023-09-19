@@ -50,9 +50,9 @@ const config = {
       "OWASP",
     ],
     docSearch: {
-      appId: process.env.DOCSEARCH_APP_ID,
-      apiKey: process.env.DOCSEARCH_API_KEY,
-      indexName: process.env.DOCSEARCH_INDEX_NAME,
+      appId: process.env.ALGOLIA_APP_ID,
+      apiKey: process.env.ALGOLIA_API_KEY,
+      indexName: process.env.ALGOLIA_INDEX_NAME,
     }
   },
   themeConfig: {
