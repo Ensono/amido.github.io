@@ -18,6 +18,7 @@ Stacks is an Ensono open-source project that automates the setup of software dev
 
 Setting up the infrastructure and frameworks necessary to deliver a software project takes time. A team might spend the first two weeks (sprint 0) making technical decisions, provisioning and configuring environments, pipelines, compute, test frameworks, and more. Stacks automates this setup using infrastructure-as-code to shrink your project's sprint 0 from two weeks to an hour or less.
 
+<!-- markdownlint-disable-next-line -->
 ## What can you do with Stacks?
 
 Most software delivery projects start with a series of technical decisions:
@@ -48,4 +49,5 @@ Massively shrinking sprint 0 Stacks gets you productive very quickly. First-time
 But there's more to Stacks than saving time. Ensono has thought deeply about the technology choices Stacks offers. Our long experience delivering successful projects means we know which technologies work well and best together. This experience has informed our choices of platforms, services and functions that Stacks offers, which means that using Stacks reduces risk. You can be confident that the test frameworks Stacks offers when building a REST API in Java, the CI/ CD pipelines for your C# event listener, or the compute options for your Node SSR web app will work well.
 
 ## How does it work
+
 Select a workload using the What Can You Do with Stacks element on the home page to see detailed documentation on how to get started. For a more detailed section on Workloads, please see [Introduction to workloads](/docs/workloads/workloads.md).
