@@ -20,7 +20,7 @@
     "markdownlint-cli": "^0.23.1"
   },
   "dependencies": {
-    "@analytics/google-analytics": "^0.5.2",
+    "@analytics/google-analytics": "^1.0.7",
     "@docsearch/react": "^3.5.2",
     "@docusaurus/core": "2.4.1",
     "@docusaurus/mdx-loader": "^2.4.1",
