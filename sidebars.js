@@ -80,7 +80,7 @@ module.exports = {
               "storybook/storybook_stacks",
               {
                 type: "category",
-                label: "Stacks Plugins",
+                label: "Ensono Stacks Plugins",
                 items: [
                   "getting_started/create-stacks-workspace/ensono-stacks-create-stacks-workspace",
                   "getting_started/workspace/ensono-stacks-workspace",
@@ -346,7 +346,7 @@ module.exports = {
       "testing/accessibility_testing",
       "testing/performance_testing_gatling",
     ],
-    "Stacks CLI": [
+    "Ensono Stacks CLI": [
       "stackscli/about"
       // "stackscli/usage",
       // "stackscli/runtime_config",

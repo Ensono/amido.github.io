@@ -15,11 +15,11 @@ keywords:
   - template
 ---
 
-This section provides an overview of generating a new [data ingest pipeline](../etl_pipelines/ingest_data_azure.md) workload and deploying it into a Stacks Data Platform, using the [Datastacks](../etl_pipelines/datastacks.md) utility.
+This section provides an overview of generating a new [data ingest pipeline](../etl_pipelines/ingest_data_azure.md) workload and deploying it into a Ensono Stacks Data Platform, using the [Datastacks](../etl_pipelines/datastacks.md) utility.
 
 This guide assumes the following are in place:
 
-* A [deployed Stacks data platform](core_data_platform_deployment_azure.md)
+* A [deployed Ensono Stacks data platform](core_data_platform_deployment_azure.md)
 * [Development environment set up](dev_quickstart_data_azure.md)
 * [Deployed shared resources](shared_resources_deployment_azure.md)
 * A data source to ingest from. The steps below are based on using the [Azure SQL example data source](example_data_source.md)
@@ -170,7 +170,7 @@ The generated workload contains a YAML file containing a template Azure DevOps C
 5. The new pipeline will require access to any Azure DevOps pipeline variable groups specified in the [datastacks config file](#step-2-prepare-the-datastacks-config-file). Under each variable group, go to 'Pipeline permissions' and add the new pipeline.
 6. Run the new pipeline
 
-Running this pipeline in Azure DevOps will deploy the artifacts into the non-production (nonprod) environment and run tests. If successful, the generated resources will now be available in the nonprod Stacks environment.
+Running this pipeline in Azure DevOps will deploy the artifacts into the non-production (nonprod) environment and run tests. If successful, the generated resources will now be available in the nonprod Ensono Stacks environment.
 
 ## Step 7: Review deployed resources
 
@@ -189,4 +189,4 @@ In the example pipeline templates:
 * Deployment to the non-production (nonprod) environment is triggered on a feature branch when a pull request is open
 * Deployment to the production (prod) environment is triggered on merging to the `main` branch, followed by manual approval of the release step.
 
-It is recommended in any Stacks data platform that processes for deploying and releasing to further should be agreed and documented, ensuring sufficient review and quality assurance of any new workloads. The template CI/CD pipelines provided are based upon two platform environments (nonprod and prod) - but these may be amended depending upon the specific requirements of your project and organisation.
+It is recommended in any Ensono Stacks data platform that processes for deploying and releasing to further should be agreed and documented, ensuring sufficient review and quality assurance of any new workloads. The template CI/CD pipelines provided are based upon two platform environments (nonprod and prod) - but these may be amended depending upon the specific requirements of your project and organisation.

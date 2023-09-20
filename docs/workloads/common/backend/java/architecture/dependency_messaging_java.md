@@ -1,6 +1,6 @@
 ---
 id: dependency_messaging_java
-title: Stacks Core Messaging module
+title: Ensono Stacks Core Messaging module
 sidebar_label: Core Messaging module
 hide_title: false
 hide_table_of_contents: true

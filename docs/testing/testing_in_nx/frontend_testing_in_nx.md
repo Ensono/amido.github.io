@@ -26,7 +26,7 @@ We recommend and currently support Playwright within the stacks workflow, with i
 
 :::tip 
 
-Visit the [`Playwright`](../../getting_started/playwright/plugin-information.md) or [`Cypress`](../../getting_started/cypress/plugin-information.md) Stacks plugins to start testing!
+Visit the [`Playwright`](../../getting_started/playwright/plugin-information.md) or [`Cypress`](../../getting_started/cypress/plugin-information.md) Ensono Stacks plugins to start testing!
 :::
 
 ### Accessibility Testing 
@@ -63,6 +63,6 @@ If you are considering adding visual regression tests to your application, then 
 
 :::note
 
-We do not currently support visual testing with Stacks using our `@ensono-stacks/cypress` plugin
+We do not currently support visual testing with Ensono Stacks using our `@ensono-stacks/cypress` plugin
 
 :::

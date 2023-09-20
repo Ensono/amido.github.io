@@ -11,7 +11,7 @@ keywords:
   - etl
 ---
 
-Data ingest workloads in Stacks are jobs which:
+Data ingest workloads in Ensono Stacks are jobs which:
 
 1. Connect to an external data source
 2. Land the data in the Bronze (raw) layer of the data lake

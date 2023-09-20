@@ -21,7 +21,7 @@ import TabItem from "@theme/TabItem";
 
 ## Introduction
 
-This page describes the use of Maven Build profiles and Spring profiles to support the use of feature sets within Stacks. The
+This page describes the use of Maven Build profiles and Spring profiles to support the use of feature sets within Ensono Stacks. The
 term 'feature sets' means provider support for common tasks such as persistence and message queue handling. It allows the selection
 of different mechanisms across different cloud providers (such as the use of CosmosDB on Azure, or DynamoDB on AWS).
 
@@ -120,20 +120,20 @@ java -jar profiles-0.0.1-SNAPSHOT.jar
 java -Dspring.profiles.active=foo -jar profiles-0.0.1-SNAPSHOT.jar
 ```
 
-## Stacks Profile Usage
+## Ensono Stacks Profile Usage
 
-Stacks projects have been configured with both Maven and Spring profiles in order to support the capability of being able to 
+Ensono Stacks projects have been configured with both Maven and Spring profiles in order to support the capability of being able to 
 easily isolate dependencies and properties between feature sets (such as cloud provider, persistence and messaging). 
 
-The ultimate aim of Stacks is for a project to be able to deploy an instance that is as close to developer-written code as possible, whilst
-still providing a rich feature set that projects can choose from. It is also a requirement to make the Stacks maintainer experience as
+The ultimate aim of Ensono Stacks is for a project to be able to deploy an instance that is as close to developer-written code as possible, whilst
+still providing a rich feature set that projects can choose from. It is also a requirement to make the Ensono Stacks maintainer experience as
 simple as possible and to allow developers and testers an easy way to switch between feature sets whilst providing a platform for them
-to extend Stacks with new feature sets in the future.
+to extend Ensono Stacks with new feature sets in the future.
 
 The use of both profile mechanisms allow dependencies and properties to be nicely ring-fenced, making it relatively easy for
-supporting scripts to be able to re-package the Stacks project and for it to be tailored more closely to a projects requirements.
+supporting scripts to be able to re-package the Ensono Stacks project and for it to be tailored more closely to a projects requirements.
 
-The three Stacks workloads differ slightly in their provided capability, so this text will now focus on the Stacks CQRS with Events 
+The three Ensono Stacks workloads differ slightly in their provided capability, so this text will now focus on the Ensono Stacks CQRS with Events 
 project as that provides the richest set of features.
 
 The following areas within the project have been configured to provide profile support: -
@@ -167,7 +167,7 @@ A number of support scripts are included in the projects that aid in the use of 
 
 ### run_scenario.sh
 
-This script is aimed at **Stacks developers & testers**.
+This script is aimed at **Ensono Stacks developers & testers**.
 
 This bash script provides a command line interface to the user to allow them to select the feature sets they want to start the 
 Spring Boot application with. 
@@ -209,7 +209,7 @@ Press ENTER to accept or CTRL-C to quit
 
 ### deploy_scenario.sh
 
-This script is aimed at **Stacks adopters & end projects**.
+This script is aimed at **Ensono Stacks adopters & end projects**.
 
 This bash script provides a command line interface to the user to allow them to select the feature sets they want to deploy the
 Spring Boot application with. After making their feature set choice it will alter the code project from being one that supports 
@@ -252,4 +252,4 @@ After pressing ENTER the script will perform the following actions: -
 4. Hard-code the feature-set related Spring Profile list in `application.yml` (and remove any unused profiles)
 5. Remove any non-required Spring profile `resources/application-PROFILE_NAME.yml` files
 
-After these operations the Stacks project code should be closer to how a Project would manually craft their application code.
+After these operations the Ensono Stacks project code should be closer to how a Project would manually craft their application code.

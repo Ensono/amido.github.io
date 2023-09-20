@@ -19,7 +19,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ## Overview
 
-This page present the high level design of the reference implementation of the Java Stacks
+This page present the high level design of the reference implementation of the Java Ensono Stacks
 application which is based on Spring Boot REST API.
 
 **This page assumes that the core infrastructure has already been provisioned. Instructions and additional information on the core infrastructure can be found [here](docs/infrastructure/azure/core_infrastructure.md)**

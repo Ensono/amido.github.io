@@ -2,7 +2,7 @@
 id: ensono-stacks-create-stacks-workspace
 title: "@ensono-stacks/create-stacks-workspace"
 sidebar_label: "@ensono-stacks/create-stacks-workspace"
-description: "Using the create-stacks-workspace with stacks!"
+description: "Using the create-stacks-workspace with Ensono Stacks!"
 keywords:
   - NX
   - monorepo
@@ -15,14 +15,14 @@ keywords:
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Create a new Stacks Nx workspace. Using the create-stacks-workspace script will quickly allow you to initialize a new NX workspace with the Stacks recommended plugins, packages and configuration to get started on a new project quickly.
+Create a new Ensono Stacks Nx workspace. Using the create-stacks-workspace script will quickly allow you to initialize a new NX workspace with the Stacks recommended plugins, packages and configuration to get started on a new project quickly.
 
 The Stacks `create-stacks-workspace` script will 
 
 - Run Nx [create-nx-workspace](https://nx.dev/packages/nx/documents/create-nx-workspace) command to setup a new NX workspace passing along any command line arguments provided 
-- Install any recommended plugin/generators/executors from Stacks. If the `next` preset is selected the [Ensono Next plugin](/docs/getting_started/next/ensono-stacks-next) will be installed. With all presets the [Ensono Workspace Plugin](/docs/getting_started/workspace/ensono-stacks-workspace) will be installed. (see [presets](/docs/getting_started/create-stacks-workspace/ensono-stacks-create-stacks-workspace#presets))
+- Install any recommended plugin/generators/executors from Ensono Stacks. If the `next` preset is selected the [Ensono Next plugin](/docs/getting_started/next/ensono-stacks-next) will be installed. With all presets the [Ensono Workspace Plugin](/docs/getting_started/workspace/ensono-stacks-workspace) will be installed. (see [presets](/docs/getting_started/create-stacks-workspace/ensono-stacks-create-stacks-workspace#presets))
 - Configure the NX workspace. This will involve updating the NX.json file with any information provided from the command line arguments
-- Execute recommended generators from Stacks to initialize the workspace/projects depending on the options provided. 
+- Execute recommended generators from Ensono Stacks to initialize the workspace/projects depending on the options provided. 
 - Create an e2e test project if this option was selected
 
 ## Setting up @ensono-stacks/create-stacks-workspace
@@ -44,9 +44,9 @@ apps              [an empty monorepo with no plugins with a layout that works be
 next.js           [a monorepo with a single Next.js application]
 ```
 
-Each preset will install, configure and run any recommended plugins for that specific preset. For example the next.js preset will run the [NX NextJS](https://nx.dev/packages/next) plugin application generator as well as the [Ensonso stacks NextJS](/docs/getting_started/next/ensono-stacks-next) init plugin generator.
+Each preset will install, configure and run any recommended plugins for that specific preset. For example the next.js preset will run the [NX NextJS](https://nx.dev/packages/next) plugin application generator as well as the [Ensonso Stacks NextJS](/docs/getting_started/next/ensono-stacks-next) init plugin generator.
 
-We do not support react and currently only support nextjs, therefore if you want to create a nextjs workspace with a client side rendered application, you must use Nx and not stacks.
+We do not support react and currently only support nextjs, therefore if you want to create a nextjs workspace with a client side rendered application, you must use Nx and not Ensono Stacks.
 
 **You will then be asked which test runner to include for e2e testing:**
 

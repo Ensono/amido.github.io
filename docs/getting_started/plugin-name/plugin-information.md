@@ -2,7 +2,7 @@
 id: ensono-stacks-[plugin-name]
 title: "@ensono-stacks/[plugin-name]"
 sidebar_label: "@ensono-stacks/[plugin-name]"
-description: "Using the [plugin-name] with stacks!"
+description: "Using the [plugin-name] with Ensono Stacks!"
 keywords:
   - Nx
   - monorepo

@@ -1,6 +1,6 @@
 # Using the CLI
 
-The Stacks CLI is built using Go, which means that it is a single binary which can be downloaded and run without the need to run an installer. It is currently built for the following platforms
+The Ensono Stacks CLI is built using Go, which means that it is a single binary which can be downloaded and run without the need to run an installer. It is currently built for the following platforms
 
 - ![windows](./images/icons/windows.png) Windows
 
@@ -12,7 +12,7 @@ The CLI will download the specified projects and run a series of operations to c
 
 ## Installation
 
-Visit the [Stacks CLI](https://github.com/Ensono/stacks-cli/releases) release page and download the latest version for your machine
+Visit the [Ensono Stacks CLI](https://github.com/Ensono/stacks-cli/releases) release page and download the latest version for your machine
 
 Once this has been downloaded, the quickest way to get started is to place the binary somewhere on your system PATH
 
@@ -22,9 +22,9 @@ The CLI has a number of commands and various options. The easiest way to see wha
 
 > **Note**
 >
-> The operation of the Stacks CLI is identical on every platform
+> The operation of the Ensono Stacks CLI is identical on every platform
 
-![Stacks CLI Help](images/stackscli-global-help.png)
+![Ensono Stacks CLI Help](images/stackscli-global-help.png)
 
 ### Completion
 
@@ -72,7 +72,7 @@ stacks-cli scaffold -h
 
 ![Help page for `scaffold` command](images/stackscli-scaffold-help.png)
 
-The [???](#Examples) section has a lot of examples showing how to run the Stacks CLI, the following show some simple uses of the command.
+The [???](#Examples) section has a lot of examples showing how to run the Ensono Stacks CLI, the following show some simple uses of the command.
 
 ## Validation
 
@@ -94,7 +94,7 @@ When the application runs, it will determine the frameworks that have been selec
 
 > **Note**
 >
-> It is not possible for the Stacks project to specify the full path to the command because it can be different on each and every machine that the Stacks CLI will run on.
+> It is not possible for the Ensono Stacks project to specify the full path to the command because it can be different on each and every machine that the Ensono Stacks CLI will run on.
 
 The commands for each of the supported frameworks are as follows:
 
@@ -106,7 +106,7 @@ The commands for each of the supported frameworks are as follows:
 
 Framework Commands
 
-If a command cannot be located, the CLI will be terminated. This does not mean the command does not exist on the machine, rather that it is not accessble using the PATH environment variable. The Stacks CLI is not a package manager and as such will not attempt to install the missing commands.
+If a command cannot be located, the CLI will be terminated. This does not mean the command does not exist on the machine, rather that it is not accessble using the PATH environment variable. The Ensono Stacks CLI is not a package manager and as such will not attempt to install the missing commands.
 
 The following screenshot shows the output of a scaffolding run where the "dotnet" framework has been specified and the `dotnet` command cannot be found:
 
@@ -134,18 +134,18 @@ This is not terribly helpful to understand what is happening. This is ocurring b
 
 As the CLI relies heavily on being able to contact GitHub, it checks to see if the `github.com` domain can be resolved. It does this as one of the first checks it performs. If it cannot resolve the address then it will terminate execution with an error similar to the following.
 
-![Stacks CLI failed connectivity check](images/stackscli-connectivity-check.png)
+![Ensono Stacks CLI failed connectivity check](images/stackscli-connectivity-check.png)
 
 ## CLI Version Check
 
-The Stacks CLI is constantly evolving and as such there are new versions being released frequently. To help ensure that you are running the most up to date version, it will check the releases for the CLI and compare that version against the one that you are running. If there is a mismatch then the CLI will inform you of the newer version.
+The Ensono Stacks CLI is constantly evolving and as such there are new versions being released frequently. To help ensure that you are running the most up to date version, it will check the releases for the CLI and compare that version against the one that you are running. If there is a mismatch then the CLI will inform you of the newer version.
 
 > **Note**
 >
 > This check does not prevent normal operation if you have an older version. However you _may_ find that some things do not work as you intend.
 
-![Stacks CLI version check](images/stackscli-version-check.png)
+![Ensono Stacks CLI version check](images/stackscli-version-check.png)
 
 This is a simple version check, it does not update the CLI for you, but does provide a link to the latest version for download and information purposes.
 
-The version check can be turned off using the `--nocliversion` option or the `options.nocliversion` in a configuration file or using the `AMIDOSTACKS_OPTIONS_NOCLIVERSION` environment variable.
+The version check can be turned off using the `--nocliversion` option or the `options.nocliversion` in a configuration file or using the `ENSONOSTACKS_OPTIONS_NOCLIVERSION` environment variable.

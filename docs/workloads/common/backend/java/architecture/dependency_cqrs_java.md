@@ -1,6 +1,6 @@
 ---
 id: dependency_cqrs_java
-title: Stacks Core CQRS module
+title: Ensono Stacks Core CQRS module
 sidebar_label: Core CQRS module
 hide_title: false
 hide_table_of_contents: true

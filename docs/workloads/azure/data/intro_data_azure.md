@@ -1,10 +1,10 @@
 ---
 id: intro_data_azure
-title: Stacks Azure Data Platform
+title: Ensono Stacks Azure Data Platform
 sidebar_label: Introduction
 hide_title: false
 hide_table_of_contents: false
-description: Introduction to Stacks Azure Data Platform
+description: Introduction to Ensono Stacks Azure Data Platform
 keywords:
   - data
   - python
@@ -15,16 +15,16 @@ keywords:
   - template
 ---
 
-The [Stacks Azure Data Platform](https://github.com/ensono/stacks-azure-data) solution provides
+The [Ensono Stacks Azure Data Platform](https://github.com/ensono/stacks-azure-data) solution provides
 a framework for accelerating the deployment of a production-ready data platform.
 
-![Stacks Data Overview](images/stacks-data-overview.png)
+![Ensono Stacks Data Overview](images/stacks-data-overview.png)
 
-1. Use the [Stacks CLI](../../../stackscli/about) to generate a new data platform project.
+1. Use the [Ensono Stacks CLI](../../../stackscli/about) to generate a new data platform project.
 2. Build and deploy the data platform infrastructure into your Azure environment.
 3. Accelerate development of data workloads and ETL pipelines with [Datastacks](etl_pipelines/datastacks.md).
 
-The Stacks Data Platform utilises tools including **Azure Data Factory** for data
+The Ensono Stacks Data Platform utilises tools including **Azure Data Factory** for data
 ingestion and orchestration, **Databricks** for data processing and **Azure Data Lake Storage Gen2**
 for data lake storage. The solution is based around a [Medallion Architecture](etl_pipelines/etl_intro_data_azure.md#medallion-architecture), with Bronze, Silver and Gold layers for various stages of data preparation.
 

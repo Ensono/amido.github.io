@@ -1,7 +1,7 @@
 Contributing
 ------------------
 
-Thank you for considering contributing to [Ensono](https://www.ensonodigital.com) Stacks. It's people like you that continue to make Stacks the best it can be.
+Thank you for considering contributing to [Ensono](https://www.ensonodigital.com) Ensono Stacks. It's people like you that continue to make Ensono Stacks the best it can be.
 
 Following these guidelines helps you communicate and participate with the developers maintaining and developing these open source projects. We will cover:
 * How to file issues

@@ -108,7 +108,7 @@ springdoc:
     disable-swagger-default-url: true
     display-operation-id: true
     path: /swagger/index.html
-  packagesToScan: com.xxAMIDOxx.xxSTACKSxx.menu.api
+  packagesToScan: com.xxENSONOxx.xxSTACKSxx.menu.api
   api-docs:
     groups:
       enabled: true

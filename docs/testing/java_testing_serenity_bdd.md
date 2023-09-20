@@ -30,7 +30,7 @@ When you write your tests in a fluent, readable manner, these screenshots become
 
 ### Configurations
 
-The [Serenity conf](https://github.com/Ensono/stacks-webapp-template/blob/master/packages/scaffolding-cli/templates/test/xxAMIDOxx.xxSTACKSxx.E2E.Serenity/src/test/resources/serenity.conf) file need to be configured.
+The [Serenity conf](https://github.com/Ensono/stacks-webapp-template/blob/master/packages/scaffolding-cli/templates/test/xxENSONOxx.xxSTACKSxx.E2E.Serenity/src/test/resources/serenity.conf) file need to be configured.
 
 The following properties for different environments are required in the `src/test/resources/serenity.conf` configuration file.
 

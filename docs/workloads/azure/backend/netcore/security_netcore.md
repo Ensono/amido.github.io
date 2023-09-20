@@ -15,7 +15,7 @@ keywords:
 
 ## Overview
 
-The .NET Core Stacks API template contains code which can easily be configured to integrate with any Identity provider via the standard OAuth 2.0 protocol.
+The .NET Core Ensono Stacks API template contains code which can easily be configured to integrate with any Identity provider via the standard OAuth 2.0 protocol.
 
 
 
@@ -195,4 +195,4 @@ The `AuthTokenFixture.cs` class has been provided for storing the static JWT bea
 
 ### Authorization
 
-The Stacks template does not provide any functionality for complex authorization scenarios although this is simple enough to implement using .NET Core Authorization Policies and JWT token claims.
+The Ensono Stacks template does not provide any functionality for complex authorization scenarios although this is simple enough to implement using .NET Core Authorization Policies and JWT token claims.

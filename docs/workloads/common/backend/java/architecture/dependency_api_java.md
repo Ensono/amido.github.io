@@ -1,6 +1,6 @@
 ---
 id: dependency_api_java
-title: Stacks Core API module
+title: Ensono Stacks Core API module
 sidebar_label: Core API module
 hide_title: false
 hide_table_of_contents: true

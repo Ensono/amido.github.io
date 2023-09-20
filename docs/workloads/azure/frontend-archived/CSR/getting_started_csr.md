@@ -84,7 +84,7 @@ values={[
   ```
 
   ```bash
-  set APP_BASE_PATH: ## Stacks base path
+  set APP_BASE_PATH: ## Ensono Stacks base path
   ```
 
   ```bash
@@ -120,7 +120,7 @@ values={[
   ```
 
   ```bash
-  export APP_BASE_PATH: ## Stacks base path
+  export APP_BASE_PATH: ## Ensono Stacks base path
   ```
 
   ```bash
@@ -271,6 +271,6 @@ Since the frameworks provide real examples on deployed applications, we recommen
 
 ## Feedback
 
-Your feedback and contributions will help us to improve. See the [Stacks guide to new contributions](/docs/contributions) for more information.
+Your feedback and contributions will help us to improve. See the [Ensono Stacks guide to new contributions](/docs/contributions) for more information.
 
 <HideNavigation prev />

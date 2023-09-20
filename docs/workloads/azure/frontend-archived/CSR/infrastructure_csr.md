@@ -23,7 +23,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ## Overview
 
-This page present the high level design of the reference implementation of the Stacks client-side rendering application.
+This page present the high level design of the reference implementation of the Ensono Stacks client-side rendering application.
 
 **This page assumes that the core infrastructure has already been provisioned. Instructions and additional information on the core infrastructure can be found [here](../../../../infrastructure/azure/core_infrastructure.md)**
 

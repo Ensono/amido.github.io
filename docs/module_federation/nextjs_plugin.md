@@ -1,14 +1,15 @@
 ---
 id: nextjs_plugin
-title: Stacks with NextJs Module Federation
-sidebar_label: Stacks Module Federation
-description: Using stacks with NextJs Module Federation
+title: Ensono Stacks with NextJs Module Federation
+sidebar_label: Ensono Stacks Module Federation
+description: Using Ensono stacks with NextJs Module Federation
 keywords:
   - Nx
   - monorepo
   - stacks
   - Generator
   - Executor
+  - ensono
 ---
 
 import Tabs from '@theme/Tabs';
@@ -24,9 +25,9 @@ Module Federation is a feature introduced in Webpack 5, it enables developers to
 
 It aims to enable a federated modules architecture in NextJs, enabling you to split a monolithic NextJs application into smaller, independently deployable parts.
 
-The following guide details the steps of how to set up Module Federation with a Stacks NextJs application. You can also visit this [GitHub repo](https://github.com/Ensono/stacks-nextjs-federated-modules-example) to view an existing example application
+The following guide details the steps of how to set up Module Federation with a Ensono Stacks NextJs application. You can also visit this [GitHub repo](https://github.com/Ensono/stacks-nextjs-federated-modules-example) to view an existing example application
 
-## NextJs Module Federation with Stacks
+## NextJs Module Federation with Ensono Stacks
 
 ### Prerequisites
 
@@ -57,9 +58,9 @@ We recommend using the latest LTS version of Node, you can find the latest LTS v
 
 ### Get Started
 
-#### Create a new Stacks and Nx workspace
+#### Create a new Ensono Stacks and Nx workspace
 
-You can scaffold a brand-new Stacks and Nx workspace using the **@ensono-stacks/create-stacks-workspace** package.
+You can scaffold a brand-new Ensono Stacks and Nx workspace using the **@ensono-stacks/create-stacks-workspace** package.
 
 Follow the interactive questions creating a new NextJs application named <b>host</b>:
 
@@ -73,7 +74,7 @@ Visit the [@ensono-stacks/create-stacks-workspace](/docs/getting_started/create-
 
 :::
 
-This will generate a new Stacks Nx workspace containing a NextJs <b>host</b> application 
+This will generate a new Ensono Stacks Nx workspace containing a NextJs <b>host</b> application 
 
 First We need to install the NextJs federated modules plugin
 

@@ -97,8 +97,8 @@
         "sidebar_label": "Project Types - Web applications"
       },
       "workloads/frontend/monorepo": {
-        "title": "Stacks Monorepo",
-        "sidebar_label": "Stacks Monorepo"
+        "title": "Ensono Stacks Monorepo",
+        "sidebar_label": "Ensono Stacks Monorepo"
       },
       "workloads/frontend/server_side_cache": {
         "title": "Server Side Cache",

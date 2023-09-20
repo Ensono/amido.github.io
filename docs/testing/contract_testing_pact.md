@@ -171,7 +171,7 @@ Please provide the Pact_Broker_URL and Pact_Broker_Token to the provider's pom
 
 ```text
 - Consumer: Creating the contract
-  Run the 'GenericMenuConsumer.java' class from the following path: api-tests/src/test/java/com/xxAMIDOxx/xxSTACKSxx/api/pact/GenericMenuConsumer.java
+  Run the 'GenericMenuConsumer.java' class from the following path: api-tests/src/test/java/com/xxENSONOxx/xxSTACKSxx/api/pact/GenericMenuConsumer.java
 
   Note: this step can be skipped in case the pact file already exists in .pact/pacts directory.
 - Execute mvn pact:publish from 'api-tests' directory to publish the consumer pact to broker.
