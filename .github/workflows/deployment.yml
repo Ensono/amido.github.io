@@ -38,5 +38,5 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: master
-          folder: .
+          folder: build
           clean: true
