@@ -16,11 +16,7 @@ keywords:
   - get started
 ---
 
-import ResponsivePlayer from "../../../../../src/pages/Components/ResponsivePlayer/ResponsivePlayer";
-
 ## Create a custom Java project template from the command line
-
-<ResponsivePlayer url="https://vimeo.com/640390929" />
 
 :::caution
 Before starting, if using Azure please make sure that your environment meets all the [requirements](../../../azure/backend/java/requirements_java.md).
@@ -62,5 +58,5 @@ that archetype as a template. To do so we do:
 
 
 :::note
-For now, until the release of the Amido STACKS CLI Tool v2 is released, this is the only way to get started with Stacks.
+For now, until the release of the Ensono Stacks CLI Tool v2 is released, this is the only way to get started with Stacks.
 :::

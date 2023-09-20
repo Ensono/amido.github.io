@@ -10,7 +10,7 @@ keywords:
 - server-side
 ---
 
-import HideNavigation  from "../../src/pages/HideNavigation";
+import HideNavigation  from "../../src/components/HideNavigation/HideNavigation";
 
 The following pages describe in detail how Stacks is developed (see relevant sections for .Net or Java). 
 

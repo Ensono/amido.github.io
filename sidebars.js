@@ -1,7 +1,6 @@
 module.exports = {
   docs: {
     "Learn about Stacks": ["index", "contributions", "code_of_conduct"],
-    Architecture: ["workloads/azure/backend/architecture-overview"],
     "Development Support": [
       "developer/developer_patterns_readme",
       {
@@ -12,11 +11,6 @@ module.exports = {
           "developer/java/patterns/java_mapstruct_mapping",
           "developer/java/patterns/java_swagger_annotations",
         ],
-      },
-      {
-        type: "category",
-        label: "Azure Development Patterns",
-        items: [],
       },
     ],
     Workloads: [
@@ -80,10 +74,10 @@ module.exports = {
             label: "Frontend Web Applications",
             items: [
               "nx/nx_stacks",
+              "getting_started/setup",
               "module_federation/nextjs_plugin",
               "linting/eslint",
               "storybook/storybook_stacks",
-              "getting_started/setup",
               {
                 type: "category",
                 label: "Stacks Plugins",
@@ -307,11 +301,6 @@ module.exports = {
             items: ["infrastructure/azure/pipelines/azure_devops"],
           },
         ],
-      },
-      {
-        type: "category",
-        label: "Google Cloud Platform",
-        items: [],
       },
     ],
     "Quality Assurance": [

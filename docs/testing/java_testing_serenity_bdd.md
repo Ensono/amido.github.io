@@ -16,8 +16,6 @@ keywords:
   - serenity report
 ---
 
-import ResponsivePlayer from "../../src/pages/Components/ResponsivePlayer/ResponsivePlayer";
-
 In the Java world there are few tools that provide an easier experience with adding behaviour driven development to your automated testing better than [Serenity BDD](http://serenity-bdd.info/#/).  Not only is it very easy to use but it also adds a rich layer of reporting to your automated testing framework which is crucial for project management and keeping your stakeholders informed.
 
 
@@ -30,11 +28,9 @@ Serenity can also be configured to automatically take screenshots throughout the
 
 When you write your tests in a fluent, readable manner, these screenshots become part of the "living documentation" of your application.
 
-<ResponsivePlayer url="https://vimeo.com/486755397" />
-
 ### Configurations
 
-The [Serenity conf](https://github.com/amido/stacks-webapp-template/blob/master/packages/scaffolding-cli/templates/test/xxAMIDOxx.xxSTACKSxx.E2E.Serenity/src/test/resources/serenity.conf) file need to be configured.
+The [Serenity conf](https://github.com/Ensono/stacks-webapp-template/blob/master/packages/scaffolding-cli/templates/test/xxAMIDOxx.xxSTACKSxx.E2E.Serenity/src/test/resources/serenity.conf) file need to be configured.
 
 The following properties for different environments are required in the `src/test/resources/serenity.conf` configuration file.
 

@@ -1,0 +1,28 @@
+.containerSelects {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 1rem;
+  padding: 0;
+  max-width: 17rem;
+  font-size: 0.7rem;
+}
+
+.disabledButton {
+  cursor: default;
+}
+
+.disabledButton:hover {
+  cursor: default;
+}
+
+.pickerContainer {
+  display: flex;
+  justify-content: center;
+}
+
+@media only screen and (min-width: 768px) {
+  .containerSelects {
+    font-size: 1rem;
+  }
+}

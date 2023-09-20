@@ -74,5 +74,5 @@ values={[
 </Tabs>
 
 :::note
-The current version of Amido Stacks is using Java 11 (Current LTS, recommended).
+The current version of Ensono Stacks is using Java 11 (Current LTS, recommended).
 :::
