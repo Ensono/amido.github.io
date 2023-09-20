@@ -1,11 +1,10 @@
 permissions:
   contents: write
 name: stacks.website
-on:
-  pull_request:
-    branches:
-        - master
-        - main
+on: 
+  push:
+    branches: 
+      master
 jobs:
   build:
     name: Install packages and build application
