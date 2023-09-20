@@ -3,10 +3,11 @@ permissions:
   pages: write
   id-token: write
 name: stacks.website
-on: 
-  push:
-      branches:
+on:
+  pull_request:
+    branches:
         - master
+        - main
 jobs:
   build:
     name: Install packages and build application
