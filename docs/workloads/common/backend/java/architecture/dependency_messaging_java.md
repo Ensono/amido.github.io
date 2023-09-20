@@ -19,7 +19,7 @@ import {siteVariables} from '@site/versions';
 ## Module Overview
 
 This module provides basic functionality to handle event management in an application. It contains the
-base class for `ApplicationEvent` instances as showcased in the [Stacks workflow with CQRS and Events](https://github.com/Ensono/stacks-java-cqrs-events/)
+base class for `ApplicationEvent` instances as showcased in the [Ensono Stacks workflow with CQRS and Events](https://github.com/Ensono/stacks-java-cqrs-events/)
 as well as base classes to construct publishers and listeners. There is also a decorated publisher class
 that also initialises a listener.
 
