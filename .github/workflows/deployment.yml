@@ -15,12 +15,12 @@ jobs:
         steps:
             # Checkout the documentation repository
             - name: Checkout Repo
-              uses: actions/checkout@v2
+              uses: actions/checkout@v4
             # Configure node so that the build can run
             - name: Use NodeJS
               uses: actions/setup-node@v3
               with:
-                    node-version: '16.x'
+                    node-version: '16.*'
             # Install Node dependencies
             - name: Install Dependencies
               run: npm install
