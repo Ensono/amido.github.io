@@ -15,12 +15,12 @@ keywords:
   - eslint
 ---
 
-import HideNavigation  from "../../../../../src/pages/HideNavigation";
+import HideNavigation  from "../../../../../src/components/HideNavigation/HideNavigation";
 
 Given we provide boilerplate WebApps designing for accessibility, we would
 like to have optionality to support broad range of browsers. We look to
 following the standards set by Government Digital Services (GDS) on designing
-our WebApp and testing for compatibility. Amido's stacks supports latest version
+our WebApp and testing for compatibility. Ensono's stacks supports latest version
 of modern browsers.
 
 Next.js supports IE11 and all modern browsers out of the box using

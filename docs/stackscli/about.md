@@ -12,6 +12,6 @@ The CLI will help you get started with scaffolding your applications and workspa
 
 :::info
 
-We are currently updating this section, please visit the **[`stacks-cli`](https://github.com/amido/stacks-cli/releases)** releases page and download the latest releases **Stacks.CLI.Manual** to get started!
+We are currently updating this section, please visit the **[`stacks-cli`](https://github.com/Ensono/stacks-cli/releases)** releases page and download the latest releases **Stacks.CLI.Manual** to get started!
 
 :::

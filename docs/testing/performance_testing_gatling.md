@@ -14,13 +14,13 @@ keywords:
   - gatling report
 ---
 
-The Amido Stacks Performance Tests is a sample project demonstrating performance testing (Load testing) using the [Gatling](https://gatling.io/) tool.
+The Ensono Stacks Performance Tests is a sample project demonstrating performance testing (Load testing) using the [Gatling](https://gatling.io/) tool.
 
-The tests within this repository have been written against the Amido Stacks APIs.
+The tests within this repository have been written against the Ensono Stacks APIs.
 
 ## Getting started
 
-To get started with performance testing, first clone the [Amido Stacks Performance Tests](https://github.com/amido/stacks-performance-tests) repo:
+To get started with performance testing, first clone the [Ensono Stacks Performance Tests](https://github.com/Ensono/stacks-performance-tests) repo:
 
 `git@github.com:amido/stacks-performance-tests.git`
 

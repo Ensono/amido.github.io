@@ -10,7 +10,7 @@ keywords:
 - server-side
 ---
 
-import HideNavigation  from "../../../../src/pages/HideNavigation";
+import HideNavigation  from "../../../../src/components/HideNavigation/HideNavigation";
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ## Context

@@ -48,7 +48,7 @@ If you are Stackifying an existing Nx workspace, this must be added manually - a
 }
 ```
 
-Please see the [Stacks CLI documentation](https://stacks.amido.com/docs/stackscli/about) for information on each of these values.
+Please see the [Stacks CLI documentation](/docs/stackscli/about) for information on each of these values.
 
 ## Usage
 

@@ -1,3 +1,3 @@
 User-agent: *
 Disallow:
-Sitemap: https://stacks.amido.com/sitemap.xml
+Sitemap: https://stacks.ensono.com/sitemap.xml

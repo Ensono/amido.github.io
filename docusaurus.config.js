@@ -1,19 +1,25 @@
+// @ts-check
+// Note: type annotations allow type checking and IDEs autocompletion
+
 const remarkImages = require('remark-images');
 const rehypeTruncate = require('rehype-truncate');
 
-module.exports = {
-  title: "Amido Stacks ",
+require('dotenv').config();
+/** @type {import('@docusaurus/types').Config} */
+
+const config = {
+  title: "Ensono Stacks",
   tagline:
     "Helping projects gain momentum on digital transformation, with opinionated and modular boilerplate solutions",
-  url: "https://stacks.amido.com",
+  url: "https://stacks.ensono.com",
   baseUrl: "/",
   trailingSlash: false,
   onBrokenLinks: "warn",
-  favicon: "img/thumbnail_stacks.png",
-  organizationName: "Amido", // Usually your GitHub org/user name.
+  favicon: "img/icons/favicon.ico",
+  organizationName: "Ensono", // Usually your GitHub org/user name.
   projectName: "Stacks", // Usually your repo name.
   customFields: {
-    description: 'Amido Stacks is a catalogue of workload templates that\n' +
+    description: 'Ensono Stacks is a catalogue of workload templates that\n' +
         'instantly scaffold and deploy boilerplate software projects. Slash the time it takes to get productive on your software project.',
     keywords: [
       "Microsoft Azure",
@@ -43,27 +49,15 @@ module.exports = {
       "Cypress",
       "OWASP",
     ],
+    docSearch: {
+      appId: process.env.ALGOLIA_APP_ID,
+      apiKey: process.env.ALGOLIA_API_KEY,
+      indexName: process.env.ALGOLIA_INDEX_NAME,
+    }
   },
   themeConfig: {
-    gtag: {
-      trackingID: 'G-EKCQBC5CSJ',
-      anonymizeIP: true, // Should IPs be anonymized? (optional)
-    },
-    googleAnalytics: {
-      trackingID: 'G-EKCQBC5CSJ',
-      anonymizeIP: true, // Should IPs be anonymized?
-    },
-    algolia: {
-      apiKey: "56a3097b6350cd2363a8746a98c6c278",
-      indexName: "amido_stacks",
-
-      // Optional: see doc section bellow
-      contextualSearch: true,
-
-      // Optional: Algolia search parameters
-      searchParameters: {},
-
-      //... other Algolia params
+    colorMode: {
+      disableSwitch: true,
     },
     prism: {
       theme: require('prism-react-renderer/themes/github'),
@@ -73,41 +67,55 @@ module.exports = {
     navbar: {
       title: "",
       logo: {
-        alt: "Amido Stacks Logo",
-        src: "img/logo_wide.svg",
+        alt: "Ensono Stacks Logo",
+        src: "img/icons/ensono-logo.svg",
+        href: "https://www.ensono.com/",
+        width: 150,
+        height: 36,
+        className: "custom-navbar-logo-class"
       },
       items: [
         {
           to: "docs/",
           activeBasePath: "docs",
-          label: "Docs",
-          position: "right",
+          label: "Documentation",
         },
         {
-          href: "https://github.com/amido/amido.github.io",
+          href: "https://github.com/Ensono/amido.github.io",
           label: "GitHub",
-          position: "right",
+        },
+        {
+          href: "https://www.ensono.com/company/lets-connect/",
+          label: "Connect",
+          position: 'right'
         },
       ],
     },
-    footer: {
-      style: "dark",
+    footer: {      
       links: [
         {
-          title: "Docs",
+          title: "Documentation",
           items: [
             {
               label: "Getting Started",
               to: "docs/",
-            },
+            }
           ],
         },
         {
           title: "About Us",
           items: [
             {
-              label: "Amido",
-              href: "https://amido.com/",
+              label: "Ensono",
+              href: "https://ensono.com/",
+            },
+            {
+              label: "Get in touch",
+              href: "https://www.ensono.com/company/lets-connect/",
+            },
+            {
+              label: "Careers at Ensono",
+              href: "https://www.ensono.com/company/careers/",
             },
           ],
         },
@@ -116,12 +124,11 @@ module.exports = {
           items: [
             {
               label: "GitHub",
-              to: "https://github.com/amido/amido.github.io",
+              to: "https://github.com/Ensono/amido.github.io",
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Amido Ltd`,
     },
   },
   presets: [
@@ -130,7 +137,6 @@ module.exports = {
       {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-
           remarkPlugins: [remarkImages],
           rehypePlugins: [rehypeTruncate],
         },
@@ -140,8 +146,18 @@ module.exports = {
         sitemap: {
           changefreq: "weekly",
           priority: 0.5
-        }
+        },
+        gtag: {
+          trackingID: 'G-EKCQBC5CSJ',
+          anonymizeIP: true, // Should IPs be anonymized? (optional)
+        },
+        googleAnalytics: {
+          trackingID: 'G-EKCQBC5CSJ',
+          anonymizeIP: true, // Should IPs be anonymized?
+        },
       }
     ]
   ]
 };
+
+module.exports = config;

@@ -6,15 +6,13 @@
  */
 import React from 'react';
 import Layout from '@theme/Layout';
-import Head from '@docusaurus/Head';
 import BrowserOnly from '@docusaurus/BrowserOnly';
 
 
 function NotFound() {
   return (
     <Layout title="Page Not Found">
-      <Head>
-        <BrowserOnly>
+      <BrowserOnly  fallback={<div>Loading...</div>}>
         <script>
         {
           React.useEffect(() => {
@@ -27,8 +25,7 @@ function NotFound() {
           })
         }
         </script>
-        </BrowserOnly>
-      </Head>
+      </BrowserOnly>
       <div className="container margin-vert--xl">
         <div className="row">
           <div className="col col--6 col--offset-3">
