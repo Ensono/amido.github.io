@@ -1,6 +1,6 @@
 module.exports = {
   docs: {
-    "Learn about Stacks": ["index", "contributions", "code_of_conduct"],
+    "Learn about Ensono Stacks": ["index", "contributions", "code_of_conduct"],
     "Development Support": [
       "developer/developer_patterns_readme",
       {
