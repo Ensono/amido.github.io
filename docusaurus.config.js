@@ -69,7 +69,7 @@ const config = {
       logo: {
         alt: "Ensono Stacks Logo",
         src: "img/icons/ensono-logo.svg",
-        href: "https://www.ensono.com/",
+        href: "/",
         width: 150,
         height: 36,
         className: "custom-navbar-logo-class"
