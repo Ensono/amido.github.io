@@ -6,10 +6,10 @@ import styles from "@site/src/pages/styles.module.css";
 const text = {
     title: 'Technologies supported by Stacks',
     technologiesSupported: [
-        { logo: 'aws.svg', name: 'AWS' }, { logo: 'google-cloud.svg', name: 'Google Cloud' }, { logo: 'microsoft-azure.svg', name: 'Microsoft Azure' },
-        { logo: 'kubernetes.svg', name: 'Kubernetes' }, { logo: 'terraform.svg', name: 'Terraform' }, { logo: 'docker.svg', name: 'Docker' }, { logo: 'auth0.svg', name: 'Auth0' }, { logo: 'nx.svg', name: 'NX' },
-        { logo: 'nextjs.svg', name: 'NextJS' }, { logo: 'pact.svg', name: 'Pact' }, { logo: 'azure-data-factory.svg', name: 'Azure Data Factory' }, { logo: 'delta-lake.svg', name: 'Delta lake' }, { logo: 'databricks.svg', name: 'Databricks' }, 
-        { logo: 'nodejs.svg', name: 'NodeJS' }, { logo: 'java.svg', name: 'Java' }, { logo: 'csharp.svg', name: 'C#' }, { logo: 'typescript.svg', name: 'Typescript' }, { logo: 'python.svg', name: 'Python' },
+        { logo: 'aws.svg', name: 'AWS' }, { logo: 'microsoft-azure.svg', name: 'Microsoft Azure' },
+        { logo: 'kubernetes.svg', name: 'Kubernetes' }, { logo: 'terraform.svg', name: 'Terraform' }, { logo: 'docker.svg', name: 'Docker' }, { logo: 'dotnet.svg', name: '.NET' }, { logo: 'nx.svg', name: 'NX' },
+        { logo: 'nextjs.svg', name: 'NextJS' }, { logo: 'spring-boot.svg', name: 'Spring Boot' }, { logo: 'azure-data-factory.svg', name: 'Azure Data Factory' }, { logo: 'delta-lake.svg', name: 'Delta lake' }, { logo: 'databricks.svg', name: 'Databricks' }, 
+        { logo: 'java.svg', name: 'Java' }, { logo: 'csharp.svg', name: 'C#' }, { logo: 'typescript.svg', name: 'Typescript' }, { logo: 'python.svg', name: 'Python' },
     ]
 }
 
