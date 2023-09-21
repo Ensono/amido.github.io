@@ -201,7 +201,7 @@ is set to `false` then no authorization is required.
 #### Auth0 configuration properties
 
 If using Auth0 for authorization, Auth0 itself will need to be configured with both an API definition and an associated Application.
-There are corresponding configuration values required for the Stacks application, within the `auth.properties` file, e.g.
+There are corresponding configuration values required for the Ensono Stacks application, within the `auth.properties` file, e.g.
 
 ```text
 auth0.issuer=https://amidostacks.eu.auth0.com/

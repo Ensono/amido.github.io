@@ -16,19 +16,19 @@ The following tables show the configuration options that are available at the ro
 
 ### Global Options
 
-The following options can be applied to any command within the Stacks CLI.
+The following options can be applied to any command within the Ensono Stacks CLI.
 
 | Option                     | Environment Variable             | Description                                                                   | Default               | Options                                      |
 | -------------------------- | -------------------------------- | ----------------------------------------------------------------------------- | --------------------- | -------------------------------------------- |
-| `-c`, `--config`           | AMIDOSTACKS_CONFIG               | Path to the configuration file to use                                         |                       |                                              |
-| `-l`, `--loglevel`         | AMIDOSTACKS_LOG_LEVEL            | Level of logging to be used                                                   | `info`                | `debug`, `info`, `warning`, `error`, `fatal` |
-| `-f`, `--logformat`        | AMIDOSTACKS_LOG_FORMAT           | Output type of the logging                                                    | `text`                | `text`, `json`                               |
-| `--logcolour`              | AMIDOSTACKS_LOG_COLOUR           | State if logging should include colour                                        |                       |                                              |
-| `--logfile`                | AMIDOSTACKS_LOG_FILE             | Write all logs to the specified file                                          |                       |                                              |
-| `-w`, `--workingdirectory` | AMIDOSTACKS_DIRECTORY_WORKINGDIR | Directory that the projects should be created in                              | `${PWD}`              |                                              |
-| `--tempdir`                | AMIDOSTACKS_DIRECTORY_TEMPDIR    | Directory to be used by Stacks for its temp files                             | System temp directory |                                              |
-| `--nobanner`               | AMIDOSTACKS_OPTIONS_NOBANNER     | Do not display the Stacks banner when running the command                     | `false`               |                                              |
-| `--nocliversion`           | AMIDOSTACKS_OPTIONS_NOCLIVERSION | Do not perform a version check for the latest version of the Ensono Stacks CLI | `false`               |                                              |
+| `-c`, `--config`           | ENSONOSTACKS_CONFIG               | Path to the configuration file to use                                         |                       |                                              |
+| `-l`, `--loglevel`         | ENSONOSTACKS_LOG_LEVEL            | Level of logging to be used                                                   | `info`                | `debug`, `info`, `warning`, `error`, `fatal` |
+| `-f`, `--logformat`        | ENSONOSTACKS_LOG_FORMAT           | Output type of the logging                                                    | `text`                | `text`, `json`                               |
+| `--logcolour`              | ENSONOSTACKS_LOG_COLOUR           | State if logging should include colour                                        |                       |                                              |
+| `--logfile`                | ENSONOSTACKS_LOG_FILE             | Write all logs to the specified file                                          |                       |                                              |
+| `-w`, `--workingdirectory` | ENSONOSTACKS_DIRECTORY_WORKINGDIR | Directory that the projects should be created in                              | `${PWD}`              |                                              |
+| `--tempdir`                | ENSONOSTACKS_DIRECTORY_TEMPDIR    | Directory to be used by Ensono Stacks for its temp files                             | System temp directory |                                              |
+| `--nobanner`               | ENSONOSTACKS_OPTIONS_NOBANNER     | Do not display the Ensono Stacks banner when running the command                     | `false`               |                                              |
+| `--nocliversion`           | ENSONOSTACKS_OPTIONS_NOCLIVERSION | Do not perform a version check for the latest version of the Ensono Stacks CLI | `false`               |                                              |
 
 Global Options
 
@@ -60,7 +60,7 @@ Global Options
         </p>
       </td>
       <td>
-        <p>AMIDOSTACKS_PROJECT_NAME</p>
+        <p>ENSONOSTACKS_PROJECT_NAME</p>
       </td>
       <td>
         <p>Name of the project to create</p>
@@ -75,7 +75,7 @@ Global Options
         </p>
       </td>
       <td>
-        <p>AMIDOSTACKS_PROJECT_SOURCECONTROL_TYPE</p>
+        <p>ENSONOSTACKS_PROJECT_SOURCECONTROL_TYPE</p>
       </td>
       <td>
         <p>Source control system to be used</p>
@@ -94,7 +94,7 @@ Global Options
         </p>
       </td>
       <td>
-        <p>AMIDOSTACKS_PROJECT_SOURCECONTROL_URL</p>
+        <p>ENSONOSTACKS_PROJECT_SOURCECONTROL_URL</p>
       </td>
       <td>
         <p>URL to the remote repository</p>
@@ -109,7 +109,7 @@ Global Options
         </p>
       </td>
       <td>
-        <p>AMIDOSTACKS_PROJECT_SETTINGSFILE</p>
+        <p>ENSONOSTACKS_PROJECT_SETTINGSFILE</p>
       </td>
       <td>
         <p>
@@ -132,7 +132,7 @@ Global Options
         </p>
       </td>
       <td>
-        <p>AMIDOSTACKS_PROJECT_FRAMEWORK_TYPE</p>
+        <p>ENSONOSTACKS_PROJECT_FRAMEWORK_TYPE</p>
       </td>
       <td>
         <p>The framework that is to be used</p>
@@ -151,7 +151,7 @@ Global Options
         </p>
       </td>
       <td>
-        <p>AMIDOSTACKS_PROJECT_FRAMEWORK_OPTION</p>
+        <p>ENSONOSTACKS_PROJECT_FRAMEWORK_OPTION</p>
       </td>
       <td>
         <p>The sort of project to be created</p>
@@ -170,7 +170,7 @@ Global Options
         </p>
       </td>
       <td>
-        <p>AMIDOSTACKS_PROJECT_FRAMEWORK_VERSION</p>
+        <p>ENSONOSTACKS_PROJECT_FRAMEWORK_VERSION</p>
       </td>
       <td>
         <p>The version of the Ensono Stacks project to use.</p>
@@ -190,7 +190,7 @@ Global Options
         </p>
       </td>
       <td>
-        <p>AMIDOSTACKS_PROJECT_FRAMEWORK_PROPERTIES_PROP1</p>
+        <p>ENSONOSTACKS_PROJECT_FRAMEWORK_PROPERTIES_PROP1</p>
       </td>
       <td>
         <p>
@@ -212,7 +212,7 @@ Global Options
         </p>
       </td>
       <td>
-        <p>AMIDOSTACKS_PROJECT_FRAMEWORK_PROPERTIES_PROP2</p>
+        <p>ENSONOSTACKS_PROJECT_FRAMEWORK_PROPERTIES_PROP2</p>
       </td>
       <td></td>
       <td></td>
@@ -225,7 +225,7 @@ Global Options
         </p>
       </td>
       <td>
-        <p>AMIDOSTACKS_PROJECT_FRAMEWORK_PROPERTIES_PROP3</p>
+        <p>ENSONOSTACKS_PROJECT_FRAMEWORK_PROPERTIES_PROP3</p>
       </td>
       <td></td>
       <td></td>
@@ -238,7 +238,7 @@ Global Options
         </p>
       </td>
       <td>
-        <p>AMIDOSTACKS_PROJECT_FRAMEWORK_PROPERTIES_PROP5</p>
+        <p>ENSONOSTACKS_PROJECT_FRAMEWORK_PROPERTIES_PROP5</p>
       </td>
       <td></td>
       <td></td>
@@ -251,7 +251,7 @@ Global Options
         </p>
       </td>
       <td>
-        <p>AMIDOSTACKS_PROJECT_FRAMEWORK_PROPERTIES_PROP5</p>
+        <p>ENSONOSTACKS_PROJECT_FRAMEWORK_PROPERTIES_PROP5</p>
       </td>
       <td></td>
       <td></td>
@@ -264,7 +264,7 @@ Global Options
         </p>
       </td>
       <td>
-        <p>AMIDOSTACKS_PLATFORM_TYPE</p>
+        <p>ENSONOSTACKS_PLATFORM_TYPE</p>
       </td>
       <td>
         <p>Platform being deployed to</p>
@@ -283,7 +283,7 @@ Global Options
         </p>
       </td>
       <td>
-        <p>AMIDOSTACKS_PIPELINE</p>
+        <p>ENSONOSTACKS_PIPELINE</p>
       </td>
       <td>
         <p>Pipeline being used to build the project</p>
@@ -302,7 +302,7 @@ Global Options
         </p>
       </td>
       <td>
-        <p>AMIDOSTACKS_CLOUD</p>
+        <p>ENSONOSTACKS_CLOUD</p>
       </td>
       <td>
         <p>Cloud platform being used</p>
@@ -321,7 +321,7 @@ Global Options
         </p>
       </td>
       <td>
-        <p>AMIDOSTACKS_CLOUD_REGION</p>
+        <p>ENSONOSTACKS_CLOUD_REGION</p>
       </td>
       <td>
         <p>Region that the project will be deployed to</p>
@@ -336,7 +336,7 @@ Global Options
         </p>
       </td>
       <td>
-        <p>AMIDOSTACKS_CLOUD_GROUP</p>
+        <p>ENSONOSTACKS_CLOUD_GROUP</p>
       </td>
       <td>
         <p>Group in the cloud platform that will hold all the resources</p>
@@ -351,7 +351,7 @@ Global Options
         </p>
       </td>
       <td>
-        <p>AMIDOSTACKS_BUSINESS_COMPANY</p>
+        <p>ENSONOSTACKS_BUSINESS_COMPANY</p>
       </td>
       <td>
         <p>Name of your company or organisation</p>
@@ -366,7 +366,7 @@ Global Options
         </p>
       </td>
       <td>
-        <p>AMIDOSTACKS_BUSINESS_DOMAIN</p>
+        <p>ENSONOSTACKS_BUSINESS_DOMAIN</p>
       </td>
       <td>
         <p>Area of the company that is responsible for the project</p>
@@ -381,7 +381,7 @@ Global Options
         </p>
       </td>
       <td>
-        <p>AMIDOSTACKS_BUSINESS_COMPONENT</p>
+        <p>ENSONOSTACKS_BUSINESS_COMPONENT</p>
       </td>
       <td>
         <p>Component of the overall project</p>
@@ -396,7 +396,7 @@ Global Options
         </p>
       </td>
       <td>
-        <p>AMIDOSTACKS_TERRAFORM_BACKEND_STORAGE</p>
+        <p>ENSONOSTACKS_TERRAFORM_BACKEND_STORAGE</p>
       </td>
       <td>
         <p>Name of the storage account being used for the state</p>
@@ -411,7 +411,7 @@ Global Options
         </p>
       </td>
       <td>
-        <p>AMIDOSTACKS_TERRAFORM_BACKEND_GROUP</p>
+        <p>ENSONOSTACKS_TERRAFORM_BACKEND_GROUP</p>
       </td>
       <td>
         <p>Group name of the storage account</p>
@@ -426,7 +426,7 @@ Global Options
         </p>
       </td>
       <td>
-        <p>AMIDOSTACKS_TERRAFORM_BACKEND_CONTAINER</p>
+        <p>ENSONOSTACKS_TERRAFORM_BACKEND_CONTAINER</p>
       </td>
       <td>
         <p>Container being used to store the data</p>
@@ -441,7 +441,7 @@ Global Options
         </p>
       </td>
       <td>
-        <p>AMIDOSTACKS_NETWORK_BASE_DOMAIN_EXTERNAL</p>
+        <p>ENSONOSTACKS_NETWORK_BASE_DOMAIN_EXTERNAL</p>
       </td>
       <td>
         <p>External domain root to be used for the projects</p>
@@ -456,7 +456,7 @@ Global Options
         </p>
       </td>
       <td>
-        <p>AMIDOSTACKS_NETWORK_BASE_DOMAIN_INTERNAL</p>
+        <p>ENSONOSTACKS_NETWORK_BASE_DOMAIN_INTERNAL</p>
       </td>
       <td>
         <p>Internal domain root to be used for projects.</p>
@@ -478,7 +478,7 @@ Global Options
         </p>
       </td>
       <td>
-        <p>AMIDOSTACKS_OPTIONS_CMDLOG</p>
+        <p>ENSONOSTACKS_OPTIONS_CMDLOG</p>
       </td>
       <td>
         <p>
@@ -504,7 +504,7 @@ Global Options
         </p>
       </td>
       <td>
-        <p>AMIDOSTACKS_OPTIONS_DRYRUN</p>
+        <p>ENSONOSTACKS_OPTIONS_DRYRUN</p>
       </td>
       <td>
         <p>
@@ -527,7 +527,7 @@ Global Options
         </p>
       </td>
       <td>
-        <p>AMIDOSTACKS_SETTINGSFILE</p>
+        <p>ENSONOSTACKS_SETTINGSFILE</p>
       </td>
       <td>
         <p>Name of the file to look for in the project</p>
@@ -546,7 +546,7 @@ Global Options
         </p>
       </td>
       <td>
-        <p>AMIDOSTACKS_CMDLOG</p>
+        <p>ENSONOSTACKS_CMDLOG</p>
       </td>
       <td>
         <p>Generate a log of all the commands that the CLI has run.</p>
@@ -569,7 +569,7 @@ Global Options
         </p>
       </td>
       <td>
-        <p>AMIDOSTACKS_DRYRUN</p>
+        <p>ENSONOSTACKS_DRYRUN</p>
       </td>
       <td>
         <p>
@@ -591,7 +591,7 @@ Global Options
         </p>
       </td>
       <td>
-        <p>AMIDOSTACKS_SAVE</p>
+        <p>ENSONOSTACKS_SAVE</p>
       </td>
       <td>
         <p>
@@ -618,7 +618,7 @@ Global Options
         </p>
       </td>
       <td>
-        <p>AMIDOSTACKS_NOCLEANUP</p>
+        <p>ENSONOSTACKS_NOCLEANUP</p>
       </td>
       <td>
         <p>
@@ -640,7 +640,7 @@ Global Options
         </p>
       </td>
       <td>
-        <p>AMIDOSTACKS_FORCE</p>
+        <p>ENSONOSTACKS_FORCE</p>
       </td>
       <td>
         <p>

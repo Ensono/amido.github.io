@@ -1,6 +1,6 @@
 ---
 id: dependency_parent_java
-title: Stacks Parent module
+title: Ensono Stacks Parent module
 sidebar_label: Parent module
 hide_title: false
 hide_table_of_contents: true
@@ -18,7 +18,7 @@ import {siteVariables} from '@site/versions';
 
 ## Module Overview
 
-This parent module provides shared functionality to the Stacks java modules. It's based on Spring
+This parent module provides shared functionality to the Ensono Stacks java modules. It's based on Spring
 and contains the dependency management, shared properties, plugins, profiles, reporting and repositories.
 It's intended to be the parent module for Ensono Stacks but can also get used in your project.
 

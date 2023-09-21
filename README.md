@@ -25,18 +25,18 @@ Configure the Algolia Crawler - https://crawler.algolia.com/
 
 The login email is `stacks@ensono.com`
 
-### Stacks Repositories
+### Ensono Stacks Repositories
 These are the repositories that make up the Stacks platform:
-- [Stacks Webapp Template](https://github.com/Ensono/stacks-webapp-template)
-- [Stacks .NET](https://github.com/Ensono/stacks-dotnet)
-- [Stacks Java](https://github.com/Ensono/stacks-java)
-- [Stacks Java with CQRS](https://github.com/Ensono/stacks-java-cqrs)
-- [Stacks Java with CQRS and Events](https://github.com/Ensono/stacks-java-cqrs-events)
-- [Stacks Frontend](https://github.com/Ensono/stacks-nx-plugins)
-- [Stacks Pipeline Templates](https://github.com/Ensono/stacks-pipeline-templates)
-- [Stacks Terraform](https://github.com/Ensono/stacks-terraform)
-- [Stacks Azure Infrastructure](https://github.com/Ensono/stacks-infrastructure-aks)
-- [Stacks Azure Data Platform](https://github.com/Ensono/stacks-azure-data)
+- [Ensono Stacks Webapp Template](https://github.com/Ensono/stacks-webapp-template)
+- [Ensono Stacks .NET](https://github.com/Ensono/stacks-dotnet)
+- [Ensono Stacks Java](https://github.com/Ensono/stacks-java)
+- [Ensono Stacks Java with CQRS](https://github.com/Ensono/stacks-java-cqrs)
+- [Ensono Stacks Java with CQRS and Events](https://github.com/Ensono/stacks-java-cqrs-events)
+- [Ensono Stacks Frontend](https://github.com/Ensono/stacks-nx-plugins)
+- [Ensono Stacks Pipeline Templates](https://github.com/Ensono/stacks-pipeline-templates)
+- [Ensono Stacks Terraform](https://github.com/Ensono/stacks-terraform)
+- [Ensono Stacks Azure Infrastructure](https://github.com/Ensono/stacks-infrastructure-aks)
+- [Ensono Stacks Azure Data Platform](https://github.com/Ensono/stacks-azure-data)
 
 ### Packages
 - [NuGet](https://www.nuget.org/profiles/amidostacks)

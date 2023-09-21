@@ -16,7 +16,7 @@ keywords:
 import HideNavigation  from "../../../../../src/components/HideNavigation/HideNavigation";
 
 
-## Stacks Java Spring Boot REST API Application
+## Ensono Stacks Java Spring Boot REST API Application
 
 ### Overview
 

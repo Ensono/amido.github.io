@@ -26,7 +26,7 @@ You can customize the deployment of the project running a handful of command lin
 by cloning one of the workload repositories and then installing the project as a Maven archetype locally; from there, we can create a new project by using
 that archetype as a template. To do so we do:
 
-1. Clone any of the Stacks Java Workloads (`simple-api`, `stacks-java-cqrs` or `stacks-java-cqrs-events`)
+1. Clone any of the Ensono Stacks Java Workloads (`simple-api`, `stacks-java-cqrs` or `stacks-java-cqrs-events`)
 2. Navigate to the `<directory you cloned the project into>/java` in the terminal
 3. Then issue the following Maven commands, using the included wrapper:
    1. ``./mvnw archetype:create-from-project -DpropertyFile=archetype.properties`` - To create the archetype
@@ -58,5 +58,5 @@ that archetype as a template. To do so we do:
 
 
 :::note
-For now, until the release of the Ensono Stacks CLI Tool v2 is released, this is the only way to get started with Stacks.
+For now, until the release of the Ensono Stacks CLI Tool v2 is released, this is the only way to get started with Ensono Stacks.
 :::

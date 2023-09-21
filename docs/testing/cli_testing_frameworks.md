@@ -1,7 +1,7 @@
 ---
 id: cli_testing_frameworks
-title: Stacks Testing Frameworks
-sidebar_label: Stacks Testing Frameworks
+title: Ensono Stacks Testing Frameworks
+sidebar_label: Ensono Stacks Testing Frameworks
 description: Bootstrap your framework using the cli testing frameworks
 keywords:
   - bootstrap
@@ -16,7 +16,7 @@ import HideNavigation  from "../../src/components/HideNavigation/HideNavigation"
 Building testing frameworks from scratch requires a lot of boilerplate code. It is also hard to know how to get started without examples.
 
 As part of the Ensono Stacks projects we have developed a range of testing frameworks for each part of our solutions that are already built in, which can be bootstrapped and tailored to your current project with just one command.
- In addition they also exist as standalone solutions that can be run cloned and run without the need to build the entire solution can can be modified to applications and workloads outside of stacks.
+ In addition they also exist as standalone solutions that can be run cloned and run without the need to build the entire solution can can be modified to applications and workloads outside of Ensono Stacks.
 
 ## Bootstrap your framework
 

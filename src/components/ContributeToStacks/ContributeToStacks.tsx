@@ -7,7 +7,7 @@ import customStyle from "./ContributeToStacks.module.css";
 import styles from "@site/src/pages/styles.module.css";
 const text = {
     contribute: {
-      title: "Contribute to Stacks",
+      title: "Contribute to Ensono Stacks",
       link: "contributions",
       description: "As an open source project, you can be a part of the Github community shaping Ensono Stacks",
       img: '/img/icons/ensono-icon_puzzle-v_0222.png',

@@ -15,13 +15,13 @@ keywords:
   - medallion
 ---
 
-The Stacks Data Platform solution accelerates the generation of production-ready ETL / ELT pipelines and workloads. New data engineering workloads can be generated through the [Datastacks](./datastacks.md) utility, while a range of example data workloads and pipelines are also provided. These workloads cover all stages from
+The Ensono Stacks Data Platform solution accelerates the generation of production-ready ETL / ELT pipelines and workloads. New data engineering workloads can be generated through the [Datastacks](./datastacks.md) utility, while a range of example data workloads and pipelines are also provided. These workloads cover all stages from
 ingesting data from source, applying data transformations across data lake layers, ultimately enabling end-user data
 visualisations and analytics.
 
 ## Medallion architecture
 
-The data lake structure and approach used in Stacks is based upon the
+The data lake structure and approach used in Ensono Stacks is based upon the
 [medallion architecture](https://www.databricks.com/glossary/medallion-architecture) design pattern. This approach
 delivers a lakehouse solution, with the following structured data transformation layers:
 
@@ -31,7 +31,7 @@ delivers a lakehouse solution, with the following structured data transformation
 
 ## ETL utilities
 
-Stacks data platform features several auxiliary utilities to enhance the process for developing and deploying
+Ensono Stacks data platform features several auxiliary utilities to enhance the process for developing and deploying
 production-ready data pipelines and workloads.
 
 * [Datastacks](datastacks.md): A CLI tool designed to facilitate the creation of custom pipelines using predefined templates.

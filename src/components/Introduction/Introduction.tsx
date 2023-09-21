@@ -9,7 +9,7 @@ import {WhatStacksCanDo} from "../";
 
 const text = {
     title: (
-        <>Stacks is the <span className={styles.primaryColour}>cloud-native software factory</span> for digital transformations that work.</>
+        <>Ensono Stacks is the <span className={styles.primaryColour}>cloud-native software factory</span> for digital transformations that work.</>
     ),
     benefitsList: [
         'Increase project predictability with reliable, tried and tested code.',

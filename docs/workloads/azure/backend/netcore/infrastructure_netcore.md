@@ -2,7 +2,7 @@
 id: infrastructure_netcore
 title: .NET Core - Azure Infrastructure
 sidebar_label: Infrastructure
-description: High level design of the reference implementation of the .NET Core Stacks REST API with CQRS.
+description: High level design of the reference implementation of the .NET Core Ensono Stacks REST API with CQRS.
 keywords:
   - .net core
   - rest api
@@ -20,7 +20,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ## Overview
 
-This page present the high level design of the reference implementation of the .NET Core Stacks REST API with CQRS.
+This page present the high level design of the reference implementation of the .NET Core Ensono Stacks REST API with CQRS.
 
 **This page assumes that the core infrastructure has already been provisioned. Instructions and additional information on the core infrastructure can be found [here](../../../../infrastructure/azure/core_infrastructure.md)**
 

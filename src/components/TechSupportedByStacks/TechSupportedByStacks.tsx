@@ -4,7 +4,7 @@ import customStyle from "./TechSupportedByStacks.module.css";
 import styles from "@site/src/pages/styles.module.css";
 
 const text = {
-    title: 'Technologies supported by Stacks',
+    title: 'Technologies supported by Ensono Stacks',
     technologiesSupported: [
         { logo: 'aws.svg', name: 'AWS' }, { logo: 'microsoft-azure.svg', name: 'Microsoft Azure' },
         { logo: 'kubernetes.svg', name: 'Kubernetes' }, { logo: 'terraform.svg', name: 'Terraform' }, { logo: 'docker.svg', name: 'Docker' }, { logo: 'dotnet.svg', name: '.NET' }, { logo: 'nx.svg', name: 'NX' },

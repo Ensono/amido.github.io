@@ -6,7 +6,7 @@ import styles from "@site/src/pages/styles.module.css";
 import customStyle from "./WhatStacksCanDo.module.css";
 
 const text = {
-    title: 'What can you do with Stacks?',
+    title: 'What can you do with Ensono Stacks?',
     description: (baseUrl: string) => (
         <>Choose a <a href={baseUrl}> workload</a> below and you can be up-and-running with a project in less than an hour:</>
     )

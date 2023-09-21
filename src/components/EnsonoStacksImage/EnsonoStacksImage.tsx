@@ -10,7 +10,7 @@ const text = {
     buttonText: 'Show me how',
     logo: {
         url: "/img/icons/stacks-logo.svg",
-        alt: "Stacks Icon"
+        alt: "Ensono Stacks Icon"
     },
     image: {
         alt: 'Ensono Image'

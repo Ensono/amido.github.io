@@ -1,6 +1,6 @@
 ---
 id: dependency_commons_java
-title: Stacks Core Commons module
+title: Ensono Stacks Core Commons module
 sidebar_label: Core Commons module
 hide_title: false
 hide_table_of_contents: true
@@ -18,10 +18,10 @@ import {siteVariables} from '@site/versions';
 
 ## Module Overview
 
-This module provides common code used by more than one of the Stacks modules: Both [Events](https://github.com/Ensono/stacks-java-core-messaging/)
+This module provides common code used by more than one of the Ensono Stacks modules: Both [Events](https://github.com/Ensono/stacks-java-core-messaging/)
 and [CQRS Commands](https://github.com/Ensono/stacks-java-core-cqrs/) use the `OperationsContext` abstract
 class and `StacksPersistence` provides a basic CRUD repository interface used in persistence related
-modules like[Stacks Cosmos](https://github.com/Ensono/stacks-java-cosmos). Please refer to these
+modules like[Ensono Stacks Cosmos](https://github.com/Ensono/stacks-java-cosmos). Please refer to these
 modules as examples.
 
 ## Module Structure

@@ -60,7 +60,7 @@ Currently supported pipeline tools are [Azure Devops](https://azure.microsoft.co
 
 :::caution
 
-The `build` files will only be generated if required project values have been collected from the [Stacks CLI](/docs/getting_started/setup#option-1-stacks-cli) or through the [@ensono-stacks/create-stacks-workspace](/docs/getting_started/setup#option-2-create-stacks-workspace-generator) plugin.
+The `build` files will only be generated if required project values have been collected from the [Ensono Stacks CLI](/docs/getting_started/setup#option-1-stacks-cli) or through the [@ensono-stacks/create-stacks-workspace](/docs/getting_started/setup#option-2-create-stacks-workspace-generator) plugin.
 
 :::
 

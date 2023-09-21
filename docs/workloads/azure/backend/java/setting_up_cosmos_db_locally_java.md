@@ -61,14 +61,14 @@ Based on the template the CosmosDB has to contain a fixed structure.
 
 Create a collection `Stacks` with a container id `menu` and the partition key `/id`.
 
-Create a database called Stacks for the application, and a database called `CosmosDBPackage` for the
+Create a database called Ensono Stacks for the application, and a database called `CosmosDBPackage` for the
 integration tests of the CosmosDB package (using the same container id and partition key as the main database).
 
 ![cosmosdb](/img/cosmosdb_emulator_1.png)
 
 <br />
 
-The **Stacks** database should have a container called **Menu** partitioned by **/id**.
+The **Ensono Stacks** database should have a container called **Menu** partitioned by **/id**.
 
 ![cosmosdb](/img/cosmosdb_emulator_2.png)
 

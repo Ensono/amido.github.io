@@ -1,8 +1,8 @@
 ---
 id: nx_stacks
-title: Stacks with Nx
-sidebar_label: Stacks with Nx
-description: Using stacks with Nx
+title: Ensono Stacks with Nx
+sidebar_label: Ensono Stacks with Nx
+description: Using Ensono Stacks with Nx
 keywords:
   - Nx
   - monorepo
@@ -14,7 +14,7 @@ keywords:
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-The ideologies of Stacks and [`Nx`](https://nx.dev/) are aligned in their focus on providing businesses with a framework that accelerates development, allowing you to focus on business objectives with best practice code. Leveraging Nx allows us to build upon that work and to fill the gaps with infrastructure, pipelines and the integration with other Stacks subsystems. Leveraging Nx allows a common developer experience, global communities of support, and an enterprise ready base.
+The ideologies of Ensono Stacks and [`Nx`](https://nx.dev/) are aligned in their focus on providing businesses with a framework that accelerates development, allowing you to focus on business objectives with best practice code. Leveraging Nx allows us to build upon that work and to fill the gaps with infrastructure, pipelines and the integration with other Ensono Stacks subsystems. Leveraging Nx allows a common developer experience, global communities of support, and an enterprise ready base.
 
 <details>
   <summary>What is Nx?</summary>
@@ -27,7 +27,7 @@ Find out more about Nx through their official [documentation](https://nx.dev/get
 
 </details>
 
-For the reasons listed above we have chosen to use Nx within Stacks for CSR and SSR frontend web applications, capitalising on Nx generators and executors to streamline your development and testing processes.
+For the reasons listed above we have chosen to use Nx within Ensono Stacks for CSR and SSR frontend web applications, capitalising on Nx generators and executors to streamline your development and testing processes.
 
 <details>
   <summary>What are Nx Generators and Executors?</summary>

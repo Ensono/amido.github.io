@@ -9,18 +9,18 @@ keywords:
   - testing
 ---
 
-Data workloads generated in Stacks feature a framework for testing. Automated tests are essential at every stage of a data pipeline for reasons including:
+Data workloads generated in Ensono Stacks feature a framework for testing. Automated tests are essential at every stage of a data pipeline for reasons including:
 
 - Early detection of issues: Catch errors and issues early in the data pipeline development process.
 - Regression testing: As new code is added, ensure that changes do not introduce regressions or break existing functionality.
 - Support CI/CD: Running automated tests are an essential part of the CI/CD process.
 - Collaboration: A shared set of expectations and a common framework for testing can help collaboration between developers and end users.
 
-In addition to the automated tests below, Stacks also has a framework for [data quality testing](./data_quality_azure.md).
+In addition to the automated tests below, Ensono Stacks also has a framework for [data quality testing](./data_quality_azure.md).
 
 ## Unit tests
 
-Unit tests are implemented throughout the Stacks solution and recommended for all data workloads. Python code is tested using [Pytest](https://docs.pytest.org/en/7.2.x/).
+Unit tests are implemented throughout the Ensono Stacks solution and recommended for all data workloads. Python code is tested using [Pytest](https://docs.pytest.org/en/7.2.x/).
 
 Within a data workload generated through [Datastacks](./datastacks.md), a placeholder for unit tests is found under `tests/unit`. These tests will be executed as part of its Azure DevOps CI/CD pipeline.
 
@@ -28,7 +28,7 @@ Within a data workload generated through [Datastacks](./datastacks.md), a placeh
 
 ## End-to-end tests
 
-Template end-to-end tests are implemented for data workloads in Stacks. These tests are implemented in a behaviour-driven-development (BDD) style using [behave](https://behave.readthedocs.io/en/stable/).
+Template end-to-end tests are implemented for data workloads in Ensono Stacks. These tests are implemented in a behaviour-driven-development (BDD) style using [behave](https://behave.readthedocs.io/en/stable/).
 
 This framework allows test cases to be written in a natural language style. Data workloads generated through Datastacks will have placeholder end-to-end BDD tests under `tests/end_to_end`. The `.feature` file located here contains the test cases in BDD style. The tests provided perform a number of actions to prepare a test scenario, execute the workload, check the results, and clean up.
 

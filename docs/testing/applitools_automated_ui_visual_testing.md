@@ -29,7 +29,7 @@ An Applitools eyes account - [Applitools](https://applitools.com/)
 
 ## Getting started
 
-We are using [Applitools](https://applitools.com/) with Cypress for visual testing. For Stacks, we have configured the framework to use the free tier, which gives:
+We are using [Applitools](https://applitools.com/) with Cypress for visual testing. For Ensono Stacks, we have configured the framework to use the free tier, which gives:
 
 - 1 user (normally the pipeline)
 - 100 checkpoints per month

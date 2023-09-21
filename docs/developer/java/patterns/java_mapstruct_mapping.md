@@ -47,7 +47,7 @@ necessary to `mvn compile` after creating any new mappers.
 
 ## Implementation Examples
 
-MapStruct is capable of working in many ways, although the approach taken in the Stacks project is to follow the pattern 
+MapStruct is capable of working in many ways, although the approach taken in the Ensono Stacks project is to follow the pattern 
 whereby it uses interfaces to define mapper objects. With the addition of some mapper utility functions it means that a 
 bean-mapper that supports single objects and collections (in addition to other features such as UUID<->String auto-conversion)
 can be created very easily.
@@ -55,7 +55,7 @@ can be created very easily.
 ### Base Mapper Code
 
 The following generic base mapper interface (this is as show at time of writing for example purposes, refer to GitHub for the latest)
-is used to define a standard set of mapping functions and lives in the Stacks `core-commons` module.
+is used to define a standard set of mapping functions and lives in the Ensono Stacks `core-commons` module.
 
 The generic template placeholder `D` is for the DTO (external) representation and `E` is for the Entity (internal) representation. As
 can be seen, this will provide a number of "out of the box" methods such as `toDto()`, `fromDto()`, `toDtoList()` etc.
@@ -76,7 +76,7 @@ public interface BaseMapper<D, E> {
 }
 ```
 
-In addition to this, some mapping utility functions are included. Some Stacks modules use a UUID as the external representation
+In addition to this, some mapping utility functions are included. Some Ensono Stacks modules use a UUID as the external representation
 of an ID whereas internally it uses a String (for persistence).
 
 The mapping utility class is currently structured as follows. This has simple functions that MapStruct will use whenever
@@ -121,7 +121,7 @@ public interface MenuMapper extends BaseMapper<MenuDTO, Menu> {}
 
 #### Example 2
 
-A more complex mapper is shown below. This mapper maps between a top-level Stacks `CreateMenuRequest` DTO and related domain object 
+A more complex mapper is shown below. This mapper maps between a top-level Ensono Stacks `CreateMenuRequest` DTO and related domain object 
 called `CreateMenuCommand`. The name of fields differs between these two objects, so it is necessary in this instance to 
 overload the `toDto()` and `fromDto()` methods to tell MapStruct how to map between the fields.
 

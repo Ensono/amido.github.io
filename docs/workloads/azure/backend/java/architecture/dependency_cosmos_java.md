@@ -1,6 +1,6 @@
 ---
 id: dependency_cosmos_java
-title: Stacks Azure CosmosDB module
+title: Ensono Stacks Azure CosmosDB module
 sidebar_label: Azure CosmosDB module
 hide_title: false
 hide_table_of_contents: true

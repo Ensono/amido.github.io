@@ -1,14 +1,15 @@
 ---
 id: storybook_stacks
-title: Stacks Storybook
-sidebar_label: Stacks Storybook
-description: Using stacks with Storybook
+title: Ensono Stacks Storybook
+sidebar_label: Ensono Stacks Storybook
+description: Using Ensono stacks with Storybook
 keywords:
   - Nx
   - monorepo
   - stacks
   - Generator
   - Executor
+  - ensono
 ---
 
 import Tabs from '@theme/Tabs';
@@ -32,9 +33,9 @@ Storybook provides a way to visually test components, making it simpler to catch
 
 Documentation, usage examples, and interactive demos can be added for each component, which helps in onboarding new team members and maintaining a comprehensive living style guide.
 
-## Storybook with Stacks
+## Storybook with Ensono Stacks
 
-Storybook can be added to Stacks using the __[Nx Storybook generator](https://nx.dev/packages/storybook)__.
+Storybook can be added to Ensono Stacks using the __[Nx Storybook generator](https://nx.dev/packages/storybook)__.
 
 ## Storybook Addons
 
@@ -42,11 +43,11 @@ Storybook has a large ecosystem of addons that extend its core functionality. Th
 
 ### storybook-addon-a11y
 
-One of the addons we recommend using with Stacks is [storybook-addon-a11y](https://storybook.js.org/addons/@storybook/addon-a11y), this addon helps developers and designers identify and address accessibility issues in their UI components during the development and testing phase.
+One of the addons we recommend using with Ensono Stacks is [storybook-addon-a11y](https://storybook.js.org/addons/@storybook/addon-a11y), this addon helps developers and designers identify and address accessibility issues in their UI components during the development and testing phase.
 
 It integrates with Storybook to provide a user-friendly interface for testing the accessibility of individual UI components or stories within your Storybook project.
 
-Some other addons we recommend using with Stacks are:
+Some other addons we recommend using with Ensono Stacks are:
 
 [storybook/addon-links](https://storybook.js.org/addons/@storybook/addon-links)
 
