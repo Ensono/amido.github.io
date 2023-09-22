@@ -39,7 +39,7 @@ resources into the target subscription(s)
 
 ### Terraform state storage
 
-Deployment of Azure resources in Stacks is done through Terraform. Within your Azure subscription, you must provision a [storage container](https://learn.microsoft.com/en-us/azure/storage/blobs/blob-containers-portal) to hold [Terraform state data](https://developer.hashicorp.com/terraform/language/state). Details regarding this storage are required when you first scaffold the project using the Stacks CLI. Therefore, once you have provisioned the storage container, make note of the following:
+Deployment of Azure resources in Ensono Stacks is done through Terraform. Within your Azure subscription, you must provision a [storage container](https://learn.microsoft.com/en-us/azure/storage/blobs/blob-containers-portal) to hold [Terraform state data](https://developer.hashicorp.com/terraform/language/state). Details regarding this storage are required when you first scaffold the project using the Stacks CLI. Therefore, once you have provisioned the storage container, make note of the following:
 
 * Storage account name
 * Resource group name
