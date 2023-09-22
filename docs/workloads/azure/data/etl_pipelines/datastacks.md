@@ -102,13 +102,10 @@ In order to generate a new data engineering workload the Datastacks CLI takes a 
 
 ## Performing data quality checks
 
-Datastacks can be used to execute data quality checks using [PySparkle](./pysparkle.md).
+Datastacks can be used to execute data quality checks using [PySparkle](./pysparkle.md), for example:
 
 ```bash
-datastacks dq --help
-datastacks dq --config-path "ingest/Ingest_AzureSql_Example/data_quality/ingest_dq.json" --container config
+# Execute data quality checks using the provided config
+datastacks dq --config-path "ingest/ingest_azure_sql_example/data_quality/ingest_dq.json" --container config
 ```
-
-### Required configuration
-
-For details regarding the required environment settings and the configuration file please read the [Data Quality](./data_quality_azure.md#usage) section.
+For details regarding the required environment settings and the configuration file see [Data Quality](./data_quality_azure.md#usage).
