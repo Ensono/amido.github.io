@@ -18,7 +18,7 @@ import HideNavigation  from "../src/components/HideNavigation/HideNavigation";
 
 ## Code of Conduct
 
-[Ensono](https://www.ensonodigital.com/about) is a independent technical consultancy delivering intelligent solutions that drive growth, innovation, and operational efficiency.
+[Ensono Stacks](https://www.ensonodigital.com/about) is a independent technical consultancy delivering intelligent solutions that drive growth, innovation, and operational efficiency.
 
 ## Values
 

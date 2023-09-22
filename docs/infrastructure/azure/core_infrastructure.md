@@ -15,7 +15,7 @@ keywords:
 import HideNavigation  from "../../../src/components/HideNavigation/HideNavigation";
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-The core infrastructure is the foundation for all other Stacks Workloads. As, in most cases, this will be the first part of Stacks that you deploy we will also cover bootstrapping your Azure tenant.
+The core infrastructure is the foundation for all other Ensono Stacks Workloads. As, in most cases, this will be the first part of Ensono Stacks that you deploy we will also cover bootstrapping your Azure tenant.
 
 ## Resources Provisioned
 

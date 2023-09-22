@@ -40,17 +40,16 @@
 }
 
 :root {
-  --ifm-link-color: var(--ifm-font-color-base);
+  --ifm-link-color: var(--ifm-color-primary);
+  --ifm-link-hover-color: var(--ifm-color-primary);
+  --ifm-link-hover-decoration: underline;
+  --ifm-link-opacity-color: 1;
+  --ifm-link-decoration: underline;
   --ifm-link-decoration-line: underline;
   --ifm-link-opacity: 0;
   --ifm-text-decoration-style: solid;
-
-
-  --ifm-link-hover-color: var(--ifm-font-color-base);
-  --ifm-link-hover-decoration-line: underline;
   --ifm-link-hover-opacity: 0.5;
   --ifm-text-hover-decoration-style: solid;
-
   --ifm-transition-duration: 0.25s;
   --ifm-transition-property: opacity;
   --ifm-transition-timing-function: ease;
@@ -99,6 +98,16 @@
 .button--primary:active {
   transform: scale(1.05);
   box-shadow: 0 10px 20px rgba(0,0,0,.1);
+}
+
+/* Remove the underline for these specific items */
+.button,
+.menu__link, 
+.navbar__link, 
+.footer__link-item,
+.pagination-nav__link,
+.table-of-contents__link  {
+  text-decoration: none;
 }
 
 /* Remove the icon from nav and footer external links */

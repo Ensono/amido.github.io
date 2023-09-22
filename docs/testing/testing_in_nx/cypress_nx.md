@@ -13,7 +13,7 @@ keywords:
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
-Cypress is a powerful testing framework that has gained popularity for its robust features and ease of use. Developed and maintained by a dedicated community, Cypress offers a comprehensive solution for web automation testing. It focuses on providing a seamless cross-browser experience, allowing developers to write reliable and efficient tests across different browsers. Due to it's popularity we are supporting it as a test framework within stacks!
+Cypress is a powerful testing framework that has gained popularity for its robust features and ease of use. Developed and maintained by a dedicated community, Cypress offers a comprehensive solution for web automation testing. It focuses on providing a seamless cross-browser experience, allowing developers to write reliable and efficient tests across different browsers. Due to it's popularity we are supporting it as a test framework within Ensono Stacks!
 
 ## Getting Started
 

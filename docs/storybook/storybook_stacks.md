@@ -2,7 +2,7 @@
 id: storybook_stacks
 title: Ensono Stacks Storybook
 sidebar_label: Ensono Stacks Storybook
-description: Using Ensono stacks with Storybook
+description: Using Ensono Stacks with Storybook
 keywords:
   - Nx
   - monorepo
