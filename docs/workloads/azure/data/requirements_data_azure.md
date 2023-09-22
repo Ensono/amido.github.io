@@ -11,7 +11,7 @@ keywords:
 
 ## Local development
 
-The following tools are recommended for developing while using the Stacks data solution:
+The following tools are recommended for developing while using the Ensono Stacks data solution:
 
 | Tool | Notes |
 | ----- | ----- |
@@ -39,7 +39,7 @@ resources into the target subscription(s)
 
 ### Terraform state storage
 
-Deployment of Azure resources in Ensono Stacks is done through Terraform. Within your Azure subscription, you must provision a [storage container](https://learn.microsoft.com/en-us/azure/storage/blobs/blob-containers-portal) to hold [Terraform state data](https://developer.hashicorp.com/terraform/language/state). Details regarding this storage are required when you first scaffold the project using the Stacks CLI. Therefore, once you have provisioned the storage container, make note of the following:
+Deployment of Azure resources in Ensono Stacks is done through Terraform. Within your Azure subscription, you must provision a [storage container](https://learn.microsoft.com/en-us/azure/storage/blobs/blob-containers-portal) to hold [Terraform state data](https://developer.hashicorp.com/terraform/language/state). Details regarding this storage are required when you first scaffold the project using the Ensono Stacks CLI. Therefore, once you have provisioned the storage container, make note of the following:
 
 * Storage account name
 * Resource group name
@@ -47,7 +47,7 @@ Deployment of Azure resources in Ensono Stacks is done through Terraform. Within
 
 ## Azure DevOps
 
-CI/CD processes within the Stacks data platform are designed to be run in Azure DevOps Pipelines[^1]. Therefore, it is a requirement to [create a project in Azure DevOps](https://learn.microsoft.com/en-us/azure/devops/organizations/projects/create-project?view=azure-devops&tabs=browser).
+CI/CD processes within the Ensono Stacks data platform are designed to be run in Azure DevOps Pipelines[^1]. Therefore, it is a requirement to [create a project in Azure DevOps](https://learn.microsoft.com/en-us/azure/devops/organizations/projects/create-project?view=azure-devops&tabs=browser).
 
 [^1]: More general information on [using Azure Pipelines in Stacks](/docs/infrastructure/azure/pipelines/azure_devops) is also available.
 

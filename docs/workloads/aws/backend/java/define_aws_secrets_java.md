@@ -71,7 +71,7 @@ Multiple secret keys and values can de defined within a single secret definition
 
 ## Using AWS Secret Property Providers 
 
-Within the Stacks code, property providers can be specified within the application resource files: -
+Within the Ensono Stacks code, property providers can be specified within the application resource files: -
 
 ```yaml
 spring.config.import:

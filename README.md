@@ -26,7 +26,7 @@ Configure the Algolia Crawler - https://crawler.algolia.com/
 The login email is `stacks@ensono.com`
 
 ### Ensono Stacks Repositories
-These are the repositories that make up the Stacks platform:
+These are the repositories that make up the Ensono Stacks platform:
 - [Ensono Stacks Webapp Template](https://github.com/Ensono/stacks-webapp-template)
 - [Ensono Stacks .NET](https://github.com/Ensono/stacks-dotnet)
 - [Ensono Stacks Java](https://github.com/Ensono/stacks-java)
