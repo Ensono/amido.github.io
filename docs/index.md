@@ -16,7 +16,7 @@ keywords:
 
 Ensono Stacks is an Ensono open-source project that automates the setup of software development projects. Ensono Stacks is for software engineers of all kinds who want to create projects quickly.
 
-Setting up the infrastructure and frameworks necessary to deliver a software project takes time. A team might spend the first two weeks (sprint 0) making technical decisions, provisioning and configuring environments, pipelines, compute, test frameworks, and more. Stacks automates this setup using infrastructure-as-code to shrink your project's sprint 0 from two weeks to an hour or less.
+Setting up the infrastructure and frameworks necessary to deliver a software project takes time. A team might spend the first two weeks (sprint 0) making technical decisions, provisioning and configuring environments, pipelines, compute, test frameworks, and more. Ensono Stacks automates this setup using infrastructure-as-code to shrink your project's sprint 0 from two weeks to an hour or less.
 
 <!-- markdownlint-disable MD026-->
 ## What can you do with Ensono Stacks?
@@ -30,7 +30,7 @@ Most software delivery projects start with a series of technical decisions:
 - What about the CI/CD pipeline?
 - What compute solution should I use?
 
-Your tech choices in these six areas are what Stacks calls a *Workload*. For example:
+Your tech choices in these six areas are what Ensono Stacks calls a *Workload*. For example:
 
 - On Azure (cloud provider)
 - I want to build a REST API (solution architecture)
