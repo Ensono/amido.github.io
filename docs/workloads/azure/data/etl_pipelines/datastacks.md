@@ -108,4 +108,5 @@ Datastacks can be used to execute data quality checks using [PySparkle](./pyspar
 # Execute data quality checks using the provided config
 datastacks dq --config-path "ingest/ingest_azure_sql_example/data_quality/ingest_dq.json" --container config
 ```
+
 For details regarding the required environment settings and the configuration file see [Data Quality](./data_quality_azure.md#usage).

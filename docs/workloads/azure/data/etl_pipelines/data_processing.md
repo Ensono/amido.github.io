@@ -15,7 +15,7 @@ keywords:
 Data processing workloads in Ensono Stacks are jobs which:
 
 1. Take data in the data lake as input (this can be various formats e.g. CSV, Parquet, JSON, Delta).
-2. Perform some form of data transformation / cleansing / modelling over the data.
+2. Perform some form of data transformation / cleansing / modelling / aggregation over the data.
 3. Output the into the data lake into a structured [Delta Lake](https://delta.io/) format.
 
 While [data ingest workloads](./ingest_data_azure.md) in Ensono Stacks utilise Azure Data Factory's inbuilt connectors and Copy activity, data processing workloads are based upon running Apache Spark / Python jobs on Databricks. These workloads may be used for various levels of data transformation and preparation within the data lake. Within the [medallion architecture](./etl_intro_data_azure.md#medallion-architecture) these will include:
@@ -49,18 +49,17 @@ reliable and accurate.
 
 ## Data processing pipeline overview
 
-The diagram below gives an overview of a data processing data pipeline in Data Factory.
+Within Stacks, processing activities are performed using Python PySpark jobs. These jobs are orchestrated by pipelines in Data Factory, and executed in Databricks. Using PySpark jobs - as opposed to notebooks - gives full control over the processing activities (for example ensuring thorough [test coverage](./testing_data_azure.md) and quality control).
+
+The diagram below gives an example of a data processing data pipeline in Data Factory.
 
 ![ADF_SilverPipelineDesign.png](../images/ADF_SilverPipelineDesign.png)
 
-The processing is executed as Python Databricks job, with repeatable data transformation processes packaged within
-our [PySparkle](pysparkle.md) library.
-
-Transformation and processing logic specific to particular datasets is kept inside the `spark_jobs` directory for the workload.
+The Python PySpark script executed as part of a data workload is kept inside the `spark_jobs` directory for the workload. This job will utilise the [Pysparkle library](./pysparkle.md), which provides a wealth of reusable utilities to assist with data transformations and loading data from/into to the data lake.
 
 ### Data Factory pipeline design
 
-Data processing pipelines are kept within the `Process` folder in Data Factory:
+Within Data Factory, the processing pipelines are kept within the `Process` folder:
 
 ![ADF_SilverPipelinesList.png](../images/ADF_SilverPipelinesList.png)
 

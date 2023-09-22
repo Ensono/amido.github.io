@@ -1,5 +1,5 @@
 ---
-id: etl_pipelines_deployment_azure
+id: ingest_pipeline_deployment_azure
 title: Data Ingest Pipeline Deployment
 sidebar_label: 6. Data Ingest Pipeline Deployment
 hide_title: false
@@ -33,7 +33,7 @@ This process will deploy the following resources into the project:
     * Trigger
 * Data ingest config files (JSON)
 * Azure DevOps CI/CD pipeline (YAML)
-* (optional) Spark jobs for data quality tests (Python)
+* (optional) Spark job and config file for data quality tests (Python)
 * Template unit tests (Python)
 * Template end-to-end tests (Python, Behave)
 
@@ -58,7 +58,7 @@ The password will need to be accessed dynamically by Data Factory on each connec
 Before creating a new workload using Datastacks, open the project locally and create a new branch for the workload being created, e.g.:
 
 ```bash
-git checkout -b feat/my-new-data-pipeline
+git checkout -b feat/my-new-ingest-pipeline
 ```
 
 ## Step 2: Prepare the Datastacks config file
@@ -100,7 +100,7 @@ window_end_default: 2010-01-31
 
 ## Step 3: Generate project artifacts using Datastacks
 
-Use the [Datastacks CLI](../etl_pipelines/datastacks.md#using-the-datastacks-cli) to generate the artifacts for the new workload, using the prepared config file (replacing `path_to_config_file/my_config.yaml` with the appropriate path). Note, a workload with Data Quality steps requires a data platform with a Databricks workspace:
+Use the [Datastacks CLI](../etl_pipelines/datastacks.md#using-the-datastacks-cli) to generate the artifacts for the new workload, using the prepared config file (replacing `path_to_config_file/my_config.yaml` with the appropriate path).:
 
 ```bash
 # Activate virtual environment
@@ -113,7 +113,7 @@ datastacks generate ingest --config="path_to_config_file/my_config.yaml"
 datastacks generate ingest --config="path_to_config_file/my_config.yaml" --data-quality
 ```
 
-This should add new project artifacts for the workload under `de_workloads/ingest/Ingest_AzureSql_MyNewExample`, based on the ingest workload templates. Review the resources that have been generated.
+This will add new project artifacts for the workload under `de_workloads/ingest/Ingest_AzureSql_MyNewExample`, based on the ingest workload templates. Review the resources that have been generated.
 
 ## Step 4: Update ingest configuration
 
@@ -163,12 +163,12 @@ The [end-to-end tests](../etl_pipelines/testing_data_azure.md#end-to-end-tests) 
 
 The generated workload contains a YAML file containing a template Azure DevOps CI/CD pipeline for the workload, named `de-ingest-ado-pipeline.yaml`. This should be added as the definition for a new pipeline in Azure DevOps.
 
-1. Sign-in to your Azure DevOps organization and go to your project
-2. Go to Pipelines, and then select New pipeline
-3. Name the new pipeline to match the name of your new workload, e.g. `de-ingest-azuresql-mynewexample`
-4. For the pipeline definition, specify the YAML file in the project repository feature branch (e.g. `de-ingest-ado-pipeline.yaml`) and save
+1. Sign-in to your Azure DevOps organization and go to your project.
+2. Go to Pipelines, and then select New pipeline.
+3. Name the new pipeline to match the name of your new workload, e.g. `de-ingest-azuresql-mynewexample`.
+4. For the pipeline definition, specify the YAML file in the project repository feature branch (e.g. `de-ingest-ado-pipeline.yaml`) and save.
 5. The new pipeline will require access to any Azure DevOps pipeline variable groups specified in the [datastacks config file](#step-2-prepare-the-datastacks-config-file). Under each variable group, go to 'Pipeline permissions' and add the new pipeline.
-6. Run the new pipeline
+6. Run the new pipeline.
 
 Running this pipeline in Azure DevOps will deploy the artifacts into the non-production (nonprod) environment and run tests. If successful, the generated resources will now be available in the nonprod Ensono Stacks environment.
 
@@ -190,3 +190,7 @@ In the example pipeline templates:
 * Deployment to the production (prod) environment is triggered on merging to the `main` branch, followed by manual approval of the release step.
 
 It is recommended in any Ensono Stacks data platform that processes for deploying and releasing to further should be agreed and documented, ensuring sufficient review and quality assurance of any new workloads. The template CI/CD pipelines provided are based upon two platform environments (nonprod and prod) - but these may be amended depending upon the specific requirements of your project and organisation.
+
+## Next steps
+
+Now you have ingested some data into the bronze data lake layer, you can generate a [data processing pipeline](./processing_pipeline_deployment_azure.md) to transform and model the data.
