@@ -15,9 +15,9 @@ keywords:
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Create a new Ensono Stacks Nx workspace. Using the create-stacks-workspace script will quickly allow you to initialize a new NX workspace with the Stacks recommended plugins, packages and configuration to get started on a new project quickly.
+Create a new Ensono Stacks Nx workspace. Using the create-stacks-workspace script will quickly allow you to initialize a new NX workspace with the Ensono Stacks recommended plugins, packages and configuration to get started on a new project quickly.
 
-The Stacks `create-stacks-workspace` script will 
+The Ensono Stacks `create-stacks-workspace` script will 
 
 - Run Nx [create-nx-workspace](https://nx.dev/packages/nx/documents/create-nx-workspace) command to setup a new NX workspace passing along any command line arguments provided 
 - Install any recommended plugin/generators/executors from Ensono Stacks. If the `next` preset is selected the [Ensono Next plugin](/docs/getting_started/next/ensono-stacks-next) will be installed. With all presets the [Ensono Workspace Plugin](/docs/getting_started/workspace/ensono-stacks-workspace) will be installed. (see [presets](/docs/getting_started/create-stacks-workspace/ensono-stacks-create-stacks-workspace#presets))

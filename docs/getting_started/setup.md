@@ -2,11 +2,12 @@
 id: setup
 title: Getting Started
 sidebar_label: Getting Started
-description: Getting started with stacks and Nx
+description: Getting started with Ensono Stacks and Nx
 keywords:
   - Nx
   - monorepo
   - stacks
+  - ensono
   - Generator
   - Executor
 ---
@@ -64,13 +65,13 @@ Visit the [Ensono Stacks CLI](../stackscli/about.md) docs for more information a
 
 :::tip
 
-Visit the [NX Example](../stackscli/about.md) for the complete instructions/example on using NX with the Stacks CLI!
+Visit the [NX Example](../stackscli/about.md) for the complete instructions/example on using NX with the Ensono Stacks CLI!
 
 :::
 
 #### Option 2: Create Ensono Stacks workspace generator
 
-You can scaffold a brand-new Stacks and Nx workspace using the **@ensono-stacks/create-stacks-workspace** package.
+You can scaffold a brand-new Ensono Stacks and Nx workspace using the **@ensono-stacks/create-stacks-workspace** package.
 
 This approach is ideal if you want to use Ensono Stacks to build your frontend web applications but already have an existing infrastructure set up without Ensono Stacks as it's not mandatory to provide any infrastructure details. However, it is still possible to use Option 2 for infrastructure and deployment through passing the required CLI arguments!
 

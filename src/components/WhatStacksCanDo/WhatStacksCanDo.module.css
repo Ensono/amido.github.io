@@ -16,7 +16,6 @@
 .heroBanner p>a:hover {
     cursor: pointer;
     color: var(--ifm-link-hover-color);
-    opacity: var(--ifm-link-hover-opacity);
     text-decoration-style: var(--ifm-text-hover-decoration-style);
     text-decoration-line: var(--ifm-link-hover-decoration-line);
     transition-duration: var(--ifm-transition-duration);
