@@ -2,7 +2,7 @@
 id: ensono-stacks-next
 title: "@ensono-stacks/next"
 sidebar_label: "@ensono-stacks/next"
-description: "Using next with stacks!"
+description: "Using next with Ensono Stacks!"
 keywords:
   - NX
   - monorepo

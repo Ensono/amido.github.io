@@ -2,7 +2,7 @@
 id: nextjs_plugin
 title: Ensono Stacks with NextJs Module Federation
 sidebar_label: Ensono Stacks Module Federation
-description: Using Ensono stacks with NextJs Module Federation
+description: Using Ensono Stacks with NextJs Module Federation
 keywords:
   - Nx
   - monorepo

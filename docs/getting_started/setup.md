@@ -2,7 +2,7 @@
 id: setup
 title: Getting Started
 sidebar_label: Getting Started
-description: Getting started with stacks and Nx
+description: Getting started with Ensono Stacks and Nx
 keywords:
   - Nx
   - monorepo

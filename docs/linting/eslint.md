@@ -2,7 +2,7 @@
 id: eslint
 title: Ensono Stacks Linting
 sidebar_label: Ensono Stacks Linting
-description: Using Ensono stacks with ESlint
+description: Using Ensono Stacks with ESlint
 keywords:
   - Nx
   - monorepo
