@@ -40,12 +40,12 @@ yarn global add nx
 
 #### Node
 
-We recommend using the latest LTS version of Node, you can find the latest LTS version [here](https://nodejs.org/en/).
+We recommend using the latest LTS version of Node, you can find the latest LTS version on the [**Node website**](https://nodejs.org/en/).
 
 :::tip
-You can switch to the latest LTS version of Node via NVM. Node Version Manager (NVM) sets your Node version to that set in the `.nvmrc` file.
+    You can switch to the latest LTS version of Node via NVM. Node Version Manager (NVM) sets your Node version to that set in the `.nvmrc` file.
 
-  You can find the installation insturctions for NVM [here](https://github.com/nvm-sh/nvm#installing-and-updating).
+    You can find the installation instructions in the [**NVM documentation**](https://github.com/nvm-sh/nvm#installing-and-updating).
 :::
 
 ### Get Started
