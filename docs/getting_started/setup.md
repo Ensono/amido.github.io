@@ -2,7 +2,7 @@
 id: setup
 title: Getting Started
 sidebar_label: Getting Started
-description: Getting started with stacks and Nx
+description: Getting started with Ensono Stacks and Nx
 keywords:
   - Nx
   - monorepo
@@ -64,7 +64,7 @@ Visit the [Ensono Stacks CLI](../stackscli/about.md) docs for more information a
 
 :::tip
 
-Visit the [NX Example](../stackscli/about.md) for the complete instructions/example on using NX with the Stacks CLI!
+Visit the [NX Example](../stackscli/about.md) for the complete instructions/example on using NX with the Ensono Stacks CLI!
 
 :::
 

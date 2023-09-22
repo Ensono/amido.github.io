@@ -60,10 +60,10 @@ There are two subfolders in this directory:
 
 ## Networking
 
-Using a private network is the default behaviour in Stacks Azure Data Platform. `networking`
+Using a private network is the default behaviour in Ensono Stacks Azure Data Platform. `networking`
 subfolder contains configurations for the created network and subnetworks, at its core using
 [azurerm-hub-spoke](https://github.com/amido/stacks-terraform/tree/master/azurerm/modules/azurerm-hub-spoke)
-Stacks Terraform module.  See [Microsoft documentation](https://learn.microsoft.com/en-us/azure/architecture/reference-architectures/hybrid-networking/hub-spoke?tabs=cli) for more details on implementing Hub-spoke network topology in Azure.
+Ensono Stacks Terraform module.  See [Microsoft documentation](https://learn.microsoft.com/en-us/azure/architecture/reference-architectures/hybrid-networking/hub-spoke?tabs=cli) for more details on implementing Hub-spoke network topology in Azure.
 
 The following diagram shows network configuration for the two default environments:
 
@@ -75,7 +75,7 @@ The following diagram shows network configuration for the two default environmen
 
 ### Databricks secure cluster connectivity
 
-Stacks Azure Data Platform uses VNet injection to deploy Databricks into a custom virtual network.
+Ensono Stacks Azure Data Platform uses VNet injection to deploy Databricks into a custom virtual network.
 
 In most scenarios, we recommend that Azure Databricks is deployed in a fully secure manner, using
 secure cluster connectivity and disabling public workspace access. This means that Databricks

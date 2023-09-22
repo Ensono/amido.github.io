@@ -13,16 +13,16 @@ keywords:
   - monorepo
 ---
 
-Using [Nx](https://nx.dev/) provides many benefits when working with SSR or CSR frontend applications. When using [stacks to scaffold an Nx monorepo](../../nx/nx_monorepo.md) you will be provided with several options to assure quality in your development process.
+Using [Nx](https://nx.dev/) provides many benefits when working with SSR or CSR frontend applications. When using [Ensono Stacks to scaffold an Nx monorepo](../../nx/nx_monorepo.md) you will be provided with several options to assure quality in your development process.
 
 
 ## Getting Started
 
-To leverage stacks and accelerate your testing process within your Nx monorepo you need to have a preexisting Nx workspace. See the **["Getting Started"](/docs/getting_started/setup)** page for more details on how to setup your workspace!
+To leverage Ensono Stacks and accelerate your testing process within your Nx monorepo you need to have a preexisting Nx workspace. See the **["Getting Started"](/docs/getting_started/setup)** page for more details on how to setup your workspace!
 
 ### Selecting your test framework
 
-We recommend and currently support Playwright within the stacks workflow, with it’s Microsoft backing, extensive feature set and fast cross-browser web automation capability, it is our preferred tooling choice. Cypress is also a powerful testing framework which has a significant user base, as such this is also supported by `@ensono-stacks`.
+We recommend and currently support Playwright within the Ensono Stacks workflow, with it’s Microsoft backing, extensive feature set and fast cross-browser web automation capability, it is our preferred tooling choice. Cypress is also a powerful testing framework which has a significant user base, as such this is also supported by `@ensono-stacks`.
 
 :::tip 
 

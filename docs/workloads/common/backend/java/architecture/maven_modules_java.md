@@ -14,7 +14,7 @@ keywords:
 ---
 
 In order to reduce code duplication, make maintenance easier and allow better customisation control, 
-the Stacks Workloads use the following internal dependencies:
+the Ensono Stacks Workloads use the following internal dependencies:
 
 ## Common Modules
 

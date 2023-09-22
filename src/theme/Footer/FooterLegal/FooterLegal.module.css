@@ -18,6 +18,7 @@
 
 .footer__legal a {
   margin-right: 2rem;
+  color: var(--ifm-font-color-base);
 }
 
 .footer__legal a > svg {

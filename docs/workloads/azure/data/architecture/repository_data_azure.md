@@ -32,7 +32,7 @@ stacks-azure-data
 ├── Makefile        # Includes commands for environment setup
 ├── pyproject.toml  # Project dependencies
 ├── README.md       # This file
-├── stackscli.yml   # Tells the Stacks CLI what operations to perform when the project is scaffolded
+├── stackscli.yml   # Tells the Ensono Stacks CLI what operations to perform when the project is scaffolded
 ├── taskctl.yaml    # Controls the independent runner
 └── yamllint.conf   # Linter configuration for YAML files used by the independent runner
 ```

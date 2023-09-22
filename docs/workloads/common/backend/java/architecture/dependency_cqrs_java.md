@@ -20,7 +20,7 @@ import {siteVariables} from '@site/versions';
 
 This module provides functionality to implement a basic CQRS functionality, by using the
 `ApplicationCommand` and `CommandHandler` classes. Please refer to sny of the [CQRS](https://github.com/Ensono/stacks-java-cqrs/)
-and [CQRS with Events](https://github.com/Ensono/stacks-java-cqrs-events/) Stacks workload templates.
+and [CQRS with Events](https://github.com/Ensono/stacks-java-cqrs-events/) Ensono Stacks workload templates.
 
 ## Module Structure
 

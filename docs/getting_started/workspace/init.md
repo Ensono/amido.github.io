@@ -9,7 +9,7 @@ Set up libraries to manage code & commit quality, keeping projects consistent an
 ## Prerequisites
 
 To scaffold your workspace with FE and deployment/infrastructure there is a dependency on the `stacks` -> `config` & `executedGenerators` fields within `nx.json`.
-If you have already run the Stacks CLI these fields will be automatically populated. Alternatively, if you created your workspace with `create-stacks-workspace`, these fields will have been populated if you passed in the relevant CLI arguments.
+If you have already run the Ensono Stacks CLI these fields will be automatically populated. Alternatively, if you created your workspace with `create-stacks-workspace`, these fields will have been populated if you passed in the relevant CLI arguments.
 If you are Stackifying an existing Nx workspace, this must be added manually - an example `stacks` field can be seen here:
 
 ```json

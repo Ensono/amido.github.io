@@ -2,7 +2,7 @@
 id: ensono-stacks-playwright
 title: "@ensono-stacks/playwright"
 sidebar_label: "@ensono-stacks/playwright"
-description: "Using the playwright with stacks!"
+description: "Using the playwright with Ensono Stacks!"
 keywords:
   - Nx
   - monorepo

@@ -19,7 +19,7 @@ import Executor from './executor.md'
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Using the `@ensono-stacks/cypress` plugin can help you get started with testing using cypress. Built upon the [@nx/cypress](https://nx.dev/packages/cypress) plugin, stacks provides additional capabilities to help you hit the ground running! 
+Using the `@ensono-stacks/cypress` plugin can help you get started with testing using cypress. Built upon the [@nx/cypress](https://nx.dev/packages/cypress) plugin, Ensono Stacks provides additional capabilities to help you hit the ground running! 
 
 Additionally, cypress tests can be added to your deployment pipelines through the various deployment generators.
 

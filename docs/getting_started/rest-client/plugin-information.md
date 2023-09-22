@@ -2,7 +2,7 @@
 id: ensono-stacks-rest-client
 title: "@ensono-stacks/rest-client"
 sidebar_label: "@ensono-stacks/rest-client"
-description: "Using the rest-client with stacks!"
+description: "Using the rest-client with Ensono Stacks!"
 keywords:
   - NX
   - monorepo
