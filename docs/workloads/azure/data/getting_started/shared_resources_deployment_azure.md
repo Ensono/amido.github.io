@@ -12,7 +12,7 @@ keywords:
   - cicd
 ---
 
-This section provides an overview of deploying the shared resources for Stacks Data Platform.
+This section provides an overview of deploying the shared resources for Ensono Stacks Data Platform.
 
 The shared resources include Azure Data Factory resources which are shared across pipelines. These are as follows:
 
@@ -32,7 +32,7 @@ For details of how these resources are used in ingest pipelines, see [data inges
 
 This guide assumes the following are in place:
 
-* A [deployed Stacks data platform](core_data_platform_deployment_azure.md)
+* A [deployed Ensono Stacks data platform](core_data_platform_deployment_azure.md)
 * [Development environment set up](dev_quickstart_data_azure.md)
 
 ## Step 1: Create feature branch
@@ -47,7 +47,7 @@ The `de_build` folder includes YAML file called `job-pipeline-vars` that contain
 
 ## Step 2: Add a shared resources pipeline in Azure DevOps
 
-The default shared resources for the Stacks Data Platform are found under [de_workloads/shared_resources](https://github.com/ensono/stacks-azure-data/tree/main/de_workloads/shared_resources). This directory contains a YAML file `de-shared-resources.yml` containing a template Azure DevOps CI/CD pipeline for building and deploying the shared resources.
+The default shared resources for the Ensono Stacks Data Platform are found under [de_workloads/shared_resources](https://github.com/ensono/stacks-azure-data/tree/main/de_workloads/shared_resources). This directory contains a YAML file `de-shared-resources.yml` containing a template Azure DevOps CI/CD pipeline for building and deploying the shared resources.
 This YAML file should be added as the definition for a new pipeline in Azure DevOps.
 
 1. Sign-in to your Azure DevOps organization and go to your project
@@ -63,13 +63,13 @@ Run the pipeline configured in Step 2 to commence the build and deployment proce
 
 Running this pipeline in Azure DevOps will initiate the deployment of artifacts into the non-production (nonprod) environment. It's important to monitor the progress of this deployment to ensure its success. You can track the progress and status of the deployment within the Pipelines section of Azure DevOps.
 
-If successful, the core DE shared resources will now be available in the nonprod Stacks environment. To view the deployed resources, navigate to the relevant resource group in the [Azure portal](https://portal.azure.com/). The deployed Data Factory resources can be viewed through the [Data Factory UI](https://adf.azure.com/).
+If successful, the core DE shared resources will now be available in the nonprod Ensono Stacks environment. To view the deployed resources, navigate to the relevant resource group in the [Azure portal](https://portal.azure.com/). The deployed Data Factory resources can be viewed through the [Data Factory UI](https://adf.azure.com/).
 
 ℹ️ Note: The structure of the data platform and Data Factory resources are defined in the project's code repository, and deployed through the Azure DevOps pipelines. Changes to Data Factory resources directly through the UI will lead to them be overwritten when pipelines are next run. If you wish to update shared Data Factory resources, update the appropriate files under the path `de_workloads/shared_resources/data_factory`.
 
 ## Step 4: Deploy shared resources in further environments
 
-By default Stacks provides a framework for managing the platform across two environments - nonprod and prod.
+By default Ensono Stacks provides a framework for managing the platform across two environments - nonprod and prod.
 The template CI/CD pipelines provided are based upon these two platform environments, but these may be amended depending upon the specific requirements of your project and organisation.
 
 * Deployment to the non-production (nonprod) environment is triggered on a feature branch when a pull request is open

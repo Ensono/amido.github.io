@@ -1,14 +1,15 @@
 ---
 id: nextjs_plugin
-title: Stacks with NextJs Module Federation
-sidebar_label: Stacks Module Federation
-description: Using stacks with NextJs Module Federation
+title: Ensono Stacks with NextJs Module Federation
+sidebar_label: Ensono Stacks Module Federation
+description: Using Ensono stacks with NextJs Module Federation
 keywords:
   - Nx
   - monorepo
   - stacks
   - Generator
   - Executor
+  - ensono
 ---
 
 import Tabs from '@theme/Tabs';
@@ -24,9 +25,9 @@ Module Federation is a feature introduced in Webpack 5, it enables developers to
 
 It aims to enable a federated modules architecture in NextJs, enabling you to split a monolithic NextJs application into smaller, independently deployable parts.
 
-The following guide details the steps of how to set up Module Federation with a Stacks NextJs application. You can also visit this [GitHub repo](https://github.com/amido/stacks-nextjs-federated-modules-example) to view an existing example application
+The following guide details the steps of how to set up Module Federation with a Ensono Stacks NextJs application. You can also visit this [GitHub repo](https://github.com/Ensono/stacks-nextjs-federated-modules-example) to view an existing example application
 
-## NextJs Module Federation with Stacks
+## NextJs Module Federation with Ensono Stacks
 
 ### Prerequisites
 
@@ -63,9 +64,9 @@ We recommend using the latest LTS version of Node, you can find the latest LTS v
 
 ### Get Started
 
-#### Create a new Stacks and Nx workspace
+#### Create a new Ensono Stacks and Nx workspace
 
-You can scaffold a brand-new Stacks and Nx workspace using the **@ensono-stacks/create-stacks-workspace** package.
+You can scaffold a brand-new Ensono Stacks and Nx workspace using the **@ensono-stacks/create-stacks-workspace** package.
 
 Follow the interactive questions creating a new NextJs application named <b>host</b>:
 
@@ -75,11 +76,11 @@ npx @ensono-stacks/create-stacks-workspace@latest
 
 :::tip
 
-Visit the [@ensono-stacks/create-stacks-workspace](/docs/nx/create-stacks-workspace/ensono-stacks-create-stacks-workspace) docs for more information and setup instructions!
+Visit the [@ensono-stacks/create-stacks-workspace](/docs/getting_started/create-stacks-workspace/ensono-stacks-create-stacks-workspace) docs for more information and setup instructions!
 
 :::
 
-This will generate a new Stacks Nx workspace containing a NextJs <b>host</b> application 
+This will generate a new Ensono Stacks Nx workspace containing a NextJs <b>host</b> application 
 
 First We need to install the NextJs federated modules plugin
 
@@ -104,7 +105,7 @@ yarn add @module-federation/nextjs-mf
 Create a new <b>header</b> application which will be our remote module, we can do this manually or by using the Nx CLI.
 
 ```bash
-nx g @nx/next:app header
+nx g @nx/next:app header --no-appDir
 ```
 
 Now we have both our <b>host</b> and <b>header</b> modules, we need to update various config in each application to enable module federation.
@@ -113,9 +114,9 @@ Let's update the header `next.config` with details of our remote <b>header</b> m
 <b>header/next.config</b>:
 
 ```javascript
-const path = require('node:path');
 const NextFederationPlugin = require('@module-federation/nextjs-mf');
 const { withNx } = require('@nrwl/next/plugins/with-nx');
+const path = require('node:path');
 
 module.exports = withNx({
     output: 'standalone',
@@ -128,7 +129,7 @@ module.exports = withNx({
                 name: 'header',
                 filename: 'static/chunks/remoteEntry.js',
                 exposes: {
-                    './index': './pages/index.tsx'
+                    './index': './pages/index.tsx',
                 },
             }),
         );
@@ -151,7 +152,7 @@ Then update the header modules `project.json` with the port on which the header 
 ```json
 {
     "serve": {
-        "executor": "@nrwl/next:server",
+        "executor": "@nx/next:server",
         "defaultConfiguration": "development",
         "options": {
             "buildTarget": "header:build",
@@ -160,6 +161,31 @@ Then update the header modules `project.json` with the port on which the header 
         }
     }
 }
+```
+
+Lets update the header module component to make it a bit more readable.
+
+<b>header/pages/index.tsx</b>:
+
+```javascript
+export function Index() {
+    return (
+        <>
+            <div className="wrapper">
+                <div className="container">
+                    <div id="welcome">
+                        <h1>
+                            Header 👋
+                        </h1>
+                    </div>
+                </div>
+            </div>
+        </>
+    );
+}
+
+export default Index;
+
 ```
 
 Now we need to update the host modules `next.config.ts` with details of the <b>host</b> and any remote modules.
@@ -212,10 +238,10 @@ Also updating the <b>host</b> modules `project.json` with the correct port numbe
 ```json
 {
     "serve": {
-        "executor": "@nrwl/next:server",
+        "executor": "@nx/next:server",
         "defaultConfiguration": "development",
         "options": {
-            "buildTarget": "header:build",
+            "buildTarget": "host:build",
             "dev": true,
             "port": 4200
         }

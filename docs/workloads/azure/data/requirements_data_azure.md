@@ -49,7 +49,7 @@ Deployment of Azure resources in Stacks is done through Terraform. Within your A
 
 CI/CD processes within the Stacks data platform are designed to be run in Azure DevOps Pipelines[^1]. Therefore, it is a requirement to [create a project in Azure DevOps](https://learn.microsoft.com/en-us/azure/devops/organizations/projects/create-project?view=azure-devops&tabs=browser).
 
-[^1]: More general information on [using Azure Pipelines in Stacks](https://stacks.amido.com/docs/infrastructure/azure/pipelines/azure_devops) is also available.
+[^1]: More general information on [using Azure Pipelines in Stacks](/docs/infrastructure/azure/pipelines/azure_devops) is also available.
 
 ### Azure Pipelines variable groups
 
@@ -127,5 +127,5 @@ You must create the following Service Connections:
 
 | Name                  | When Needed   | Description                                           |
 |-----------------------|---------------|-------------------------------------------------------|
-| Stacks.Pipeline.Builds | Project start | The Service Connection to Azure |
-| GitHubReleases | Project start | The Service Connection to Github for releases |
+| Stacks.Pipeline.Builds | Project start | The Service Connection to Azure. The service principal or managed identity that is used to create the connection must have contributor access to the Azure Subscription. |
+| GitHubReleases | Project start | The Service Connection to Github for releases. The access token that is used to create the connection must have read/write access to the GitHub repository. |

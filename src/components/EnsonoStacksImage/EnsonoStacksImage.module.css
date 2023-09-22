@@ -1,0 +1,81 @@
+.ensonoStacksImageContainer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 20rem;
+    background-image: linear-gradient(to right,  rgba(51, 51, 51, 0.7), rgba(255, 255, 255, 0));
+}
+
+.ensonoStacksImageContainer h2,
+.ensonoStacksImageContainer p {
+    color: #fff;
+}
+
+.ensonoStacksImageContainer p {
+    width: 15.5rem;
+    text-align: left;
+}
+
+.ensonoStacksImageContainer .wrapperImage {
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -1;
+}
+.ensonoStacksImageContainer .wrapperImage img {
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    will-change: transform;
+    object-fit: cover;
+}
+
+.ensonoStacksImageContainer .stacksLogo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ensonoStacksImageContainer .stacksLogo img {
+    width: 8rem;
+    height: 4rem;
+}
+
+.ensonoStacksImageContainer .wrapper {
+    left: 2rem;
+    bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+@media only screen and (min-width: 768px) {
+    .ensonoStacksImageContainer {
+        justify-content: flex-start;
+        padding-left: 4rem;
+        min-height: 24rem;
+    }
+
+    .ensonoStacksImageContainer h2 {
+        font-size: var(--ifm-h2-font-size);
+    }
+
+    .ensonoStacksImageContainer .stacksLogo img {
+        width: auto;
+        height: auto;
+    }
+
+    .ensonoStacksImageContainer p {
+        width: 17rem;
+    }
+
+    .ensonoStacksImageContainer .wrapper {
+        left: 4rem;
+        bottom: auto;
+    }
+
+}

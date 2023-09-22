@@ -10,7 +10,7 @@ keywords:
   - great expectations
 ---
 
-Stacks data workloads can be deployed with additional Data Quality checks. These checks validate that the outputs of
+Ensono Stacks data workloads can be deployed with additional Data Quality checks. These checks validate that the outputs of
 a data pipeline meet specified requirements, expressed in a simple, human-readable language. It allows
 you to assert expectations about your data, which can help catch any discrepancies, anomalies, or
 errors in your data as early in the pipeline as possible.

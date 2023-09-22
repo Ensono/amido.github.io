@@ -28,9 +28,9 @@ import TabItem from '@theme/TabItem';
 
 1. ### Clone one of the Java workloads to your local machine from one of the following repos
     
-    1. Simple web API: [stacks-java repository](https://github.com/amido/stacks-java)
-    2. Web API with CQRS: [stacks-java-cqrs repository](https://github.com/amido/stacks-java-cqrs)
-    3. Web API with CQRS and events: [stacks-java-cqrs-events repository](https://github.com/amido/stacks-java-cqrs-events)
+    1. Simple web API: [stacks-java repository](https://github.com/Ensono/stacks-java)
+    2. Web API with CQRS: [stacks-java-cqrs repository](https://github.com/Ensono/stacks-java-cqrs)
+    3. Web API with CQRS and events: [stacks-java-cqrs-events repository](https://github.com/Ensono/stacks-java-cqrs-events)
    
 2. ### Configure the application
 
@@ -201,7 +201,7 @@ is set to `false` then no authorization is required.
 #### Auth0 configuration properties
 
 If using Auth0 for authorization, Auth0 itself will need to be configured with both an API definition and an associated Application.
-There are corresponding configuration values required for the Stacks application, within the `auth.properties` file, e.g.
+There are corresponding configuration values required for the Ensono Stacks application, within the `auth.properties` file, e.g.
 
 ```text
 auth0.issuer=https://amidostacks.eu.auth0.com/

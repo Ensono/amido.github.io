@@ -21,37 +21,37 @@ keywords:
 ### Simple Web API
 
 ```text
-Solution 'xxAMIDOxx.xxSTACKSss.API'
+Solution 'xxENSONOxx.xxSTACKSss.API'
 ├── API
-│  ├── xxAMIDOxx.xxSTACKSxx.API
-│  ├── xxAMIDOxx.xxSTACKSxx.API.Models
+│  ├── xxENSONOxx.xxSTACKSxx.API
+│  ├── xxENSONOxx.xxSTACKSxx.API.Models
 └── Tests
-   ├── xxAMIDOxx.xxSTACKSxx.API.UnitTests
+   ├── xxENSONOxx.xxSTACKSxx.API.UnitTests
 ```
 
 
 ### Web API with CQRS
 
 ```text
-Solution 'xxAMIDOxx.xxSTACKSss.API'
+Solution 'xxENSONOxx.xxSTACKSss.API'
 ├── API
-│  ├── xxAMIDOxx.xxSTACKSxx.API
-│  ├── xxAMIDOxx.xxSTACKSxx.API.Models
+│  ├── xxENSONOxx.xxSTACKSxx.API
+│  ├── xxENSONOxx.xxSTACKSxx.API.Models
 ├── Application
-│  ├── xxAMIDOxx.xxSTACKSxx.Application.CommandHandlers
-│  ├── xxAMIDOxx.xxSTACKSxx.Application.Integration
-│  ├── xxAMIDOxx.xxSTACKSxx.Application.QueryHandlers
+│  ├── xxENSONOxx.xxSTACKSxx.Application.CommandHandlers
+│  ├── xxENSONOxx.xxSTACKSxx.Application.Integration
+│  ├── xxENSONOxx.xxSTACKSxx.Application.QueryHandlers
 ├── Domain
-│  ├── xxAMIDOxx.xxSTACKSxx.Domain
+│  ├── xxENSONOxx.xxSTACKSxx.Domain
 │  └── External
 ├── Shared
-│  ├── xxAMIDOxx.xxSTACKSxx.Common
-│  └── xxAMIDOxx.xxSTACKSxx.CQRS
+│  ├── xxENSONOxx.xxSTACKSxx.Common
+│  └── xxENSONOxx.xxSTACKSxx.CQRS
 └── Tests
-   ├── xxAMIDOxx.xxSTACKSxx.API.ComponentTests
-   ├── xxAMIDOxx.xxSTACKSxx.Common.UnitTests
-   ├── xxAMIDOxx.xxSTACKSxx.Domain.UnitTests
-   └── xxAMIDOxx.xxSTACKSxx.Infrastructure.IntegrationTests
+   ├── xxENSONOxx.xxSTACKSxx.API.ComponentTests
+   ├── xxENSONOxx.xxSTACKSxx.Common.UnitTests
+   ├── xxENSONOxx.xxSTACKSxx.Domain.UnitTests
+   └── xxENSONOxx.xxSTACKSxx.Infrastructure.IntegrationTests
 ```
 
 ### Functions and Worker Services
@@ -59,16 +59,16 @@ Solution 'xxAMIDOxx.xxSTACKSss.API'
 ```text
 ├── Functions
 │  ├── function-aeh-listener
-│  │   ├── xxAMIDOxx.xxSTACKSxx.Listener
-│  │   └── xxAMIDOxx.xxSTACKSxx.Listener.UnitTests
+│  │   ├── xxENSONOxx.xxSTACKSxx.Listener
+│  │   └── xxENSONOxx.xxSTACKSxx.Listener.UnitTests
 │  ├── function-asb-listener
-│  │   ├── xxAMIDOxx.xxSTACKSxx.Listener
-│  │   └── xxAMIDOxx.xxSTACKSxx.Listener.UnitTests
+│  │   ├── xxENSONOxx.xxSTACKSxx.Listener
+│  │   └── xxENSONOxx.xxSTACKSxx.Listener.UnitTests
 │  ├── function-cosmosdb-worker
-│  │   ├── xxAMIDOxx.xxSTACKSxx.Worker
-│  │   └── xxAMIDOxx.xxSTACKSxx.Worker.UnitTests
+│  │   ├── xxENSONOxx.xxSTACKSxx.Worker
+│  │   └── xxENSONOxx.xxSTACKSxx.Worker.UnitTests
 ├── Worker
-│  └── xxAMIDOxx.xxSTACKSxx.BackgroundWorker
+│  └── xxENSONOxx.xxSTACKSxx.BackgroundWorker
 ```
 
 

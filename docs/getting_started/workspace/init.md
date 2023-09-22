@@ -48,11 +48,11 @@ If you are Stackifying an existing Nx workspace, this must be added manually - a
 }
 ```
 
-Please see the [Stacks CLI documentation](https://stacks.amido.com/docs/stackscli/about) for information on each of these values.
+Please see the [Ensono Stacks CLI documentation](/docs/stackscli/about) for information on each of these values.
 
 ## Usage
 
-Initialise your NX workspace with stacks with the following command:
+Initialise your NX workspace with Ensono Stacks with the following command:
 
 ```bash
 nx g @ensono-stacks/workspace:init
@@ -112,7 +112,7 @@ It also adds commitizen to the git `prepare-commit-msg` script, and Commitlint t
 
 #### Code quality management
 
-Stacks projects use ESLint and Typescript to help maintain code quality. Using the same config in every Stacks project ensures consistency and allows developers to more easily onboard onto new projects.
+Ensono Stacks projects use ESLint and Typescript to help maintain code quality. Using the same config in every Ensono Stacks project ensures consistency and allows developers to more easily onboard onto new projects.
 
 This generator creates config files for both Typescript and ESLint and installs the relevant dependencies.
 

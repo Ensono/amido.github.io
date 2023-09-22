@@ -12,20 +12,20 @@ keywords:
   - databricks
 ---
 
-Data processing workloads in Stacks are jobs which:
+Data processing workloads in Ensono Stacks are jobs which:
 
 1. Take data in the data lake as input (this can be various formats e.g. CSV, Parquet, JSON, Delta).
 2. Perform some form of data transformation / cleansing / modelling over the data.
 3. Output the into the data lake into a structured [Delta Lake](https://delta.io/) format.
 
-While [data ingest workloads](./ingest_data_azure.md) in Stacks utilise Azure Data Factory's inbuilt connectors and Copy activity, data processing workloads are based upon running Apache Spark / Python jobs on Databricks. These workloads may be used for various levels of data transformation and preparation within the data lake. Within the [medallion architecture](./etl_intro_data_azure.md#medallion-architecture) these will include:
+While [data ingest workloads](./ingest_data_azure.md) in Ensono Stacks utilise Azure Data Factory's inbuilt connectors and Copy activity, data processing workloads are based upon running Apache Spark / Python jobs on Databricks. These workloads may be used for various levels of data transformation and preparation within the data lake. Within the [medallion architecture](./etl_intro_data_azure.md#medallion-architecture) these will include:
 
 - Bronze to Silver
 - Silver to Gold
 
 Similar to ingest workloads, data processing workloads can optionally include a [Data Quality validations](./data_quality_azure.md) step. Depending on your requirements, you can generate a workload with or without a Data Quality step.
 
-The Stacks data platform contains the following example data processing workloads:
+The Ensono Stacks data platform contains the following example data processing workloads:
 
 - [silver_movies_example](https://github.com/Ensono/stacks-azure-data/tree/main/de_workloads/data_processing/silver_movies_example): Performs Bronze to Silver layer data processing over the [example dataset](../getting_started/example_data_source.md).
 

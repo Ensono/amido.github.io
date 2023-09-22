@@ -13,7 +13,7 @@ keywords:
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
-Playwright is a relatively new testing framework, which is developed and supported by Microsoft. Playwright was designed to enable cross-browser web automation that is reliable and fast, with support for multiple browsers, programming languages and test runners. With a vast array of growing capabilities, alongside Microsoft backing, we are supporting and recommending it as a test framework within stacks!
+Playwright is a relatively new testing framework, which is developed and supported by Microsoft. Playwright was designed to enable cross-browser web automation that is reliable and fast, with support for multiple browsers, programming languages and test runners. With a vast array of growing capabilities, alongside Microsoft backing, we are supporting and recommending it as a test framework within Ensono Stacks!
 
 ## Getting Started
 
@@ -249,7 +249,7 @@ nx e2e next-js-app-e2e --reporter=html --trace on
 
 ### Output in CI
 
-If your test project and application has been scaffolded with infrastructure ([@ensono-stacks/workspace:init](../../nx/workspace/plugin-information.md#generators) and [@ensono-stacks/next:infrastructure](../../nx/next/plugin-information.md#generators)) the [@ensono-stacks/playwright:init](../../nx/playwright/plugin-information.md#generators) generator will add e2e tasks to your taskctl.yaml file.
+If your test project and application has been scaffolded with infrastructure ([@ensono-stacks/workspace:init](../../getting_started/workspace/plugin-information.md#generators) and [@ensono-stacks/next:infrastructure](../../getting_started/next/plugin-information.md#generators)) the [@ensono-stacks/playwright:init](../../getting_started/playwright/plugin-information.md#generators) generator will add e2e tasks to your taskctl.yaml file.
 
 Upon a pull request being made this will automatically trigger a build pipeline for your application whereby the e2e test project will be ran.
 

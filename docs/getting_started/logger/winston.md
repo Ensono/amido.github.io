@@ -7,7 +7,7 @@ Generates a new Nx library which contains a Winston logger instance and associat
 
 ## Prerequisites
 
-An existing Stacks workspace.
+An existing Ensono Stacks workspace.
 
 ## Usage
 
@@ -79,6 +79,10 @@ logger.log({
     message: 'I love Ensono Stacks!', 
 })
 ```
+
+:::note
+    You would need to change the `@workspace-name` to the name of your workspace
+:::
 
 To change how Winston is configured, edit the created library:
 

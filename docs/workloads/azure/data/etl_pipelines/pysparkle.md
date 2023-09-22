@@ -13,7 +13,7 @@ keywords:
   - etl
 ---
 
-[PySparkle](https://github.com/ensono/stacks-azure-data/tree/main/pysparkle) is a Python library built to streamline data processing workflows with Apache Spark, and is an integral part of the Stacks Data Platform.
+[PySparkle](https://github.com/ensono/stacks-azure-data/tree/main/pysparkle) is a Python library built to streamline data processing workflows with Apache Spark, and is an integral part of the Ensono Stacks Data Platform.
 
 ## Prerequisites
 

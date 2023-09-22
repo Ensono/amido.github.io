@@ -4,7 +4,7 @@ title: Generate a data project
 sidebar_label: 1. Generate a data project
 hide_title: false
 hide_table_of_contents: false
-description: Generate a new data project using Stacks
+description: Generate a new data project using Ensono Stacks
 keywords:
   - stacks cli
   - data
@@ -12,16 +12,16 @@ keywords:
   - template
 ---
 
-This section provides an overview of scaffolding and generating a new Data Platform project using the [Stacks CLI](../../../../stackscli/about).
+This section provides an overview of scaffolding and generating a new Data Platform project using the [Ensono Stacks CLI](/docs/stackscli/about).
 
 It assumes the following [requirements](../requirements_data_azure.md) are in place:
 
 * A [remote git repository](../requirements_data_azure.md#git-repository) for hosting the generated project
 * [Terraform state storage](../requirements_data_azure.md#terraform-state-storage)
 
-## Step 1: Install the Stacks CLI
+## Step 1: Install the Ensono Stacks CLI
 
-Download and install the [Stacks CLI](../../../../stackscli/about).
+Download and install the [Ensono Stacks CLI](/docs/stackscli/about).
 Please refer to the **Stacks.CLI.Manual** in the latest [stacks-cli release](https://github.com/ensono/stacks-cli/releases) for detailed instructions.
 
 ## Step 2: Prepare the project config
@@ -33,7 +33,7 @@ A [sample data project config file](https://github.com/Ensono/stacks-azure-data/
 | Config field | Example value | Description |
 | ----- | ----- | ----- |
 | directory.working | `stacks` | Target directory for the scaffolded project. |
-| directory.export | `~` | Path to your Stacks CLI installation. |
+| directory.export | `~` | Path to your Ensono Stacks CLI installation. |
 | business.company | `mycompany` | Used for resource naming. |
 | business.domain | `mydomain` | Used for environment & Terraform state key naming. |
 | business.component | `data` | Used for resource naming. |
@@ -45,11 +45,11 @@ A [sample data project config file](https://github.com/Ensono/stacks-azure-data/
 | terraform.backend.group | `tfgroup` | Resource group account name for Terraform state. |
 | terraform.backend.container | `tfcontainer` | Container name account name for Terraform state. |
 
-All other values can be left as they are. For full documentation of all fields in the config file, refer to the Stacks CLI documentation.
+All other values can be left as they are. For full documentation of all fields in the config file, refer to the Ensono Stacks CLI documentation.
 
 ## Step 3: Scaffold the project
 
-You will now pass the prepared config file to the Stacks scaffold command, and your project will be generated. Run the following, replacing `./data-scaffold-config.yml` with the path to your config file:
+You will now pass the prepared config file to the Ensono Stacks scaffold command, and your project will be generated. Run the following, replacing `./data-scaffold-config.yml` with the path to your config file:
 
 ```bash
 stacks-cli scaffold -c ./data-scaffold-config.yml

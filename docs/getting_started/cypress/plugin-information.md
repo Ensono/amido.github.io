@@ -2,7 +2,7 @@
 id: ensono-stacks-cypress
 title: "@ensono-stacks/cypress"
 sidebar_label: "@ensono-stacks/cypress"
-description: "Using cypress with stacks!"
+description: "Using cypress with Ensono Stacks!"
 keywords:
   - Nx
   - monorepo

@@ -1,6 +1,6 @@
 ---
 id: dependency_parent_java
-title: Stacks Parent module
+title: Ensono Stacks Parent module
 sidebar_label: Parent module
 hide_title: false
 hide_table_of_contents: true
@@ -18,9 +18,9 @@ import {siteVariables} from '@site/versions';
 
 ## Module Overview
 
-This parent module provides shared functionality to the Stacks java modules. It's based on Spring
+This parent module provides shared functionality to the Ensono Stacks java modules. It's based on Spring
 and contains the dependency management, shared properties, plugins, profiles, reporting and repositories.
-It's intended to be the parent module for Amido Stacks but can also get used in your project.
+It's intended to be the parent module for Ensono Stacks but can also get used in your project.
 
 ## Module Structure
 
@@ -76,7 +76,7 @@ Use it as you'd use any dependency in your build tool.
 
 ### Localized solution using Maven Archetypes
 
-If you wish to customise the module and use your organisation's namespaces instead of Amido's. You can create a
+If you wish to customise the module and use your organisation's namespaces instead of Ensono's. You can create a
 [Maven archetype](https://maven.apache.org/archetype/index.html). Archetype is Maven's tool for
 scaffolding and offers lots of extra functionality. We suggest spending some time looking into them. We use Archetype to create a template and enable you to adopt this module under your organisation's namespace.
 To use the deployed archetypes:
@@ -112,7 +112,7 @@ To use the deployed archetypes:
 >
 >-  Update them manually
 >-  Re-create the relevant `import` statements to use the new-made module instead
->-  If you plan to use this with Amido Stacks, include your namespace in the `@ComponentScan` annotation of the `Application` class.
+>-  If you plan to use this with Ensono Stacks, include your namespace in the `@ComponentScan` annotation of the `Application` class.
 
 ### Building the module locally from this repository
 
@@ -124,7 +124,7 @@ To build the module locally:
 
 ### Creating an Archetype from this repository
 
-If you wish to customise the module and use your organisation's namespaces instead of Amido's. You can create a
+If you wish to customise the module and use your organisation's namespaces instead of Ensono's. You can create a
 [Maven archetype](https://maven.apache.org/archetype/index.html). Archetype is Maven's tool for
 scaffolding and offers lots of extra functionality. We suggest spending some time looking into them. We use Archetype to create a template and enable you to adopt this module under your organisation's namespace.
 To use the deployed archetypes:
@@ -180,7 +180,7 @@ To build, install and use the archetype follow these steps:
 >
 >-  Update them manually
 >-  Re-create the relevant `import` statements to use the new-made module instead
->-  If you plan to use this with Amido Stacks, include your namespace in the `@ComponentScan` annotation of the `Application` class.
+>-  If you plan to use this with Ensono Stacks, include your namespace in the `@ComponentScan` annotation of the `Application` class.
 
 ## Accessing Sonatype OSSRH 
 

@@ -2,7 +2,7 @@
 id: ensono-stacks-logger
 title: "@ensono-stacks/logger"
 sidebar_label: "@ensono-stacks/logger"
-description: "Using the logger with stacks!"
+description: "Using the logger with Ensono Stacks!"
 keywords:
   - Nx
   - monorepo
@@ -16,7 +16,7 @@ import Winston from './winston.md'
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-The `@ensono-stacks/logger` plugin allows you to add industry standard logging functionality to your Stacks apps.
+The `@ensono-stacks/logger` plugin allows you to add industry standard logging functionality to your Ensono Stacks apps.
 
 Currently, the following logging libraries are supported:
 
@@ -26,7 +26,7 @@ Currently, the following logging libraries are supported:
 
 ### Prerequisites
 
-An existing Stacks workspace.
+An existing Ensono Stacks workspace.
 
 ### Installation 
 

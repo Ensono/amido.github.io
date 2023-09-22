@@ -7,15 +7,16 @@ hide_table_of_contents: false
 description: Infrastructure deployment
 keywords:
   - stacks cli
+  - ensono
   - data
   - infrastructure
   - azure
   - template
 ---
 
-This section provides an overview of generating a new Data Platform project and deploying core infrastructure for Stacks Data Platform.
+This section provides an overview of generating a new Data Platform project and deploying core infrastructure for Ensono Stacks Data Platform.
 
-It assumes you have [generated a new data project using Stacks](generate_project.md), and that the following [requirements](../requirements_data_azure.md) are in place:
+It assumes you have [generated a new data project using Ensono Stacks](generate_project.md), and that the following [requirements](../requirements_data_azure.md) are in place:
 
 * [Azure subscription and service principal](../requirements_data_azure.md#azure-subscription)
     * If you want to provision the infrastructure within a private network, this can be done as part of a [Hub-Spoke network topology](../infrastructure_data_azure#networking). Spoke virtual network and subnet for private endpoints must be provisioned for each environment. The hub network must contain a self-hosted agent. See [Microsoft documentation](https://learn.microsoft.com/en-us/azure/architecture/reference-architectures/hybrid-networking/hub-spoke?tabs=cli) for more details on implementing Hub-spoke network topology in Azure.
@@ -50,14 +51,14 @@ Run the pipeline configured in Step 2 to commence the build and deployment proce
 
 Running this pipeline in Azure DevOps will initiate the deployment of artifacts into the non-production (nonprod) environment. It's important to monitor the progress of this deployment to ensure its success. You can track the progress and status of the deployment within the Pipelines section of Azure DevOps.
 
-If successful, the core infrastructure resources will now be available in the nonprod Stacks environment. To view these deployed resources, navigate to the [Azure portal](https://portal.azure.com/) and search for the resource group associated with the deployment. This resource group is named based upon values provided during step 1 in the pattern
+If successful, the core infrastructure resources will now be available in the nonprod Ensono Stacks environment. To view these deployed resources, navigate to the [Azure portal](https://portal.azure.com/) and search for the resource group associated with the deployment. This resource group is named based upon values provided during step 1 in the pattern
 `companyname-projectname-stage-region-component` (for example: `amido-stacks-dev-euw-de`). Within the resource group, you'll find a list of the resources that were deployed.
 
 Once core infrasturcture resources are deployed in nonprod environment, values will need adding into the nonprod variable group to reflect the deployed resources (e.g. `amido-stacks-de-pipeline-nonprod`). For additional information, see [Pipelines variable groups](../requirements_data_azure.md#azure-pipelines-variable-groups).
 
 ## Step 4: Deploy Infrastructure in further environments
 
-By default Stacks provides a framework for managing the platform across two environments - nonprod and prod.
+By default Ensono Stacks provides a framework for managing the platform across two environments - nonprod and prod.
 The template CI/CD pipelines provided are based upon these two platform environments (nonprod and prod) - but these may be amended depending upon the specific requirements of your project and organisation.
 
 * Deployment to the non-production (nonprod) environment is triggered on a feature branch when a pull request is open
@@ -67,4 +68,4 @@ Once core infrastructure resources are deployed in prod environment, values will
 
 ## Next steps
 
-Now you have generated and deployed a new Stacks data platform, [setup your local development environment](dev_quickstart_data_azure.md).
+Now you have generated and deployed a new Ensono Stacks data platform, [setup your local development environment](dev_quickstart_data_azure.md).
