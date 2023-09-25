@@ -171,7 +171,7 @@ The processing script is now prepared to perform the following steps:
     1. Read the latest data from the bronze layer into a Spark DataFrame.
     2. Define an output path for the data in the silver layer.
     3. Execute the transformation function against the DataFrame.
-    4. Save the transformed DataFrame into the silver layer in Delta format.     
+    4. Save the transformed DataFrame into the silver layer in Delta format.
 
 In order to run / debug the code during development, you may wish to use [Databricks for development](./dev_quickstart_data_azure.md#optional-pyspark-development-in-databricks).
 
