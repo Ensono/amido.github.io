@@ -7,6 +7,7 @@ keywords:
   - Nx
   - monorepo
   - stacks
+  - ensono
   - Generator
   - Executor
 ---
@@ -76,7 +77,7 @@ Visit the [NX Example](../stackscli/about.md) for the complete instructions/exam
 
 #### Option 2: Create Ensono Stacks workspace generator
 
-You can scaffold a brand-new Stacks and Nx workspace using the **@ensono-stacks/create-stacks-workspace** package.
+You can scaffold a brand-new Ensono Stacks and Nx workspace using the **@ensono-stacks/create-stacks-workspace** package.
 
 This approach is ideal if you want to use Ensono Stacks to build your frontend web applications but already have an existing infrastructure set up without Ensono Stacks as it's not mandatory to provide any infrastructure details. However, it is still possible to use Option 2 for infrastructure and deployment through passing the required CLI arguments!
 
