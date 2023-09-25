@@ -71,8 +71,8 @@ Here is the description of the main elements:
     5. `validation_config`: A list of validation configurations where each configuration contains the following fields:
         1. `column_name`: Name of the validated column.
         2. `expectations`: List of expectations where each expectation has the following fields:
-        3. `expectation_type`: Name of the Great Expectations expectation class to use.
-        4. `expectation_kwargs`: The keyword arguments to pass to the expectation class.
+            - `expectation_type`: Name of the Great Expectations [expectation class](https://greatexpectations.io/expectations/) to use.
+            - `expectation_kwargs`: The keyword arguments to pass to the expectation class.
 
 ### Example
 
