@@ -93,15 +93,109 @@ This will add new project artifacts for the workload under `de_workloads/process
 
 ## Step 4: Update PySpark job
 
-TODO.
+Within the generated workload, the following Python file will be used as the entrypoint for the processing job: `spark_jobs/process.py`. The file is structured ready to start adding any logic specific to your particular workload using Python / Spark. It will reference [Pysparkle](../etl_pipelines/pysparkle.md) utilities to simplify interactions with the data platform and standard transformation activities.
+
+```python
+import logging
+from pysparkle.logger import setup_logger
+
+WORKLOAD_NAME = "processing_demo"
+
+logger_library = "pysparkle"
+logger = logging.getLogger(logger_library)
+
+
+def etl_main() -> None:
+    """Execute data processing and transformation jobs."""
+    logger.info(f"Running {WORKLOAD_NAME} processing...")
+
+    #######################
+    # Add processing here #
+    #######################
+
+    logger.info(f"Finished: {WORKLOAD_NAME} processing.")
+
+
+if __name__ == "__main__":
+    setup_logger(name=logger_library, log_level=logging.INFO)
+    etl_main()
+
+```
+
+For the getting started guide, we have provided a simple example - you may extend this based on whatever your workload requires. Copy the following additional imports and constants into the top of your `process.py` file:
+
+```python
+from pysparkle.etl import (
+    TableTransformation,
+    get_spark_session_for_adls,
+    read_latest_rundate_data,
+    transform_and_save_as_delta,
+)
+from pysparkle.pyspark_utils import rename_columns_to_snake_case
+
+BRONZE_CONTAINER = "raw"
+SILVER_CONTAINER = "staging"
+SOURCE_DATA_TYPE = "parquet"
+INPUT_PATH_PATTERN = "Ingest_AzureSql_Example/movies.{table_name}/v1/full/"
+OUTPUT_PATH_PATTERN = "movies/{table_name}"
+```
+
+Next, copy the following within the `etl_main` function in `process.py`, replacing the ` # Add processing here #` comment:
+
+```python
+    spark = get_spark_session_for_adls(WORKLOAD_NAME)
+
+    tables = [
+        TableTransformation("links", rename_columns_to_snake_case),
+        TableTransformation("ratings_small", rename_columns_to_snake_case)
+    ]
+
+    for table in tables:
+        df = read_latest_rundate_data(
+            spark,
+            BRONZE_CONTAINER,
+            INPUT_PATH_PATTERN.format(table_name=table.table_name),
+            datasource_type=SOURCE_DATA_TYPE,
+        )
+
+        output_path = OUTPUT_PATH_PATTERN.format(table_name=table.table_name)
+
+        transform_and_save_as_delta(spark, df, table.transformation_function, SILVER_CONTAINER, output_path)
+```
+
+The processing script is now prepared to perform the following steps:
+
+1. Initiate a Spark session and connectivity to the data lake.
+2. Define `TableTransformation` objects - these consist of an input table name, and a transformation function. Here we are specifying two tables - _links_ and _ratings_small_ - and assigning the `rename_columns_to_snake_case` function as their transformation function.
+3. For each of the tables:
+    1. Read the latest data from the bronze layer into a Spark DataFrame.
+    2. Define an output path for the data in the silver layer.
+    3. Execute the transformation function against the DataFrame.
+    4. Save the transformed DataFrame into the silver layer in Delta format.     
+
+In order to run / debug the code during development, you may wish to use [Databricks for development](./dev_quickstart_data_azure.md#optional-pyspark-development-in-databricks).
 
 ## Step 5: Update tests
 
-TODO.
+The workload is created with placeholders for adding unit and end-to-end tests - see [testing](../etl_pipelines/testing_data_azure.md) for further details.
+
+### Unit tests
+
+A placeholder for adding unit tests is located within the workload under `tests/unit/test_processing.py`. The unit tests are intended as a first step to ensure the code is performing as intended and ensure no breaking changes have been introduced. The unit tests will run as part of the deployment pipeline, and can be run locally by developers.
+
+Within the same directory a `conftest.py` is provided. This contains a PyTest fixture to enable a local Spark session to be used for running the unit tests in isolation - for examples of this you can refer to the [example silver workload](https://github.com/Ensono/stacks-azure-data/blob/main/de_workloads/processing/silver_movies_example/tests/unit/).
+
+Add any unit tests you require to `test_processing.py` (although they are not strictly required for the getting started guide). You may also add these tests to the project's `Makefile` under the `test` command, to easily run them alongside other unit tests in the project.
+
+### End-to-end tests
+
+A placeholder directory for end-to-end tests for the workload is provided under `tests/unit/test_processing.py`. These will run as part of the deployment pipeline.
+
+End-to-end tests not required to be added for the getting started demo, but would be recommended when developing any production workload.
 
 ## Step 6: Deploy new workload in non-production environment
 
-The generated workload contains a YAML file containing a template Azure DevOps CI/CD pipeline for the workload, named `de-process-ado-pipeline.yaml`. This should be added as the definition for a new pipeline in Azure DevOps.
+As for ingest workloads, processing workloads contains a YAML file containing a template Azure DevOps CI/CD pipeline, named `de-process-ado-pipeline.yaml`. This should be added as the definition for a new pipeline in Azure DevOps.
 
 1. Sign-in to your Azure DevOps organization and go to your project.
 2. Go to Pipelines, and then select New.
@@ -114,7 +208,7 @@ Running this pipeline in Azure DevOps will deploy the artifacts into the non-pro
 
 ## Step 7: Review deployed resources
 
-If successful, the new resources will now be deployed into the non-production resource group in Azure - these can be viewed through the [Azure Portal](https://portal.azure.com/#home) or CLI.
+If successful, the workload's resources will now be deployed into the non-production resource group in Azure - these can be viewed through the [Azure Portal](https://portal.azure.com/#home) or CLI.
 
 The Azure Data Factory resources can be viewed through the [Data Factory UI](https://adf.azure.com/). You may also wish to run/debug the newly generated pipeline from here (see [Microsoft documentation](https://learn.microsoft.com/en-us/azure/data-factory/iterative-development-debugging)).
 
@@ -129,4 +223,4 @@ In the example pipeline templates:
 * Deployment to the non-production (nonprod) environment is triggered on a feature branch when a pull request is open
 * Deployment to the production (prod) environment is triggered on merging to the `main` branch, followed by manual approval of the release step.
 
-It is recommended in any Ensono Stacks data platform that processes for deploying and releasing to further should be agreed and documented, ensuring sufficient review and quality assurance of any new workloads. The template CI/CD pipelines provided are based upon two platform environments (nonprod and prod) - but these may be amended depending upon the specific requirements of your project and organisation.
+ℹ️ It is recommended in any data platform that processes for deploying and releasing across environments should be agreed and documented, ensuring sufficient review and quality assurance of any new workloads. The template CI/CD pipelines provided are based upon two platform environments (nonprod and prod) - but these may be amended depending upon the specific requirements of your project and organisation.
