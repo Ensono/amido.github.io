@@ -56,14 +56,13 @@ This YAML file should be added as the definition for a new pipeline in Azure Dev
 4. For the pipeline definition, specify the YAML file in the project repository feature branch (`de-shared-resources.yml`) and save
 5. The new pipeline will require access to any Azure DevOps pipeline variable groups specified in the pipeline YAML. Under each variable group, go to 'Pipeline permissions' and add the pipeline.
 
-
 ## Step 3: Deploy shared resources in non-production environment
 
 Run the pipeline configured in Step 2 to commence the build and deployment process.
 
 Running this pipeline in Azure DevOps will initiate the deployment of artifacts into the non-production (nonprod) environment. It's important to monitor the progress of this deployment to ensure its success. You can track the progress and status of the deployment within the Pipelines section of Azure DevOps.
 
-If successful, the core DE shared resources will now be available in the nonprod Ensono Stacks environment. To view the deployed resources, navigate to the relevant resource group in the [Azure portal](https://portal.azure.com/). The deployed Data Factory resources can be viewed through the [Data Factory UI](https://adf.azure.com/).
+If successful, the core DE shared resources will now be available in the non-production environment. To view the deployed resources, navigate to the relevant resource group in the [Azure portal](https://portal.azure.com/). The deployed Data Factory resources can be viewed through the [Data Factory UI](https://adf.azure.com/).
 
 ℹ️ Note: The structure of the data platform and Data Factory resources are defined in the project's code repository, and deployed through the Azure DevOps pipelines. Changes to Data Factory resources directly through the UI will lead to them be overwritten when pipelines are next run. If you wish to update shared Data Factory resources, update the appropriate files under the path `de_workloads/shared_resources/data_factory`.
 
@@ -74,7 +73,6 @@ The template CI/CD pipelines provided are based upon these two platform environm
 
 * Deployment to the non-production (nonprod) environment is triggered on a feature branch when a pull request is open
 * Deployment to the production (prod) environment is triggered on merging to the `main` branch, followed by manual approval of the release step.
-
 
 ## Next steps
 
