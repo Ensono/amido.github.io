@@ -25,7 +25,7 @@ export const EnsonoStacksImage = () => {
     return (
         <div className={customStyle.ensonoStacksImageContainer}>
             <div className={customStyle.wrapperImage}>
-                <img src={useBaseUrl('img/shutterstock_1293015184.png')} alt={image.alt}/>
+                <img src={useBaseUrl('img/stacks-banner.png')} alt={image.alt}/>
             </div>
             <div className={customStyle.wrapper}>
                 <div className={customStyle.stacksLogo}>
