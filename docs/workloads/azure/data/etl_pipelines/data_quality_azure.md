@@ -37,7 +37,7 @@ The design of the Data Quality processing is outlined in the following diagram.
 
 ## Usage
 
-To perform data quality checks against a workload interactively, you can use the [Datastacks](./datastacks.md) CLI. Note, this also requires that the [Pysparkle environment variables](./pysparkle.md#pysparkle-environment-variables) are set:
+To perform data quality checks against a workload interactively, you can use the [Datastacks](./datastacks.md) CLI. Note, this also requires that the [Datastacks PySpark environment variables](./pyspark_utilities.md#prerequisites) are set:
 
 ```bash
 datastacks dq --help
