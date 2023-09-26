@@ -9,7 +9,7 @@ import Layout from '@theme/Layout';
 import BrowserOnly from '@docusaurus/BrowserOnly';
 
 
-function NotFound() {
+function ErrorPageContent() {
   return (
     <Layout title="Page Not Found">
       <BrowserOnly  fallback={<div>Loading...</div>}>
@@ -42,4 +42,4 @@ function NotFound() {
   );
 }
 
-export default NotFound;
+export default ErrorPageContent;
