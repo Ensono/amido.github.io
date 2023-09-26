@@ -31,13 +31,13 @@ for data lake storage. The solution is based around a [Medallion Architecture](e
 Key elements of the solution include:
 
 * Infrastructure as code (IaC) for all infrastructure components (Terraform).
-* [Datastacks](etl_pipelines/datastacks.md) - a library and CLI built to accelerate the development of data engineering
+* [Datastacks](./etl_pipelines/datastacks.md) - a library and CLI built to accelerate the development of data engineering
 workloads in the data platform.
-* Sample ingest pipeline that transfers data from a source into a landing (Bronze) data lake zone.
-* Sample data processing pipelines performing data transformations from Bronze to Silver and Silver to Gold layers.
-* Data Quality validations.
+* Sample [ingest pipeline](./etl_pipelines/ingest_data_azure.md) that transfers data from a source into a landing (Bronze) data lake zone.
+* Sample [data processing pipelines](./etl_pipelines/data_processing.md) performing data transformations from Bronze to Silver and Silver to Gold layers.
+* [Data Quality validations](./etl_pipelines/data_quality_azure.md).
 * Deployment pipelines to enable CI/CD and DataOps for all components.
-* Automated tests to ensure quality assurance and operational efficiency.
+* [Automated tests](./etl_pipelines/testing_data_azure.md) to ensure quality assurance and operational efficiency.
 
 ### High-level architecture
 
