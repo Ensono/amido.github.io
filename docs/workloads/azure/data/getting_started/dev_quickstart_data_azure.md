@@ -87,4 +87,4 @@ To run scripts within a Databricks cluster, you will need to:
 
 ## Next steps
 
-Once you setup your local development environment, you can continue with the Getting Started tutorial by [deploying the Shared Resources](shared_resources_deployment_azure.md).
+Once you setup your local development environment, you can continue with the Getting Started tutorial by [deploying the shared resources](shared_resources_deployment_azure.md).
