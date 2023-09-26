@@ -16,7 +16,7 @@ keywords:
 ---
 
 The [Ensono Stacks Azure Data Platform](https://github.com/ensono/stacks-azure-data) solution provides
-a framework for accelerating the deployment of a production-ready data platform.
+a framework for accelerating the deployment of a production-ready modern data platform.
 
 ![Ensono Stacks Data Overview](images/stacks-data-overview.png)
 
@@ -32,8 +32,7 @@ Key elements of the solution include:
 
 * Infrastructure as code (IaC) for all infrastructure components (Terraform).
 * [Datastacks](etl_pipelines/datastacks.md) - a library and CLI built to accelerate the development of data engineering
-workloads in the data platform based upon templates.
-* [Pysparkle](etl_pipelines/pysparkle.md) - a library built to streamline data processing activities running in Apache Spark.
+workloads in the data platform.
 * Sample ingest pipeline that transfers data from a source into a landing (Bronze) data lake zone.
 * Sample data processing pipelines performing data transformations from Bronze to Silver and Silver to Gold layers.
 * Data Quality validations.

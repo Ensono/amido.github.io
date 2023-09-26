@@ -25,7 +25,6 @@ stacks-azure-data
 │   ├── shared_resources        # Shared resources used across data engineering workloads
 ├── deploy          # TF modules to deploy core Azure resources (used by `build` directory)
 ├── docs            # Documentation
-├── pysparkle       # Python library built to streamline data processing; packaged and uploaded to DBFS
 ├── stacks-cli      # Example config to use when scaffolding a project using stacks-cli
 ├── utils           # Python utilities package used across solution for local testing
 ├── .pre-commit-config.yaml         # Configuration for pre-commit hooks
