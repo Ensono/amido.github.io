@@ -41,6 +41,8 @@ To perform data quality checks against a workload interactively, you can use the
 
 ```bash
 datastacks dq --help
+
+# Execute data quality checks using the provided config
 datastacks dq --config-path "ingest/Ingest_AzureSql_Example/data_quality/ingest_dq.json" --container config
 ```
 

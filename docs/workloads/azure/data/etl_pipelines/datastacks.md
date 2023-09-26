@@ -107,13 +107,25 @@ In order to generate a new data engineering workload the Datastacks CLI takes a 
 | --------------------------------------------- | ----------------------------------------------------------------- | --------------- | ------------ | ------------------- | ------------------- |
 | pipeline_name | Name of the data pipeline / workload. | Yes | String | _n/a_ | processing_demo |
 
-## Data quality checks
+## PySpark utilities
 
-Datastacks CLI can be used to execute data quality checks interactively, for example:
+The Datastacks Python library contains utilities built to streamline data processing workflows with Apache Spark, and is an integral part of data workloads in Ensono Stacks.
 
-```bash
-# Execute data quality checks using the provided config
-datastacks dq --config-path "ingest/ingest_azure_sql_example/data_quality/ingest_dq.json" --container config
-```
+Datastacks also provides the foundation for the [Data Quality framework](./data_quality_azure.md) in Stacks.
 
-For details regarding the required environment settings and the configuration file see [Data Quality](./data_quality_azure.md#usage).
+### Prerequisites
+
+To develop and test using PySpark with Datastacks, the following setup is required:
+
+- Install the [local development requirements](../requirements_data_azure.md#local-development).
+- [Setup your local development environment](../getting_started/dev_quickstart_data_azure.md).
+
+To interact with Azure resources, the following additional environment variables are currently required:
+
+- `AZURE_TENANT_ID`: Directory ID for Azure Active Directory application.
+- `AZURE_CLIENT_ID`: Application ID for Azure Active Directory application.
+- `AZURE_CLIENT_SECRET`: Service Principal Secret.
+- `ADLS_ACCOUNT`: ADLS account name.
+- `BLOB_ACCOUNT`: Blob Storage account name.
+
+These are defined in Databricks clusters - see [development in Databricks](../getting_started/dev_quickstart_data_azure.md#optional-pyspark-development-in-databricks) for further details.
