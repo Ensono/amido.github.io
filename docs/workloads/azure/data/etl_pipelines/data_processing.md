@@ -55,7 +55,7 @@ The diagram below gives an example of a data processing data pipeline in Data Fa
 
 ![ADF_SilverPipelineDesign.png](../images/ADF_SilverPipelineDesign.png)
 
-The Python PySpark script executed as part of a data workload is kept inside the `spark_jobs` directory for the workload. This job will utilise the [Pysparkle library](./pysparkle.md), which provides a wealth of reusable utilities to assist with data transformations and loading data from/into to the data lake.
+The Python PySpark script executed as part of a data workload is kept inside the `spark_jobs` directory for the workload. This job will utilise the [Datastacks library](./datastacks.md), which provides a wealth of reusable utilities to assist with data transformations and loading data from/into to the data lake.
 
 ### Data Factory pipeline design
 
@@ -68,4 +68,4 @@ In Data Factory a standard data processing pipeline is as simple as this:
 ![ADF_Silver.png](../images/ADF_silver.png)
 
 It contains just one step - Python Databricks, configured to run a `silver.py` script, which gets deployed to DBFS
-(`dbfs:/FileStore/scripts/silver/silver.py`). The Datastacks / PySparkle package and library is deployed to DBFS, and made available to the cluster.
+(`dbfs:/FileStore/scripts/silver/silver.py`). The Datastacks package and library is deployed to DBFS, and made available to the cluster.
