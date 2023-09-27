@@ -51,7 +51,7 @@ workloads in the data platform.
 * Azure Blob Storage
 * Azure Data Factory
 * Log Analytics Workspace
-* Databricks Workspace (optional)
+* Databricks Workspace
 * Azure SQL Database (optional)
 
 The solution may be deployed within a secure private network. For details please see [Infrastructure](infrastructure_data_azure.md).

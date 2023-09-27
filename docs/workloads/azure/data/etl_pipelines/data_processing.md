@@ -23,9 +23,9 @@ Data processing workloads are based upon running Apache Spark / Python jobs on D
 - Bronze to Silver
 - Silver to Gold
 
-Similar to ingest workloads, data processing workloads can optionally include a [Data Quality validations](./data_quality_azure.md) step. Depending on your requirements, you can generate a workload with or without a Data Quality step.
+Processing workloads will utilise [Datastacks' PySpark utilities](./pyspark_utilities.md), to support and standardise common tasks. Similar to ingest workloads, data processing workloads can also optionally include a [Data Quality validations](./data_quality_azure.md) step.
 
-The Ensono Stacks data platform contains the following example data processing workloads:
+The following example data processing workloads are included for reference:
 
 - [silver_movies_example](https://github.com/Ensono/stacks-azure-data/tree/main/de_workloads/data_processing/silver_movies_example): Performs Bronze to Silver layer data processing over the [example dataset](../getting_started/example_data_source.md).
 

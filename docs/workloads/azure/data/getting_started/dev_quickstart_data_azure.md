@@ -65,6 +65,8 @@ make pre_commit
 
 ## (Optional) PySpark development in Databricks
 
+ℹ️ This sub-section assumes that [Datastacks build & deployment](./datastacks_deployment_azure.md) has been completed - if you are working through the _getting started guide_ for the first time, you may skip this section.
+
 When developing with PySpark, you may wish to either:
 
 - Run scripts locally using a local Spark installation, or

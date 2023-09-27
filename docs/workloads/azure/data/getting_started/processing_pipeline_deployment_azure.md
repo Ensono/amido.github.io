@@ -1,7 +1,7 @@
 ---
 id: processing_pipeline_deployment_azure
 title: Data Processing Pipeline Deployment
-sidebar_label: 7. Data Processing Pipeline Deployment
+sidebar_label: 8. Data Processing Pipeline Deployment
 hide_title: false
 hide_table_of_contents: false
 description: Data processing pipelines development & deployment
@@ -15,22 +15,23 @@ keywords:
   - template
 ---
 
-This section provides an overview of generating a new [data processing pipeline](../etl_pipelines/data_processing.md) workload and deploying it into a Ensono Stacks Data Platform, using the [Datastacks](../etl_pipelines/datastacks.md) utility.
+This section provides an overview of generating a new [data processing pipeline](../etl_pipelines/data_processing.md) workload and deploying it into a Ensono Stacks Data Platform, using the [Datastacks CLI](../etl_pipelines/datastacks.md).
 
 This guide assumes the following are in place:
 
-* A [deployed Ensono Stacks data platform](./core_data_platform_deployment_azure.md)
-* [Development environment set up](./dev_quickstart_data_azure.md)
-* [Deployed shared resources](./shared_resources_deployment_azure.md)
-* [Data ingested into the bronze layer of the data lake](./ingest_pipeline_deployment_azure.md)
+- A [deployed Ensono Stacks data platform](./core_data_platform_deployment_azure.md)
+- [Development environment set up](./dev_quickstart_data_azure.md)
+- [Deployed shared resources](./shared_resources_deployment_azure.md)
+- [Deployed Datastacks](./datastacks_deployment_azure.md)
+- [Data ingested into the bronze layer of the data lake](./ingest_pipeline_deployment_azure.md)
 
 This process will deploy the following resources into the project:
 
-* Azure Data Factory Pipeline resource (defined in Terraform / ARM)
-* Boilerplated script for performing data processing activities using PySpark (Python).
-* Azure DevOps CI/CD pipeline (YAML)
-* (optional) Spark job and config file for data quality tests (Python)
-* Template unit tests (Python)
+- Azure Data Factory Pipeline resource (defined in Terraform / ARM)
+- Boilerplated script for performing data processing activities using PySpark (Python).
+- Azure DevOps CI/CD pipeline (YAML)
+- (optional) Spark job and config file for data quality tests (Python)
+- Template unit tests (Python)
 
 ## Background
 
@@ -220,7 +221,7 @@ Continue to make any further amendments required to the new workload, re-running
 
 In the example pipeline templates:
 
-* Deployment to the non-production (nonprod) environment is triggered on a feature branch when a pull request is open
-* Deployment to the production (prod) environment is triggered on merging to the `main` branch, followed by manual approval of the release step.
+- Deployment to the non-production (nonprod) environment is triggered on a feature branch when a pull request is open
+- Deployment to the production (prod) environment is triggered on merging to the `main` branch, followed by manual approval of the release step.
 
 ℹ️ It is recommended in any data platform that processes for deploying and releasing across environments should be agreed and documented, ensuring sufficient review and quality assurance of any new workloads. The template CI/CD pipelines provided are based upon two platform environments (nonprod and prod) - but these may be amended depending upon the specific requirements of your project and organisation.
