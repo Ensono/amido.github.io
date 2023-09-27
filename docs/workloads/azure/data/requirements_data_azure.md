@@ -82,7 +82,7 @@ Deployment', referring to variables required after the fundamental infrastructur
 | databricksHost                   | After core infra | Databricks URL                              |
 | databricksWorkspaceResourceId    | After core infra | Databricks workspace resource id            |
 | datafactoryname                  | After core infra | Azure Data Factory name                     |
-| github_token                     | After core infra | Github token                                |
+| github_token                     | After core infra | GitHub PAT token, see below for more details                                |                            |
 | integration_runtime_name         | After core infra | Azure Data Factory integration runtime name |
 | KeyVault_baseURL                 | After core infra | Vault URI                                   |
 | keyvault_name                    | After core infra | Key Vault name                              |
@@ -119,6 +119,12 @@ Deployment', referring to variables required after the fundamental infrastructur
 | azure-tenant-id       | Project start | Directory ID for Azure Active Directory application   |
 
 </details>
+
+### Github PAT Token
+
+Within the pipelines we use an Azure DevOps task called UsePythonVersion@0 which allows us to install a specific version of Python onto the build agent. If the Python version doesn't exist on the build agent, it will download it from [Github Actions](https://github.com/actions/python-versions) however this requires a Github PAT Token otherwise you may hit by a GitHub anonymous download limit.
+You can create a token by following this [guide](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens).
+You do not require any permissions on this token because GitHub only needs to read your public profile.
 
 ### Azure Pipelines Service Connections
 
