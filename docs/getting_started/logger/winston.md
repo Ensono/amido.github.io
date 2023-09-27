@@ -3,7 +3,9 @@
 
 <details>
 <summary>Add Winston to your project</summary>
-Generates a new Nx library which contains a Winston logger instance and associated config.
+
+Generates a new Nx library which contains a **[Winston](https://github.com/winstonjs/winston)** logger instance and associated config.
+
 
 ## Prerequisites
 
@@ -98,6 +100,32 @@ if (process.env.NODE_ENV !== 'production') {
  
 export default logger;
 ```
+
+### Log Levels
+
+Winston provides several [log levels](https://github.com/winstonjs/winston#logging-levels) that you can use to categorize and filter log messages.
+These log levels are commonly used in many logging libraries and provide a way to prioritize and categorize log messages based on their severity.
+
+By default Winston uses the following npm [log levels](https://github.com/winstonjs/winston#logging-levels):
+
+- __error__: Used to log errors and exceptions. This log level is for critical issues that require immediate attention.
+
+- __warn__: Indicates a potential issue or warning that does not necessarily disrupt the application but should be noted.
+
+- __info__: This is the default log level and is used for general information about the application's operations. It's often used to log major events or milestones.
+
+- __http__: Logs HTTP related messages, such as host, path and response/request details.
+
+- __verbose__: A step above debug, providing more detailed information but not as noisy as silly or debug.
+
+- __debug__: Used for debugging and providing additional information about the application's state and behavior.
+
+- __silly__: The lowest log level, often used internally for debugging and tracing purposes.
+
+For more information on log level severity please refer to the [log levels](https://github.com/winstonjs/winston#logging-levels) section of the Winston documentation.
+
+
+
 
 ### Other resources
 
