@@ -82,7 +82,7 @@ Deployment', referring to variables required after the fundamental infrastructur
 | databricksHost                   | After core infra | Databricks URL                              |
 | databricksWorkspaceResourceId    | After core infra | Databricks workspace resource id            |
 | datafactoryname                  | After core infra | Azure Data Factory name                     |
-| github_token                     | After core infra | Github PAT token, see below for more details                                |                            |
+| github_token                     | After core infra | GitHub PAT token, see below for more details                                |                            |
 | integration_runtime_name         | After core infra | Azure Data Factory integration runtime name |
 | KeyVault_baseURL                 | After core infra | Vault URI                                   |
 | keyvault_name                    | After core infra | Key Vault name                              |
