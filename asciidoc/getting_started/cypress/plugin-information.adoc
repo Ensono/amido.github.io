@@ -16,12 +16,16 @@ Visit the link:../../testing/testing_in_nx/frontend_testing_in_nx.md[Frontend Te
 
 Install the `@ensono-stacks/cypress` plugin with the following command:
 
-[npm]
+=== npm
+
+[source]
 ----
 npm install --save-dev @ensono-stacks/cypress@latest
 ----
 
-[yarn]
+=== yarn
+
+[source]
 ----
 yarn add --dev @ensono-stacks/cypress@latest
 ----
