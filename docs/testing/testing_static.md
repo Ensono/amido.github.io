@@ -22,9 +22,6 @@ To enable integrations with GitHub and for use in Azure DevOps CI, the results a
 
 SonarCloud offers quality gates that ensure that your standards are adhered to before deploying.
 
- ![sonarcloud_example](https://amidostacksassets.blob.core.windows.net/docs/assets/sonarcloud_overview.png)
- ![sonarcloud_github](https://amidostacksassets.blob.core.windows.net/docs/assets/sonarcloud_github.png)
-
 SonarCloud supports most languages.
 
 ## Getting started
