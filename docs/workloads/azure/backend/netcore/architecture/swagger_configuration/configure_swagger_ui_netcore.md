@@ -18,7 +18,7 @@ keywords:
   - dotnet
 ---
 
-import HideNavigation  from "../../../../../../../src/pages/HideNavigation";
+import HideNavigation  from "../../../../../../../src/components/HideNavigation/HideNavigation";
 
 
 ## Configure Swagger UI

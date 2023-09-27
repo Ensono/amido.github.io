@@ -11,17 +11,45 @@ keywords:
 
 ## Local development
 
-* Python 3.9+
-* [Poetry](https://python-poetry.org/docs/)
-* (Windows users) A Linux distribution, e.g. [WSL2](https://docs.microsoft.com/en-us/windows/wsl/install)
-* Java 8/11/17 as in the [Spark documentation](https://spark.apache.org/docs/latest/)
+The following tools are recommended for developing while using the Ensono Stacks data solution:
 
-## Azure
+| Tool | Notes |
+| ----- | ----- |
+| [Python 3.9+](https://www.python.org/downloads/) |  |
+| [Poetry](https://python-poetry.org/docs/) | Used for Python dependency management in Stacks. |
+| A Linux distribution, e.g. [WSL2](https://docs.microsoft.com/en-us/windows/wsl/install) | Optional: recommended for Windows users developing the solution. |
+| Java 8/11/17 | Optional: Java is required to develop and run tests using PySpark locally - see [Spark documentation](https://spark.apache.org/docs/latest/). |
+| [Azure CLI](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli) | Optional: Azure CLI allows you to interact with Azure resources locally, including running end-to-end tests. |
 
-* Azure subscription – for deploying the solution into
-* Azure service principal (Application) – needs permissions to deploy and configure all required
-resources into the target subscription
-* Azure DevOps project – for running CI/CD pipelines and storing project variables
+See [development quickstart](getting_started/dev_quickstart_data_azure.md) for further details on getting start with developing the solution.
+
+## Git repository
+
+A remote Git repository is required for storing and managing a data project's code. When scaffolding a new data project, you will need the HTTPS URL of the repo.
+
+The examples and quickstart documentation assume that `main` is the primary branch in the repo.
+
+## Azure subscription
+
+In order to deploy a Stacks data platform into Azure, you will need:
+
+* One or more Azure subscriptions – for deploying the solution into
+* Azure service principal (Application) – with permissions to deploy and configure all required
+resources into the target subscription(s)
+
+### Terraform state storage
+
+Deployment of Azure resources in Ensono Stacks is done through Terraform. Within your Azure subscription, you must provision a [storage container](https://learn.microsoft.com/en-us/azure/storage/blobs/blob-containers-portal) to hold [Terraform state data](https://developer.hashicorp.com/terraform/language/state). Details regarding this storage are required when you first scaffold the project using the Ensono Stacks CLI. Therefore, once you have provisioned the storage container, make note of the following:
+
+* Storage account name
+* Resource group name
+* Container name
+
+## Azure DevOps
+
+CI/CD processes within the Ensono Stacks data platform are designed to be run in Azure DevOps Pipelines[^1]. Therefore, it is a requirement to [create a project in Azure DevOps](https://learn.microsoft.com/en-us/azure/devops/organizations/projects/create-project?view=azure-devops&tabs=browser).
+
+[^1]: More general information on [using Azure Pipelines in Stacks](/docs/infrastructure/azure/pipelines/azure_devops) is also available.
 
 ### Azure Pipelines variable groups
 
@@ -40,14 +68,14 @@ the variables fall into one of two categories based on the time of requirement: 
 denoting variables required at the very outset of the project, and 'After Core Infrastructure
 Deployment', referring to variables required after the fundamental infrastructure has been deployed.
 
+ℹ️ The variables under `amido-stacks-euw-de-env-network` are only required if you want to provision the infrastructure within a private network.
+
 <details>
   <summary>amido-stacks-de-pipeline-env</summary>
 
 | Variable Name                    | When Needed      | Description                                 |
 |----------------------------------|------------------|---------------------------------------------|
 | ADLS_DataLake_URL                | After core infra | Azure Data Lake Storage Gen2 URL            |
-| azure_subscription_id            | Project start    | Subscription ID                             |
-| azure-client-secret              | Project start    | Service principal secret                    |
 | blob_adls_storage                | After core infra | Azure Data Lake Storage Gen2 name           |
 | blob_configStorage               | After core infra | Blob storage name                           |
 | Blob_ConfigStore_serviceEndpoint | After core infra | Blob service URL                            |
@@ -59,9 +87,6 @@ Deployment', referring to variables required after the fundamental infrastructur
 | KeyVault_baseURL                 | After core infra | Vault URI                                   |
 | keyvault_name                    | After core infra | Key Vault name                              |
 | location                         | Project start    | Azure region                                |
-| pe_subnet_prefix                 | Project start    | Subnet CIDR, e.g. ["10.3.1.0/24"]           |
-| private_subnet_prefix            | Project start    | Subnet CIDR, e.g. ["10.3.1.0/24"]           |
-| public_subnet_prefix             | Project start    | Subnet CIDR, e.g. ["10.3.1.0/24"]           |
 | resource_group                   | Project start    | Name of the resource group                  |
 | sql_connection                   | After core infra | Connection string to Azure SQL database     |
 
@@ -70,12 +95,16 @@ Deployment', referring to variables required after the fundamental infrastructur
 <details>
   <summary>amido-stacks-euw-de-env-network</summary>
 
-
-| Variable Name          | When Needed   | Description                                             |
-|------------------------|---------------|---------------------------------------------------------|
-| pe_resource_group_name | Project start | Name of the resource group to provision private VNet to |
-| pe_vnet_name           | Project start | Private VNet name                                       |
-| pe_subnet_name         | Project start | Name of the subnet to provision private endpoints into  |
+| Variable Name                  | When Needed   | Description                                             |
+|--------------------------------|---------------|---------------------------------------------------------|
+| databricks_private_subnet_name | Project start | Name of the private databricks subnet                   |
+| databricks_public_subnet_name  | Project start | Name of the public databricks subnet                    |
+| pe_resource_group_name         | Project start | Name of the resource group to provision private VNet to |
+| pe_subnet_name                 | Project start | Name of the subnet to provision private endpoints into  |
+| pe_subnet_prefix               | Project start | Subnet CIDR, e.g. ["10.3.1.0/24"]                       |
+| pe_vnet_name                   | Project start | Private VNet name                                       |
+| private_subnet_prefix          | Project start | Subnet CIDR, e.g. ["10.3.4.0/24"]                       |
+| public_subnet_prefix           | Project start | Subnet CIDR, e.g. ["10.3.3.0/24"]                       |
 
 </details>
 
@@ -91,5 +120,12 @@ Deployment', referring to variables required after the fundamental infrastructur
 
 </details>
 
-Please see [Azure DevOps Pipelines](https://stacks.amido.com/docs/infrastructure/azure/pipelines/azure_devops)
-for general information on using Azure Pipelines in Stacks.
+### Azure Pipelines Service Connections
+
+Service Connections are used in Azure DevOps Pipelines to connect to external services, like Azure and GitHub.
+You must create the following Service Connections:
+
+| Name                  | When Needed   | Description                                           |
+|-----------------------|---------------|-------------------------------------------------------|
+| Stacks.Pipeline.Builds | Project start | The Service Connection to Azure. The service principal or managed identity that is used to create the connection must have contributor access to the Azure Subscription. |
+| GitHubReleases | Project start | The Service Connection to Github for releases. The access token that is used to create the connection must have read/write access to the GitHub repository. |

@@ -1,7 +1,6 @@
 module.exports = {
   docs: {
-    "Learn about Stacks": ["index", "contributions", "code_of_conduct"],
-    Architecture: ["workloads/azure/backend/architecture-overview"],
+    "Learn about Ensono Stacks": ["index", "contributions", "code_of_conduct"],
     "Development Support": [
       "developer/developer_patterns_readme",
       {
@@ -12,11 +11,6 @@ module.exports = {
           "developer/java/patterns/java_mapstruct_mapping",
           "developer/java/patterns/java_swagger_annotations",
         ],
-      },
-      {
-        type: "category",
-        label: "Azure Development Patterns",
-        items: [],
       },
     ],
     Workloads: [
@@ -80,19 +74,23 @@ module.exports = {
             label: "Frontend Web Applications",
             items: [
               "nx/nx_stacks",
+              "getting_started/setup",
+              "module_federation/nextjs_plugin",
+              "linting/eslint",
+              "storybook/storybook_stacks",
               {
                 type: "category",
-                label: "Stacks Plugins",
+                label: "Ensono Stacks Plugins",
                 items: [
-                  "nx/create-stacks-workspace/ensono-stacks-create-stacks-workspace",
-                  "nx/workspace/ensono-stacks-workspace",
-                  "nx/next/ensono-stacks-next",
-                  "nx/azure-node/ensono-stacks-azure-node",
-                  //"nx/azure-react/ensono-stacks-azure-react", Temporarily removed, add back in Cycle 11
-                  "nx/rest-client/ensono-stacks-rest-client",
-                  "nx/playwright/ensono-stacks-playwright",
-                  "nx/cypress/ensono-stacks-cypress",
-                  "nx/logger/ensono-stacks-logger",
+                  "getting_started/create-stacks-workspace/ensono-stacks-create-stacks-workspace",
+                  "getting_started/workspace/ensono-stacks-workspace",
+                  "getting_started/next/ensono-stacks-next",
+                  "getting_started/azure-node/ensono-stacks-azure-node",
+                  //"getting_started/azure-react/ensono-stacks-azure-react", Temporarily removed, add back in Cycle 11
+                  "getting_started/rest-client/ensono-stacks-rest-client",
+                  "getting_started/playwright/ensono-stacks-playwright",
+                  "getting_started/cypress/ensono-stacks-cypress",
+                  "getting_started/logger/ensono-stacks-logger",
                 ],
               },
             ],
@@ -217,28 +215,27 @@ module.exports = {
                 type: "category",
                 label: "ETL Pipelines",
                 items: [
+                  "workloads/azure/data/etl_pipelines/etl_intro_data_azure",
                   "workloads/azure/data/etl_pipelines/ingest_data_azure",
-                  "workloads/azure/data/etl_pipelines/silver_data_azure",
+                  "workloads/azure/data/etl_pipelines/data_processing",
                   "workloads/azure/data/etl_pipelines/data_quality_azure",
                   "workloads/azure/data/etl_pipelines/datastacks",
-                  {
-                    type: "category",
-                    label: "PySparkle",
-                    items: [
-                      "workloads/common/data/pysparkle/pysparkle_quickstart",
-                      "workloads/common/data/pysparkle/pysparkle_data_quality",
-                    ],
-                  },
+                  "workloads/azure/data/etl_pipelines/pysparkle",
+                  "workloads/azure/data/etl_pipelines/testing_data_azure",
                 ],
               },
               {
                 type: "category",
                 label: "Getting Started",
                 items: [
-                  "workloads/azure/data/getting_started/dev_quickstart_data_azure",
+                  "workloads/azure/data/getting_started/getting_started",
+                  "workloads/azure/data/getting_started/generate_project",
                   "workloads/azure/data/getting_started/core_data_platform_deployment_azure",
-                  "workloads/azure/data/getting_started/etl_pipelines_deployment_azure",
-                  "workloads/azure/data/getting_started/testing_data_azure",
+                  "workloads/azure/data/getting_started/dev_quickstart_data_azure",
+                  "workloads/azure/data/getting_started/shared_resources_deployment_azure",
+                  "workloads/azure/data/getting_started/example_data_source",
+                  "workloads/azure/data/getting_started/ingest_pipeline_deployment_azure",
+                  "workloads/azure/data/getting_started/processing_pipeline_deployment_azure",
                 ],
               },
               "workloads/azure/data/security_data_azure",
@@ -306,11 +303,6 @@ module.exports = {
           },
         ],
       },
-      {
-        type: "category",
-        label: "Google Cloud Platform",
-        items: [],
-      },
     ],
     "Quality Assurance": [
       "testing/cli_testing_frameworks",
@@ -355,7 +347,7 @@ module.exports = {
       "testing/accessibility_testing",
       "testing/performance_testing_gatling",
     ],
-    "Stacks CLI": [
+    "Ensono Stacks CLI": [
       "stackscli/about"
       // "stackscli/usage",
       // "stackscli/runtime_config",

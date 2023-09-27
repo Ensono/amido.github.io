@@ -58,9 +58,7 @@ It's as simple as following these steps:
 1. Open the Solution in Visual Studio
 2. Open the test explorer from View > Test
 3. Right-click the test you wish to debug, and select Debug Test
-![vs_debug](https://amidostacksassets.blob.core.windows.net/docs/assets/debug_visual_studio.gif)
 4. Set a breakpoint and start stepping through your code!
-![vs_debug_step](https://amidostacksassets.blob.core.windows.net/docs/assets/debug_visual_studio_breakpoint.gif)
 
 ## Building the solution
 
@@ -218,7 +216,6 @@ One of the best methods to test your locator is working is by trying it in the b
 
 In this example, we show how the edit icon can be referenced by using the data attribute. The data attribute in this instance was created for use with Cypress functional tests. We can easily use this again in Selenium. This way we are using common selectors.
 
-![edit_button](https://amidostacksassets.blob.core.windows.net/docs/assets/data_attribute.png)
 
 ```html
 <button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary Mui-disabled MuiIconButton-edgeEnd Mui-disabled"
@@ -241,4 +238,4 @@ public By menus = By.CssSelector("[data-cy='editMenuItem']");
 
 ## Standalone Implementation
 
-If you wish to simply have a solution that is not tied into the stacks CLI tool then you can clone the frpo from [here](https://github.com/amido/stacks-dotnet-webapp-automation)
+If you wish to simply have a solution that is not tied into the Ensono Stacks CLI tool then you can clone the frpo from [here](https://github.com/Ensono/stacks-dotnet-webapp-automation)

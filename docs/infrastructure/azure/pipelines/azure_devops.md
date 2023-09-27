@@ -10,13 +10,13 @@ keywords:
   - pipeline template
 ---
 
-import HideNavigation  from "../../../../src/pages/HideNavigation";
+import HideNavigation  from "../../../../src/components/HideNavigation/HideNavigation";
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The pipeline will automate provisioning and updating the core infrastructure in Azure. This page assumes you have already completed the steps on the [core infrastructure page](../core_infrastructure.md).
 
-Where possible, we are creating reusable steps ([stacks-pipeline-templates](https://github.com/amido/stacks-pipeline-templates)) that can be pulled into any base pipeline. Reusable steps can include tasks to deploy, build, test and more.
-Azure infrastructure source code can be found [here](https://github.com/amido/stacks-infrastructure-aks).
+Where possible, we are creating reusable steps ([stacks-pipeline-templates](https://github.com/Ensono/stacks-pipeline-templates)) that can be pulled into any base pipeline. Reusable steps can include tasks to deploy, build, test and more.
+Azure infrastructure source code can be found [here](https://github.com/Ensono/stacks-infrastructure-aks).
 
 ## Pipeline Diagram
 

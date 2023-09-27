@@ -11,7 +11,7 @@ keywords:
   - repository
 ---
 
-Structure of [stacks-azure-data](https://github.com/amido/stacks-azure-data) repository:
+Structure of [stacks-azure-data](https://github.com/ensono/stacks-azure-data) repository:
 
 ```md
 stacks-azure-data
@@ -26,13 +26,13 @@ stacks-azure-data
 ├── deploy          # TF modules to deploy core Azure resources (used by `build` directory)
 ├── docs            # Documentation
 ├── pysparkle       # Python library built to streamline data processing; packaged and uploaded to DBFS
+├── stacks-cli      # Example config to use when scaffolding a project using stacks-cli
 ├── utils           # Python utilities package used across solution for local testing
-├── .flake8         # Configuration for Flake8 linting
 ├── .pre-commit-config.yaml         # Configuration for pre-commit hooks
 ├── Makefile        # Includes commands for environment setup
 ├── pyproject.toml  # Project dependencies
 ├── README.md       # This file
-├── stackscli.yml   # Tells the Stacks CLI what operations to perform when the project is scaffolded
+├── stackscli.yml   # Tells the Ensono Stacks CLI what operations to perform when the project is scaffolded
 ├── taskctl.yaml    # Controls the independent runner
 └── yamllint.conf   # Linter configuration for YAML files used by the independent runner
 ```

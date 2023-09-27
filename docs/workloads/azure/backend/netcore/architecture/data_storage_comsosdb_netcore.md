@@ -4,7 +4,7 @@ title: Data Storage - CosmosDB
 sidebar_label: Data Storage - CosmosDB
 hide_title: true
 hide_table_of_contents: true
-description: .NET Core REST API application - how to use the Stacks package for CosmosDB document storage
+description: .NET Core REST API application - how to use the Ensono Stacks package for CosmosDB document storage
 keywords:
   - .net core
   - rest api
@@ -30,7 +30,7 @@ keywords:
 
 ### Summary
 
-This guide provides information on how to use the Stacks package for CosmosDB document storage.
+This guide provides information on how to use the Ensono Stacks package for CosmosDB document storage.
 
 The focus of this guide is the CosmosDB SQL API, it assumes the reader have prior knowledge about [CosmosDB SQL API](https://docs.microsoft.com/en-us/azure/cosmos-db/sql-query-getting-started) in order to understand the concepts describe thereafter.
 

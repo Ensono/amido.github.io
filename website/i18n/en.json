@@ -25,8 +25,8 @@
         "sidebar_label": "Dev [Node.js]- Using the repo to build the Node.js application"
       },
       "index": {
-        "title": "About Amido Stacks",
-        "sidebar_label": "About Amido Stacks"
+        "title": "About Ensono Stacks",
+        "sidebar_label": "About Ensono Stacks"
       },
       "infrastructure/azure/infrastructure_code": {
         "title": "Infrastructure",
@@ -97,8 +97,8 @@
         "sidebar_label": "Project Types - Web applications"
       },
       "workloads/frontend/monorepo": {
-        "title": "Stacks Monorepo",
-        "sidebar_label": "Stacks Monorepo"
+        "title": "Ensono Stacks Monorepo",
+        "sidebar_label": "Ensono Stacks Monorepo"
       },
       "workloads/frontend/server_side_cache": {
         "title": "Server Side Cache",

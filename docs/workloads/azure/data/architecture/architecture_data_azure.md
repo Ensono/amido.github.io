@@ -4,7 +4,7 @@ title: Architecture Overview
 sidebar_label: Architecture Overview
 hide_title: false
 hide_table_of_contents: false
-description: Introduction to Stacks Azure Data Platform
+description: Introduction to Ensono Stacks Azure Data Platform
 keywords:
   - data
   - python
@@ -14,7 +14,7 @@ keywords:
   - adf
 ---
 
-Stacks Azure Data Platform serves two primary functions:
+Ensono Stacks Azure Data Platform serves two primary functions:
 
 * Deployment of a fully integrated, modern Azure Data Platform.
 * A framework for generating new data engineering workloads from configurable templates, and deploying them to the Data Platform.
@@ -25,13 +25,12 @@ Stacks Azure Data Platform serves two primary functions:
 
 ## Deployment workflow
 
-The following activity diagrams depicts the steps to create the Core Data Platform, as well as additional
-data engineering workloads:
+The following diagrams depict the steps to create a Ensono Stacks Data Platform and data engineering workloads.
 
-### Data platform deployment
+### High-level workflow
 
-![Data platform deployment](../images/workflow-core-platform.png)
+![Ensono Stacks Data workflow - high-level](../images/stacks-data-workflow-high-level.png)
 
-### Data engineering workloads
+### Detailed workflow
 
-![Data engineering workload generation and deployment](../images/workflow-de-workloads.png)
+![Ensono Stacks Data workflow - detailed](../images/stacks-data-workflow-full.png)

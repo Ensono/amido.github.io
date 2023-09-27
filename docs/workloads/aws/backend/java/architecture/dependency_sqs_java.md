@@ -1,6 +1,6 @@
 ---
 id: dependency_sqs_java
-title: Stacks AWS SQS module
+title: Ensono Stacks AWS SQS module
 sidebar_label: AWS SQS module
 hide_title: false
 hide_table_of_contents: true

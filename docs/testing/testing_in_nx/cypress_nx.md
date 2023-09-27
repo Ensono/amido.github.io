@@ -13,7 +13,7 @@ keywords:
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
-Cypress is a powerful testing framework that has gained popularity for its robust features and ease of use. Developed and maintained by a dedicated community, Cypress offers a comprehensive solution for web automation testing. It focuses on providing a seamless cross-browser experience, allowing developers to write reliable and efficient tests across different browsers. Due to it's popularity we are supporting it as a test framework within stacks!
+Cypress is a powerful testing framework that has gained popularity for its robust features and ease of use. Developed and maintained by a dedicated community, Cypress offers a comprehensive solution for web automation testing. It focuses on providing a seamless cross-browser experience, allowing developers to write reliable and efficient tests across different browsers. Due to it's popularity we are supporting it as a test framework within Ensono Stacks!
 
 ## Getting Started
 
@@ -220,12 +220,12 @@ To change the reporter being used locally you can amend the [`cypress.config.ts`
 :::info
 The following plugins are dependencies for adding cypress to your build and deployment pipelines:
 
-- [`@ensono-stacks/workspace:init`](../../nx/workspace/plugin-information.md#generators)
-- [`@ensono-stacks/next:init-deployment`](../../nx/next/plugin-information.md#ensono-stacksnextinit-deployment)
+- [`@ensono-stacks/workspace:init`](../../getting_started/workspace/plugin-information.md#generators)
+- [`@ensono-stacks/next:init-deployment`](../../getting_started/next/plugin-information.md#ensono-stacksnextinit-deployment)
 
 :::
 
-- Running the [`@ensono-stacks/cypress:init-deployment`](../../nx/cypress/plugin-information.md#ensono-stackscypressinit-deployment) generator will configure your taskctl pipelines with the relevant test/reporting tasks.
+- Running the [`@ensono-stacks/cypress:init-deployment`](../../getting_started/cypress/plugin-information.md#ensono-stackscypressinit-deployment) generator will configure your taskctl pipelines with the relevant test/reporting tasks.
 - Upon a pull request being made this will automatically trigger a build pipeline for your application whereby the e2e tests for the application will be ran.
 - As defined in the [base configuration](#base-configuration) all test artefacts are output to 'test-results/<app-name\>'
 

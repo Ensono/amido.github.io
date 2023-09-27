@@ -26,13 +26,13 @@ Service (Amazon RDS), Amazon Redshift, and Amazon DocumentDB. Also, the service 
 including API keys and OAuth tokens. In addition, Secrets Manager enables you to control access to secrets using fine-grained 
 permissions and audit secret rotation centrally for resources in the AWS Cloud, third-party services, and on-premises.
 
-## Usage within Stacks
+## Usage within Ensono Stacks
 
-Support for AWS Secret Manager within Stacks is demonstrated as the provision of a number of secrets defined in AWS that are used as 
+Support for AWS Secret Manager within Ensono Stacks is demonstrated as the provision of a number of secrets defined in AWS that are used as 
 properties within the codebase. As the purpose of this is to simply showcase functionality, the use-case is that some secrets are 
 defined in the AWS Management Console and provided to a class within the application.
 
-Stacks uses Spring Cloud integration capability to allow a developer to access a secret as if it were a property defined locally.
+Ensono Stacks uses Spring Cloud integration capability to allow a developer to access a secret as if it were a property defined locally.
 This reduces the amount of coding required (for example, they don't need to access the AWS SDK directly) by allowing the developer to 
 simply specify an additional property source to their application through a series of properties in the application property files under
 resources.
@@ -71,7 +71,7 @@ Multiple secret keys and values can de defined within a single secret definition
 
 ## Using AWS Secret Property Providers 
 
-Within the Stacks code, property providers can be specified within the application resource files: -
+Within the Ensono Stacks code, property providers can be specified within the application resource files: -
 
 ```yaml
 spring.config.import:
@@ -107,7 +107,7 @@ providers in that an exception will be generated.
 
 ### Testing the Secret Properties
 
-Assuming the system has been configured properly, it should be possible to start the Stacks application and then access 
+Assuming the system has been configured properly, it should be possible to start the Ensono Stacks application and then access 
 the configured secret values using a simple cURL command via a test controller endpoint, as follows:
 
 ```bash

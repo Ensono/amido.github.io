@@ -13,20 +13,20 @@ keywords:
   - monorepo
 ---
 
-Using [Nx](https://nx.dev/) provides many benefits when working with SSR or CSR frontend applications. When using [stacks to scaffold an Nx monorepo](../../nx/nx_monorepo.md) you will be provided with several options to assure quality in your development process.
+Using [Nx](https://nx.dev/) provides many benefits when working with SSR or CSR frontend applications. When using [Ensono Stacks to scaffold an Nx monorepo](../../nx/nx_monorepo.md) you will be provided with several options to assure quality in your development process.
 
 
 ## Getting Started
 
-To leverage stacks and accelerate your testing process within your Nx monorepo you need to have a preexisting Nx workspace. See the **["Setting up your stacks workspace"](../../nx/nx_monorepo.md#set-up-your-stacks-workspace)** to get started!
+To leverage Ensono Stacks and accelerate your testing process within your Nx monorepo you need to have a preexisting Nx workspace. See the **["Getting Started"](/docs/getting_started/setup)** page for more details on how to setup your workspace!
 
 ### Selecting your test framework
 
-We recommend and currently support Playwright within the stacks workflow, with it’s Microsoft backing, extensive feature set and fast cross-browser web automation capability, it is our preferred tooling choice. Cypress is also a powerful testing framework which has a significant user base, as such this is also supported by `@ensono-stacks`.
+We recommend and currently support Playwright within the Ensono Stacks workflow, with it’s Microsoft backing, extensive feature set and fast cross-browser web automation capability, it is our preferred tooling choice. Cypress is also a powerful testing framework which has a significant user base, as such this is also supported by `@ensono-stacks`.
 
 :::tip 
 
-Visit the [`Playwright`](../../nx/playwright/plugin-information.md) or [`Cypress`](../../nx/cypress/plugin-information.md) Stacks plugins to start testing!
+Visit the [`Playwright`](../../getting_started/playwright/plugin-information.md) or [`Cypress`](../../getting_started/cypress/plugin-information.md) Ensono Stacks plugins to start testing!
 :::
 
 ### Accessibility Testing 
@@ -41,7 +41,7 @@ Visit the [`Playwright`](../../nx/playwright/plugin-information.md) or [`Cypress
   </div>
 </details>
 
-The [`@ensono-stacks/playwright:accessibility`](../../nx/playwright/plugin-information.md#ensono-stacksplaywrightaccessibility) and [`@ensono-stacks/cypress:accessibility`](../../nx/cypress/plugin-information.md#ensono-stackscypressaccessibility) generators enable you to add Axe accessibility tests to your application, if you would prefer an alternative to axe, then simply use an alternative plugin within your workspace!
+The [`@ensono-stacks/playwright:accessibility`](../../getting_started/playwright/plugin-information.md#ensono-stacksplaywrightaccessibility) and [`@ensono-stacks/cypress:accessibility`](../../getting_started/cypress/plugin-information.md#ensono-stackscypressaccessibility) generators enable you to add Axe accessibility tests to your application, if you would prefer an alternative to axe, then simply use an alternative plugin within your workspace!
 
 ### Visual Regression Testing
 
@@ -54,7 +54,7 @@ The [`@ensono-stacks/playwright:accessibility`](../../nx/playwright/plugin-infor
   </div>
 </details>
 
-If you are considering adding visual regression tests to your application, then we provide two options with the [`@ensono-stacks/playwright:visual-regression`](../../nx/playwright/plugin-information.md#ensono-stacksplaywrightvisual-regression) generator:
+If you are considering adding visual regression tests to your application, then we provide two options with the [`@ensono-stacks/playwright:visual-regression`](../../getting_started/playwright/plugin-information.md#ensono-stacksplaywrightvisual-regression) generator:
 
 -	Applitools eyes
     -	A powerful visual regression testing tool that detects visual changes, updates of browsers or OS, and integrates with popular testing frameworks and CI/CD pipelines, making it easy to automate visual regression testing and improve the quality and user-friendliness of digital products. Our community of experts recommend this software as the best approach, to decide if it is right for you, please visit [Applitools Eyes!](https://applitools.com/platform/eyes/)
@@ -63,6 +63,6 @@ If you are considering adding visual regression tests to your application, then 
 
 :::note
 
-We do not currently support visual testing with Stacks using our `@ensono-stacks/cypress` plugin
+We do not currently support visual testing with Ensono Stacks using our `@ensono-stacks/cypress` plugin
 
 :::

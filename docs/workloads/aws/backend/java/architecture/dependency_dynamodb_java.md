@@ -1,6 +1,6 @@
 ---
 id: dependency_dynamodb_java
-title: Stacks AWS DynamoDB module
+title: Ensono Stacks AWS DynamoDB module
 sidebar_label: AWS DynamoDB module
 hide_title: false
 hide_table_of_contents: true

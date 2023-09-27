@@ -14,7 +14,7 @@ keywords:
 
 ## Introduction
 
-This page is **work in progress** and will be completed as the Stacks DynamoDB support is more fully developed.
+This page is **work in progress** and will be completed as the Ensono Stacks DynamoDB support is more fully developed.
 
 ## Starting the DynamoDB Emulator
 
@@ -79,7 +79,7 @@ that have been created in the database use:
 aws dynamodb list-tables --endpoint-url http://localhost:8000
 ```
 
-## Creating the Stacks Menu table
+## Creating the Ensono Stacks Menu table
 
 **NOTE: This section needs updating to provide a more complete data model for Menu; it will at least support basic querying and 
 creation of a top level Menu item for the time being. For sub-objects, such as Categories and Items the schema below will
@@ -152,7 +152,7 @@ aws dynamodb scan --consistent-read --table-name Menu --endpoint-url http://loca
 
 Additional [DynamoDB API query examples](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithItems.html) can be found online. 
 
-## Executing Stacks Workload using DynamoDB rather than CosmosDB
+## Executing Ensono Stacks Workload using DynamoDB rather than CosmosDB
 
 TODO: **Move this to a better area once the DynamoDB work is completed**
 
@@ -160,7 +160,7 @@ There are a few steps required to use DynamoDB rather than CosmosDB: -
 
 1. Ensure that the module `stacks-aws-dynamodb` is present (and version number correct( in the **dynamodb** `pom.xml` (section profile[id='dynamodb'] > dependencies > dependency)
    1. To get the current WIP version of the module run the following commands:
-      1. `git clone https://github.com/amido/stacks-java-aws-dynamodb.git`
+      1. `git clone https://github.com/Ensono/stacks-java-aws-dynamodb.git`
       2. `mvn clean install`
 2. Check that the endpoint specified in `application-dynamodb.yml` is correct (local or pointing at AWS per requirements)
 3. Switch off the CosmosDB profile and switch on the DynamoDB profile when starting the workload
