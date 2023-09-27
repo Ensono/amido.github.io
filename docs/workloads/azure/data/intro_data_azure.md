@@ -16,7 +16,7 @@ keywords:
 ---
 
 The [Ensono Stacks Azure Data Platform](https://github.com/ensono/stacks-azure-data) solution provides
-a framework for accelerating the deployment of a production-ready data platform.
+a framework for accelerating the deployment of a production-ready modern data platform.
 
 ![Ensono Stacks Data Overview](images/stacks-data-overview.png)
 
@@ -31,14 +31,13 @@ for data lake storage. The solution is based around a [Medallion Architecture](e
 Key elements of the solution include:
 
 * Infrastructure as code (IaC) for all infrastructure components (Terraform).
-* [Datastacks](etl_pipelines/datastacks.md) - a library and CLI built to accelerate the development of data engineering
-workloads in the data platform based upon templates.
-* [Pysparkle](etl_pipelines/pysparkle.md) - a library built to streamline data processing activities running in Apache Spark.
-* Sample ingest pipeline that transfers data from a source into a landing (Bronze) data lake zone.
-* Sample data processing pipelines performing data transformations from Bronze to Silver and Silver to Gold layers.
-* Data Quality validations.
+* [Datastacks](./etl_pipelines/datastacks.md) - a library and CLI built to accelerate the development of data engineering
+workloads in the data platform.
+* Sample [ingest pipeline](./etl_pipelines/ingest_data_azure.md) that transfers data from a source into a landing (Bronze) data lake zone.
+* Sample [data processing pipelines](./etl_pipelines/data_processing.md) performing data transformations from Bronze to Silver and Silver to Gold layers.
+* [Data Quality validations](./etl_pipelines/data_quality_azure.md).
 * Deployment pipelines to enable CI/CD and DataOps for all components.
-* Automated tests to ensure quality assurance and operational efficiency.
+* [Automated tests](./etl_pipelines/testing_data_azure.md) to ensure quality assurance and operational efficiency.
 
 ### High-level architecture
 
@@ -52,7 +51,7 @@ workloads in the data platform based upon templates.
 * Azure Blob Storage
 * Azure Data Factory
 * Log Analytics Workspace
-* Databricks Workspace (optional)
+* Databricks Workspace
 * Azure SQL Database (optional)
 
 The solution may be deployed within a secure private network. For details please see [Infrastructure](infrastructure_data_azure.md).
