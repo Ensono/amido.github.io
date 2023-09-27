@@ -1,6 +1,6 @@
 = Ensono Stacks with Nx
 
-The ideologies of Ensono Stacks and [`Nx`](https://nx.dev/) are aligned in their focus on providing businesses with a framework that accelerates development, allowing you to focus on business objectives with best practice code. Leveraging Nx allows us to build upon that work and to fill the gaps with infrastructure, pipelines and the integration with other Ensono Stacks subsystems. Leveraging Nx allows a common developer experience, global communities of support, and an enterprise ready base.
+The ideologies of Ensono Stacks and https://nx.dev/[Nx] are aligned in their focus on providing businesses with a framework that accelerates development, allowing you to focus on business objectives with best practice code. Leveraging Nx allows us to build upon that work and to fill the gaps with infrastructure, pipelines and the integration with other Ensono Stacks subsystems. Leveraging Nx allows a common developer experience, global communities of support, and an enterprise ready base.
 
 .What is Nx?
 [%collapsible]
@@ -10,7 +10,7 @@ The Nx framework is a powerful tool that allows developers to easily build, test
 Additionally, Nx provides powerful features such as code-sharing, optimized builds, and real-time feedback, making it an ideal choice for any developer looking to streamline their development process and improve their productivity.
 
 
-TIP: Find out more about Nx through their official [documentation](https://nx.dev/getting-started/intro)!
+TIP: Find out more about Nx through their official https://nx.dev/getting-started/intro[documentation]!
 
 ====
 
