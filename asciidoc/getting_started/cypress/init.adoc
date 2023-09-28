@@ -61,6 +61,6 @@ The _init_ generator will create a new test project within your chosen applicati
 
 [NOTE]
 ====
-Visit the link:../../testing/testing_in_nx/cypress_nx.md[Testing with cypress] documentation for further details!
+Visit the link:../../testing/testing_in_nx/cypress_nx.adoc[Testing with cypress] documentation for further details!
 ====
 =====

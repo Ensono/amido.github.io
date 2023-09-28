@@ -11,7 +11,7 @@ The _init-deployment_ generator adds E2E testing to pre-existing deployment pipe
 [discrete]
 == Prerequisites
 
-1. The link:../workspace/plugin-information.md[@ensono-stacks/workspace:init-deployment] has been executed, producing the required deployment files for the workspace
+1. The link:../workspace/plugin-information.adoc[@ensono-stacks/workspace:init-deployment] has been executed, producing the required deployment files for the workspace
 
 [discrete]
 == Usage

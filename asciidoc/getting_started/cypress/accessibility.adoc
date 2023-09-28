@@ -51,6 +51,6 @@ Additionally, an example accessibility test will be generated, showcasing how to
 
 [NOTE]
 ====
-Visit the link:../../testing/testing_in_nx/cypress_accessibility_testing.md[Accessibility Testing] documentation for further details!
+Visit the link:../../testing/testing_in_nx/cypress_accessibility_testing.adoc[Accessibility Testing] documentation for further details!
 ====
 =====
