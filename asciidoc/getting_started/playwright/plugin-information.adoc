@@ -7,23 +7,19 @@ Using the `@ensono-stacks/playwright` plugin can help you get started with testi
 
 Additionally, Playwright tests can be added to your deployment pipelines through various deployment generators.
 
-[NOTE]
-====
-Visit the link:../../testing/testing_in_nx/frontend_testing_in_nx.adoc[Frontend Testing in an Nx monorepo] and link:../../testing/testing_in_nx/playwright_nx.adoc[Testing with Playwright] user guides for more information!
-====
+NOTE: Visit the link:../../testing/testing_in_nx/frontend_testing_in_nx.adoc[Frontend Testing in an Nx monorepo] and link:../../testing/testing_in_nx/playwright_nx.adoc[Testing with Playwright] user guides for more information!
+
 
 == Setting up @ensono-stacks/playwright
 
 Install the `@ensono-stacks/playwright` plugin with the following command:
-
-== npm
 
 [source]
 ----
 npm install --save-dev @ensono-stacks/playwright@latest
 ----
 
-== yarn
+or
 
 [source]
 ----

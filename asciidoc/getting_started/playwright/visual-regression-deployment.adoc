@@ -71,10 +71,7 @@ updatesnapshots:
     - task: e2e:updatesnapshots
 ----
 
-[NOTE]
-====
-Visit the link:../../testing/testing_in_nx/playwright_visual_testing.adoc[Updating your baseline images] documentation for further details!
-====
+NOTE: Visit the link:../../testing/testing_in_nx/playwright_visual_testing.adoc[Updating your baseline images] documentation for further details!
 
 [discrete]
 === Playwright with Applitools Eyes
@@ -91,8 +88,5 @@ Opting to scaffold visual testing with **applitools** will make a small change t
             APPLITOOLS_API_KEY: $(APPLITOOLS_API_KEY) # API key for Applitools API added
 ----
 
-[NOTE]
-====
-Visit the link:../../testing/testing_in_nx/playwright_visual_testing_applitools.adoc[Playwright with Applitools Eyes] documentation for further details!
-====
+NOTE: Visit the link:../../testing/testing_in_nx/playwright_visual_testing_applitools.adoc[Playwright with Applitools Eyes] documentation for further details!
 =====

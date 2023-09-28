@@ -44,9 +44,6 @@ Additionally, an example accessibility test will be generated, showcasing how to
 │   │   ├── src
 │   │   │   ├── axe-accessibility.spec.ts #Example accessibility test using Playwright
 ----
-[NOTE]
-====
-Visit the link:../../testing/testing_in_nx/playwright_accessibility_testing.adoc[Accessibility Testing] documentation for further details!
-====
+NOTE: Visit the link:../../testing/testing_in_nx/playwright_accessibility_testing.adoc[Accessibility Testing] documentation for further details!
 =====
 

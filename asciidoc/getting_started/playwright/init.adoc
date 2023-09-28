@@ -51,8 +51,5 @@ By default, the _init_ generator will configure both a baseline Playwright confi
 └── playwright.config.base.ts
 ----
 
-[NOTE]
-====
-Visit the link:../../testing/testing_in_nx/playwright_nx.adoc[Testing with Playwright] documentation for further details!
-====
+NOTE: Visit the link:../../testing/testing_in_nx/playwright_nx.adoc[Testing with Playwright] documentation for further details!
 =====

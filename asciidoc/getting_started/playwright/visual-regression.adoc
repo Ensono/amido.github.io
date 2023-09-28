@@ -61,10 +61,8 @@ Opting to scaffold **native** visual testing will make a number of amendments to
 │   │   ├── src
 │   │   │   ├── playwright-visual-regression.spec.ts #Example visual test using Playwright
 ----
-[NOTE]
-====
-Visit the link:../../testing/testing_in_nx/playwright_visual_testing.adoc[Playwright with visual comparisons] documentation for further details!
-====
+NOTE: Visit the link:../../testing/testing_in_nx/playwright_visual_testing.adoc[Playwright with visual comparisons] documentation for further details!
+
 
 [discrete]
 === Playwright with Applitools Eyes
@@ -83,9 +81,6 @@ Opting to scaffold visual testing with **applitools** will make a number of amen
 │   │   ├── src
 │   │   │   ├── applitools-eyes-grid.spec.ts #Example visual test using Playwright
 ----
-[NOTE]
-====
-Visit the link:../../testing/testing_in_nx/playwright_visual_testing_applitools.adoc[Playwright with Applitools Eyes] documentation for further details!
-====
+NOTE: Visit the link:../../testing/testing_in_nx/playwright_visual_testing_applitools.adoc[Playwright with Applitools Eyes] documentation for further details!
 =====
 
