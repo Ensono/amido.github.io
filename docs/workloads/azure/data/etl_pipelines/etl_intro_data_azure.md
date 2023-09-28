@@ -26,7 +26,7 @@ delivers a lakehouse solution, with the following structured data transformation
 | Data lake layer | Description | Default container name | Data format | Stacks workload type |
 | ------------- | ------------- | ------------- | ------------- | ------------- |
 | Bronze | The initial landing area where data is stored as per its original source, prior to any transformations. | raw | Parquet | [Data ingest](./ingest_data_azure.md) |
-| Silver | The data has been cleansed and validated, and stored in an optimal format to support downstream analytic use-cases. | staging | Delta | [Data processing](./data_processing.md) |
+| Silver | The data has been cleansed, validated and stored in an optimal format to support downstream analytic use-cases. | staging | Delta | [Data processing](./data_processing.md) |
 | Gold | Reliable data entities prepared for specific use-cases. These typically combine and aggregate datasets from the silver layer. | conformance | Delta | [Data processing](./data_processing.md) |
 
 ## Datastacks
