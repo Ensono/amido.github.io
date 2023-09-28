@@ -29,16 +29,15 @@ delivers a lakehouse solution, with the following structured data transformation
 * [Silver](data_processing.md): Conformance, cleansing and data quality processing stage.
 * Gold: Data aggregations, refinement and enrichment, producing datasets optimised for analytics and visualisation.
 
-## ETL utilities
+## Datastacks
 
-Ensono Stacks data platform features several auxiliary utilities to enhance the process for developing and deploying
-production-ready data pipelines and workloads.
+[Datastacks](./datastacks.md) is a library and CLI built to accelerate the development of data engineering workloads in the data platform. It features a range of utilities to enhance the process for developing and deploying production-ready data pipelines and workloads.
 
-* [Datastacks](datastacks.md): A CLI tool designed to facilitate the creation of custom pipelines using predefined templates.
-* [PySparkle](pysparkle.md): A versatile library equipped with reusable data processing components.
-* [Data Quality](data_quality_azure.md): An optional step incorporated into all ETL pipelines to ensure data integrity.
+## Quality assurance
 
-## Dataset
+Quality and reliability of data workloads are at the core of Ensono Stacks data platform. This is ensured through frameworks for [data quality](./data_quality_azure.md) and [automated testing](./testing_data_azure.md).
+
+## Sample dataset
 
 The example workloads included in the solution are based upon an
 [example Azure SQL data source and dataset](../getting_started/example_data_source.md). This data source may optionally

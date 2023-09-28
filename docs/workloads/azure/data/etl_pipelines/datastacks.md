@@ -14,11 +14,18 @@ keywords:
   - template
 ---
 
-Datastacks is a utility built to support various functions within the Ensono Stacks Data Platform. The library and its associated Python-based CLI is intended to assist developers working within a deployed Stacks Data Platform, supporting common tasks such as generating new data engineering workloads and running Spark jobs.
+Datastacks provides a suite of utilities built to accelerate development within an Ensono Stacks Data Platform, supporting common tasks such as generating new data engineering workloads and running Spark jobs. Datastacks consists of:
+
+- [Datastacks CLI](#using-the-datastacks-cli) - A command-line interface for data engineers, enabling interaction with Datastacks' various functions.
+- [Data workload generation](#generating-data-workloads) - Generate new data workloads based upon common templates.
+- [PySpark utilities](./pyspark_utilities.md) - A suite of reusable utilities to simplify development of data pipelines using Apache Spark and Python.
+- [Data quality utilities](./data_quality_azure.md) - Utilities to support the data quality framework implemented in Stacks.
+- Azure utilities - Utilities to support common interactions with Azure resources from data workloads.
+- Behave utilities - Common scenarios and setup used by [Behave end-to-end tests](./testing_data_azure.md#end-to-end-tests).
 
 ## Using the Datastacks CLI
 
-* [Setup project environment](../getting_started/dev_quickstart_data_azure.md)
+- [Setup project environment](../getting_started/dev_quickstart_data_azure.md)
 
 ```bash
 # Option 1: Run Datastacks CLI using Poetry's interactive shell (recommended for local development)
@@ -31,16 +38,16 @@ poetry run datastacks --help
 
 ## Generating data workloads
 
-Datastacks can be used to generate all the resources required for a new data engineering workload - for example a data ingest pipeline. This will create all resources required for the workload, based upon templates within the [de_templates](https://github.com/ensono/stacks-azure-data/tree/main/de_templates) directory.
+Datastacks can be used to generate all the resources required for a new data engineering workload - for example a [data ingest](./ingest_data_azure.md) or [data processing](./data_processing.md) pipeline. This will create all resources required for the workload, based upon templates within the [de_templates](https://github.com/ensono/stacks-azure-data/tree/main/de_templates) directory.
 
 The [deployment architecture](../architecture/architecture_data_azure.md#data-engineering-workloads) section shows the workflow for using Datastacks to generate a new workload.
 The [getting started](../getting_started/getting_started.md) section includes step-by-step instructions on deploying a new ingest or processing workload using Datastacks.
 
 ### Commands
 
-* **`generate`**: Top-level command for generating resources for a new data workload.
-    * **`ingest`**: Subcommand to generate a new [data ingest workload](./ingest_data_azure.md), using the provided configuration file. A optional flag (`--data-quality` or `-dq`) can be included to specify whether to include data quality components in the workload.
-    * **`processing`**: Subcommand to generate a new [data processing workload](./data_processing.md), using the provided configuration file. A optional flag (`--data-quality` or `-dq`) can be included to specify whether to include data quality components in the workload.
+- **`generate`**: Top-level command for generating resources for a new data workload.
+    - **`ingest`**: Subcommand to generate a new [data ingest workload](./ingest_data_azure.md), using the provided configuration file. A optional flag (`--data-quality` or `-dq`) can be included to specify whether to include data quality components in the workload.
+    - **`processing`**: Subcommand to generate a new [data processing workload](./data_processing.md), using the provided configuration file. A optional flag (`--data-quality` or `-dq`) can be included to specify whether to include data quality components in the workload.
 
 ### Examples
 
@@ -99,14 +106,3 @@ In order to generate a new data engineering workload the Datastacks CLI takes a 
 | Config field | Description | Required? | Format | Default value | Example value |
 | --------------------------------------------- | ----------------------------------------------------------------- | --------------- | ------------ | ------------------- | ------------------- |
 | pipeline_name | Name of the data pipeline / workload. | Yes | String | _n/a_ | processing_demo |
-
-## Performing data quality checks
-
-Datastacks can be used to execute data quality checks using [PySparkle](./pysparkle.md), for example:
-
-```bash
-# Execute data quality checks using the provided config
-datastacks dq --config-path "ingest/ingest_azure_sql_example/data_quality/ingest_dq.json" --container config
-```
-
-For details regarding the required environment settings and the configuration file see [Data Quality](./data_quality_azure.md#usage).
