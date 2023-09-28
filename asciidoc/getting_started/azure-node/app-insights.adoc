@@ -8,9 +8,7 @@ This generator will add and configure https://www.npmjs.com/package/applicationi
 
 - Requires a NodeJs server for application insights to hook into.
 
-TIP: Use the https://nx.dev/packages/next/generators/custom-server[@nx/next:custom-server] generator which will have been added to your workspace by xref:plugin-information.adoc[@ensono-stacks/workspace].
-
-/docs/getting_started/workspace/ensono-stacks-workspace[@ensono-stacks/workspace] to generate your NodeJS server!
+TIP: Use the https://nx.dev/packages/next/generators/custom-server[@nx/next:custom-server] generator which will have been added to your workspace by link:/docs/getting_started/workspace/ensono-stacks-workspace[@ensono-stacks/workspace] to generate your NodeJS server!
 
 - Requires the APPLICATIONINSIGHTS_CONNECTION_STRING environment variable to be set.
 
