@@ -1,7 +1,7 @@
 ---
 id: processing_pipeline_deployment_azure
 title: Data Processing Pipeline Deployment
-sidebar_label: 7. Data Processing Pipeline Deployment
+sidebar_label: 8. Data Processing Pipeline Deployment
 hide_title: false
 hide_table_of_contents: false
 description: Data processing pipelines development & deployment
@@ -15,22 +15,23 @@ keywords:
   - template
 ---
 
-This section provides an overview of generating a new [data processing pipeline](../etl_pipelines/data_processing.md) workload and deploying it into a Ensono Stacks Data Platform, using the [Datastacks](../etl_pipelines/datastacks.md) utility.
+This section provides an overview of generating a new [data processing pipeline](../etl_pipelines/data_processing.md) workload and deploying it into a Ensono Stacks Data Platform, using the [Datastacks CLI](../etl_pipelines/datastacks.md).
 
 This guide assumes the following are in place:
 
-* A [deployed Ensono Stacks data platform](./core_data_platform_deployment_azure.md)
-* [Development environment set up](./dev_quickstart_data_azure.md)
-* [Deployed shared resources](./shared_resources_deployment_azure.md)
-* [Data ingested into the bronze layer of the data lake](./ingest_pipeline_deployment_azure.md)
+- A [deployed Ensono Stacks data platform](./core_data_platform_deployment_azure.md)
+- [Development environment set up](./dev_quickstart_data_azure.md)
+- [Deployed shared resources](./shared_resources_deployment_azure.md)
+- [Deployed Datastacks](./datastacks_deployment_azure.md)
+- [Data ingested into the bronze layer of the data lake](./ingest_pipeline_deployment_azure.md)
 
 This process will deploy the following resources into the project:
 
-* Azure Data Factory Pipeline resource (defined in Terraform / ARM)
-* Boilerplated script for performing data processing activities using PySpark (Python).
-* Azure DevOps CI/CD pipeline (YAML)
-* (optional) Spark job and config file for data quality tests (Python)
-* Template unit tests (Python)
+- Azure Data Factory Pipeline resource (defined in Terraform / ARM)
+- Boilerplated script for performing data processing activities using PySpark (Python).
+- Azure DevOps CI/CD pipeline (YAML)
+- (optional) Spark job and config file for data quality tests (Python)
+- Template unit tests (Python)
 
 ## Background
 
@@ -93,15 +94,15 @@ This will add new project artifacts for the workload under `de_workloads/process
 
 ## Step 4: Update PySpark job
 
-Within the generated workload, the following Python file will be used as the entrypoint for the processing job: `spark_jobs/process.py`. The file is structured ready to start adding any logic specific to your particular workload using Python / Spark. It will reference [Pysparkle](../etl_pipelines/pysparkle.md) utilities to simplify interactions with the data platform and standard transformation activities.
+Within the generated workload, the following Python file will be used as the entrypoint for the processing job: `spark_jobs/process.py`. The file is structured ready to start adding any logic specific to your particular workload using Python / Spark. It will reference [PySpark utilities](../etl_pipelines/pyspark_utilities.md) to simplify interactions with the data platform and standard transformation activities.
 
 ```python
 import logging
-from pysparkle.logger import setup_logger
+from datastacks.logger import setup_logger
 
 WORKLOAD_NAME = "processing_demo"
 
-logger_library = "pysparkle"
+logger_library = "datastacks"
 logger = logging.getLogger(logger_library)
 
 
@@ -125,13 +126,13 @@ if __name__ == "__main__":
 For the getting started guide, we have provided a simple example - you may extend this based on whatever your workload requires. Copy the following additional imports and constants into the top of your `process.py` file:
 
 ```python
-from pysparkle.etl import (
+from datastacks.pyspark.etl import (
     TableTransformation,
     get_spark_session_for_adls,
     read_latest_rundate_data,
     transform_and_save_as_delta,
 )
-from pysparkle.pyspark_utils import rename_columns_to_snake_case
+from datastacks.pyspark.pyspark_utils import rename_columns_to_snake_case
 
 BRONZE_CONTAINER = "raw"
 SILVER_CONTAINER = "staging"
@@ -220,7 +221,7 @@ Continue to make any further amendments required to the new workload, re-running
 
 In the example pipeline templates:
 
-* Deployment to the non-production (nonprod) environment is triggered on a feature branch when a pull request is open
-* Deployment to the production (prod) environment is triggered on merging to the `main` branch, followed by manual approval of the release step.
+- Deployment to the non-production (nonprod) environment is triggered on a feature branch when a pull request is open
+- Deployment to the production (prod) environment is triggered on merging to the `main` branch, followed by manual approval of the release step.
 
 ℹ️ It is recommended in any data platform that processes for deploying and releasing across environments should be agreed and documented, ensuring sufficient review and quality assurance of any new workloads. The template CI/CD pipelines provided are based upon two platform environments (nonprod and prod) - but these may be amended depending upon the specific requirements of your project and organisation.

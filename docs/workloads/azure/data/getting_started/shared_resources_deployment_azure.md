@@ -50,10 +50,10 @@ The `de_build` folder includes YAML file called `job-pipeline-vars` that contain
 The default shared resources for the Ensono Stacks Data Platform are found under [de_workloads/shared_resources](https://github.com/ensono/stacks-azure-data/tree/main/de_workloads/shared_resources). This directory contains a YAML file `de-shared-resources.yml` containing a template Azure DevOps CI/CD pipeline for building and deploying the shared resources.
 This YAML file should be added as the definition for a new pipeline in Azure DevOps.
 
-1. Sign-in to your Azure DevOps organization and go to your project
-2. Go to Pipelines, and then select **New pipeline**
-3. Name the new pipeline, e.g. `de-shared-resources`
-4. For the pipeline definition, specify the YAML file in the project repository feature branch (`de-shared-resources.yml`) and save
+1. Sign-in to your Azure DevOps organization and go to your project.
+2. Go to Pipelines, and then select **New pipeline**.
+3. Name the new pipeline, e.g. `de-shared-resources`.
+4. For the pipeline definition, specify the YAML file in the project repository feature branch (`de-shared-resources.yml`) and save.
 5. The new pipeline will require access to any Azure DevOps pipeline variable groups specified in the pipeline YAML. Under each variable group, go to 'Pipeline permissions' and add the pipeline.
 
 ## Step 3: Deploy shared resources in non-production environment
@@ -76,4 +76,4 @@ The template CI/CD pipelines provided are based upon these two platform environm
 
 ## Next steps
 
-Once the shared resources are deployed you may now [generate a new data ingest pipeline](./ingest_pipeline_deployment_azure.md) (optionally implementing the [example data source](example_data_source.md) beforehand).
+Once the shared resources are deployed you should [build and deploy the Datastacks library](./datastacks_deployment_azure.md).
