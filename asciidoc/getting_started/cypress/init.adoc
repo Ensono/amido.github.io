@@ -25,10 +25,12 @@ Upon calling the _init_ generator, you will be presented with the following ques
 
 The following command line arguments are available:
 
-[cols="2*",options="header"]
+[cols="1,1"]
 |===
 | Option | Description
-| --project | The name of the application to generate a test project for
+
+| --project 
+| The name of the application to generate a test project for
 |===
 
 [discrete]
@@ -36,10 +38,7 @@ The following command line arguments are available:
 
 The _init_ generator will create a new test project within your chosen application containing an example test and predefined configuration for the monorepo and the individual test project.
 
-[NOTE]
-====
 .Generated files
-[stem]
 ----
 .
 ├── apps
@@ -57,10 +56,6 @@ The _init_ generator will create a new test project within your chosen applicati
 │   │   ├── tsconfig.json #Typescript configuration updated for cypress exclusions
 └── cypress.config.base.ts #Shared cypress configuration across projects
 ----
-====
 
-[NOTE]
-====
-Visit the link:../../testing/testing_in_nx/cypress_nx.adoc[Testing with cypress] documentation for further details!
-====
+NOTE: Visit the link:../../testing/testing_in_nx/cypress_nx.adoc[Testing with cypress] documentation for further details!
 =====

@@ -18,10 +18,12 @@ nx g @ensono-stacks/cypress:accessibility
 [discrete]
 == Command line arguments
 
-[cols="2*",options="header"]
+[cols="1,1"]
 |===
 | Option | Description
-| --project -p | The name of the test project to add accessibility tests to
+
+| --project -p 
+| The name of the test project to add accessibility tests to
 |===
 
 [discrete]
@@ -49,8 +51,5 @@ Additionally, an example accessibility test will be generated, showcasing how to
 └──────────
 ----
 
-[NOTE]
-====
-Visit the link:../../testing/testing_in_nx/cypress_accessibility_testing.adoc[Accessibility Testing] documentation for further details!
-====
+NOTE: Visit the link:../../testing/testing_in_nx/cypress_accessibility_testing.adoc[Accessibility Testing] documentation for further details!
 =====

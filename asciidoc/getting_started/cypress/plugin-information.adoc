@@ -7,25 +7,19 @@ Using the `@ensono-stacks/cypress` plugin can help you get started with testing 
 
 Additionally, Cypress tests can be added to your deployment pipelines through the various deployment generators.
 
-[NOTE]
-====
-Visit the link:../../testing/testing_in_nx/frontend_testing_in_nx.md[Frontend Testing in an Nx monorepo] and link:../../testing/testing_in_nx/cypress_nx.md[Testing with Cypress] user guides for more information!
-====
+NOTE: Visit the link:../../testing/testing_in_nx/frontend_testing_in_nx.md[Frontend Testing in an Nx monorepo] and link:../../testing/testing_in_nx/cypress_nx.md[Testing with Cypress] user guides for more information!
+
 
 == Setting up @ensono-stacks/cypress
 
 Install the `@ensono-stacks/cypress` plugin with the following command:
 
-=== npm
-
-[source]
 ----
 npm install --save-dev @ensono-stacks/cypress@latest
 ----
 
-=== yarn
+or
 
-[source]
 ----
 yarn add --dev @ensono-stacks/cypress@latest
 ----
