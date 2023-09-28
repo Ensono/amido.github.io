@@ -46,8 +46,6 @@ Follow the interactive questions creating a new NextJs application named *host*:
 npx @ensono-stacks/create-stacks-workspace@latest
 ----
 
-
-
 TIP: Visit the link:/docs/getting_started/create-stacks-workspace/ensono-stacks-create-stacks-workspace[@ensono-stacks/create-stacks-workspace] docs for more information and setup instructions!
 
 This will generate a new Ensono Stacks Nx workspace containing a NextJs *host* application
@@ -252,6 +250,3 @@ nx run-many --target=serve
 
 We can then visit http://localhost:4200/[localhost:4200] and see the *header* module running inside the *host* application.
 Or we can visit http://localhost:4300/[localhost:4300] and see the *header* module hosted independently.
-
-
-
