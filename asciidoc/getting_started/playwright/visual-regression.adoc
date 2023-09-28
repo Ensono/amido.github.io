@@ -1,0 +1,91 @@
+=== @ensono-stacks/playwright:visual-regression
+
+.Adds native or cloud-based visual regression to your test suite
+[%collapsible]
+=====
+[.details]
+====
+The _visual-regression_ generator provides you with the option to scaffold visual regression tests and configuration through a cloud-based provider or Playwright's native visual comparison API.
+====
+
+[discrete]
+== Usage
+
+----
+nx g @ensono-stacks/playwright:visual-regression
+----
+
+Upon calling the _visual-regression_ generator, you will be presented with a number of options:
+
+* What type of visual regression tests would you like to use?
+** native: Generate visual regression tests using Playwright's native link:https://playwright.dev/docs/test-snapshots[visual comparison API]
+** applitools: Generate visual regression tests using the link:https://www.npmjs.com/package/@applitools/eyes-playwright[@applitools/eyes-playwright] plugin and scaffold an example visual regression test batch.
+
+[discrete]
+== Command line arguments
+
+[cols="1,1,1,1,1"]
+|===
+|Option |Description |Type |Accepted Values |Default
+
+| --project, -p 
+| The name of the existing Playwright test app to enhance
+| string
+|
+|
+
+| --type, -t 
+| Method used to conduct visual testing 
+| string 
+| [choices: "native", "applitools"] 
+| none
+|===
+
+[discrete]
+== Generator Output
+
+[discrete]
+=== Playwright with native visual comparisons
+
+Opting to scaffold **native** visual testing will make a number of amendments to your test project's configuration:
+
+1. link:../../testing/testing_in_nx/playwright_visual_testing.adoc[playwright.config.ts snapshot configuration]: Configuration for your visual tests.
+2. link:../../testing/testing_in_nx/playwright_visual_testing.adoc[playwright-visual-regression.spec.ts]: Sample test showcasing how to perform visual testing using Playwright's native link:https://playwright.dev/docs/test-snapshots[visual comparison API].
+3. project.json: Additional task set up to enable you to run your visual regression tests using the `playwright:jammy` container.
+
+[source,text]
+----
+.
+├── apps
+│   ├── <app-name>-e2e
+│   │   ├── src
+│   │   │   ├── playwright-visual-regression.spec.ts #Example visual test using Playwright
+----
+[NOTE]
+====
+Visit the link:../../testing/testing_in_nx/playwright_visual_testing.adoc[Playwright with visual comparisons] documentation for further details!
+====
+
+[discrete]
+=== Playwright with Applitools Eyes
+
+Opting to scaffold visual testing with **applitools** will make a number of amendments to your test project's configuration:
+
+1. link:https://www.npmjs.com/package/@applitools/eyes-playwright[@applitools/eyes-playwright]: Dependency added to `package.json`.
+2. link:../../testing/testing_in_nx/playwright_visual_testing_applitools.adoc[playwright.config.ts project configuration]: Standalone project configuration to isolate visual tests with Applitools Eyes.
+3. link:../../testing/testing_in_nx/playwright_visual_testing_applitools.adoc[applitools-eyes-grid.spec.ts]: Sample test showcasing how to perform visual testing using the Applitools Eyes Grid.
+
+[source,text]
+----
+.
+├── apps
+│   ├── <app-name>-e2e
+│   │   ├── src
+│   │   │   ├── applitools-eyes-grid.spec.ts #Example visual test using Playwright
+----
+[NOTE]
+====
+Visit the link:../../testing/testing_in_nx/playwright_visual_testing_applitools.adoc[Playwright with Applitools Eyes] documentation for further details!
+====
+=====
+
