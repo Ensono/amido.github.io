@@ -15,9 +15,7 @@ keywords:
   - medallion
 ---
 
-The Ensono Stacks Data Platform solution accelerates the generation of production-ready ETL / ELT pipelines and workloads. New data engineering workloads can be generated through the [Datastacks](./datastacks.md) utility, while a range of example data workloads and pipelines are also provided. These workloads cover all stages from
-ingesting data from source, applying data transformations across data lake layers, ultimately enabling end-user data
-visualisations and analytics.
+The Ensono Stacks Data Platform solution accelerates the generation of production-ready ETL / ELT pipelines and workloads. New data engineering workloads can be generated through the [Datastacks](./datastacks.md) utility, while a range of example data workloads and pipelines are also provided. These workloads cover all stages from ingesting data from source, applying data transformations across data lake layers, ultimately enabling end-user data visualisations and analytics.
 
 ## Medallion architecture
 
@@ -25,9 +23,11 @@ The data lake structure and approach used in Ensono Stacks is based upon the
 [medallion architecture](https://www.databricks.com/glossary/medallion-architecture) design pattern. This approach
 delivers a lakehouse solution, with the following structured data transformation layers:
 
-* [Bronze](ingest_data_azure.md): Landing of raw data from source.
-* [Silver](data_processing.md): Conformance, cleansing and data quality processing stage.
-* Gold: Data aggregations, refinement and enrichment, producing datasets optimised for analytics and visualisation.
+| Data lake layer | Description | Default container name | Data format | Stacks workload type |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| Bronze | The initial landing area where data is stored as per its original source, prior to any transformations. | raw | Parquet | [Data ingest](./ingest_data_azure.md) |
+| Silver | The data has been cleansed and validated, and stored in an optimal format to support downstream analytic use-cases. | staging | Delta | [Data processing](./data_processing.md) |
+| Gold | Reliable data entities prepared for specific use-cases. These typically combine and aggregate datasets from the silver layer. | conformance | Delta | [Data processing](./data_processing.md) |
 
 ## Datastacks
 
