@@ -29,24 +29,6 @@ The following example data processing workloads are included for reference:
 
 - [silver_movies_example](https://github.com/Ensono/stacks-azure-data/tree/main/de_workloads/data_processing/silver_movies_example): Performs Bronze to Silver layer data processing over the [example dataset](../getting_started/example_data_source.md).
 
-## Silver processing
-
-The transformation from Bronze to Silver is crucial for filtering out the noise from raw data. It ensures that analysts
-and data scientists work with a consistent, clean, and dependable dataset that can be trusted for downstream analytics.
-
-As data moves to the Silver layer, it undergoes a series of transformations:
-
-- **Conformance**: At this stage, inconsistencies in data representation are ironed out. For instance, disparate date
-formats, value representations, or units from different data sources are standardized to a common format.
-- **Cleansing**: Data errors, missing values, or duplicates, are identified and rectified. This ensures that downstream
-analytics are based on clean and reliable data.
-- **Enrichment**: Data from various sources might be combined or enriched with additional information to provide a more
-holistic dataset.
-- **Structuring**: While the Bronze layer often holds semi-structured or unstructured data, the Silver layer typically
-structures this data into a more query-friendly format, enabling efficient data analysis.
-- **Data Quality Checks**: This stage ensures that the data conforms to predefined quality standards, making sure it's
-reliable and accurate.
-
 ## Data processing pipeline overview
 
 Within Stacks, processing activities are performed using Python PySpark jobs. These jobs are orchestrated by pipelines in Data Factory, and executed in Databricks. Using PySpark jobs - as opposed to notebooks - gives full control over the processing activities (for example ensuring thorough [test coverage](./testing_data_azure.md) and quality control).
