@@ -56,9 +56,9 @@ The following command line arguments are available:
 
 - Adds an app insights config file
 
+./src/app-insights-config.ts
 [source, json]
 ```
-title="/src/app-insights-config.ts"
 // eslint-disable-next-line import/no-extraneous-dependencies
 import {
   DistributedTracingModes,
@@ -82,9 +82,9 @@ export default appInsightConfig;
 
 - Adds a telemetry provider 
 
+./src/telemetry-provider.tsx
 [source, json]
 ```
-title="/src/telemetry-provider.tsx"
 import {
   ReactPlugin,
   AppInsightsContext,
@@ -118,9 +118,9 @@ export const TelemetryProvider: FC<{ children?: ReactNode }> = ({ children }) =>
 
 - Installs and adds microsoft applicationinsights packages to package.json
 
+./package.json
 [source, json]
 ```
-title="/package.json"
   "dependencies": {
     ...OtherDependencies
     "@microsoft/applicationinsights-react-js": "3.4.0",
