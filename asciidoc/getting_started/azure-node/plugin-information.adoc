@@ -23,7 +23,6 @@ To see a list of the plugin capabilities run the following command:
 
 [source, bash]
 nx list @ensono-stacks/azure-node
-```
 
 View additional information about a plugin capability through the following command:
 
