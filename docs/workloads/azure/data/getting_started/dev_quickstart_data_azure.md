@@ -34,6 +34,7 @@ In order to interact with Azure resources when developing, including running end
     - `AZURE_DATA_FACTORY_NAME`
     - `AZURE_REGION_NAME`
     - `AZURE_STORAGE_ACCOUNT_NAME`
+    - `AZURE_CONFIG_ACCOUNT_NAME`
 
 ## Running tests
 
