@@ -65,7 +65,7 @@ TIP: Visit the link:./workspace/plugin-information.md[@ensono-stacks/workspace] 
 To accelerate your project development and ensure consistency across those projects, we have several Ensono Stacks plugins available!
 
 
-[cols="1,1"]
+[cols="1,2"]
 |===
 |Plugin |Description
 
