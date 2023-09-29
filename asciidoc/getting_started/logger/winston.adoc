@@ -120,8 +120,9 @@ The following command line arguments are available:
 
 The generator will create a new application within your libs folder with the following structure:
 
-[source, text]
-====
+[source,text]
+----
+.
 ├── libs/[libname]
 │   ├── src
 │   ├── ├── index.ts // Contains the Winston configuration and creates the logger instance
@@ -136,32 +137,32 @@ The generator will create a new application within your libs folder with the fol
 ├── jest.config.ts // Workspace-level Jest config - created if this does not already exist
 └── jest.preset.ts // Workspace-leve Jest preset that extends `@nx/jest/preset` - created if this does not already exist.
 
-====
+----
 
 Additionally, the following files will be modified
 
 [source, text]
-====
+----
 .
 ├── nx.json // Adds configuration for Jest tests if this has not already been done by another generator
 ├── package.json // Adds winston as a dependency
 └── tsconfig.base.json // Adds new library into `paths` field
 
-====
+----
 
 === Importing the logger into your app
 
 Having created a logger using the above [command](#usage), import the Winston logger instance from the newly created library (the import name can be found within the `tsconfig.base.json` files `paths` field) into your application:
 
 [source, typescript]
-====
+----
 import logger from '@workspace-name/mynewlogger'
 
 logger.log({
     level: 'info',
     message: 'I love Ensono Stacks!', 
 })
-====
+----
 
 NOTE: You would need to change the `@workspace-name` to the name of your workspace
 
@@ -169,7 +170,7 @@ To change how Winston is configured, edit the created library:
 
 ../libs/mynewlogger/src/index.ts
 [source, typescript]
-====
+----
 const logger = winston.createLogger(logConfiguration);
 
 // Custom transport for non-production
@@ -180,7 +181,7 @@ if (process.env.NODE_ENV !== 'production') {
 } 
  
 export default logger;
-====
+----
 
 === Log Levels
 
