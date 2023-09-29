@@ -17,9 +17,16 @@ nx g @ensono-stacks/next:init-deployment
 
 The following command line arguments are available:
 
-| Option          | Description                            | Type              | Accepted Values | Default |
-| --------------- | -------------------------------------- | ----------------- | --------------- | ------- |
-| --project       | The name of the project                | nameOfApplication | string          | N/A     |
+[cols="1,1,1,1,1"]
+|===
+|Option |Description | Type | Accepted Values|Default
+
+|--project
+|The name of the project
+|nameOfApplication
+|string
+|N/A
+|===
 
 === Generator Output
 
