@@ -31,9 +31,4 @@ nx g @ensono-stacks/azure-react:app-insights-web --help
 
 === Generators
 
-.Installs and configures a ReactJS Library with App Insights.
-[%collapsible]
-====
 include::generator-app-insights-web.adoc[]
-====
-

@@ -58,7 +58,7 @@ The following command line arguments are available:
 
 ./src/app-insights-config.ts
 [source, json]
-```
+----
 // eslint-disable-next-line import/no-extraneous-dependencies
 import {
   DistributedTracingModes,
@@ -78,13 +78,13 @@ const appInsightConfig: IConfiguration & IConfig = {
 };
 
 export default appInsightConfig;
-```
+----
 
 - Adds a telemetry provider 
 
 ./src/telemetry-provider.tsx
 [source, json]
-```
+----
 import {
   ReactPlugin,
   AppInsightsContext,
@@ -114,27 +114,26 @@ export const TelemetryProvider: FC<{ children?: ReactNode }> = ({ children }) =>
     {children}
   </AppInsightsContext.Provider>
 );
-```
+----
 
 - Installs and adds microsoft applicationinsights packages to package.json
 
 ./package.json
 [source, json]
-```
-  "dependencies": {
-    ...OtherDependencies
-    "@microsoft/applicationinsights-react-js": "3.4.0",
-    "@microsoft/applicationinsights-web": "2.8.9",
-  }
+----
+"dependencies": {
+  ...OtherDependencies
+  "@microsoft/applicationinsights-react-js": "3.4.0",
+  "@microsoft/applicationinsights-web": "2.8.9",
 }
-```
+----
 
 === Using Application Insights 
 
 To use the Application Insights react hooks within your application please import the generated library and wrap your application in the TelemetryProvider installed by the generator for example 
 
 [source, json]
-```
+----
 import NxWelcome from './nx-welcome';
 import { TelemetryProvider } from 'packages/nameOfGeneratedAppInsightsLibrary/src';
 
@@ -148,12 +147,12 @@ export function App() {
 }
 
 export default App;
-```
+----
 
 From here a `useAppInsightsContext` hook will be available to use anywhere within your ReactJS App. For example
 
 [source, json]
-```
+----
 import React from "react";
 import { useAppInsightsContext } from "@microsoft/applicationinsights-react-js";
 
@@ -172,6 +171,6 @@ const MyComponent = () => {
 }
 
 export default MyComponent;
-```
+----
 
 Full documentation and a getting started guide can be found at https://learn.microsoft.com/en-gb/azure/azure-monitor/app/javascript-react-plugin[React plug-in for Application Insights JavaScript SDK]
