@@ -1,8 +1,11 @@
 == @ensono-stacks/[plugin-name]:generator/executor name
 
-Very brief description (E.g Add Next Authentication to your next application)
 
-What does the generator/executor do?
+.What does the generator/executor do?
+[%collapsible]
+====
+
+Very brief description (E.g Add Next Authentication to your next application)
 
 === Prerequisites
 
@@ -50,3 +53,5 @@ Will it create new files, will it manipulate existing ones?
 │   ├── second file which gets created
 └── second folder created
 ----
+
+====
