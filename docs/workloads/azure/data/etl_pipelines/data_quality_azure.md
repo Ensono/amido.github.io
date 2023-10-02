@@ -16,8 +16,8 @@ you to assert expectations about your data, which can help catch any discrepanci
 errors in your data as early in the pipeline as possible.
 
 Data Quality checks are executed as Python Databricks jobs with the quality validation logic
-packaged within our [PySparkle](pysparkle.md) library.
-Internally, PySparkle leverages the capabilities of the [Great Expectations](https://greatexpectations.io/)
+packaged within our [Datastacks](./datastacks.md) library.
+Internally, Datastacks leverages the capabilities of the [Great Expectations](https://greatexpectations.io/)
 library, an open-source Python-based library, to perform these checks.
 
 The design of the Data Quality processing is outlined in the following diagram.
@@ -37,10 +37,12 @@ The design of the Data Quality processing is outlined in the following diagram.
 
 ## Usage
 
-To perform data quality checks against a workload interactively, you can use the [Datastacks](./datastacks.md) CLI. Note, this also requires that the [Pysparkle environment variables](./pysparkle.md#pysparkle-environment-variables) are set:
+To perform data quality checks against a workload interactively, you can use the [Datastacks](./datastacks.md) CLI. Note, this also requires that the [Datastacks PySpark environment variables](./pyspark_utilities.md#prerequisites) are set:
 
 ```bash
 datastacks dq --help
+
+# Execute data quality checks using the provided config
 datastacks dq --config-path "ingest/Ingest_AzureSql_Example/data_quality/ingest_dq.json" --container config
 ```
 
