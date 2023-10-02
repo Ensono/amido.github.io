@@ -1,7 +1,8 @@
 == @ensono-stacks/next:init
 
-Adds custom config and developer tools to an existing next application
-
+.Adds custom config and developer tools to an existing next application
+[%collapsible]
+====
 The next init generator will add a custom ESlint config to an existing NextJs application, install `eslint-plugin-testing-library` to the project. as well as update project.json with a custom test config to allow coverage collection from https://jestjs.io/[jest].
 
 === Prerequisites
@@ -43,7 +44,7 @@ UPDATE apps/baseline-next-app/specs/index.spec.tsx #Formatting changes
 
 The generator will also add https://github.com/dequelabs/axe-core-npm/blob/develop/packages/react/README.md[react-axe] (version 4.7.3) into the app via the following:
 
-....app.tsx
+.app.tsx
 [source, typescript]
 ----
 // @ts-ignore
@@ -63,3 +64,4 @@ react-axe has been added so your app can be tested for accessibility and results
 
 A final message is provided if the developer would like to run the relevant deployment generator that supports this FE.
 `@ensono-stacks/next:init-deployment`.
+====

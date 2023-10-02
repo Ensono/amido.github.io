@@ -6,7 +6,7 @@ The next-auth-redis generator will add Redis for session management into your ex
 
 === Prerequisites
 
-An existing [Next](https://nextjs.org/) application with Next-auth. Use the `@ensono-stacks/next:next-auth` generator to add this into your application
+An existing https://nextjs.org/[Next] application with Next-auth. Use the `@ensono-stacks/next:next-auth` generator to add this into your application
 
 === Usage
 
