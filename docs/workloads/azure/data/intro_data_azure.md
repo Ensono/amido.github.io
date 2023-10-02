@@ -20,7 +20,7 @@ a framework for accelerating the deployment of a production-ready modern data pl
 
 ![Ensono Stacks Data Overview](images/stacks-data-overview.png)
 
-1. Use the [Ensono Stacks CLI](../../../stackscli/about) to generate a new data platform project.
+1. Use the [Ensono Stacks CLI](https://stacks.ensono.com/docs/stackscli/about) to generate a new data platform project.
 2. Build and deploy the data platform infrastructure into your Azure environment.
 3. Accelerate development of data workloads and ETL pipelines with [Datastacks](etl_pipelines/datastacks.md).
 
@@ -60,5 +60,6 @@ Example data engineering workloads are provided, based upon the Datastacks templ
 
 - [Ingest](./etl_pipelines/ingest_data_azure.md)
 - [Bronze to Silver](./etl_pipelines/data_processing.md)
+- [Silver to Gold](./etl_pipelines/data_processing.md)
 
 Each of the ingest and data processing workloads may optionally include [Data Quality checks](./etl_pipelines/data_quality_azure.md).
