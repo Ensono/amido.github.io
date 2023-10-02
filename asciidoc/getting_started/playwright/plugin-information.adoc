@@ -1,0 +1,55 @@
+= @ensono-stacks/playwright
+:sidebar_label: @ensono-stacks/playwright
+:description: Using Playwright with Ensono Stacks
+:keywords: Nx, monorepo, stacks, ensono, playwright, generator, executor
+
+Using the `@ensono-stacks/playwright` plugin can help you get started with testing using Playwright. With its comprehensive feature set, this plugin accelerates your setup process and provides examples to get you started.
+
+Additionally, Playwright tests can be added to your deployment pipelines through various deployment generators.
+
+NOTE: Visit the link:../../testing/testing_in_nx/frontend_testing_in_nx.adoc[Frontend Testing in an Nx monorepo] and link:../../testing/testing_in_nx/playwright_nx.adoc[Testing with Playwright] user guides for more information!
+
+
+== Setting up @ensono-stacks/playwright
+
+Install the `@ensono-stacks/playwright` plugin with the following command:
+
+[source]
+----
+npm install --save-dev @ensono-stacks/playwright@latest
+----
+
+or
+
+[source]
+----
+yarn add --dev @ensono-stacks/playwright@latest
+----
+
+== Executors and Generators
+
+To see a list of the plugin capabilities, run the following command:
+
+----
+nx list @ensono-stacks/playwright
+----
+
+View additional information about a plugin capability through the following command:
+
+----
+nx g @ensono-stacks/playwright:[generator-executor-name] --help
+----
+
+=== Generators
+
+include::init.adoc[]
+
+include::init-deployment.adoc[]
+
+include::accessibility.adoc[]
+
+include::visual-regression.adoc[]
+
+include::visual-regression-deployment.adoc[]
+
+include::executor.adoc[]
