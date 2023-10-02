@@ -60,5 +60,6 @@ Example data engineering workloads are provided, based upon the Datastacks templ
 
 - [Ingest](./etl_pipelines/ingest_data_azure.md)
 - [Bronze to Silver](./etl_pipelines/data_processing.md)
+- [Silver to Gold](./etl_pipelines/data_processing.md)
 
 Each of the ingest and data processing workloads may optionally include [Data Quality checks](./etl_pipelines/data_quality_azure.md).
