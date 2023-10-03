@@ -1,6 +1,6 @@
 = Introduction to workloads
 
-What you can do with Ensono Stacks is described in the link:../[About Ensono Stacks] section.
+What you can do with Ensono Stacks is described in the link:../index.adoc[About Ensono Stacks] section.
 
 Workload options cover all the supported options around what type of cloud infrastructure to provision for a project.
 
