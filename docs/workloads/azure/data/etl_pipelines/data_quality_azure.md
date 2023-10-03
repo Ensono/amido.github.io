@@ -43,7 +43,7 @@ To perform data quality checks against a workload interactively, you can use the
 datastacks dq --help
 
 # Execute data quality checks using the provided config
-datastacks dq --config-path "ingest/Ingest_AzureSql_Example/data_quality/ingest_dq.json" --container config
+datastacks dq --config-path "ingest/ingest_azure_sql_example/data_quality/ingest_dq.json" --container config
 ```
 
 `config-path` is a path to a JSON config inside the Azure Blob container, `container` is name of the container. The storage account used will be based upon the `BLOB_ACCOUNT` environment variable.
@@ -84,12 +84,12 @@ Here's a minimal example of a configuration file:
 {
     "gx_directory_path": "/dbfs/great_expectations/",
     "dataset_name": "movies",
-    "dq_output_path": "abfss://raw@{ADLS_ACCOUNT}.dfs.core.windows.net/Ingest_AzureSql_Example/",
+    "dq_output_path": "abfss://raw@{ADLS_ACCOUNT}.dfs.core.windows.net/ingest_azure_sql_example/",
     "datasource_config": [
         {
             "datasource_name": "movies.movies_metadata",
             "datasource_type": "parquet",
-            "data_location": "abfss://raw@{ADLS_ACCOUNT}.dfs.core.windows.net/Ingest_AzureSql_Example/movies.movies_metadata/v1/*/*/*",
+            "data_location": "abfss://raw@{ADLS_ACCOUNT}.dfs.core.windows.net/ingest_azure_sql_example/movies.movies_metadata/v1/*/*/*",
             "expectation_suite_name": "movies.movies_metadata_suite",
             "validation_config": [
                 {

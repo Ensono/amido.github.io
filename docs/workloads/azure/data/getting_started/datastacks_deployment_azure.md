@@ -51,7 +51,11 @@ Run the pipeline configured in Step 2 to commence the build and deployment proce
 
 Running this pipeline in Azure DevOps will initiate the build and deployment of the Datastacks library into the non-production (nonprod) environment. It's important to monitor the progress of this deployment to ensure its success. You can track the progress and status of the deployment within the Pipelines section of Azure DevOps.
 
-ℹ️ Once deployed, Datastacks Python utilities will be accessible to scripts running in Databricks. The workloads created in the following examples will utilise this, or refer to [PySpark development in Databricks](./dev_quickstart_data_azure.md#optional-pyspark-development-in-databricks).
+:::tip
+
+Once deployed, Datastacks Python utilities will be accessible to scripts running in Databricks. The workloads created in the following examples will utilise this, or refer to [PySpark development in Databricks](./dev_quickstart_data_azure.md#optional-pyspark-development-in-databricks).
+
+:::
 
 ## Step 4: Deploy shared resources in further environments
 
