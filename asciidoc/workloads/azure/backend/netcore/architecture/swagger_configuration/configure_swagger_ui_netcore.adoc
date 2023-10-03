@@ -85,7 +85,7 @@ The problem with this approach is that makes it harder to group endpoints if the
 
 ApiGroup is a concept introduced in ASP.NET Core. It requires the controller to be decorated with the attribute ApiExplorerSettingsAttribute, the GroupName  to be set to the Tag expected in swagger as below.
 
-[souce, cs]
+[source, cs]
 ----
 [ApiExplorerSettings(GroupName = "Category")]
 public class AddMenuCategoryController : ControllerBase { ... actions ... }
@@ -98,7 +98,7 @@ To group endpoints pass the group predicate to the method `c.TagActionsBy()`.
 The following code has to be added to the swagger doc generation:
 
 
-[souce, cs]
+[source, cs]
 ----
 services.AddSwaggerGen(c => {
 
