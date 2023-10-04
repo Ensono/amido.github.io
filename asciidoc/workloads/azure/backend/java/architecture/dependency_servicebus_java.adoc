@@ -1,5 +1,5 @@
 = Stacks Azure Service Bus module
-:keywords: java,maven,module,modularity,archetype,azure,service bus
+:keywords: java, maven, module, modularity, archetype, azure, service bus
 
 == Module Overview
 

@@ -1,4 +1,5 @@
-== Ensono Stacks Azure CosmosDB module
+= Ensono Stacks Azure CosmosDB module
+:keywords: java, maven, module, modularity, archetype, azure, cosmosdb
 
 === Module Overview
 
