@@ -33,12 +33,12 @@ deploy.
 
 There are four ways to integrate this module into your project:
 
--  Use it as a #use-it-as-a-dependency[dependency]
--  Create a localized solution using [Maven Archetypes artifacts](#localized-solution-using-maven-archetypes) available in our Artifactory repo
--  Clone this repo, [locally build](#building-the-module-locally-from-this-repository) and use it as a Maven dependency
--  Clone this repo, create a [custom archetype](#creating-an-archetype-from-this-repository) and then use it as a Maven dependency
+-  Use it as a <<use-it-as-a-dependency, dependency>>
+-  Create a localized solution using <<localized-solution-using-maven-archetypes, Maven Archetypes artifacts>> available in our Artifactory repo
+-  Clone this repo, <<building-the-module-locally-from-this-repository, locally build>> and use it as a Maven dependency
+-  Clone this repo, create a <<creating-an-archetype-from-this-repository, custom archetype>> and then use it as a Maven dependency
 
-=== Use it as a dependency
+=== Use it as a dependency [[use-it-as-a-dependency]]
 
 === Maven
 
@@ -66,7 +66,7 @@ Then you can do a `./mvnw clean compile` to fetch it; after that, you can use it
 
 Use it as you'd use any dependency in your build tool.
 
-=== Localized solution using Maven Archetypes
+=== Localized solution using Maven Archetypes [[localized-solution-using-maven-archetypes]]
 
 If you wish to customise the module and use your organisation's namespaces instead of Ensono's. You can create a
 https://maven.apache.org/archetype/index.html[Maven archetype]. Archetype is Maven's tool for
@@ -93,32 +93,38 @@ To use the deployed archetypes:
 -  `<your-version>` is a placeholder for your version
 -  `<package-name>` is a placeholder for the root package name and structure. It should start with your `groupdId` and continue with the name of the root package.
 
-> For example, using `-DgroupId=com.test` and `-Dpackage=com.test.stacks` will instruct Maven to place the code in `src/main/java/com/test/stacks` and update all the relevant references accordingly (i.e. `imports`)
+[]
+====
+For example, using `-DgroupId=com.test` and `-Dpackage=com.test.stacks` will instruct Maven to place the code in `src/main/java/com/test/stacks` and update all the relevant references accordingly (i.e. `imports`)
+====
 
-3.  Go to the `pom.xml` file of the project you'll be using this module in and add it as a #use-it-as-a-dependency[dependency]
+3.  Go to the `pom.xml` file of the project you'll be using this module in and add it as a <<use-it-as-a-dependency, dependency>>
 
 **Example**: Using `-DgroupId=com.test` and `-Dpackage=com.test.stacks` will instruct Maven to place the code in `src/main/java/com/test/stacks` and update all the relevant references accordingly (i.e. `imports`)
 
-> **If you previously had used this module under different namespace (i.e. the default `com.amido.stacks.cosmosdb`):**
->
-> Maven ONLY updates the imports for the module you generated. Any references in other projects will remain to the previous namespace.
->
-> You will need to
->
->-  Update them manually
->-  Re-create the relevant `import` statements to use the new-made module instead
->-  If you plan to use this with Ensono Stacks, include your namespace in the `@ComponentScan` annotation of the `Application` class.
+[]
+====
+**If you previously had used this module under different namespace (i.e. the default `com.amido.stacks.cosmosdb`):**
 
-=== Building the module locally from this repository
+Maven ONLY updates the imports for the module you generated. Any references in other projects will remain to the previous namespace.
+
+You will need to
+
+-  Update them manually
+-  Re-create the relevant `import` statements to use the new-made module instead
+-  If you plan to use this with Ensono Stacks, include your namespace in the `@ComponentScan` annotation of the `Application` class.
+====
+
+=== Building the module locally from this repository [[building-the-module-locally-from-this-repository]]
 
 To build the module locally:
 
 1.  Clone this repo
 2.  Navigate to the `java` folder
 3.  run `./mvnw clean install` to install the module locally.
-4.  Add it as any other [dependency](#use-it-as-a-dependency)
+4.  Add it as any other <<use-it-as-a-dependency, dependency>>
 
-=== Creating an Archetype from this repository
+=== Creating an Archetype from this repository [[creating-an-archetype-from-this-repository]]
 
 If you wish to customise the module and use your organisation's namespaces instead of Ensono's. You can create a
 https://maven.apache.org/archetype/index.html[Maven archetype]. Archetype is Maven's tool for
@@ -171,7 +177,7 @@ cd target/generated-sources/archetype
     4.  `<package-name>` is a placeholder for the root package name and structure. It should start with your `groupdId` and continue with the name of the root package.
     > For example, using `-DgroupId=com.test` and `-Dpackage=com.test.stacks` will instruct Maven to place the code in `src/main/java/com/test/stacks` and update all the relevant references accordingly (i.e. `imports`)
 
-6.  Go to the `pom.xml` file of the project you'll be using this module in and add it as a #use-it-as-a-dependency[dependency]
+6.  Go to the `pom.xml` file of the project you'll be using this module in and add it as a <<use-it-as-a-dependency, dependency>>
 
 **Example**: Using `-DgroupId=com.test` and `-Dpackage=com.test.stacks` will instruct Maven to place the code in `src/main/java/com/test/stacks` and update all the relevant references accordingly (i.e. `imports`)
 

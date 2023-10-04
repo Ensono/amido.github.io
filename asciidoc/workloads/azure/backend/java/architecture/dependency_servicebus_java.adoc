@@ -1,38 +1,22 @@
----
-id: dependency_servicebus_java
-title: Stacks Azure Service Bus module
-sidebar_label: Azure Service Bus module
-hide_title: false
-hide_table_of_contents: true
-keywords:
-- java
-- maven
-- module
-- modularity
-- archetype
-- azure
-- service bus
----
+= Stacks Azure Service Bus module
+:keywords: java,maven,module,modularity,archetype,azure,service bus
 
-<!-- markdownlint-disable MD033 MD046 -->
-import {siteVariables} from '@site/versions';
+== Module Overview
 
-
-## Module Overview
-
-This module implements the listener and publisher interfaces from the [messaging module](https://github.com/Ensono/stacks-java-core-messaging/)
-to implement [Azure ServiceBus](https://docs.microsoft.com/en-us/azure/service-bus-messaging/). Listeners
+This module implements the listener and publisher interfaces from the https://github.com/Ensono/stacks-java-core-messaging/[messaging module]
+to implement https://docs.microsoft.com/en-us/azure/service-bus-messaging/[Azure ServiceBus]. Listeners
 in this module are configured to simply log events.
 
-## Module Structure
+== Module Structure
 
 In the following diagram, you can see all the relevant files of this module. Be aware, pulling from
 the repository will have some extra files that are not relevant to the logic but required to build and
 deploy.
 
-### Project structure
+=== Project structure
 
-    java
+[source, java]
+----
     \_.mvn
     : |_settings.xml
     |_archetype.properties
@@ -49,21 +33,24 @@ deploy.
     :      |_ServiceBusConfiguration.java
     :      |_ServiceBusProperties.java
 
-## How to use
+----
+
+=== How to use
 
 There are four ways to integrate this module into your project:
 
--  Use it as a [dependency](#use-it-as-a-dependency)
--  Create a localized solution using [Maven Archetypes artifacts](#localized-solution-using-maven-archetypes) available in our Artifactory repo
--  Clone this repo, [locally build](#building-the-module-locally-from-this-repository) and use it as a Maven dependency
--  Clone this repo, create a [custom archetype](#creating-an-archetype-from-this-repository) and then use it as a Maven dependency
+-  Use it as a <<use-it-as-a-dependency, dependency>>
+-  Create a localized solution using <<localized-solution-using-maven-archetypes, Maven Archetypes artifacts>> available in our Artifactory repo
+-  Clone this repo, <<building-the-module-locally-from-this-repository, locally build>> and use it as a Maven dependency
+-  Clone this repo, create a <<creating-an-archetype-from-this-repository, custom archetype>> and then use it as a Maven dependency
 
-### Use it as a dependency
+=== Use it as a dependency [[use-it-as-a-dependency]]
 
-#### Maven
+=== Maven
 
 In the `dependencies` section of your application's `pom.xml` add:
-
+[source, xml]
+----
 <pre><code parentName="pre" {...{
             "className": "language-xml"
           }}>{
@@ -73,28 +60,29 @@ In the `dependencies` section of your application's `pom.xml` add:
     <version>${siteVariables.javaAzureServicebusVersion}</version>
 </dependency>
 `}</code></pre>
+----
 
 Then you can do a `./mvnw clean compile` to fetch it; after that, you can use it like any other dependency.
 
-```bash
+[source, bash]
 ./mvnw clean compile
-```
 
-#### Others
+=== Others
 
 Use it as you'd use any dependency in your build tool.
 
-### Localized solution using Maven Archetypes
+=== Localized solution using Maven Archetypes [[localized-solution-using-maven-archetypes]]
 
 If you wish to customise the module and use your organisation's namespaces instead of Ensono's. You can create a
-[Maven archetype](https://maven.apache.org/archetype/index.html). Archetype is Maven's tool for
+https://maven.apache.org/archetype/index.html[Maven archetype]. Archetype is Maven's tool for
 scaffolding and offers lots of extra functionality. We suggest spending some time looking into them. We use Archetype to create a template and enable you to adopt this module under your organisation's namespace.
 To use the deployed archetypes:
 
 1.  Make and move to a new folder
 2.  Then run
 
-    ``` bash
+[source, bash]
+----
     mvn archetype:generate \
         -DarchetypeGroupId='com.amido.stacks.modules' \
         -DarchetypeArtifactId='stacks-azure-servicebus-archetype' \
@@ -103,7 +91,7 @@ To use the deployed archetypes:
         -DartifactId='<your-artifact-id>' \
         -Dversion='<your-version>' \
         -Dpackage='<package-name>'
-    ```
+----
 
     -  `<your-group-id>` is a placeholder for your group ID
     -  `<your-artifact-id>` is a placeholder for your artefact ID
@@ -112,33 +100,36 @@ To use the deployed archetypes:
 
     > For example, using `-DgroupId=com.test` and `-Dpackage=com.test.stacks` will instruct Maven to place the code in `src/main/java/com/test/stacks` and update all the relevant references accordingly (i.e. `imports`)
 
-3.  Go to the `pom.xml` file of the project you'll be using this module in and add it as a [dependency](#use-it-as-a-dependency)
+3.  Go to the `pom.xml` file of the project you'll be using this module in and add it as a <<use-it-as-a-dependency, dependency>>
 
 **Example**: Using `-DgroupId=com.test` and `-Dpackage=com.test.stacks` will instruct Maven to place the code in `src/main/java/com/test/stacks` and update all the relevant references accordingly (i.e. `imports`)
 
-> **If you previously had used this module under different namespace (i.e. the default `com.amido.stacks.cosmosdb`):**
->
-> Maven ONLY updates the imports for the module you generated. Any references in other projects will remain to the previous namespace.
->
-> You will need to
->
->-  Update them manually
->-  Re-create the relevant `import` statements to use the new-made module instead
->-  If you plan to use this with Ensono Stacks, include your namespace in the `@ComponentScan` annotation of the `Application` class.
+[]
+====
+**If you previously had used this module under different namespace (i.e. the default `com.amido.stacks.cosmosdb`):**
 
-### Building the module locally from this repository
+Maven ONLY updates the imports for the module you generated. Any references in other projects will remain to the previous namespace.
+
+You will need to
+
+-  Update them manually
+-  Re-create the relevant `import` statements to use the new-made module instead
+-  If you plan to use this with Ensono Stacks, include your namespace in the `@ComponentScan` annotation of the `Application` class.
+====
+
+=== Building the module locally from this repository [[building-the-module-locally-from-this-repository]]
 
 To build the module locally:
 
 1.  Clone this repo
 2.  Navigate to the `java` folder
 3.  run `./mvnw clean install` to install the module locally.
-4.  Add it as any other [dependency](#use-it-as-a-dependency)
+4.  Add it as any other <<use-it-as-a-dependency, dependency>>
 
-### Creating an Archetype from this repository
+=== Creating an Archetype from this repository [[creating-an-archetype-from-this-repository]]
 
 If you wish to customise the module and use your organisation's namespaces instead of Ensono's. You can create a
-[Maven archetype](https://maven.apache.org/archetype/index.html). Archetype is Maven's tool for
+https://maven.apache.org/archetype/index.html[Maven archetype]. Archetype is Maven's tool for
 scaffolding and offers lots of extra functionality. We suggest spending some time looking into them. We use Archetype to create a template and enable you to adopt this module under your organisation's namespace.
 To use the deployed archetypes:
 To build, install and use the archetype follow these steps:
@@ -148,26 +139,30 @@ To build, install and use the archetype follow these steps:
 3.  Then issue the following Maven commands, using the included wrapper:
     1.  Create the archetype from the existing code
 
-        ```bash
+[source, bash]
+----
         ./mvnw archetype:create-from-project -DpropertyFile='./archetype.properties'
-        ```
+----
 
     2.  Navigate to the folder it was created in
 
-        ```bash
+[source, bash]
+----
         cd target/generated-sources/archetype
-        ```
+----
 
     3.  Install the archetype locally
 
-        ```bash
+[source, bash]
+----
         ..\..\..\mvnw install
-        ```
+----
 
 4.  Make and navigate to a directory in which you'd like to create the localized project, ideally outside this project's root folder
 5.  To create the project, use the command below:
 
-    ```bash
+[source, bash]
+----
     <path-to-mvn-executable>/mvnw archetype:generate \
         -DarchetypeGroupId='com.amido' \
         -DarchetypeArtifactId='stacks-azure-servicebus' \
@@ -176,32 +171,36 @@ To build, install and use the archetype follow these steps:
         -DartifactId='<your-artifact-id>' \
         -Dversion='<your-version>' \
         -Dpackage='<package-name>'`
-    ```
+----
 
     1.  `<your-group-id>` is a placeholder for your group ID
     2.  `<your-artifact-id>` is a placeholder for your artefact ID
     3.  `<your-version>` is a placeholder for your version
     4.  `<package-name>` is a placeholder for the root package name and structure. It should start with your `groupdId` and continue with the name of the root package.
     > For example, using `-DgroupId=com.test` and `-Dpackage=com.test.stacks` will instruct Maven to place the code in `src/main/java/com/test/stacks` and update all the relevant references accordingly (i.e. `imports`)
-6.  Go to the `pom.xml` file of the project you'll be using this module in and add it as a [dependency](#use-it-as-a-dependency)
+6.  Go to the `pom.xml` file of the project you'll be using this module in and add it as a <<use-it-as-a-dependency, dependency>>
 
 **Example**: Using `-DgroupId=com.test` and `-Dpackage=com.test.stacks` will instruct Maven to place the code in `src/main/java/com/test/stacks` and update all the relevant references accordingly (i.e. `imports`)
 
-> **If you previously had used this module under different namespace (i.e. the default `com.amido.stacks.cosmosdb`):**
->
-> Maven ONLY updates the imports for the module you generated. Any references in other projects will remain to the previous namespace.
->
-> You will need to
->
->-  Update them manually
->-  Re-create the relevant `import` statements to use the new-made module instead
->-  If you plan to use this with Ensono Stacks, include your namespace in the `@ComponentScan` annotation of the `Application` class.
+[]
+====
+**If you previously had used this module under different namespace (i.e. the default `com.amido.stacks.cosmosdb`):**
 
-## Accessing Sonatype OSSRH
+Maven ONLY updates the imports for the module you generated. Any references in other projects will remain to the previous namespace.
+
+You will need to
+
+-  Update them manually
+-  Re-create the relevant `import` statements to use the new-made module instead
+-  If you plan to use this with Ensono Stacks, include your namespace in the `@ComponentScan` annotation of the `Application` class.
+====
+
+=== Accessing Sonatype OSSRH
 
 Our artefacts and archetypes get hosted on Sonatype OSSRH  then to  maven central . to access artifact from OSSRH before it get published to maven central update  `pom.xml`:
 
-```xml
+[source, xml]
+----
 <repositories>
   <repository>
     <snapshots/>
@@ -218,12 +217,13 @@ Our artefacts and archetypes get hosted on Sonatype OSSRH  then to  maven centra
     <url>https://s01.oss.sonatype.org/content/repositories/releases/</url>
   </repository>
 </repositories>
-```
+----
 
 Alternatively, you can also add this configuration as a profile in your Maven's `settings.xml` file
 in the `.m2` folder in your home directory (any OS):
 
-```xml
+[source, xml]
+----
 <profiles>
   <profile>
     <repositories>
@@ -250,4 +250,4 @@ in the `.m2` folder in your home directory (any OS):
 <activeProfile>nexus</activeProfile>
 </activeProfiles>
 
-```
+----
