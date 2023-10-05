@@ -99,7 +99,7 @@ In order to generate a new data engineering workload the Datastacks CLI takes a 
 | window_start_default | Default window start date in the Data Factory pipeline. | No | Date | "2010-01-01" | 2010-01-01 |
 | window_end_default | Default window end date in the Data Factory pipeline. | No | Date | "2010-01-31" | 2010-01-31 |
 
-[^1]: Additional data source types will be supported in future.
+[^1]: Additional data source types will be supported in future - see [ingest data source types](./ingest_data_azure.md#data-source-types).
 
 #### Processing workloads
 
