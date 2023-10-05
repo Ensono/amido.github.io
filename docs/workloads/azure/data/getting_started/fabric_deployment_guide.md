@@ -92,7 +92,7 @@ As mentioned above, it is currently not possible to connect to data lake storage
 
 ## Step 5: Create Lakehouse Tables shortcuts
 
-Tables shortcuts will allow us to interact with query and interact with data stored in Delta Lake format. At present, external tables must be added as shortcuts individually.
+Tables shortcuts will allow us to interact with query and interact with data stored in Delta Lake format. At present, external tables must be added as shortcuts individually to be fully accessible from the lakehouse.
 
 Follow these steps for each of the tables in the data lake staging (silver) and curated (gold) layers:
 
@@ -106,6 +106,29 @@ Follow these steps for each of the tables in the data lake staging (silver) and 
 5. Select `Create`. The shortcut should now be accessible under the Tables directory in the lakehouse explorer panel.
 6. Repeat the above steps to create a table shortcut for each of the tables required in the staging and curated containers.
 
-## Step 5: Interacting with Lakehouse Tables
+## Step 5: Interacting with data in the lakehouse
 
-Once Tables shortcuts have been added, the tables can be queried via SQL endpoint - for example. .... These can also be used for Power BI.
+Once shortcuts have been added, data in the Lakehouse can be used within Fabric in a number of ways:
+
+### SQL Endpoint
+
+Tables in the lakehouse can be directly queried via the [SQL endpoint](https://learn.microsoft.com/en-us/fabric/data-engineering/lakehouse-sql-endpoint).
+
+1. Within the lakehouse, select the __Lakehouse__ button from the top right corner, and select __SQL Endpoint__.
+2. From here, all tables added as shortcuts will be appear as tables in the SQL Endpoint, within the default schema. You can query the tables using SQL. See documentation on the (SQL query editor)[https://learn.microsoft.com/en-us/fabric/data-warehouse/sql-query-editor] for more details. 
+
+:::tip
+
+Tables in the Lakehouse are read-only via the SQL endpoint. However, views can be created.
+
+:::
+
+
+### Power BI
+
+Tables and views in the lakehouse integrate seamlessly with Power BI.  
+and views in the Lakehouse can be accessed by Power BI. Direct lake mode provides a default Power BI dataset over
+
+### Spark notebooks
+
+
