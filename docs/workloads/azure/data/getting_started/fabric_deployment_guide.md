@@ -34,22 +34,20 @@ The first step in setting up a Fabric Workspace is provisioning a capacity resou
 To setup a capacity resource in the Azure portal:
 
 1. Login to Azure portal, search for Fabric and select Create.
-
 ![Ensono Stacks Fabric look](../images/fabric_lookup.png)
-
 2. Create a Fabric capacity:
 ![Ensono Stacks Fabric create](../images/fabric_create.png)
    1. Select the subscription and resource group for the Fabric capacity.
-   3. Enter a name to identify the capacity resource (this is displayed in the Microsoft Fabric admin portal and Azure portal). The name must be unique in the selected location.
-   4. Enter the region.
-   5. Select a resource size, based upon your requirements.
-   6. Enter a Fabric capacity administrator. The capacity administrator must be a member user or a service principal in your AAD tenant.
+   1. Enter a name to identify the capacity resource (this is displayed in the Microsoft Fabric admin portal and Azure portal). The name must be unique in the selected location.
+   1. Enter the region.
+   1. Select a resource size, based upon your requirements.
+   1. Enter a Fabric capacity administrator. The capacity administrator must be a member user or a service principal in your AAD tenant.
 
 ## Step 2: Create a Microsoft Fabric Workspace
 
 Workspaces are places to collaborate with colleagues to create collections of items such as lakehouses, warehouses, and reports. please refer below Microsoft link for details on [Fabric workspaces](https://learn.microsoft.com/en-us/fabric/get-started/workspaces). You may create a workspace per envirnoment, to align to your data platform. To setup a Fabric workspace:
 
-1. Go to https://app.fabric.microsoft.com and sign-in to your organization's portal. You will need a PowerBI Pro license and workspace admin rights on your account to create workspaces.
+1. Go to [https://app.fabric.microsoft.com](https://app.fabric.microsoft.com) and sign-in to your organization's portal. You will need a PowerBI Pro license and workspace admin rights on your account to create workspaces.
 2. Select the __Data Engineering__ 'experience' from the left plane. Select __Workspaces__ from the left pane, then the __New Workspace__ button.
 ![Ensono Stacks Fabric workspace](../images/fabric_workspaces_powerbi.png)
 3. Enter the name of workspace as per your naming conventions (e.g. `ensono-stacks-dev-euw-fabric`). Under advanced options choose __Fabric capacity__ for license mode.
@@ -84,11 +82,10 @@ As mentioned above, it is currently not possible to connect to data lake storage
 ![Ensono Stacks Fabric adls shortcut](../images/fabric_dfs_shortcut.png)
 3. Provide connection details for your ADLS storage account:
 ![Ensono Stacks Fabric adls connection](../images/fabric_dfs_connection.png)
-  1. Enter the URL for the ADLS Gen 2 endpoint to connect, e.g. `https://amidostacksdeveuwdeadls.dfs.core.windows.net/raw`.
-  2. Under __Connection__ select _Create new connection_.
-  3. Set a connection name, e.g. `amidostacksdeveuwadls-raw`
-  4. For __Authentication kind__ select the method you will use for authenticating with the storage account, for example SAS token (see documentation on [generating SAS tokens for a storage container](https://learn.microsoft.com/en-us/azure/ai-services/translator/document-translation/how-to-guides/create-sas-tokens?tabs=Containers)).
-
+    1. Enter the URL for the ADLS Gen 2 endpoint to connect, e.g. `https://amidostacksdeveuwdeadls.dfs.core.windows.net/raw`.
+    1. Under __Connection__ select _Create new connection_.
+    1. Set a connection name, e.g. `amidostacksdeveuwadls-raw`
+    1. For __Authentication kind__ select the method you will use for authenticating with the storage account, for example SAS token (see documentation on [generating SAS tokens for a storage container](https://learn.microsoft.com/en-us/azure/ai-services/translator/document-translation/how-to-guides/create-sas-tokens?tabs=Containers)).
 4. Set the and name for the new shortcut, e.g. `amidostacksdeveuwadls-raw`. If you included the container name in the URL, the __Sub Path__ should already be set (e.g. `/raw`).
 5. Select `Create`. The shortcut should now be accessible under the Files directory in the lakehouse explorer panel.
 6. Repeat the above steps to create a shortcut for each of the data lake containers, i.e. raw, staging, and curated.
@@ -103,8 +100,8 @@ Follow these steps for each of the tables in the data lake staging (silver) and 
 2. Under __External sources__ select __Azure Data Lake Storage Gen2__.
 3. Provide connection details for your ADLS storage account:
 ![Ensono Stacks Fabric adls connection](../images/fabric_dfs_connection.png)
-  1. Enter the URL for the ADLS Gen 2 endpoint to connect, e.g. `https://amidostacksdeveuwdeadls.dfs.core.windows.net/staging`.
-  2. You may re-use the connection to this container created in the previous step.
+    1. Enter the URL for the ADLS Gen 2 endpoint to connect, e.g. `https://amidostacksdeveuwdeadls.dfs.core.windows.net/staging`.
+    1. You may re-use the connection to this container created in the previous step.
 4. Set the and name for the new table shortcut, e.g. `staging_movies_links`. In the __Sub Path__ provide the path to the Delta table directory in the container (e.g. `/staging/movies/links`).
 5. Select `Create`. The shortcut should now be accessible under the Tables directory in the lakehouse explorer panel.
 6. Repeat the above steps to create a table shortcut for each of the tables required in the staging and curated containers.
@@ -112,5 +109,3 @@ Follow these steps for each of the tables in the data lake staging (silver) and 
 ## Step 5: Interacting with Lakehouse Tables
 
 Once Tables shortcuts have been added, the tables can be queried via SQL endpoint - for example. .... These can also be used for Power BI.
-
-
