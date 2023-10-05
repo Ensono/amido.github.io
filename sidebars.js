@@ -237,6 +237,7 @@ module.exports = {
                   "workloads/azure/data/getting_started/example_data_source",
                   "workloads/azure/data/getting_started/ingest_pipeline_deployment_azure",
                   "workloads/azure/data/getting_started/processing_pipeline_deployment_azure",
+                  "workloads/azure/data/getting_started/fabric_deployment_guide",
                 ],
               },
               "workloads/azure/data/security_data_azure",
