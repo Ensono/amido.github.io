@@ -38,7 +38,7 @@ In order to interact with Azure resources when developing, including running end
 
 ## Running tests
 
-`make` commands are provided to assist with running tests while developing locally. See [testing](../etl_pipelines/testing_data_azure.md) for further details on these tests.
+`make` commands are provided to assist with running tests while developing locally. See [testing](../data_engineering/testing_data_azure.md) for further details on these tests.
 
 :::tip
 
@@ -95,7 +95,7 @@ To run scripts within a Databricks cluster, you will need to:
 - Install the Datastacks whl file on the cluster, either from:
     - The latest deployed version in `dbfs:/FileStore/jars/datastacks-latest-py3-none-any.whl`, or
     - Create a new whl file with the `poetry build` command.
-- Add the additional [environment variables](../etl_pipelines/pyspark_utilities.md#prerequisites) required for PySpark development - the values can be set as per the Data Factory linked service (see [adf_linked_services.tf](https://github.com/Ensono/stacks-azure-data/blob/main/de_workloads/shared_resources/data_factory/adf_linked_services.tf)).
+- Add the additional [environment variables](../data_engineering/pyspark_utilities.md#prerequisites) required for PySpark development - the values can be set as per the Data Factory linked service (see [adf_linked_services.tf](https://github.com/Ensono/stacks-azure-data/blob/main/de_workloads/shared_resources/data_factory/adf_linked_services.tf)).
 - Ensure the user has appropriate permissions for Azure resources required.
 
 ## Azure Data Factory Development

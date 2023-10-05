@@ -22,20 +22,20 @@ a framework for accelerating the deployment of a production-ready modern data pl
 
 1. Use the [Ensono Stacks CLI](../../../stackscli/about) to generate a new data platform project.
 2. Build and deploy the data platform infrastructure into your Azure environment.
-3. Accelerate development of data workloads and ETL pipelines with [Datastacks](etl_pipelines/datastacks.md).
+3. Accelerate development of data workloads and ETL pipelines with [Datastacks](/data_engineering/datastacks.md).
 
-The Ensono Stacks Data Platform delivers a modern Lakehouse solution, based upon the [Medallion Architecture](etl_pipelines/etl_intro_data_azure.md#medallion-architecture), with Bronze, Silver and Gold layers for various stages of data preparation. The platform utilises tools including **Azure Data Factory** for data ingestion and orchestration, **Databricks** for data processing and **Azure Data Lake Storage Gen2** for data lake storage.
+The Ensono Stacks Data Platform delivers a modern Lakehouse solution, based upon the [Medallion Architecture](/data_engineering/data_engineering_intro_azure.md#medallion-architecture), with Bronze, Silver and Gold layers for various stages of data preparation. The platform utilises tools including **Azure Data Factory** for data ingestion and orchestration, **Databricks** for data processing and **Azure Data Lake Storage Gen2** for data lake storage.
 
 Key elements of the solution include:
 
 - Infrastructure as code (IaC) for all infrastructure components (Terraform).
 - Deployment pipelines to enable CI/CD and DataOps for the platform and all data workloads.
-- [Datastacks](./etl_pipelines/datastacks.md) - a library and CLI built to accelerate the development of data engineering
+- [Datastacks](./data_engineering/datastacks.md) - a library and CLI built to accelerate the development of data engineering
 workloads in the data platform.
-- A framework for [data quality validations](./etl_pipelines/data_quality_azure.md).
-- [Automated tests](./etl_pipelines/testing_data_azure.md) to ensure quality assurance and operational efficiency.
-- Sample [data ingest pipelines](./etl_pipelines/ingest_data_azure.md) that transfer data from a source into the landing (Bronze) data lake zone.
-- Sample [data processing pipelines](./etl_pipelines/data_processing.md) performing data transformations from Bronze to Silver and Silver to Gold layers.
+- A framework for [data quality validations](./data_engineering/data_quality_azure.md).
+- [Automated tests](./data_engineering/testing_data_azure.md) to ensure quality assurance and operational efficiency.
+- Sample [data ingest pipelines](./data_engineering/ingest_data_azure.md) that transfer data from a source into the landing (Bronze) data lake zone.
+- Sample [data processing pipelines](./data_engineering/data_processing.md) performing data transformations from Bronze to Silver and Silver to Gold layers.
 
 ### High-level architecture
 
@@ -58,8 +58,8 @@ The solution may be deployed within a secure private network. For details please
 
 Example data engineering workloads are provided, based upon the Datastacks templates:
 
-- [Ingest](./etl_pipelines/ingest_data_azure.md)
-- [Bronze to Silver](./etl_pipelines/data_processing.md)
-- [Silver to Gold](./etl_pipelines/data_processing.md)
+- [Ingest](./data_engineering/ingest_data_azure.md)
+- [Bronze to Silver](./data_engineering/data_processing.md)
+- [Silver to Gold](./data_engineering/data_processing.md)
 
-Each of the ingest and data processing workloads may optionally include [Data Quality checks](./etl_pipelines/data_quality_azure.md).
+Each of the ingest and data processing workloads may optionally include [Data Quality checks](./data_engineering/data_quality_azure.md).

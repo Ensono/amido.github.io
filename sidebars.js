@@ -213,15 +213,15 @@ module.exports = {
               "workloads/azure/data/infrastructure_data_azure",
               {
                 type: "category",
-                label: "ETL Pipelines",
+                label: "Data Engineering",
                 items: [
-                  "workloads/azure/data/etl_pipelines/etl_intro_data_azure",
-                  "workloads/azure/data/etl_pipelines/datastacks",
-                  "workloads/azure/data/etl_pipelines/ingest_data_azure",
-                  "workloads/azure/data/etl_pipelines/data_processing",
-                  "workloads/azure/data/etl_pipelines/data_quality_azure",
-                  "workloads/azure/data/etl_pipelines/pyspark_utilities",
-                  "workloads/azure/data/etl_pipelines/testing_data_azure",
+                  "workloads/azure/data/data_engineering/data_engineering_intro_azure",
+                  "workloads/azure/data/data_engineering/datastacks",
+                  "workloads/azure/data/data_engineering/ingest_data_azure",
+                  "workloads/azure/data/data_engineering/data_processing",
+                  "workloads/azure/data/data_engineering/data_quality_azure",
+                  "workloads/azure/data/data_engineering/pyspark_utilities",
+                  "workloads/azure/data/data_engineering/testing_data_azure",
                 ],
               },
               {

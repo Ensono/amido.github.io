@@ -13,9 +13,9 @@ keywords:
   - fabric
 ---
 
-Microsoft Fabric can be used to implement a Lakehouse layer over a Stacks data platform, giving full analytics capabilities over the data lake, and native integrations with tools such as Power BI.
+Microsoft Fabric can be used to implement a [lakehouse](../data_engineering/data_engineering_intro_azure.md#lakehouse-approach) layer over a Stacks data platform, giving full analytics capabilities over the data lake, and native integrations with tools such as Power BI.
 
-This section provides step-by-step instructions on deploying a Fabric workspace, and setting up a Lakehouse over your data lake.
+This section provides step-by-step instructions on deploying a Fabric workspace, and setting up a lakehouse over your data lake. It assumes you have deployed a Stacks data platform, and have loaded data into the [bronze layer](./ingest_pipeline_deployment_azure.md) and [silver / gold layers](./processing_pipeline_deployment_azure.md) of the data lake.
 
 :::note Fabric Preview
 
@@ -44,7 +44,7 @@ To setup a capacity resource in the Azure portal:
 
 ## Step 2: Create a Microsoft Fabric Workspace
 
-Workspaces are places to collaborate with colleagues to create collections of items such as lakehouses, warehouses, and reports. please refer below Microsoft link for details on [Fabric workspaces](https://learn.microsoft.com/en-us/fabric/get-started/workspaces). You may create a workspace per envirnoment, to align to your data platform. To setup a Fabric workspace:
+Workspaces are places to collaborate with colleagues to create collections of items such as lakehouses, warehouses, and reports. please refer below Microsoft link for details on [Fabric workspaces](https://learn.microsoft.com/en-us/fabric/get-started/workspaces). You may create a workspace per environment, to align to your data platform. To setup a Fabric workspace:
 
 1. Go to [https://app.fabric.microsoft.com](https://app.fabric.microsoft.com) and sign-in to your organization's portal. You will need a Power BI Pro license and workspace admin rights on your account to create workspaces.
 2. Select the __Data Engineering__ 'experience' from the left plane. Select __Workspaces__ from the left pane, then the __New Workspace__ button.

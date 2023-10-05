@@ -18,7 +18,7 @@ Data processing workloads in Ensono Stacks are jobs which:
 2. Perform some form of data transformation / cleansing / modelling / aggregation over the data.
 3. Output the into the data lake into a structured [Delta Lake](https://delta.io/) format.
 
-Data processing workloads are based upon running Apache Spark / Python jobs on Databricks. These workloads may be used for various levels of data transformation and preparation within the data lake. Within the [medallion architecture](./etl_intro_data_azure.md#medallion-architecture) these will include:
+Data processing workloads are based upon running Apache Spark / Python jobs on Databricks. These workloads may be used for various levels of data transformation and preparation within the data lake. Within the [medallion architecture](./data_engineering_intro_azure.md#medallion-architecture) these will include:
 
 - Bronze to Silver
 - Silver to Gold
