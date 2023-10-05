@@ -1,0 +1,29 @@
+= ETL Overview
+:description: Introduction to ETL Pipelines
+:keywords: ingest, silver, gold, bronze, databricks, etl, medallion
+
+The Ensono Stacks Data Platform solution accelerates the generation of production-ready ETL / ELT pipelines and workloads. New data engineering workloads can be generated through the link:./datastacks.adoc[Datastacks] utility, while a range of example data workloads and pipelines are also provided. These workloads cover all stages from ingesting data from the source, applying data transformations across data lake layers, ultimately enabling end-user data visualizations and analytics.
+
+== Medallion architecture
+
+The data lake structure and approach used in Ensono Stacks is based upon the link:https://www.databricks.com/glossary/medallion-architecture[medallion architecture] design pattern. This approach delivers a lakehouse solution, with the following structured data transformation layers:
+
+|===
+| Data lake layer | Description | Default container name | Data format | Stacks workload type
+
+| Bronze | The initial landing area where data is stored as per its original source, prior to any transformations. | raw | Parquet | link:./ingest_data_azure.adoc[Data ingest]
+| Silver | The data has been cleansed, validated, and stored in an optimal format to support downstream analytic use-cases. | staging | Delta | link:./data_processing.adoc[Data processing]
+| Gold | Reliable data entities prepared for specific use-cases. These typically combine and aggregate datasets from the silver layer. | conformance | Delta | link:./data_processing.adoc[Data processing]
+|===
+
+== Datastacks
+
+link:./datastacks.adoc[Datastacks] is a library and CLI built to accelerate the development of data engineering workloads in the data platform. It features a range of utilities to enhance the process for developing and deploying production-ready data pipelines and workloads.
+
+== Quality assurance
+
+Quality and reliability of data workloads are at the core of Ensono Stacks data platform. This is ensured through frameworks for link:./data_quality_azure.adoc[data quality] and link:./testing_data_azure.adoc[automated testing].
+
+== Sample dataset
+
+The example workloads included in the solution are based upon an link:../getting_started/example_data_source.adoc[example Azure SQL data source and dataset]. This data source may optionally be deployed as part of the data platform, to allow full demonstration testing of these example workloads.
