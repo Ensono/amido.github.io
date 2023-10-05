@@ -48,5 +48,3 @@ As an example, below is a JSON response to illustrate the structure defined by t
 
 Even though the restaurant/menu context is used as the foundation for the templates, the .NET template engine provides us with the ability to change the domain with a simple command. The templates are highly customizable and modular, so a project can be generated with only what you need. Conditional compilation is used depending on the settings you provide to generate the minimal amount of code needed for your project.
 
-image::../../../src/components/HideNavigation/HideNavigation.png[Hide Navigation,align=right]
-
