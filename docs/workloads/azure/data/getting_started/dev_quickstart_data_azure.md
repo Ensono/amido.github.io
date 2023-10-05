@@ -40,6 +40,13 @@ In order to interact with Azure resources when developing, including running end
 
 `make` commands are provided to assist with running tests while developing locally. See [testing](../etl_pipelines/testing_data_azure.md) for further details on these tests.
 
+:::tip
+
+If you encounter PATH-related issues with Poetry when running the tests, we recommend installing Poetry using
+[pipx](https://python-poetry.org/docs/#installing-with-pipx) rather than the official installer.
+
+:::
+
 ### Unit tests
 
 In order to run unit tests, run the following command:
@@ -56,6 +63,12 @@ Running the end-to-end tests will involve executing Data Factory pipelines in Az
 make test_e2e
 ```
 
+:::tip
+
+Running end-to-end tests from your local machine may require additional permissions in Azure. If the tests fail whilst clearing up directories, ensure that you have [Storage Blob Data Contributor](https://learn.microsoft.com/en-us/azure/role-based-access-control/built-in-roles#storage-blob-data-contributor) access applied to your Azure Active Directory subscription. You may also be required to configure the [firewall rules](https://learn.microsoft.com/en-us/azure/storage/common/storage-network-security) for the storage account to whitelist your IP address.
+
+:::
+
 ### Code quality checks
 
 [Pre-commit](https://pre-commit.com/) is used for code quality and linting checks on the project. It can be run using:
@@ -66,7 +79,11 @@ make pre_commit
 
 ## (Optional) PySpark development in Databricks
 
-ℹ️ This sub-section assumes that [Datastacks build & deployment](./datastacks_deployment_azure.md) has been completed - if you are working through the _getting started guide_ for the first time, you may skip this section.
+:::note Prerequisite
+
+This sub-section assumes that [Datastacks build & deployment](./datastacks_deployment_azure.md) has been completed - if you are working through the _getting started guide_ for the first time, you may skip this section.
+
+:::
 
 When developing with PySpark, you may wish to either:
 
@@ -81,12 +98,26 @@ To run scripts within a Databricks cluster, you will need to:
 - Add the additional [environment variables](../etl_pipelines/pyspark_utilities.md#prerequisites) required for PySpark development - the values can be set as per the Data Factory linked service (see [adf_linked_services.tf](https://github.com/Ensono/stacks-azure-data/blob/main/de_workloads/shared_resources/data_factory/adf_linked_services.tf)).
 - Ensure the user has appropriate permissions for Azure resources required.
 
-## Troubleshooting
+## Azure Data Factory Development
 
-ℹ️ If you encounter PATH-related issues with Poetry when running the tests, we recommend installing Poetry using
-[pipx](https://python-poetry.org/docs/#installing-with-pipx) rather than the official installer.
+A core component of the Ensono Stacks Azure data platform is [Azure Data Factory](https://learn.microsoft.com/en-us/azure/data-factory/), which is used for ingest activities, pipeline orchestration and scheduling. When an instance of Data Factory has been deployed, it's intuitive user interface can be used for reviewing, monitoring and editing resources.
 
-ℹ️ Running end-to-end tests from your local machine may require additional permissions in Azure. If the tests fail whilst clearing up directories, ensure that you have [Storage Blob Data Contributor](https://learn.microsoft.com/en-us/azure/role-based-access-control/built-in-roles#storage-blob-data-contributor) access applied to your Azure Active Directory subscription. You may also be required to configure the [firewall rules](https://learn.microsoft.com/en-us/azure/storage/common/storage-network-security) for the storage account to whitelist your IP address.
+While resources can be edited directly through the UI, the approach used in Stacks is to manage all resources through infrastructure-as-code using Terraform. The allows full CI/CD capabilities and control over changes across environments. Developers may use Data Factory's UI to assist in the development of new resources, and then transpose these into the project repository.
+
+The following resource types will typically be added for new data workloads:
+
+| Resource type | Stacks workload types | Defined in | Notes |
+| ----- | ----- | ----- | ----- |
+| Linked services | Ingest | `data_factory/adf_linked_services.tf` | Refer to Microsoft documentation for up-to-date details on [connector types supported by Data Factory](https://learn.microsoft.com/en-us/azure/data-factory/connector-overview), and Terraform documentation for adding [custom linked services](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/data_factory_linked_custom_service). Core linked services are added during deployment of [shared resources](./shared_resources_deployment_azure.md). |
+| Datasets | Ingest | `data_factory/adf_datasets.tf` | Refer to Terraform documentation for adding [custom datasets](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/data_factory_custom_dataset). Core datasets are added during deployment of [shared resources](./shared_resources_deployment_azure.md). |
+| Pipelines | Ingest & Processing | `data_factory/adf_pipelines.tf` | Pipelines are deployed using the Terraform [azurerm_resource_group_template_deployment](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/resource_group_template_deployment) type. These refer to a JSON file containing the pipeline definition. The pipeline definition JSON can be obtained after creating pipelines interactively through the Data Factory UI. If editing a pipeline in the Data Factory UI, click the `{}` icon to view the underlying JSON - this can then be copied into the workload's JSON file in the project repo (under the `resources` element). |
+| Triggers | Ingest | `data_factory/adf_triggers.tf` | Refer to Terraform documentation for adding triggers, e.g. [tumbling window triggers](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/data_factory_tumbling_window). |
+
+:::tip
+
+Changes to Data Factory resources directly through the UI will lead to them being overwritten when deployment pipelines are next run. Ensure updates are made within the project repository to ensure updates are not lost.
+
+:::
 
 ## Next steps
 
