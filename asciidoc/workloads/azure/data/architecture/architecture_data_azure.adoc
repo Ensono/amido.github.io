@@ -1,5 +1,5 @@
 = Architecture Overview
-:imagesdir: ../images
+:imagesdir: ../../../../../static/img
 :description: Introduction to Ensono Stacks Azure Data Platform
 :keywords: data, python, etl, databricks, azure, adf
 
