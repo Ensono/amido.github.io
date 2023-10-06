@@ -19,7 +19,7 @@ Ensono Stacks accelerates the generation of production-ready data engineering wo
 
 ## Lakehouse approach
 
-The Ensono Stacks data platform is based upon a Lakehouse architecture. This approach combines the benefits of both data warehouses and data lakes, to provide a platform that is fully scalable, flexible and performant, along with governance and management capabilities. It can support all use cases, from complex machine learning to standard BI reporting and analysis.
+The Ensono Stacks data platform is based upon a _Lakehouse_ architecture. This approach combines the benefits of both data warehouses and data lakes, to provide a platform that is fully scalable, flexible and performant, along with governance and management capabilities. It can support all use cases, from complex machine learning to standard BI reporting and analysis.
 
 ### Medallion architecture
 

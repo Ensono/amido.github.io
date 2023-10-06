@@ -206,11 +206,11 @@ module.exports = {
                 label: "Architecture",
                 items: [
                   "workloads/azure/data/architecture/architecture_data_azure",
-                  "workloads/azure/data/architecture/repository_data_azure",
+                  "workloads/azure/data/architecture/infrastructure_data_azure",
+                  "workloads/azure/data/architecture/security_data_azure",
                 ],
               },
-              "workloads/azure/data/requirements_data_azure",
-              "workloads/azure/data/infrastructure_data_azure",
+              
               {
                 type: "category",
                 label: "Data Engineering",
@@ -228,6 +228,7 @@ module.exports = {
                 type: "category",
                 label: "Getting Started",
                 items: [
+                  "workloads/azure/data/getting_started/requirements_data_azure",
                   "workloads/azure/data/getting_started/getting_started",
                   "workloads/azure/data/getting_started/generate_project",
                   "workloads/azure/data/getting_started/core_data_platform_deployment_azure",
@@ -240,7 +241,6 @@ module.exports = {
                   "workloads/azure/data/getting_started/fabric_deployment_guide",
                 ],
               },
-              "workloads/azure/data/security_data_azure",
             ],
           },
         ],
