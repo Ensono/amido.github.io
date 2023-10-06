@@ -64,6 +64,7 @@ We will be creating a [Fabric Lakehouse](https://learn.microsoft.com/en-us/fabri
 ## Step 4: Create Lakehouse Files shortcut
 
 In our Fabric lakehouse we will be creating both _Files_ and _Tables_ shortcuts to our data lake storage containers:
+
 - _Files_ shortcuts will allow us to access all objects in the data lake (regardless of file type). This allows the data to be accessed through [Fabric notebooks](#notebooks).
 - _Tables_ shortcuts can be created over Delta Lake format tables (as we have in the Silver and Gold layers of our data lake). Once added as Tables, we can run [SQL queries](#sql-endpoint) and use the data in [Power BI](#power-bi). 
 
@@ -116,7 +117,7 @@ Once shortcuts have been added, data in the Lakehouse can be used within Fabric 
 Tables in the lakehouse can be directly queried via the [SQL endpoint](https://learn.microsoft.com/en-us/fabric/data-engineering/lakehouse-sql-endpoint).
 
 1. Within the lakehouse, select the __Lakehouse__ button from the top right corner, and select __SQL Endpoint__.
-2. From here, all tables added as shortcuts will be appear as tables in the SQL Endpoint, within the default schema. You can query the tables using SQL. See documentation on the (SQL query editor)[https://learn.microsoft.com/en-us/fabric/data-warehouse/sql-query-editor] for more details. 
+2. From here, all tables added as shortcuts will be appear as tables in the SQL Endpoint, within the default schema. You can query the tables using SQL. See documentation on the [SQL query editor](https://learn.microsoft.com/en-us/fabric/data-warehouse/sql-query-editor) for more details. 
 
 :::tip
 
