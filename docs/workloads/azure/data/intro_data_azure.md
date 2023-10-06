@@ -24,7 +24,7 @@ a framework for accelerating the deployment of a production-ready modern data pl
 2. Build and deploy the data platform infrastructure into your Azure environment.
 3. Accelerate development of data workloads and ETL pipelines with [Datastacks](/data_engineering/datastacks.md).
 
-The Ensono Stacks Data Platform delivers a modern Lakehouse solution, based upon the [Medallion Architecture](/data_engineering/data_engineering_intro_azure.md#medallion-architecture), with Bronze, Silver and Gold layers for various stages of data preparation. The platform utilises tools including **Azure Data Factory** for data ingestion and orchestration, **Databricks** for data processing and **Azure Data Lake Storage Gen2** for data lake storage.
+The Ensono Stacks Data Platform delivers a modern _Lakehouse_ solution, based upon the [medallion architecture](/data_engineering/data_engineering_intro_azure.md#medallion-architecture), with Bronze, Silver and Gold layers for various stages of data preparation. The platform utilises tools including **Azure Data Factory** for data ingestion and orchestration, **Databricks** for data processing and **Azure Data Lake Storage Gen2** for data lake storage. It provides a foundation for data analytics and reporting through **Microsoft Fabric** and **Power BI**.
 
 Key elements of the solution include:
 
@@ -50,9 +50,11 @@ workloads in the data platform.
 - Azure Data Factory
 - Log Analytics Workspace
 - Databricks Workspace
-- Azure SQL Database (optional)
+- Azure SQL Database (optional, for testing the platform)
 
-The solution may be deployed within a secure private network. For details please see [Infrastructure](./infrastructure_data_azure.md).
+The deployed platform can [integrate with Microsoft Fabric](./data_engineering/data_engineering_intro_azure.md#fabric-lakehouse) to provide a suite of analytics tools and capabilities.
+
+The solution is designed to be deployed within a secure private network - for details see [infrastructure and networking](./infrastructure_data_azure.md).
 
 ### Data Engineering workloads
 
