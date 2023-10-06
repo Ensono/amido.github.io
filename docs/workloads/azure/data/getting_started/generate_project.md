@@ -45,7 +45,13 @@ A [sample data project config file](https://github.com/Ensono/stacks-azure-data/
 | terraform.backend.group | `tfgroup` | Resource group account name for Terraform state. |
 | terraform.backend.container | `tfcontainer` | Container name account name for Terraform state. |
 
-All other values can be left as they are. For full documentation of all fields in the config file, refer to the Ensono Stacks CLI documentation.
+All other values can be left as they are. For full documentation of all fields in the config file, refer to the Stacks CLI Manual.
+
+:::tip
+
+Alternatively, you can use the `stacks-cli interactive` command to generate a YAML configuration file by answering a series of questions. See the Stacks CLI Manual for further information.
+
+:::
 
 ## Step 3: Scaffold the project
 
