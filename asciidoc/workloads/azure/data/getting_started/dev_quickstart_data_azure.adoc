@@ -35,7 +35,7 @@ In order to interact with Azure resources when developing, including running end
 
 [TIP]
 If you encounter PATH-related issues with Poetry when running the tests, we recommend installing Poetry using
-[pipx](https://python-poetry.org/docs/#installing-with-pipx) rather than the official installer.
+link:https://python-poetry.org/docs/#installing-with-pipx[pipx] rather than the official installer.
 
 === Unit tests
 
@@ -56,7 +56,7 @@ make test_e2e
 ----
 
 [TIP]
-Running end-to-end tests from your local machine may require additional permissions in Azure. If the tests fail whilst clearing up directories, ensure that you have [Storage Blob Data Contributor](https://learn.microsoft.com/en-us/azure/role-based-access-control/built-in-roles#storage-blob-data-contributor) access applied to your Azure Active Directory subscription. You may also be required to configure the [firewall rules](https://learn.microsoft.com/en-us/azure/storage/common/storage-network-security) for the storage account to whitelist your IP address.
+Running end-to-end tests from your local machine may require additional permissions in Azure. If the tests fail whilst clearing up directories, ensure that you have link:https://learn.microsoft.com/en-us/azure/role-based-access-control/built-in-roles#storage-blob-data-contributor[Storage Blob Data Contributor] access applied to your Azure Active Directory subscription. You may also be required to configure the link:https://learn.microsoft.com/en-us/azure/storage/common/storage-network-security[firewall rules] for the storage account to whitelist your IP address.
 
 === Code quality checks
 
