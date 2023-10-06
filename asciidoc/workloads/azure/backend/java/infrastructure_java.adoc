@@ -62,7 +62,7 @@ image::azure_rest_api_infrastructure.png[Azure Java API Infrastructure]
 
 The following pipelines are currently supported for automating the deployment:
 
-- docs/workloads/azure/backend/java/pipeline_java.md[Azure DevOps]
+link:./pipeline_java.adoc[Azure DevOps]
 
 === Running Locally
 

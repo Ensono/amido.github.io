@@ -6,13 +6,13 @@
 
 === Running the application locally
 
-1. Clone one of the Java workloads to your local machine from one of the following repos
+==== Clone one of the Java workloads to your local machine from one of the following repos
     
     . Simple web API: https://github.com/Ensono/stacks-java[stacks-java repository]
     . Web API with CQRS: https://github.com/Ensono/stacks-java-cqrs[stacks-java-cqrs repository]
     . Web API with CQRS and events: https://github.com/Ensono/stacks-java-cqrs-events[stacks-java-cqrs-events repository]
    
-2. Configure the application
+==== Configure the application
 
 ====
 The application is currently configured to work with the Azure environment only.
@@ -47,7 +47,7 @@ application-insights:
   enabled: false
 ----
 
-Alternatively, you can use Spring `local` profile, which is configured to not require cloud infrastructure to run. For the details, please follow the [Spring Profiles](https://www.baeldung.com/spring-profiles#4-jvm-system-parameter) article.
+Alternatively, you can use Spring `local` profile, which is configured to not require cloud infrastructure to run. For the details, please follow the https://www.baeldung.com/spring-profiles#4-jvm-system-parameter[Spring Profiles] article.
 
 There are two corresponding environment variables that need to be set to interact with these systems:
 
@@ -65,7 +65,7 @@ Open the System Properties then select the Advanced tab, then click on the Envir
 button and add the new parameters.
 
    
-3. Build and run the application
+==== Build and run the application
 
 Note that at a minimum https://adoptopenjdk.net/[Java 11] should be installed.
 
@@ -83,11 +83,12 @@ Move to the `<PROJECT-NAME>/java` folder, then
 mvnw.cmd spring-boot:run
 ----
 
-For instructions on how to customise the project for your company please look in the [Scaffolding](docs/workloads/azure/backend/java/scaffolding_java) section
+For instructions on how to customise the project for your company please look in the link:../../../common/backend/java/scaffolding_java.adoc[Scaffolding] section
 
-4. Build and run the application using Cosmos DB Emulator
+=== Build and run the application using Cosmos DB Emulator
     
-Please refer to section "Determine which root certificates have been installed" in [Setting Up CosmosDB Emulator](docs/workloads/azure/backend/java/setting_up_cosmos_db_locally_java.)
+Please refer to section "Determine which root certificates have been installed" in
+link:../../backend/java/setting_up_cosmos_db_locally_java.adoc[Setting Up CosmosDB Emulator]
 
 Move to the `<PROJECT-NAME>/java` folder, then go to `application.yml` either comment out the `application-insights` block or set `enabled`  property to `false`.
     
@@ -132,14 +133,14 @@ mvnw.cmd spring-boot:run -Dspring-boot.run.jvmArguments='-Djavax.net.ssl.trustSt
 ----
 
 
-5. Verify that the application has started
+==== Verify that the application has started
 
 Browse to http://localhost:9000/v1/menu[http://localhost:9000/v1/menu]. This should return a valid JSON response.
 
 The application configuration uses Swagger/OAS3 to represent the API endpoints. The Swagger UI can be viewed by directing your
 browser to http://localhost:9000/swagger/index.html[http://localhost:9000/swagger/index.html].
 
-=== Authorization
+==== Authorization
 
 All API endpoints are (optionally) protected using **Auth0**. There is an `auth.properties` file within the project codebase.
 If the following property within this file is set:

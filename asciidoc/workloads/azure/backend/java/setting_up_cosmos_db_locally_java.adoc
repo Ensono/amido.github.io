@@ -15,10 +15,15 @@ Latest instruction can be found in https://docs.microsoft.com/en-us/azure/cosmos
 Download and install the latest version of **CosmosDB Emulator**. Once it's installed, it will be
 available on https://localhost:8081/_explorer/index.html[localhost].
 
-=== Windows
+.Windows
+[%collapsible]
+====
 You can also find the Emulator from Start Menu and type Azure CosmosDB Emulator.
+====
 
-=== Unix
+.Unix
+[%collapsible]
+====
 
 The **CosmosDB Emulator** service is primarily a Windows service, so using it in Unix/Linux/MacOS requires a few
 additional steps. One of the simplest ways of running the emulator is to download
@@ -49,9 +54,13 @@ The **Ensono Stacks** database should have a container called **Menu** partition
 
 image::cosmosdb_emulator_2.png[cosmosdb]
 
+====
+
 == Export Azure Cosmos DB Emulator certificates to use in the Java Application
 
-=== Windows
+.Windows
+[%collapsible]
+====
 Start the Windows Certificate manager by running certlm.msc and navigate to the Personal->Certificates folder and open the certificate with the friendly name DocumentDbEmulatorCertificate.
 
 image::cosmosdb_emulator_certificate.png[certificates]
@@ -93,7 +102,11 @@ Now running the below should list 4 certificates.
 keytool -list -keystore cacerts
 ----
 
-=== Unix
+====
+
+.Unix
+[%collapsible]
+====
 
 ==== Download the certificate
 
@@ -115,3 +128,4 @@ In order to make sure the certificate is there, you can run the following:
 ----
 keytool -list -cacerts | grep -A1 documentdbemulator
 ----
+====
