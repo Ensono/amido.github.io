@@ -8,6 +8,7 @@
 [%collapsible]
 ====
 
+[discrete]
 ==== Mandatory
 
 - https://adoptopenjdk.net/[Install Java 11] and set JAVA_HOME environment variable to the directory java is installed and make sure MAVEN_HOME environment variable is not set
@@ -16,6 +17,7 @@
 
 - An IDE
 
+[discrete]
 ==== Optional
 
 - https://www.jetbrains.com/idea/download/#section=windows[IntelliJ IDEA]
@@ -27,6 +29,7 @@
 [%collapsible]
 ====
 
+[discrete]
 ==== Mandatory
 
 - homebrew
@@ -55,6 +58,7 @@ export PATH=$PWD/OpenJDK11U-jdk_x64/Contents/Home/bin:$PATH
 
 - https://aka.ms/cosmosdb-emulator[CosmosDB Emulator 2.4.5+]
 
+[discrete]
 ==== Optional
 
 - Add this to the path to your dotfiles: .bash_profile or .zshrc depending on what shell you are running

@@ -30,7 +30,7 @@ additional steps. One of the simplest ways of running the emulator is to downloa
 the https://docs.microsoft.com/en-us/azure/cosmos-db/linux-emulator[Linux Emulator] for Docker.
 Please follow the installation instructions, with one exception: when running the Docker image, don't set
 the `AZURE_COSMOS_EMULATOR_IP_ADDRESS_OVERRIDE=$ipaddr`. Instead, set it to `127.0.0.1`.
-
+====
 
 The value for `COSMOSDB_KEY` can be found within the emulator. See Primary Key:
 
@@ -54,7 +54,6 @@ The **Ensono Stacks** database should have a container called **Menu** partition
 
 image::cosmosdb_emulator_2.png[cosmosdb]
 
-====
 
 == Export Azure Cosmos DB Emulator certificates to use in the Java Application
 
@@ -68,6 +67,7 @@ image::cosmosdb_emulator_certificate.png[certificates]
 Follow the steps in https://docs.microsoft.com/en-us/azure/cosmos-db/local-emulator-export-ssl-certificates#export-emulator-certificate[Export the Azure Cosmos DB TLS/SSL certificate]
 Also Export CosmosEmulatorSecretes following the above link.
 
+[discrete]
 ==== Determine which root certificates have been installed
 
 Follow the steps to determine which root certificates have been installed https://docs.microsoft.com/en-us/azure/developer/java/sdk/java-sdk-add-certificate-ca-store#determining-which-root-certificates-are-installed[Add Root certificate]
@@ -107,7 +107,7 @@ keytool -list -keystore cacerts
 .Unix
 [%collapsible]
 ====
-
+[discrete]
 ==== Download the certificate
 
 [source, bash]
@@ -115,6 +115,7 @@ keytool -list -keystore cacerts
 curl -k https://localhost:8081/_explorer/emulator.pem > emulatorcert.crt
 ----
 
+[discrete]
 ==== Import to Java trust store
 
 [source, bash]
