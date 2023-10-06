@@ -8,9 +8,9 @@ a framework for accelerating the deployment of a production-ready modern data pl
 
 image::stacks-data-overview.png[Ensono Stacks Data Overview]
 
-1. Use the link:../../stackscli/about.md[Ensono Stacks CLI] to generate a new data platform project.
+1. Use the link:../../stackscli/about.adoc[Ensono Stacks CLI] to generate a new data platform project.
 2. Build and deploy the data platform infrastructure into your Azure environment.
-3. Accelerate development of data workloads and ETL pipelines with [Datastacks](etl_pipelines/datastacks.md).
+3. Accelerate development of data workloads and ETL pipelines with link:./etl_pipelines/datastacks.adoc[Datastacks].
 
 The Ensono Stacks Data Platform delivers a modern Lakehouse solution, based upon the link:./etl_pipelines/etl_intro_data_azure.adoc#medallion-architecture[Medallion Architecture], with Bronze, Silver and Gold layers for various stages of data preparation. The platform utilises tools including **Azure Data Factory** for data ingestion and orchestration, **Databricks** for data processing and **Azure Data Lake Storage Gen2** for data lake storage.
 
