@@ -7,15 +7,18 @@
 
 Very brief description (E.g Add Next Authentication to your next application)
 
+[discrete]
 === Prerequisites
 
 Are there any prerequisites?
 
+[discrete]
 === Usage
 
 [source, bash]
 nx @ensono-stacks/[plugin-name]:generator/executor --Option1 Option1Value --Option2 Option2Value
 
+[discrete]
 === Command line arguments
 
 The following command line arguments are available:
@@ -38,8 +41,10 @@ The following command line arguments are available:
 
 |===
 
+[discrete]
 === Generator Output
 
+[discrete]
 === What is the output of the above commands
 
 Will it create new files, will it manipulate existing ones?
