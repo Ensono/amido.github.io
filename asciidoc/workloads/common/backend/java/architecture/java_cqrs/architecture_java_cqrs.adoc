@@ -3,8 +3,6 @@
 :description: Spring Boot Rest API Architecture
 :keywords: java, rest, api, architecture, spring boot, cqrs, event, controller, logs, monitoring, query service, repository ,azure cosmos db, event handler, event listener, event dispatcher, authorisation
 
-//include::@docusaurus/useBaseUrl.adoc[]
-
 == Spring Boot Rest API Architecture
 
 The diagram below represents the architecture of the Command Query Responsibility Segregation (CQRS) pattern, as it has been applied
