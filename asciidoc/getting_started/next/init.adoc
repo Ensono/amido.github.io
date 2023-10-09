@@ -5,15 +5,18 @@
 ====
 The next init generator will add a custom ESlint config to an existing NextJs application, install `eslint-plugin-testing-library` to the project. as well as update project.json with a custom test config to allow coverage collection from https://jestjs.io/[jest].
 
+[discrete]
 === Prerequisites
 
 An existing https://nextjs.org/[Next] application
 
+[discrete]
 === Usage
 
 [source, bash]
 nx g @ensono-stacks/next:init
 
+[discrete]
 === Command line arguments
 
 The following command line arguments are available:
@@ -29,6 +32,7 @@ The following command line arguments are available:
 |N/A
 |===
 
+[discrete]
 === Generator Output
 
 The following files will be updated.
