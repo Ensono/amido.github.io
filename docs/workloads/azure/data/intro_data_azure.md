@@ -18,13 +18,13 @@ keywords:
 The [Ensono Stacks Azure Data Platform](https://github.com/ensono/stacks-azure-data) solution provides
 a framework for accelerating the deployment of a production-ready modern data platform in Azure.
 
-![Ensono Stacks Data Overview](images/stacks-data-overview.png)
+![Ensono Stacks Data Overview](./images/stacks-data-overview.png)
 
 1. Use the [Ensono Stacks CLI](../../../stackscli/about) to generate a new data platform project.
 2. Build and deploy the data platform infrastructure into your Azure environment.
-3. Accelerate development of data workloads and ETL pipelines with [Datastacks](/data_engineering/datastacks.md).
+3. Accelerate development of data workloads and ETL pipelines with [Datastacks](./data_engineering/datastacks.md).
 
-The Ensono Stacks Data Platform delivers a modern _Lakehouse_ solution, based upon the [medallion architecture](/data_engineering/data_engineering_intro_azure.md#medallion-architecture), with Bronze, Silver and Gold layers for various stages of data preparation. The platform utilises tools including **Azure Data Factory** for data ingestion and orchestration, **Databricks** for data processing and **Azure Data Lake Storage Gen2** for data lake storage. It provides a foundation for data analytics and reporting through **Microsoft Fabric** and **Power BI**.
+The Ensono Stacks Data Platform delivers a modern _Lakehouse_ solution, based upon the [medallion architecture](./data_engineering/data_engineering_intro_azure.md#medallion-architecture), with Bronze, Silver and Gold layers for various stages of data preparation. The platform utilises tools including **Azure Data Factory** for data ingestion and orchestration, **Databricks** for data processing and **Azure Data Lake Storage Gen2** for data lake storage. It provides a foundation for data analytics and reporting through **Microsoft Fabric** and **Power BI**.
 
 Key elements of the solution include:
 
@@ -54,7 +54,7 @@ workloads in the data platform.
 
 The deployed platform can [integrate with Microsoft Fabric](./data_engineering/data_engineering_intro_azure.md#fabric-lakehouse) to provide a suite of analytics tools and capabilities.
 
-The solution is designed to be deployed within a secure private network - for details see [infrastructure and networking](./infrastructure_data_azure.md).
+The solution is designed to be deployed within a secure private network - for details see [infrastructure and networking](./architecture/infrastructure_data_azure.md).
 
 ### Data Engineering workloads
 
