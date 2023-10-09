@@ -15,7 +15,7 @@ In Ensono Stacks Azure Data Platform all resources are created using the applica
 principal. Credentials for the service principal are stored in Azure Pipelines variable groups.
 
 Both the service principal and the configured variable groups are the prerequisites for deploying
-our platform to Azure. For details please check the [requirements](../requirements_data_azure.md) page.
+our platform to Azure. For details please check the [requirements](../getting_started/requirements_data_azure.md) page.
 
 For internal communication between Azure services, Ensono Stacks Data Platform uses managed identities,
 which are created automatically within our CI/CD deployments. For instance, Azure Data Factory

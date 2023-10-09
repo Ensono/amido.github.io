@@ -12,7 +12,7 @@ keywords:
 
 This section covers the steps required to start developing a Ensono Stacks Azure Data Platform from your machine:
 
-1. Make sure you have installed the applications in [local development requirements](../requirements_data_azure.md#local-development).
+1. Make sure you have installed the applications in [local development requirements](./requirements_data_azure.md#local-development).
 2. Ensure that Poetry is added to your `$PATH`.
 
 ## Environment setup
@@ -121,4 +121,4 @@ Changes to Data Factory resources directly through the UI will lead to them bein
 
 ## Next steps
 
-Once you setup your local development environment, you can continue with the Getting Started tutorial by [deploying the shared resources](shared_resources_deployment_azure.md).
+Once you setup your local development environment, you can continue with the Getting Started tutorial by [deploying the shared resources](./shared_resources_deployment_azure.md).

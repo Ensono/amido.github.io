@@ -67,4 +67,4 @@ The template CI/CD pipelines provided are based upon these two platform environm
 
 ## Next steps
 
-Now Datastacks Python utilities have been deployed you may now [generate a new data ingest pipeline](./ingest_pipeline_deployment_azure.md) (optionally implementing the [example data source](example_data_source.md) beforehand).
+Now Datastacks Python utilities have been deployed you may now [generate a new data ingest pipeline](./ingest_pipeline_deployment_azure.md) (optionally implementing the [example data source](./example_data_source.md) beforehand).

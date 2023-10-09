@@ -32,8 +32,8 @@ For details of how these resources are used in ingest pipelines, see [data inges
 
 This guide assumes the following are in place:
 
-* A [deployed Ensono Stacks data platform](core_data_platform_deployment_azure.md)
-* [Development environment set up](dev_quickstart_data_azure.md)
+* A [deployed Ensono Stacks data platform](./core_data_platform_deployment_azure.md)
+* [Development environment set up](./dev_quickstart_data_azure.md)
 
 ## Step 1: Create feature branch
 

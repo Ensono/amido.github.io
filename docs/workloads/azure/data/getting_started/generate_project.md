@@ -82,4 +82,4 @@ git push -u origin main
 
 ## Next steps
 
-Now you have generated a new data project, [deploy the core infrastructure](core_data_platform_deployment_azure.md).
+Now you have generated a new data project, [deploy the core infrastructure](./core_data_platform_deployment_azure.md).
