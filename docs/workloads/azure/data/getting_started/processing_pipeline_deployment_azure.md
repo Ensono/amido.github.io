@@ -15,7 +15,7 @@ keywords:
   - template
 ---
 
-This section provides an overview of generating a new [data processing pipeline](../etl_pipelines/data_processing.md) workload and deploying it into a Ensono Stacks Data Platform, using the [Datastacks CLI](../etl_pipelines/datastacks.md).
+This section provides an overview of generating a new [data processing pipeline](../data_engineering/data_processing.md) workload and deploying it into a Ensono Stacks Data Platform, using the [Datastacks CLI](../data_engineering/datastacks.md).
 
 This guide assumes the following are in place:
 
@@ -35,7 +35,7 @@ This process will deploy the following resources into the project:
 
 ## Background
 
-Once you have landed data in the bronze layer of your data lake (e.g. through a [data ingest pipeline](./ingest_pipeline_deployment_azure.md)), you will typically need to perform additional processing activities upon the data in order make it usable for your needs - for example loading it into the silver and gold layers of your data lake. For more information, see [data processing workloads](../etl_pipelines/data_processing.md).
+Once you have landed data in the bronze layer of your data lake (e.g. through a [data ingest pipeline](./ingest_pipeline_deployment_azure.md)), you will typically need to perform additional processing activities upon the data in order make it usable for your needs - for example loading it into the silver and gold layers of your data lake. For more information, see [data processing workloads](../data_engineering/data_processing.md).
 
 In the steps below, we will generate a data processing pipeline that uses data ingested in the [previous task](./ingest_pipeline_deployment_azure.md) as its source, and loads it into the silver layer. The same approach can be used to load data from silver to gold.
 
@@ -49,7 +49,7 @@ git checkout -b feat/my-new-processing-pipeline
 
 ## Step 2: Prepare the Datastacks config file
 
-Datastacks requires a YAML config file for generating a new ingest workload - see [Datastacks configuration](../etl_pipelines/datastacks.md#configuration) for further details.
+Datastacks requires a YAML config file for generating a new ingest workload - see [Datastacks configuration](../data_engineering/datastacks.md#configuration) for further details.
 
 Create a new YAML file and populate the values relevant to your new processing pipeline. The example below will generate resources for a processing workload named **my_processing_pipeline**.
 
@@ -77,7 +77,7 @@ ado_variable_groups_prod:
 
 ## Step 3: Generate project artifacts using Datastacks
 
-Use the [Datastacks CLI](../etl_pipelines/datastacks.md#using-the-datastacks-cli) to generate the artifacts for the new workload, using the prepared config file (replacing `path_to_config_file/my_config.yaml` with the appropriate path).:
+Use the [Datastacks CLI](../data_engineering/datastacks.md#using-the-datastacks-cli) to generate the artifacts for the new workload, using the prepared config file (replacing `path_to_config_file/my_config.yaml` with the appropriate path).:
 
 ```bash
 # Activate virtual environment
@@ -94,7 +94,7 @@ This will add new project artifacts for the workload under `de_workloads/process
 
 ## Step 4: Update PySpark job
 
-Within the generated workload, the following Python file will be used as the entrypoint for the processing job: `spark_jobs/process.py`. The file is structured ready to start adding any logic specific to your particular workload using Python / Spark. It will reference [PySpark utilities](../etl_pipelines/pyspark_utilities.md) to simplify interactions with the data platform and standard transformation activities.
+Within the generated workload, the following Python file will be used as the entrypoint for the processing job: `spark_jobs/process.py`. The file is structured ready to start adding any logic specific to your particular workload using Python / Spark. It will reference [PySpark utilities](../data_engineering/pyspark_utilities.md) to simplify interactions with the data platform and standard transformation activities.
 
 ```python
 import logging
@@ -137,7 +137,7 @@ from datastacks.pyspark.pyspark_utils import rename_columns_to_snake_case
 BRONZE_CONTAINER = "raw"
 SILVER_CONTAINER = "staging"
 SOURCE_DATA_TYPE = "parquet"
-INPUT_PATH_PATTERN = "Ingest_AzureSql_Example/movies.{table_name}/v1/full/"
+INPUT_PATH_PATTERN = "ingest_azure_sql_example/movies.{table_name}/v1/full/"
 OUTPUT_PATH_PATTERN = "movies/{table_name}"
 ```
 
@@ -178,7 +178,7 @@ In order to run / debug the code during development, you may wish to use [Databr
 
 ## Step 5: Update tests
 
-The workload is created with placeholders for adding unit and end-to-end tests - see [testing](../etl_pipelines/testing_data_azure.md) for further details.
+The workload is created with placeholders for adding unit and end-to-end tests - see [testing](../data_engineering/testing_data_azure.md) for further details.
 
 ### Unit tests
 
@@ -213,7 +213,11 @@ If successful, the workload's resources will now be deployed into the non-produc
 
 The Azure Data Factory resources can be viewed through the [Data Factory UI](https://adf.azure.com/). You may also wish to run/debug the newly generated pipeline from here (see [Microsoft documentation](https://learn.microsoft.com/en-us/azure/data-factory/iterative-development-debugging)).
 
-ℹ️ Note: The structure of the data platform and Data Factory resources are defined in the project's code repository, and deployed through the Azure DevOps pipelines. Changes to Data Factory resources directly through the UI will lead to them be overwritten when pipelines are next run. If you wish to update Data Factory resources, update the appropriate files within the workload (under the `data_factory` path).
+:::note Updating Data Factory resources
+
+The structure of the data platform and Data Factory resources are defined in the project's code repository, and deployed through the Azure DevOps pipelines. Changes to Data Factory resources directly through the UI will lead to them being overwritten when deployment pipelines are next run. See [Data Factory development quickstart](../getting_started/dev_quickstart_data_azure.md#azure-data-factory-development) for further information on updating Data Factory resources.
+
+:::
 
 Continue to make any further amendments required to the new workload, re-running the DevOps pipeline as required. If including data quality checks, update the (`data_quality_config.json`) file in the repository with details of checks required on the data.
 
@@ -224,4 +228,8 @@ In the example pipeline templates:
 - Deployment to the non-production (nonprod) environment is triggered on a feature branch when a pull request is open
 - Deployment to the production (prod) environment is triggered on merging to the `main` branch, followed by manual approval of the release step.
 
-ℹ️ It is recommended in any data platform that processes for deploying and releasing across environments should be agreed and documented, ensuring sufficient review and quality assurance of any new workloads. The template CI/CD pipelines provided are based upon two platform environments (nonprod and prod) - but these may be amended depending upon the specific requirements of your project and organisation.
+:::tip
+
+It is recommended in any data platform that processes for deploying and releasing across environments should be agreed and documented, ensuring sufficient review and quality assurance of any new workloads. The template CI/CD pipelines provided are based upon two platform environments (nonprod and prod) - but these may be amended depending upon the specific requirements of your project and organisation.
+
+:::

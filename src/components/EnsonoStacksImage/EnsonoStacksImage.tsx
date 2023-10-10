@@ -27,17 +27,19 @@ export const EnsonoStacksImage = () => {
             <div className={customStyle.wrapperImage}>
                 <img src={useBaseUrl('img/stacks-banner.png')} alt={image.alt}/>
             </div>
-            <div className={customStyle.wrapper}>
-                <div className={customStyle.stacksLogo}>
-                    <img src={logo.url} alt={logo.alt}/> 
-                    <h2>{title}</h2>
+            <div className={customStyle.headingWrapper}>
+                <div className={customStyle.wrapper}>
+                    <div className={customStyle.stacksLogo}>
+                        <img src={logo.url} alt={logo.alt}/>
+                        <h2>{title}</h2>
+                    </div>
+                    <p>{description}</p>
+                    <Link
+                        className="button button--primary button--lg"
+                        to={baseUrl}
+                    >{buttonText}</Link>
                 </div>
-                <p>{description}</p>
-                <Link
-                    className="button button--primary button--lg"
-                    to={baseUrl}
-                >{buttonText}</Link>
-            </div> 
+            </div>
         </div>
     )
 }

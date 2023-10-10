@@ -1,0 +1,44 @@
+= @ensono-stacks/workspace
+
+The `@ensono-stacks/workspace` plugin contains generators to manage the Nx workspace itself. These will often be useful in any workspace, regardless of the specific apps or libraries it contains.
+
+Using a standard setup for workspaces ensures consistency across projects and allows developers to easily onboard onto new projects.
+
+CAUTION: This plugin will automatically be installed and configured if creating a stacks workspace with the link:/docs/getting_started/setup#option-1-stacks-cli[Ensono Stacks CLI] or link:/docs/getting_started/setup#option-2-create-stacks-workspace-generator[@ensono-stacks/create-stacks-workspace]
+
+== Setting up @ensono-stacks/workspace
+
+Install the `@ensono-stacks/workspace` with the following command:
+
+----
+npm install --save-dev @ensono-stacks/workspace@latest
+----
+
+or
+
+----
+yarn add --dev @ensono-stacks/workspace@latest
+----
+
+
+`@ensono-stacks/workspace` depends on the `@ensono-stacks/core` plugin.
+
+== Executors and Generators
+
+To see a list of the plugin capabilities run the following command:
+
+----
+nx list @ensono-stacks/workspace
+----
+
+View additional information about a plugin capability through the following command:
+
+----
+nx g @ensono-stacks/workspace:[generator-executor-name] --help
+----
+
+=== Generators
+
+include::init.adoc[@ensono-stacks/workspace:init]
+
+include::init-deployment.adoc[@ensono-stacks/workspace:init-deployment]

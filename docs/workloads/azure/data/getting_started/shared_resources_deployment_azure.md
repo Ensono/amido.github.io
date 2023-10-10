@@ -28,12 +28,12 @@ The shared resources include Azure Data Factory resources which are shared acros
     * _pipeline_Get_Ingest_Config_ - To retrieve config data for use in a pipeline
     * _pipeline_Generate_Ingest_Query_ - To generate a query for ingesting data
 
-For details of how these resources are used in ingest pipelines, see [data ingestion](../etl_pipelines/ingest_data_azure.md).
+For details of how these resources are used in ingest pipelines, see [data ingestion](../data_engineering/ingest_data_azure.md).
 
 This guide assumes the following are in place:
 
-* A [deployed Ensono Stacks data platform](core_data_platform_deployment_azure.md)
-* [Development environment set up](dev_quickstart_data_azure.md)
+* A [deployed Ensono Stacks data platform](./core_data_platform_deployment_azure.md)
+* [Development environment set up](./dev_quickstart_data_azure.md)
 
 ## Step 1: Create feature branch
 
@@ -64,7 +64,11 @@ Running this pipeline in Azure DevOps will initiate the deployment of artifacts 
 
 If successful, the core DE shared resources will now be available in the non-production environment. To view the deployed resources, navigate to the relevant resource group in the [Azure portal](https://portal.azure.com/). The deployed Data Factory resources can be viewed through the [Data Factory UI](https://adf.azure.com/).
 
-ℹ️ Note: The structure of the data platform and Data Factory resources are defined in the project's code repository, and deployed through the Azure DevOps pipelines. Changes to Data Factory resources directly through the UI will lead to them be overwritten when pipelines are next run. If you wish to update shared Data Factory resources, update the appropriate files under the path `de_workloads/shared_resources/data_factory`.
+:::note Updating Data Factory resources
+
+The structure of the data platform and Data Factory resources are defined in the project's code repository, and deployed through the Azure DevOps pipelines. Changes to Data Factory resources directly through the UI will lead to them being overwritten when deployment pipelines are next run. See [Data Factory development quickstart](../getting_started/dev_quickstart_data_azure.md#azure-data-factory-development) for further information on updating Data Factory resources.
+
+:::
 
 ## Step 4: Deploy shared resources in further environments
 
