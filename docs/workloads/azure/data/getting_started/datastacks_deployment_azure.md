@@ -13,7 +13,7 @@ keywords:
   - cicd
 ---
 
-This section provides an overview of the build and deployment of the [Datastacks Python library](../etl_pipelines/pyspark_utilities.md).
+This section provides an overview of the build and deployment of the [Datastacks Python library](../data_engineering/pyspark_utilities.md).
 
 Datastacks provides a range of utilities designed to support the development of data engineering workloads. The steps in this section are to setup a deployment pipeline, which:
 
@@ -67,4 +67,4 @@ The template CI/CD pipelines provided are based upon these two platform environm
 
 ## Next steps
 
-Now Datastacks Python utilities have been deployed you may now [generate a new data ingest pipeline](./ingest_pipeline_deployment_azure.md) (optionally implementing the [example data source](example_data_source.md) beforehand).
+Now Datastacks Python utilities have been deployed you may now [generate a new data ingest pipeline](./ingest_pipeline_deployment_azure.md) (optionally implementing the [example data source](./example_data_source.md) beforehand).
