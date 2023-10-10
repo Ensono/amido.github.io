@@ -1,0 +1,26 @@
+= Dev [Node.js] - Using the repo to build the Node.js application
+
+== Getting started
+
+=== Bootstrapping a WebApp
+
+As a general rule, the steps to get one of our npm environments up and running are as follows:
+
+For local execution:
+
+1. Clone the project and navigate to the relevant path.
+2. Run the following commands in the following order:
+
+[source,bash]
+----
+npm install
+npm run build
+npm run build:watch
+npm npm run start
+----
+
+All of our packages, including the link:https://www.npmjs.com/package/@amidostacks/scaffolding-cli[npm: @amidostacks/scaffolding-cli], are available on link:https://www.npmjs.com/package/@amidostacks/scaffolding-cli[npm].
+
+See the README for more information on generating the templates from the CLI: link:https://github.com/Ensono/stacks-webapp-template/blob/master/packages/scaffolding-cli/README.md[packages/scaffolding-cli/README.md].
+
+Once built, when starting the server and webapp, a browser window should open up and automatically navigate you to the local instance, but if not, the default URL is link:http://localhost:3000[http://localhost:3000].

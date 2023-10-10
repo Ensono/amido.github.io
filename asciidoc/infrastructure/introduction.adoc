@@ -1,0 +1,9 @@
+= Infrastructure Introduction
+
+All Ensono Stacks workloads require initial configuration of the cloud provider and some core infrastructure.
+
+== Terraform
+
+All infrastructure tooling is done with https://www.terraform.io/[Terraform], as a method for implementing infrastructure as code. Terraform uses workspaces as the main mechanism of segregating states.
+
+All the modules used by Ensono Stacks are documented and maintained https://github.com/Ensono/stacks-terraform[here]

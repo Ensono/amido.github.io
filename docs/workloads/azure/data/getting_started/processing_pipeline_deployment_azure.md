@@ -137,7 +137,7 @@ from datastacks.pyspark.pyspark_utils import rename_columns_to_snake_case
 BRONZE_CONTAINER = "raw"
 SILVER_CONTAINER = "staging"
 SOURCE_DATA_TYPE = "parquet"
-INPUT_PATH_PATTERN = "Ingest_AzureSql_Example/movies.{table_name}/v1/full/"
+INPUT_PATH_PATTERN = "ingest_azure_sql_example/movies.{table_name}/v1/full/"
 OUTPUT_PATH_PATTERN = "movies/{table_name}"
 ```
 
@@ -213,7 +213,11 @@ If successful, the workload's resources will now be deployed into the non-produc
 
 The Azure Data Factory resources can be viewed through the [Data Factory UI](https://adf.azure.com/). You may also wish to run/debug the newly generated pipeline from here (see [Microsoft documentation](https://learn.microsoft.com/en-us/azure/data-factory/iterative-development-debugging)).
 
-ℹ️ Note: The structure of the data platform and Data Factory resources are defined in the project's code repository, and deployed through the Azure DevOps pipelines. Changes to Data Factory resources directly through the UI will lead to them be overwritten when pipelines are next run. If you wish to update Data Factory resources, update the appropriate files within the workload (under the `data_factory` path).
+:::note Updating Data Factory resources
+
+The structure of the data platform and Data Factory resources are defined in the project's code repository, and deployed through the Azure DevOps pipelines. Changes to Data Factory resources directly through the UI will lead to them being overwritten when deployment pipelines are next run. See [Data Factory development quickstart](../getting_started/dev_quickstart_data_azure.md#azure-data-factory-development) for further information on updating Data Factory resources.
+
+:::
 
 Continue to make any further amendments required to the new workload, re-running the DevOps pipeline as required. If including data quality checks, update the (`data_quality_config.json`) file in the repository with details of checks required on the data.
 
@@ -224,4 +228,8 @@ In the example pipeline templates:
 - Deployment to the non-production (nonprod) environment is triggered on a feature branch when a pull request is open
 - Deployment to the production (prod) environment is triggered on merging to the `main` branch, followed by manual approval of the release step.
 
-ℹ️ It is recommended in any data platform that processes for deploying and releasing across environments should be agreed and documented, ensuring sufficient review and quality assurance of any new workloads. The template CI/CD pipelines provided are based upon two platform environments (nonprod and prod) - but these may be amended depending upon the specific requirements of your project and organisation.
+:::tip
+
+It is recommended in any data platform that processes for deploying and releasing across environments should be agreed and documented, ensuring sufficient review and quality assurance of any new workloads. The template CI/CD pipelines provided are based upon two platform environments (nonprod and prod) - but these may be amended depending upon the specific requirements of your project and organisation.
+
+:::
