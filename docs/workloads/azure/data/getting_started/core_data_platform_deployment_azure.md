@@ -16,11 +16,11 @@ keywords:
 
 This section provides an overview of generating a new Data Platform project and deploying core infrastructure for Ensono Stacks Data Platform.
 
-It assumes you have [generated a new data project using Ensono Stacks](generate_project.md), and that the following [requirements](../requirements_data_azure.md) are in place:
+It assumes you have [generated a new data project using Ensono Stacks](./generate_project.md), and that the following [requirements](./requirements_data_azure.md) are in place:
 
-* [Azure subscription and service principal](../requirements_data_azure.md#azure-subscription)
-    * If you want to provision the infrastructure within a private network, this can be done as part of a [Hub-Spoke network topology](../infrastructure_data_azure#networking). Spoke virtual network and subnet for private endpoints must be provisioned for each environment. The hub network must contain a self-hosted agent. See [Microsoft documentation](https://learn.microsoft.com/en-us/azure/architecture/reference-architectures/hybrid-networking/hub-spoke?tabs=cli) for more details on implementing Hub-spoke network topology in Azure.
-* [Azure DevOps project with Pipelines variable groups](../requirements_data_azure.md#azure-devops).
+* [Azure subscription and service principal](./requirements_data_azure.md#azure-subscription)
+    * If you want to provision the infrastructure within a private network, this can be done as part of a [Hub-Spoke network topology](../architecture/infrastructure_data_azure#networking). Spoke virtual network and subnet for private endpoints must be provisioned for each environment. The hub network must contain a self-hosted agent. See [Microsoft documentation](https://learn.microsoft.com/en-us/azure/architecture/reference-architectures/hybrid-networking/hub-spoke?tabs=cli) for more details on implementing Hub-spoke network topology in Azure.
+* [Azure DevOps project with Pipelines variable groups](./requirements_data_azure.md#azure-devops).
 
 ## Step 1: Create branch and set networking option
 
@@ -32,7 +32,7 @@ git checkout -b feat/infra-pipeline
 
 The file `deploy/azure/infra/vars.tf` contains a variable `enable_private_networks`:
 
-* If you want to provision infrastructure within a [private network](../infrastructure_data_azure#networking), ensure this variable is set to `true`.
+* If you want to provision infrastructure within a [private network](../architecture/infrastructure_data_azure#networking), ensure this variable is set to `true`.
 * If you want to provision infrastructure with a default deployment model, ensure this variable is set to `false`.
 
 ## Step 2: Add Infrastructure pipeline in Azure DevOps
@@ -54,7 +54,7 @@ Running this pipeline in Azure DevOps will initiate the deployment of artifacts 
 If successful, the core infrastructure resources will now be available in the nonprod Ensono Stacks environment. To view these deployed resources, navigate to the [Azure portal](https://portal.azure.com/) and search for the resource group associated with the deployment. This resource group is named based upon values provided during step 1 in the pattern
 `companyname-projectname-stage-region-component` (for example: `amido-stacks-dev-euw-de`). Within the resource group, you'll find a list of the resources that were deployed.
 
-Once core infrasturcture resources are deployed in nonprod environment, values will need adding into the nonprod variable group to reflect the deployed resources (e.g. `amido-stacks-de-pipeline-nonprod`). For additional information, see [Pipelines variable groups](../requirements_data_azure.md#azure-pipelines-variable-groups).
+Once core infrasturcture resources are deployed in nonprod environment, values will need adding into the nonprod variable group to reflect the deployed resources (e.g. `amido-stacks-de-pipeline-nonprod`). For additional information, see [Pipelines variable groups](./requirements_data_azure.md#azure-pipelines-variable-groups).
 
 ## Step 4: Deploy Infrastructure in further environments
 
@@ -64,8 +64,8 @@ The template CI/CD pipelines provided are based upon these two platform environm
 * Deployment to the non-production (nonprod) environment is triggered on a feature branch when a pull request is open
 * Deployment to the production (prod) environment is triggered on merging to the `main` branch, followed by manual approval of the release step.
 
-Once core infrastructure resources are deployed in prod environment, values will need adding into the prod variable group to reflect the deployed resources (e.g. `amido-stacks-de-pipeline-prod`). For additional information, see [Pipelines variable groups](../requirements_data_azure.md#azure-pipelines-variable-groups).
+Once core infrastructure resources are deployed in prod environment, values will need adding into the prod variable group to reflect the deployed resources (e.g. `amido-stacks-de-pipeline-prod`). For additional information, see [Pipelines variable groups](./requirements_data_azure.md#azure-pipelines-variable-groups).
 
 ## Next steps
 
-Now you have generated and deployed a new Ensono Stacks data platform, [setup your local development environment](dev_quickstart_data_azure.md).
+Now you have generated and deployed a new Ensono Stacks data platform, [setup your local development environment](./dev_quickstart_data_azure.md).
