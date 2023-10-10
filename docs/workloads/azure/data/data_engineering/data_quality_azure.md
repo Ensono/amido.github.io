@@ -66,7 +66,7 @@ Here is the description of the main elements:
        * If the data is stored in files, like a Parquet file on ADLS, you should
        provide the complete path to the file within the `dq_input_path`. Examples:
           * `"myfolder/mysubfolder/myfile.parquet"`
-          * `"mysubfolder/*"`
+          * `"myfolder/mysubfolder/*"`
        * For tables with metadata managed by a data catalog, you should provide
        the database schema and the table name. Example:
           * `staging.table_name`
