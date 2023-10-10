@@ -57,24 +57,37 @@ Here is the description of the main elements:
 
 1. `gx_directory_path`: Path to the Great Expectations metadata store.
 2. `dataset_name`: Name of the dataset that is being processed.
-3. `datasource_config`: Configuration for the dataset being tested.
+3. `dq_input_path`: Path to where the input data is stored. For data stored in files, this would be a URI, e.g. `"abfss://raw@accountname.dfs.core.windows.net/ingest_azure_sql_example/"`
+4. `dq_output_path`: Path to where data quality results will be written.
+5. `datasource_config`: Configuration for the dataset being tested.
     1. `datasource_name`: Name of the data asset, e.g. table or file name.
     2. `datasource_type`: Data type of the asset - this can be any type that Spark can read from, e.g. table, parquet, csv, delta.
-    3. `data_location`: Location of the given data asset. It can either be a path to files in the data lake
-    or a fully qualified table name, depending on the data source:
-       * If the data is stored in a file, like a Parquet file on ADLS, you should
-       provide the complete path to the file. Examples:
-          * `"abfss://raw@accountname.dfs.core.windows.net/myfolder/mysubfolder/myfile.parquet"`,
-          * `"abfss://raw@accountname.dfs.core.windows.net/myfolder/mysubfolder/*"`,
-          * `"abfss://staging@{ADLS_ACCOUNT}.dfs.core.windows.net/myfolder/mysubfolder/*"`.
+    3. `data_location`: Location of the given data asset.
+       * If the data is stored in files, like a Parquet file on ADLS, you should
+       provide the complete path to the file within the `dq_input_path`. Examples:
+          * `"myfolder/mysubfolder/myfile.parquet"`
+          * `"mysubfolder/*"`
        * For tables with metadata managed by a data catalog, you should provide
-       the database schema and the table name. For example, `staging.table_name`.
+       the database schema and the table name. Example:
+          * `staging.table_name`
     4. `expectation_suite_name`: Name of the expectation suite associated with this data source.
     5. `validation_config`: A list of validation configurations where each configuration contains the following fields:
         1. `column_name`: Name of the validated column.
         2. `expectations`: List of expectations where each expectation has the following fields:
             * `expectation_type`: Name of the Great Expectations [expectation class](https://greatexpectations.io/expectations/) to use.
             * `expectation_kwargs`: The keyword arguments to pass to the expectation class.
+
+### Using environment variables in configuration files
+
+It is possible to use environment variables in a configuration file for Data Quality.
+Placeholders in the form of `{ENV_VAR_NAME}` will be replaced with the corresponding environment
+variable values. For example, you can pass the ADLS name using an environment variable:
+
+```json
+{
+  "dq_input_path": "abfss://raw@{ADLS_ACCOUNT}.dfs.core.windows.net/ingest_azure_sql_example/"
+}
+```
 
 ### Example
 
@@ -84,12 +97,13 @@ Here's a minimal example of a configuration file:
 {
     "gx_directory_path": "/dbfs/great_expectations/",
     "dataset_name": "movies",
+    "dq_input_path": "abfss://raw@{ADLS_ACCOUNT}.dfs.core.windows.net/ingest_azure_sql_example/",
     "dq_output_path": "abfss://raw@{ADLS_ACCOUNT}.dfs.core.windows.net/ingest_azure_sql_example/",
     "datasource_config": [
         {
             "datasource_name": "movies.movies_metadata",
             "datasource_type": "parquet",
-            "data_location": "abfss://raw@{ADLS_ACCOUNT}.dfs.core.windows.net/ingest_azure_sql_example/movies.movies_metadata/v1/*/*/*",
+            "data_location": "movies.movies_metadata/v1/*/*/*",
             "expectation_suite_name": "movies.movies_metadata_suite",
             "validation_config": [
                 {
@@ -104,17 +118,5 @@ Here's a minimal example of a configuration file:
             ]
         }
     ]
-}
-```
-
-### Using environment variables in configuration files
-
-It is possible to use environment variables in a configuration file for Data Quality.
-Placeholders in the form of `{ENV_VAR_NAME}` will be replaced with the corresponding environment
-variable values. For example, you can pass the ADLS name using an environment variable:
-
-```json
-{
-  "data_location": "abfss://raw@{ADLS_ACCOUNT}.dfs.core.windows.net/example_azuresql_1/SalesLT.Product/v1/*/*/*"
 }
 ```

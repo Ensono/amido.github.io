@@ -197,7 +197,7 @@ The structure of the data platform and Data Factory resources are defined in the
 
 :::
 
-Continue to make any further amendments required to the new workload, re-running the DevOps pipeline as required. If including data quality checks, update the (`ingest_dq`) file in the repository with details of checks required on the data.
+Continue to make any further amendments required to the new workload, re-running the DevOps pipeline as required. If including data quality checks, update the (`ingest_dq`) file in the repository with details of checks required on the data (see [data quality configuration](../data_engineering/data_quality_azure.md#json-configuration-file-for-great-expectations) for further details).
 
 ## Step 8: Deploy new workload in further environments
 
