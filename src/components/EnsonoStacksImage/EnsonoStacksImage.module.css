@@ -79,3 +79,22 @@
     }
 
 }
+
+.headingWrapper {
+    width: 100%;
+    margin: 2.4rem auto;
+    max-width: 75rem;
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+}
+
+@media (min-width: 768px) {
+    .headingWrapper {
+        justify-content: flex-start;
+        align-items: stretch;
+    }
+}
+
+
