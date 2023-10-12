@@ -38,7 +38,7 @@ poetry run datastacks --help
 
 ## Generating data workloads
 
-Datastacks can be used to generate all the resources required for a new data engineering workload - for example a [data ingest](./ingest_data_azure.md) or [data processing](./data_processing.md) pipeline. This will create all resources required for the workload, based upon templates within the [de_templates](https://github.com/ensono/stacks-azure-data/tree/main/de_templates) directory.
+Datastacks can be used to generate all the resources required for a new data engineering workload - for example a [data ingest](./ingest_data_azure.md) or [data processing](./data_processing.md) pipeline. This will create all resources required for the workload, based upon templates (held within [datastacks.generate.templates](https://github.com/ensono/stacks-azure-data/tree/main/datastacks/datastacks/generate/templates)).
 
 The [deployment architecture](../architecture/architecture_data_azure.md#data-engineering-workloads) section shows the workflow for using Datastacks to generate a new workload.
 The [getting started](../getting_started/getting_started.md) section includes step-by-step instructions on deploying a new ingest or processing workload using Datastacks.
@@ -56,21 +56,21 @@ The [getting started](../getting_started/getting_started.md) section includes st
 poetry shell
 
 # Generate resources for an ingest workload
-datastacks generate ingest --config="de_templates/test_config_ingest.yaml"
+datastacks generate ingest --config="de_workloads/generate_examples/test_config_ingest.yaml"
 
 # Generate resources for an ingest workload, with added data quality steps
-datastacks generate ingest --config="de_templates/test_config_ingest.yaml" --data-quality
+datastacks generate ingest --config="de_workloads/generate_examples/test_config_ingest.yaml" --data-quality
 
 # Generate resources for a processing workload
-datastacks generate processing --config="de_templates/test_config_processing.yaml"
+datastacks generate processing --config="de_workloads/generate_examples/test_config_processing.yaml"
 
 # Generate resources for a processing workload, with added data quality steps
-datastacks generate processing --config="de_templates/test_config_processing.yaml" --data-quality
+datastacks generate processing --config="de_workloads/generate_examples/test_config_processing.yaml" --data-quality
 ```
 
 ### Configuration
 
-In order to generate a new data engineering workload the Datastacks CLI takes a path to a config file. This config file should be YAML format, and contain configuration values as specified in the table below. Sample config files are included in the [de_templates](https://github.com/ensono/stacks-azure-data/tree/main/de_templates) folder. The structure of config is [validated using Pydantic](https://github.com/ensono/stacks-azure-data/tree/main/datastacks/datastacks/config.py).
+In order to generate a new data engineering workload the Datastacks CLI takes a path to a config file. This config file should be YAML format, and contain configuration values as specified in the table below. Sample config files are included in the [de_workloads/generate_examples](https://github.com/ensono/stacks-azure-data/tree/main/de_workloads/generate_examples) folder. The structure of config is validated using Pydantic.
 
 #### All workloads
 
