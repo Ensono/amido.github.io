@@ -1,10 +1,10 @@
 ---
 id: infrastructure_data_azure
-title: Infrastructure
-sidebar_label: Infrastructure
+title: Infrastructure & Networking
+sidebar_label: Infrastructure & Networking
 hide_title: false
 hide_table_of_contents: false
-description: Infrastructure overview
+description: Infrastructure & Networking overview
 keywords:
   - azure
   - resource group
@@ -22,9 +22,9 @@ There are two subfolders in this directory:
 * `infra`
 * `networking`
 
-## Infra
+## Infrastructure
 
-`infra` subfolder contains the following definitions:
+The `infra` subfolder contains the following definitions:
 
 1. **Resource Group**
 2. **Azure SQL Database** sample instance with database schemas
@@ -71,7 +71,7 @@ The following diagram shows network configuration for the two default environmen
 * Nonprod (`is_hub: false`)
 * Prod (`is_hub: false`)
 
-![network_hub_spoke.png](images/network_hub_spoke.png)
+![network_hub_spoke.png](../images/network_hub_spoke.png)
 
 ### Databricks secure cluster connectivity
 
@@ -95,4 +95,4 @@ restricted based on the IAM policy.
 
 The following diagram depicts the Databricks network configuration.
 
-![network_databricks.png](images/network_databricks.png)
+![network_databricks.png](../images/network_databricks.png)
