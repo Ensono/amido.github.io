@@ -21,7 +21,7 @@ The following tools are recommended for developing while using the Ensono Stacks
 | Java 8/11/17 | Optional: Java is required to develop and run tests using PySpark locally - see [Spark documentation](https://spark.apache.org/docs/latest/). |
 | [Azure CLI](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli) | Optional: Azure CLI allows you to interact with Azure resources locally, including running end-to-end tests. |
 
-See [development quickstart](getting_started/dev_quickstart_data_azure.md) for further details on getting start with developing the solution.
+See [development quickstart](./dev_quickstart_data_azure.md) for further details on getting start with developing the solution.
 
 ## Git repository
 

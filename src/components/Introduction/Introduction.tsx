@@ -1,6 +1,5 @@
 import React from "react";
 import Link from "@docusaurus/Link";
-import useBaseUrl from "@docusaurus/useBaseUrl";
 
 import styles from "@site/src/pages/styles.module.css";
 import customStyles from "./Introduction.module.css";
@@ -23,7 +22,7 @@ const text = {
 const {title, benefitsList, buttonText} = text
 
 export const Introduction = () => {
-    const baseUrl = useBaseUrl("docs/");
+    const ensonoStacksOfferingLink = "https://www.ensono.com/offerings/ensono-stacks-revolutionizing-business-approaches-for-future-growth/";
 
     return (
         <div className={styles.section}>
@@ -36,7 +35,7 @@ export const Introduction = () => {
                         ))}
                     </ul>
                     <div className={styles.buttons}>
-                        <Link className="button button--primary button--lg" to={baseUrl}>{buttonText}</Link>
+                        <Link className="button button--primary button--lg" to={ensonoStacksOfferingLink}>{buttonText}</Link>
                     </div>
                 </div>
 
