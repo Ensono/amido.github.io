@@ -1,0 +1,34 @@
+= Overview of Maven modularity
+:description: Maven Modules used as Ensono Stacks Workload dependencies
+:keywords: java, maven, module, modularity, archetype
+
+In order to reduce code duplication, make maintenance easier and allow better customisation control, 
+the Ensono Stacks Workloads use the following internal dependencies:
+
+== Common Modules
+
+These modules are shared modules, independant of the cloud provider selected:
+
+* link:./dependency_parent_java.adoc[Ensono Stacks modules parent], found in https://github.com/Ensono/stacks-java-module-parent[stacks-java-module-parent]
+* link:./dependency_commons_java.adoc[Ensono Stacks commons core module], found in https://github.com/Ensono/stacks-java-core-commons[stacks-java-core-commons]
+* link:./dependency_api_java.adoc[Ensono Stacks commons API module]), found in https://github.com/Ensono/stacks-java-core-api[stacks-java-core-api]
+* link:./dependency_cqrs_java.adoc[Ensono Stacks commons CQRS module]), found in https://github.com/Ensono/stacks-java-core-cqrs[stacks-java-core-cqrs]
+* link:./dependency_messaging_java.adoc[Ensono Stacks messaging core module], found in https://github.com/Ensono/stacks-java-core-messaging[stacks-java-core-messaging]
+
+== Azure Capability Modules
+
+Capabilities are provided by the Azure cloud platform: -
+
+* link:../../../../azure/backend/java/architecture/dependency_servicebus_java.adoc[Ensono Stacks Azure Service Bus module], found in https://github.com/Ensono/stacks-java-azure-servicebus[stacks-java-azure-servicebus]
+* link:../../../../azure/backend/java/architecture/dependency_cosmos_java.adoc[Ensono Stacks Azure CosmosDB module], found in https://github.com/Ensono/stacks-java-azure-cosmos[stacks-java-azure-cosmos]
+
+== AWS Capability Modules
+
+Capabilities are provided by the AWS cloud platform: -
+
+* link:../../../../aws/backend/java/architecture/dependency_sqs_java.adoc[Ensono Stacks AWS SQS module], found in https://github.com/Ensono/stacks-java-aws-sqs[stacks-java-aws-sqs]
+* link:../../../../aws/backend/java/architecture/dependency_dynamodb_java.adoc[Ensono Stacks AWS DynamoDB module], found in https://github.com/Ensono/stacks-java-aws-dynamodb[stacks-java-aws-dynamodb]
+
+The modules are built and published independently of the Workloads and by default are pulled into the project as
+Maven dependencies. You can easily replace these by cloning individual repositories and placing them in your
+application either directly or as modules.
