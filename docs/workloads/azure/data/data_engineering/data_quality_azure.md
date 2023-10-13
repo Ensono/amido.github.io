@@ -123,19 +123,19 @@ Here's a minimal example of a configuration file:
 
 ## Validation Results
 
-Results of the data quality checks are stored in the `dq_output_path` location in Delta tables. The results contain the following columns:
+Results of the data quality checks are stored in the `dq_output_path` location in Delta tables. Their names follow the format `{datasource_name}_dq`, e.g. `movies.movies_metadata_dq`. The results contain the following columns:
 
-| Column Name           | Description                                                                                      |
-|-----------------------|--------------------------------------------------------------------------------------------------|
-| data_quality_run_date | Timestamp of the data quality run                                                                |
-| datasource_name       | Name of the data asset                                                                           |
-| column_name           | Name of the column                                                                               |
-| validator             | Name of the validator                                                                            |
-| value_set             | The set of values a column should have (if applicable)                                           |
-| threshold             | The percentage of rows that should pass the validation for the check to be considered successful |
-| failure_count         | The number of rows that failed the validation                                                    |
-| failure_percent       | The percentage of rows that failed the validation                                                |
-| failure_query         | A query that can be used to retrieve the rows that failed the validation                         |
-| dq_check_exception    | True if an exception occurred while running the check                                            |
-| exception_message     | The exception message if an exception was raised                                                 |
-| success               | True if the dataset passed the check                                                             |
+| Column Name           | Type    | Description                                                                                       |
+|-----------------------|---------|---------------------------------------------------------------------------------------------------|
+| data_quality_run_date | date    | Timestamp of the data quality run.                                                                |
+| datasource_name       | string  | Name of the data asset.                                                                           |
+| column_name           | string  | Name of the column.                                                                               |
+| validator             | string  | Name of the validator.                                                                            |
+| value_set             | string  | The set of values a column should have (if applicable).                                           |
+| threshold             | string  | The percentage of rows that should pass the validation for the check to be considered successful. |
+| failure_count         | string  | The number of rows that failed the validation.                                                    |
+| failure_percent       | string  | The percentage of rows that failed the validation (expressed as a decimal between 0 and 1).       |
+| failure_query         | string  | A query that can be used to retrieve the rows that failed the validation.                         |
+| dq_check_exception    | boolean | True if an exception occurred while running the check.                                            |
+| exception_message     | string  | The exception message if an exception was raised.                                                 |
+| success               | boolean | True if the dataset passed the check.                                                             |
