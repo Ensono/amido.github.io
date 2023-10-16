@@ -11,7 +11,7 @@ keywords:
   - azure
 ---
 
-This _Getting Started_ section provides the steps needed to get up and running with Ensono Stacks Data. It follows the [Ensono Stacks Data deployment workflow](../architecture/architecture_data_azure.md).
+This _Getting Started_ section provides the steps needed to get up and running with an Ensono Stacks Data Platform. It follows the [Ensono Stacks Data deployment workflow](../architecture/architecture_data_azure.md).
 
 ![Ensono Stacks Data workflow - high-level](../images/stacks-data-workflow-high-level.png)
 

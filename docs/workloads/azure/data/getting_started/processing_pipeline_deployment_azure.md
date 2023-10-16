@@ -19,7 +19,7 @@ This section provides an overview of generating a new [data processing pipeline]
 
 This guide assumes the following are in place:
 
-- A [deployed Ensono Stacks data platform](./core_data_platform_deployment_azure.md)
+- A [deployed Ensono Stacks Data Platform](./core_data_platform_deployment_azure.md)
 - [Development environment set up](./dev_quickstart_data_azure.md)
 - [Deployed shared resources](./shared_resources_deployment_azure.md)
 - [Data ingested into the bronze layer of the data lake](./ingest_pipeline_deployment_azure.md)

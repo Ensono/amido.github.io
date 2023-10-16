@@ -96,7 +96,7 @@ To run scripts within a Databricks cluster, you will need to:
 
 ## Azure Data Factory Development
 
-A core component of the Ensono Stacks Azure data platform is [Azure Data Factory](https://learn.microsoft.com/en-us/azure/data-factory/), which is used for ingest activities, pipeline orchestration and scheduling. When an instance of Data Factory has been deployed, it's intuitive user interface can be used for reviewing, monitoring and editing resources.
+A core component of the Ensono Stacks Data Platform is [Azure Data Factory](https://learn.microsoft.com/en-us/azure/data-factory/), which is used for ingest activities, pipeline orchestration and scheduling. When an instance of Data Factory has been deployed, it's intuitive user interface can be used for reviewing, monitoring and editing resources.
 
 While resources can be edited directly through the UI, the approach used in Stacks is to manage all resources through infrastructure-as-code using Terraform. The allows full CI/CD capabilities and control over changes across environments. Developers may use Data Factory's UI to assist in the development of new resources, and then transpose these into the project repository.
 

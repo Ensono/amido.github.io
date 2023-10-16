@@ -31,7 +31,7 @@ The examples and quickstart documentation assume that `main` is the primary bran
 
 ## Azure subscription
 
-In order to deploy a Stacks data platform into Azure, you will need:
+In order to deploy an Ensono Stacks Data Platform into Azure, you will need:
 
 * One or more Azure subscriptions – for deploying the solution into
 * Azure service principal (Application) – with permissions to deploy and configure all required
@@ -47,7 +47,7 @@ Deployment of Azure resources in Ensono Stacks is done through Terraform. Within
 
 ## Azure DevOps
 
-CI/CD processes within the Ensono Stacks data platform are designed to be run in Azure DevOps Pipelines[^1]. Therefore, it is a requirement to [create a project in Azure DevOps](https://learn.microsoft.com/en-us/azure/devops/organizations/projects/create-project?view=azure-devops&tabs=browser).
+CI/CD processes within the Ensono Stacks Data Platform are designed to be run in Azure DevOps Pipelines[^1]. Therefore, it is a requirement to [create a project in Azure DevOps](https://learn.microsoft.com/en-us/azure/devops/organizations/projects/create-project?view=azure-devops&tabs=browser).
 
 [^1]: More general information on [using Azure Pipelines in Stacks](/docs/infrastructure/azure/pipelines/azure_devops) is also available.
 

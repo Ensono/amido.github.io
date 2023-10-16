@@ -23,7 +23,7 @@ Data processing workloads are based upon running Apache Spark / Python jobs on D
 - Bronze to Silver
 - Silver to Gold
 
-Processing workloads will utilise the [Stacks Data Python library](./stacks_data_utilities.md), to support and standardise common tasks. Similar to ingest workloads, data processing workloads can also optionally include a [data quality validations](./data_quality_azure.md) step.
+Processing workloads will utilise the [Stacks Data Python library](./stacks_data_utilities.md) to support and standardise common tasks. Similar to ingest workloads, data processing workloads can also optionally include a [data quality validations](./data_quality_azure.md) step.
 
 The following example data processing workloads are included for reference:
 

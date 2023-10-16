@@ -54,10 +54,8 @@ datastacks dq --config-path "ingest/ingest_azure_sql_example/data_quality/ingest
 
 ## JSON Configuration File for Great Expectations
 
-This section describes the structure of the JSON configuration file used in our system.
+This section describes the structure of the JSON configuration file used for the data quality process.
 The configuration is defined using Python's Pydantic library for data validation.
-
-Here is the description of the main elements:
 
 1. `gx_directory_path`: Path to the Great Expectations metadata store.
 2. `dataset_name`: Name of the dataset that is being processed.
@@ -125,7 +123,7 @@ Here's a minimal example of a configuration file:
 }
 ```
 
-## Validation Results
+## Validation results
 
 Results of the data quality checks are stored in the `dq_output_path` location in Delta tables. Their names follow the format `{datasource_name}_dq`, e.g. `movies.movies_metadata_dq`. The results contain the following columns:
 

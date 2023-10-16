@@ -12,7 +12,7 @@ keywords:
   - cicd
 ---
 
-This section provides an overview of deploying the shared resources for Ensono Stacks Data Platform.
+This section provides an overview of deploying the shared resources for an Ensono Stacks Data Platform.
 
 The shared resources include Azure Data Factory resources which are shared across pipelines. These are as follows:
 
@@ -32,7 +32,7 @@ For details of how these resources are used in ingest pipelines, see [data inges
 
 This guide assumes the following are in place:
 
-* A [deployed Ensono Stacks data platform](./core_data_platform_deployment_azure.md)
+* A [deployed Ensono Stacks Data Platform](./core_data_platform_deployment_azure.md)
 * [Development environment set up](./dev_quickstart_data_azure.md)
 
 ## Step 1: Create feature branch

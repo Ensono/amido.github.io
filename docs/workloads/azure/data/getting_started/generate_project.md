@@ -12,7 +12,7 @@ keywords:
   - template
 ---
 
-This section provides an overview of scaffolding and generating a new Data Platform project using the [Ensono Stacks CLI](/docs/stackscli/about).
+This section provides an overview of scaffolding and generating a new data platform project using the [Ensono Stacks CLI](/docs/stackscli/about).
 
 It assumes the following [requirements](./requirements_data_azure.md) are in place:
 

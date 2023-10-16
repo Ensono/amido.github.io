@@ -19,7 +19,7 @@ Ensono Stacks accelerates the generation of production-ready data engineering wo
 
 ## Lakehouse approach
 
-The Ensono Stacks data platform is based upon a _Lakehouse_ architecture. This approach combines the benefits of both data warehouses and data lakes, to provide a platform that is fully scalable, flexible and performant, along with governance and management capabilities. It can support all use cases, from complex machine learning to standard BI reporting and analysis.
+The Ensono Stacks Data Platform is based upon a _Lakehouse_ architecture. This approach combines the benefits of both data warehouses and data lakes, to provide a platform that is fully scalable, flexible and performant, along with governance and management capabilities. It can support all use cases, from complex machine learning to standard BI reporting and analysis.
 
 ### Medallion architecture
 
@@ -34,7 +34,7 @@ The data lake structure in Ensono Stacks is based upon the
 
 ### Fabric lakehouse
 
-[Microsoft Fabric](https://learn.microsoft.com/en-us/fabric/) can be used as the lakehouse layer in an Ensono Stacks data platform. Fabric provides an all-in-one analytics experience, with a range of tools for data analysts, data engineers and data scientists. It also closely integrates with Power BI. Full details on getting a Fabric lakehouse up and running with your Ensono Stacks data platform are in the [getting started](../getting_started/fabric_deployment_guide.md) section.
+[Microsoft Fabric](https://learn.microsoft.com/en-us/fabric/) can be used as the lakehouse layer in an Ensono Stacks Data Platform. Fabric provides an all-in-one analytics experience, with a range of tools for data analysts, data engineers and data scientists. It also closely integrates with Power BI. Full details on getting a Fabric lakehouse up and running with your Ensono Stacks Data Platform are in the [getting started](../getting_started/fabric_deployment_guide.md) section.
 
 ## Stacks Data utilities
 
@@ -42,7 +42,7 @@ The deployed platform utilises the [Stacks Data Python library](./stacks_data_ut
 
 ## Quality assurance
 
-Quality and reliability of data workloads are at the core of Ensono Stacks data platform. This is ensured through frameworks for [data quality](./data_quality_azure.md) and [automated testing](./testing_data_azure.md).
+Quality and reliability of data workloads are at the core of Ensono Stacks Data Platform. This is ensured through frameworks for [data quality](./data_quality_azure.md) and [automated testing](./testing_data_azure.md).
 
 ## Sample dataset
 

@@ -14,7 +14,7 @@ keywords:
   - template
 ---
 
-The Datastacks CLI is a command-line interface for data engineers, built upon the [Stacks Data Python library](./stacks_data_utilities.md). It's key features include:
+The Datastacks CLI is a command-line interface for data engineers, built upon the [Stacks Data Python library](./stacks_data_utilities.md). It's features include:
 
 - [Data workload generation](#generating-data-workloads) - Generate new data engineering workloads based upon common templates.
 - [Data quality checks](./data_quality_azure.md#interactive-usage) - Interactively run data quality checks over a data source.
