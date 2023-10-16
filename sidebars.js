@@ -234,7 +234,6 @@ module.exports = {
                   "workloads/azure/data/getting_started/core_data_platform_deployment_azure",
                   "workloads/azure/data/getting_started/dev_quickstart_data_azure",
                   "workloads/azure/data/getting_started/shared_resources_deployment_azure",
-                  "workloads/azure/data/getting_started/datastacks_deployment_azure",
                   "workloads/azure/data/getting_started/example_data_source",
                   "workloads/azure/data/getting_started/ingest_pipeline_deployment_azure",
                   "workloads/azure/data/getting_started/processing_pipeline_deployment_azure",

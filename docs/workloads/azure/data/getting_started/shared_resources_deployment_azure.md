@@ -80,4 +80,4 @@ The template CI/CD pipelines provided are based upon these two platform environm
 
 ## Next steps
 
-Once the shared resources are deployed you should [build and deploy the Datastacks library](./datastacks_deployment_azure.md).
+Once the shared resources are deployed you may now [generate a new data ingest pipeline](./ingest_pipeline_deployment_azure.md) (optionally implementing the [example data source](./example_data_source.md) beforehand).

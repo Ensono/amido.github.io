@@ -79,12 +79,6 @@ make pre_commit
 
 ## (Optional) PySpark development in Databricks
 
-:::note Prerequisite
-
-This sub-section assumes that [Datastacks build & deployment](./datastacks_deployment_azure.md) has been completed - if you are working through the _getting started guide_ for the first time, you may skip this section.
-
-:::
-
 When developing with PySpark, you may wish to either:
 
 - Run scripts locally using a local Spark installation, or
@@ -92,9 +86,7 @@ When developing with PySpark, you may wish to either:
 
 To run scripts within a Databricks cluster, you will need to:
 
-- Install the Datastacks whl file on the cluster, either from:
-    - The latest deployed version in `dbfs:/FileStore/jars/datastacks-latest-py3-none-any.whl`, or
-    - Create a new whl file with the `poetry build` command.
+- Ensure the `stacks-data` library is installed on the cluster.
 - Add the additional [environment variables](../data_engineering/pyspark_utilities.md#prerequisites) required for PySpark development - the values can be set as per the Data Factory linked service (see [adf_linked_services.tf](https://github.com/Ensono/stacks-azure-data/blob/main/de_workloads/shared_resources/data_factory/adf_linked_services.tf)).
 - Ensure the user has appropriate permissions for Azure resources required.
 

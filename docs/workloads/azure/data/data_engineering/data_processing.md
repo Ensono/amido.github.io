@@ -51,7 +51,7 @@ In Data Factory a data processing pipeline can be as simple as this example:
 ![ADF_Silver.png](../images/ADF_silver.png)
 
 It contains just one step - Python Databricks, configured to run a `silver.py` script, which gets deployed to DBFS
-(`dbfs:/FileStore/scripts/silver/silver.py`). The Datastacks package and library is deployed to DBFS, and made available to the cluster.
+(`dbfs:/FileStore/scripts/silver/silver.py`). The script makes use of the `stacks-data` Python library.
 
 ### Passing parameters from Data Factory
 
