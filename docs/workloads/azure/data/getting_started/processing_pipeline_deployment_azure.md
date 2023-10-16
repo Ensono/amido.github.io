@@ -93,15 +93,15 @@ This will add new project artifacts for the workload under `de_workloads/process
 
 ## Step 4: Update PySpark job
 
-Within the generated workload, the following Python file will be used as the entrypoint for the processing job: `spark_jobs/process.py`. The file is structured ready to start adding any logic specific to your particular workload using Python / Spark. It will reference [PySpark utilities](../data_engineering/pyspark_utilities.md) to simplify interactions with the data platform and standard transformation activities.
+Within the generated workload, the following Python file will be used as the entrypoint for the processing job: `spark_jobs/process.py`. The file is structured ready to start adding any logic specific to your particular workload using Python / Spark. It will reference [Stacks Data utilities](../data_engineering/stacks_data_utilities.md) to simplify interactions with the data platform and standard transformation activities.
 
 ```python
 import logging
-from datastacks.logger import setup_logger
+from stacks.data.logger import setup_logger
 
 WORKLOAD_NAME = "processing_demo"
 
-logger_library = "datastacks"
+logger_library = "stacks.data"
 logger = logging.getLogger(logger_library)
 
 
@@ -125,13 +125,13 @@ if __name__ == "__main__":
 For the getting started guide, we have provided a simple example - you may extend this based on whatever your workload requires. Copy the following additional imports and constants into the top of your `process.py` file:
 
 ```python
-from datastacks.pyspark.etl import (
+from stacks.data.pyspark.etl import (
     TableTransformation,
     get_spark_session_for_adls,
     read_latest_rundate_data,
     transform_and_save_as_delta,
 )
-from datastacks.pyspark.pyspark_utils import rename_columns_to_snake_case
+from stacks.data.pyspark.pyspark_utils import rename_columns_to_snake_case
 
 BRONZE_CONTAINER = "raw"
 SILVER_CONTAINER = "staging"

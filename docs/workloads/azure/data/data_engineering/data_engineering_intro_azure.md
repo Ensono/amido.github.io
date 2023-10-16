@@ -15,7 +15,7 @@ keywords:
   - medallion
 ---
 
-Ensono Stacks accelerates the generation of production-ready data engineering workloads and pipelines for a data lakehouse. New data engineering workloads can be generated through the [Datastacks](./datastacks.md) utility, while a range of example data workloads and pipelines are also provided. These workloads cover all stages from ingesting data from source, applying data transformations across data lake layers, ultimately enabling end-user data visualisations and analytics.
+Ensono Stacks accelerates the generation of production-ready data engineering workloads and pipelines for a data lakehouse. New data engineering workloads can be generated through the [Datastacks CLI](#stacks-data-utilities), while a range of example data workloads and pipelines are also provided. These workloads cover all stages from ingesting data from source, applying data transformations across data lake layers, ultimately enabling end-user data visualisations and analytics.
 
 ## Lakehouse approach
 
@@ -36,9 +36,9 @@ The data lake structure in Ensono Stacks is based upon the
 
 [Microsoft Fabric](https://learn.microsoft.com/en-us/fabric/) can be used as the lakehouse layer in an Ensono Stacks data platform. Fabric provides an all-in-one analytics experience, with a range of tools for data analysts, data engineers and data scientists. It also closely integrates with Power BI. Full details on getting a Fabric lakehouse up and running with your Ensono Stacks data platform are in the [getting started](../getting_started/fabric_deployment_guide.md) section.
 
-## Datastacks
+## Stacks Data utilities
 
-[Datastacks](./datastacks.md) is a library and CLI built to accelerate the development of data engineering workloads in the data platform. It features a range of utilities to enhance the process for developing and deploying production-ready data pipelines and workloads.
+The deployed platform utilises the [Stacks Data Python library](./stacks_data_utilities.md), which provides a range of utilities to enhance the process for developing and deploying production-ready data pipelines and workloads. Central to this is the [Datastacks CLI](./datastacks.md), which enables automatic generation of new data workloads.
 
 ## Quality assurance
 

@@ -216,11 +216,11 @@ module.exports = {
                 label: "Data Engineering",
                 items: [
                   "workloads/azure/data/data_engineering/data_engineering_intro_azure",
+                  "workloads/azure/data/data_engineering/stacks_data_utilities",                  
                   "workloads/azure/data/data_engineering/datastacks",
                   "workloads/azure/data/data_engineering/ingest_data_azure",
                   "workloads/azure/data/data_engineering/data_processing",
                   "workloads/azure/data/data_engineering/data_quality_azure",
-                  "workloads/azure/data/data_engineering/pyspark_utilities",
                   "workloads/azure/data/data_engineering/testing_data_azure",
                 ],
               },

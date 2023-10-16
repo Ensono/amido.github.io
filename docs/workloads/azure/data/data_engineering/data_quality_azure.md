@@ -16,28 +16,32 @@ you to assert expectations about your data, which can help catch any discrepanci
 errors in your data as early in the pipeline as possible.
 
 Data Quality checks are executed as Python Databricks jobs with the quality validation logic
-packaged within our [Datastacks](./datastacks.md) library.
-Internally, Datastacks leverages the capabilities of the [Great Expectations](https://greatexpectations.io/)
-library, an open-source Python-based library, to perform these checks.
+packaged within the [Stacks Data library](./stacks_data_utilities.md).
+Internally, this leverages the capabilities of the [Great Expectations](https://greatexpectations.io/)
+library, an open-source Python library, to perform these checks.
 
 The design of the Data Quality processing is outlined in the following diagram.
 
 ![ADF_Ingest_AzureSql_Example_DQ.png](../images/ADF_DataQualityDesign.png)
 
 
-## ADF Pipelines with DQ
+## Data pipelines with quality checks
 
-### Ingest
+Both [data ingest](./ingest_data_azure.md) and [data processing](./data_processing.md) pipelines may be generated with a data quality step - see [generating data workloads](./datastacks.md#generating-data-workloads) for details.
+
+The generated workloads will contain a Python script within `spark_jobs/data_quality.py`. This script will be executed via a Databricks Python activity in Data Factory. The script gets uploaded to DBFS (`dbfs:/FileStore/scripts/pipeline_name/data_quality.py`) as part of the deployment pipeline, so it is accessible to Databricks.
+
+### Ingest pipeline example
 
 ![ADF_Ingest_AzureSql_Example_DQ.png](../images/ADF_Ingest_AzureSql_Example_DQ.png)
 
-### Silver
+### Processing pipeline example
 
 ![ADF_silver_dq.png](../images/ADF_silver_dq.png)
 
-## Usage
+## Interactive usage
 
-To perform data quality checks against a workload interactively, you can use the [Datastacks](./datastacks.md) CLI. Note, this also requires that the [Datastacks PySpark environment variables](./pyspark_utilities.md#prerequisites) are set:
+You can use the [Datastacks CLI](./datastacks.md) to perform data quality checks against a workload interactively. Note, this requires that the [Azure environment variables](./stacks_data_utilities.md#azure-environment-variables) are set:
 
 ```bash
 datastacks dq --help

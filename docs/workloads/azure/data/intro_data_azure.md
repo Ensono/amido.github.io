@@ -33,8 +33,9 @@ Key elements of the solution include:
 - Sample [data ingest pipelines](./data_engineering/ingest_data_azure.md) that transfer data from a source into the landing (Bronze) data lake zone.
 - Sample [data processing pipelines](./data_engineering/data_processing.md) performing data transformations from Bronze to Silver and Silver to Gold layers.
 
-The solution utilises the [stacks-data](https://pypi.org/project/stacks-data/) Python library, which offers a suite of utilities to support:
-- Data transformations using [PySpark](./data_engineering/pyspark_utilities.md).
+The solution utilises the [Stacks Data Python library](./data_engineering/stacks_data_utilities.md), which offers a suite of utilities to support:
+
+- Data transformations using PySpark.
 - Frameworks for [data quality validations](./data_engineering/data_quality_azure.md) and [automated testing](./data_engineering/testing_data_azure.md).
 - The [Datastacks CLI](./data_engineering/datastacks.md) - a tool enabling developers to quickly generate new data workloads.
 

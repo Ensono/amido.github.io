@@ -17,10 +17,14 @@ This section covers the steps required to start developing a Ensono Stacks Azure
 
 ## Environment setup
 
-A Makefile has been created to assist with setting up the development environment. Run:
+A Makefile has been created to assist with setting up the development environment. The commands below will use Poetry to create a Python virtual environment and install requirements (including [stacks-data](../data_engineering/stacks_data_utilities.md)):
 
 ```bash
+# Use make command to setup your local development environment
 make setup_dev_environment
+
+# Enter the Poetry virtual environment shell
+poetry shell
 ```
 
 ### (Optional) Azure connection
@@ -86,8 +90,8 @@ When developing with PySpark, you may wish to either:
 
 To run scripts within a Databricks cluster, you will need to:
 
-- Ensure the `stacks-data` library is installed on the cluster.
-- Add the additional [environment variables](../data_engineering/pyspark_utilities.md#prerequisites) required for PySpark development - the values can be set as per the Data Factory linked service (see [adf_linked_services.tf](https://github.com/Ensono/stacks-azure-data/blob/main/de_workloads/shared_resources/data_factory/adf_linked_services.tf)).
+- Ensure the [stacks-data library](../data_engineering/stacks_data_utilities.md) is installed on the cluster.
+- Add the additional [Azure environment variables](../data_engineering/stacks_data_utilities.md#azure-environment-variables) - the values can be set as per the Data Factory linked service (see [adf_linked_services.tf](https://github.com/Ensono/stacks-azure-data/blob/main/de_workloads/shared_resources/data_factory/adf_linked_services.tf)).
 - Ensure the user has appropriate permissions for Azure resources required.
 
 ## Azure Data Factory Development
