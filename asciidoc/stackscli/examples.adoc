@@ -1,0 +1,942 @@
+= Examples
+
+This section provides some examples on how to run the CLI to set up a project from the Ensono Stacks projects.
+
+[NOTE]
+====
+It is assumed that the Ensono Stacks CLI command has been installed and is in the path to be called using the `stacks` name.
+====
+
+The following table shows the settings that are being used in each of the examples.
+
+.Example settings
+[cols="3"]
+|===
+|Name | Value | Description
+
+|company
+|MyCompany
+|Name of the company that the project is being created for
+
+|area
+|core
+|The area within the company that the project is relevant to.
+In previous versions of the CLI, this has been referred to as the domain, but it has been changed to area to avoid confusion with DNS domain.
+
+|component
+|backend
+|Component that the project is for
+
+|domain
+|stacks-example.com
+|DNS domain for which the application will respond to
+
+|cloud
+|azure
+|The cloud platform being used
+
+|region
+|ukwest
+|Region in the cloud that the resources will be deployed to
+
+|group
+|mywebapi-resources
+|Group that holds all of the cloud resources
+
+|tfgroup
+|supporting-group
+|Group that has the resources to be used to hold the Terraform state
+
+|tfstorage
+|kjh56sdfnjnkjn
+|Name of the storage that will hold the Terraform state
+
+|tfcontainer
+|tfstate
+|Container in the storage for the state files
+
+|name
+|my-webapi
+|Name of the project to create in the working directory
+
+|framework_option
+|webapi
+|The option within the framework being created.
+For `dotnet` or `java`, the options are webapi, cqrs, or events. For `infra`, the options are aks.
+|===
+
+== .NET
+
+The following table shows the additional options that are required when scaffolding the .NET examples.
+
+.Example settings
+[cols="3"]
+|===
+| Name              | Value      | Description
+
+| framework
+| dotnet
+| Framework being used, e.g. dotnet, java, or infra
+
+| framework_version
+| v6.0.274
+| Version of the framework option to grab.
+|===
+
+== .NET WebApi project from the command line
+
+Run the following command to create the new project in the working directory, which will be the directory that the command is being run in.
+
+.Bash
+[%nowrap,bash]
+----
+stacks-cli scaffold -A core \ --company MyCompany \ --component backend \ --domain stacks-example.com \ -F dotnet \ -n my-webapi \ -p azdo \ -P aks \ --tfcontainer my-webapi \ --tfgroup supporting-group \ --tfstorage kjh56sdfnjnkjn \ -O webapi \ -V v6.0.274 \ --cmdlog
+----
+
+.Powershell
+[%nowrap,powershell]
+----
+stacks-cli scaffold -A core ` --company MyCompany ` --component backend ` --domain stacks-example.com ` -F dotnet ` -n my-webapi ` -p azdo ` -P aks ` --tfcontainer my-webapi ` --tfgroup supporting-group ` --tfstorage kjh56sdfnjnkjn ` -O webapi ` -V v6.0.274 ` --cmdlog
+----
+
+This will get the specified version of the framework project, create a new project based on the options specified, and then update the build files to work with those settings. Finally, it will initialize a new git repository in the new project directory. All of the commands that have been run by the CLI will be saved in the `cmdlog.txt` file in the directory that the command was run in.
+
+.CLI with command line options [[cli-with-command-line-options]]
+image::./images/example_dotnet_webapi_cmdline.png[CLI with command line options]
+
+<<cli-with-command-line-options, Figure 1>> shows the output of the command running in PowerShell. It also shows the commands that have been run in the `cmdlog.txt`.
+
+The resultant project, as stated by the `Project path:` statement in the screenshot, contains all the necessary files to run a simple .NET WebApi. The following listing shows that the solutions have been renamed with the `company` name as the namespace.
+
+----
+└───my-webapi
+    ├───.github
+    ├───build
+    │   └───azDevOps
+    │       └───azure
+    │           └───templates
+    │               └───steps
+    │                   └───build
+    ├───contracts
+    ├───deploy
+    │   ├───azure
+    │   │   └───app
+    │   │       └───kube
+    │   ├───k8s
+    │   │   └───app
+    │   └───scripts
+    └───src
+        ├───api
+        │   ├───MyCompany.core.API
+        │   │   ├───Authentication
+        │   │   ├───Authorization
+        │   │   └───Controllers
+        │   │       ├───Category
+        │   │       ├───DOMAIN
+        │   │       └───Item
+        │   ├───MyCompany.core.API.Models
+        │   │   ├───Requests
+        │   │   └───Responses
+        │   └───MyCompany.core.API.UnitTests
+        │       └───Controllers
+        │           ├───Category
+        │           ├───DOMAIN
+        │           └───Item
+        └───tests
+            └───Functional
+                └───MyCompany.core.API.FunctionalTests
+                    ├───Builders
+                    │   └───Http
+                    ├───Configuration
+                    ├───Models
+                    └───Tests
+                        ├───Fixtures
+                        ├───Steps
+                        └───Stories
+----
+
+== .NET WebApi project using the interactive command
+
+The interactive command is designed to ask questions on the command line about the configuration required for setting up Ensono Stacks. It will then save this configuration out to a file that can be read in using the `scaffold` command.
+
+[source,bash]
+----
+stacks-cli interactive
+----
+
+The values as specified in the previous configuration table have been used in the following screenshot of the interactive session.
+
+image::images/stackscli-interactive.png[stackscli interactive]
+
+The resulting configuration file contains all of the configuration that was used to generate the projects, which means it can be used to produce the same project stack again.
+
+[source,yaml]
+----
+log:
+  level: info
+  format: text
+  colour: true
+directory:
+  working: "C:\\Users\\RussellSeymour\\scratch\\projects"
+business:
+  company: My Company
+  domain: core
+  component: backend
+cloud:
+  platform: azure
+network:
+  base:
+    domain:
+      external: example-stacks.com
+pipeline: azdo
+project:
+  - name: my-webapi
+    framework:
+      type: dotnet
+      option: webapi
+      version: v3.0.232
+    platform:
+      type: aks
+    sourcecontrol:
+      type: github
+      url: https://github.com/russellseymour/my-webapi
+    cloud:
+      region: ukwest
+      group: mywebapi-resources
+stacks:
+  dotnet:
+    webapi:
+      url: https://github.com/Ensono/stacks-dotnet
+      trunk: master
+    cqrs:
+      url: https://github.com/Ensono/stacks-dotnet-cqrs
+      trunk: master
+    events:
+      url: https://github.com/Ensono/stacks-dotnet-cqrs-events
+      trunk: master
+  java:
+    webapi:
+      url: https://github.com/Ensono/stacks-java
+      trunk: master
+    cqrs:
+      url: https://github.com/Ensono/stacks-java-cqrs
+      trunk: main
+    events:
+      url: https://github.com/Ensono/stacks-java-cqrs-events
+      trunk: main
+  nodejs:
+    csr:
+      url: https://github.com/Ensono/stacks-typescript-csr
+      trunk: master
+    ssr:
+      url: https://github.com/Ensono/stacks-typescript-ssr
+      trunk: master
+  infra:
+    aks:
+      url: https://github.com/Ensono/stacks-infrastructure-aks
+      trunk: master
+terraform:
+  backend:
+    storage: kjh56sdfnjnkjn
+    group: supporting-group
+    container: tfstate
+options:
+  cmdlog: false
+  dryrun: false
+  nobanner: false
+  nocliversion: false
+----
+
+The command that needs to be run next is displayed at the end of the output.
+
+== .NET WebApi project using a configuration file
+
+The CLI can be used with a configuration file to generate the Ensono Stacks based projects.
+
+
+NOTE: The configuration file that is used in the following example is from the previous example. However, any valid configuration file can be used.
+
+[source,bash]
+----
+stacks-cli scaffold -c ./stacks.yml
+----
+
+The CLI will use the configuration file to scaffold the requested projects.
+
+image::./images/stackscli-dotnet-webapi-config-file.png[Scaffolding projects with a configuration file]
+
+As has been seen with using the scaffolding command with command line options, the resultant project has been created with the namespace set to the specified company name.
+
+----
+└───my-webapi
+    ├───.github
+    ├───build
+    │   └───azDevOps
+    │       └───azure
+    │           └───templates
+    │               └───steps
+    │                   └───build
+    ├───contracts
+    ├───deploy
+    │   ├───azure
+    │   │   └───app
+    │   │       └───kube
+    │   ├───k8s
+    │   │   └───app
+    │   └───scripts
+    └───src
+        ├───api
+        │   ├───MyCompany.core.API
+        │   │   ├───Authentication
+        │   │   ├───Authorization
+        │   │   └───Controllers
+        │   │       ├───Category
+        │   │       ├───DOMAIN
+        │   │       └───Item
+        │   ├───MyCompany.core.API.Models
+        │   │   ├───Requests
+        │   │   └───Responses
+        │   └───MyCompany.core.API.UnitTests
+        │       └───Controllers
+        │           ├───Category
+        │           ├───DOMAIN
+        │           └───Item
+        └───tests
+            └───Functional
+                └───MyCompany.core.API.FunctionalTests
+                    ├───Builders
+                    │   └───Http
+                    ├───Configuration
+                    ├───Models
+                    └───Tests
+                        ├───Fixtures
+                        ├───Steps
+                        └───Stories
+----
+
+== Java
+
+The following table shows the additional options that are required when scaffolding the Java examples.
+
+|===
+| Name | Value | Description
+
+| framework | `java` | Framework being used, e.g. `dotnet`, `java`, or `infra`
+| framework_version | `v1.0.0` | Version of the framework option to grab.
+|===
+
+Java Specific settings
+
+=== Java WebApi project from command line
+
+Run the following command to scaffold a new Java project based on the Ensono WebApi Java project. The project will be created in the working directory, which in this case will be the directory that the command is being run under.
+
+.Bash
+[%nowrap,bash]
+----
+stacks-cli scaffold -A core \ --company MyCompany \ --component backend \ --domain stacks-example.com \ -F java \ -n my-webapi \ -p azdo \ -P aks \ --tfcontainer my-webapi \ --tfgroup supporting-group \ --tfstorage kjh56sdfnjnkjn \ -O webapi \ -V v1.0.0 \ -u https://github.com/my-company/my-webapi \ --cmdlog
+----
+
+.Powershell
+[%nowrap,powershell]
+----
+stacks-cli scaffold -A core ` --company MyCompany ` --component backend ` --domain stacks-example.com ` -F java ` -n my-webapi ` -p azdo ` -P aks ` --tfcontainer my-webapi ` --tfgroup supporting-group ` --tfstorage kjh56sdfnjnkjn ` -O webapi ` -V v1.0.0 ` -u https://github.com/my-company/my-webapi ` --cmdlog
+----
+
+This command will download version v1.0.0 from the GitHub releases for the project into a temporary directory. It will then run the specified Maven commands from the project settings file and scaffold a new project with the specified name in the current directory. Once the project has been set up, it will be initialized as a Git repository and, where applicable, set the remote origin for the repo. All of the commands that are executed by the CLI will be saved in a file called `cmdlog.txt`.
+
+image::./images/example-java-webapi-cmdline.png[CLI scaffolding Java project from command line]
+
+As the option to save all the commands that are executed by the CLI has been specified, the `cmdlog.txt` file for the above command is as follows.
+
+image::./images/example-java-webapi-cmdlog.png[Command log for the Java webapi scaffold]
+
+The resultant project, as stated by the `Project path:` statement in the screenshot, contains all the necessary files to run a simple Java WebApi. The following listing shows that the solutions have been renamed with the `company` name as the namespace.
+
+----
+└───my-webapi
+    ├───api-tests
+    │   ├───.mvn
+    │   │   └───wrapper
+    │   └───src
+    │       └───test
+    │           ├───java
+    │           │   └───com
+    │           │       └───MyCompany
+    │           │           └───core
+    │           │               └───backend
+    │           │                   └───tests
+    │           │                       ├───menu
+    │           │                       ├───models
+    │           │                       ├───pact
+    │           │                       │   └───pacts
+    │           │                       ├───status
+    │           │                       ├───stepdefinitions
+    │           │                       └───templates
+    │           └───resources
+    │               ├───cucumber
+    │               │   └───features
+    │               │       └───status
+    │               └───templates
+    ├───api-tests-karate
+    │   ├───.mvn
+    │   │   └───wrapper
+    │   └───src
+    │       └───test
+    │           ├───java
+    │           │   └───org
+    │           │       └───MyCompany
+    │           │           └───core
+    │           │               └───backend
+    │           │                   └───tests
+    │           └───resources
+    ├───build
+    │   ├───azDevOps
+    │   │   └───azure
+    │   │       ├───coverage
+    │   │       └───templates
+    │   │           └───steps
+    │   │               ├───build
+    │   │               └───deploy
+    │   └───jenkins
+    │       └───azure
+    ├───deploy
+    │   ├───azure
+    │   │   └───app
+    │   │       └───kube
+    │   └───k8s
+    │       └───app
+    └───java
+        ├───.mvn
+        │   └───wrapper
+        ├───src
+        │   ├───main
+        │   │   ├───java
+        │   │   │   └───com
+        │   │   │       └───MyCompany
+        │   │   │           └───core
+        │   │   │               └───backend
+        │   │   │                   └───menu
+        │   │   │                       ├───api
+        │   │   │                       │   ├───v1
+        │   │   │                       │   │   ├───dto
+        │   │   │                       │   │   │   ├───request
+        │   │   │                       │   │   │   └───response
+        │   │   │                       │   │   └───impl
+        │   │   │                       │   └───v2
+        │   │   │                       │       └───impl
+        │   │   │                       ├───domain
+        │   │   │                       └───mappers
+        │   │   └───resources
+        │   │       └───local
+        │   └───test
+        │       └───java
+        │           └───com
+        │               └───MyCompany
+        │                   └───core
+        │                       └───backend
+        │                           ├───actuator
+        │                           ├───menu
+        │                           │   ├───api
+        │                           │   │   ├───v1
+        │                           │   │   │   ├───dto
+        │                           │   │   │   │   └───response
+        │                           │   │   │   └───impl
+        │                           │   │   └───v2
+        │                           │   │       └───impl
+        │                           │   ├───domain
+        │                           │   └───mappers
+        │                           └───util
+        └───target
+            └───classes
+                └───local
+----
+
+=== Java WebApi project using the interactive command
+
+As with the .NET example, it is possible to create a configuration file interactively to scaffold out a new Java project using the `interactive` sub-command.
+
+[NOTE]
+====
+The examples shown here have been run in WSL on Windows 11.
+====
+
+[source,sourceCode.bash]
+----
+---
+stacks-cli interactive
+---
+----
+
+The values specified in the example are the same as the settings used in the Java example for scaffolding from the command line. They are as shown in the configuration table:
+
+image::./images/stackscli-interactive-java.png[stackscli interactive java]
+
+The resulting configuration file contains all of the configuration that was used to generate the projects, which means it can be used to produce the same project stack again.
+
+[source,yaml]
+----
+log:
+  level: info
+  format: text
+  colour: true
+  file: ""
+directory:
+  working: /home/russells/projects
+business:
+  company: My Company
+  domain: core
+  component: backend
+cloud:
+  platform: azure
+network:
+  base:
+    domain:
+      external: example-stacks.com
+pipeline: azdo
+project:
+  - name: my-webapi
+    framework:
+      type: java
+      option: webapi
+      version: v1.0.0
+    sourcecontrol:
+      type: github
+      url: https://github.com/my-company/my-webapi
+    cloud:
+      region: ukwest
+      group: mywebapi-resources
+stacks:
+  dotnet:
+    webapi:
+      url: https://github.com/Ensono/stacks-dotnet
+      trunk: master
+    cqrs:
+      url: https://github.com/Ensono/stacks-dotnet-cqrs
+      trunk: master
+    events:
+      url: https://github.com/Ensono/stacks-dotnet-cqrs-events
+      trunk: master
+  java:
+    webapi:
+      url: https://github.com/Ensono/stacks-java
+      trunk: master
+    cqrs:
+      url: https://github.com/Ensono/stacks-java-cqrs
+      trunk: main
+    events:
+      url: https://github.com/Ensono/stacks-java-cqrs-events
+      trunk: main
+  nodejs:
+    csr:
+      url: https://github.com/Ensono/stacks-typescript-csr
+      trunk: master
+    ssr:
+      url: https://github.com/Ensono/stacks-typescript-ssr
+      trunk: master
+  infra:
+    aks:
+      url: https://github.com/Ensono/stacks-infrastructure-aks/
+      trunk: master
+terraform:
+  backend:
+    storage: kjh56sdfnjnkjn
+    group: supporting-group
+    container: tfstate
+options:
+  cmdlog: true
+  dryrun: false
+  nobanner: false
+  nocliversion: false
+----
+
+=== Java WebApi project using a configuration file
+
+The Ensono Stacks CLI can be used with a configuration file to set up multiple projects in one go.
+
+NOTE: The configuration file used in this example is the one that was generated from the `interactive` command in the previous example.
+
+NOTE: The examples shown here have been run in WSL on Windows 11.
+
+[source,bash]
+----
+stacks-cli scaffold -c ./stacks.yml
+----
+
+The CLI will use the configuration file to get all the settings required to scaffold the projects that have been requested.
+
+image::./images/stackscli-java-webapi-config-file.png[Stacks CLI Scaffold Java project]
+
+As the configuration file was configured with a company name with a space in it, the CLI has modified the value so it will be compatible with the commands that need to be run. This can be seen in the output of the CLI in the above image.
+
+----
+└── my-webapi
+    ├── api-tests
+    │   └── src
+    │       └── test
+    │           ├── java
+    │           │   └── com
+    │           │       └── My_Company
+    │           │           └── core
+    │           │               └── backend
+    │           │                   └── tests
+    │           │                       ├── menu
+    │           │                       ├── models
+    │           │                       ├── pact
+    │           │                       │   └── pacts
+    │           │                       ├── status
+    │           │                       ├── stepdefinitions
+    │           │                       └── templates
+    │           └── resources
+    │               ├── cucumber
+    │               │   └── features
+    │               │       └── status
+    │               └── templates
+    ├── api-tests-karate
+    │   └── src
+    │       └── test
+    │           ├── java
+    │           │   └── components
+    │           │       └── menu
+    │           └── resources
+    ├── build
+    │   ├── azDevOps
+    │   │   └── azure
+    │   │       ├── coverage
+    │   │       └── templates
+    │   │           └── steps
+    │   │               ├── build
+    │   │               └── deploy
+    │   └── jenkins
+    │       └── azure
+    ├── deploy
+    │   ├── azure
+    │   │   └── app
+    │   │       └── kube
+    │   └── k8s
+    │       └── app
+    └── java
+        ├── src
+        │   ├── main
+        │   │   ├── java
+        │   │   │   └── com
+        │   │   │       └── My_Company
+        │   │   │           └── core
+        │   │   │               └── backend
+        │   │   │                   └── menu
+        │   │   │                       ├── api
+        │   │   │                       │   ├── v1
+        │   │   │                       │   │   ├── dto
+        │   │   │                       │   │   │   ├── request
+        │   │   │                       │   │   │   └── response
+        │   │   │                       │   │   └── impl
+        │   │   │                       │   └── v2
+        │   │   │                       │       └── impl
+        │   │   │                       ├── domain
+        │   │   │                       └── mappers
+        │   │   └── resources
+        │   │       └── local
+        │   └── test
+        │       └── java
+        │           └── com
+        │               └── My_Company
+        │                   └── core
+        │                       └── backend
+        │                           ├── actuator
+        │                           ├── menu
+        │                           │   ├── api
+        │                           │   │   ├── v1
+        │                           │   │   │   ├── dto
+        │                           │   │   │   │   └── response
+        │                           │   │   │   └── impl
+        │                           │   │   └── v2
+        │                           │   │       └── impl
+        │                           │   ├── domain
+        │                           │   └── mappers
+        │                           └── util
+        └── target
+            └── classes
+                └── local
+----
+
+
+== Running the Scaffold Command Again
+
+Due to the fact that the CLI performs a substantial amount of work, it will not attempt to create projects if the project path already exists. For example, running the same command as before without changing any settings will result in an error being displayed during the project creation.
+
+[source,bash]
+----
+stacks-cli scaffold -c ./stacks.yml
+----
+
+image::./images/stackscli-scaffold-project-guard.png[Project Protection Guard]
+
+As seen, the CLI will not overwrite anything at the same target path.
+
+It is possible to change this behavior by adding the `--force` option to the command line. This will remove any existing directory and recreate the project in its place.
+
+NOTE: If the project directory already exists but is empty, i.e., it does not contain any files or directories, the CLI will continue to use the directory and issue a warning that it has done so.
+
+image::images/stackscli-overwrite-empty-dir.png[Overwriting an Empty Directory]
+
+[source,bash]
+----
+stacks-cli scaffold -c ./stacks.yml --force
+----
+
+
+image::./images/stackscli-scaffold-project-guard-force.png[Force Removal of Existing Project Directories]
+
+== Checking Framework Command Versions
+
+Each project scaffolded by the CLI has a `stackscli.yml` file that informs the CLI about what to do for that project. One of the configurable options is setting constraints on the version of the framework that needs to be installed.
+
+For example, consider the following project settings file:
+
+[source,yaml]
+----
+framework:
+  name: dotnet
+  commands:
+    - name: dotnet
+      version: ">= 3.1, < 3.2"
+
+# Pipeline files
+pipeline:
+  - type: azdo
+    files:
+      - name: build
+        path: build/azDevOps/azure/azure-pipelines-netcore-k8s.yml
+      - name: variable
+        path: build/azDevOps/azure/azuredevops-vars.yml
+    replacements:
+      - pattern: ^.*stacks-credentials-nonprod-kv$
+        value: ""
+
+# The init stage are things that are required to run before the template is run
+init:
+  operations:
+    - action: cmd
+      cmd: dotnet
+      args: new -i .
+      desc: Install "stacks-webapi" template from the repo directory
+    - action: cmd
+      cmd: dotnet
+      args: new stacks-webapi -n {{ .Input.Business.Company }}.{{ .Input.Business.Domain }} -o {{ .Project.Directory.WorkingDir }}
+      desc: Create a project using the "stacks-webapi" template
+----
+
+When the CLI runs it will take take the version constraint, on line 5, and compare the version of `dotnet` it finds with this constraint. The following screenshot shows this in action on a machine that has .NET version `5.0.303` installed.
+
+image::./images/stacks-scaffold-command-version-check.png[Dotnet command version check]
+
+It is possible to bypass this version check by using the `--force` option on the command line, but note this is a destructive operation and if the project exists at the same location as the CLI is trying to write to the original project will be deleted.
+
+In this case the error will still be displayed, but a a warning will state that the process is continuing.
+
+image::./images/stacks-scaffold-command-version-check-force.png[Dotnet command bypass version check]
+
+== Nx
+
+This section explains the additional options required for scaffolding Nx examples.
+
+|===
+| Name              | Value    | Description
+
+| framework         | `nx`     | Framework being used, e.g., `dotnet`, `java`, `nx`, or `infra`
+| framework_version | `latest` | Version of Nx to scaffold on the project.
+|===
+
+=== Nx Next.js Project Using the Interactive Command
+
+To create an Ensono Stacks Nx Project with a preconfigured Next.js App, start by running the interactive command:
+
+[source,bash]
+----
+stacks-cli interactive
+----
+
+
+When prompted for the framework type, select `nx`, followed by `next` as the framework option. Complete the remaining questions to generate a `stacks.yml` config file.
+
+[source,yaml]
+----
+log:
+  level: info
+  format: text
+  colour: true
+directory:
+  working: .
+business:
+  company: Company
+  domain: Domain
+  component: Component
+cloud:
+  platform: azure
+network:
+  base:
+    domain:
+      internal: test.com
+      external: test.dev
+pipeline: azdo
+project:
+  - name: test
+    framework:
+      type: nx
+      option: next
+      version: latest
+      properties: --appName=demo --style=css
+    sourcecontrol:
+      type: github
+      url: https://github.com/org/stacks-demo.git
+    cloud:
+      region: euw
+      group: stacks-ancillary-resources
+stacks:
+  dotnet:
+    webapi:
+      type: nuget
+      name: Amido.Stacks.Templates
+      id: stacks-dotnet
+    cqrs:
+      type: nuget
+      name: Amido.Stacks.CQRS.Templates
+      id: stacks-dotnet-cqrs
+  java:
+    webapi:
+      version: master
+      name: https://github.com/Ensono/stacks-java
+    cqrs:
+      version: main
+      name: https://github.com/Ensono/stacks-java-cqrs
+    events:
+      version: main
+      name: https://github.com/Ensono/stacks-java-cqrs-events
+  nx:
+    next:
+      version: main
+      name: https://github.com/Ensono/stacks-nx
+    apps:
+      version: main
+      name: https://github.com/Ensono/stacks-nx
+  infra:
+    aks:
+      version: master
+      name: https://github.com/Ensono/stacks-infrastructure-aks/
+terraform:
+  backend:
+    storage: tf-storage
+    group: tf-group
+    container: tf-container
+options:
+  cmdlog: false
+  dryrun: false
+  nobanner: false
+  nocliversion: false
+----
+
+After creating the config, you need to adjust the project's framework properties:
+
+[source,yaml]
+----
+framework:
+  properties: --appName=demo --style=css
+----
+
+|===
+| Property  | Description                                    | Type
+
+| `appName` | The name of the Next.js application            | `string`
+| `style`   | The style strategy for the Next.js application | `css`, `scss`, `styl`, `less`, `styled-components`, `@emotion/styled`, `styled-jsx`
+|===
+
+The command that needs to be run next is displayed at the end of the output from the `interactive` command.
+
+=== Nx Apps project using the interactive command
+
+To create an empty Ensono Stacks Nx Project start by running the interactive command.
+
+[source,bash]
+----
+stacks-cli interactive
+----
+
+When prompted for the framework type, select `nx`, followed by `apps` as the framework option.
+Complete the remaining questions to produce a `stacks.yml` config file.
+
+[source,yaml]
+----
+log:
+  level: info
+  format: text
+  colour: true
+directory:
+  working: .
+business:
+  company: Company
+  domain: Domain
+  component: Component
+cloud:
+  platform: azure
+network:
+  base:
+    domain:
+      internal: test.com
+      external: test.dev
+pipeline: azdo
+project:
+  - name: test
+    framework:
+      type: nx
+      option: apps
+      version: latest
+    sourcecontrol:
+      type: github
+      url: https://github.com/org/stacks-demo.git
+    cloud:
+      region: euw
+      group: stacks-ancillary-resources
+stacks:
+  dotnet:
+    webapi:
+      type: nuget
+      name: Amido.Stacks.Templates
+      id: stacks-dotnet
+    cqrs:
+      type: nuget
+      name: Amido.Stacks.CQRS.Templates
+      id: stacks-dotnet-cqrs
+  java:
+    webapi:
+      version: master
+      name: https://github.com/Ensono/stacks-java
+    cqrs:
+      version: main
+      name: https://github.com/Ensono/stacks-java-cqrs
+    events:
+      version: main
+      name: https://github.com/Ensono/stacks-java-cqrs-events
+  nx:
+    next:
+      version: main
+      name: https://github.com/Ensono/stacks-nx
+    apps:
+      version: main
+      name: https://github.com/Ensono/stacks-nx
+  infra:
+    aks:
+      version: master
+      name: https://github.com/Ensono/stacks-infrastructure-aks/
+terraform:
+  backend:
+    storage: tf-storage
+    group: tf-group
+    container: tf-container
+options:
+  cmdlog: false
+  dryrun: false
+  nobanner: false
+  nocliversion: false
+----
+
+The command that needs to be run next is displayed at the end of the output from the `interactive` command.
