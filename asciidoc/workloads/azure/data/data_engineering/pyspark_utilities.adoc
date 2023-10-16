@@ -9,7 +9,7 @@ Datastacks also provides the foundation for the link:./data_quality_azure.adoc[*
 
 To develop and test using PySpark with Datastacks, the following setup is required:
 
-* Install the link:../requirements_data_azure.adoc#local-development[**local development requirements**].
+* Install the link:../getting_started/requirements_data_azure.adoc#local-development[**local development requirements**].
 * link:../getting_started/dev_quickstart_data_azure.adoc[**Setup your local development environment**].
 
 To interact with Azure resources, the following additional environment variables are currently required:

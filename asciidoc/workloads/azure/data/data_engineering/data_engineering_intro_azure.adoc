@@ -1,8 +1,12 @@
-= ETL Overview
-:description: Introduction to ETL Pipelines
+= Data Engineering Overview
+:description: Data Engineering in Ensono Stacks
 :keywords: ingest, silver, gold, bronze, databricks, etl, medallion
 
-The Ensono Stacks Data Platform solution accelerates the generation of production-ready ETL / ELT pipelines and workloads. New data engineering workloads can be generated through the link:./datastacks.adoc[Datastacks] utility, while a range of example data workloads and pipelines are also provided. These workloads cover all stages from ingesting data from the source, applying data transformations across data lake layers, ultimately enabling end-user data visualizations and analytics.
+Ensono Stacks accelerates the generation of production-ready data engineering workloads and pipelines for a data lakehouse. New data engineering workloads can be generated through the link:./datastacks.adoc[Datastacks] utility, while a range of example data workloads and pipelines are also provided. These workloads cover all stages from ingesting data from source, applying data transformations across data lake layers, ultimately enabling end-user data visualisations and analytics.
+
+## Lakehouse approach
+
+The Ensono Stacks data platform is based upon a _Lakehouse_ architecture. This approach combines the benefits of both data warehouses and data lakes, to provide a platform that is fully scalable, flexible and performant, along with governance and management capabilities. It can support all use cases, from complex machine learning to standard BI reporting and analysis.
 
 == Medallion architecture
 
@@ -15,6 +19,10 @@ The data lake structure and approach used in Ensono Stacks is based upon the lin
 | Silver | The data has been cleansed, validated, and stored in an optimal format to support downstream analytic use-cases. | staging | Delta | link:./data_processing.adoc[Data processing]
 | Gold | Reliable data entities prepared for specific use-cases. These typically combine and aggregate datasets from the silver layer. | conformance | Delta | link:./data_processing.adoc[Data processing]
 |===
+
+### Fabric lakehouse
+
+link:https://learn.microsoft.com/en-us/fabric/[Microsoft Fabric] can be used as the lakehouse layer in an Ensono Stacks data platform. Fabric provides an all-in-one analytics experience, with a range of tools for data analysts, data engineers and data scientists. It also closely integrates with Power BI. Full details on getting a Fabric lakehouse up and running with your Ensono Stacks data platform are in the link:../getting_started/fabric_deployment_guide.adoc[getting started] section.
 
 == Datastacks
 

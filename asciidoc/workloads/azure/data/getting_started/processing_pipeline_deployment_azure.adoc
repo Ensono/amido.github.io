@@ -2,7 +2,7 @@
 :description: Data processing pipelines development & deployment
 :keywords: datastacks, data, python, etl, cli, azure, template
 
-This section provides an overview of generating a new link:../etl_pipelines/data_processing.adoc[data processing pipeline] workload and deploying it into an Ensono Stacks Data Platform, using the link:../etl_pipelines/datastacks.adoc[Datastacks CLI].
+This section provides an overview of generating a new link:../data_engineering/data_processing.adoc[data processing pipeline] workload and deploying it into an Ensono Stacks Data Platform, using the link:../etl_pipelines/datastacks.adoc[Datastacks CLI].
 
 This guide assumes the following are in place:
 
@@ -22,7 +22,7 @@ This process will deploy the following resources into the project:
 
 == Background
 
-Once you have landed data in the bronze layer of your data lake (e.g. through a link:./ingest_pipeline_deployment_azure.adoc[data ingest pipeline]), you will typically need to perform additional processing activities upon the data in order to make it usable for your needs - for example loading it into the silver and gold layers of your data lake. For more information, see link:../etl_pipelines/data_processing.adoc[data processing workloads].
+Once you have landed data in the bronze layer of your data lake (e.g. through a link:./ingest_pipeline_deployment_azure.adoc[data ingest pipeline]), you will typically need to perform additional processing activities upon the data in order to make it usable for your needs - for example loading it into the silver and gold layers of your data lake. For more information, see link:../data_engineering/data_processing.adoc[data processing workloads].
 
 In the steps below, we will generate a data processing pipeline that uses data ingested in the link:./ingest_pipeline_deployment_azure.adoc[previous task] as its source and loads it into the silver layer. The same approach can be used to load data from silver to gold.
 
@@ -37,7 +37,7 @@ git checkout -b feat/my-new-processing-pipeline
 
 == Step 2: Prepare the Datastacks config file
 
-Datastacks requires a YAML config file for generating a new ingest workload - see link:../etl_pipelines/datastacks.adoc[Datastacks configuration] for further details.
+Datastacks requires a YAML config file for generating a new ingest workload - see link:../data_engineering/datastacks.adoc[Datastacks configuration] for further details.
 
 Create a new YAML file and populate the values relevant to your new processing pipeline. The example below will generate resources for a processing workload named **my_processing_pipeline**.
 
@@ -66,7 +66,7 @@ ado_variable_groups_prod:
 
 == Step 3: Generate project artifacts using Datastacks
 
-Use the link:../etl_pipelines/datastacks.adoc[Datastacks CLI] to generate the artifacts for the new workload, using the prepared config file (replacing `path_to_config_file/my_config.yaml` with the appropriate path).:
+Use the link:../data_engineering/datastacks.adoc[Datastacks CLI] to generate the artifacts for the new workload, using the prepared config file (replacing `path_to_config_file/my_config.yaml` with the appropriate path).:
 
 [source]
 ----
@@ -84,7 +84,7 @@ This will add new project artifacts for the workload under `de_workloads/process
 
 == Step 4: Update PySpark job
 
-Within the generated workload, the following Python file will be used as the entrypoint for the processing job: `spark_jobs/process.py`. The file is structured ready to start adding any logic specific to your particular workload using Python / Spark. It will reference link:../etl_pipelines/pyspark_utilities.adoc[PySpark utilities] to simplify interactions with the data platform and standard transformation activities.
+Within the generated workload, the following Python file will be used as the entrypoint for the processing job: `spark_jobs/process.py`. The file is structured ready to start adding any logic specific to your particular workload using Python / Spark. It will reference link:../data_engineering/pyspark_utilities.adoc[PySpark utilities] to simplify interactions with the data platform and standard transformation activities.
 
 [source]
 ----
@@ -168,7 +168,7 @@ In order to run / debug the code during development, you may wish to use link:./
 
 == Step 5: Update tests
 
-The workload is created with placeholders for adding unit and end-to-end tests - see link:../etl_pipelines/testing_data_azure.adoc[testing] for further details.
+The workload is created with placeholders for adding unit and end-to-end tests - see link:../data_engineering/testing_data_azure.adoc[testing] for further details.
 
 === Unit tests
 
