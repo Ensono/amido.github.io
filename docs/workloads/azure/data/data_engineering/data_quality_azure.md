@@ -10,17 +10,17 @@ keywords:
   - great expectations
 ---
 
-Ensono Stacks data workloads can be deployed with additional Data Quality checks. These checks validate that the outputs of
+Ensono Stacks data workloads can be deployed with additional data quality checks. These checks validate that the outputs of
 a data pipeline meet specified requirements, expressed in a simple, human-readable language. It allows
 you to assert expectations about your data, which can help catch any discrepancies, anomalies, or
 errors in your data as early in the pipeline as possible.
 
-Data Quality checks are executed as Python Databricks jobs with the quality validation logic
+Data quality checks are executed as Python Databricks jobs with the quality validation logic
 packaged within the [Stacks Data library](./stacks_data_utilities.md).
 Internally, this leverages the capabilities of the [Great Expectations](https://greatexpectations.io/)
 library, an open-source Python library, to perform these checks.
 
-The design of the Data Quality processing is outlined in the following diagram.
+The design of the data quality processing is outlined in the following diagram.
 
 ![ADF_Ingest_AzureSql_Example_DQ.png](../images/ADF_DataQualityDesign.png)
 
@@ -81,7 +81,7 @@ The configuration is defined using Python's Pydantic library for data validation
 
 ### Using environment variables in configuration files
 
-It is possible to use environment variables in a configuration file for Data Quality.
+It is possible to use environment variables in a configuration file for data quality.
 Placeholders in the form of `{ENV_VAR_NAME}` will be replaced with the corresponding environment
 variable values. For example, you can pass the ADLS name using an environment variable:
 

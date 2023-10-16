@@ -82,10 +82,10 @@ Use the [Datastacks CLI](../data_engineering/datastacks.md#using-the-datastacks-
 # Activate virtual environment
 poetry shell
 
-# Generate resources for an ingest pipeline (without Data Quality steps)
+# Generate resources for an ingest pipeline (without data quality steps)
 datastacks generate processing --config="path_to_config_file/my_config.yaml"
 
-# Generate resources for an ingest pipeline (with added Data Quality steps)
+# Generate resources for an ingest pipeline (with added data quality steps)
 datastacks generate processing --config="path_to_config_file/my_config.yaml" --data-quality
 ```
 

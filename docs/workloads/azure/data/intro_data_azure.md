@@ -66,4 +66,4 @@ Example data engineering workloads are provided, based upon the Datastacks templ
 - [Bronze to Silver](./data_engineering/data_processing.md)
 - [Silver to Gold](./data_engineering/data_processing.md)
 
-Each of the ingest and data processing workloads may optionally include [Data Quality checks](./data_engineering/data_quality_azure.md).
+Each of the ingest and data processing workloads may optionally include [data quality checks](./data_engineering/data_quality_azure.md).
