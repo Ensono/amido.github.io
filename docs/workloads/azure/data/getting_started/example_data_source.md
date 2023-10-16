@@ -12,7 +12,7 @@ keywords:
   - testing
 ---
 
-When deploying an Ensono Stacks Data Platform, you may optionally include an Azure SQL database. This database is intended to be used for experimenting and testing ingest processes with the Ensono Stacks Data Platform. The database will be deployed into the same resource groups as the core data platform resources, named for example:
+When deploying an Ensono Stacks Data Platform, you may optionally include an Azure SQL database. This database is intended to be used for experimenting and testing ingest processes within the platform. The database will be deployed into the same resource groups as the core data platform resources, named for example:
 
 * **SQL server name:** amidostacksdeveuwdesql.database.windows.net
 * **SQL database name:** sqldbtest

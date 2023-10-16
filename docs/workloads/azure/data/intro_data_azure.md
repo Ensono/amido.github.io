@@ -20,7 +20,7 @@ a framework for accelerating the deployment of a production-ready modern data pl
 
 ![Ensono Stacks Data Overview](./images/stacks-data-overview.png)
 
-1. Use the [Ensono Stacks CLI](../../../stackscli/about) to generate a new data platform project.
+1. Use the [Ensono Stacks CLI](/docs/stackscli/about) to generate a new data platform project.
 2. Build and deploy the data platform infrastructure into your Azure environment.
 3. Accelerate development of data workloads and ELT pipelines with the [Datastacks CLI](./data_engineering/datastacks.md).
 
