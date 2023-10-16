@@ -28,7 +28,7 @@ The following tools are recommended for developing while using the Ensono Stacks
 
 |===
 
-See link:./getting_started/dev_quickstart_data_azure.adoc[development quickstart] for further details on getting start with developing the solution.
+See link:./dev_quickstart_data_azure.adoc[development quickstart] for further details on getting start with developing the solution.
 
 == Git repository
 
