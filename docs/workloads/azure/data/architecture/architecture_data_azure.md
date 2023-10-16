@@ -25,7 +25,7 @@ Ensono Stacks Data Platform serves two primary functions:
 
 ## Deployment workflow
 
-The following diagrams depict the steps to create a Ensono Stacks Data Azure Platform and data engineering workloads.
+The following diagrams depict the steps to create an Ensono Stacks Data Platform and data engineering workloads.
 
 ### High-level workflow
 
