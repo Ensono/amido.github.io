@@ -76,6 +76,7 @@ In order to generate a new data engineering workload the Datastacks CLI takes a 
 | ado_variable_groups_nonprod | List of required variable groups in non-production environment. | Yes | List[String] | _n/a_ | - amido-stacks-de-pipeline-nonprod<br />- stacks-credentials-nonprod-kv |
 | ado_variable_groups_prod | List of required variable groups in production environment. | Yes | List[String] | _n/a_ | - amido-stacks-de-pipeline-prod<br />- stacks-credentials-prod-kv |
 | default_arm_deployment_mode | Deployment mode for terraform. | No | String | "Incremental" | Incremental |
+| stacks_data_package_version | Version of the [stacks-data](./stacks_data_utilities.md) Python package in PyPi to install on the job cluster. | No | String (SemVer pattern) | _Latest available package at the time of generation_ | 0.1.2 |
 
 #### Ingest workloads
 

@@ -52,6 +52,12 @@ An example pipeline is shown below:
 
 The pipeline contains a Python Databricks activity which runs the `process.py` file. The [stacks-data library](./stacks_data_utilities.md) is installed on the cluster via PyPi.
 
+:::tip
+
+It is recommended that specific versions of packages are defined in the Databricks Library configuration (e.g. `stacks-data==0.1.2`) to ensure a reproducible environment for running jobs. This is the default approach when generating workloads using [Datastacks CLI](./datastacks.md). If the version is omitted (e.g. `stacks-data`), then Databricks will use the latest available version - however this is not recommended.
+
+:::
+
 ### Passing parameters from Data Factory
 
 You may pass parameters from Data Factory to the Python job executed in Databricks. These are defined in the Settings section of the Databricks Python activity:
