@@ -18,3 +18,4 @@ A more link:../architecture/architecture_data_azure.adoc[detailed workflow diagr
 6. (Optional) link:./example_data_source.adoc[Example Data Source] - To assist with the 'Getting Started' steps, you may wish to set up the Example Data Source.
 7. link:./ingest_pipeline_deployment_azure.adoc[Data Ingest Pipeline Deployment] - Generate and deploy a data ingest pipeline using the Datastacks CLI.
 8. link:./processing_pipeline_deployment_azure.adoc[Data Processing Pipeline Deployment] - Generate and deploy a data processing pipeline using the Datastacks CLI.
+9. link:./fabric_deployment_guide.adoc[Fabric Lakehouse Deployment] - Steps to implement a Microsoft Fabric Lakehouse over the data platform.
