@@ -1,19 +1,22 @@
 == @ensono-stacks/next:next-auth
 
-Add Next Authentication to your next application
-
+.Add Next Authentication to your next application
+[%collapsible]
+=====
 The next-auth generator will install and configure https://next-auth.js.org/[NextAuth.js] into an existing Next application. It will add the initial configuration, add the session provider, setup an API endpoint and add local environmental variables. It will also configure provider specific setup.
 
-
+[discrete]
 === Prerequisites
 
 An existing https://nextjs.org/[Next] application
 
+[discrete]
 === Usage
 
 [source, bash]
 nx g @ensono-stacks/next:next-auth
 
+[discrete]
 === Command line arguments
 
 The following command line arguments are available:
@@ -41,6 +44,7 @@ The following command line arguments are available:
 |false
 |===
 
+[discrete]
 === Generator Output
 
 - Creates a new Next API endpoint with the file name `[...nextauth].ts`. This contains the dynamic route handler for NextAuth.js which will also contain all of your global NextAuth.js configurations. If you have specified a provider when running the generator this will be added to the providers array
@@ -111,3 +115,4 @@ export default CustomApp;
 ----
 
 From here with the configuration complete it is now possible to access the https://next-auth.js.org/getting-started/client#usesession[useSession] hook from next auth. For further information please see the https://next-auth.js.org/getting-started/example#frontend---add-react-hook[Getting Started Guide to Next Auth]
+=====
