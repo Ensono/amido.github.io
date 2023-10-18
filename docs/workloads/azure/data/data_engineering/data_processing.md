@@ -52,3 +52,17 @@ In Data Factory a data processing pipeline can be as simple as this example:
 
 It contains just one step - Python Databricks, configured to run a `silver.py` script, which gets deployed to DBFS
 (`dbfs:/FileStore/scripts/silver/silver.py`). The Datastacks package and library is deployed to DBFS, and made available to the cluster.
+
+### Passing parameters from Data Factory
+
+You may pass parameters from Data Factory to the Python job executed in Databricks. These are defined in the Settings section of the Databricks Python activity:
+
+![adf-databricks-parameters.png](../images/adf-databricks-parameters.png)
+
+These parameters can then be accessed from the Python file, by using the `get_data_factory_param` Datastacks function - for example the below could be used to access the first parameter shown above:
+
+```python
+from datastacks.pyspark.etl import get_data_factory_param
+
+run_id = get_data_factory_param(1, "default_run_id")
+```
