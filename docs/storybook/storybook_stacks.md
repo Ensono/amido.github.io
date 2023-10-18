@@ -35,24 +35,5 @@ Documentation, usage examples, and interactive demos can be added for each compo
 
 ## Storybook with Ensono Stacks
 
-Storybook can be added to Ensono Stacks using the __[Nx Storybook generator](https://nx.dev/packages/storybook)__.
+Storybook can be added to Ensono Stacks using the __[Stacks Storybook generator](../getting_started/next/storybook)__.
 
-## Storybook Addons
-
-Storybook has a large ecosystem of addons that extend its core functionality. These addons can be used for things like showing component props, testing, accessibility and theming.
-
-### storybook-addon-a11y
-
-One of the addons we recommend using with Ensono Stacks is [storybook-addon-a11y](https://storybook.js.org/addons/@storybook/addon-a11y), this addon helps developers and designers identify and address accessibility issues in their UI components during the development and testing phase.
-
-It integrates with Storybook to provide a user-friendly interface for testing the accessibility of individual UI components or stories within your Storybook project.
-
-Some other addons we recommend using with Ensono Stacks are:
-
-[storybook/addon-links](https://storybook.js.org/addons/@storybook/addon-links)
-
-[storybook/addon-actions](https://storybook.js.org/docs/react/essentials/actions)
-
-[storybook/addon-jest](https://storybook.js.org/addons/@storybook/addon-jest)
-
-[storybook/theming](https://storybook.js.org/docs/react/configure/theming)
