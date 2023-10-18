@@ -1,0 +1,258 @@
+= Project Settings
+
+Each project that is supported by the Ensono Stacks CLI has a settings file associated with them. This is called, by default, `stackscli.yml`. It is possible to override the actual file that is used as well as the filename.
+
+The settings file is intended to allow the project maintainers to define what steps need to be done on a project and instruct the CLI what to do, without having to refactor the CLI.
+
+== Structure
+
+The following table details the structure of the settings file.
+
+[cols="a,a,a,a",stripes=even]
+|===
+| Parameter | Description | Example | Allowed Values
+
+| `framework`
+| The framework that the project is based on.
+| 
+| 
+
+| `pipeline`
+| This is a list of the supported pipelines and the associated files
+| 
+| 
+
+| `init.operations`
+| List of operations that need to be performed on the temporary project directory
+| 
+| 
+
+| `setup.operations`
+| List of operations that need to be performed on the project directory
+| 
+| 
+|===
+
+Settings file root structure
+
+The following table shows the options that can be specified for a framework
+
+.Framework Options
+[cols="a,a,a,a",stripes=even]
+|===
+| Parameter | Description | Example | Allowed Values
+
+| `name`
+| Name of the framework that this project targets
+| `dotnet`, `java`, `nx`
+| `commands`
+| 
+
+| A list of the commands and the versions that are required for the project
+| This is a list, so multiple commands and versions can be specified in the yaml file
+| 
+| `commands.name`
+| 
+
+| Name of the command to be checked
+| `dotnet`
+| 
+
+| `commands.version`
+| 
+
+| This is a semantic version constraint that the command version must conform to
+| So to ensure that the `dotnet` command is version `3.1`, the following version string can be used `>= 3.1, < 3.2`
+| 
+
+| `commands.version`
+| Any valid semver constraint
+| 
+| 
+|===
+
+NOTE: If no command or version is specified then the command that is found on the machine that the CLI is running on will be used without checking.
+
+IMPORTANT: It is possible to ignore the results of the version check when the CLI is running by using the +force+ option, but remember that it is a destructive operation and it will delete any existing projects that exist in the same path.
+
+Not all version numbers conform to semantic versioning. For example, Java tends to add characters to the version number, e.g., `1.8.0_301`. To get around this, the CLI tries to make the version semver compliant by removing the `_`, so the version tested will be `1.8.0301`, which is a valid semver.
+
+The next table shows the options for the operations.
+
+NOTE: These are valid for both `init` and `setup` operations
+
+.Operations Parameters
+[cols="a,a,a,a",stripes=even]
+|===
+| Parameter | Description | Example | Allowed Values
+
+| `action`
+| The type of action that needs to be performed
+| If `copy` is specified then no other parameters are required. This only really makes sense when in the `setup` phase of the project. It copies the contents of the downloaded repository to the project directory. This is useful for projects that do not have a templating system, such as `stacks-infrastructure-aks`.
+| `cmd`, `copy`
+
+| `cmd`
+| The command that needs to be run.
+| Each framework has a set of commands that it knows it can during the setup of the project run. The value that is set here must be specified within that list in order for the command to execute.
+| java = `java`, dotnet = `dotnet`, nx = `npx`
+
+| `args`
+| The arguments that need to be passed to the command
+| `new -i .`
+| 
+
+| `desc`
+| Description of what is being performed. This is output during the execution of the CLI
+| `Installing template from folder`
+| 
+|===
+
+The following table shows the values that can be assigned to the pipeline list.
+
+.Pipeline Options
+[cols="a,a,a,a",stripes=even]
+|===
+| Parameter | Description | Example | Allowed Values
+
+| `type`
+| Type of pipeline being configured
+| `azdo`
+| `azdo`
+
+| `files`
+| List of files that should be worked on. 
+
+See <<file-definition, File Definition>> for syntax
+| 
+| 
+
+| `template`
+| List of templates that the CLI should use. At the moment only `variable` is supported.
+| 
+| 
+
+| `replacements`
+| This is a list of replacements that need to be made in the build file
+| 
+| 
+|===
+
+.File Definition [[file-definition]]
+[cols="a,a,a",stripes=even]
+|===
+| Parameter | Description | Example
+
+| `name`
+| Name of the file.
+
+The names `build` and `variable` are reserved by the CLI and are used when writing out files. Other files can be specified, and the replacements will be made on each one.
+
+The names must be unique, if not, then the last one specified with the same name will take precedence.
+| `build`
+
+| `path`
+| Path to the file in question, relative to the repository root
+| `build/azDevOps/azure/azure-pipelines-netcore-k8s.yml`
+
+| `noreplace`
+| If set to `true` then no replacements will be attempted on this file.
+
+This is not supported when used in a `template` definition.
+| `true`
+|===
+
+NOTE: If no template is specified for the `variable` then the static version built into the CLI will be used.
+
+[cols="a,a,a",stripes=even]
+|===
+| Parameter | Description | Example
+
+| `pattern`
+| Regular expression pattern for finding the text to be replaced
+| `^.*myvalue$`
+
+| `value`
+| Value to replace the phrase that has been found by the pattern
+| `Foo Bar`
+| 
+| 
+|===
+
+Replacement definition
+
+== YAML File
+
+The following code listing shows an example settings file.
+
+*Example project settings file.*
+
+[source,yaml]
+----
+framework:
+  name: dotnet
+  commands:
+    - name: dotnet
+      version: ">= 3.1, < 3.2"
+
+pipeline:
+  - type: azdo
+    files:
+      - name: build
+        path: build/azDevOps/azure/azure-pipelines-netcore-k8s.yml
+      - name: variable
+        path: build/azDevOps/azure/azuredevops-vars.yml
+    replacements:
+      - pattern: ^.*myvalue$
+        value: Foo Bar
+
+init:
+  operations:
+    - action: cmd
+      args: new stacks-docs -n {{ .Input.Business.Company }}.{{ .Input.Business.Domain }}
+      desc: Create a project using the "stacks-docs" project
+
+setup:
+  operations:
+----
+* Sets the framework that the commands should be run for
+* Specify the commands for which the version number should be checked
+* The name of the command to get the version number for
+* The version constraint that the version number should be checked against
+* Specify the pipeline that is being targeted
+* Name and path to the build pipeline file in the repository, for the specified pipeline system
+* Name and path to the variable template in the repository
+* List of replacements that should be made in the specified build file
+* Perform operations on the temporary project directory
+* List any number of operations that need to be performed
+* States the action that needs to be performed
+* The arguments that need to be passed to the framework command, in this case `dotnet`
+* Description of the operation, this will be displayed in the log output when the CLI is executed
+* Define operations that need to be performed after the project has been created
+
+This example shows one action that needs to be performed on the project before it has been created in the user-specified working directory.
+
+== Examples
+
+The GO template package is very powerful and allows advanced configuration in a settings file. This section shows some examples of what can be achieved.
+
+=== Setting a default value
+
+The framework properties that can be specified on a project allow extra information to be specified in the CLI configuration that is passed to the template. This information does not have to be set, but a default value may be required in the template.
+
+For example, in the `stacks-dotnet-cqrs-events` project, we need to be able to pass in `servicebus` or `eventhub` based on the selection from the user. However, if this selection is not made, then the project settings file should still work as expected. It is not possible to default the property to a known value as these properties will be used by other languages, so the value needs to have a default in the template.
+
+To achieve this, the `or` template function needs to be used. This function takes values and will use the first value that has been set.
+
+The following listing shows a snippet of the project settings file for a project.
+
+Setting default value using Go template.
+
+[source]
+----
+- action: cmd
+  cmd: dotnet
+  args: new stacks-cqrs-events-app -n {{ .Input.Business.Company }}.{{ .Input.Business.Domain }} -o {{ .Project.Directory.WorkingDir }} -e {{ or .Project.Framework.Properties.Prop1 "servicebus"}}
+----
+In this example, all of the values for the parameters come from the `.Input` or `.Project` object.
+
+The last parameter to be set is defined as `{{ or .Project.Framework.Properties.Prop1 "servicebus" }}`. This will set the `-e` parameter to the value set in the property if that is set or default to "servicebus".

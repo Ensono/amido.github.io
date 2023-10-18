@@ -18,12 +18,12 @@ The shared resources include Azure Data Factory resources which are shared acros
 ** _pipeline_Get_Ingest_Config_ - To retrieve config data for use in a pipeline
 ** _pipeline_Generate_Ingest_Query_ - To generate a query for ingesting data
 
-For details of how these resources are used in ingest pipelines, see link:../etl_pipelines/ingest_data_azure.adoc[data ingestion].
+For details of how these resources are used in ingest pipelines, see link:../data_engineering/ingest_data_azure.adoc[data ingestion].
 
 This guide assumes the following are in place:
 
-* A link:core_data_platform_deployment_azure.adoc[deployed Ensono Stacks data platform]
-* link:dev_quickstart_data_azure.adoc[Development environment set up]
+* A link:./core_data_platform_deployment_azure.adoc[deployed Ensono Stacks data platform]
+* link:./dev_quickstart_data_azure.adoc[Development environment set up]
 
 == Step 1: Create feature branch
 
