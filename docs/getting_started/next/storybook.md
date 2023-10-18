@@ -79,7 +79,7 @@ The generator installs the follow dependencies unless the `--skipPackageJson` op
 After the Storybook generator has been installed you can now run the new command `custom-component` that will add the following:
 - creates a component under a specified name
 - creates a test for the new component
-- creates a story for hte new component
+- creates a story for the new component
 
 :::note
 
@@ -88,11 +88,11 @@ After the Storybook generator has been installed you can now run the new command
 :::
 
 ```bash
-nx run my-app:custom-component --name=component-x --folderPath
+nx run my-app:custom-component --name=component-x --folderPath=components
 ```
 
 The flags are the following:
-- name: name of hte component
+- name: name of the component
 - folderPath: path of the new component folder (based on the app as the root of the path)
 
 </details>

@@ -92,15 +92,15 @@ After the Storybook generator has been installed you can now run the new command
 .Command generates:
 * creates a component under a specified name
 * creates a test for the new component
-* creates a story for hte new component
+* creates a story for the new component
 
 NOTE: `my-app` is an example of your app's name.
 
 [source, bash]
 ----
-nx run my-app:custom-component --name=component-x --folderPath
+nx run my-app:custom-component --name=component-x --folderPath=components
 ----
 
 .Command flags:
-* name: name of hte component
+* name: name of the component
 * folderPath: path of the new component folder (based on the app as the root of the path)
