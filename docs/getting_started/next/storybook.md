@@ -42,12 +42,14 @@ The following command line arguments are available:
 ### Generator Output
 
 The generator creates the following:
+
 - creates a new folder `.storybook`. This contains information for the storybook package.
     - main.js file is created
     - preview.js file is created
 - creates a new file `tsconfig.storybook.json` to store configuration for storybook
 
 The generator updates the following:
+
 - updates the `project.json` file to add the `custom-component` command
 
 The generator installs the follow dependencies unless the `--skipPackageJson` option was used:
@@ -77,6 +79,7 @@ The generator installs the follow dependencies unless the `--skipPackageJson` op
 ### Custom command for app
 
 After the Storybook generator has been installed you can now run the new command `custom-component` that will add the following:
+
 - creates a component under a specified name
 - creates a test for the new component
 - creates a story for the new component
@@ -92,6 +95,7 @@ nx run my-app:custom-component --name=component-x --folderPath=components
 ```
 
 The flags are the following:
+
 - name: name of the component
 - folderPath: path of the new component folder (based on the app as the root of the path)
 
