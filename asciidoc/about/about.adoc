@@ -11,7 +11,7 @@ keywords:
   - template
 ---
 
-== What is Ensono Stacks1
+== What is Ensono Stacks
 
 Ensono Stacks is an Ensono open-source project that automates the setup of software development projects. Ensono Stacks is for software engineers of all kinds who want to create projects quickly.
 
