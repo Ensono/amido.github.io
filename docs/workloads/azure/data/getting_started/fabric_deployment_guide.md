@@ -108,7 +108,7 @@ Follow these steps for each of the tables in the data lake staging (silver) and 
 
 ![Fabric tables shortcut](../images/fabric_tables_shortcut.png)
 
-## Step 5: Interacting with data in the lakehouse
+## Step 6: Interacting with data in the lakehouse
 
 Once shortcuts have been added, data in the Lakehouse can be used within Fabric in a number of ways:
 
