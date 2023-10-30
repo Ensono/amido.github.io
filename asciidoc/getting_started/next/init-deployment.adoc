@@ -1,18 +1,22 @@
 == @ensono-stacks/next:init-deployment
 
-Configure Deployment & Infra for your Next project
-
+.Configure Deployment & Infra for your Next project
+[%collapsible]
+=====
 The deployment generator will provide all the necessary tools and setup ready to host your application in a Kubernetes Cluster.
 
+[discrete]
 === Prerequisites
 
 An existing https://nextjs.org/[Next] application. This may already exist if you agreed to install the infra during next:init generator.
 
+[discrete]
 === Usage
 
 [source, bash]
 nx g @ensono-stacks/next:init-deployment
 
+[discrete]
 === Command line arguments
 
 The following command line arguments are available:
@@ -28,6 +32,7 @@ The following command line arguments are available:
 |N/A
 |===
 
+[discrete]
 === Generator Output
 
 [source, text]
@@ -66,10 +71,12 @@ The following command line arguments are available:
 @nx-tools/container-metadata
 @jscutlery/semver
 
+[discrete]
 === Understanding the Infrastructure
 
 Azure devops configuration exists within the build folder for each new generated app project. This folder lives at root.
 
+[discrete]
 === build/azDevOps
 
 `azuredevops-runner.yaml`
@@ -80,6 +87,7 @@ Here you will find the actions for triggering the pipelines. Basically, creating
 
 This is of course the actual stages of the pipeline that are configured. Most of the detail is done via taskctl, which can found as the last task in the build job.
 
+[discrete]
 === taskctl
 
 https://github.com/taskctl/taskctl[taskctl] has been used to enable across different environments and builds. Cross platform, one single syntax.
@@ -105,6 +113,7 @@ helm:
       },
   }
 
+[discrete]
 === Helm
 
 The configuration files for Helm Charts live inside the libs folder under directory for your app, contained as its own library
@@ -124,10 +133,12 @@ In the infra pipeline, the steps for Helm will begin by linting, followed by eit
 
 The remaining tasks are then carried out post versioning, covered in the next section.
 
+[discrete]
 === Versioning
 
 https://github.com/jscutlery/semver[jscutlery:semver] is an Nx plugin which has been configured to automate semantic versioning and release in these projects. It follow conventional commits and is also applied to proceeding pipeline targets such as Helm charts.
 
+[discrete]
 === Package & Push
 
 After versioning, our build is containerised using Docker and pushed to the set Azure registry.
@@ -136,8 +147,10 @@ Likewise, the Helm Charts are also packaged and pushed to their respective place
 
 Finally a Github release is tagged with relevant notes using jscutlery.
 
+[discrete]
 === Terraform
 
 This is the last group of tasks to run as part of the infrastructure. See `myproject/apps/myapp/deploy/terraform` for configuration files.
 
 One thing to highlight is that once the Terraform apply task is completed, a Helm install will also be executed. As mentioned earlier, the default behaviour is to deploy a non-production instance when a PR is created and once the PR is merged, then the deployment is made to production.
+=====

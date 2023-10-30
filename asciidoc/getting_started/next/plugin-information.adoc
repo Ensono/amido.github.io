@@ -1,3 +1,5 @@
+= @ensono-stacks/next
+
 == Using next with Ensono Stacks!"
 
 The `next` plugin contains generators to augment existing NextJs projects. Adding eslint rules, testing config as well as installing and configuring NextAuth.js in your NextJs app.
@@ -48,3 +50,5 @@ nx g @ensono-stacks/next:[generator-executor-name] --help
 include::init.adoc[]
 include::init-deployment.adoc[]
 include::next-auth.adoc[]
+include::next-auth-redis.adoc[]
+include::next-auth-redis-deployment.adoc[]
