@@ -1,6 +1,21 @@
-= Getting started with the Java Rest API application
-:description: Getting started with the Java Rest API application
-:keywords: java, rest, api, application, spring boot, authorization, docker, swagger, auth0, settings, get started
+---
+id: quickstart_java
+title: Getting started with the Java Rest API application
+linkTitle: Getting started
+weight: 4
+keywords:
+  - java
+  - rest
+  - api
+  - application
+  - spring boot
+  - authorization
+  - docker
+  - swagger
+  - auth0
+  - settings
+  - get started
+---
 
 == Using the repository to build the Java Spring Boot Rest API application
 

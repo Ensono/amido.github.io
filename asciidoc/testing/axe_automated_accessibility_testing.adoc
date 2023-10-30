@@ -1,10 +1,16 @@
-= Automated Accessibility Testing With Axe
-:id: accessibility_testing
-:sidebar_label: Automated Accessibility Testing
-:hide_title: false
-:hide_table_of_contents: true
-:description: Accessibility testing with Axe
-:keywords: axe, tests, testing, jest, cypress, accessibility testing
+---
+id: accessibility_testing
+title: Automated Accessibility Testing With Axe
+linkTitle: Automated Accessibility Testing
+weight: 10
+keywords:
+  - axe
+  - tests
+  - testing
+  - jest
+  - cypress
+  - accessibility testing
+---
 
 [CAUTION]
 ====

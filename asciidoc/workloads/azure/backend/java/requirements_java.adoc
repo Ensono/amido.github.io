@@ -1,6 +1,18 @@
-= Requirements
-:description: Requirements for getting started with the Java Rest API application
-:keywords: java, rest , api, application, spring boot, swagger, settings, get started
+---
+id: requirements_java
+title: Requirements
+linkTitle: Requirements
+weight: 2
+keywords:
+  - java
+  - rest 
+  - api
+  - application
+  - spring boot
+  - swagger
+  - settings
+  - get started
+---
 
 == Requirements for running the API locally
 

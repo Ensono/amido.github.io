@@ -1,6 +1,17 @@
-= Solution Structure
-:description: .NET Core REST API application - Solution Structure
-:keywords: .net core, rest api, cqrs, example, template, repository, structure
+---
+id: project_structure_netcore
+title: Solution Structure
+linkTitle: Solution Structure
+weight: 3
+keywords:
+  - .net core
+  - rest api
+  - cqrs
+  - example
+  - template
+  - repository
+  - structure
+---
 
 == Simple Web API
 

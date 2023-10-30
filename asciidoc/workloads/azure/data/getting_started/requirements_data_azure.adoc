@@ -1,6 +1,11 @@
-= Requirements
-:description: Requirements
-:keywords: requirements
+---
+id: requirements_data_azure
+title: Requirements
+linkTitle: Requirements
+weight: 1
+keywords:
+  - requirements
+---
 
 == Local development
 

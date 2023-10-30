@@ -1,4 +1,15 @@
-= NuGet Dependencies
+---
+id: nuget_dependencies
+title: NuGet dependencies for .NET Core API
+sidebar_label: NuGet Dependencies
+weight: 6
+keywords:
+  - .net core
+  - rest api
+  - packages
+  - dependency
+  - repository
+---
 
 The .NET Core API depends on several NuGet packages, and here are links to each of these repositories:
 

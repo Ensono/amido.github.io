@@ -1,5 +1,16 @@
-= Separation of Concerns
-:imagesdir: ../../../../static/img
+---
+id: seperation-of-concerns
+title: Separation of Concerns
+linkTitle: Separation of Concerns
+weight: 1
+keywords:
+- development
+- java
+- backend
+- server-side
+---
+
+:imagesdir: ../../../../images
 
 == Context
 

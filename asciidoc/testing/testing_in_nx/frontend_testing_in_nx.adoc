@@ -1,6 +1,17 @@
-= Frontend Testing in an Nx monorepo
-:description: Considerations for testing within an Nx monorepo
-:keywords: Nx, testing, playwright, cypress, accessibility testing, visual regression testing, monorepo
+---
+id: frontend_testing_in_nx
+title: Frontend Testing in an Nx monorepo
+linkTitle: Frontend Testing in an Nx monorepo
+weight: 1
+keywords:
+  - Nx
+  - testing
+  - playwright
+  - cypress
+  - accessibility testing
+  - visual regression testing
+  - monorepo
+---
 
 Using link:https://nx.dev/[Nx] provides many benefits when working with SSR or CSR frontend applications. When using link:../../nx/nx_monorepo.adoc[Ensono Stacks to scaffold an Nx monorepo], you will be provided with several options to assure quality in your development process.
 

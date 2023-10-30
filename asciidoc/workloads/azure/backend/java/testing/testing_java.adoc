@@ -1,4 +1,27 @@
-= Pre-deployment tests and reports
+---
+id: testing_java
+title: Pre-deployment tests and reports
+linkTitle: Pre-deployment tests and reports
+weight: 1
+keywords:
+  - java
+  - rest 
+  - api
+  - project
+  - testing
+  - test
+  - unit
+  - component
+  - integration
+  - report
+  - mutation
+  - parallel
+  - owasp
+  - code coverage
+  - configuration
+  - access token
+  - dependency checker
+---
 
 Tests within the code are grouped using Tag annotations. There are three groups: 'Unit', 'Component', and 'Integration'. To just run the unit tests, for example, type:
 

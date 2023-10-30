@@ -1,6 +1,15 @@
-= Automated UI Visual Testing With Applitools
-:description: How to run tests with Applitools
-:keywords: cypress, tests, testing, applitools, visual analysis
+---
+id: visual_analysis
+title: Automated UI Visual Testing With Applitools
+linkTitle: Automated UI Visual Testing
+weight: 8
+keywords:
+  - cypress
+  - tests
+  - testing
+  - applitools
+  - visual analysis
+---
 
 [CAUTION]
 ====

@@ -1,4 +1,11 @@
-= Testing
+---
+id: testing_data_azure
+title: Testing
+linkTitle: Testing
+weight: 7
+keywords:
+  - testing
+---
 
 Data workloads generated in Ensono Stacks feature a framework for testing. Automated tests are essential at every stage of a data pipeline for reasons including:
 

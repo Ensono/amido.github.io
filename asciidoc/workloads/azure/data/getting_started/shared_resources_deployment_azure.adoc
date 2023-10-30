@@ -1,6 +1,15 @@
-= Shared Resources Deployment
-:description: Deployment of common Azure Data Factory resources shared by data pipelines
-:keywords: ,data, infrastructure, adf, cicd
+---
+id: shared_resources_deployment_azure
+title: Shared Resources Deployment
+linkTitle: 4. Shared Resources Deployment
+weight: 6
+keywords:
+  - data
+  - infrastructure
+  - adf
+  - cicd
+---
+
 
 This section provides an overview of deploying the shared resources for Ensono Stacks Data Platform.
 

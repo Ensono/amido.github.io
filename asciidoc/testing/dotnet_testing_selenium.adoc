@@ -1,6 +1,20 @@
-= UI Browser Automation with Selenium and .NET
-:description: UI tests with Selenium and .NET
-:keywords: selenium, tests, testing, ui, .Net, template, example, run the tests, model
+---
+id: testing_dotnet_selenium
+title: UI Browser Automation with Selenium and .NET
+linkTitle: C# - Selenium .NET
+weight: 4
+keywords:
+  - selenium
+  - tests
+  - testing
+  - ui
+  - .Net
+  - template
+  - example
+  - run the tests
+  - model
+---
+
 
 == Getting Started
 

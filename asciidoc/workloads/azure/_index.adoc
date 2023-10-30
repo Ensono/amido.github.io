@@ -1,0 +1,6 @@
+---
+id: azure-index
+title: Azure
+linkTitle: Azure
+weight: 3
+---

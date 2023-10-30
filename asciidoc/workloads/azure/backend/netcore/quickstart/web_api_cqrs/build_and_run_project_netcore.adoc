@@ -1,7 +1,22 @@
-= Build and Run the application
+---
+id: build_and_run_project_netcore
+title: Build & Run REST API with CQRS
+linkTitle: Build & Run REST API with CQRS
+weight: 3
+keywords:
+  - .net core
+  - rest api
+  - cqrs
+  - azure
+  - application insights
+  - cosmos db
+  - aws sns
+  - build
+  - run
+  - application
+---
+
 :imagesdir: ../../../../../../../static/img
-:doctype: book
-:keywords: .net core, rest api, cqrs, azure, application insights, cosmos db, aws sns, build, run, application
 
 The API generated consists of configuration to be run locally or on a docker container.
 

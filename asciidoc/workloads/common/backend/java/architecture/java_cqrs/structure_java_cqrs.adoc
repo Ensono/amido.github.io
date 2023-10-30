@@ -1,6 +1,27 @@
-= Java Rest API Structure
-:description: Java Rest API Structure
-:keywords: java, rest, api, project, overview, configuration, logging, application insights, swagger, authorisation, settings, cqrs
+---
+id: architecture_java_cqrs
+title: Java Rest API Architecture
+linkTitle: Architecture overview
+weight: 1
+keywords:
+  - java
+  - rest 
+  - api
+  - architecture
+  - spring boot
+  - cqrs
+  - event
+  - controller
+  - logs
+  - monitoring
+  - query service
+  - repository
+  - azure cosmos db
+  - event handler
+  - event listener
+  - event dispatcher
+  - authorisation
+---
 
 == Project Structure
 

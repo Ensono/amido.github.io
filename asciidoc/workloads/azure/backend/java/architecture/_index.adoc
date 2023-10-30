@@ -1,0 +1,6 @@
+---
+id: azure-backend-java-arch-index
+title: Architecture
+linkTitle: Architecture
+weight: 5
+---

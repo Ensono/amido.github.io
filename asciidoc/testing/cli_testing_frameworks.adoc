@@ -1,6 +1,15 @@
-= Ensono Stacks Testing Frameworks
-:description: Bootstrap your framework using the CLI testing frameworks
-:keywords: bootstrap, framework, testing, example, CLI
+---
+id: cli_testing_frameworks
+title: Ensono Stacks Testing Frameworks
+linkTitle: Ensono Stacks Testing Frameworks
+weight: 1
+keywords:
+  - bootstrap
+  - framework
+  - testing
+  - example
+  - cli
+---
 
 Building testing frameworks from scratch requires a lot of boilerplate code. It is also hard to know how to get started without examples.
 
