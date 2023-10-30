@@ -1,8 +1,18 @@
-= Introduction to the Java REST API Application
-:description: Introduction to the Java REST API Application
-:keywords: java, rest, api, cqrs, introduction, spring boot
+---
+id: intro_java
+title: Introduction to the Java REST API application
+linkTitle: Introduction
+weight: 1
+keywords:
+  - java
+  - rest 
+  - api
+  - cqrs
+  - introduction
+  - spring boot
+---
 
-== Overview
+== Overview [[overview]]
 
 This is a sample Java REST API application with CQRS, showcasing best coding practices and integrating with Cloud services
 and scaffolding for Ensono Stacks.

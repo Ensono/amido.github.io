@@ -1,5 +1,16 @@
-= Workloads on Google Cloud Platform
-:keywords: workload, gsp, webapp, server-side, in progress
+---
+id: workloads_gcp_readme
+title: Workloads on Google Cloud Platform
+linkTitle: Workloads on GCP
+weight: 4
+keywords:
+  - workload
+  - gsp
+  - webapp
+  - server-side
+  - in progress
+---
+
 
 We're working on adding workloads for GCP at the moment. Currently there is one available:
 

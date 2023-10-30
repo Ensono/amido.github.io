@@ -1,0 +1,6 @@
+---
+id: azure-data-arch-index
+title: Architecture
+linkTitle: Architecture
+weight: 2
+---

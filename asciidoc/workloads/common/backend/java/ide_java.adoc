@@ -1,5 +1,28 @@
-= IDE guidelines for the Java Rest API
-:imagesdir: ../../../../../static/img
+---
+id: ide_java
+title: IDE guidelines for the Java Rest API
+linkTitle: IDE guidelines
+weight: 3
+keywords:
+  - java
+  - rest
+  - api
+  - ide
+  - ide guidelines
+  - plugins
+  - code quality
+  - lombok
+  - sonarlint
+  - spring assistant
+  - check style
+  - google java format
+  - spotbugs
+  - jacoco
+  - setups
+  - pom
+---
+
+:imagesdir: ../../../../../images
 :description: IDE guidelines for the Java Rest API
 :keywords: java, rest, api, ide, ide guidelines, plugins, code quality, lombok, sonarlint, spring assistant, check style, google java format ,spotbugs, jacoco, setups ,pom
 

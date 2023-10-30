@@ -1,6 +1,27 @@
-= Requirements
-:description: Detailed requirements to create .NET Core REST API application from a template
-:keywords: .net core, rest api, cqrs, example, template, azure, application insights, cosmos db, build, run, application, configure, docker, tests, github, scaffolding, cli
+---
+id: requirements_netcore
+title: Requirements
+linkTitle: Requirements
+weight: 2
+keywords:
+  - .net core
+  - rest api
+  - cqrs
+  - example
+  - template
+  - azure
+  - application insights
+  - cosmos db
+  - build
+  - run
+  - application
+  - configure
+  - docker
+  - tests
+  - github
+  - scaffolding
+  - cli
+---
 
 .Windows
 [%collapsible]

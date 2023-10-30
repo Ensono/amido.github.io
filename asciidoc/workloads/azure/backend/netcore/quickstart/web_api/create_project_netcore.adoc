@@ -1,6 +1,23 @@
-= Create REST API project
-:description: Create .NET Core REST API application from a template
-:keywords: .net core, rest api, example, template, azure, application insights, build, run, application, configure, docker, tests, github
+---
+id: create_project_netcore
+title: Create REST API project
+linkTitle: Create REST API project
+weight: 1
+keywords:
+  - .net core
+  - rest api
+  - example
+  - template
+  - azure
+  - application insights
+  - build
+  - run
+  - application
+  - configure
+  - docker
+  - tests
+  - github
+---
 
 == Create a project using the Nuget template package
 

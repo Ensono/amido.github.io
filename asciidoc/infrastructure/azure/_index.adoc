@@ -1,0 +1,6 @@
+---
+id: infrastructure-azure-index
+title: Azure
+linkTitle: Azure
+weight: 2
+---

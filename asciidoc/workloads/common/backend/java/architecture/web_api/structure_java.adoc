@@ -1,6 +1,21 @@
-= Java Rest API Structure
-:description: Java Rest API Structure
-:keywords: java, rest , api, project, overview, configuration, logging, application insights, swagger, authorisation, settings
+---
+id: structure_java
+title: Java Rest API Structure
+linkTitle: Project structure
+weight: 2
+keywords:
+  - java
+  - rest 
+  - api
+  - project
+  - overview
+  - configuration
+  - logging
+  - application insights
+  - swagger
+  - authorisation
+  - settings
+---
 
 === Project structure
 

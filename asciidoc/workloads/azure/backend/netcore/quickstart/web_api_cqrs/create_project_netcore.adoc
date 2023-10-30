@@ -1,7 +1,27 @@
-= Create REST API with CQRS project
+---
+id: create_project_netcore
+title: Create REST API with CQRS project
+linkTitle: Create REST API with CQRS project
+weight: 1
+keywords:
+  - .net core
+  - rest api
+  - cqrs
+  - example
+  - template
+  - azure
+  - application insights
+  - cosmos db
+  - build
+  - run
+  - application
+  - configure
+  - docker
+  - tests
+  - github
+---
+
 :imagesdir: ../../../../../../../static/img
-:doctype: book
-:keywords: .net core, rest api, cqrs, azure, application insights, cosmos db, aws sns, build, run, application, configure, docker, example, template, tests, github
 
 == Create a project
 

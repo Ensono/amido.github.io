@@ -1,0 +1,6 @@
+---
+id: java-arch-modules-index
+title: Modules
+linkTitle: Modules
+weight: 2
+---

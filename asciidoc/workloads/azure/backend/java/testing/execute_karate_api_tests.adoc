@@ -1,5 +1,22 @@
-= Running API tests with Karate
-:tabs:
+---
+id: execute_karate_api_tests
+title: Running API tests with Karate
+linkTitle: REST API testing with Karate
+weight: 3
+keywords:
+  - java
+  - rest 
+  - api
+  - karate
+  - run karate tests
+  - karate test example
+  - test runner
+  - karate test report
+  - execute parallel tests
+  - framework
+  - testing
+  - test
+---
 
 Karate is an open-source general-purpose test-automation framework that can script calls to HTTP end-points and assert that the JSON or XML responses are as expected. Karate also has support for service-virtualization where it can bring up "mock" (or stub) servers which can substitute for web-services that need to participate in an integration-test. Karate's capabilities include being able to run tests in parallel, HTML reports, and compatibility with Continuous Integration tools.
 

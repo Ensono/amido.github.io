@@ -1,6 +1,18 @@
-= Functional Testing with TestCafe
-:description: How to create functional tests with TestCafe
-:keywords: TestCafe, tests, testing, functional, template, example, run TestCafe tests, TestCafe report
+---
+id: testcafe_functional_testing
+title: Functional Testing with TestCafe
+linkTitle: TestCafe - Functional Testing
+weight: 6
+keywords:
+  - TestCafe
+  - tests
+  - testing
+  - functional
+  - template
+  - example
+  - run TestCafe tests
+  - TestCafe report
+---
 
 [CAUTION]
 TestCafe is no longer supported by stacks. However this is still part of the scaffolding cli for testing and may be removed at a later date

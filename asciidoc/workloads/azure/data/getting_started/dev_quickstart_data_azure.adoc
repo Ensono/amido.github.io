@@ -1,6 +1,12 @@
-= Local Development Quickstart
-:description: Quickstart for local development
-:keywords: quickstart, development
+---
+id: dev_quickstart_data_azure
+title: Local Development Quickstart
+linkTitle: 3. Local Development Quickstart
+weight: 5
+keywords:
+  - quickstart
+  - development
+---
 
 This section covers the steps required to start developing an Ensono Stacks Azure Data Platform from your machine:
 

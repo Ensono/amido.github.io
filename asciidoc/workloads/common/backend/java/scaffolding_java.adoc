@@ -1,6 +1,19 @@
-= Using the Maven Scaffolding to create the Java project template
-:description: Using the Maven Scaffolding to create the Java project template
-:keywords: java, rest, api application, spring boot, swagger, template, maven scaffolding, get started
+---
+id: scaffolding_java
+title: Using the Maven Scaffolding to create the Java project template
+linkTitle: Using the Maven Scaffolding
+weight: 3
+keywords:
+  - java
+  - rest 
+  - api
+  - application
+  - spring boot
+  - swagger
+  - template
+  - maven scaffolding
+  - get started
+---
 
 == Create a custom Java project template from the command line
 

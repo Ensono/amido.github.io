@@ -1,6 +1,14 @@
-= Generate a Data Project
-:description: Generate a new data project using Ensono Stacks
-:keywords: stacks cli, data, azure, template
+---
+id: generate_project
+title: Generate a data project
+linkTitle: 1. Generate a data project
+weight: 3
+keywords:
+  - stacks cli
+  - data
+  - azure
+  - template
+---
 
 This section provides an overview of scaffolding and generating a new Data Platform project using the link:https://github.com/ensono/stacks-cli/releases[Ensono Stacks CLI].
 

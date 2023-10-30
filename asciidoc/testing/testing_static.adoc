@@ -1,6 +1,20 @@
-= Testing - Static Code Analysis
-:description: How to use Jest with SonarCloud
-:keywords: jest, sonarcloud, tests, testing, static, code, analysis, example, report, static quality gates
+---
+id: testing_static_analysis
+title: Testing - Static Code Analysis
+linkTitle: Static Code Analysis
+weight: 7
+keywords:
+  - jest
+  - sonarcloud
+  - tests
+  - testing
+  - static
+  - code
+  - analysis
+  - example
+  - report
+  - static quality gates
+---
 
 Ensono Stacks projects use link:https://docs.sonarqube.org/[SonarQube] for static analysis.
 

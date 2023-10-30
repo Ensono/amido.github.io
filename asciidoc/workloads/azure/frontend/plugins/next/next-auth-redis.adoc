@@ -1,0 +1,98 @@
+== @ensono-stacks/next:next-auth-redis
+
+Add Redis for session management to your Next application
+
+The next-auth-redis generator will add Redis for session management into your existing Next app with Next-auth.
+
+=== Prerequisites
+
+An existing https://nextjs.org/[Next] application with Next-auth. Use the `@ensono-stacks/next:next-auth` generator to add this into your application
+
+=== Usage
+
+[source, bash]
+nx g @ensono-stacks/next:next-auth-redis
+
+=== Command line arguments
+
+The following command line arguments are available:
+
+[cols="1,1,1,1,1"]
+|===
+|Option |Description | Type | Accepted Values|Default
+
+|--project
+|The name of the project
+|string
+|string
+|N/A
+
+|--adapterName
+|Name of the generated Redis adapter library
+|string
+|
+|next-auth-redis
+
+|--envVar
+|Name of the env var that stores connection string for Redis
+|string
+|
+|REDIS_URL
+|===
+
+=== Generator Output
+
+A new redis library will be added to your `libs` folder with the following structure:
+
+[source, bash]
+----
+libs
+│   next-auth-redis
+│   ├──  src
+│   │   ├── index.ts       #All code required for session management with Redis
+│   │   ├── index.test.ts  #Unit tests using 'ioredis-mock' to mock Redis functions.
+│   ├──  README.md
+│   ├── tsconfig.json
+│   ├── tsconfig.lib.json
+│   ├── project.json
+│   ├── .eslintrc.json
+│   ├── jest.config.ts
+└── └── tsconfig.spec.json
+----
+
+In order for Redis to be used within next-auth a new entry for the redis library is added to the tsconfig.base.json "paths"
+
+[source, json]
+"paths": {
+    "@<workspace-name>/next-auth-redis": [
+      "libs/next-auth-redis/src/index.ts"
+    ]
+}
+
+Your `[...nextauth].ts` file within the Next application will be updated to use the new Redis adapter:
+
+[source, typescript]
+----
+import { Redis } from 'ioredis';
+import NextAuth from 'next-auth';
+import AzureADProvider from 'next-auth/providers/azure-ad';
+
+import { IORedisAdapter } from '@0-5-23-next-with-test-app/next-auth-redis';
+
+const nextAuth = NextAuth({
+  providers: [
+    AzureADProvider({
+      clientId: process.env.AZURE_AD_CLIENT_ID,
+      clientSecret: process.env.AZURE_AD_CLIENT_SECRET,
+      tenantId: process.env.AZURE_AD_TENANT_ID,
+    }),
+  ],
+  adapter: IORedisAdapter(new Redis(process.env.REDIS_URL)),
+});
+
+export default nextAuth;
+----
+
+A final message is provided if the developer would like to run the relevant deployment generator that supports this FE.
+`@ensono-stacks/next:next-auth-redis-deployment`.
+
