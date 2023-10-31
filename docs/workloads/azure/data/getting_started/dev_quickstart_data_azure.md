@@ -17,7 +17,15 @@ This section covers the steps required to start developing a Ensono Stacks Azure
 
 ## Environment setup
 
-A Makefile has been created to assist with setting up the development environment. The commands below will use Poetry to create a Python virtual environment and install requirements (including [stacks-data](../data_engineering/stacks_data_utilities.md)):
+Poetry will be used to create a Python virtual environment for the project, and install the project's dependencies (including [stacks-data](../data_engineering/stacks_data_utilities.md)). A `make` command has been created to assist with the initial setup, as well as installing other development tools such as [pre-commit](#code-quality-checks).
+
+:::tip
+
+You may wish to enable the [virtualenvs.in-project](https://python-poetry.org/docs/configuration/#virtualenvsin-project) configuration setting in Poetry - this will ensure that the Python virtual environment for the project gets created within the project directory, which can simplify management and integration with your IDE. To set this, run `poetry config virtualenvs.in-project true`.
+
+:::
+
+To setup your local development environment, run the following commands:
 
 ```bash
 # Use make command to setup your local development environment
