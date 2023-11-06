@@ -25,11 +25,6 @@ module.exports = {
         label: "Ensono Stacks CLI",
         items: [
           "stackscli/about"
-          // "stackscli/usage",
-          // "stackscli/runtime_config",
-          // "stackscli/project_settings",
-          // "stackscli/examples",
-          // "stackscli/troubleshooting",
         ]
       }
     ],
