@@ -1,6 +1,17 @@
-= Datastacks overview
-:description: Overview of the Datastacks utility
-:keywords: data, python, etl, cli, azure, template
+---
+id: datastacks
+title: Datastacks overview
+linkTitle: Datastacks
+weight: 2
+keywords:
+  - data
+  - python
+  - etl
+  - cli
+  - azure
+  - template
+---
+
 
 Datastacks provides a suite of utilities built to accelerate development within an Ensono Stacks Data Platform, supporting common tasks such as generating new data engineering workloads and running Spark jobs. Datastacks consists of:
 

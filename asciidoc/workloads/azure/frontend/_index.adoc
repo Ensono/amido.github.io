@@ -1,0 +1,6 @@
+---
+id: frontend-index
+title: Frontend Web Applications
+linkTitle: Frontend Web Applications
+weight: 1
+---

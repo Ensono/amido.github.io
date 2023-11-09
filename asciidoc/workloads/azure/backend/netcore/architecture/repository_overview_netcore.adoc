@@ -1,6 +1,17 @@
-= Repository Overview
-:description: .NET Core REST API application - Repositories Overview
-:keywords: .net core, rest api, cqrs, example, template, repository, structure
+---
+id: repository_overview_netcore
+title: Repository Overview
+linkTitle: Repository Structure
+weight: 2
+keywords:
+  - .net core
+  - rest api
+  - cqrs
+  - example 
+  - template 
+  - repository
+  - structure
+---
 
 ----
 ├── build

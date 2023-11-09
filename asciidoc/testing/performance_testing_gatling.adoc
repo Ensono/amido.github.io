@@ -1,6 +1,18 @@
-= Performance Testing - Gatling
-:description:: Performance tests with Gatling
-:keywords:: gatling, tests, testing, performance, template, example, run performance tests, gatling report
+---
+id: performance_testing_gatling
+title: Performance Testing - Gatling
+linkTitle: Gatling Performance Testing
+weight: 11
+keywords:
+  - gatling
+  - tests
+  - testing
+  - performance
+  - template
+  - example
+  - run performance tests
+  - gatling report
+---
 
 The Ensono Stacks Performance Tests is a sample project demonstrating performance testing (Load testing) using the link:https://gatling.io/[Gatling] tool.
 

@@ -1,6 +1,18 @@
-= Data Processing Pipeline Deployment
-:description: Data processing pipelines development & deployment
-:keywords: datastacks, data, python, etl, cli, azure, template
+---
+id: processing_pipeline_deployment_azure
+title: Data Processing Pipeline Deployment
+linkTitle: 8. Data Processing Pipeline Deployment
+weight: 10
+keywords:
+  - datastacks
+  - data
+  - python
+  - etl
+  - cli
+  - azure
+  - template
+---
+
 
 This section provides an overview of generating a new link:../data_engineering/data_processing.adoc[data processing pipeline] workload and deploying it into an Ensono Stacks Data Platform, using the link:../etl_pipelines/datastacks.adoc[Datastacks CLI].
 

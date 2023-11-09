@@ -1,6 +1,14 @@
-= Example Data Source
-:description: Setting up and using the example data source
-:keywords: data, sql, azure, testing
+---
+id: example_data_source
+title: Example Data Source
+linkTitle: 6. Example Data Source
+weight: 8
+keywords:
+  - data
+  - sql
+  - azure
+  - testing
+---
 
 When deploying an Ensono Stacks data platform, you may optionally include an Azure SQL database. This database is intended to be used for experimenting and testing ingest processes with the Ensono Stacks data platform. The database will be deployed into the same resource groups as the core data platform resources, named, for example:
 

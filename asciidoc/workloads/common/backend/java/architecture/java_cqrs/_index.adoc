@@ -1,0 +1,6 @@
+---
+id: webapi-cqrs-arch-index
+title: Web API with CQRS and Events Architecture
+linkTitle: Web API with CQRS and Events Architecture
+weight: 4
+---

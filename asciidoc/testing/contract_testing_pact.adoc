@@ -1,7 +1,21 @@
-= API Contract Testing With Pact [[contract_testing_pact]]
-:keywords: contract testing, pact, consumer, provider, pact stub service, pact broker, example, java, dotnet
+---
+id: contract_testing_pact
+title: API Contract Testing With Pact
+linkTitle: API Contract Testing With Pact
+weight: 9
+keywords:
+  - contract testing
+  - pact
+  - consumer
+  - provider
+  - pact stub service
+  - pact broker
+  - example
+  - java
+  - dotnet
+---
 
-== Consumer-Driven contract testing with Pact
+== Consumer-Driven contract testing with Pact [[contract_testing_pact]]
 
 Consumer-Driven Contract (CDC) Testing is a pattern that allows a consumer (i.e:
 a client) and a provider (i.e. an API provider) to communicate using an agreed

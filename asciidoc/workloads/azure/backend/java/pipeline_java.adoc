@@ -1,7 +1,20 @@
-= Java REST API - Azure DevOps Pipeline
-:imagesdir: ../../../../../static/img
-:description: Java REST API- Azure DevOps Pipeline
-:keywords: java, rest, api, azure, devops, pipeline, spring boot, setting
+---
+id: pipeline_java
+title: Java REST API - Azure DevOps Pipeline
+linkTitle: Pipeline
+weight: 7
+keywords:
+  - java
+  - rest
+  - api
+  - azure
+  - devops
+  - pipeline
+  - spring boot
+  - setting
+---
+
+:imagesdir: ../../../../../images
 
 The pipeline will automate provisioning and updating the Java REST API infrastructure in Azure.
 

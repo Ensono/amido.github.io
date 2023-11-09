@@ -1,7 +1,22 @@
-= .NET Core - Azure Infrastructure
-:imagesdir: ../../../../../static/img
-:description: High level design of the reference implementation of the .NET Core Ensono Stacks REST API with CQRS.
-:keywords: .net core, rest api, cqrs, pipeline, azure, azure container registry, azure kubernetes service, application insights, cosmos db, deployment
+---
+id: infrastructure_netcore
+title: .NET Core - Azure Infrastructure
+linkTitle: Infrastructure
+weight: 6
+keywords:
+  - .net core
+  - rest api
+  - cqrs
+  - pipeline
+  - azure
+  - azure container registry
+  - azure kubernetes service
+  - application insights
+  - cosmos db
+  - deployment
+---
+
+:imagesdir: ../../../../../images
 
 == Overview
 
@@ -38,7 +53,7 @@ pass:[*] *Resource is created by the core infrastructure deployment.*
 
 The following pipelines are currently supported for automating the deployment:
 
-- link:./pipeline_netcore.md[Azure DevOps]
+* link:./pipeline_netcore.md[Azure DevOps]
 
 === Running Locally
 
@@ -48,7 +63,8 @@ The safest way to run and maintain this locally is to rely on Docker and environ
 
 Sample commands with example environment vars:
 
-```bash
+[source,bash]
+----
 # Navigate to the infra directory
 cd ${YOUR_DIRECTORY_PATH}/deploy/azure/app
 
@@ -99,3 +115,4 @@ terraform workspace select dev || terraform workspace new dev
 
 # Check the plan matches your expected changes.
 terraform plan
+----

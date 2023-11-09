@@ -1,4 +1,14 @@
-= Reducing Swagger Annotation Overload
+---
+id: java_swagger_annotations
+title: Reducing Swagger Annotation Overload 
+linkTitle: Reducing Swagger Annotation Overload
+weight: 3
+keywords:
+- development
+- java
+- backend
+- server-side
+---
 
 == Context
 

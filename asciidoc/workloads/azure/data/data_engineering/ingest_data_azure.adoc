@@ -1,9 +1,18 @@
-= Data Ingest Workloads
+---
+id: ingest_data_azure
+title: Data Ingest Workloads
+linkTitle: Data Ingest Workloads
+weight: 3
+keywords:
+  - ingest
+  - adf
+  - etl
+---
 
 Data ingest workloads in Ensono Stacks are jobs which:
 
-1. Connect to an external data source
-2. Land the data in the Bronze (raw) layer of the data lake
+. Connect to an external data source
+. Land the data in the Bronze (raw) layer of the data lake
 
 Data ingest workloads utilize link:https://learn.microsoft.com/en-us/azure/data-factory/connector-overview[**Azure Data Factory's inbuilt connectors**] and link:https://learn.microsoft.com/en-us/azure/data-factory/copy-activity-overview[**Copy activity**], to give the ability to easily ingest data from a wide range of data sources. The ingest process is designed around reusable, metadata-driven pipelines. This means once an initial data pipeline is created for a given data source, additional entities from the same data source can be added or modified just by updating a configuration file.
 
@@ -13,13 +22,13 @@ The solution contains a the following example data ingest workloads:
 
 * link:https://github.com/Ensono/stacks-azure-data/tree/main/de_workloads/ingest/ingest_azure_sql_example[**Ingest_AzureSql_Example**]: Ingests data from the link:../getting_started/example_data_source.adoc[**example Azure SQL source**] and lands data into the data lake Bronze layer.
 
-=== Pipeline Overview
+== Pipeline Overview
 
 The diagram below gives an overview of the ingestion pipeline design.
 
-image::../images/ADF_IngestPipelineDesign.png[]
+image::../../../../../images/ADF_IngestPipelineDesign.png[]
 
-=== Configuration
+== Configuration
 
 The configuration files for the workload are
 stored in the pipeline's link:https://github.com/Ensono/stacks-azure-data/tree/main/de_workloads/ingest/ingest_azure_sql_example/config[**config**] directory.
@@ -61,11 +70,11 @@ the Data Factory pipeline.
 
 link:https://github.com/Ensono/stacks-azure-data/tree/main/de_workloads/ingest/ingest_azure_sql_example/tests/unit[Unit tests] are provided to ensure the config files remain valid against the schema.
 
-==== Query Generation
+=== Query Generation
 
 Values from the config will be used to generate the logic for extracting from the data source. For an Azure SQL data source, an SQL query would be generated for each ingest_entity as follows:
 
-===== Full Load
+==== Full Load
 
 [source,sql]
 ----
@@ -74,7 +83,7 @@ FROM {schema}.{table}
 ;
 ----
 
-===== Delta Load
+==== Delta Load
 
 NOTE: `run_window_start_date` and `run_window_end_date` are determined by the values passed at runtime, e.g. by the link:#data-factory-triggers[**tumbling window trigger**].
 
@@ -87,12 +96,12 @@ WHERE {delta_date_column} >= {run_window_start_date}
 ;
 ----
 
-==== Data Factory Pipeline Design
+== Data Factory Pipeline Design
 
 The provided sample pipelines give an example of a data ingest process from source to the data lake.
 The pipelines folder is structured as follows:
 
-image::../images/ADF_IngestPipelinesList.png[]
+image::../../../../../images/ADF_IngestPipelinesList.png[]
 
 - `Ingest` contains ingest pipelines specific to the given data source. The naming convention for
 these pipelines is `Ingest_{SourceType}_{SourceName}`. These are the parent pipelines that would be
@@ -104,7 +113,7 @@ meant to be triggered independently. These are defined within the link:https://g
 
 The `Ingest_AzureSql_Example` pipeline consists of the following steps:
 
-image::../images/ADF_Ingest_AzureSql_Example.png[]
+image::../../../../../images/ADF_Ingest_AzureSql_Example.png[]
 
 . `Get_Ingest_Config`: Calls the utility pipeline, passing the data source name as a parameter.
     This will return the configuration required for the given data source.
@@ -120,9 +129,9 @@ image::../images/ADF_Ingest_AzureSql_Example.png[]
 
 The following picture shows the two possibilities of full vs delta extraction in `Generate_Ingest_Query`:
 
-image::../images/ADF_IngestGenerateIngestQuery.png[]
+image::../../../../../images/ADF_IngestGenerateIngestQuery.png[]
 
-==== Data Factory Triggers
+=== Data Factory Triggers
 
 An example Data Factory pipeline trigger is provided and associated to the ingest pipeline. Triggers can be viewed in the Data Factory UI through `Manage` > `Triggers`.
 

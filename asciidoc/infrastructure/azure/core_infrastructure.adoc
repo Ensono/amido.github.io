@@ -1,4 +1,17 @@
-= Azure Core Infrastructure
+---
+id: core_infrastructure
+title: Azure Core Infrastructure
+linkTitle: Core Infrastructure
+weight: 1
+keywords:
+  - azure devops
+  - scaffolding cli
+  - workload
+  - pipeline
+  - pipeline template
+  - resources
+---
+
 :imagesdir: ../../../static/img
 
 The core infrastructure is the foundation for all other Ensono Stacks Workloads. As, in most cases, this will be the first part of Ensono Stacks that you deploy we will also cover bootstrapping your Azure tenant.
@@ -9,7 +22,7 @@ Both the diagram and resource list below are for a single environment. By defaul
 
 === Diagram
 
-image::azure_core_infrastructure.png[]
+image::../../images/azure_core_infrastructure.png[]
 
 === Resource List
 

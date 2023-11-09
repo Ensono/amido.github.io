@@ -1,5 +1,16 @@
-= PySpark utilities
-:keywords: pyspark, spark, pyspark, python, etl
+---
+id: pyspark_utilities
+title: PySpark utilities
+linkTitle: PySpark utilities
+weight: 6
+keywords:
+  - pyspark
+  - spark
+  - pyspark
+  - python
+  - etl
+---
+
 
 The link:datastacks.adoc[**Datastacks**] Python library contains utilities built to streamline data processing workflows with Apache Spark and is an integral part of data workloads in Ensono Stacks.
 

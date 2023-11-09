@@ -1,4 +1,21 @@
-= Operations, Events, Exceptions, and Correlation
+---
+id: operations_events_exceptions_correlation_netcore
+title: Operations, Events, Exceptions and Correlation
+linkTitle: Operations, Events, Exceptions and Correlation
+weight: 5
+keywords:
+  - .net core
+  - rest api
+  - cqrs
+  - example 
+  - template 
+  - repository
+  - structure
+  - operations
+  - events
+  - exceptions 
+  - correlation
+---
 
 This document aims to clarify concepts implemented in the platform to facilitate the monitoring and management of services deployed on the platform. The entire platform provides monitoring data via logs and metrics to monitoring tools and requires a consistent approach across services to simplify building dashboards, report generation, and alert configuration. A clear understanding of these concepts is crucial to make the platform consistent and easy to maintain.
 

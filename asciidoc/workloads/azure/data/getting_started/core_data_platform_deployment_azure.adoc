@@ -1,6 +1,16 @@
-= Infrastructure Deployment
-:description: Infrastructure deployment
-:keywords: stacks cli, ensono, data, infrastructure, azure, template
+---
+id: core_data_platform_deployment_azure
+title: Infrastructure Deployment
+linkTitle: 2. Infrastructure Deployment
+weight: 4
+keywords:
+  - stacks cli
+  - ensono
+  - data
+  - infrastructure
+  - azure
+  - template
+---
 
 This section provides an overview of generating a new Data Platform project and deploying core infrastructure for Ensono Stacks Data Platform.
 

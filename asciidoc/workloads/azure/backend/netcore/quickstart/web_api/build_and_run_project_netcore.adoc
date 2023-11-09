@@ -1,6 +1,17 @@
-= Build & Run REST API
-:description: Build and Run .NET Core REST API application
-:keywords: .net core, rest api, azure, application insights, build, run, application
+---
+id: build_and_run_project_netcore
+title: Build & Run REST API
+linkTitle: Build & Run REST API
+weight: 2
+keywords:
+  - .net core
+  - rest api
+  - azure
+  - application insights
+  - build
+  - run
+  - application
+---
 
 == Build and Run the application
 

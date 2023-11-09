@@ -1,6 +1,13 @@
-= Security
-:description: Security
-:keywords: security, service principal, managed identity
+---
+id: security_data_azure
+title: Security
+linkTitle: Security
+weight: 3
+keywords:
+  - security
+  - service principal
+  - managed identity
+---
 
 In Ensono Stacks Azure Data Platform all resources are created using the application-type Azure AD service
 principal. Credentials for the service principal are stored in Azure Pipelines variable groups.

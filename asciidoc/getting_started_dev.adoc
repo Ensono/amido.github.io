@@ -1,3 +1,10 @@
+// ---
+// id: getting-started-dev
+// title: Using the repo to build the Node.js application
+// description: Using the repo to build the Node.js application
+// weight: 3
+// ---
+
 = Dev [Node.js] - Using the repo to build the Node.js application
 
 == Getting started

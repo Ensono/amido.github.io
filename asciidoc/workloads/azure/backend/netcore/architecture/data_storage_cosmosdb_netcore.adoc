@@ -1,4 +1,28 @@
-= Data Storage - CosmosDB
+---
+id: data_storage_cosmosdb_netcore
+title: Data Storage - CosmosDB
+linkTitle: Data Storage - CosmosDB
+weight: 4
+keywords:
+  - .net core
+  - rest api
+  - cqrs
+  - template 
+  - cosmos 
+  - cosmosdb 
+  - data storage 
+  - azure 
+  - storage 
+  - configuration 
+  - cosmosdbkey
+  - documentsearch
+  - sql
+  - api
+  - repository
+  - cosmosdb package
+  - dependency injection
+  - stacks
+---
 
 == Summary
 
