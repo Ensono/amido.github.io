@@ -14,7 +14,7 @@ keywords:
   - template
 ---
 
-This section provides an overview of generating a new Data Platform project and deploying core infrastructure for Ensono Stacks Data Platform.
+This section provides an overview of configuring and deploying the core data platform infrastructure in Azure.
 
 It assumes you have [generated a new data project using Ensono Stacks](./generate_project.md), and that the following [requirements](./requirements_data_azure.md) are in place:
 
@@ -68,4 +68,4 @@ Once core infrastructure resources are deployed in prod environment, values will
 
 ## Next steps
 
-Now you have generated and deployed a new Ensono Stacks data platform, [setup your local development environment](./dev_quickstart_data_azure.md).
+Now you have generated and deployed a new Ensono Stacks Data Platform, [setup your local development environment](./dev_quickstart_data_azure.md).

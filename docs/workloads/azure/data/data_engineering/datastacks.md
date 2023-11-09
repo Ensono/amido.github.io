@@ -1,10 +1,10 @@
 ---
 id: datastacks
-title: Datastacks overview
-sidebar_label: Datastacks
+title: Datastacks CLI
+sidebar_label: Datastacks CLI
 hide_title: false
 hide_table_of_contents: false
-description: Overview of the Datastacks utility
+description: Overview of the Datastacks CLI utility
 keywords:
   - data
   - python
@@ -14,14 +14,10 @@ keywords:
   - template
 ---
 
-Datastacks provides a suite of utilities built to accelerate development within an Ensono Stacks Data Platform, supporting common tasks such as generating new data engineering workloads and running Spark jobs. Datastacks consists of:
+The Datastacks CLI is a command-line interface for data engineers, built upon the [Stacks Data Python library](./stacks_data_utilities.md). It's features include:
 
-- [Datastacks CLI](#using-the-datastacks-cli) - A command-line interface for data engineers, enabling interaction with Datastacks' various functions.
-- [Data workload generation](#generating-data-workloads) - Generate new data workloads based upon common templates.
-- [PySpark utilities](./pyspark_utilities.md) - A suite of reusable utilities to simplify development of data pipelines using Apache Spark and Python.
-- [Data quality utilities](./data_quality_azure.md) - Utilities to support the data quality framework implemented in Stacks.
-- Azure utilities - Utilities to support common interactions with Azure resources from data workloads.
-- Behave utilities - Common scenarios and setup used by [Behave end-to-end tests](./testing_data_azure.md#end-to-end-tests).
+- [Data workload generation](#generating-data-workloads) - Generate new data engineering workloads based upon common templates.
+- [Data quality checks](./data_quality_azure.md#interactive-usage) - Interactively run data quality checks over a data source.
 
 ## Using the Datastacks CLI
 
@@ -38,7 +34,7 @@ poetry run datastacks --help
 
 ## Generating data workloads
 
-Datastacks can be used to generate all the resources required for a new data engineering workload - for example a [data ingest](./ingest_data_azure.md) or [data processing](./data_processing.md) pipeline. This will create all resources required for the workload, based upon templates (held within [datastacks.generate.templates](https://github.com/ensono/stacks-azure-data/tree/main/datastacks/datastacks/generate/templates)).
+Datastacks can be used to generate all the resources required for a new data engineering workload - for example a [data ingest](./ingest_data_azure.md) or [data processing](./data_processing.md) pipeline. This will create all resources required for the workload, based upon templates.
 
 The [deployment architecture](../architecture/architecture_data_azure.md#data-engineering-workloads) section shows the workflow for using Datastacks to generate a new workload.
 The [getting started](../getting_started/getting_started.md) section includes step-by-step instructions on deploying a new ingest or processing workload using Datastacks.
@@ -70,7 +66,7 @@ datastacks generate processing --config="de_workloads/generate_examples/test_con
 
 ### Configuration
 
-In order to generate a new data engineering workload the Datastacks CLI takes a path to a config file. This config file should be YAML format, and contain configuration values as specified in the table below. Sample config files are included in the [de_workloads/generate_examples](https://github.com/ensono/stacks-azure-data/tree/main/de_workloads/generate_examples) folder. The structure of config is validated using Pydantic.
+In order to generate a new data engineering workload the Datastacks CLI takes a path to a config file. This config file should be YAML format, and contain configuration values as specified in the table below. Sample config files are included in the [de_workloads/generate_examples](https://github.com/ensono/stacks-azure-data/tree/main/de_workloads/generate_examples) folder.
 
 #### All workloads
 
@@ -80,6 +76,7 @@ In order to generate a new data engineering workload the Datastacks CLI takes a 
 | ado_variable_groups_nonprod | List of required variable groups in non-production environment. | Yes | List[String] | _n/a_ | - amido-stacks-de-pipeline-nonprod<br />- stacks-credentials-nonprod-kv |
 | ado_variable_groups_prod | List of required variable groups in production environment. | Yes | List[String] | _n/a_ | - amido-stacks-de-pipeline-prod<br />- stacks-credentials-prod-kv |
 | default_arm_deployment_mode | Deployment mode for terraform. | No | String | "Incremental" | Incremental |
+| stacks_data_package_version | Version of the [stacks-data](./stacks_data_utilities.md) Python package in PyPi to install on the job cluster. | No | String (SemVer pattern) | _Latest available package at the time of generation_ | 0.1.2 |
 
 #### Ingest workloads
 

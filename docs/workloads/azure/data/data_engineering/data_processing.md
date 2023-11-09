@@ -23,7 +23,7 @@ Data processing workloads are based upon running Apache Spark / Python jobs on D
 - Bronze to Silver
 - Silver to Gold
 
-Processing workloads will utilise [Datastacks' PySpark utilities](./pyspark_utilities.md), to support and standardise common tasks. Similar to ingest workloads, data processing workloads can also optionally include a [Data Quality validations](./data_quality_azure.md) step.
+Processing workloads will utilise the [Stacks Data Python library](./stacks_data_utilities.md) to support and standardise common tasks. Similar to ingest workloads, data processing workloads can also optionally include a [data quality validations](./data_quality_azure.md) step.
 
 The following example data processing workloads are included for reference:
 
@@ -38,7 +38,7 @@ The diagram below gives an example of a data processing data pipeline in Data Fa
 
 ![ADF_SilverGoldPipelineDesign.png](../images/ADF_SilverGoldPipelineDesign.png)
 
-The Python PySpark script executed as part of a data workload is kept inside the `spark_jobs` directory for the workload. This job will utilise the [Datastacks library](./datastacks.md), which provides a wealth of reusable utilities to assist with data transformations and loading data from/into to the data lake.
+The Python PySpark script executed is defined in `spark_jobs/process.py` within the workload's directory. This job will utilise the [Stacks Data library](./stacks_data_utilities.md), which provides a wealth of reusable utilities to assist with data transformations and loading data from/into to the data lake. The script gets uploaded to DBFS (`dbfs:/FileStore/scripts/pipeline_name/process.py`) as part of the deployment pipeline, so it is accessible to Databricks.
 
 ### Data Factory pipeline design
 
@@ -46,12 +46,17 @@ Within Data Factory, the processing pipelines are kept within the `Process` fold
 
 ![ADF_SilverPipelinesList.png](../images/ADF_SilverPipelinesList.png)
 
-In Data Factory a data processing pipeline can be as simple as this example:
+An example pipeline is shown below:
 
 ![ADF_Silver.png](../images/ADF_silver.png)
 
-It contains just one step - Python Databricks, configured to run a `silver.py` script, which gets deployed to DBFS
-(`dbfs:/FileStore/scripts/silver/silver.py`). The Datastacks package and library is deployed to DBFS, and made available to the cluster.
+The pipeline contains a Python Databricks activity which runs the `process.py` file. The [stacks-data library](./stacks_data_utilities.md) is installed on the cluster via PyPi.
+
+:::tip
+
+It is recommended that specific versions of packages are defined in the Databricks Library configuration (e.g. `stacks-data==0.1.2`) to ensure a reproducible environment for running jobs. This is the default approach when generating workloads using [Datastacks CLI](./datastacks.md). If the version is omitted (e.g. `stacks-data`), then Databricks will use the latest available version - however this is not recommended.
+
+:::
 
 ### Passing parameters from Data Factory
 
@@ -59,10 +64,10 @@ You may pass parameters from Data Factory to the Python job executed in Databric
 
 ![adf-databricks-parameters.png](../images/adf-databricks-parameters.png)
 
-These parameters can then be accessed from the Python file, by using the `get_data_factory_param` Datastacks function - for example the below could be used to access the first parameter shown above:
+These parameters can then be accessed from the Python file, by using the `get_data_factory_param` function - for example the below could be used to access the first parameter shown above:
 
 ```python
-from datastacks.pyspark.etl import get_data_factory_param
+from stacks.data.pyspark.etl import get_data_factory_param
 
 run_id = get_data_factory_param(1, "default_run_id")
 ```

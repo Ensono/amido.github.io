@@ -1,7 +1,7 @@
 ---
 id: ingest_pipeline_deployment_azure
 title: Data Ingest Pipeline Deployment
-sidebar_label: 7. Data Ingest Pipeline Deployment
+sidebar_label: 6. Data Ingest Pipeline Deployment
 hide_title: false
 hide_table_of_contents: false
 description: Data ingest pipelines development & deployment
@@ -19,10 +19,9 @@ This section provides an overview of generating a new [data ingest pipeline](../
 
 This guide assumes the following are in place:
 
-- A [deployed Ensono Stacks data platform](./core_data_platform_deployment_azure.md)
+- A [deployed Ensono Stacks Data Platform](./core_data_platform_deployment_azure.md)
 - [Development environment set up](./dev_quickstart_data_azure.md)
 - [Deployed shared resources](./shared_resources_deployment_azure.md)
-- [Deployed Datastacks](./datastacks_deployment_azure.md)
 - A data source to ingest from. The steps below are based on using the [Azure SQL example data source](example_data_source.md)
 
 This process will deploy the following resources into the project:
@@ -107,10 +106,10 @@ Use the [Datastacks CLI](../data_engineering/datastacks.md#using-the-datastacks-
 # Activate virtual environment
 poetry shell
 
-# Generate resources for an ingest pipeline (without Data Quality steps)
+# Generate resources for an ingest pipeline (without data quality steps)
 datastacks generate ingest --config="path_to_config_file/my_config.yaml"
 
-# Generate resources for an ingest pipeline (with added Data Quality steps)
+# Generate resources for an ingest pipeline (with added data quality steps)
 datastacks generate ingest --config="path_to_config_file/my_config.yaml" --data-quality
 ```
 

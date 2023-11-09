@@ -1,7 +1,7 @@
 ---
 id: fabric_deployment_guide
 title: Fabric Lakehouse Deployment
-sidebar_label: 9. Fabric Lakehouse Deployment
+sidebar_label: 8. Fabric Lakehouse Deployment
 hide_title: false
 hide_table_of_contents: false
 description: Deployment of Microsoft Fabric Lakehouse through Azure Portal
@@ -13,9 +13,9 @@ keywords:
   - fabric
 ---
 
-Microsoft Fabric can be used to implement a [lakehouse](../data_engineering/data_engineering_intro_azure.md#lakehouse-approach) layer over a Stacks data platform, giving full analytics capabilities over the data lake, and native integrations with tools such as Power BI.
+Microsoft Fabric can be used to implement a [lakehouse](../data_engineering/data_engineering_intro_azure.md#lakehouse-approach) layer over an Ensono Stacks Data Platform, giving full analytics capabilities over the data lake, and native integrations with tools such as Power BI.
 
-This section provides step-by-step instructions on deploying a Fabric workspace, and setting up a lakehouse over your data lake. It assumes you have deployed a Stacks data platform, and have loaded data into the [bronze layer](./ingest_pipeline_deployment_azure.md) and [silver / gold layers](./processing_pipeline_deployment_azure.md) of the data lake.
+This section provides step-by-step instructions on deploying a Fabric workspace, and setting up a lakehouse over your data lake. It assumes you have deployed an Ensono Stacks Data Platform, and have loaded data into the [bronze layer](./ingest_pipeline_deployment_azure.md) and [silver / gold layers](./processing_pipeline_deployment_azure.md) of the data lake.
 
 :::note Fabric Preview
 

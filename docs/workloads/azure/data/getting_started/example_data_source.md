@@ -1,7 +1,7 @@
 ---
 id: example_data_source
 title: Example Data Source
-sidebar_label: 6. Example Data Source
+sidebar_label: 5. Example Data Source
 hide_title: false
 hide_table_of_contents: false
 description: Setting up and using the example data source
@@ -12,10 +12,20 @@ keywords:
   - testing
 ---
 
-When deploying a Ensono Stacks data platform, you may optionally include an Azure SQL database. This database is intended to be used for experimenting and testing ingest processes with the Ensono Stacks data platform. The database will be deployed into the same resource groups as the core data platform resources, named for example:
+When deploying an Ensono Stacks Data Platform, an Azure SQL database will be deployed. This database is intended to be used for experimenting and testing ingest processes within the platform. The database will be deployed into the same resource groups as the core data platform resources, named for example:
 
 * **SQL server name:** amidostacksdeveuwdesql.database.windows.net
 * **SQL database name:** sqldbtest
+
+:::note Accessing the Azure SQL database
+
+When the sample Azure SQL database is deployed, by default it will create an admin user (`mssqladmin`). A password for this user will be randomly generated and added to key vault secrets under `sql-password`.
+
+By default the SQL server and database will not be accessible outside of the virtual network into which the data platform has been deployed. If you wish to access the SQL server from another network (for example when testing in a non-sensitive environment) you may do this by adding a firewall rule - see [Azure SQL firewall documentation](https://learn.microsoft.com/en-us/azure/azure-sql/database/firewall-configure?view=azuresql#create-and-manage-ip-firewall-rules).
+
+If using the database for anything more than local testing, it is recommended that you configure the database with additional users with more restrictive access.
+
+:::
 
 ## Example dataset
 
