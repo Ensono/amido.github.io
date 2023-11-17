@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkstacks=self.webpackChunkstacks||[]).push([[2535],{5641:function(s){s.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"Ensono Stacks Blog","permalink":"/blog/"}]}')}}]);
