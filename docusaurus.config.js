@@ -85,11 +85,6 @@ const config = {
           label: "GitHub",
         },
         {
-          href: "blog/",
-          activeBasePath: "blog",
-          label: "Blog",
-        },
-        {
           href: "https://www.ensono.com/company/lets-connect/",
           label: "Connect",
           position: 'right'
