@@ -147,7 +147,7 @@ Next, copy the following within the `etl_main` function in `process.py`, replaci
 
     tables = [
         TableTransformation("links", rename_columns_to_snake_case),
-        TableTransformation("ratings_small", rename_columns_to_snake_case)
+        TableTransformation("ratings_small", rename_columns_to_snake_case),
     ]
 
     for table in tables:
