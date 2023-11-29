@@ -155,9 +155,31 @@ Configuration of the data that the workload will ingest from the source is speci
             "schema": "movies",
             "table": "ratings_small",
             "columns": "[userId], [movieId], [rating], [timestamp]",
-            "load_type": "delta",
-            "delta_date_column": "DATEADD(SECOND,[timestamp],'1970-01-01')",
-            "delta_upsert_key": "[userId], [movieId]"
+            "load_type": "full",
+            "delta_date_column": null,
+            "delta_upsert_key": null
+        },
+        {
+            "version": 1,
+            "display_name": "movies.keywords",
+            "enabled": true,
+            "schema": "movies",
+            "table": "keywords",
+            "columns": "[id], [keywords]",
+            "load_type": "full",
+            "delta_date_column": null,
+            "delta_upsert_key": null
+        },
+        {
+            "version": 1,
+            "display_name": "movies.links",
+            "enabled": true,
+            "schema": "movies",
+            "table": "links",
+            "columns": "[movieId], [imdbId], [tmdbId]",
+            "load_type": "full",
+            "delta_date_column": null,
+            "delta_upsert_key": null
         }
     ]
 }
