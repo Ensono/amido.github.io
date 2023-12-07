@@ -98,6 +98,7 @@ Within the generated workload, the following Python file will be used as the ent
 ```python
 import logging
 from stacks.data.logger import setup_logger
+from stacks.data.pyspark.etl import EtlSession
 
 WORKLOAD_NAME = "processing_demo"
 
@@ -108,6 +109,10 @@ logger = logging.getLogger(logger_library)
 def etl_main() -> None:
     """Execute data processing and transformation jobs."""
     logger.info(f"Running {WORKLOAD_NAME} processing...")
+
+    etl_session = EtlSession(WORKLOAD_NAME)
+    spark_session = etl_session.spark_session
+    adls_client = etl_session.adls_client
 
     #######################
     # Add processing here #
@@ -143,8 +148,6 @@ OUTPUT_PATH_PATTERN = "movies/{table_name}"
 Next, copy the following within the `etl_main` function in `process.py`, replacing the ` # Add processing here #` comment:
 
 ```python
-    spark = get_spark_session_for_adls(WORKLOAD_NAME)
-
     tables = [
         TableTransformation("links", rename_columns_to_snake_case),
         TableTransformation("ratings_small", rename_columns_to_snake_case),
@@ -152,7 +155,8 @@ Next, copy the following within the `etl_main` function in `process.py`, replaci
 
     for table in tables:
         df = read_latest_rundate_data(
-            spark,
+            spark_session,
+            adls_client,
             BRONZE_CONTAINER,
             INPUT_PATH_PATTERN.format(table_name=table.table_name),
             datasource_type=SOURCE_DATA_TYPE,
@@ -160,7 +164,10 @@ Next, copy the following within the `etl_main` function in `process.py`, replaci
 
         output_path = OUTPUT_PATH_PATTERN.format(table_name=table.table_name)
 
-        transform_and_save_as_delta(spark, df, table.transformation_function, SILVER_CONTAINER, output_path)
+        transform_and_save_as_delta(
+            spark_session, adls_client, df, table.transformation_function, SILVER_CONTAINER, output_path
+        )
+
 ```
 
 The processing script is now prepared to perform the following steps:

@@ -37,16 +37,7 @@ poetry shell
 
 ### (Optional) Azure connection
 
-In order to interact with Azure resources when developing, including running end-to-end tests, you must:
-
-1. [Sign in to the Azure CLI](https://learn.microsoft.com/en-us/cli/azure/authenticate-azure-cli)
-2. Set the following environment variables:
-    - `AZURE_SUBSCRIPTION_ID`
-    - `AZURE_RESOURCE_GROUP_NAME`
-    - `AZURE_DATA_FACTORY_NAME`
-    - `AZURE_REGION_NAME`
-    - `AZURE_STORAGE_ACCOUNT_NAME`
-    - `AZURE_CONFIG_ACCOUNT_NAME`
+In order to interact with Azure resources when developing locally, including running end-to-end tests, you must [set up the environment variables](../data_engineering/stacks_data_utilities.md#azure-environment-variables) required by stacks-data.
 
 ## Running tests
 
@@ -99,8 +90,15 @@ When developing with PySpark, you may wish to either:
 To run scripts within a Databricks cluster, you will need to:
 
 - Ensure the [stacks-data library](../data_engineering/stacks_data_utilities.md) is installed on the cluster.
-- Add the additional [Azure environment variables](../data_engineering/stacks_data_utilities.md#azure-environment-variables) - the values can be set as per the Data Factory linked service (see [adf_linked_services.tf](https://github.com/Ensono/stacks-azure-data/blob/main/de_workloads/shared_resources/data_factory/adf_linked_services.tf)).
-- Ensure the user has appropriate permissions for Azure resources required.
+- Add the [environment variables](../data_engineering/stacks_data_utilities.md#azure-environment-variables) required for running Spark jobs. These should match those used in the [Data Factory linked service](https://github.com/Ensono/stacks-azure-data/blob/main/de_workloads/shared_resources/data_factory/adf_linked_services.tf), and reference secret values from the key vault where applicable, e.g.:
+
+```bash
+AZURE_TENANT_ID={{secrets/key-vault-backed/azure-tenant-id}}
+AZURE_CLIENT_ID={{secrets/key-vault-backed/azure-client-id}}
+AZURE_CLIENT_SECRET={{secrets/key-vault-backed/service-principal-secret}}
+ADLS_ACCOUNT=amidostacksdeveuwdeadls
+CONFIG_BLOB_ACCOUNT=amidostacksdeveuwdeconfi
+```
 
 ## Azure Data Factory Development
 
