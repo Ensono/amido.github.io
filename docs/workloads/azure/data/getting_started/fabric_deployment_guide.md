@@ -13,15 +13,13 @@ keywords:
   - fabric
 ---
 
-Microsoft Fabric can be used to implement a [lakehouse](../data_engineering/data_engineering_intro_azure.md#lakehouse-approach) layer over an Ensono Stacks Data Platform, giving full analytics capabilities over the data lake, and native integrations with tools such as Power BI.
+[Microsoft Fabric](https://learn.microsoft.com/en-us/fabric/) can be used to implement a [lakehouse](../data_engineering/data_engineering_intro_azure.md#lakehouse-approach) layer over an Ensono Stacks Data Platform, giving full analytics capabilities over the data lake, and native integrations with tools such as Power BI.
 
 This section provides step-by-step instructions on deploying a Fabric workspace, and setting up a lakehouse over your data lake. It assumes you have deployed an Ensono Stacks Data Platform, and have loaded data into the [bronze layer](./ingest_pipeline_deployment_azure.md) and [silver / gold layers](./processing_pipeline_deployment_azure.md) of the data lake.
 
-:::note Fabric Preview
+:::note Fabric networking
 
-At the time of writing, Fabric is in [public preview](https://learn.microsoft.com/en-us/fabric/get-started/preview).
-
-Some features are not currently supported, for example connecting to data lake storage behind a firewall or virtual network (which is the recommended approach in Ensono Stacks). Once additional key features such as this become available, this documentation will be updated and closer integrations with Ensono Stacks can be implemented.
+At the time of writing, some networking capabilities are not currently supported in Fabric - for example connecting to data lake storage behind a firewall or virtual network (which is the recommended approach in Ensono Stacks). Once additional key features such as this become available, this documentation will be updated and closer integrations with Ensono Stacks can be implemented.
 
 Please refer to [Microsoft documentation](https://learn.microsoft.com/en-us/fabric/) for the latest updates on Fabric and full documentation.
 
@@ -33,7 +31,7 @@ The first step in setting up a Fabric Workspace is provisioning a capacity resou
 
 To setup a capacity resource in the Azure portal:
 
-1. Login to Azure portal, search for __Microsft Fabric (preview)__ and select __Create__.
+1. Login to Azure portal, search for __Microsft Fabric__ and select __Create__.
 2. Create a Fabric capacity:
    1. Select the subscription and resource group for the Fabric capacity.
    1. Enter a name to identify the capacity resource (this is displayed in the Microsoft Fabric admin portal and Azure portal). The name must be unique in the selected location.
@@ -57,7 +55,7 @@ Workspaces are places to collaborate with colleagues to create collections of it
 
 We will be creating a [Fabric Lakehouse](https://learn.microsoft.com/en-us/fabric/data-engineering/lakehouse-overview) to access the data in our data lake. To create the lakehouse:
 
-- Within the newly created workspace, select __New Lakehouse (Preview)__ and enter a name for the lakehouse.
+- Within the newly created workspace, select __New Lakehouse__ and enter a name for the lakehouse.
 
 ![Ensono Stacks Fabric new lakehouse](../images/fabric_new_lakehouse.png)
 
