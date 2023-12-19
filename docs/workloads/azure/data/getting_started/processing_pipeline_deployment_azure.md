@@ -132,7 +132,6 @@ For the getting started guide, we have provided a simple example - you may exten
 ```python
 from stacks.data.pyspark.etl import (
     TableTransformation,
-    get_spark_session_for_adls,
     read_latest_rundate_data,
     transform_and_save_as_delta,
 )
