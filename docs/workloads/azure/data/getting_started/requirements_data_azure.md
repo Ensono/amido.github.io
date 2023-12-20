@@ -17,7 +17,7 @@ The following tools are recommended for developing while using the Ensono Stacks
 | ----- | ----- |
 | [Python 3.9+](https://www.python.org/downloads/) | Use of Python 3.12+ is not currently supported. You may wish to use a utility such as [pyenv](https://pypi.org/project/pyenv/) to manage your local versions of Python. |
 | [Poetry](https://python-poetry.org/docs/) | Used for Python dependency management in Stacks. |
-| A Linux distribution, e.g. [WSL2](https://docs.microsoft.com/en-us/windows/wsl/install) | Optional: recommended for Windows users developing the solution. |
+| (Windows users) a Linux distribution, e.g. [WSL](https://docs.microsoft.com/en-us/windows/wsl/install) | A Unix-based environment is recommended for developing the solution (e.g. macOS, or WSL for Windows users). |
 | Java 8/11/17 | Optional: Java is required to develop and run tests using PySpark locally - see [Spark documentation](https://spark.apache.org/docs/latest/). |
 | [Azure CLI](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli) | Optional: Azure CLI allows you to interact with Azure resources locally, including running end-to-end tests. |
 
