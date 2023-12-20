@@ -32,8 +32,7 @@ git checkout -b feat/infra-pipeline
 
 The file `deploy/azure/infra/vars.tf` contains a variable `enable_private_networks`:
 
-* If you want to provision infrastructure within a [private network](../architecture/infrastructure_data_azure#networking), ensure this variable is set to `true`.
-* If you want to provision infrastructure with a default deployment model, ensure this variable is set to `false`.
+* If you want to provision infrastructure within a [private network](../architecture/infrastructure_data_azure#networking), ensure this variable is set to `true`. This is the approach currently supported by Ensono Stacks.
 
 ## Step 2: Add Infrastructure pipeline in Azure DevOps
 
