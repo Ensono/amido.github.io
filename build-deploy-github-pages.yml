@@ -55,3 +55,5 @@ steps:
     displayName: "Publish: GitHub Pages"
     workingDirectory: $(working_directory)
     condition: and(contains(variables['build.sourceBranch'], 'refs/heads/master'), succeeded())
+    env:
+      DEPLOYMENT_BRANCH: master
