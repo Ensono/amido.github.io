@@ -17,7 +17,7 @@ const config = {
   onBrokenLinks: "warn",
   favicon: "img/icons/favicon.ico",
   organizationName: "Ensono", // Usually your GitHub org/user name.
-  projectName: "Ensono Stacks", // Usually your repo name.
+  projectName: "amido.github.io", // Usually your repo name.
   customFields: {
     description: 'Ensono Stacks is a catalogue of workload templates that\n' +
         'instantly scaffold and deploy boilerplate software projects. Slash the time it takes to get productive on your software project.',
