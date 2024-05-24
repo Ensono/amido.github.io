@@ -24,7 +24,7 @@
     "@docsearch/react": "^3.5.2",
     "@docusaurus/core": "2.4.1",
     "@docusaurus/mdx-loader": "^2.4.1",
-    "@docusaurus/plugin-google-analytics": "^2.4.1",
+    "@docusaurus/plugin-google-analytics": "^2.4.3",
     "@docusaurus/plugin-google-gtag": "2.4.1",
     "@docusaurus/plugin-sitemap": "2.4.1",
     "@docusaurus/preset-classic": "2.4.1",
