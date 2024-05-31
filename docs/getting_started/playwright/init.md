@@ -21,13 +21,13 @@ Upon calling the _init_ generator you will be presented with the following quest
 
 The following command line arguments are available:
 
-| Option                | Description                                                       | Type      | 
+| Option                | Description                                                       | Type      |
 | ---------------       | --------------------------------------------------------------    | ---       |
-| --project             | The name of the application to generate a test project for      | string   |  
+| --project             | The name of the application to generate a test project for      | string   |
 
 ### Generator Output
 
-The _init_ generator will create a new test project for your chosen application containing an example test and predefined configuration for the monorepo and the individual test projects. 
+The _init_ generator will create a new test project for your chosen application containing an example test and predefined configuration for the monorepo and the individual test projects.
 By default the _init_ generator will configure both a baseline playwright configuration and an individual project base playwright configuration.
 
 
@@ -42,7 +42,6 @@ By default the _init_ generator will configure both a baseline playwright config
 │   │   ├── tsconfig.e2e.json #E2E typscript config file
 │   │   ├── tsconfig.json #typscript config file
 │   │   ├── .eslintrc.json #Linting configuration for the e2e project
-└── playwright.config.base.ts
 ```
 
 :::note

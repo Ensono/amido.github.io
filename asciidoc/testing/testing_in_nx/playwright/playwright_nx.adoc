@@ -16,7 +16,7 @@ Playwright is a relatively new testing framework, which is developed and support
 
 == Getting Started
 
-Upon scaffolding your application with the playwright testing framework, you will be presented with an example test suite and playwright configuration. The link:https://github.com/marksandspencer/nx-plugins/tree/main/packages/nx-playwright[@mands/nx-playwright] NX plugin is used as a base for the Playwright/NX integration.
+Upon scaffolding your application with the playwright testing framework, you will be presented with an example test suite and playwright configuration. The link:https://nx.dev/nx-api/playwright/executors/playwright[@nx/ playwright] NX plugin is used as a base for the Playwright/NX integration.
 
 == Playwright Configuration
 
@@ -45,7 +45,7 @@ export const baseConfig: PlaywrightTestConfig = {
   /* Timeout for each test in ms */
   timeout: 30000,
   /* The output directory for files created during test execution. */
-  outputDir: outputFolderForProject, 
+  outputDir: outputFolderForProject,
   /* Reporter to use. */
   reporter: process.env.CI
     ? [

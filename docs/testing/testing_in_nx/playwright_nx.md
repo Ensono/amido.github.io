@@ -17,13 +17,13 @@ Playwright is a relatively new testing framework, which is developed and support
 
 ## Getting Started
 
-Upon scaffolding your application with the playwright testing framework, you will be presented with an example test suite and playwright configuration. The [`@mands/nx-playwright`](https://github.com/marksandspencer/nx-plugins/tree/main/packages/nx-playwright) NX plugin is used as a base for the Playwright/NX integration. 
+Upon scaffolding your application with the playwright testing framework, you will be presented with an example test suite and playwright configuration. The [`@nx/playwright`](https://nx.dev/nx-api/playwright/executors/playwright) NX plugin is used as a base for the Playwright/NX integration.
 
 ## Playwright Configuration
 
 ### Base configuration
 
-The base configuration has been created with CI in mind, meaning the default configuration (shared across all projects) considers requirements for reporting and pipeline efficiency out of the box! 
+The base configuration has been created with CI in mind, meaning the default configuration (shared across all projects) considers requirements for reporting and pipeline efficiency out of the box!
 
 ```typescript title="playwright.config.base.ts"
 import { PlaywrightTestConfig } from '@playwright/test';
@@ -44,7 +44,7 @@ export const baseConfig: PlaywrightTestConfig = {
   /* Timeout for each test in ms */
   timeout: 30000,
   /* The output directory for files created during test execution. */
-  outputDir: outputFolderForProject, 
+  outputDir: outputFolderForProject,
   /* Reporter to use. */
   reporter: process.env.CI
     ? [
@@ -61,7 +61,7 @@ export const baseConfig: PlaywrightTestConfig = {
 
 ### Project based configuration
 
-Individual project configuration has been created with our own recommendations to get the most out of playwright’s capabilities, targeting multiple browsers and devices. From this example, you can tailor it to suit your specific needs! See the [docs](https://playwright.dev/docs/test-configuration) for more information! 
+Individual project configuration has been created with our own recommendations to get the most out of playwright’s capabilities, targeting multiple browsers and devices. From this example, you can tailor it to suit your specific needs! See the [docs](https://playwright.dev/docs/test-configuration) for more information!
 
 ```typescript title="playwright.config.ts"
 import { type PlaywrightTestConfig, devices } from '@playwright/test';
@@ -201,7 +201,7 @@ test('App should be up and running @smoke-test', async ({ page }) => {
 });
 ```
 
-To run specific this specific test you can use the grep parameter alongside your run command, similarly, if multiple tests contain **@smoke-test** within their name, they will also be executed 
+To run specific this specific test you can use the grep parameter alongside your run command, similarly, if multiple tests contain **@smoke-test** within their name, they will also be executed
 
 ```bash
 nx e2e example-test-project-e2e --grep @smoke-test
@@ -213,7 +213,7 @@ nx e2e example-test-project-e2e --grep @smoke-test
 
 Playwright has many configuration options for test reporting which can be found in [the documentation](https://playwright.dev/docs/test-reporters).
 
-#### Locally 
+#### Locally
 
 Using the scaffolded [base configuration](#base-configuration) all test results will be output to the terminal using Playwrights **_list_** reporter, an example output can be seen below:
 
@@ -241,7 +241,7 @@ Done in 56.75s.
 
 One recommendation for running locally is to utilise HTML reports, a visual report on the status of all executed tests. When viewing HTML reports, all artefacts such as screenshots can be found in one place, alongside trace reports which are very useful in debugging tests post execution.
 
-To change the reporter being used locally you can amend the [`playwright.config.ts`](#project-based-configuration) or alternatively through the CLI. Through both options you can also enable the [trace viewer](https://playwright.dev/docs/trace-viewer-intro): 
+To change the reporter being used locally you can amend the [`playwright.config.ts`](#project-based-configuration) or alternatively through the CLI. Through both options you can also enable the [trace viewer](https://playwright.dev/docs/trace-viewer-intro):
 
 ```bash
 nx e2e next-js-app-e2e --reporter=html --trace on
@@ -269,7 +269,7 @@ When running in the CI three reporters are utilised:
 
 ![Azure Pipeline Test Results](/img/azure-test-pipeline-test-results.png)
 
-**Test artefacts:** To download the test artefacts captured by playwright select the _build_ job on the summary page, within the build log click on the 'artefact produced' link, from here you can then download the 'testresults' folder for the test run. 
+**Test artefacts:** To download the test artefacts captured by playwright select the _build_ job on the summary page, within the build log click on the 'artefact produced' link, from here you can then download the 'testresults' folder for the test run.
 
 ![Azure Pipeline Build log](/img/azure-test-pipeline-build-log.png)
 
