@@ -1,11 +1,11 @@
-=== @mands/nx-playwright:playwright-executor
+=== @nx/playwright:playwright
 
 .Enables you to execute your playwright tests
 [%collapsible]
 =====
 [.details]
 ====
-The _playwright-executor_ executor is a third-party executor provided by @mands and enables you to run your e2e tests.
+The _playwright_ executor is an executor provided by NX and enables you to run your e2e tests.
 ====
 
 [discrete]
@@ -20,5 +20,5 @@ nx e2e <app-name>-e2e
 [discrete]
 == Command line arguments
 
-See the link:https://github.com/marksandspencer/nx-plugins/tree/main/packages/nx-playwright#execution-flags[@mands/nx-playwright] plugin page for a list of up-to-date command-line arguments
+See the link:https://nx.dev/nx-api/playwright/executors/playwright[@nx/playwright] plugin page for a list of up-to-date command-line arguments
 =====
