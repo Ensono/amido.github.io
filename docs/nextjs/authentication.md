@@ -22,8 +22,8 @@ Ensono Stacks is currently leveraging the v5 beta builds for Auth.js, to leverag
 
 ## Authentication
 
-Auth.js allows supports a variety of custom authentication providers, making it fairly trivial to support any compliant OAuth2 or OpenID provider.
-Ensono Stacks continues to add full support for industry leading providers that have a proven track record and comply with Ensono's internal audits.
+Auth.js supports a wide variety of custom authentication providers, making it easy to intergrate with any compliant OAuth2 or OpenID provider.
+Ensono Stacks continually adds full support for industry leading providers that have a proven track record and meet Ensono's internal audit standards.
 
 The current list of supported providers:
 
@@ -40,9 +40,9 @@ Ensono Stacks supports Refresh token rotation for any compliant OAuth2 or OpenID
 
 Auth.js has two different strategies for holding session management, cookie based or database.
 
-### Cookie Based Sessions
+### Cookie-Based Sessions
 
-Cookie based sessions allows you get started quickly without the need for additional infrastructure. All session data is stored within an encrypted cookie as a secure JWT (JSON Web Token).
+Cookie-based sessions enables a quick start without the need for additional infrastructure. All session data is stored within an encrypted cookie as a secure JWT (JSON Web Token).
 
 :::caution
 
@@ -50,17 +50,17 @@ Browsers impose a max cookie size limit of 4096 bytes. We recommend you also con
 
 :::
 
-### Database Based Sessions (Redis)
+### Database-Based Sessions (Redis)
 
-Auth.js allows for adapters which can handoff account, user and session data to a database. A Session cookie is on the user's device links the relevant data and is composed on the server back to Next.js.
+Auth.js supports adapters that transfer account, user and session data to a database. A Session cookie on the user's device links the relevant data and is composed on the server and sent back to the client.
 
-Ensono Stacks has support for Redis as a session storage, as it is proven to be a fast in-memory cache solution. Which is essential when data fetching is almost always required for each request.
+Ensono Stacks supports Redis for session storage, as it is proven, fast in-memory cache solution, essential for efficient data fetching on each request.
 
 ## Guest Sessions
 
-By default Auth.js does not yet provide Guest or Anonymous Sessions, however Ensono Stacks offers a configuration to enable this behaviour, with full support of your chosen Session Storage.
+While Auth.js does not natively support guest or anonymous sessions, Ensono Stacks provides a configuration to enable this feature with full support for your chosen session storage.
 
-By default, Guest user's will have a user role of "guest" allowing you to craft the necessary role based controls within Next.js.
+By default, guest users are assigned a “guest” user role, allowing you to implement necessary role-based controls within Next.js.
 
 A basic Guest Session Component is added to the `/src/components` directory in your Next.js application. Including this client component will initiate the guest session.
 
@@ -89,9 +89,9 @@ Cookie based sessions have limited functionality as all session data is stored o
 
 ## Middleware
 
-Auth.js provides Next.js middleware that is able to update session expiry with each matching request. Auth.js core is fully supported in edge runtime, so if you are using cookie based sessions you should have no issues leveraging this feature.
+Auth.js offers Next.js middleware capable of updating session expiry with each matching request. Auth.js core is fully supported in the edge runtime, so if you’re using cookie-based sessions, you should have no issues utilising this feature.
 
-Adapters, like our Redis implementation, are not supported in the Edge Runtime as it requires built-in modules that are not available. To read more on Auth.js' approach to Edge Runtime compatability, you can [read more here](https://authjs.dev/guides/edge-compatibility).
+However, adapters like our Redis implementation are not supported in the edge runtime due to the need for built-in modules that are unavailable. For more information on Auth.js’ approach to edge runtime compatibility, you can [read more here](https://authjs.dev/guides/edge-compatibility).
 
 To add Middleware to your Next.js application:
 
