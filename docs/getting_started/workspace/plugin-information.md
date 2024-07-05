@@ -12,8 +12,8 @@ keywords:
   - generator
   - executor
 ---
+
 import Init from './init.md'
-import InitDeployment from './init-deployment.md'
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -34,16 +34,16 @@ Install the `@ensono-stacks/workspace` with the following command:
  <Tabs>
   <TabItem value="npm" label="npm">
 
-  ```bash
-  npm install --save-dev @ensono-stacks/workspace@latest
-  ```
+```bash
+npm install --save-dev @ensono-stacks/workspace@latest
+```
 
   </TabItem>
   <TabItem value="yarn" label="yarn">
 
-  ```bash
-  yarn add --dev @ensono-stacks/workspace@latest
-  ```
+```bash
+yarn add --dev @ensono-stacks/workspace@latest
+```
 
   </TabItem>
  </Tabs>
@@ -65,6 +65,6 @@ nx g @ensono-stacks/workspace:[generator-executor-name] --help
 ```
 
 ### Generators
+
 <!-- markdownlint-disable MD033 -->
 <Init />
-<InitDeployment />
