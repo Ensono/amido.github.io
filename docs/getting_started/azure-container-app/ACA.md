@@ -65,7 +65,7 @@ Azure Container Apps consists of two primary components:
 # CICD Strategy
  
 The deployment strategy can be segmented into two parts:
-- Infrastructuure Deployment
+- Infrastructure Deployment
 - App Deployment
 
 ## Option 1 - Container App Enviornment and Container App deployment via Infrastructure pipeline
