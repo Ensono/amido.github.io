@@ -1,7 +1,7 @@
 ---
 id: authentication
 title: Authentication and Session Management
-sidebar_label: Authentication and Session Management
+sidebar_label: Overview
 description: Using Ensono Stacks with NextJs Authentication and Session Management
 keywords:
   - Nx

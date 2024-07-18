@@ -32,7 +32,14 @@ module.exports = {
       {
         type: "category",
         label: "Next.js",
-        items: ["module_federation/nextjs_plugin", "nextjs/authentication"],
+        items: [
+          "module_federation/nextjs_plugin",
+          {
+            type: "category",
+            label: "Authentication and Session Management",
+            items: ["nextjs/authentication", "nextjs/infrastructure"],
+          },
+        ],
       },
       "linting/eslint",
       "storybook/storybook_stacks",
