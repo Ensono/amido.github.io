@@ -169,7 +169,7 @@ This pre-built module will help reduce duplication and ease maintenance across m
 By leveraging this existing module in our recommended approach, we can achieve a more efficient and manageable deployment strategy for our Azure Container Apps while maintaining the flexibility to evolve both infrastructure and applications independently.
 
 
-# ACA vs AKS: A Comparative Analysis / How does ACA compare to AKS?
+# ACA vs AKS: A Comparative Analysis
 
 | Feature | Azure Kubernetes Service (AKS)<br>Infrastructure focus, higher flexibility | Azure Container Apps (ACA)<br>Application focus, infrastructure abstraction |
 |---------|-----------------------------------------------------------------------------------|----------------------------------------------------------------------------------|
