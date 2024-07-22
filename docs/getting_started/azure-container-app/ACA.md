@@ -11,8 +11,6 @@ keywords:
   - ensono
 ---
 
-# Azure Container Apps
-
 Azure Container Apps(ACA) is a fully managed serverless container service for building and deploying modern apps at scale - without managing infrastructure. It is builds on top of Kubernetes, offering a fully managed experience for deploying containerized applications without requiring direct access to Kubernetes APIs or cluster management.
 
 Common uses of Azure Container Apps include:
@@ -24,34 +22,34 @@ Common uses of Azure Container Apps include:
 
 ![aca-usecase.png](images/aca-usecase.png)
 
-# Azure Container Apps Components / Infrastucture Overview
+## Azure Container Apps Components / Infrastucture Overview
 
 Azure Container Apps consists of two primary components:
 
 - Container Apps Environment
 
-  - This component allows you to specify the infrastructure for deploying your container app.
-  - A secure boundary around one or more container apps and jobs.
-  - Defines shared settings for networking, logging, and other services.
+    - This component allows you to specify the infrastructure for deploying your container app.
+    - A secure boundary around one or more container apps and jobs.
+    - Defines shared settings for networking, logging, and other services.
 
 - Container App
 
-  - A Container App hosts a single, independent microservice and includes its desired state configuration.
-  - Utilizes containers from public registries (e.g., Docker Hub) or private registries (e.g., Azure Container Registry).
+    - A Container App hosts a single, independent microservice and includes its desired state configuration.
+    - Utilizes containers from public registries (e.g., Docker Hub) or private registries (e.g., Azure Container Registry).
 
 ![aca-components.png](images/aca-components.png)
 
 - More settings
 
-  - **Ingress**: Azure Container Apps supports both HTTP and HTTPS ingress. The ingress controls how external traffic reaches your container apps and allows you to configure custom domains, SSL/TLS certificates, authentication, and authorization.
-  - **Networking rules**: You can define networking rules to manage how your application communicates internally and with the outside world. This includes securing connections and integrating with private networks for enhanced security.
-  - **Persistent storage**: Azure Container Apps allows you to attach Azure Storage accounts as volumes in your containers, enabling your application to access persistent storage for data that needs to be preserved across container instances or revisions.
-  - **Secrets management**: If your application uses secrets, you can inject them into your containers either from Azure Key Vault or defined directly in the Container App settings. This ensures secure storage and access to sensitive information.
-  - **Managed identity**: You can assign a managed identity to your container app, allowing it to securely access other Azure services without the need for explicit credentials.
-  - **Logging and monitoring**: Azure Container Apps integrates with Azure Monitor for logging and monitoring. You can configure log collection and set up alerts to gain insights into your application's performance and health.
-  - **Health probes**: You can define liveness and readiness probes to monitor the health of your containers. These probes help ensure that your application is functioning correctly and can handle incoming requests.
+    - **Ingress**: Azure Container Apps supports both HTTP and HTTPS ingress. The ingress controls how external traffic reaches your container apps and allows you to configure custom domains, SSL/TLS certificates, authentication, and authorization.
+    - **Networking rules**: You can define networking rules to manage how your application communicates internally and with the outside world. This includes securing connections and integrating with private networks for enhanced security.
+    - **Persistent storage**: Azure Container Apps allows you to attach Azure Storage accounts as volumes in your containers, enabling your application to access persistent storage for data that needs to be preserved across container instances or revisions.
+    - **Secrets management**: If your application uses secrets, you can inject them into your containers either from Azure Key Vault or defined directly in the Container App settings. This ensures secure storage and access to sensitive information.
+    - **Managed identity**: You can assign a managed identity to your container app, allowing it to securely access other Azure services without the need for explicit credentials.
+    - **Logging and monitoring**: Azure Container Apps integrates with Azure Monitor for logging and monitoring. You can configure log collection and set up alerts to gain insights into your application's performance and health.
+    - **Health probes**: You can define liveness and readiness probes to monitor the health of your containers. These probes help ensure that your application is functioning correctly and can handle incoming requests.
 
-# Azure Container Options Comparison
+## Azure Container Options Comparison
 
 | Feature/Service       |           Azure Container Apps            |     Azure App Service     |     Azure Container Instances      |     Azure Kubernetes Service     |     Azure Functions     |
 | --------------------- | :---------------------------------------: | :-----------------------: | :--------------------------------: | :------------------------------: | :---------------------: |
@@ -71,14 +69,14 @@ Azure Container Apps consists of two primary components:
 - This table provides a high-level comparison of the main features and use cases for each Azure container service.
 - For detailed information on each service, refer to the official Azure documentation.
 
-# CICD Strategy
+## CICD Strategy
 
 The deployment strategy can be segmented into two parts:
 
 - Infrastructure Deployment
 - App Deployment
 
-## Option 1 - Container App Enviornment and Container App deployment via Infrastructure pipeline
+### Option 1 - Container App Enviornment and Container App deployment via Infrastructure pipeline
 
 This approach involves deploying both the Container App Environment and Container App through the infrastructure pipeline, with application code deployed to the Container App via a separate application deployment pipeline.
 
@@ -114,18 +112,18 @@ Con's
 - Potential discrepancies between infrastructure-defined image tags and application deployment updates
 - Additional maintenance overhead to keep infrastructure and application deployment configurations in sync
 
-## Option 2 - Container App Environment deployment via Infrastructure pipeline, Container App deployment via Application pipeline
+### Option 2 - Container App Environment deployment via Infrastructure pipeline, Container App deployment via Application pipeline
 
 This approach separates the deployment of the Container App Environment and the Container App itself:
 
 - Infrastructure Deployment Pipeline:
 
-  - Deploys Container App Environment and other required resources.
-  - Does not provision the Container App at this stage.
+    - Deploys Container App Environment and other required resources.
+    - Does not provision the Container App at this stage.
 
 - Application Deployment Pipeline:
-  - Builds application code and publishes the image to the container registry.
-  - Provisions the Container App using Terraform with the newly created image.
+    - Builds application code and publishes the image to the container registry.
+    - Provisions the Container App using Terraform with the newly created image.
 
 ![cicd-option2.png](images/cicd-option2.png)
 
@@ -164,7 +162,7 @@ Con's
 
 - Requires separate management of Terraform code for each individual Container App
 
-## Recommendation
+### Recommendation
 
 We recommend implementing Option 2: Container App Environment deployment via Infrastructure pipeline and Container App deployment via Application pipeline. This approach provides the flexibility to manage infrastructure and application deployments separately while optimizing the deployment process for Azure Container Apps.
 This recommendation will result in a more streamlined deployment process, eliminating unnecessary Container App revisions and allowing for tighter integration between application builds and deployments.
@@ -174,7 +172,7 @@ However, it's important to note that this approach will require additional effor
 This pre-built module will help reduce duplication and ease maintenance across multiple Container Apps, standardizing our Container App deployments and reducing the overhead of managing individual Terraform configurations.
 By leveraging this existing module in our recommended approach, we can achieve a more efficient and manageable deployment strategy for our Azure Container Apps while maintaining the flexibility to evolve both infrastructure and applications independently.
 
-# ACA vs AKS: A Comparative Analysis
+## ACA vs AKS: A Comparative Analysis
 
 | Feature             | Azure Kubernetes Service (AKS)<br />Infrastructure focus, higher flexibility                                                                                                  | Azure Container Apps (ACA)<br />Application focus, infrastructure abstraction                                                                                                                                                                                                                             |
 | ------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -183,7 +181,7 @@ By leveraging this existing module in our recommended approach, we can achieve a
 | Deployment Approach | • Admins set up node-based AKS clusters via Azure Portal, CLI, or IaC<br />• Developers use Kubernetes manifests or Helm for container deployment in isolated namespaces      | • Direct container deployment as Container Apps through Azure Portal, CLI, or IaC<br />• No Kubernetes manifest knowledge required<br />• Apps grouped in shared environments, similar to Kubernetes namespaces                                                                                           |
 | Open Source Tools   | • Extendable with various cluster add-ons (e.g., Dapr, KEDA, Service Mesh)<br />• Supports custom component installation using Kubernetes manifests                           | Includes opinionated platform capabilities powered by CNCF projects including Dapr, KEDA and Envoy which are fully platform-managed and supported<br />• Envoy: managed ingress and traffic splitting<br />• KEDA: managed, event-driven autoscale<br />• Dapr: codified best practices for microservices |
 
-# Upgrade Path: Azure Container Apps to Azure Kubernetes Service
+## Upgrade Path: Azure Container Apps to Azure Kubernetes Service
 
 High-level upgrade path from Azure Container Apps to Azure Kubernetes Service.
 
@@ -191,35 +189,35 @@ Application code and container images remain largely unchanged in this migration
 
 1. Assessment and Planning
 
-   - Review current microservices architecture and ACA-specific features in use
-   - Identify necessary Kubernetes features for AKS migration
-   - Plan changes for CI/CD pipelines
+    - Review current microservices architecture and ACA-specific features in use
+    - Identify necessary Kubernetes features for AKS migration
+    - Plan changes for CI/CD pipelines
 
 2. Infrastructure Preparation
 
-   - Set up AKS cluster (using Terraform or Azure CLI)
-   - Configure networking (VNets, subnets)
-   - Set up or integrate existing Azure Container Registry (ACR)
+    - Set up AKS cluster (using Terraform or Azure CLI)
+    - Configure networking (VNets, subnets)
+    - Set up or integrate existing Azure Container Registry (ACR)
 
 3. Kubernetes Manifest Creation / Service migration
 
-   - Begin with non-critical services
-   - Convert ACA configurations to Kubernetes manifests (Deployments, Services, Ingress)
-   - Set up Dapr on AKS if previously used in ACA
-   - Translate ACA scaling rules to Kubernetes Horizontal Pod Autoscaler (HPA)
+    - Begin with non-critical services
+    - Convert ACA configurations to Kubernetes manifests (Deployments, Services, Ingress)
+    - Set up Dapr on AKS if previously used in ACA
+    - Translate ACA scaling rules to Kubernetes Horizontal Pod Autoscaler (HPA)
 
 4. CI/CD Pipeline Updates
 
-   - Update pipelines to deploy to AKS
-   - Implement Kubernetes-specific deployment strategies (rolling updates, blue-green deployments)
+    - Update pipelines to deploy to AKS
+    - Implement Kubernetes-specific deployment strategies (rolling updates, blue-green deployments)
 
 5. Testing
 
-   - Thoroughly test each migrated service in AKS environment
-   - Perform load testing to ensure performance
+    - Thoroughly test each migrated service in AKS environment
+    - Perform load testing to ensure performance
 
 6. Gradual Transition and Decommissioning
-   - Decommission ACA environment after successful migration and stabilization
+    - Decommission ACA environment after successful migration and stabilization
 
 Additional points to consider during upgrade/ migration:-
 
