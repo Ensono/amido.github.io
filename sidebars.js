@@ -312,6 +312,7 @@ module.exports = {
             label: "Pipelines",
             items: ["infrastructure/azure/pipelines/azure_devops"],
           },
+          "getting_started/azure-container-app/azure-container-apps",
         ],
       },
     ],
