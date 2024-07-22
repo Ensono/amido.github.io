@@ -15,7 +15,6 @@ keywords:
 ---
 
 import Init from './init.md'
-import NextInitDeployment from './init-deployment.md'
 import NextAuth from './next-auth.md'
 import Storybook from './storybook.md'
 import Tabs from '@theme/Tabs';
@@ -80,7 +79,5 @@ nx g @ensono-stacks/next:[generator-executor-name] --help
 
 <!-- markdownlint-disable MD033 -->
 <Init />
-<NextInitDeployment />
-
 <NextAuth />
 <Storybook />
