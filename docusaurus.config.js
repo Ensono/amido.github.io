@@ -2,7 +2,7 @@
 // Note: type annotations allow type checking and IDEs autocompletion
 
 const remarkImages = require('remark-images');
-const rehypeTruncate = require('rehype-truncate');
+const {themes} = require('prism-react-renderer');
 
 require('dotenv').config();
 /** @type {import('@docusaurus/types').Config} */
@@ -60,8 +60,8 @@ const config = {
       disableSwitch: true,
     },
     prism: {
-      theme: require('prism-react-renderer/themes/github'),
-      darkTheme: require('prism-react-renderer/themes/vsDark'),
+      theme: themes.github,
+      darkTheme: themes.vsDark,
       additionalLanguages: ['csharp', 'docker', 'powershell', 'java', 'bash', 'json'],
     },
     navbar: {
@@ -137,8 +137,7 @@ const config = {
       {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          remarkPlugins: [remarkImages],
-          rehypePlugins: [rehypeTruncate],
+            remarkPlugins: [remarkImages],
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css")
