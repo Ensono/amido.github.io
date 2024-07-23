@@ -34,11 +34,11 @@ The IDE we have used is Intellij.
 We recommend that you install the following plugins:
 
 - Lombok - To reduce the amount of boiler-plate code that needs to be written
-- SonarLint - Fix and detect code quality issues (<https://www.sonarlint.org/>)
-- Spring Assistant - An IntelliJ plugin for aiding Spring development projects (<https://plugins.jetbrains.com/plugin/10229-spring-assistant>)
-- Spring Tools - Adds Spring support for IDEs (<https://spring.io/tools>)
-- CheckStyle - Flags up issues with coding style (<https://checkstyle.sourceforge.io/>)
-- google-java-format Formatter - Formats code according to configuration (<https://github.com/Ensono/stacks-java/blob/master/tools/formatter/intellij-java-google-style.xml>)
+- SonarLint - Fix and detect code quality issues (https://www.sonarlint.org/)
+- Spring Assistant - An IntelliJ plugin for aiding Spring development projects (https://plugins.jetbrains.com/plugin/10229-spring-assistant)
+- Spring Tools - Adds Spring support for IDEs (https://spring.io/tools)
+- CheckStyle - Flags up issues with coding style (https://checkstyle.sourceforge.io/)
+- google-java-format Formatter - Formats code according to configuration (https://github.com/Ensono/stacks-java/blob/master/tools/formatter/intellij-java-google-style.xml)
 
 ### Plugins used in POM
 

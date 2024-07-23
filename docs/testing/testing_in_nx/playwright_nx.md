@@ -253,13 +253,13 @@ If your test project and application has been scaffolded with infrastructure ([@
 
 Upon a pull request being made this will automatically trigger a build pipeline for your application whereby the e2e test project will be ran.
 
-As defined in the [base configuration](#base-configuration) all test artefacts are output to 'test-results/<app-name\>'
+As defined in the [base configuration](#base-configuration) all test artefacts are output to `test-results/<app-name\>`
 
 When running in the CI three reporters are utilised:
 
 1. dot: Produces a single character per successful test run, keeping detail concise for CI reporting.
-2. html: A self-contained folder that contains report for the test run that can be served as a web page. Output to 'test-results/<app-name\>/html-report'.
-3. junit: A JUnit-style xml report which can be fed back into CI reports on the test run. Output to 'test-results/<app-name\>/<app-name\>.xml'
+2. html: A self-contained folder that contains report for the test run that can be served as a web page. Output to `test-results/<app-name\>/html-report`.
+3. junit: A JUnit-style xml report which can be fed back into CI reports on the test run. Output to `test-results/<app-name\>/<app-name\>.xml`
 
 **Build summary:** You can view a summary of your build by viewing the pipeline which was ran upon pull request creation.
 

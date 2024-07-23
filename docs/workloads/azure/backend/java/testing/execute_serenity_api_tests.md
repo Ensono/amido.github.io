@@ -32,7 +32,7 @@ This page explains how to setup the API testing framework built with Java and Se
 
 ### Prerequisites
 
-Set an environment variable `BASE_URL` (e.g. if testing locally set it to <http://localhost:9000>) or use the `export BASE_URL=http://localhost:9000` command.
+Set an environment variable `BASE_URL` (e.g. if testing locally set it to http://localhost:9000) or use the `export BASE_URL=http://localhost:9000` command.
 
 ## Running the tests
 

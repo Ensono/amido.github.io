@@ -69,7 +69,7 @@ The default value is `serenity.take.screenshots=BEFORE_AND_AFTER_EACH_STEP`
 
 `webdriver.chrome.driver` - Path to the Chrome driver, if it is not on the system path.
 
-More properties here: <https://serenity-bdd.github.io/theserenitybook/latest/serenity-system-properties.html>
+More properties here: https://serenity-bdd.github.io/theserenitybook/latest/serenity-system-properties.html
 
 ### Run Tests Locally
 
