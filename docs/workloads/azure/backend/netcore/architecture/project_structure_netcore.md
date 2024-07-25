@@ -93,29 +93,22 @@ import TabItem from "@theme/TabItem";
         </p>
         <br />
         <h3>Company.Project.API</h3>
-        <p>
-            The <strong>API</strong> project containing the controllers and swagger documentation. The purpose of the API project
+        <p>The <strong>API</strong> project containing the controllers and swagger documentation. The purpose of the API project
             is to expose the application via a set of REST\HTTP endpoints. The API will validate requests either by built-in
             validators using DataAnnotations attributes or using FluentValidation(not included in the template).</p>
-        <p>
-            The API is a self hosted service using .NET Core kestrel and does not require any external web server. The hosting
+        <p>The API is a self hosted service using .NET Core kestrel and does not require any external web server. The hosting
             logic is handled by the <code>Program.cs</code> class.</p>
-        <p>
-            The API depends on <code>ICommandHandler</code> and <code>IQueryHandler</code> abstractions and does not contain a direct reference to the
+        <p>The API depends on <code>ICommandHandler</code> and <code>IQueryHandler</code> abstractions and does not contain a direct reference to the
             command-handlers and query-handler projects to reduce coupling. The bridge between the interface abstraction and
             implementations will be provided by the infrastructure that maps the interfaces and implementations of many
             components, like the queries and commands handlers, repositories, caches and so on.</p>
-        <p>
-            Having the constructor depending on abstractions also makes the API flexible for Contract Testing, where the interfaces can me mocked
-            and don't require a dependency to the Application.
-        </p>
+        <p>Having the constructor depending on abstractions also makes the API flexible for Contract Testing, where the interfaces can me mocked
+            and don't require a dependency to the Application.</p>
         <br />
         <h3>Company.Project.Models</h3>
-        <p>
-            The <strong>Models</strong> exposed by the API have been pulled out of the API project to make them reusable. The
+        <p>The <strong>Models</strong> exposed by the API have been pulled out of the API project to make them reusable. The
             models have their own validation using <code>DataAnnotations</code>, therefore the validation id provided in the models without
-            dependency on third party libraries like FluentValidation, which should be implemented only if needed.
-        </p>
+            dependency on third party libraries like FluentValidation, which should be implemented only if needed.</p>
         <ul>
             <li>
                 <p>
@@ -124,15 +117,13 @@ import TabItem from "@theme/TabItem";
                 </p>
             </li>
             <li>
-                <p>
-                    A Client SDK can be create in the future to communicate with the API, having a reusable Model, makes it easy
+                <p>A Client SDK can be create in the future to communicate with the API, having a reusable Model, makes it easy
                     to write the SDK without rewriting them every time the API changes.</p>
             </li>
         </ul>
         <br />
         <h3>Company.Project.Infrastructure</h3>
-        <p>
-            The infrastructure project is a cross cutting project responsible to tie the dependencies within the API and
+        <p>The infrastructure project is a cross cutting project responsible to tie the dependencies within the API and
             application. In general, the API communicates to an Interface that abstracts away the need to have an implementation
             available at API design time. It needs to know only the Commands and Queries available for each operation. The command
             and query handlers are implemented in their own projects and the API does not have a direct dependency on it. The
@@ -174,7 +165,8 @@ import TabItem from "@theme/TabItem";
         </ul>
         <br />
         <h3>Company.Project.Application.CommandHandlers</h3>
-        <p>The <strong>CommandHandlers</strong> contain implementations of <code>ICommandHandler</code> interface. Each handler expect it's
+        <p>
+            The <strong>CommandHandlers</strong> contain implementations of <code>ICommandHandler</code> interface. Each handler expect it's
             own command type and handles it's own logic.
         </p>
         <p>
@@ -201,7 +193,8 @@ import TabItem from "@theme/TabItem";
                     If an operation can only be executed if the domain is in a specific state or has a determined value, the condition
                     checks should be evaluated within the domain.
                 </li>
-                <li>If the business rules condition requires data from source outside the domain, i.e database, services, etc, then a
+                <li>
+                    If the business rules condition requires data from source outside the domain, i.e database, services, etc, then a
                     domain service should be created to handle the logic like load the rules from a gateway and execute the check before
                     the entity is changed.
                 </li>

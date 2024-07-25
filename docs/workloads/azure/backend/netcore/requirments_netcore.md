@@ -56,21 +56,25 @@ values={[
         <div>
             <h5>Mandatory</h5>
             <ul>
-                <li><a href="https://desktop.docker.com/win/stable/Docker%20Desktop%20Installer.exe">Docker Desktop(for Windows)</a>: Version 2.1.0.1 (37199) or superior
+                <li>
+                    <a href="https://desktop.docker.com/win/stable/Docker%20Desktop%20Installer.exe">Docker Desktop(for Windows)</a>: Version 2.1.0.1 (37199) or superior
                     <ul>
-                        <li>Enable:
+                        <li>
+                            Enable:
                             <ul>
                                 <li>Kubernetes 1.14+</li>
                                 <li>Linux container (Not windows containers)</li>
                             </ul>
                         </li>
                         <li>Docker Engine 19.03.1+ (provided with docker)</li>
-                        <li>WSL (Windows Subsystem for Linux: recommended v1, v2 is still in preview and has not been tested) (provided with docker)
+                        <li>
+                            WSL (Windows Subsystem for Linux: recommended v1, v2 is still in preview and has not been tested) (provided with docker)
                             <ul>
                                 <li>For running build, test and deployment scripts targeting Linux environment</li>
                             </ul>
                         </li>
-                        <li>kubectl v1.14+ (provided with docker)
+                        <li>
+                            kubectl v1.14+ (provided with docker)
                             <ul>
                                 <li>Also <a
                                         href="https://kubernetes.io/docs/tasks/tools/install-kubectl/#install-kubectl-on-windows">downloaded
@@ -87,7 +91,8 @@ values={[
         <summary>Additional requirements for running the API in a kubernetes cluster</summary>
         <div>
             <ul>
-                <li>NGINX ingress controller
+                <li>
+                    NGINX ingress controller
                     <ul>
                         <li>Install the ingress controller in you local cluster.</li>
                         <li>Make sure you follow the process for Bare Metal deployment described <a href="https://kubernetes.github.io/ingress-nginx/deploy/">here</a>.</li>

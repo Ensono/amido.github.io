@@ -31,7 +31,7 @@ aXe tests are performed on two levels:
 1. Rendering the React component and testing with Jest.
 2. Rendering the entire page and testing with Cypress.
 
-Both examples are in the scaffolded web app templates: <https://github.com/Ensono/stacks-webapp-template/tree/master/packages/scaffolding-cli/templates/src/ssr>
+Both examples are in the scaffolded web app templates: [Stacks Webapp Template](https://github.com/Ensono/stacks-webapp-template/tree/master/packages/scaffolding-cli/templates/src/ssr)
 
 ### Cypress: Debugging Axe failures
 

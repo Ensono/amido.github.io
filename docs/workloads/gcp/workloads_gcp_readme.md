@@ -25,7 +25,7 @@ Currently roadmapped for GCP are these workloads:
 - Event listener in both C#/.NET and Java/SpringBoot
 - Client-side rendered webapp in JavaScript / NodeJS and React
 
-Contact stacks@ensono.com for more information.
+Contact [stacks@ensono.com](mailto:stacks@ensono.com) for more information.
 
 <HideNavigation next />
 <HideNavigation prev />

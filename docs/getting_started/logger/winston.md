@@ -83,7 +83,7 @@ logger.log({
 ```
 
 :::note
-    You would need to change the `@workspace-name` to the name of your workspace
+You would need to change the `@workspace-name` to the name of your workspace
 :::
 
 To change how Winston is configured, edit the created library:
@@ -108,19 +108,19 @@ These log levels are commonly used in many logging libraries and provide a way t
 
 By default Winston uses the following npm [log levels](https://github.com/winstonjs/winston#logging-levels):
 
-- __error__: Used to log errors and exceptions. This log level is for critical issues that require immediate attention.
+- **error**: Used to log errors and exceptions. This log level is for critical issues that require immediate attention.
 
-- __warn__: Indicates a potential issue or warning that does not necessarily disrupt the application but should be noted.
+- **warn**: Indicates a potential issue or warning that does not necessarily disrupt the application but should be noted.
 
-- __info__: This is the default log level and is used for general information about the application's operations. It's often used to log major events or milestones.
+- **info**: This is the default log level and is used for general information about the application's operations. It's often used to log major events or milestones.
 
-- __http__: Logs HTTP related messages, such as host, path and response/request details.
+- **http**: Logs HTTP related messages, such as host, path and response/request details.
 
-- __verbose__: A step above debug, providing more detailed information but not as noisy as silly or debug.
+- **verbose**: A step above debug, providing more detailed information but not as noisy as silly or debug.
 
-- __debug__: Used for debugging and providing additional information about the application's state and behavior.
+- **debug**: Used for debugging and providing additional information about the application's state and behavior.
 
-- __silly__: The lowest log level, often used internally for debugging and tracing purposes.
+- **silly**: The lowest log level, often used internally for debugging and tracing purposes.
 
 For more information on log level severity please refer to the [log levels](https://github.com/winstonjs/winston#logging-levels) section of the Winston documentation.
 

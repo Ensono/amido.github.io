@@ -107,7 +107,7 @@ REDIS_URL=localhost:6379
 ```
 
 :::warning
-For Azure DevOps, the **NEXTAUTH_SECRET** needs to be added to the <company\>-<component\>-<domain\>-nonprod and <company\>-<component\>-<domain\>-prod' variable groups
+For Azure DevOps, the **NEXTAUTH_SECRET** needs to be added to the `<company\>-<component\>-<domain\>-nonprod` and `<company\>-<component\>-<domain\>-prod`' variable groups
 :::
 
 </details>

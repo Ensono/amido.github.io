@@ -38,7 +38,7 @@ Both the diagram and resource list below are for a single environment.
 | AKS**\***                   | Azure Kubernetes Service                                                                     |
 | Public DNS Record           | DNS record pointing Ingress (via application gateway**\*** and internal load balancer**\***) |
 | ACR**\***                   | Azure Container Registry                                                                     |
-| Namespace: {env}-api        | Kubernetes namespace for the environment                                                     |
+| Namespace: `{env}-api`      | Kubernetes namespace for the environment                                                     |
 | Ingress                     | Kubernetes Ingress to handle routing to Service                                              |
 | Service                     | Kubernetes Service to handle routing to Deployment Pods                                      |
 | Deployment                  | Kubernetes Deployment for managing Pods                                                      |
