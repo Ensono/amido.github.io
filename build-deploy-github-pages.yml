@@ -29,7 +29,7 @@ variables:
     value: amido.github.io
   - name: working_directory
     value: "$(Agent.BuildDirectory)/s/$(self_repo)"
-  - group: stack-github-pages
+  - group: stacks-github-pages
 
 steps:
   - checkout: self
