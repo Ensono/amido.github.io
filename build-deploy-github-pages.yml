@@ -18,7 +18,7 @@ resources:
       type: github
       name: ensono/stacks-pipeline-templates
       ref: refs/tags/v1.1.0
-      endpoint: amidostacks
+      endpoint: ensonostacks
 
 variables:
   - name: pool_vm_image
