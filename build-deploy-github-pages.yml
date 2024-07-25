@@ -7,10 +7,10 @@ pool:
 trigger:
   branches:
     include:
-      - 'master'
+      - "master"
   paths:
     include:
-      - '*'
+      - "*"
 
 resources:
   repositories:
@@ -24,11 +24,11 @@ variables:
   - name: pool_vm_image
     value: ubuntu-20.04
   - name: version_spec
-    value: 16.x
+    value: 18.x
   - name: self_repo
     value: amido.github.io
   - name: working_directory
-    value: '$(Agent.BuildDirectory)/s/$(self_repo)'
+    value: "$(Agent.BuildDirectory)/s/$(self_repo)"
   - group: amido-stacks-webapp
 
 steps:
@@ -44,7 +44,7 @@ steps:
 
   - bash: |
       npm run lint
-    displayName: 'Lint: Run markdown lint'
+    displayName: "Lint: Run markdown lint"
     workingDirectory: $(working_directory)
 
   - bash: |
