@@ -230,7 +230,7 @@ The following plugins are dependencies for adding cypress to your build and depl
 - As defined in the [base configuration](#base-configuration) all test artefacts are output to `test-results/<app-name\>`
 
 When running in the CI three reporters are utilised:
-`
+
 1. spec: Default cypress console reporting.
 2. mocha-junit-reporter: A JUnit-style xml reports which are fed back into CI reports on the test run. Output to `test-results/<app-name\>/downloads/junit-report`.
 3. mochawesome: Reports for each test which are used as the basis for html report generation. Output to `test-results/<app-name\>/downloads/reports-json-file`.

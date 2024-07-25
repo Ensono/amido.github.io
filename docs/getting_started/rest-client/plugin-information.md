@@ -66,9 +66,7 @@ nx g @ensono-stacks/rest-client:[generator-executor-name] --help
 ### Generators
 
 <!-- markdownlint-disable MD033 -->
-```
 <HttpClient />
 <ClientEndpoint />
 <BumpVersion />
 <OpenapiClient />
-```

@@ -210,7 +210,7 @@ The generated report can be viewed under - `./target/dependency-check.html`.
 
 ### Optional: Mutation testing
 
-PIT mutation testing is used to generate mutation tests (see https://pitest.org/ for details).
+PIT mutation testing is used to generate mutation tests (see [PIT Documentation](https://pitest.org/) for details).
 The mutation coverage goal analyses all classes in the codebase that match the target tests and target class filters.
 To run it:
 

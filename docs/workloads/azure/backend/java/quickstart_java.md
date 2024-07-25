@@ -222,7 +222,7 @@ These parameters are used to verify that the JWT supplied in the Authorization h
 
 ## Using a Docker image
 
-https://docs.docker.com/docker-for-windows/install/
+[Install Docker for Windows](https://docs.docker.com/docker-for-windows/install/)
 
 From the `<PROJECT-NAME>/java` folder, build a Docker image using e.g. the command below:
 
