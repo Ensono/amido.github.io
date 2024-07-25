@@ -1,3 +1,0 @@
-export {
-    TechSupportedByStacks
-} from './TechSupportedByStacks';

@@ -1,6 +1,0 @@
----
-id: azure-backend-index
-title: Backend Services
-linkTitle: Backend Services
-weight: 2
----

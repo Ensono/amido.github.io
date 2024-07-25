@@ -1,6 +1,0 @@
----
-id: webapi_arch-index
-title: Web API Architecture
-linkTitle: Web API Architecture
-weight: 3
----

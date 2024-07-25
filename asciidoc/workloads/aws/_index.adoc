@@ -1,6 +1,0 @@
----
-id: aws-index
-title: Amazon Web Services
-linkTitle: Amazon Web Services
-weight: 5
----

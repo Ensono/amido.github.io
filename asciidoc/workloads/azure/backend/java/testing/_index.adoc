@@ -1,6 +1,0 @@
----
-id: azure-backend-testingapi-index
-title: Testing the API
-linkTitle: Testing the API
-weight: 8
----

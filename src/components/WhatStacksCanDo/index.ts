@@ -1,3 +1,0 @@
-export {
-    WhatStacksCanDo
-} from './WhatStacksCanDo';

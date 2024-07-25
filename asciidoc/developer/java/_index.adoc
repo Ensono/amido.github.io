@@ -1,6 +1,0 @@
----
-id: java-dev-patterns-index
-title: Java Development Patterns
-linkTitle: Java Development Patterns
-weight: 2
----

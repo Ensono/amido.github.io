@@ -1,3 +1,0 @@
-export {
-    ResponsivePlayer
-} from './ResponsivePlayer';

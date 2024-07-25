@@ -1,6 +1,0 @@
----
-id: azure-data-index
-title: Data Platform
-linkTitle: Data Platform
-weight: 3
----

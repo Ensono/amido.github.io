@@ -1,6 +1,0 @@
----
-id: about-index
-title: About Ensono Stacks
-linkTitle: Learn about Ensono Stacks
-weight: 1
----

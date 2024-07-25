@@ -1,6 +1,0 @@
----
-id: azure-data-eng-index
-title: Data Engineering
-linkTitle: Data Engineering
-weight: 2
----

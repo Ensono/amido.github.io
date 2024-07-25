@@ -1,8 +1,0 @@
----
-id: aws-backend-java-intro
-title: Introduction to the Java REST API application
-linkTitle: Introduction
-weight: 1
----
-
-Common documentation for the Java Spring Boot REST API can be found link:../../../../common/backend/java/[here]

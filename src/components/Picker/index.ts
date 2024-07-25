@@ -1,3 +1,0 @@
-export {
-    Picker
-} from './Picker';

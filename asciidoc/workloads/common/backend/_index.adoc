@@ -1,6 +1,0 @@
----
-id: common-java-index
-title: Java
-linkTitle: Java
-weight: 1
----

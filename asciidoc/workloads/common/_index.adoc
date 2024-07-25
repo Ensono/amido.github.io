@@ -1,6 +1,0 @@
----
-id: common-index
-title: Common
-linkTitle: Common
-weight: 2
----

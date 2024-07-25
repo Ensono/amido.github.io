@@ -1,6 +1,0 @@
----
-id: aws-backend-index
-title: Backend
-linkTitle: Backend
-weight: 1
----

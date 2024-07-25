@@ -1,3 +1,0 @@
-export {
-    EnsonoStacksImage
-} from './EnsonoStacksImage';
