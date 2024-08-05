@@ -1,0 +1,120 @@
+---
+id: build_and_run_project_netcore
+title: Build & Run REST API with CQRS
+linkTitle: Build & Run REST API with CQRS
+weight: 3
+keywords:
+  - .net core
+  - rest api
+  - cqrs
+  - azure
+  - application insights
+  - cosmos db
+  - aws sns
+  - build
+  - run
+  - application
+---
+
+:imagesdir: ../../../../../../../static/img
+
+The API generated consists of configuration to be run locally or on a docker container.
+
+.Build and run locally on Windows
+[%collapsible]
+=====
+Move to the `<PROJECT-NAME>/src/api` folder and run the next commands in **Command Prompt** or **Powershell**
+
+[source, bash]
+----
+dotnet build
+----
+
+[source, bash]
+----
+# Note that the template engine will rename your paths, so change the command accordingly
+dotnet run --project xxENSONOxx.xxSTACKSxx.API/xxENSONOxx.xxSTACKSxx.API.csproj
+----
+
+NOTE: Potential issue on some Windows installations
+Depending on how deep your folder structure is you might encounter a problem where you cannot build the project. This happens because of our dependency on https://docs.pact.io/[Pact] for our contract tests.
+
+The error looks something like this
+
+[source, shell]
+----
+Error MSB3491 Path: File exceeds the OS max path limit. The fully qualified file name must be less than 260 characters.
+----
+
+There are two fixes possible so far:
+
+- You must enable long file paths on Windows by following the instructions https://docs.microsoft.com/en-us/windows/win32/fileio/maximum-file-path-limitation?tabs=powershell#enable-long-paths-in-windows-10-version-1607-and-later[here]
+- Create your folder on an upper level where the paths won't exceed 260 characters
+=====
+
+.Build and run locally on Linux
+[%collapsible]
+=====
+Move to the `<PROJECT-NAME>/src/api` folder and run the next commands in **terminal**.
+
+[source, bash]
+----
+export COSMOSDB_KEY=<COSMOSDB_KEY value here>
+export SERVICEBUS_CONNECTIONSTRING=<Your Service Bus connection string here>
+export EVENTHUB_CONNECTIONSTRING=<Your Event Hub connection string here>
+export STORAGE_CONNECTIONSTRING=<Your Event Hub storage connection string here>
+----
+
+[source, bash]
+----
+dotnet build
+----
+
+[source, bash]
+----
+# Note that the template engine will rename your paths, so change the command accordingly
+dotnet run --project xxENSONOxx.xxSTACKSxx.API/xxENSONOxx.xxSTACKSxx.API.csproj
+----
+=====
+
+.Build and run in docker container
+[%collapsible]
+=====
+
+From the `<PROJECT-NAME>/src/api` folder, build a Docker image using e.g. the command below:
+
+.Build docker image
+[source, bash]
+----
+docker build -t dotnet-api .
+----
+
+This uses the **Dockerfile** in this folder to generate the Docker image.
+
+After the creation of the Docker image, the Docker container can be run using the command below:
+
+.Run docker container
+[source, bash]
+----
+docker run -p 5000:80 --mount type=bind,source=/path/to/PROJECT-NAME/src/api/xxENSONOxx.xxSTACKSxx.API/appsettings.json,target=/app/config/appsettings.json -e COSMOSDB_KEY=your-key -e SERVICEBUS_CONNECTIONSTRING=your-asb-connection-string -e EVENTHUB_CONNECTIONSTRING=your-aeh-connection-string -e STORAGE_CONNECTIONSTRING=your-aeh-storage-connection-string  dotnet-api:latest`
+----
+
+NOTE: The **COSMOSDB_KEY** described in the command above has to be passed when running the container. **SERVICEBUS_CONNECTIONSTRING** OR **EVENTHUB_CONNECTIONSTRING** and **STORAGE_CONNECTIONSTRING** are needed based on the configuration and message service you'll be using. Note that the **appsettings.json** value is mounted here for running locally,
+but not if the full project is deployed to Azure, where the build process will perform the substitution.
+=====
+
+.Verify that the application has started
+[%collapsible]
+=====
+
+[NOTE]
+.Relationship between domain and path
+====
+Keep in mind that if you've changed the domain (original being `Menu`), the path will reflect that. If your domain is `Foo`. Then the path will be `../v1/foo` instead of `..v1/menu` etc.
+====
+
+Browse to http://localhost:5000/v1/menu[http://localhost:5000/v1/menu]. This should return a valid JSON response.
+
+The application configuration uses Swagger/OAS3 to represent the API endpoints. The Swagger UI can be viewed by directing your
+browser to http://localhost:5000/swagger/index.html[http://localhost:5000/swagger/index.html].
+=====

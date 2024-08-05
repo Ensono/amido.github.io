@@ -1,0 +1,57 @@
+---
+id: ensono-stacks-rest-client
+title: "@ensono-stacks/rest-client"
+linkTitle: "@ensono-stacks/rest-client"
+weight: 6
+keywords:
+  - NX
+  - monorepo
+  - stacks
+  - ensono
+  - "rest-client"
+  - generator
+  - executor
+---
+
+This plugin provides the ability to quickly get up and running with http clients and endpoints. One can generate the basic HTTP methods required to start building out a project.
+
+**What benefits does it give you?**
+
+- Helps track versioning and easily bump versions of endpoints using one of the plugins.
+- Ensure solid foundational syntax accuracy
+- Promote best practice in generated code
+
+== Setting up @ensono-stacks/rest-client
+
+Install the @ensono-stacks/rest-client with the following command:
+
+----
+npm install --save-dev @ensono-stacks/rest-client@latest
+----
+
+or
+
+----
+yarn add --dev @ensono-stacks/rest-client
+----
+
+== Executors and Generators
+
+To see a list of the plugin capabilities run the following command:
+
+----
+nx list @ensono-stacks/rest-client
+----
+
+View additional information about a plugin capability through the following command:
+
+----
+nx g @ensono-stacks/rest-client:[generator-executor-name] --help
+----
+
+=== Generators
+
+include::http-client.adoc[]
+include::client-endpoint.adoc[]
+include::bump-version.adoc[]
+include::openapi-client..adoc[]

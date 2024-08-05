@@ -1,0 +1,6 @@
+---
+id: workloads-index
+title: Workloads
+linkTitle: Workloads
+weight: 3
+---

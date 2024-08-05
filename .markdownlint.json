@@ -1,0 +1,11 @@
+{
+  "default": true,
+  "MD003": { "style": "atx" },
+  "MD007": { "indent": 4 },
+  "no-hard-tabs": false,
+  "whitespace": false,
+  "line-length": false,
+  "no-inline-html": {
+    "allowed_elements": [ "table", "td", "th", "tr", "tbody", "thead", "div", "code", "ul", "li", "Tabs", "TabItem", "a", "br", "pre", "img", "p", "ol", "strong", "h3", "details", "summary", "h5", "hr", "h4", "HideNavigation", "ResponsivePlayer", "b" ]
+  }
+}

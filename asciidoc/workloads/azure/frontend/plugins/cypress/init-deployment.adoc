@@ -1,0 +1,68 @@
+=== @ensono-stacks/cypress:init-deployment
+
+.Create cypress E2E tests to your deployment pipelines
+[%collapsible]
+=====
+[.details]
+====
+The _init-deployment_ generator adds E2E testing to pre-existing deployment pipelines, including test reporting and artifact uploads.
+====
+
+[discrete]
+== Prerequisites
+
+1. The link:../workspace/plugin-information.adoc[@ensono-stacks/workspace:init-deployment] has been executed, producing the required deployment files for the workspace
+
+[discrete]
+== Usage
+
+----
+nx g @ensono-stacks/cypress:init-deployment
+----
+
+[discrete]
+== Generator Output
+
+[source,yaml]
+----
+# New e2e:ci task definition will be added to the tasks.yaml, defining what target should be ran for projects when executing the e2e task
+e2e:ci:
+    description: Run e2e tests in ci
+    command:
+      - npx nx affected --base="$BASE_SHA" --target=e2e --parallel=1
+----
+
+NOTE: The `e2e:ci` task definition will be added to the tasks.yaml file, defining the target to run for projects when executing the E2E task.
+
+[source,yaml]
+----
+# New e2e:ci task will be added to the taskctl pipeline, adding e2e tests following unit testing
+- task: e2e:ci
+    depends_on: test:ci
+----
+
+NOTE: A new `e2e:ci` task will be added to the taskctl pipeline, adding E2E tests following unit testing.
+
+[source,yaml]
+----
+# Generate HTML report for all affected projects
+- task: Bash@3
+            condition: and(succeededOrFailed(),eq(variables.HASTESTRESULTS, 'true'))
+            displayName: Generate Reports
+            inputs:
+              targetType: inline
+              script: npx nx affected --base="$BASE_SHA" --target=html-report
+                --configuration=ci --parallel=1
+# New test reporting steps will be added to the azuredevops pipeline
+- task: PublishTestResults@2
+    # Configuration for publishing test results
+- task: PublishPipelineArtifact@1
+    # Configuration for publishing pipeline artifacts
+----
+
+[NOTE]
+====
+- Generate an HTML report for all affected projects.
+- New test reporting steps will be added to the Azure DevOps pipeline.
+====
+=====

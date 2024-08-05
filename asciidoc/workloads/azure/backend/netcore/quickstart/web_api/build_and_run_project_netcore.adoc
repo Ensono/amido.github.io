@@ -1,0 +1,86 @@
+---
+id: build_and_run_project_netcore
+title: Build & Run REST API
+linkTitle: Build & Run REST API
+weight: 2
+keywords:
+  - .net core
+  - rest api
+  - azure
+  - application insights
+  - build
+  - run
+  - application
+---
+
+== Build and Run the application
+
+The API generated consists of configuration to be run locally or on a docker container.
+
+Build and run locally
+
+=== Windows
+
+Move to the `<PROJECT-NAME>/src/api` folder and run the next commands in **Command Prompt** or **Powershell**
+
+[source, bash]
+----
+dotnet build
+----
+
+[source, bash]
+----
+# Note that the template engine will rename your paths, so change the command accordingly
+dotnet run --project xxENSONOxx.xxSTACKSxx.API/xxENSONOxx.xxSTACKSxx.API.csproj
+----
+
+=== Linux
+
+Move to the `<PROJECT-NAME>/src/api` folder and run the next commands in **terminal**.
+
+[source, bash]
+----
+dotnet build
+----
+
+[source, bash]
+----
+# Note that the template engine will rename your paths, so change the command accordingly
+dotnet run --project xxENSONOxx.xxSTACKSxx.API/xxENSONOxx.xxSTACKSxx.API.csproj
+----
+Build and run in docker container
+
+From the `<PROJECT-NAME>/src/api` folder, build a Docker image using e.g. the command below:
+
+.Build docker image
+[source, bash]
+----
+docker build -t dotnet-api .
+----
+
+This uses the **Dockerfile** in this folder to generate the Docker image.
+
+After the creation of the Docker image, the Docker container can be run using the command below:
+
+.Run docker container
+[source, bash]
+----
+docker run -p 5000:80 --mount type=bind,source=/path/to/PROJECT-NAME/src/api/xxENSONOxx.xxSTACKSxx.API/appsettings.json,target=/app/config/appsettings.json
+----
+
+Verify that the application has started
+
+
+[]
+==== 
+.Relationship between domain and path
+
+Keep in mind that if you've changed the domain (original being `Menu`), the path will reflect that. If your domain is `Foo`. Then the path will be `../v1/foo` instead of `..v1/menu` etc.
+
+====
+
+Browse to http://localhost:5000/v1/menu[http://localhost:5000/v1/menu]. This should return a valid JSON response.
+
+The application configuration uses Swagger/OAS3 to represent the API endpoints. The Swagger UI can be viewed by directing your
+browser to http://localhost:5000/swagger/index.html[http://localhost:5000/swagger/index.html].
+

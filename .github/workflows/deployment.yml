@@ -1,0 +1,38 @@
+permissions:
+  contents: write
+name: stacks.website
+on:
+  push:
+    branches: master
+jobs:
+  build:
+    name: Install packages and build application
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+      - name: Use NodeJS
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+      - name: Install Dependencies
+        run: npm install
+      - name: Build application
+        run: npm run build
+        env:
+          ALGOLIA_INDEX_NAME: ${{ secrets.ALGOLIA_INDEX_NAME }}
+          ALGOLIA_APP_ID: ${{ secrets.ALGOLIA_APP_ID }}
+          ALGOLIA_API_KEY: ${{ secrets.ALGOLIA_API_KEY }}
+      - name: Upload Artifact
+        uses: actions/upload-artifact@main
+        with:
+          name: github-pages
+          path: ./build
+          if-no-files-found: warn
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: build
+          clean: true

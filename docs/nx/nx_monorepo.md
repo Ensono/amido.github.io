@@ -1,0 +1,54 @@
+---
+id: nx_stacks
+title: Ensono Stacks with Nx
+sidebar_label: Ensono Stacks with Nx
+description: Using Ensono Stacks with Nx
+keywords:
+  - Nx
+  - monorepo
+  - stacks
+  - Generator
+  - Executor
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+The ideologies of Ensono Stacks and [`Nx`](https://nx.dev/) are aligned in their focus on providing businesses with a framework that accelerates development, allowing you to focus on business objectives with best practice code. Leveraging Nx allows us to build upon that work and to fill the gaps with infrastructure, pipelines and the integration with other Ensono Stacks subsystems. Leveraging Nx allows a common developer experience, global communities of support, and an enterprise ready base.
+
+<details>
+  <summary>What is Nx?</summary>
+    <p>The Nx framework is a powerful tool that allows developers to easily build, test, and automate their applications. It is built on top of the popular open-source Node.js platform, and provides a streamlined and efficient workflow for building apps. With Nx, developers can easily manage their dependencies, automate tasks, and quickly test their applications.</p> 
+    <p>Additionally, Nx provides powerful features such as code-sharing, optimized builds, and real-time feedback, making it an ideal choice for any developer looking to streamline their development process and improve their productivity.</p>
+
+:::tip Find out more!
+Find out more about Nx through their official [documentation](https://nx.dev/getting-started/intro)!
+:::
+
+</details>
+
+For the reasons listed above we have chosen to use Nx within Ensono Stacks for CSR and SSR frontend web applications, capitalising on Nx generators and executors to streamline your development and testing processes.
+
+<details>
+  <summary>What are Nx Generators and Executors?</summary>
+    <p>Nx generators and executors are two powerful features of the Nx build system that allow developers to quickly and easily generate new code and files for their projects, as well as to automate common tasks.</p>
+    <p>Nx generators are templates that can be used to quickly generate new code and files for different types of projects, such as Angular applications, React components, and Node.js services. Developers can use these generators to quickly create the code and files they need, based on pre-defined templates, saving them time and effort.</p>
+    <p>Nx executors, on the other hand, are scripts that can be used to automate common tasks, such as building, testing, and deploying code. Developers can use these executors to automate repetitive tasks and to streamline their workflow. Executors can also be customized to suit the specific needs of a project, making them a highly versatile tool.</p>
+</details>
+
+#### Why should you use the Nx build system
+
+Nx makes scaling easy. Modern techniques such as distributed task execution and computation caching make sure your CI times remain fast, even as you keep adding projects to your workspace.
+
+- Never rebuild the same code twice
+    - Nx is smart! It can figure out whether the same computation has run before and can restore the files and the terminal output from its cache.
+- Distributed task execution (DTE)
+    - Smart, automated, dynamic distribution of tasks across multiple machines to get maximum parallelization and CPU efficient CI runs.
+- Remote caching
+    - Share your local computation cache with team mates and your CI system for maximum efficiency.
+- Only run what changed
+    - Nothing is faster than not running a task. Nx analyses your project graph and can diff it against a baseline to determine which projects changed and what tasks need to be re-run.
+- Large community
+    - Nx is built on top of the popular Node.js platform, which has a large and active community of developers. This means that developers using Nx can easily find support and resources online.
+- Better code-sharing
+    - Nx provides powerful features for sharing code between different applications, which can help teams collaborate more effectively and reduce duplication of effort.

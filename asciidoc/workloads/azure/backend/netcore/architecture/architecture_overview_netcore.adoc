@@ -1,0 +1,99 @@
+---
+id: architecture_overview_netcore
+title: Architecture Overview
+linkTitle: Architecture Overview
+weight: 1
+keywords:
+  - .net core
+  - rest api
+  - template
+  - architecture overview
+  - aggregate
+  - AggregateRoot
+  - domain
+  - events
+  - repository
+  - stacks
+---
+
+:imagesdir: ../../../../../../images
+
+== DDD Architecture Overview
+
+image::cqrs_diagram.png[Solution Diagram]
+
+=== Bounded Context
+
+In DDD, when we start mapping the business domain into objects, we have to identify their relation to each other on a wide scope, at the start, we identify them as a big and indivisible context to have a clear view of their relationships.
+
+When their relationships are identified, we have to identify the smallest cohesive scope where they fit together in their own context. This boundary is given the name of bounded context.
+
+A domain object might belong to multiple bounded contexts, but in each of them, it will have a different set of attributes that are only relevant to the context they are within.
+
+In some cases, a domain object might change its name to make more sense within the context it is located.
+
+*Example:*
+A property management business might have a person as a customer for the business, but when the person is in the context of a rental department, they are a tenant in their respective context, even though they are a customer in another context of the business.
+For more information, see link:https://martinfowler.com/bliki/BoundedContext.html[Bounded Context, by Martin Fowler].
+
+=== Entities
+
+An entity is a domain object that represents a thread of continuity; it is a business object that has a unique identity even though its attributes are the same. An identity makes the object unique, which means two objects with the same attribute values are not considered the same.
+
+Because entities are not defined by their attributes, all the attributes might change, but the identity remains the same.
+
+*Example:*
+Two people with the same name (John Smith) and born on the same day may have the same attributes, but in respect to the system, they are independent domain objects.
+When a person gets married, they might change their names, but the identity stays the same.
+
+=== Value Objects
+
+Value Objects are domain objects that do not have a conceptual identity within the context; they are just needed for their attributes, and two objects with the same attributes should be considered the same.
+
+In some scenarios, we might have value objects representing entities in other contexts; these value objects will likely have IDs as attributes. Even though they have unique IDs, they should still be value objects because they are not a primary object within the bounded context and are just representing external dependencies.
+
+Different from entities, value objects can be duplicated within the domain, but entities are unique.
+
+=== Aggregates
+
+An Aggregate is an entity that aggregates a set of objects that are bound together by the same parent. An Aggregate holds control of the aggregated objects and controls their accessibility and lifetime.
+
+For more information, see link:https://martinfowler.com/bliki/DDD_Aggregate.html[DDD Aggregate, by Martin Fowler].
+
+=== AggregateRoot
+
+An Aggregate Root is similar to aggregates with a simple difference: it is a single root entity that allows external operations to interact with entities within the context. When referenced outside of the domain, the Aggregate Root is the reference that should be used to avoid coupling the application to the domain and making it flexible to evolve with little application changes. Let's say we have objects A, B, and C (either entities or Value objects), A contains B, and B contains C. In this case, A is the root. To modify C, external elements should pass through A first, and A decides how the operation is handled. If the application were to talk to B directly by bypassing A, it would make the application coupled to B, and a change in the structure would make it harder to refactor the domain.
+
+Also, an Aggregate Root is the persistence boundary used to track changes and the state of the domain.
+
+=== Domain Events
+
+Domain events are an indicator that something happened inside an object in the domain and should be broadcasted to other objects to react to its occurrence.
+
+*Example:*
+A checkout cart can have products the customer wants to buy; when a product is added to the cart, the total should be updated.
+
+In simple terms, we could just make a call to recalculate the total, and it is all done. With this approach, we have a coupling between the operation add item and calculate totals.
+
+In DDD, we could just raise an event of type ItemAddedToCartEvent and implement an event handler to calculate the totals outside of the AddItem operation but within the same context.
+
+This approach makes both operations decoupled and flexible for extension. When we add new operations that need to calculate the total, we just need to extend the event handler to catch all events that trigger the totals recalculation.
+
+Another usage for events is EventSourcing, where we gather these events to identify what happened when we persist the changes caused by the operation.
+
+=== Domain Exceptions
+
+Domain exceptions, sometimes called business rule violations, are exceptions raised within the domain when an operation or object fails to meet business rules.
+
+*Example:*
+When an employee raises a purchase order, if the purchase order value is above a certain limit, the domain will raise an exception telling that the operation can't be completed. This exception will interrupt the processing and tell the application about the error.
+
+Because domain exceptions do not know about the environment they're running in, the application has to handle these exceptions and wrap them with an exception containing the environment context details like: Which operation raised the exception, who triggered the exception, correlation-id of the trigger, and so on.
+
+=== Repository
+
+To make it possible to execute operations against a domain, we require a component that prepares the domain object to the last known state before the operation is executed.
+
+The repository is the component that lives between the application and the domain; it is responsible for loading **Aggregate Roots** from the database or materializing the domain from a chain of events when using EventSourcing.
+
+It is also responsible for persisting the changes and events that occurred to an Aggregate Root after an operation is executed.

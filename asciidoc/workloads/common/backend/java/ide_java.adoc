@@ -1,0 +1,134 @@
+---
+id: ide_java
+title: IDE guidelines for the Java Rest API
+linkTitle: IDE guidelines
+weight: 3
+keywords:
+  - java
+  - rest
+  - api
+  - ide
+  - ide guidelines
+  - plugins
+  - code quality
+  - lombok
+  - sonarlint
+  - spring assistant
+  - check style
+  - google java format
+  - spotbugs
+  - jacoco
+  - setups
+  - pom
+---
+
+:imagesdir: ../../../../../images
+:description: IDE guidelines for the Java Rest API
+:keywords: java, rest, api, ide, ide guidelines, plugins, code quality, lombok, sonarlint, spring assistant, check style, google java format ,spotbugs, jacoco, setups ,pom
+
+== IDE guidelines
+
+The IDE we have used is IntelliJ.
+
+We recommend that you install the following plugins:
+
+* Lombok - To reduce the amount of boiler-plate code that needs to be written
+* SonarLint - Fix and detect code quality issues (link:https://www.sonarlint.org/[SonarLint])
+* Spring Assistant - An IntelliJ plugin for aiding Spring development projects (link:https://plugins.jetbrains.com/plugin/10229-spring-assistant[Spring Assistant])
+* Spring Tools - Adds Spring support for IDEs (link:https://spring.io/tools[Spring Tools])
+* CheckStyle - Flags up issues with coding style (link:https://checkstyle.sourceforge.io/[CheckStyle])
+* google-java-format Formatter - Formats code according to configuration (link:https://github.com/Ensono/stacks-java/blob/master/tools/formatter/intellij-java-google-style.xml[google-java-format Formatter])
+
+
+== Plugins used in POM
+* Lombok - Avoids need to write e.g. Getter, Setter, RequiredArgsConstructor, ToString, EqualsAndHashCode) in Java classes.
+* JaCoCo - A free Java code test coverage library.
+* Surefire - Used for reporting purposes (creates reports based on tests in the Java test package).
+* fmt-maven-plugin - Formats the java code based on rules in java-google-style.xml.
+* Spotbugs - Performs a static analysis of the Java code to check for bugs.
+
+== Set up the project
+
+=== How to import the whole project
+
+In the IDE (We used IntelliJ) go to File -> New -> Project.
+Set project SDK to Java 11. Click Next -> Next
+
+image::new_java_project.png[New Project]
+
+Choose the java project folder
+
+image::new_java_project_1.png[New Java Project]
+
+click finish.
+
+=== Setup required to get it up and running
+
+Open up the "java" folder and right click on pom.xml and choose "Add as Maven Project".
+Click on Run -> Edit Configurations
+
+image::run_configuration.png[Run Configurations]
+
+Click on Add new Configuration and choose Application/Spring boot
+
+image::run_configuration_1.png[Run Configurations_1]
+
+Choose the main class as "Application.java" and set any relevant variables, such as to set environment variable
+for **AZURE_COSMOSDB_KEY** and set JRE to Java 11. Click OK
+
+image::run_configuration_2.png[Run Configurations_2]
+
+Open Application.java file and right click and choose run Application.
+
+image::run_java_application.png[Run Java Application]
+
+== Code Quality
+
+=== Formatter
+
+Install the `intellij-java-google-style.xml` formatter configuration file into the IDE from link:https://github.com/Ensono/stacks-java/blob/master/tools/formatter/intellij-java-google-style.xml[here].
+
+The Java source code will automatically be reformatted to comply with the link:https://google.github.io/styleguide/javaguide.html[Google Java Style].
+
+You can override the settings locally in the codebase by adding, for example:
+
+[source]
+----
+//@formatter:off
+manually formatted code
+///@formatter:on
+----
+
+==== Validating and applying formatting
+
+.Unix
+----
+./mvnw com.coveo:fmt-maven-plugin:check
+----
+.Windows
+----
+mvnw.cmd com.coveo:fmt-maven-plugin:check
+----
+
+To validate the current formatting. You can then run the below code to apply formatting to the
+source code.
+
+.Unix
+----
+./mvnw com.coveo:fmt-maven-plugin:format
+----
+.Windows
+----
+mvnw.cmd com.coveo:fmt-maven-plugin:format
+----
+
+=== Verifying common programming flaws
+
+.Unix
+----
+./mvnw spotbugs:check
+----
+.Windows
+----
+mvnw.cmd spotbugs:check
+----
