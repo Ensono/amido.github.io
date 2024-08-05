@@ -1,0 +1,58 @@
+---
+id: ensono-stacks-logger
+title: "@ensono-stacks/logger"
+linkTitle: "@ensono-stacks/logger"
+weight: 9
+keywords:
+  - Nx
+  - monorepo
+  - stacks
+  - ensono
+  - "logger"
+  - generator
+  - executor
+---
+
+== Using the logger with Ensono Stacks!
+
+The `@ensono-stacks/logger` plugin allows you to add industry standard logging functionality to your Ensono Stacks apps.
+
+Currently, the following logging libraries are supported:
+
+- **https://github.com/winstonjs/winston[winston]**
+
+== Setting up @ensono-stacks/logger
+
+=== Prerequisites
+
+An existing Ensono Stacks workspace.
+
+=== Installation 
+
+Install the @ensono-stacks/logger with the following command:
+
+[source, bash]
+npm install --save-dev @ensono-stacks/logger@latest
+
+or
+
+[source, bash]
+yarn add --dev @ensono-stacks/logger@latest
+
+=== Executors and Generators
+
+To see a list of the plugin capabilities run the following command:
+
+[source, bash]
+nx list @ensono-stacks/logger
+
+View additional information about a plugin capability through the following command:
+
+[source, bash]
+nx g @ensono-stacks/logger:[generator-executor-name] --help
+
+=== Generators
+
+include::winston.adoc[]
+
+

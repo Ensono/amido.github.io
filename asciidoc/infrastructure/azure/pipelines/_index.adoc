@@ -1,0 +1,6 @@
+---
+id: infrastructure-azure-pipelines-index
+title: Pipelines
+linkTitle: Pipelines
+weight: 2
+---

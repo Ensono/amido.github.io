@@ -1,0 +1,6 @@
+---
+id: azure-data-getting-startedindex
+title: Getting Started
+linkTitle: Getting Started
+weight: 4
+---

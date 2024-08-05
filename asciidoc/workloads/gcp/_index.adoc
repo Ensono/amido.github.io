@@ -1,0 +1,6 @@
+---
+id: workloads-gcp-index
+title: Google Cloud Platform
+linkTitle: Google Cloud Patform
+weight: 4
+---

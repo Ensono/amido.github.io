@@ -1,0 +1,55 @@
+=== @ensono-stacks/playwright:init-deployment
+
+.Add Playwright E2E tests to your deployment pipelines
+[%collapsible]
+=====
+[.details]
+====
+The _init-deployment_ generator adds E2E testing to preexisting deployment pipelines, including test reporting and artifact uploads.
+====
+
+[discrete]
+== Prerequisites
+
+1. The link:../workspace/plugin-information.adoc[@ensono-stacks/workspace:init-deployment] has been executed, producing the required deployment files for the workspace.
+
+[discrete]
+== Usage
+
+----
+nx g @ensono-stacks/playwright:init-deployment
+----
+
+[discrete]
+== Generator Output
+
+[source,yaml]
+----
+# New e2e:ci task definition will be added to the tasks.yaml, defining what target should be ran for projects when executing the e2e task
+e2e:ci:
+    description: Run E2E tests in CI
+    command:
+      - npx nx affected --base="$BASE_SHA" --target=e2e --parallel=1
+----
+
+[source,yaml]
+----
+# New e2e:ci task will be added to the taskctl pipeline, adding E2E tests following unit testing
+- task: e2e:ci
+    depends_on: test:ci
+- task: version:prod
+    depends_on: e2e:ci
+----
+
+[source,yaml]
+----
+# New test reporting steps will be added to the Azure DevOps pipeline
+- script: |-
+    # Install Playwright added to setup step 
+    npx playwright install --with-deps
+- task: PublishTestResults@2
+    # Configuration for publishing test results
+- task: PublishPipelineArtifact@1
+    # Configuration for publishing pipeline artifacts
+----
+=====

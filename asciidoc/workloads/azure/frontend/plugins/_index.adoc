@@ -1,0 +1,6 @@
+---
+id: frontend-plugins-index
+title: Ensono Stacks Plugins
+linkTitle: Ensono Stacks Plugins
+weight: 6
+---
