@@ -31,7 +31,7 @@ Access Amido.Stacks.Templates package page in Nuget https://www.nuget.org/packag
 .Run the command to install the package
 [source, bash]
 ----
-dotnet new --install Amido.Stacks.Templates
+dotnet new install Amido.Stacks.Templates
 ----
 
 === Create a new  project
@@ -41,7 +41,7 @@ Navigate to the folder where you wish to create a new project in.
 .Run the command to create the project
 [source, bash]
 ----
-dotnet new stacks-webapi -n Company.Project -do YourDomain -cp AzureCloud
+dotnet new stacks-webapi -n Company.Project -do YourDomain --cloudProvider Azure
 ----
 
 The above command will create a folder and a repository called `Company.Project` with DevOps build pipelines ready for Azure DevOps.
@@ -51,7 +51,7 @@ The above command will create a folder and a repository called `Company.Project`
 .To uninstall the template pack you have to execute the following command
 [source, bash]
 ----
-dotnet new --uninstall Amido.Stacks.Templates
+dotnet new uninstall Amido.Stacks.Templates
 ----
 
 [] 
