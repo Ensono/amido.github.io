@@ -32,7 +32,7 @@ keywords:
 Access Amido.Stacks.Templates package page in Nuget [here](https://www.nuget.org/packages/Amido.Stacks.Templates/). Copy and execute the command displayed in the page (if you want to get the latest version). For example:
 
 ```bash title="Run the command to install the package"
-dotnet new --install Amido.Stacks.Templates
+dotnet new install Amido.Stacks.Templates
 ```
 
 ### Create a new  project
@@ -40,7 +40,7 @@ dotnet new --install Amido.Stacks.Templates
 Navigate to the folder where you wish to create a new project in.
 
 ```bash title="Run the command to create the project"
-dotnet new stacks-webapi -n Company.Project -do YourDomain -cp AzureCloud
+dotnet new stacks-webapi -n Company.Project -do YourDomain --cloudProvider Azure
 ```
 
 The above command will create a folder and a repository called `Company.Project` with DevOps build pipelines ready for Azure DevOps.
@@ -48,7 +48,7 @@ The above command will create a folder and a repository called `Company.Project`
 ### Uninstalling a template
 
 ```bash title="To uninstall the template pack you have to execute the following command"
-dotnet new --uninstall Amido.Stacks.Templates
+dotnet new uninstall Amido.Stacks.Templates
 ```
 
 :::note Template parameter details
@@ -61,7 +61,7 @@ dotnet new --uninstall Amido.Stacks.Templates
 - **-o|--output**
     - Sets the path to where the project is added
     - Omitting the parameter will result in the creation of a new folder
-- **-cp|--cloudProvider**
+- **--cloudProvider**
     - Configures which cloud provider to be used
 - **-cicd|--cicdProvider**
     - Configures which cicd provider templates to be used
