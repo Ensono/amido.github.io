@@ -216,11 +216,11 @@ module.exports = {
               },
             ],
           },
-          {
-            type: "category",
-            label: "Google Cloud Platform",
-            items: ["workloads/gcp/workloads_gcp_readme"],
-          },
+          // {
+          //   type: "category",
+          //   label: "Google Cloud Platform",
+          //   items: ["workloads/gcp/workloads_gcp_readme"],
+          // },
           {
             type: "category",
             label: "Amazon Web Services",

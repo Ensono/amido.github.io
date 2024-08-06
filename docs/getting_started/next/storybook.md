@@ -1,5 +1,6 @@
 <!-- markdownlint-disable MD041 -->
-### @ensono-stacks/next:storybook
+
+### @ensono-stacks/next:storybook {#ensono-stacks-next-storybook}
 
 <details>
 <summary>Add Storybook to your next application</summary>
@@ -34,18 +35,18 @@ nx g @ensono-stacks/next:storybook
 
 The following command line arguments are available:
 
-| Option    | Description           | Type      | Accepted Values   |Default            |
-| ---       | -------------------   | ---       | ---               | ---               |
-| --project | The name of the project  | nameOfApplication   |  string       | N/A              |
-| --skipPackageJson | Do not add dependencies to `package.json`  | boolean    |  true/false                 |false     |
+| Option            | Description                               | Type              | Accepted Values | Default |
+| ----------------- | ----------------------------------------- | ----------------- | --------------- | ------- |
+| --project         | The name of the project                   | nameOfApplication | string          | N/A     |
+| --skipPackageJson | Do not add dependencies to `package.json` | boolean           | true/false      | false   |
 
 ### Generator Output
 
 The generator creates the following:
 
 - creates a new folder `.storybook`. This contains information for the storybook package.
-    - main.js file is created
-    - preview.js file is created
+  - main.js file is created
+  - preview.js file is created
 - creates a new file `tsconfig.storybook.json` to store configuration for storybook
 
 The generator updates the following:
@@ -56,24 +57,23 @@ The generator installs the follow dependencies unless the `--skipPackageJson` op
 
 ```json title="/package.json"
 {
-    "dependencies": {
-        "@storybook/core-server": "7.4.5",
-    },
-    "devDependencies": {
-        "@nx/storybook": "16.9.1",
-        "@storybook/nextjs": "7.4.5",
-        "@storybook/addon-essentials": "7.4.5",
-        "@storybook/addon-actions": "7.4.5",
-        "@storybook/addon-links": "7.4.5",
-        "@storybook/manager-api": "7.4.5",
-        "@storybook/preview-api": "7.4.5",
-        "@storybook/addon-a11y": "7.4.5",
-        "@storybook/addon-jest": "7.4.5",
-        "@storybook/theming": "7.4.5",
-        "eslint-plugin-storybook": "0.6.15",
-    },
+  "dependencies": {
+    "@storybook/core-server": "7.4.5"
+  },
+  "devDependencies": {
+    "@nx/storybook": "16.9.1",
+    "@storybook/nextjs": "7.4.5",
+    "@storybook/addon-essentials": "7.4.5",
+    "@storybook/addon-actions": "7.4.5",
+    "@storybook/addon-links": "7.4.5",
+    "@storybook/manager-api": "7.4.5",
+    "@storybook/preview-api": "7.4.5",
+    "@storybook/addon-a11y": "7.4.5",
+    "@storybook/addon-jest": "7.4.5",
+    "@storybook/theming": "7.4.5",
+    "eslint-plugin-storybook": "0.6.15"
+  }
 }
-
 ```
 
 ### Custom command for app

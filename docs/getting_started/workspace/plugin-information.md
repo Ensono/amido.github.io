@@ -23,7 +23,7 @@ Using a standard setup for workspaces ensures consistency across projects and al
 
 :::caution
 
-This plugin will automatically be installed and configured if creating a stacks workspace with the [Ensono Stacks CLI](/docs/getting_started/setup#option-1-stacks-cli) or [@ensono-stacks/create-stacks-workspace](/docs/getting_started/setup#option-2-create-stacks-workspace-generator)
+This plugin will automatically be installed and configured if creating a stacks workspace with the [Ensono Stacks CLI](/docs/getting_started/setup#option-1-ensono-stacks-cli) or [@ensono-stacks/create-stacks-workspace](/docs/getting_started/setup#option-2-create-ensono-stacks-workspace-generator)
 
 :::
 

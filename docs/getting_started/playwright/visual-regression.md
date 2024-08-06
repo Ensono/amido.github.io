@@ -1,5 +1,6 @@
 <!-- markdownlint-disable MD041 -->
-### @ensono-stacks/playwright:visual-regression
+
+### @ensono-stacks/playwright:visual-regression {#ensono-stacks-playwright-visual-regression}
 
 <details>
 <summary>Adds native or cloud based visual regression to your test suite</summary>
@@ -15,17 +16,17 @@ nx g @ensono-stacks/playwright:visual-regression
 Upon calling the _visual-regression_ generator you will be presented with a number of options:
 
 - What type of visual regression tests would you like to use?
-    - native: Generate visual regression tests using Playwrights native [visual comparison api](https://playwright.dev/docs/test-snapshots)
-    - applitools: Generate visual regression tests using the [`@applitools/eyes-playwright`](https://www.npmjs.com/package/@applitools/eyes-playwright) plugin and scaffold an example visual regression test batch
+  - native: Generate visual regression tests using Playwrights native [visual comparison api](https://playwright.dev/docs/test-snapshots)
+  - applitools: Generate visual regression tests using the [`@applitools/eyes-playwright`](https://www.npmjs.com/package/@applitools/eyes-playwright) plugin and scaffold an example visual regression test batch
 
 ### Command line arguments
 
 The following command line arguments are available:
 
-| Option                | Description                                                       | Type      | Accepted Values                           |Default    |
-| ---------------       | --------------------------------------------------------------    | ---       | ---                                       | ---       |
-| --project, -p             | The name of the existing playwright test app to enhance       | string   |                              |           |
-| --type, -t   | Method used to conduct visual testing                            | string    | [choices: "native", "applitools"] | none      |
+| Option        | Description                                             | Type   | Accepted Values                   | Default |
+| ------------- | ------------------------------------------------------- | ------ | --------------------------------- | ------- |
+| --project, -p | The name of the existing playwright test app to enhance | string |                                   |         |
+| --type, -t    | Method used to conduct visual testing                   | string | [choices: "native", "applitools"] | none    |
 
 ### Generator Output
 
