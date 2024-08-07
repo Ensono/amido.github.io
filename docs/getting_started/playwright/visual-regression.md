@@ -16,8 +16,8 @@ nx g @ensono-stacks/playwright:visual-regression
 Upon calling the _visual-regression_ generator you will be presented with a number of options:
 
 - What type of visual regression tests would you like to use?
-  - native: Generate visual regression tests using Playwrights native [visual comparison api](https://playwright.dev/docs/test-snapshots)
-  - applitools: Generate visual regression tests using the [`@applitools/eyes-playwright`](https://www.npmjs.com/package/@applitools/eyes-playwright) plugin and scaffold an example visual regression test batch
+    - native: Generate visual regression tests using Playwrights native [visual comparison api](https://playwright.dev/docs/test-snapshots)
+    - applitools: Generate visual regression tests using the [`@applitools/eyes-playwright`](https://www.npmjs.com/package/@applitools/eyes-playwright) plugin and scaffold an example visual regression test batch
 
 ### Command line arguments
 

@@ -45,8 +45,8 @@ The following command line arguments are available:
 The generator creates the following:
 
 - creates a new folder `.storybook`. This contains information for the storybook package.
-  - main.js file is created
-  - preview.js file is created
+    - main.js file is created
+    - preview.js file is created
 - creates a new file `tsconfig.storybook.json` to store configuration for storybook
 
 The generator updates the following:

@@ -16,7 +16,7 @@ nx g @ensono-stacks/cypress:init
 Upon calling the _init_ generator you will be presented with the following question:
 
 - What app would you like to generate a test project for?
-  - The name of the existing application to generate a test project for
+- The name of the existing application to generate a test project for
 
 ### Command line arguments
 

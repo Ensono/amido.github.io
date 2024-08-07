@@ -42,8 +42,8 @@ The [getting started](../getting_started/getting_started.md) section includes st
 ### Commands
 
 - **`generate`**: Top-level command for generating resources for a new data workload.
-  - **`ingest`**: Subcommand to generate a new [data ingest workload](./ingest_data_azure.md), using the provided configuration file. A optional flag (`--data-quality` or `-dq`) can be included to specify whether to include data quality components in the workload.
-  - **`processing`**: Subcommand to generate a new [data processing workload](./data_processing.md), using the provided configuration file. A optional flag (`--data-quality` or `-dq`) can be included to specify whether to include data quality components in the workload.
+- **`ingest`**: Subcommand to generate a new [data ingest workload](./ingest_data_azure.md), using the provided configuration file. A optional flag (`--data-quality` or `-dq`) can be included to specify whether to include data quality components in the workload.
+- **`processing`**: Subcommand to generate a new [data processing workload](./data_processing.md), using the provided configuration file. A optional flag (`--data-quality` or `-dq`) can be included to specify whether to include data quality components in the workload.
 
 ### Examples
 

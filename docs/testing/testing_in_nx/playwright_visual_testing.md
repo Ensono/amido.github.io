@@ -64,20 +64,20 @@ As part of native visual comparisons with playwright the following recommended c
 ```
 
 - updateSnapshots
-  - Description: Whether to update expected snapshots with the actual results produced by the test run.
-  - Value: **'missing'** - Missing snapshots are created, for example when authoring a new test and running it for the first time.
+    - Description: Whether to update expected snapshots with the actual results produced by the test run.
+    - Value: **'missing'** - Missing snapshots are created, for example when authoring a new test and running it for the first time.
 - ignoreSnapshots
-  - Description: Whether to skip snapshot expectations, such as expect(value).toMatchSnapshot() and await expect(page).toHaveScreenshot()..
-  - Value: **!process.env.CI** - Any snapshot checks are skipped unless the test is being ran within the CI.
+    - Description: Whether to skip snapshot expectations, such as expect(value).toMatchSnapshot() and await expect(page).toHaveScreenshot()..
+    - Value: **!process.env.CI** - Any snapshot checks are skipped unless the test is being ran within the CI.
 - toHaveScreenshot/toMatchSnapshot::maxDiffPixelRatio
-  - Description: an acceptable ratio of pixels that are different to the total amount of pixels, between 0 and 1.
-  - Value: **0.05** - Any images with > 0.05% pixel variance will be flagged.
+    - Description: an acceptable ratio of pixels that are different to the total amount of pixels, between 0 and 1.
+    - Value: **0.05** - Any images with > 0.05% pixel variance will be flagged.
 - toHaveScreenshot/toMatchSnapshot::threshold
-  - Description: an acceptable perceived colour difference in the YIQ colour space between the same pixel in compared images, between zero (strict) and one (lax).
-  - Value: **0.2** - Any pixel with > 20% variance will be flagged
+    - Description: an acceptable perceived colour difference in the YIQ colour space between the same pixel in compared images, between zero (strict) and one (lax).
+    - Value: **0.2** - Any pixel with > 20% variance will be flagged
 - toHaveScreenshot::animations
-  - Description: whether to enable or disable CSS animations, CSS transitions and Web Animations
-  - Value: **disabled** - finite animations are fast-forwarded to completion and infinite animations are cancelled to initial state.
+    - Description: whether to enable or disable CSS animations, CSS transitions and Web Animations
+    - Value: **disabled** - finite animations are fast-forwarded to completion and infinite animations are cancelled to initial state.
 
 :::info
 

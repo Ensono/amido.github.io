@@ -54,9 +54,9 @@ The [`@ensono-stacks/playwright:accessibility`](../../getting_started/playwright
 If you are considering adding visual regression tests to your application, then we provide two options with the [`@ensono-stacks/playwright:visual-regression`](../../getting_started/playwright/plugin-information.md#ensono-stacks-playwright-visual-regression) generator:
 
 - Applitools eyes
-  - A powerful visual regression testing tool that detects visual changes, updates of browsers or OS, and integrates with popular testing frameworks and CI/CD pipelines, making it easy to automate visual regression testing and improve the quality and user-friendliness of digital products. Our community of experts recommend this software as the best approach, to decide if it is right for you, please visit [Applitools Eyes!](https://applitools.com/platform/eyes/)
+    - A powerful visual regression testing tool that detects visual changes, updates of browsers or OS, and integrates with popular testing frameworks and CI/CD pipelines, making it easy to automate visual regression testing and improve the quality and user-friendliness of digital products. Our community of experts recommend this software as the best approach, to decide if it is right for you, please visit [Applitools Eyes!](https://applitools.com/platform/eyes/)
 - Native
-  - A free alternative to cloud-based providers which enables developers to perform automated visual regression testing using the latest web platform features in their chosen testing framework.
+    - A free alternative to cloud-based providers which enables developers to perform automated visual regression testing using the latest web platform features in their chosen testing framework.
 
 :::note
 
