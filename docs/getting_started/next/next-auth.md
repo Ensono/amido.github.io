@@ -1,6 +1,6 @@
 <!-- markdownlint-disable MD041 -->
 
-### @ensono-stacks/next:next-auth
+### @ensono-stacks/next:next-auth {#ensono-stacks-next-next-auth}
 
 <details>
 <summary>Add Next Authentication to your next application</summary>

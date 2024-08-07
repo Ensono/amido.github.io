@@ -1,5 +1,6 @@
 <!-- markdownlint-disable MD041 -->
-### @ensono-stacks/playwright:visual-regression
+
+### @ensono-stacks/playwright:visual-regression {#ensono-stacks-playwright-visual-regression}
 
 <details>
 <summary>Adds native or cloud based visual regression to your test suite</summary>
@@ -22,10 +23,10 @@ Upon calling the _visual-regression_ generator you will be presented with a numb
 
 The following command line arguments are available:
 
-| Option                | Description                                                       | Type      | Accepted Values                           |Default    |
-| ---------------       | --------------------------------------------------------------    | ---       | ---                                       | ---       |
-| --project, -p             | The name of the existing playwright test app to enhance       | string   |                              |           |
-| --type, -t   | Method used to conduct visual testing                            | string    | [choices: "native", "applitools"] | none      |
+| Option        | Description                                             | Type   | Accepted Values                   | Default |
+| ------------- | ------------------------------------------------------- | ------ | --------------------------------- | ------- |
+| --project, -p | The name of the existing playwright test app to enhance | string |                                   |         |
+| --type, -t    | Method used to conduct visual testing                   | string | [choices: "native", "applitools"] | none    |
 
 ### Generator Output
 

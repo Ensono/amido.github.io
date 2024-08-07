@@ -1,6 +1,6 @@
 <!-- markdownlint-disable MD041 -->
 
-### @nx/playwright:playwright
+### @nx/playwright:playwright {#ensono-stacks-playwright-executor}
 
 <details>
 <summary>Enables you to execute your playwright tests</summary>
