@@ -82,7 +82,7 @@ button and add the new parameters.
    
 ==== Build and run the application
 
-Note that at a minimum https://adoptopenjdk.net/[Java 11] should be installed.
+Note that at a minimum https://www.azul.com/downloads/?package=jdk#zulu[Java 17] should be installed.
 
 Move to the `<PROJECT-NAME>/java` folder, then
 
