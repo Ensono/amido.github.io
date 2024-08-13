@@ -105,7 +105,7 @@ To spin up the server automatically, then run Cypress in headless Chrome, use:
 
 _Script_:
 
-`npm run test:cypress`. This is the same script as mentioned for running in [CI pipelines](#how-is-cypress-run-in-continuous-integration-ci-pipelines)
+`npm run test:cypress`. This is the same script as mentioned for running in [CI pipelines](#how-cypress-is-run-in-continuous-integration-ci-pipelines)
 
 ### Where tests should be located
 

@@ -74,7 +74,7 @@ This contains classes used to manage the configuration for the tests.
 - `ConfigAccessor.cs` contains the logic required to obtain the JSON from `appsettings.json` and bind it to the `ConfigModel.cs` object. This allows the configuration to be used as a simple object.
 The ConfigAccessor will automatically replace any configuration setting values with the values set in the Environment Variables on the machine running the tests.
 
-Example: In `appsettings.json` we are using the configuration setting (key-value pair) "BaseUrl":"http://dev.azure.amidostacks.com/api/menu/". If there is an Environment Variable set on the current machine/build agent using `BaseUrl` key, the value in `appsettings.json` will be replaced.
+Example: In `appsettings.json` we are using the configuration setting (key-value pair) `"BaseUrl":"http://dev.azure.amidostacks.com/api/menu/"`. If there is an Environment Variable set on the current machine/build agent using `BaseUrl` key, the value in `appsettings.json` will be replaced.
 
 
 ## Models

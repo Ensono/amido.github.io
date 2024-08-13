@@ -150,7 +150,7 @@ Maintainers and contributors may obtain the `PACT_BEARER_TOKEN` if they request 
 When the tests pass, the contract will be written to `[pacts](./pacts/genericmenuconsumer-menuapi.json)`, following the naming convention: `<PACT_CONSUMER>-<PACT_PROVIDER>`.
 
 Some good practices:
-✅ Use Pact Matchers to ensure we account for state change, e.g. no hardcoded values for menus in the database, see <https://docs.pact.io/getting_started/matching> for more information.
+✅ Use Pact Matchers to ensure we account for state change, e.g. no hardcoded values for menus in the database, see [Pact Matchers Documentation](https://docs.pact.io/getting_started/matching) for more information.
 ✅ Ensure that the provider state has been configured by the Provider
 
 It's important to get the `PACT_CONSUMER` and `PACT_PROVIDER` names correct, as these form the key for verify.

@@ -7,10 +7,10 @@ pool:
 trigger:
   branches:
     include:
-      - 'master'
+      - "master"
   paths:
     include:
-      - '*'
+      - "*"
 
 resources:
   repositories:
@@ -18,18 +18,18 @@ resources:
       type: github
       name: ensono/stacks-pipeline-templates
       ref: refs/tags/v1.1.0
-      endpoint: amidostacks
+      endpoint: ensonostacks
 
 variables:
   - name: pool_vm_image
     value: ubuntu-20.04
   - name: version_spec
-    value: 16.x
+    value: 18.x
   - name: self_repo
     value: amido.github.io
   - name: working_directory
-    value: '$(Agent.BuildDirectory)/s/$(self_repo)'
-  - group: amido-stacks-webapp
+    value: "$(Agent.BuildDirectory)/s/$(self_repo)"
+  - group: stacks-github-pages
 
 steps:
   - checkout: self
@@ -44,16 +44,5 @@ steps:
 
   - bash: |
       npm run lint
-    displayName: 'Lint: Run markdown lint'
+    displayName: "Lint: Run markdown lint"
     workingDirectory: $(working_directory)
-
-  - bash: |
-      git config --global user.email $(GIT_USER_EMAIL)
-      git config --global user.name $(GIT_USER_NAME)
-      echo "machine github.com login $(GIT_USER_NAME) password $(GITHUB_TOKEN)" > ~/.netrc
-      GIT_USER="$(GIT_USER_NAME)" npm run publish
-    displayName: "Publish: GitHub Pages"
-    workingDirectory: $(working_directory)
-    condition: and(contains(variables['build.sourceBranch'], 'refs/heads/master'), succeeded())
-    env:
-      DEPLOYMENT_BRANCH: master

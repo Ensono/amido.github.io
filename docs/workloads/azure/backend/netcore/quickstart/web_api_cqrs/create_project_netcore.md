@@ -51,7 +51,7 @@ Once installed, you obtain 6 templates that can be used
 Navigate to the folder where you wish to create a new project on.
 
 ```bash title="Run the command to create the project"
-dotnet new stacks-cqrs-app -n Company.Project -do YourDomain -e MessagingProvider -db DatabaseOption -cp CloudProvider
+dotnet new stacks-cqrs-app -n Company.Project -do YourDomain -e MessagingProvider -db DatabaseOption --cloudProvider CloudProvider
 ```
 
 The above command will create a folder and a repository called `Company.Project`.
@@ -134,7 +134,7 @@ dotnet new --uninstall Amido.Stacks.CQRS.Templates
 Navigate to the folder where you wish to create a new project in. Then run the following command.
 
 ```bash title="Run the command to create the project"
-dotnet new stacks-cqrs-webapi -n Company.Project -do YourDomain -cp AzureCloud
+dotnet new stacks-cqrs-app -n Company.Project -do YourDomain --cloudProvider Azure
 ```
 
 The above command will create a folder and a repository called `Company.Project` with DevOps build pipelines ready for Azure DevOps.
@@ -144,7 +144,7 @@ The above command will create a folder and a repository called `Company.Project`
 To create a project with CosmosDb as the database you can use the following command
 
 ```bash title="Run the command to create the project with database"
-dotnet new stacks-cqrs-webapi -n Company.Project -do YourDomain -db CosmosDb
+dotnet new stacks-cqrs-app -n Company.Project -do YourDomain -db CosmosDb
 ```
 
 :::note Template parameter details

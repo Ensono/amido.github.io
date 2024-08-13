@@ -12,14 +12,17 @@ keywords:
   - generator
   - executor
 ---
+
 import InitGenerator from './init.md'
-import InitDeploy from './init-deployment.md'
+
+<!-- import InitDeploy from './init-deployment.md' -->
+
 import AccessibilityGenerator from './accessibility.md'
 import Executor from './executor.md'
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Using the `@ensono-stacks/cypress` plugin can help you get started with testing using cypress. Built upon the [@nx/cypress](https://nx.dev/packages/cypress) plugin, Ensono Stacks provides additional capabilities to help you hit the ground running! 
+Using the `@ensono-stacks/cypress` plugin can help you get started with testing using cypress. Built upon the [@nx/cypress](https://nx.dev/packages/cypress) plugin, Ensono Stacks provides additional capabilities to help you hit the ground running!
 
 Additionally, cypress tests can be added to your deployment pipelines through the various deployment generators.
 
@@ -36,16 +39,16 @@ Install the `@ensono-stacks/cypress` plugin with the following command:
  <Tabs>
   <TabItem value="npm" label="npm">
 
-  ```bash
-  npm install --save-dev @ensono-stacks/cypress@latest
-  ```
+```bash
+npm install --save-dev @ensono-stacks/cypress@latest
+```
 
   </TabItem>
   <TabItem value="yarn" label="yarn">
 
-  ```bash
-  yarn add --dev @ensono-stacks/cypress@latest
-  ```
+```bash
+yarn add --dev @ensono-stacks/cypress@latest
+```
 
   </TabItem>
  </Tabs>
@@ -65,13 +68,12 @@ nx g @ensono-stacks/cypress:[generator-executor-name] --help
 ```
 
 ### Generators
+
 <!-- markdownlint-disable MD033 -->
 <InitGenerator />
-<InitDeploy />
+<!-- <InitDeploy />  -->
 <AccessibilityGenerator />
 
 ### Executors
 
 <Executor/>
-
-
