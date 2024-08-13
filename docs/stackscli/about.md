@@ -12,7 +12,7 @@ The CLI will help you get started with scaffolding your applications and workspa
 
 ## Installation
 
-As the CLI is a single binary the quickest way to install it is to download it and put it somewhere in your PATH. The following code snippets show how this can be achieved using Bash and PowerShell.
+As the CLI is a single binary, the quickest way to install it is to download it and add it to your PATH. The following code snippets show how this can be achieved using Bash and PowerShell.
 
 ### Linux and Mac OS
 
@@ -30,7 +30,7 @@ chmod +x /usr/local/bin/stacks-cli
 
 ### Windows
 
-The following PowerShell snippet will download the application to the user's Downloads directory. It is up to the user to put it somewhere that is accessible on the PATH or use the full path to the app when using it.
+The following PowerShell snippet will download the Stacks CLI executable to the user's Downloads directory. It should be moved somewhere accessible for use through the PATH (or alternatively, use the full path to the app when using it).
 
 ```bash
 # Download the binary
