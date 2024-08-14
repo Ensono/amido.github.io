@@ -29,7 +29,7 @@ All security sensitive information is passed as a secret in our configuration. W
 
 The project can be set to use Azure **Cosmos DB** or an **InMemory** database to store the example application data. The **InMemory** database works out of the box and no further setup is required aside from creating your project. Depending on your desired setup you'll have to provide some or all of the configuration in the `appsettings.json` file section showed below.
 
-```json title="<PROJECT-NAME>/src/api/xxENSONOxx.xxSTACKSxx.API/appsettings.json"
+```json title="<PROJECT-NAME>/cqrs/src/api/xxENSONOxx.xxSTACKSxx.API/appsettings.json"
 "CosmosDb": {
 	"DatabaseAccountUri": "<Add CosmosDB Account URI here>",
 	"DatabaseName": "Stacks",
@@ -204,7 +204,7 @@ When choosing not to run the CosmosDB locally via the emulator, further configur
 
 Aside from setting the `COSMOSDB_KEY` as an environment variable (described in the previous section), you'll have to set the CosmosDB URI parameter `DatabaseAccountUri` as well.
 
-```json title="<PROJECT-NAME>/src/api/xxENSONOxx.xxSTACKSxx.API/appsettings.json"
+```json title="<PROJECT-NAME>/cqrs/src/api/xxENSONOxx.xxSTACKSxx.API/appsettings.json"
 "CosmosDb": {
 	"DatabaseAccountUri": "<Add CosmosDB Account URI here>",
 	"DatabaseName": "Stacks",
@@ -234,7 +234,7 @@ The template and NuGet package assumes you'll use the `AWS CLI` tools and will h
 
 Depending on your desired setup you'll have to provide some or all of the configuration in the `appsettings.json` file section showed below.
 
-```json title="<PROJECT-NAME>/src/api/xxENSONOxx.xxSTACKSxx.API/appsettings.json"
+```json title="<PROJECT-NAME>/cqrs/src/api/xxENSONOxx.xxSTACKSxx.API/appsettings.json"
 "DynamoDb": {
     "TableName": "Menu",
     "TablePrefix": ""
@@ -253,7 +253,7 @@ The project can be set to use AWS **SNS** to publish and consume events. In orde
 
 You will also be required to set the `TOPIC_ARN` as an environment variable (see section **Setting the TOPIC_ARN environment variable**).
 
-```json title="<PROJECT-NAME>/src/api/xxENSONOxx.xxSTACKSxx.API/appsettings.json"
+```json title="<PROJECT-NAME>/cqrs/src/api/xxENSONOxx.xxSTACKSxx.API/appsettings.json"
 "AwsSnsConfiguration": {
   "TopicArn": {
 		"Identifier": "TOPIC_ARN",

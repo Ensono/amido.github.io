@@ -21,7 +21,7 @@ Build and run locally
 
 === Windows
 
-Move to the `<PROJECT-NAME>/src/api` folder and run the next commands in **Command Prompt** or **Powershell**
+Move to the `<PROJECT-NAME>/simple-api/src/api` folder and run the next commands in **Command Prompt** or **Powershell**
 
 [source, bash]
 ----
@@ -36,7 +36,7 @@ dotnet run --project xxENSONOxx.xxSTACKSxx.API/xxENSONOxx.xxSTACKSxx.API.csproj
 
 === Linux
 
-Move to the `<PROJECT-NAME>/src/api` folder and run the next commands in **terminal**.
+Move to the `<PROJECT-NAME>/simple-api/src/api` folder and run the next commands in **terminal**.
 
 [source, bash]
 ----
@@ -50,7 +50,7 @@ dotnet run --project xxENSONOxx.xxSTACKSxx.API/xxENSONOxx.xxSTACKSxx.API.csproj
 ----
 Build and run in docker container
 
-From the `<PROJECT-NAME>/src/api` folder, build a Docker image using e.g. the command below:
+From the `<PROJECT-NAME>/simple-api/src/api` folder, build a Docker image using e.g. the command below:
 
 .Build docker image
 [source, bash]
@@ -65,7 +65,7 @@ After the creation of the Docker image, the Docker container can be run using th
 .Run docker container
 [source, bash]
 ----
-docker run -p 5000:80 --mount type=bind,source=/path/to/PROJECT-NAME/src/api/xxENSONOxx.xxSTACKSxx.API/appsettings.json,target=/app/config/appsettings.json
+docker run -p 5000:80 --mount type=bind,source=/path/to/PROJECT-NAME/simple-api/src/api/xxENSONOxx.xxSTACKSxx.API/appsettings.json,target=/app/config/appsettings.json
 ----
 
 Verify that the application has started

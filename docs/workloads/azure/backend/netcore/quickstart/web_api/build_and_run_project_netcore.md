@@ -38,7 +38,7 @@ values={[
 ]}>
 <TabItem value="windows">
 
-Move to the `<PROJECT-NAME>/src/api` folder and run the next commands in **Command Prompt** or **Powershell**
+Move to the `<PROJECT-NAME>/simple-api/src/api` folder and run the next commands in **Command Prompt** or **Powershell**
 
 ```bash
 dotnet build
@@ -53,7 +53,7 @@ dotnet run --project xxENSONOxx.xxSTACKSxx.API/xxENSONOxx.xxSTACKSxx.API.csproj
 
 <TabItem value="linux">
 
-Move to the `<PROJECT-NAME>/src/api` folder and run the next commands in **terminal**.
+Move to the `<PROJECT-NAME>/simple-api/src/api` folder and run the next commands in **terminal**.
 
 ```bash
 dotnet build
@@ -77,7 +77,7 @@ dotnet run --project xxENSONOxx.xxSTACKSxx.API/xxENSONOxx.xxSTACKSxx.API.csproj
 
 <div>
 
-From the `<PROJECT-NAME>/src/api` folder, build a Docker image using e.g. the command below:
+From the `<PROJECT-NAME>/simple-api/src/api` folder, build a Docker image using e.g. the command below:
 
 ```bash title="Build docker image"
 docker build -t dotnet-api .
@@ -88,7 +88,7 @@ This uses the **Dockerfile** in this folder to generate the Docker image.
 After the creation of the Docker image, the Docker container can be run using the command below:
 
 ```bash title="Run docker container"
-docker run -p 5000:80 --mount type=bind,source=/path/to/PROJECT-NAME/src/api/xxENSONOxx.xxSTACKSxx.API/appsettings.json,target=/app/config/appsettings.json
+docker run -p 5000:80 --mount type=bind,source=/path/to/PROJECT-NAME/simple-api/src/api/xxENSONOxx.xxSTACKSxx.API/appsettings.json,target=/app/config/appsettings.json
 ```
 
 </div>

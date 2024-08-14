@@ -41,7 +41,7 @@ values={[
 ]}>
 <TabItem value="windows">
 
-Move to the `<PROJECT-NAME>/src/api` folder and run the next commands in **Command Prompt** or **Powershell**
+Move to the `<PROJECT-NAME>/cqrs/src/api` folder and run the next commands in **Command Prompt** or **Powershell**
 
 ```bash
 dotnet build
@@ -72,7 +72,7 @@ There are two fixes possible so far:
 
 <TabItem value="linux">
 
-Move to the `<PROJECT-NAME>/src/api` folder and run the next commands in **terminal**.
+Move to the `<PROJECT-NAME>/cqrs/src/api` folder and run the next commands in **terminal**.
 
 ```bash
 export COSMOSDB_KEY=<COSMOSDB_KEY value here>
@@ -103,7 +103,7 @@ dotnet run --project xxENSONOxx.xxSTACKSxx.API/xxENSONOxx.xxSTACKSxx.API.csproj
 
 <div>
 
-From the `<PROJECT-NAME>/src/api` folder, build a Docker image using e.g. the command below:
+From the `<PROJECT-NAME>/cqrs/src/api` folder, build a Docker image using e.g. the command below:
 
 ```bash title="Build docker image"
 docker build -t dotnet-api .
@@ -114,7 +114,7 @@ This uses the **Dockerfile** in this folder to generate the Docker image.
 After the creation of the Docker image, the Docker container can be run using the command below:
 
 ```bash title="Run docker container"
-docker run -p 5000:80 --mount type=bind,source=/path/to/PROJECT-NAME/src/api/xxENSONOxx.xxSTACKSxx.API/appsettings.json,target=/app/config/appsettings.json -e COSMOSDB_KEY=your-key -e SERVICEBUS_CONNECTIONSTRING=your-asb-connection-string -e EVENTHUB_CONNECTIONSTRING=your-aeh-connection-string -e STORAGE_CONNECTIONSTRING=your-aeh-storage-connection-string  dotnet-api:latest`
+docker run -p 5000:80 --mount type=bind,source=/path/to/PROJECT-NAME/cqrs/src/api/xxENSONOxx.xxSTACKSxx.API/appsettings.json,target=/app/config/appsettings.json -e COSMOSDB_KEY=your-key -e SERVICEBUS_CONNECTIONSTRING=your-asb-connection-string -e EVENTHUB_CONNECTIONSTRING=your-aeh-connection-string -e STORAGE_CONNECTIONSTRING=your-aeh-storage-connection-string  dotnet-api:latest`
 ```
 
 :::note
