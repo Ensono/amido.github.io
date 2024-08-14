@@ -12,7 +12,7 @@ keywords:
   - ensono
 ---
 
-Authentication and Session Management is provided with a custom implementation of [Auth.js (Next-auth)](https://authjs.dev/). To configure Authentication into your Ensono Stacks workspace follow the Next.js plugin documentation for the [@ensono-stacks/next:next-auth generator](/docs/getting_started/next/ensono-stacks-next#ensono-stacksnextnext-auth).
+Authentication and Session Management is provided with a custom implementation of [Auth.js (Next-auth)](https://authjs.dev/). To configure Authentication into your Ensono Stacks workspace follow the Next.js plugin documentation for the [@ensono-stacks/next:next-auth generator](/docs/getting_started/next/ensono-stacks-next#ensono-stacks-next-next-auth).
 
 :::info
 

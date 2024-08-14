@@ -24,7 +24,7 @@ The following tools are recommended for developing while using the Ensono Stacks
 |(Windows users) a Linux distribution, e.g. https://docs.microsoft.com/en-us/windows/wsl/install[WSL]
 |A Unix-based environment is recommended for developing the solution (e.g. macOS, or WSL for Windows users).
 
-|Java 8/11/17
+|Java 17
 |Optional: Java is required to develop and run tests using PySpark locally - see https://spark.apache.org/docs/latest/[Spark documentation].
 
 |https://learn.microsoft.com/en-us/cli/azure/install-azure-cli[Azure CLI]

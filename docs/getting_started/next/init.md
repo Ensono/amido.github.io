@@ -1,6 +1,6 @@
 <!-- markdownlint-disable MD041 -->
 
-### @ensono-stacks/next:init
+### @ensono-stacks/next:init {#ensono-stacks-next-init}
 
 <details>
 <summary>Adds custom config and developer tools to an existing next application</summary>
