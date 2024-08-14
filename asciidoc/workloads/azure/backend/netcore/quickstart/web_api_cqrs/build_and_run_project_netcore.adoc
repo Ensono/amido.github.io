@@ -23,7 +23,7 @@ The API generated consists of configuration to be run locally or on a docker con
 .Build and run locally on Windows
 [%collapsible]
 =====
-Move to the `<PROJECT-NAME>/src/api` folder and run the next commands in **Command Prompt** or **Powershell**
+Move to the `<PROJECT-NAME>/cqrs/src/api` folder and run the next commands in **Command Prompt** or **Powershell**
 
 [source, bash]
 ----
@@ -55,7 +55,7 @@ There are two fixes possible so far:
 .Build and run locally on Linux
 [%collapsible]
 =====
-Move to the `<PROJECT-NAME>/src/api` folder and run the next commands in **terminal**.
+Move to the `<PROJECT-NAME>/cqrs/src/api` folder and run the next commands in **terminal**.
 
 [source, bash]
 ----
@@ -81,7 +81,7 @@ dotnet run --project xxENSONOxx.xxSTACKSxx.API/xxENSONOxx.xxSTACKSxx.API.csproj
 [%collapsible]
 =====
 
-From the `<PROJECT-NAME>/src/api` folder, build a Docker image using e.g. the command below:
+From the `<PROJECT-NAME>/cqrs/src/api` folder, build a Docker image using e.g. the command below:
 
 .Build docker image
 [source, bash]
@@ -96,7 +96,7 @@ After the creation of the Docker image, the Docker container can be run using th
 .Run docker container
 [source, bash]
 ----
-docker run -p 5000:80 --mount type=bind,source=/path/to/PROJECT-NAME/src/api/xxENSONOxx.xxSTACKSxx.API/appsettings.json,target=/app/config/appsettings.json -e COSMOSDB_KEY=your-key -e SERVICEBUS_CONNECTIONSTRING=your-asb-connection-string -e EVENTHUB_CONNECTIONSTRING=your-aeh-connection-string -e STORAGE_CONNECTIONSTRING=your-aeh-storage-connection-string  dotnet-api:latest`
+docker run -p 5000:80 --mount type=bind,source=/path/to/PROJECT-NAME/cqrs/src/api/xxENSONOxx.xxSTACKSxx.API/appsettings.json,target=/app/config/appsettings.json -e COSMOSDB_KEY=your-key -e SERVICEBUS_CONNECTIONSTRING=your-asb-connection-string -e EVENTHUB_CONNECTIONSTRING=your-aeh-connection-string -e STORAGE_CONNECTIONSTRING=your-aeh-storage-connection-string  dotnet-api:latest`
 ----
 
 NOTE: The **COSMOSDB_KEY** described in the command above has to be passed when running the container. **SERVICEBUS_CONNECTIONSTRING** OR **EVENTHUB_CONNECTIONSTRING** and **STORAGE_CONNECTIONSTRING** are needed based on the configuration and message service you'll be using. Note that the **appsettings.json** value is mounted here for running locally,

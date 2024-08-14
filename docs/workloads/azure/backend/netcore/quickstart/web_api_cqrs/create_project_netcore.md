@@ -30,19 +30,28 @@ keywords:
 
 ### Install the package
 
-:::note
-.NET 3.1 templates have been deprecated. If you want to use the 3.1 templates the latest version is [3.0.130](https://www.nuget.org/packages/Amido.Stacks.CQRS.Templates/3.0.130)
-:::
 
-Access Amido.Stacks.CQRS.Template package page in Nuget [here](https://www.nuget.org/packages/Amido.Stacks.CQRS.Templates/)
+Access Amido.Stacks.CQRS.Template package page in Nuget [here](https://www.nuget.org/packages/Amido.Stacks.Templates/)
 Copy and execute the command displayed in the page (if you want to get the latest version).
 For example
 
 ```bash title="Run the command to install the package"
-dotnet new --install Amido.Stacks.CQRS.Templates
+dotnet new install Amido.Stacks.CQRS.Templates
 ```
 
-Once installed, you obtain 6 templates that can be used
+Once installed, you obtain 7 templates that can be used
+
+### stacks-webapi
+
+<p>A simple web API which also includes the build infrastructure</p>
+
+Navigate to the folder where you wish to create a new project in.
+
+```bash title="Run the command to create the project"
+dotnet new stacks-webapi -n Company.Project -do YourDomain --cloudProvider Azure
+```
+
+The above command will create a folder and a repository called `Company.Project` with DevOps build pipelines ready for Azure DevOps.
 
 ### stacks-cqrs-app
 
@@ -110,7 +119,7 @@ dotnet new stacks-asb-worker -n Company.Project -do Menu
 - **-o|--output**
     - Sets the path to where the project is added
     - Omitting the parameter will result in the creation of a new folder
-- **-cp|--cloudProvider**
+- **--cloudProvider**
     - Configures which cloud provider to be used
 :::
 
@@ -121,7 +130,7 @@ Once installed you can either, create a new project or add CQRS to an existing p
 If you want to remove the templates from your system you'll have to uninstall the Nuget package.
 
 ```bash title="To uninstall package execute the following command"
-dotnet new --uninstall Amido.Stacks.CQRS.Templates
+dotnet new uninstall Amido.Stacks.Templates
 ```
 
 </details>
@@ -159,7 +168,7 @@ dotnet new stacks-cqrs-app -n Company.Project -do YourDomain -db CosmosDb
 - **-o|--output**
     - Sets the path to where the project is added
     - Omitting the parameter will result in the creation of a new folder
-- **-cp|--cloudProvider**
+- **--cloudProvider**
     - Configures which cloud provider to be used
 - **-cicd|--cicdProvider**
     - Configures which cicd provider templates to be used
