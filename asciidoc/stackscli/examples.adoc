@@ -801,7 +801,7 @@ stacks:
       id: stacks-dotnet
     cqrs:
       type: nuget
-      name: Amido.Stacks.CQRS.Templates
+      name: Amido.Stacks.Templates
       id: stacks-dotnet-cqrs
   java:
     webapi:
@@ -905,7 +905,7 @@ stacks:
       id: stacks-dotnet
     cqrs:
       type: nuget
-      name: Amido.Stacks.CQRS.Templates
+      name: Amido.Stacks.Templates
       id: stacks-dotnet-cqrs
   java:
     webapi:

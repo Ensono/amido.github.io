@@ -31,12 +31,12 @@ keywords:
 ### Install the package
 
 
-Access Amido.Stacks.CQRS.Template package page in Nuget [here](https://www.nuget.org/packages/Amido.Stacks.Templates/)
+Access Amido.Stacks.Template package page in Nuget [here](https://www.nuget.org/packages/Amido.Stacks.Templates/)
 Copy and execute the command displayed in the page (if you want to get the latest version).
 For example
 
 ```bash title="Run the command to install the package"
-dotnet new install Amido.Stacks.CQRS.Templates
+dotnet new install Amido.Stacks.Templates
 ```
 
 Once installed, you obtain 7 templates that can be used
