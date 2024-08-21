@@ -79,7 +79,7 @@ The following table shows the additional options that are required when scaffold
 | Framework being used, e.g. dotnet, java, or infra
 
 | framework_version
-| v6.0.274
+| v8.0.101
 | Version of the framework option to grab.
 |===
 
@@ -90,13 +90,13 @@ Run the following command to create the new project in the working directory, wh
 .Bash
 [%nowrap,bash]
 ----
-stacks-cli scaffold -A core \ --company MyCompany \ --component backend \ --domain stacks-example.com \ -F dotnet \ -n my-webapi \ -p azdo \ -P aks \ --tfcontainer my-webapi \ --tfgroup supporting-group \ --tfstorage kjh56sdfnjnkjn \ -O webapi \ -V v6.0.274 \ --cmdlog
+stacks-cli scaffold -A core \ --company MyCompany \ --component backend \ --domain stacks-example.com \ -F dotnet \ -n my-webapi \ -p azdo \ -P aks \ --tfcontainer my-webapi \ --tfgroup supporting-group \ --tfstorage kjh56sdfnjnkjn \ -O webapi \ -V v8.0.101 \ --cmdlog
 ----
 
 .Powershell
 [%nowrap,powershell]
 ----
-stacks-cli scaffold -A core ` --company MyCompany ` --component backend ` --domain stacks-example.com ` -F dotnet ` -n my-webapi ` -p azdo ` -P aks ` --tfcontainer my-webapi ` --tfgroup supporting-group ` --tfstorage kjh56sdfnjnkjn ` -O webapi ` -V v6.0.274 ` --cmdlog
+stacks-cli scaffold -A core ` --company MyCompany ` --component backend ` --domain stacks-example.com ` -F dotnet ` -n my-webapi ` -p azdo ` -P aks ` --tfcontainer my-webapi ` --tfgroup supporting-group ` --tfstorage kjh56sdfnjnkjn ` -O webapi ` -V v8.0.101 ` --cmdlog
 ----
 
 This will get the specified version of the framework project, create a new project based on the options specified, and then update the build files to work with those settings. Finally, it will initialize a new git repository in the new project directory. All of the commands that have been run by the CLI will be saved in the `cmdlog.txt` file in the directory that the command was run in.
@@ -107,6 +107,7 @@ image::./images/example_dotnet_webapi_cmdline.png[CLI with command line options]
 <<cli-with-command-line-options, Figure 1>> shows the output of the command running in PowerShell. It also shows the commands that have been run in the `cmdlog.txt`.
 
 The resultant project, as stated by the `Project path:` statement in the screenshot, contains all the necessary files to run a simple .NET WebApi. The following listing shows that the solutions have been renamed with the `company` name as the namespace.
+
 
 ----
 └───my-webapi
@@ -800,7 +801,7 @@ stacks:
       id: stacks-dotnet
     cqrs:
       type: nuget
-      name: Amido.Stacks.CQRS.Templates
+      name: Amido.Stacks.Templates
       id: stacks-dotnet-cqrs
   java:
     webapi:
@@ -904,7 +905,7 @@ stacks:
       id: stacks-dotnet
     cqrs:
       type: nuget
-      name: Amido.Stacks.CQRS.Templates
+      name: Amido.Stacks.Templates
       id: stacks-dotnet-cqrs
   java:
     webapi:

@@ -151,7 +151,7 @@ If you want to remove the templates from your system you'll have to uninstall th
 .To uninstall package execute the following command
 [source, bash]
 ----
-dotnet new uninstall Amido.Stacks.CQRS.Templates
+dotnet new uninstall Amido.Stacks.Templates
 ----
 =====
 

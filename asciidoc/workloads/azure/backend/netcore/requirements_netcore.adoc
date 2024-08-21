@@ -31,7 +31,7 @@ keywords:
 
 [discrete]
 ==== Mandatory
-* link:https://dotnet.microsoft.com/en-us/download/dotnet/6.0[.NET 6 SDK] and Runtime 6.0.* or superior (for .NET 6 templates)
+* link:https://dotnet.microsoft.com/en-us/download/dotnet/8.0[.NET 8 SDK] and Runtime .0.* or superior (for .NET 8 templates)
 * link:https://aka.ms/cosmosdb-emulator[CosmosDB Emulator 2.4.5+]
 
 [discrete]
@@ -70,7 +70,7 @@ keywords:
 
 * homebrew
 * azure-cli: brew install azure-cli
-* link:https://dotnet.microsoft.com/en-us/download/dotnet/6.0[.NET 6 SDK] 6.0.* or superior: brew cask install dotnet-sdk
+* link:https://dotnet.microsoft.com/en-us/download/dotnet/8.0[.NET 8 SDK] 8.0.* or superior: brew cask install dotnet-sdk
 * link:https://aka.ms/cosmosdb-emulator[CosmosDB Emulator 2.4.5+]: Currently the Cosmos emulator can only be run on Windows. If you have an Azure subscription, you are able to use the Azure version instead
 
 [discrete]
@@ -80,4 +80,4 @@ keywords:
 * kubectl: docker run --name kubectl bitnami/kubectl:latest
 =====
 
-NOTE: The current version of Ensono Stacks are templates for .NET 6 (Current LTS, recommended).
+NOTE: The current version of Ensono Stacks are templates for .NET 8 (Current LTS, recommended).
