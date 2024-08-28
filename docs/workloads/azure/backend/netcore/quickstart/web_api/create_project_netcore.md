@@ -25,10 +25,10 @@ keywords:
 
 ### Install the package
 
-Access Amido.Stacks.Templates package page in Nuget [here](https://www.nuget.org/packages/Amido.Stacks.Templates/). Copy and execute the command displayed in the page (if you want to get the latest version). For example:
+Access Ensono.Stacks.Templates package page in Nuget [here](https://www.nuget.org/packages/Amido.Stacks.Templates/). Copy and execute the command displayed in the page (if you want to get the latest version). For example:
 
 ```bash title="Run the command to install the package"
-dotnet new install Amido.Stacks.Templates
+dotnet new install Ensono.Stacks.Templates
 ```
 
 ### Create a new  project
@@ -44,7 +44,7 @@ The above command will create a folder and a repository called `Company.Project`
 ### Uninstalling a template
 
 ```bash title="To uninstall the template pack you have to execute the following command"
-dotnet new uninstall Amido.Stacks.Templates
+dotnet new uninstall Ensono.Stacks.Templates
 ```
 
 :::note Template parameter details

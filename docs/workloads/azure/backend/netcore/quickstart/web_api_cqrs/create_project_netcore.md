@@ -31,12 +31,12 @@ keywords:
 ### Install the package
 
 
-Access Amido.Stacks.Template package page in Nuget [here](https://www.nuget.org/packages/Amido.Stacks.Templates/)
+Access Ensono.Stacks.Template package page in Nuget [here](https://www.nuget.org/packages/Amido.Stacks.Templates/)
 Copy and execute the command displayed in the page (if you want to get the latest version).
 For example
 
 ```bash title="Run the command to install the package"
-dotnet new install Amido.Stacks.Templates
+dotnet new install Ensono.Stacks.Templates
 ```
 
 Once installed, you obtain 7 templates that can be used
@@ -130,7 +130,7 @@ Once installed you can either, create a new project or add CQRS to an existing p
 If you want to remove the templates from your system you'll have to uninstall the Nuget package.
 
 ```bash title="To uninstall package execute the following command"
-dotnet new uninstall Amido.Stacks.Templates
+dotnet new uninstall Ensono.Stacks.Templates
 ```
 
 </details>

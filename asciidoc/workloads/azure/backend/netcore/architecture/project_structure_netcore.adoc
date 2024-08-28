@@ -261,7 +261,7 @@ The Integration Tests implemented in the scope of this solution does not focus o
 
 The function listener contains a Azure function that is triggered by a message in a Azure Service Bus topic.
 
-It uses a package to help with serialization and deserialization called Amido.Stacks.Messaging.Azure.ServiceBus
+It uses a package to help with serialization and deserialization called Ensono.Stacks.Messaging.Azure.ServiceBus
 
 [discrete]
 === Company.Project.Listener.UnitTests
@@ -273,7 +273,7 @@ Tests the function execution.
 
 The function listener contains a Azure function that is triggered by a message from Azure Event Hubs.
 
-It uses a package to help with serialization and deserialization called Amido.Stacks.Messaging.Azure.EventHub.
+It uses a package to help with serialization and deserialization called Ensono.Stacks.Messaging.Azure.EventHub.
 
 [discrete]
 === Company.Project.Listener.UnitTests
@@ -300,5 +300,5 @@ Resources like Repositories and gateway are mocked to provide dummy or fake the 
 
 The Worker service is a service triggered by messages in a Azure Service Bus topic.
 
-It uses a package to help with serialization and deserialization called Amido.Stacks.Messaging.Azure.ServiceBus
+It uses a package to help with serialization and deserialization called Ensono.Stacks.Messaging.Azure.ServiceBus
 =====
