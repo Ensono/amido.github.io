@@ -64,13 +64,13 @@ Azure CosmosDB provides a reliable SDK to communicate with the CosmosDB server, 
 
 This package provides a single data access layer implementation that is simple and reusable by multiple services, reducing the amount of boilerplate code and keeping a consistent and well tested library.
 
-The solution is split into two packages, **Amido.Stacks.Data.Documents** and **Amido.Stacks.Data.Documents.CosmosDB**.
+The solution is split into two packages, **Ensono.Stacks.Data.Documents** and **Ensono.Stacks.Data.Documents.CosmosDB**.
 
 <br />
 
 ### Document Storage
 
-Package **Amido.Stacks.Data.Documents** contains the interface contracts for data access layers, it will define the operations available and decouple the contracts from the implementation. In the future, if the company decides to use other solutions like MongoDB, Cassandra or similar, will make it smooth to switch between servers without changing the code on services consuming it.
+Package **Ensono.Stacks.Data.Documents** contains the interface contracts for data access layers, it will define the operations available and decouple the contracts from the implementation. In the future, if the company decides to use other solutions like MongoDB, Cassandra or similar, will make it smooth to switch between servers without changing the code on services consuming it.
 
 The contracts are defined by two interfaces IDocumentStorage and IDocumentSearch, as below, method signatures were removed for simplicity:
 
@@ -110,13 +110,13 @@ The operations were decoupled into two interfaces to:
 
 **It is expected that the implementations of these interfaces are reused between requests, for that reason it will be registered as singletons to improve the performance.**
 
-Applications using the Document Storage does not need to be aware of the implementations, this is why you should only need the **Amido.Stacks.Data.Documents** namespace where it is being used. Doing so, will make easier to Mock DB dependencies when doing unit tests.
+Applications using the Document Storage does not need to be aware of the implementations, this is why you should only need the **Ensono.Stacks.Data.Documents** namespace where it is being used. Doing so, will make easier to Mock DB dependencies when doing unit tests.
 
 <br />
 
 ### CosmosDB Package
 
-The CosmosDB implementation of the document storage is called CosmosDbDocumentStorage and is available in the package Amido.Stacks.Data.Documents.CosmosDB.
+The CosmosDB implementation of the document storage is called CosmosDbDocumentStorage and is available in the package Ensono.Stacks.Data.Documents.CosmosDB.
 
 The package makes use of the CosmosDB SDK v3, that contains a few improvements compared to previous version, the most notorious one is the simplicity in the interfaces available, for more details, please check the announcements [here](https://azure.microsoft.com/en-gb/blog/azure-cosmos-dotnet-sdk-version-3-0-now-in-public-preview/).
 
@@ -179,7 +179,7 @@ Because document stores require a partition key to persist the data, it is requi
 
 ### Dependency Injection
 
-In order to use the right implementation, we need to inject the dependencies in the IoC container before the application starts, the CosmosDB implementation provides an extension method called **AddCosmosDB()** from the namespace **Amido.Stacks.Data.Documents.CosmosDB.Extensions**, to use it, you just have to make a call to the extension in the dependency registration method of your application, like below:
+In order to use the right implementation, we need to inject the dependencies in the IoC container before the application starts, the CosmosDB implementation provides an extension method called **AddCosmosDB()** from the namespace **Ensono.Stacks.Data.Documents.CosmosDB.Extensions**, to use it, you just have to make a call to the extension in the dependency registration method of your application, like below:
 
 ```csharp
 public virtual void ConfigureServices(IServiceCollection services)

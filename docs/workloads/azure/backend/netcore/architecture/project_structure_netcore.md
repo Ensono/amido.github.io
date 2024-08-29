@@ -310,7 +310,7 @@ import TabItem from "@theme/TabItem";
             The function listener contains a Azure function that is triggered by a message in a Azure Service Bus topic.
         </p>
         <p>
-            It uses a package to help with serialization and deserialization called Amido.Stacks.Messaging.Azure.ServiceBus
+            It uses a package to help with serialization and deserialization called Ensono.Stacks.Messaging.Azure.ServiceBus
         </p>
         <br />
         <h3>Company.Project.Listener.UnitTests</h3>
@@ -323,7 +323,7 @@ import TabItem from "@theme/TabItem";
             The function listener contains a Azure function that is triggered by a message from Azure Event Hubs.
         </p>
         <p>
-            It uses a package to help with serialization and deserialization called Amido.Stacks.Messaging.Azure.EventHub.
+            It uses a package to help with serialization and deserialization called Ensono.Stacks.Messaging.Azure.EventHub.
         </p>
         <br />
         <h3>Company.Project.Listener.UnitTests</h3>
@@ -354,7 +354,7 @@ import TabItem from "@theme/TabItem";
             The Worker service is a service triggered by messages in a Azure Service Bus topic.
         </p>
         <p>
-            It uses a package to help with serialization and deserialization called Amido.Stacks.Messaging.Azure.ServiceBus
+            It uses a package to help with serialization and deserialization called Ensono.Stacks.Messaging.Azure.ServiceBus
         </p>
     </TabItem>
     <TabItem value="tests">
