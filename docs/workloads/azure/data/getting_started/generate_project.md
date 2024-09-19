@@ -23,8 +23,8 @@ For more information on the pre-requisites, see [here](./requirements_data_azure
 
 ## Step 1: Install the Ensono Stacks CLI
 
-Download and install the Ensono Stacks CLI.
-Please see [here](/docs/stackscli/about) for instructions.
+Download and install the [Ensono Stacks CLI](/docs/stackscli/about).
+Please refer to the **Stacks.CLI.Manual** in the latest [stacks-cli release](https://github.com/ensono/stacks-cli/releases) for detailed instructions.
 
 ## Step 2: Prepare the project config
 
