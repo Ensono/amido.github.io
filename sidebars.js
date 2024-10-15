@@ -351,7 +351,6 @@ module.exports = {
       "testing/testing_java_serenity_bdd",
       "testing/testing_dotnet_selenium",
       "testing/cypress_functional_testing",
-      "testing/testcafe_functional_testing",
       "testing/testing_static_analysis",
       "testing/visual_analysis",
       "testing/contract_testing_pact",
