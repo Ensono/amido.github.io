@@ -17,26 +17,40 @@ keywords:
 
 import HideNavigation  from "../../../../../src/components/HideNavigation/HideNavigation";
 
-Ensono Stacks is a collection of sample .NET 8 template projects that contain
+# Introduction to the .NET 8 REST API Application
 
-- Simple Web API application
-- A Web API application with CQRS functionality
-- A Web API application with CQRS and event sourcing functionality
+This document introduces a sample .NET 8 REST API project. It uses a simple restaurant menu app as an example to demonstrate important concepts.
 
-Ensono Stacks showcases best coding practices adopted throughout Ensono and helps bootstrap client projects faster with already proven and tested code.
+### What is This Project?
 
-All applications contain build and cloud infrastructure and are currently hosted on Azure. They use Application Insights for performance management, and different settings exist that can be set for cloud persistence.
+The project is part of **Ensono Stacks**, a collection of sample applications built in .NET 8. These examples help you get started quickly with common scenarios in building web APIs. There are three types of projects you can choose from:
 
-The application base is designed as a restaurant menu application. Users can create a Menu.
-Menus can hold one or more Categories, and a Category holds menu Items.
-The API provides an interface for clients to create/update and delete any or all of the menu components.
+1. **Simple Web API**: A basic setup to create APIs that respond to requests.
+2. **Web API with CQRS**: A more advanced API setup to handle data in a more structured way.
+3. **ServiceBus Worker**: A simple project that sends messages to a Service Bus (a system used to pass messages between different apps).
+4. **ServiceBus Listener**: A simple project that receives messages from a Service Bus.
+5. **CosmosDb Worker**: A project that tracks changes in a **Cosmos DB** (a cloud database) and sends updates to a Service Bus.
+6. **EventHub Listener**: A project that receives messages from an **Event Hub** (a system used for handling streams of data).
 
+These projects use good coding practices to help developers build their apps faster and more efficiently.
 
-:::tip Demo
-**For a clearer understanding on the output, there is a demo API hosted [here](https://dev-netcore-api.nonprod.amidostacks.com/api/menu/swagger/index.html).**
-:::
+### What Does the API Do?
 
-As an example below is a Json response to illustrate the structure defined by the model.
+In this example, the API is for a **restaurant menu system**. Users can:
+
+- **Create**, **update**, or **delete** a **Menu**.
+- Each Menu contains **Categories** (like "Main Course", "Drinks", etc.).
+- Each Category has **Items** (like "Lasagna", "Pasta", etc.).
+
+The API gives an interface for doing all these operations through HTTP requests.
+
+### How is the Project Hosted?
+
+The project is hosted on **Azure** and uses **Application Insights** to monitor performance. This means the project is set up to run in the cloud and can be easily scaled.
+
+### Example JSON Response
+
+Here's an example of what the API might return when you ask for menu details:
 
 ```json
 {
@@ -64,7 +78,16 @@ As an example below is a Json response to illustrate the structure defined by th
 }
 ```
 
-Even though the restaurant/menu context is used as the foundation for the templates, the .NET template engine provides us with the ability to change the domain with a simple command. The templates are highly customizable and modular, so a project can be generated with only what you need. Conditional compilation is used depending on the settings you provide to generate the minimal amount of code needed for your project.
+In this example:
+- The menu has categories like "Main Menus".
+- Inside each category, there are items, like "Lasagna" with details like price and availability.
+
+### Try It Yourself
+
+You can try out a demo version of this API [here](<insert-link-here>).
+
+### Customizing the Template
+
+Although this example uses a restaurant, you can easily change the project to suit other types of data. The project templates are modular, meaning you can add or remove parts depending on what your project needs.
 
 <HideNavigation prev />
-
