@@ -39,21 +39,21 @@ npx @amidostacks/scaffolding-cli test -i
 
 [stripes=even]
 |===
-| | Cypress* | Typescript - TestCafe | C# - Selenium | Java - Serenity | jest-sonar*
+| | Cypress* | C# - Selenium | Java - Serenity | jest-sonar*
 
-| Framework Type | Acceptance Functional E2E Functional API Component Accessibility Visual Regression | Acceptance Functional E2E Accessibility | Acceptance Functional E2E | Acceptance Functional E2E | Unit Component Integration
-| Language | Typescript Optional: Javascript | Typescript Optional: Javascript | C# | Java | Typescript Optional: Javascript
-| Framework | Cypress | TestCafe | Bespoke | Serenity | Jest
-| Libraries and Tools | Mocha Chai Chai-jQuery Sinon.JS Sinon-Chai Lodash Minimatch Moment Blob Promise | Axios TestCafe Assertions TestCafe API | Microsoft Test SDK Selenium WebDriver ChromeDriver Shouldly BDDfy xUnit | Java SDK Selenium WebDriver ChromeDriver Serenity JUnit | Jest Snapshot @testing-library/react
-| Integrations | Axe Applitools | Axe LambdaTest |  |  | Sonar Scanner
-| Report(s) | jUnit/xUnit xunit-viewer (single page HTML) Mochawesome (rich HTML results with screenshots) | xUnit | BDDfy xUnit | Serenity reports | jUnit/xUnit Cobertura, lcov (code coverage) Sonar reporter
-| Browsers | Used: Google Chrome Supported: Mozilla Firefox Microsoft Edge Electron Brave | Used: LambdaTest Google Chrome Supports: Internet Explorer (11+) Microsoft Edge (legacy and Chromium-based) Mozilla Firefox Safari | Used: Google Chrome Supports: LambdaTest Internet Explorer (11+) Microsoft Edge (legacy and Chromium-based) Mozilla Firefox Safari | Used: Google Chrome Supports: Internet Explorer (11+) Microsoft Edge (legacy and Chromium-based) Mozilla Firefox | N/A
+| Framework Type | Acceptance Functional E2E Functional API Component Accessibility Visual Regression | Acceptance Functional E2E | Acceptance Functional E2E | Unit Component Integration
+| Language | Typescript Optional: Javascript | C# | Java | Typescript Optional: Javascript
+| Framework | Cypress | Bespoke | Serenity | Jest
+| Libraries and Tools | Mocha Chai Chai-jQuery Sinon.JS Sinon-Chai Lodash Minimatch Moment Blob Promise | Microsoft Test SDK Selenium WebDriver ChromeDriver Shouldly BDDfy xUnit | Java SDK Selenium WebDriver ChromeDriver Serenity JUnit | Jest Snapshot @testing-library/react
+| Integrations | Axe Applitools |  |  | Sonar Scanner
+| Report(s) | jUnit/xUnit xunit-viewer (single page HTML) Mochawesome (rich HTML results with screenshots) | BDDfy xUnit | Serenity reports | jUnit/xUnit Cobertura, lcov (code coverage) Sonar reporter
+| Browsers | Used: Google Chrome Supported: Mozilla Firefox Microsoft Edge Electron Brave | Used: Google Chrome Supports: LambdaTest Internet Explorer (11+) Microsoft Edge (legacy and Chromium-based) Mozilla Firefox Safari | Used: Google Chrome Supports: Internet Explorer (11+) Microsoft Edge (legacy and Chromium-based) Mozilla Firefox | N/A
 | Pipeline |  | AzureDevops | AzureDevops | AzureDevops |
-| Example Test(s) | Yes | Yes | Yes | Yes | Yes
-| Example Data Teardown | N/A (stubbed request) | Yes | Yes | Yes | N/A
-| BDD | Mocha |  | BDDfy | Serenity | Jasmine
-| Features | Automatic waiting In-browser Element selector tool Spies, stubs, clocks Real-time reloads Can use the same environment variables as the web app | Cross-browser Script injection | WebDriver | WebDriver Multi-thread test execution Enhanced reporting | Render
-| Screenshots +/- Videos | Yes | Yes | Yes | Yes | No
+| Example Test(s) | Yes | Yes | Yes | Yes
+| Example Data Teardown | N/A (stubbed request) | Yes | Yes | N/A
+| BDD | Mocha | BDDfy | Serenity | Jasmine
+| Features | Automatic waiting In-browser Element selector tool Spies, stubs, clocks Real-time reloads Can use the same environment variables as the web app | WebDriver | WebDriver Multi-thread test execution Enhanced reporting | Render
+| Screenshots +/- Videos | Yes | Yes | Yes | No
 |===
 
 pass:[*] Currently cannot be bootstrapped from link:https://www.npmjs.com/package/@amidostacks/scaffolding-cli[@amidostacks/scaffolding-cli], but are available to clone from the link:https://github.com/Ensono/stacks-webapp-template[amido/stacks-webapp-template] repository.
