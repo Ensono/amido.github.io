@@ -316,7 +316,6 @@ module.exports = {
       },
     ],
     QA: [
-      "testing/cli_testing_frameworks",
       {
         type: "category",
         label: "NX - Frontend Testing",
