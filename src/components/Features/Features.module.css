@@ -35,7 +35,7 @@
   align-items: flex-end;
 }
 
-@media (min-width: 68px) { 
+@media (min-width: 768px) { 
   .feature:first-child {
     border-bottom: 1px solid var(--igm-color-dark-grey);
   }
