@@ -35,7 +35,7 @@
   align-items: flex-end;
 }
 
-@media (min-width: 768px) { 
+@media (min-width: 68px) { 
   .feature:first-child {
     border-bottom: 1px solid var(--igm-color-dark-grey);
   }
@@ -93,7 +93,7 @@
     margin: 1.3rem 0;
   }
   .feature .imageWrapper img {
-    width: 10rem;
+    width: 4.5rem;
     height: 4.5rem;
     min-width: 4.5rem;
     min-height: 4.5rem;
