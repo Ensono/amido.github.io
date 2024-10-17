@@ -25,40 +25,50 @@ keywords:
 
 ### Install the package
 
-Access Ensono.Stacks.Templates package page in Nuget [here](https://www.nuget.org/packages/Amido.Stacks.Templates/). Copy and execute the command displayed in the page (if you want to get the latest version). For example:
+1. Go to the [Ensono.Stacks.Templates package page on Nuget](https://www.nuget.org/packages/Ensono.Stacks.Templates/).
+2. Copy the command displayed on the page to install the latest version of the package.
+3. Open your terminal and run the copied command. For example:
 
-```bash title="Run the command to install the package"
+```bash
 dotnet new install Ensono.Stacks.Templates
 ```
 
-### Create a new  project
+### Create a new project
 
-Navigate to the folder where you wish to create a new project in.
+1. Open your terminal.
+2. Navigate to the folder where you want to create the new project.
+3. Run the following command to create the project:
 
-```bash title="Run the command to create the project"
+```bash
 dotnet new stacks-webapi -n Company.Project -do YourDomain --cloudProvider Azure
 ```
 
-The above command will create a folder and a repository called `Company.Project` with DevOps build pipelines ready for Azure DevOps.
+This command will create a folder and a repository called `Company.Project` with DevOps build pipelines ready for Azure DevOps.
 
 ### Uninstalling a template
 
-```bash title="To uninstall the template pack you have to execute the following command"
+1. Open your terminal.
+2. Run the following command to uninstall the template pack:
+
+```bash
 dotnet new uninstall Ensono.Stacks.Templates
 ```
 
-:::note Template parameter details
+### Template parameter details
 
 - **-n|--name**
-    - Sets the project name
-    - Omitting it will result in the project name being the same as the folder where the command has been ran from
+  - Sets the project name.
+  - If you do not provide this parameter, the project name will be the same as the folder where you run the command.
+
 - **-do|--domain**
-    - Sets the name of the aggregate root object. It is also the name of the collection within CosmosDB instance.
+  - Sets the name of the aggregate root object. This is also the name of the collection within the CosmosDB instance.
+
 - **-o|--output**
-    - Sets the path to where the project is added
-    - Omitting the parameter will result in the creation of a new folder
+  - Sets the path where the project will be created.
+  - If you do not provide this parameter, a new folder will be created.
+
 - **--cloudProvider**
-    - Configures which cloud provider to be used
+  - Configures which cloud provider to use.
+
 - **-cicd|--cicdProvider**
-    - Configures which cicd provider templates to be used
-:::
+  - Configures which CI/CD provider templates to use.
