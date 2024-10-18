@@ -22,28 +22,9 @@ The API can be configured to run locally or in a Docker container.
 ### Build and Run Locally
 
 <details open>
-<summary>Instructions for Windows</summary>
+<summary>Instructions</summary>
 
 1. Open **Command Prompt** or **PowerShell**.
-2. Navigate to the `<PROJECT-NAME>/simple-api/src/api` folder.
-3. Run the following command to build the project:
-
-    ```bash
-    dotnet build
-    ```
-
-4. Run the following command to start the project:
-
-    ```bash
-    dotnet run --project xxENSONOxx.xxSTACKSxx.API/xxENSONOxx.xxSTACKSxx.API.csproj
-    ```
-
-</details>
-
-<details>
-<summary>Instructions for Linux</summary>
-
-1. Open your **terminal**.
 2. Navigate to the `<PROJECT-NAME>/simple-api/src/api` folder.
 3. Run the following command to build the project:
 
@@ -89,4 +70,4 @@ The API can be configured to run locally or in a Docker container.
 
    > If you have changed the domain (originally `Menu`), the path will reflect that change. For example, if your domain is `Foo`, then the path will be `../v1/foo` instead of `../v1/menu`.
 
-3. To view the Swagger UI, go to [http://localhost:5000/swagger/index.html](http://localhost:5000/swagger/index.html). This will show the API endpoints.
+3. To view the Open API UI, go to [http://localhost:5000/swagger/index.html](http://localhost:5000/swagger/index.html). This will show the API endpoints.
