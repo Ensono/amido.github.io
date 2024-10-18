@@ -54,7 +54,3 @@ If you are considering adding visual regression tests to your application, we pr
   ** A powerful visual regression testing tool that detects visual changes, updates of browsers or OS, and integrates with popular testing frameworks and CI/CD pipelines, making it easy to automate visual regression testing and improve the quality and user-friendliness of digital products. Our community of experts recommends this software as the best approach. To decide if it is right for you, please visit link:https://applitools.com/platform/eyes/[Applitools Eyes!].
 * Native
   ** A free alternative to cloud-based providers that enables developers to perform automated visual regression testing using the latest web platform features in their chosen testing framework.
-
-++++
-<br><br><br><br>
-++++
