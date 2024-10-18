@@ -1,7 +1,7 @@
 ---
 id: functional_testing_netcore
-title: Testing the application
-sidebar_label: Testing the API
+title: Functionally testing the application
+sidebar_label: Functionally Testing the API
 hide_title: false
 hide_table_of_contents: false
 description: Dotnet API tests examples using bddfy
@@ -18,27 +18,32 @@ keywords:
 ---
 
 
-The Automated Functional Tests is a sample project demonstrating functional testing created using BDDfy and XUnit.
+# Automated Functional Tests Overview
 
-The project contains the framework for testing API's and a number of test cases to demonstrate usage of the framework.
+This is a sample project that shows how to do **functional testing** using **BDDfy** and **xUnit**. Functional testing checks if an API behaves correctly by running different tests.
 
+## Tools Used in the Project
 
-## Dependencies
+- **xUnit**: The testing framework used to write and run the tests.
+- **BDDfy**: A tool to write tests in a behavior-driven development (BDD) style, making the tests easy to read.
+- **HttpClient**: Used to send API requests.
+- **Shouldly**: A tool to check if the result of the tests matches what's expected.
 
-- xUnit (Test adapter)
-- BDDfy (BDD tool)
-- HttpClient (For API requests)
-- Shouldly (Assertions)
+## How to Run the Tests
 
-## Running Tests
+1. Open a terminal or command prompt.
+2. Navigate to the `API.FunctionalTests` folder.
+3. Run this command:
 
-Navigate to `API.FunctionalTests` folder and run the following command:
+    ```bash
+    dotnet test
+    ```
 
-```bash
-dotnet test
-```
+This will run all the tests in the project.
 
-## Test Folder structure
+## Test Folder Structure
+
+Here is what the test folder looks like:
 
 ```text
 ├── Builders
@@ -51,60 +56,60 @@ dotnet test
     └── Steps
 ```
 
-## Builders
+## What Each Folder Does
 
-This folder contains builder classes that are used to create POCO's (Plain Old CLR Object) for objects used in API requests. Ideally there should be a model for every request and response that is used within the tests. The aim of these classes is to make it as easy as possible for developers to generate the data required by API's.
+  - **Builders**: Contains helper classes to create the data you need for API requests.
+  - **Configuration**: Manages settings needed for the tests.
+  - **Models**: Defines the data structures used in API requests and responses.
+  - **Tests**: Contains all the test logic.
 
-All Builder classes should inherit from `IBuilder.cs`
+### Builders
 
+This folder helps create data for API requests.
 
-### Http
+  - `HttpRequestBuilder.cs`: Helps create HTTP requests (the actual request you send to the API).
+  - `HttpRequestFactory.cs`: Coordinates creating the HTTP requests for different API methods (like GET, POST, etc.).
 
-This folder contains a builder and factory for managing HttpClients within the tests.
+All builder classes should inherit from the interface `IBuilder.cs`.
 
-- `HttpRequestBuilder.cs` manages creating the HttpRequest and also the HttpClient. This is only used within `HttpRequestFactory.cs`.
-- `HttpRequestFactory.cs` orchestrates the creation of the HttpRequest for each REST method.
+### Configuration
 
+This folder handles the settings for the tests.
+  - `ConfigModel.cs`: Represents the settings (like URLs) in the `appsettings.json` file.
+  - `ConfigAccessor.cs`: Reads the settings from `appsettings.json` and makes them usable in the tests. If the machine running the tests has specific environment variables (like a different URL), it will replace the settings in the file.
 
-## Configuration
+For example, if the appsettings.json contains the base API URL `"BaseUrl":"http://dev.azure.amidostacks.com/api/menu/"`, but the environment variable on your computer uses a different URL, the environment variable will be used instead.
 
-This contains classes used to manage the configuration for the tests.
+### Models
 
-- `ConfigModel.cs` is a POCO representation of the json in `appsettings.json`
-- `ConfigAccessor.cs` contains the logic required to obtain the JSON from `appsettings.json` and bind it to the `ConfigModel.cs` object. This allows the configuration to be used as a simple object.
-The ConfigAccessor will automatically replace any configuration setting values with the values set in the Environment Variables on the machine running the tests.
+These represent the data used in API requests and responses. For example, the request body or response body. The Builders use these models to create the data for the tests.
 
-Example: In `appsettings.json` we are using the configuration setting (key-value pair) `"BaseUrl":"http://dev.azure.amidostacks.com/api/menu/"`. If there is an Environment Variable set on the current machine/build agent using `BaseUrl` key, the value in `appsettings.json` will be replaced.
+### Tests Folder
 
+This folder contains all the test code.
 
-## Models
+### Fixtures
 
-These are POCO representations of entities that are used in API requests (E.g. Request body, response body). The builder classes are used to create instances of these models.
+The Fixtures folder contains setup and cleanup code for the tests.
 
+  - `AuthFixture.cs`: Contains methods to get authentication tokens that are needed for some test cases.
 
-## Tests
+Fixtures in xUnit allow setting up a shared context for tests. For more info on xUnit fixtures, see the [xUnit documentation](https://xunit.net/docs/shared-context).
 
-This is the parent folder for all test code
+### Stories
 
+The Stories folder contains the actual test cases, written using BDDfy.
 
-## Fixtures
+  - Each file in this folder represents a test story.
+  - Inside each story, there are multiple test cases that test specific API features.
 
-The "Fixtures" folder contains xUnit class fixtures. These class fixtures are used to create test context for the tests. The fixture is where you can put fixture setup (via constructor) and teardown (Via `Dispose()`)
+Test cases are written using xUnit's Facts. Each test is described using BDDfy, which helps organize the test steps in a readable way.
 
-See [xUnit documentation](https://xunit.net/docs/shared-context) for information on different fixtures and how to use them.
+Some tests are marked as smoke tests using `[Trait("Category", "SmokeTest")]`. Smoke tests are quick checks to make sure everything works.
 
-`AuthFixture.cs` contains methods for getting authentication tokens required in the test cases.
+### Steps
 
+The Steps folder contains the logic behind each test.
 
-## Stories
-
-The Stories folder contains all the test cases (I.e. the BDDfy stories). Each class should represent a new test story, and within each class/story, there will be a number of test cases which test a specific feature.
-
-Test cases within a story are defined using xUnit `Facts`. BDDfy is used to describe and orchestrate the tests.
-
-The solution tags tests as smoke tests using xUnit `Traits`. I.e. `[Trait("Category", "SmokeTest")]`
-
-
-## Steps
-
-This is where all the step definitions are created. The definitions contain the logic behind the tests and these steps are called from within the test cases found within the `TestCases` folder.
+  - These are the steps that are executed within each test case. For example, sending a request to the API, checking the response, etc.
+  - The test cases in the Stories folder call these steps.

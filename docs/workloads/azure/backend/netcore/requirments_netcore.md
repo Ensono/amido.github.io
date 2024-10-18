@@ -4,9 +4,9 @@ title: Requirements
 sidebar_label: Requirements
 hide_title: false
 hide_table_of_contents: true
-description: Detailed requirements to create .NET Core REST API application from a template
+description: Detailed requirements to create .NET REST API application from a template
 keywords:
-  - .net core
+  - .net
   - rest api
   - cqrs
   - example
@@ -25,110 +25,52 @@ keywords:
   - cli
 ---
 
-import Tabs from "@theme/Tabs";
-import TabItem from "@theme/TabItem";
+# Running the API Locally
 
-<Tabs
-defaultValue="windows"
-values={[
-{label: 'Windows', value: 'windows'},
-{label: 'macOS', value: 'macos'}
-]}>
-<TabItem value="windows">
-    <details open>
-        <summary>Requirements for running the API locally</summary>
-        <div>
-            <h5>Mandatory</h5>
-            <ul>
-                <li><a href="https://dotnet.microsoft.com/en-us/download/dotnet/8.0">.NET 8 SDK</a> and Runtime 8.0.* or superior (for .NET 8 templates)</li>
-                <li><a href="https://aka.ms/cosmosdb-emulator">CosmosDB Emulator 2.4.5+</a></li>
-            </ul>
-            <h5>Optional</h5>
-            <ul>
-				<li><a href="https://visualstudio.microsoft.com/vs/">Visual Studio 2022</a></li>
-                <li><a href="https://code.visualstudio.com/">Visual Studio Code</a> 1.35+ with C# Extension from Microsoft (C# for Visual Studio Code (powered by OmniSharp))</li>
-            </ul>
-        </div>
-    </details>
-    <br />
-    <details>
-        <summary>Additional requirements for running the API in docker containers</summary>
-        <div>
-            <h5>Mandatory</h5>
-            <ul>
-                <li>
-                    <a href="https://desktop.docker.com/win/stable/Docker%20Desktop%20Installer.exe">Docker Desktop(for Windows)</a>: Version 2.1.0.1 (37199) or superior
-                    <ul>
-                        <li>
-                            Enable:
-                            <ul>
-                                <li>Kubernetes 1.14+</li>
-                                <li>Linux container (Not windows containers)</li>
-                            </ul>
-                        </li>
-                        <li>Docker Engine 19.03.1+ (provided with docker)</li>
-                        <li>
-                            WSL (Windows Subsystem for Linux: recommended v1, v2 is still in preview and has not been tested) (provided with docker)
-                            <ul>
-                                <li>For running build, test and deployment scripts targeting Linux environment</li>
-                            </ul>
-                        </li>
-                        <li>
-                            kubectl v1.14+ (provided with docker)
-                            <ul>
-                                <li>Also <a
-                                        href="https://kubernetes.io/docs/tasks/tools/install-kubectl/#install-kubectl-on-windows">downloaded
-                                        from k8s.io</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-    </details>
-    <br />
-    <details>
-        <summary>Additional requirements for running the API in a kubernetes cluster</summary>
-        <div>
-            <ul>
-                <li>
-                    NGINX ingress controller
-                    <ul>
-                        <li>Install the ingress controller in you local cluster.</li>
-                        <li>Make sure you follow the process for Bare Metal deployment described <a href="https://kubernetes.github.io/ingress-nginx/deploy/">here</a>.</li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-    </details>
-</TabItem>
-<TabItem value="macos">
-    <details open>
-        <summary>Requirements for running the API locally</summary>
-        <div>
-            <ul>
-                <li>homebrew</li>
-                <li>azure-cli: brew install azure-cli</li>
-                <li><a href="https://dotnet.microsoft.com/en-us/download/dotnet/8.0">.NET 8 SDK</a> 8.0.* or superior: brew cask install dotnet-sdk</li>
-                <li>
-                    <a href="https://aka.ms/cosmosdb-emulator">CosmosDB Emulator 2.4.5+</a>: Currently the Cosmos emulator can only be run on Windows. If you have an Azure subscription, you are able to use the Azure version instead
-                </li>
-            </ul>
-        </div>
-    </details>
-    <br />
-    <details>
-        <summary>Additional requirements for running the API in docker containers</summary>
-        <div>
-            <ul>
-                <li><a href="https://desktop.docker.com/mac/stable/Docker.dmg">Docker Desktop for Mac</a></li>
-                <li>kubectl: docker run --name kubectl bitnami/kubectl:latest</li>
-            </ul>
-        </div>
-    </details>
-</TabItem>
-</Tabs>
+## Windows
 
-:::note
-The current version of Ensono Stacks are templates for .NET 8 (Current LTS, recommended).
-:::
+### Requirements for running the API locally
+
+#### Mandatory
+- [.NET 8 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) and Runtime 8.0.* or higher (for .NET 8 projects).
+- [CosmosDB Emulator 2.4.5+](https://aka.ms/cosmosdb-emulator).
+
+#### Optional
+- [Visual Studio 2022](https://visualstudio.microsoft.com/vs/).
+- [Visual Studio Code](https://code.visualstudio.com/) 1.35+ with the C# extension.
+
+### Additional requirements for running the API in Docker containers
+
+#### Mandatory
+- [Docker Desktop for Windows](https://desktop.docker.com/win/stable/Docker%20Desktop%20Installer.exe): Version 2.1.0.1 (or higher).
+  - Enable:
+    - Kubernetes 1.14+.
+    - Linux containers (not Windows containers).
+  - Docker Engine 19.03.1+ (included with Docker).
+  - Windows Subsystem for Linux (WSL) for running Linux environment scripts (recommended v1, v2 is still in testing).
+  - `kubectl` v1.14+ (included with Docker).
+    - You can also [download it separately](https://kubernetes.io/docs/tasks/tools/install-kubectl/#install-kubectl-on-windows).
+
+### Additional requirements for running the API in a Kubernetes cluster
+
+- **NGINX Ingress Controller**:
+  - Install it in your local cluster.
+  - Follow the [Bare Metal deployment guide](https://kubernetes.github.io/ingress-nginx/deploy/).
+
+## macOS
+
+### Requirements for running the API locally
+
+- **Homebrew**: A package manager for macOS.
+- **Azure CLI**: Install it via `brew install azure-cli`.
+- [.NET 8 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/8.0): Install it via `brew install --cask dotnet-sdk`.
+- [CosmosDB Emulator](https://aka.ms/cosmosdb-emulator): Only available for Windows. If you use Azure, you can run CosmosDB in the cloud.
+
+### Additional requirements for running the API in Docker containers
+
+- [Docker Desktop for Mac](https://desktop.docker.com/mac/stable/Docker.dmg).
+- `kubectl`: Run `docker run --name kubectl bitnami/kubectl:latest` to install.
+
+---
+
+**Note**: The current version of Ensono Stacks uses .NET 8 (the latest Long Term Support version, recommended).
