@@ -21,8 +21,7 @@ The API can be configured to run locally or in a Docker container.
 
 ### Build and Run Locally
 
-<details open>
-<summary>Instructions</summary>
+#### Instructions
 
 1. Open **Command Prompt** or **PowerShell**.
 2. Navigate to the `<PROJECT-NAME>/simple-api/src/api` folder.
@@ -38,12 +37,10 @@ The API can be configured to run locally or in a Docker container.
     dotnet run --project xxENSONOxx.xxSTACKSxx.API/xxENSONOxx.xxSTACKSxx.API.csproj
     ```
 
-</details>
 
 ### Build and Run in Docker Container
 
-<details>
-<summary>Instructions for Docker</summary>
+#### Instructions for Docker
 
 1. Open your **terminal**.
 2. Navigate to the `<PROJECT-NAME>/simple-api/src/api` folder.
@@ -61,14 +58,12 @@ The API can be configured to run locally or in a Docker container.
     docker run -p 5000:80 --mount type=bind,source=/path/to/PROJECT-NAME/simple-api/src/api/xxENSONOxx.xxSTACKSxx.API/appsettings.json,target=/app/config/appsettings.json
     ```
 
-</details>
-
 ### Verify that the Application Has Started
 
 1. Open your web browser.
 2. Go to [http://localhost:5000/v1/menu](http://localhost:5000/v1/menu). This should return a valid JSON response.
 
-:::**Note:**
+:::note Note
 If you have changed the domain (originally `Menu`), the path will reflect that change. For example, if your domain is `Foo`, then the path will be `../v1/foo` instead of `../v1/menu`.
 :::
 
