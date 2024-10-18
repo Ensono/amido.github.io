@@ -72,8 +72,7 @@ npm run test:pact-publish
 ### Pact stub service
 
 Pact contracts are easily turned into locally running API stubs. They are great
-for use as a simple service to run integration tests against, whether with
-Jest, or with Cypress. This ensures that you can test your application without
+for use as a simple service to run integration tests against. This ensures that you can test your application without
 hitting the actual endpoint, and ensures the same response every time, without
 duplicating mock definitions.
 

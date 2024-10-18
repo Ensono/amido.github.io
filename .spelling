@@ -311,19 +311,15 @@ Commitlint
  - ./docs/nx/azure-node/app-insights-deployment.md
 APPLICATIONINSIGHTS_CONNECTION_STRING
 applicationinsightsConnectionString
- - ./docs/nx/cypress/plugin-information.md
 InitGenerator
 InitDeploy
 AccessibilityGenerator
 accessibility.md
 executor.md
- - ./docs/testing/testing_in_nx/cypress_accessibility_testing.md
 webpage
 spec
 e2e.ts
- - ./docs/testing/testing_in_nx/cypress_nx.md
 localhost
-cypress.config.base.ts
 mocha-junit-reporter
 JUnit-style
 junit-report
