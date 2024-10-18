@@ -74,5 +74,6 @@ dotnet new uninstall Ensono.Stacks.Templates
 - **-cicd|--cicdProvider**
   - Configures which CI/CD provider templates to use.
 
->Note:
->For additional information use the --help flag.
+:::**Note:**
+For additional information use the --help flag.
+:::
