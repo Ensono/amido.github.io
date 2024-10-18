@@ -67,8 +67,12 @@ dotnet new uninstall Ensono.Stacks.Templates
   - Sets the path where the project will be created.
   - If you do not provide this parameter, a new folder will be created.
 
-- **--cloudProvider**
+- **-c|--cloudProvider**
   - Configures which cloud provider to use.
+  - Accepted values: `Azure`, `AWS`, `GCP`.
 
 - **-cicd|--cicdProvider**
   - Configures which CI/CD provider templates to use.
+
+>Note:
+>For additional information use the --help flag.
