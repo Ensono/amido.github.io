@@ -17,6 +17,34 @@ keywords:
 
 This project template for building APIs using .NET can be easily set up to use OAuth 2.0 authentication. This means it can work with services that handle user login (like Google, Auth0, or Microsoft).
 
+:::note What's the Difference Between Authentication and Authorization?
+
+When you're building an API or any system that handles users, you'll often hear the terms **Authentication** and **Authorization**. While they sound similar, they do very different things.
+
+### Authentication: "Who Are You?"
+
+**Authentication** is all about **proving who you are**. It's the process of checking whether someone is a valid user. 
+
+For example, when a user logs in with their username and password (or Google account, etc.), the system checks if their credentials (login info) match an existing user. If they match, the user gets a token (like an ID badge) that proves they're logged in.
+
+Think of it like a bouncer at a club checking your ID to make sure you are who you say you are.
+
+### Authorization: "What Are You Allowed to Do?"
+
+**Authorization** happens **after** authentication and controls **what you're allowed to do**. Once we know who the user is (they've authenticated), we need to check what actions they can perform.
+
+For example, some users might only be allowed to view data, while others can edit or delete it. Authorization makes sure users only access what they have permission to do.
+
+Think of it like being in a building: you might be allowed to enter the lobby (authentication), but whether you're allowed in restricted areas depends on your access level (authorization).
+
+### In Summary:
+
+- **Authentication** = Are you a valid user? (Proving who you are)
+- **Authorization** = What can you do? (Checking your permissions)
+
+Both are important for keeping your application secure!
+:::
+
 ## Authentication (Checking JWT Access Tokens)
 
 In this project, we check if a user is logged in using **JWT tokens**. A JWT token is like a badge someone gets after they log in. They show this badge whenever they want to access parts of your API that require authentication.
