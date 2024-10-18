@@ -4,7 +4,7 @@ title: Build & Run REST API
 sidebar_label: Build & Run REST API
 hide_title: true
 hide_table_of_contents: true
-description:  Build and Run .NET Core REST API application
+description: Build and Run .NET Core REST API application
 keywords:
   - .net core
   - rest api
@@ -37,7 +37,6 @@ The API can be configured to run locally or in a Docker container.
     dotnet run --project xxENSONOxx.xxSTACKSxx.API/xxENSONOxx.xxSTACKSxx.API.csproj
     ```
 
-
 ### Build and Run in Docker Container
 
 #### Instructions for Docker
@@ -64,7 +63,9 @@ The API can be configured to run locally or in a Docker container.
 2. Go to [http://localhost:5000/v1/menu](http://localhost:5000/v1/menu). This should return a valid JSON response.
 
 :::note Note
-If you have changed the domain (originally `Menu`), the path will reflect that change. For example, if your domain is `Foo`, then the path will be `../v1/foo` instead of `../v1/menu`.
+If you have changed the domain (originally `Menu`), the path will reflect that change. For example, if your domain
+is `Foo`, then the path will be `../v1/foo` instead of `../v1/menu`.
 :::
 
-3. To view the Open API UI, go to [http://localhost:5000/swagger/index.html](http://localhost:5000/swagger/index.html). This will show the API endpoints.
+3. To view the Open API UI, go to [http://localhost:5000/swagger/index.html](http://localhost:5000/swagger/index.html).
+   This will show the API endpoints.

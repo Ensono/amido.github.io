@@ -43,7 +43,8 @@ dotnet new install Ensono.Stacks.Templates
 dotnet new stacks-webapi -n Company.Project -do YourDomain --cloudProvider Azure
 ```
 
-This command will create a folder and a repository called `Company.Project` with DevOps build pipelines ready for Azure DevOps.
+This command will create a folder and a repository called `Company.Project` with DevOps build pipelines ready for Azure
+DevOps.
 
 ### Uninstalling a template
 
@@ -57,23 +58,23 @@ dotnet new uninstall Ensono.Stacks.Templates
 ### Template parameter details
 
 - **-n|--name**
-  - Sets the project name.
-  - If you do not provide this parameter, the project name will be the same as the folder where you run the command.
+    - Sets the project name.
+    - If you do not provide this parameter, the project name will be the same as the folder where you run the command.
 
 - **-do|--domain**
-  - Sets the name of the aggregate root object. This is also the name of the collection within the CosmosDB instance.
+    - Sets the name of the aggregate root object. This is also the name of the collection within the CosmosDB instance.
 
 - **-o|--output**
-  - Sets the path where the project will be created.
-  - If you do not provide this parameter, a new folder will be created.
+    - Sets the path where the project will be created.
+    - If you do not provide this parameter, a new folder will be created.
 
 - **-c|--cloudProvider**
-  - Configures which cloud provider to use.
-  - Accepted values: `Azure`, `AWS`, `GCP`.
+    - Configures which cloud provider to use.
+    - Accepted values: `Azure`, `AWS`, `GCP`.
 
 - **-cicd|--cicdProvider**
-  - Configures which CI/CD provider templates to use.
-  - Accepted values: `AZDO`, `GHA`, `None`.
+    - Configures which CI/CD provider templates to use.
+    - Accepted values: `AZDO`, `GHA`, `None`.
 
 :::note Note
 For additional information use the --help flag.
