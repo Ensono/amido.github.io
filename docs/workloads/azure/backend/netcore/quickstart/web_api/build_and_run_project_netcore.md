@@ -4,7 +4,7 @@ title: Build & Run REST API
 sidebar_label: Build & Run REST API
 hide_title: true
 hide_table_of_contents: true
-description:  Build and Run .NET Core REST API application
+description: Build and Run .NET Core REST API application
 keywords:
   - .net core
   - rest api
@@ -15,104 +15,56 @@ keywords:
   - application
 ---
 
-## Build and Run the application
+## Build and Run the Application
 
-<br />
+The API can be configured to run locally or in a Docker container.
 
-The API generated consists of configuration to be run locally or on a docker container.
+### Build and Run Locally
 
-import Tabs from "@theme/Tabs";
-import TabItem from "@theme/TabItem";
+#### Instructions
 
-<details open>
-<summary>Build and run locally</summary>
+1. Open **Command Prompt** or **PowerShell**.
+2. Navigate to the `<PROJECT-NAME>/simple-api/src/api` folder.
+3. Run the following command to build the project:
 
-<div>
+    ```bash
+    dotnet build
+    ```
 
-<Tabs
-groupId="operating-systems"
-defaultValue="windows"
-values={[
-{label: 'Windows', value: 'windows'},
-{label: 'Linux', value: 'linux'},
-]}>
-<TabItem value="windows">
+4. Run the following command to start the project:
 
-Move to the `<PROJECT-NAME>/simple-api/src/api` folder and run the next commands in **Command Prompt** or **Powershell**
+    ```bash
+    dotnet run --project xxENSONOxx.xxSTACKSxx.API/xxENSONOxx.xxSTACKSxx.API.csproj
+    ```
 
-```bash
-dotnet build
-```
+### Build and Run in Docker Container
 
-```bash
-# Note that the template engine will rename your paths, so change the command accordingly
-dotnet run --project xxENSONOxx.xxSTACKSxx.API/xxENSONOxx.xxSTACKSxx.API.csproj
-```
+#### Instructions for Docker
 
-</TabItem>
+1. Open your **terminal**.
+2. Navigate to the `<PROJECT-NAME>/simple-api/src/api` folder.
+3. Run the following command to build a Docker image:
 
-<TabItem value="linux">
+    ```bash
+    docker build -t dotnet-api .
+    ```
 
-Move to the `<PROJECT-NAME>/simple-api/src/api` folder and run the next commands in **terminal**.
+   This uses the **Dockerfile** in this folder to generate the Docker image.
 
-```bash
-dotnet build
-```
+4. After the Docker image is created, run the following command to start the Docker container:
 
-```bash
-# Note that the template engine will rename your paths, so change the command accordingly
-dotnet run --project xxENSONOxx.xxSTACKSxx.API/xxENSONOxx.xxSTACKSxx.API.csproj
-```
+    ```bash
+    docker run -p 5000:80 --mount type=bind,source=/path/to/PROJECT-NAME/simple-api/src/api/xxENSONOxx.xxSTACKSxx.API/appsettings.json,target=/app/config/appsettings.json
+    ```
 
-</TabItem>
-</Tabs>
+### Verify that the Application Has Started
 
-</div>
-</details>
+1. Open your web browser.
+2. Go to [http://localhost:5000/v1/menu](http://localhost:5000/v1/menu). This should return a valid JSON response.
+3. To view the Open API UI, go to [http://localhost:5000/swagger/index.html](http://localhost:5000/swagger/index.html).
+   This will show the API endpoints.
 
-<br />
-
-<details>
-<summary>Build and run in docker container</summary>
-
-<div>
-
-From the `<PROJECT-NAME>/simple-api/src/api` folder, build a Docker image using e.g. the command below:
-
-```bash title="Build docker image"
-docker build -t dotnet-api .
-```
-
-This uses the **Dockerfile** in this folder to generate the Docker image.
-
-After the creation of the Docker image, the Docker container can be run using the command below:
-
-```bash title="Run docker container"
-docker run -p 5000:80 --mount type=bind,source=/path/to/PROJECT-NAME/simple-api/src/api/xxENSONOxx.xxSTACKSxx.API/appsettings.json,target=/app/config/appsettings.json
-```
-
-</div>
-</details>
-
-<br />
-
-<details open>
-<summary>Verify that the application has started</summary>
-
-<div>
-
-:::note Relationship between domain and path
-
-Keep in mind that if you've changed the domain (original being `Menu`), the path will reflect that. If your domain is `Foo`. Then the path will be `../v1/foo` instead of `..v1/menu` etc.
-
+:::note Note
+If you have changed the domain (originally `Menu`), the path will reflect that change. For example, if your domain
+is `Foo`, then the path will be `../v1/foo` instead of `../v1/menu`.
 :::
-
-Browse to [http://localhost:5000/v1/menu](http://localhost:5000/v1/menu). This should return a valid JSON response.
-
-The application configuration uses Swagger/OAS3 to represent the API endpoints. The Swagger UI can be viewed by directing your
-browser to [http://localhost:5000/swagger/index.html](http://localhost:5000/swagger/index.html).
-
-</div>
-</details>
-
-<br />

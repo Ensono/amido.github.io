@@ -43,7 +43,6 @@ const config = {
       "Rest Assured",
       "Jest",
       "Gatling",
-      "TestCafe",
       "Google Lighthouse",
       "Applitools",
       "Cypress",

@@ -316,7 +316,6 @@ module.exports = {
       },
     ],
     QA: [
-      "testing/cli_testing_frameworks",
       {
         type: "category",
         label: "NX - Frontend Testing",
@@ -351,9 +350,7 @@ module.exports = {
       "testing/testing_java_serenity_bdd",
       "testing/testing_dotnet_selenium",
       "testing/cypress_functional_testing",
-      "testing/testcafe_functional_testing",
       "testing/testing_static_analysis",
-      "testing/visual_analysis",
       "testing/contract_testing_pact",
       "testing/accessibility_testing",
       "testing/performance_testing_gatling",

@@ -191,7 +191,7 @@ We are using, as a base, the Page Object model, with a strong flavor and inclina
 
 > Instead, you can use the concept of Page Components. A Page Component represents a specific part of the page that helps the user perform a specific task. A login form, a navigation hierarchy, a search result list, or the details about the current user: all of these would make great Page Components.
 
-This aligns with our Front End implementation approach with React components and how other testing frameworks are structured (with Cypress, TestCafe).
+This aligns with our Front End implementation approach with React components and how other testing frameworks are structured.
 
 Documentation: link:https://johnfergusonsmart.com/page-objects-that-suck-less-tips-for-writing-more-maintainable-page-objects/[Page Objects that Suck Less – Tips for writing more maintainable Page Objects].
 
