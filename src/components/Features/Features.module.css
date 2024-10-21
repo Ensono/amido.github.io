@@ -21,10 +21,6 @@
   padding: 2rem;
 }
 
-.feature:first-child {
-  border-bottom: 0;
-}
-
 .feature p {
   display: flex;
   text-align: center;
@@ -36,10 +32,6 @@
 }
 
 @media (min-width: 768px) { 
-  .feature:first-child {
-    border-bottom: 1px solid var(--igm-color-dark-grey);
-  }
-
   .feature {
     flex: 1 1 0;
   }
