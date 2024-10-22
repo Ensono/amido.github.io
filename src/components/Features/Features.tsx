@@ -14,13 +14,7 @@ const text = {
           img: '/img/icons/ensono-icon_host-v_0222.png',
           buttonText: 'Show me'
         },
-        {
-          title: "Test Framework",
-          link: "testing/cli_testing_frameworks",
-          description: "With just one command, discover how to tailor your project with Ensono Stacks’ front-end focused opinionated test frameworks.",
-          img: '/img/icons/ensono-icon_symbol-checkmark-v_0222.png',
-          buttonText: 'Show me'
-        },
+
     ]
   }
 const { features } = text;
