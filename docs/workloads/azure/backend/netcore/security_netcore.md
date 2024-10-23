@@ -9,7 +9,7 @@ keywords:
   - authentication
   - configuration
   - enable oauth
-  - authorization url
+  - authorization url![alt text](image.png)
   - authorization
 ---
 
@@ -37,7 +37,7 @@ For example, some users might only be allowed to view data, while others can edi
 
 Think of it like being in a building: you might be allowed to enter the lobby (authentication), but whether you're allowed in restricted areas depends on your access level (authorization).
 
-### In Summary:
+### In Summary
 
 - **Authentication** = Are you a valid user? (Proving who you are)
 - **Authorization** = What can you do? (Checking your permissions)
@@ -114,6 +114,7 @@ var jwtBearerAuthenticationConfiguration = new JwtBearerAuthenticationConfigurat
     UseStubbedBackChannelHandler = true  // Pretends to communicate with the login system to make tests faster
 };
 ```
+
 - **AllowExpiredTokens**: Normally, expired tokens are rejected, but for testing, you can allow them. This makes it easier to use pre-made tokens.
   
 - **UseStubbedBackChannelHandler**: This simulates communication with the login system, so you don't have to wait for real requests. It speeds up tests and makes sure they run even if the login system is down.

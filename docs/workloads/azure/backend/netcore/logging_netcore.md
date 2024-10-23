@@ -86,7 +86,7 @@ Here's an example of what the `appsettings.json` configuration file might look l
 }
 ```
 
-### Key Points:
+### Key Points
 
 1. **Console Sink**: 
    - Sends logs to the console, so you can quickly check what's happening with your service in real time. 

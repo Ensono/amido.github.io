@@ -17,7 +17,7 @@ keywords:
 
 import HideNavigation  from "../../../../../src/components/HideNavigation/HideNavigation";
 
-# Introduction to the .NET 8 REST API Application
+## Introduction to the .NET 8 REST API Application
 
 This document introduces a sample .NET 8 REST API project. It uses a simple restaurant menu app as an example to demonstrate important concepts.
 
@@ -79,6 +79,7 @@ Here's an example of what the API might return when you ask for menu details:
 ```
 
 In this example:
+
 - The menu has categories like "Main Menus".
 - Inside each category, there are items, like "Lasagna" with details like price and availability.
 
