@@ -20,14 +20,96 @@ keywords:
   - docker
 ---
 
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
 
-## Configuring the project
+# Configure REST API with CQRS Project
 
-All security sensitive information is passed as a secret in our configuration. We have a library called [Ensono.Stacks.Configuration](https://github.com/Ensono/stacks-dotnet-packages-configuration) that reads secrets from the environment before the application starts and makes the needed substitutions in the configuration files.
+All sensitive information that needs to be kept secret in our configuration is stored as environment variables. When the application starts up, the placeholders for these secrets in our configuration files are substitutes with teh values stored in our environment.
 
-### Configuring Cosmos DB
+When we configure the the REST API with CQRS Project, we have two services to configure: a _storage service_ and a _messaging service_.  In the first part of this quick start guide, [Create REST API with CQRS project](https://stacks.ensono.com/docs/workloads/azure/backend/netcore/quickstart/web_api_cqrs/create_project_netcore), when you ran the `dotnet new` command you chose a database and a messaging service.  Now we will configure the services that you chose.
 
-The project can be set to use Azure **Cosmos DB** or an **InMemory** database to store the example application data. The **InMemory** database works out of the box and no further setup is required aside from creating your project. Depending on your desired setup you'll have to provide some or all of the configuration in the `appsettings.json` file section showed below.
+## Configure your Database
+
+When you created your project using the Stacks `dotnet new` command, you had an option to choose a database using either the `-db` or `--database` switch.  Your options were either, Microsoft Azure CosmosDB, Amazon Web Services DynamoDB, of an in memory 'database'.  Depending on the option that you chose, follow one of the guides below to configure your database.
+
+### Configure an In-Memory Database
+
+The in-memory database requires no additional setup, as it holds all data in memory rather than connecting to an external database service. While it's useful for demonstrating the REST API with the CQRS project, keep in mind that the in-memory database is _not_ suitable for production workloads.
+
+### Step 1: Configure an Azure Cosmos DB Database
+
+To configure Cosmos DB, first we need to find the Primary Key for the database, and then we need add it to our configuration.  Tofind the primary key, you have another choice to make:  Would you like to run the database locally on your computer or use an existing database in Azure?  Depending on your choice, follow one of the guides below: -
+
+#### Find the Cosmos DB Primary Key
+
+<details>
+<summary>Run Cosmos DB locally using the emulator, (Windows only)</summary>
+
+<div>
+
+1. **Install the Cosmos DB emulator.**  
+Follow the [instructions provided by Microsoft](https://learn.microsoft.com/en-us/azure/cosmos-db/how-to-develop-emulator?tabs=windows%2Ccsharp&pivots=api-nosql) to install and start the emulator.  
+The Cosmos DB emulator is only available for Windows operating system, Mac and Linux users should follow the instructions below to run Cosmos DB emulator in a Docker container.
+
+2. **Browse to the emulator's quick-start page.**  
+After installing the Cosmos DB emulator, browse to the quick-start page in your browser.  
+You will find the location of the quick-start page in the _Start the emulator_ section of the documentation.
+
+3. **Find the Cosmos DB Primary Key**  
+The screenshot below shows the location of the CosmosDB Primary Key.   Make a note of this value.
+ ![CosmosDB](/img/cosmosdb_emulator_3.png)
+
+4. **Create the Database and Container**  
+Create a collection called `Stacks`, which corresponds to `DatabaseName` in the `appsettings.json` file below and a container id called `Menu`, which is the name of domain object.  If, when you created your  project, you chose a different domain object name, you should use this name for your container.  Finally choose `/id` for your partition key.
+
+![CosmosDB](/img/cosmosdb_emulator_1.png)
+
+</div>
+</details>
+
+<br />
+
+<details>
+<summary>Run Cosmos DB locally in a container</summary>
+
+<div>
+
+1. **Install the Cosmos DB container.**  
+Follow the [instructions provided by Microsoft](https://learn.microsoft.com/en-us/azure/cosmos-db/how-to-develop-emulator?tabs=docker-linux%2Ccsharp&pivots=api-nosql) to install and start the emulator in a Docker Container.
+
+2. **Browse to the emulator's quick-start page.**  
+After installing the Cosmos DB container, browse to the quick-start page in your browser.  
+You will find the location of the quick-start page in the _Start the emulator_ section of the documentation.
+
+3. **Find the Cosmos DB Primary Key**  
+The screenshot below shows the location of the CosmosDB Primary Key.  Make a note of this value.
+ ![CosmosDB](/img/cosmosdb_emulator_3.png)
+
+4. **Create the Database and Container**  
+Create a collection called `Stacks`, which corresponds to `DatabaseName` in the `appsettings.json` file below and a container id called `Menu`, which is the name of domain object.  If, when you created your  project, you chose a different domain object name, you should use this name for your container.  Finally choose `/id` for your partition key.
+
+![CosmosDB](/img/cosmosdb_emulator_1.png)
+
+</div>
+</details>
+
+<br />
+
+<details>
+<summary>Connecting to a Cosmos DB instance in Azure</summary>
+
+<div>
+
+1. **Locate the your Cosmos DB**  
+Login to you Azure account and type _Azure Cosmos DB_ in the search bar at the top of the page to list all of your Cosmos DB instances.  Then click the one that you wish to use.
+
+2. **Locate your Database URI and Key.**  
+From the left hand menu, choose Settings/Keys.  In the keys blade, click the eye icon next to the Primary Key to reveal its value.  Make a note of the `URI` and the `Primary Key`.
+
+3. **Add the URI to appsettings.json**  
+
+Unlike the option to run Cosmos DB locally, if we wish to connect to an Azure instance, then we need to provide the URL for the database in the `appsettings.json` file.  Browse to the appsettings.json file in the path shown below and update the `DatabaseAccountUri`value with the URL we made a note of in step 2.
 
 ```json title="<PROJECT-NAME>/cqrs/src/api/xxENSONOxx.xxSTACKSxx.API/appsettings.json"
 "CosmosDb": {
@@ -40,64 +122,53 @@ The project can be set to use Azure **Cosmos DB** or an **InMemory** database to
 }
 ```
 
-<br />
-
-<details>
-<summary>Using the Cosmos DB Emulator to run the database locally</summary>
-
-<div>
-
-For running on local environments (Windows/Linux/macOS) please follow the [instructions provided by Microsoft.](https://docs.microsoft.com/en-us/azure/cosmos-db/local-emulator?tabs=ssl-netstd21)
-
-1. Navigate to the local Cosmos DB URL in your browser as indicated in the documentation given in the above link.
-
-2. Identify the **Primary Key**. Please refer to the field in the screenshot below. ![CosmosDB](/img/cosmosdb_emulator_3.png)
-
-3. Cosmos DB has to contain a fixed structure depending on your project. Create a collection `Stacks` (this corresponds to `DatabaseName` in the `appsettings.json` file) with a container id `Menu` (name of domain object) and the partition key `/id`. Keep in mind that if you've changed the domain (default being `Menu`), you have to supply your own domain when creating the container.
-
-![CosmosDB](/img/cosmosdb_emulator_1.png)
-
-:::note CosmosDb environment variable
-
-To interact with CosmosDb there is a environment variable called `COSMOSDB_KEY` that needs to be set before running your application. This variable holds the value of the **Primary Key** you got from step 2. Please see the next section on details of how to set it on your machine.
-
-:::
-
 </div>
 </details>
 
-<br />
+### Step 2:  Setting the Cosmos DB environment variable
 
-<details>
-<summary>Setting the COSMOSDB_KEY environment variable</summary>
+The `CosmosDb:SecurityKeySecret:Identifier` value in the  **appsettings.json** file, shown below, defines the name of the environment variable that we need to set.  The default name for the environment variable is `COSMOSDB_KEY` but you can change it if you wish.  In this guide, we will assume we are working with the default value.
+
+```json title="src/api/Company.Project.API/appsettings.json"
+"CosmosDb": {
+    ...
+    "SecurityKeySecret": {
+        "Identifier": "COSMOSDB_KEY",
+        ...
+    }
+}
+```
+
 <div>
-
 
 <Tabs
 defaultValue="windows"
 values={[
 {label: 'Windows', value: 'windows'},
-{label: 'Unix', value: 'unix'}
+{label: 'Mac and Linux', value: 'mac-and-linux'}
+{label: 'Docker', value: 'docker'}
 ]}>
 <TabItem value="windows">
 
-There are a couple of different ways to set the environment variable
+Choose one of the following methods to set your environment variable.
 
-## Using Powershell for COSMOSDB_KEY
+#### Using Powershell
 
-You can use `Powershell` with administrator privileges to execute the command below. Substitute `<PRIMARY-KEY-HERE>` with your own key.
+Use `Powershell` with administrator privileges to execute the command below. Substitute `<PRIMARY-KEY-HERE>` with your own key.
 
 ```powershell title="Run PS command to add the COSMOSDB_KEY system variable"
 [Environment]::SetEnvironmentVariable("COSMOSDB_KEY", "<PRIMARY-KEY-HERE>", [EnvironmentVariableTarget]::Machine)
 ```
 
-## Using Visual Studio for COSMOSDB_KEY
+#### Using Visual Studio
 
-1. Open the project in Visual Studio. The solution file is located at `src/api/xxENSONOxx.xxSTACKSxx.API.sln`.
+1. **Open the project in Visual Studio.**
+The solution file is located in the `src/api/Company.Project.API.sln` folder.  Where Company.Project is the name of you chose when creating the project.
 
-2. Add **COSMOSDB_KEY** environment variable to the **launchSettings.json** file generated by Visual Studio and add the Cosmos DB Primary Key value.
+2. **Edit the launchSettings.json file.**
+The launchSettings.json file is can be used to provide environment variables when a project is launched.  Open the file in the in the properties folder of the project and add the  **COSMOSDB_KEY** environment variable with the value that you made a note of.  There is an example below.
 
-```json title="src/api/xxENSONOxx.xxSTACKSxx.API/properties/launchSettings.json"
+```json title="src/api/Company.Project.API/properties/launchSettings.json"
 {
   ...
   "profiles": {
@@ -112,42 +183,24 @@ You can use `Powershell` with administrator privileges to execute the command be
 }
 ```
 
-## Using VSCode for COSMOSDB_KEY
+#### Using VSCode
 
-If you're using VSCode that means you'll have a `launch.json` file generated when you try to run the project. In that file there's an `env` section where you can put environment variables for the current session.
+If you are using VSCode you will have a `launch.json` file generated when you try to run the project. In this file there's an `env` section used to provide environment variables when a project is launched.  Open this file and add the  **COSMOSDB_KEY** environment variable with the value that you made a note of.  There is an example below.
 
 ```json title="launch.json"
 "env": {
-	...
-    "COSMOSDB_KEY": "<PRIMARY-KEY-HERE>",
-    ...
+   "COSMOSDB_KEY": "<PRIMARY-KEY-HERE>",
 }
 ```
-
-:::note Note on usage
-
-The variable is referenced in **appsettings.json**. As mentioned in the beginning section of this page this environment variable name will be substituted with the actual value on startup.
-
-```json title="src/api/xxENSONOxx.xxSTACKSxx.API/appsettings.json"
-"CosmosDb": {
-    ...
-    "SecurityKeySecret": {
-        "Identifier": "COSMOSDB_KEY",
-        ...
-    }
-}
-```
-
-:::
 
 </TabItem>
-<TabItem value="unix">
+<TabItem value="mac-and-linux">
 
-There are a couple of different ways to set the environment variable
+Choose one of the following methods to set your environment variable.
 
-## Using terminal for COSMOSDB_KEY
+#### Using terminal for COSMOSDB_KEY
 
-You can use the `terminal` to execute the command below. Substitute `<PRIMARY-KEY-HERE>` with your own key. This will set the environment variable only for the current session of your terminal.
+Use the `terminal` to execute the command below.  Substitute `<PRIMARY-KEY-HERE>` with your own key to set the environment variable only for the current session of your terminal.
 
 ```shell title="Run terminal command to add the COSMOSDB_KEY system variable"
 export COSMOSDB_KEY=<PRIMARY-KEY-HERE>
@@ -159,173 +212,113 @@ To set the environment variable permanently on your system you'll have to edit y
 echo 'export COSMOSDB_KEY=<PRIMARY-KEY-HERE>' >> ~/.zshenv
 ```
 
-## Using Visual Studio Code for COSMOSDB_KEY
+#### Using VSCode
 
-If you're using VSCode that means you'll have a `launch.json` file generated when you try to run the project. In that file there's an `env` section where you can put environment variables for the current session.
+If you are using VSCode you will have a `launch.json` file generated when you try to run the project. In this file there's an `env` section used to provide environment variables when a project is launched.  Open this file and add the  **COSMOSDB_KEY** environment variable with the value that you made a note of.  There is an example below.
 
 ```json title="launch.json"
 "env": {
-	...
     "COSMOSDB_KEY": "<PRIMARY-KEY-HERE>",
-    ...
 }
 ```
-
-:::note Note on usage
-
-The variable is referenced in **appsettings.json**. As mentioned in the beginning section of this page this environment variable name will be substituted with the actual value on startup.
-
-```json title="src/api/xxENSONOxx.xxSTACKSxx.API/appsettings.json"
-"CosmosDb": {
-    ...
-    "SecurityKeySecret": {
-        "Identifier": "COSMOSDB_KEY",
-        ...
-    }
-}
-```
-
-:::
 </TabItem>
+
+<TabItem value="docker">
+
+If you are running the application in a docker container, then environment variables are set when you use the `docker run` command with the `-e` switch.  Make a note of your Cosmos DB URL and Primary Key as we will use them in the [Build & Run REST API with CQRS](https://stacks.ensono.com/docs/workloads/azure/backend/netcore/quickstart/web_api_cqrs/build_and_run_project_netcore) section of this guide.
+
+</TabItem>
+
 </Tabs>
 </div>
-</details>
-
-<br />
-
-import Tabs from "@theme/Tabs";
-import TabItem from "@theme/TabItem";
-
-<details>
-<summary>Connecting to deployed Cosmos DB instance</summary>
-
-<div>
-When choosing not to run the CosmosDB locally via the emulator, further configuration needs to be changed in the `appsettings.json` file.
-
-Aside from setting the `COSMOSDB_KEY` as an environment variable (described in the previous section), you'll have to set the CosmosDB URI parameter `DatabaseAccountUri` as well.
-
-```json title="<PROJECT-NAME>/cqrs/src/api/xxENSONOxx.xxSTACKSxx.API/appsettings.json"
-"CosmosDb": {
-	"DatabaseAccountUri": "<Add CosmosDB Account URI here>",
-	"DatabaseName": "Stacks",
-	"SecurityKeySecret": {
-		"Identifier": "COSMOSDB_KEY",
-	...
-	}
-}
-```
-
-</div>
-</details>
-
-<br />
 
 ### Configuring DynamoDB
 
-You need a DynamoDB instance in order to connect the API to it. You can follow the official instructions provided by AWS [here](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/SettingUp.DynamoWebService.html).
+To use Dynamo DB you will need to create a DynamoDB instance in Amazon Web Services.  The following steps describe how to create a Dynamo DB instance and configure you solution.
 
-Relevant documentation pages that you can follow to set up your profile:
+1. **Create an AWS Dynamo DB Instance**  
+Follow the [AWS Dynamo DB Developers guide to get started with Dynamo DB](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/SettingUp.DynamoWebService.html) to create a Dynamo DB instance.  When you create your instance, you may wish name it the same as your Domain Object when you create the project.  If you did not provide one, the default is _menu_.
 
-- [Configuration and credential file settings](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html)
+2. **Configure the AWS CLI tools.**  
+The template assumes that you are using the AWS CLI tools and have configured your access keys via the `aws configure` command.  Follow the [AWS CLI configuration guide](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html) and the [AWS named profiles guide](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html) to setup your CLI environment.
 
-- [Named profiles](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html)
+3. **Edit the appsettings.json file**  
+To configure the project to use your Dynamo DB instance, adjust the `.../cqrs/src/api/Company.Project.API/appsettings.json` file, where  Company.Project is the name that you chose for your project.  Add the following section to your appsettings.json file where the TableName value is the name of the instance that you created in step 1.
 
-The template and NuGet package assumes you'll use the `AWS CLI` tools and will have configured your access keys via the `aws configure` command.
-
-Depending on your desired setup you'll have to provide some or all of the configuration in the `appsettings.json` file section showed below.
-
-```json title="<PROJECT-NAME>/cqrs/src/api/xxENSONOxx.xxSTACKSxx.API/appsettings.json"
+```json title="../cqrs/src/api/Company.Project.API/appsettings.json"
 "DynamoDb": {
     "TableName": "Menu",
     "TablePrefix": ""
 }
 ```
 
-### Ensono.Stacks.DynamoDB package
+## Configure your Messaging Service
 
-This template uses the [Ensono.Stacks.DynamoDB](https://github.com/Ensono/stacks-dotnet-packages-dynamodb) package to connect and use DynamoDB.
+When you created your project using the Stacks `dotnet new` command, you had an option to choose a messaing service using either the `-e` or `--eventPublisher` switch.  Your options were either, Microsoft Azure Event Hub, Microsoft Azure Service Bus or Amazon Web Services Simple Notification Service.  Depending on the option that you chose, follow one of the guides below to configure your database.
 
-<br />
+### Configure Azure Event Hub
 
-### Configuring AWS SNS
+To use Azure Event Hubs as a messaging service,follow the steps below.
 
-The project can be set to use AWS **SNS** to publish and consume events. In order to publish messages to a Queue you will also require a version of AWS SQS running on AWS cloud. For SNS to work out the box with AWS you will have to provide some configuration in the `appsettings.json` file section showed below as well as subscribeaing your SNS topic to your SQS queue.
+1. **Locate the your Event Hub**  
+Login to you Azure account and type _Event Hubs_ in the search bar at the top of the page to list all of your Event Hub instances.  Then click the one that you wish to use.  Make a note of the name of the Event Hub.
 
-You will also be required to set the `TOPIC_ARN` as an environment variable (see section **Setting the TOPIC_ARN environment variable**).
+2. **Locate your Event Hub's Connection String.**  
+From the left hand menu, choose Settings/Shared Access Policies.  In the Shared Access Policies blade, choose a policy that has the `send` claim and click it. Make a note of the value in the `Primary Connection String` text box.
 
-```json title="<PROJECT-NAME>/cqrs/src/api/xxENSONOxx.xxSTACKSxx.API/appsettings.json"
-"AwsSnsConfiguration": {
-  "TopicArn": {
-		"Identifier": "TOPIC_ARN",
-	...
-	}
-},
-"AWS": {
-    "Region": "eu-west-2"
-}
-```
+3. **Add the Event Hub Name to appsettings.json**  
+Browse to the appsettings.json file in the path shown below and update the `EventHubConfiguration:Publisher:EventHubName` value with the name of the Event Hub that we made a note of in step 1.
 
-<br />
+   ```json
+   "EventHubConfiguration": {
+       "Publisher": {
+           "NamespaceConnectionString": {
+               "Identifier": "EVENTHUB_CONNECTIONSTRING",
+               "Source": "Environment"
+           },
+           "EventHubName": "stacks-event-hub"
+       }
+   }
+   ```
 
-<details>
-<summary>Using the AWS SNS to publish messages</summary>
-
-<div>
-
-For running on local environments you will still require a version of AWS SNS running on AWS cloud.
-
-1. Navigate to the SNS Topic in your browser.
-
-2. Identify the **TopicArn**. This is located within: Amazon SNS --> Topics --> topic-name (e.g. stacks-dev) --> TopicArn
-
-3. Apply the **TopicArn** obtained to the environmental variable called `TOPIC_ARN` (Please see the next section on details of how to set it on your machine).
-
-4. Run your application and carry out some event worth actions (create domain objects, retrieve domain objects, delete domain objects etc...). Any time you carry out an action which should raise an event, there will be an event raised within your AWS SQS queue.
-
-5. Navigate to the SQS Queue in your browser and select `Send and receive messages`. Select `Poll for messages` and see all the events raised.
-
-</div>
-</details>
-
-<br />
-
-<details>
-<summary>Setting the TOPIC_ARN environment variable</summary>
-<div>
-
+4. **Add the Event Hub connection string as an environment variable.**
+The connection string for the Event Hub is stored in an environment variable specified in the `EventHubConfiguration:Publisher:NamespaceConnectionString:Identifier` value.  This guide assumes that we will use the default environment variable name of `EVENTHUB_CONNECTIONSTRING`, but you may change its name in the appsettting.json file if you wish.
 
 <Tabs
 defaultValue="windows"
 values={[
 {label: 'Windows', value: 'windows'},
-{label: 'Unix', value: 'unix'}
+{label: 'Mac and Linux', value: 'mac-and-linux'}
+{label: 'Docker', value: 'docker'}
 ]}>
 <TabItem value="windows">
 
-There are a couple of different ways to set the environment variable
+Choose one of the following methods to set your environment variable.
 
-## Using Powershell for TOPIC_ARN
+#### Using Powershell
 
-You can use `Powershell` with administrator privileges to execute the command below. Substitute `<TOPIC-ARN-HERE>` with your own key.
+Use `Powershell` with administrator privileges to execute the command below. Substitute `<CONNECTION-STRING-HERE>` with your connection string.
 
-```powershell title="Run PS command to add the TOPIC_ARN system variable"
-[Environment]::SetEnvironmentVariable("TOPIC_ARN", "<TOPIC-ARN-HERE>", [EnvironmentVariableTarget]::Machine)
+```powershell title="Run PS command to add the COSMOSDB_KEY system variable"
+[Environment]::SetEnvironmentVariable("EVENTHUB_CONNECTIONSTRING", "<CONNECTION-STRING-HERE>", [EnvironmentVariableTarget]::Machine)
 ```
 
-## Using Visual Studio for TOPIC_ARN
+#### Using Visual Studio
 
-1. Open the project in Visual Studio. The solution file is located at `src/api/xxENSONOxx.xxSTACKSxx.API.sln`.
+1. **Open the project in Visual Studio.**
+The solution file is located in the `src/api/Company.Project.API.sln` folder.  Where Company.Project is the name of you chose when creating the project.  Open this solution in Visual Studio.
 
-2. Add **TOPIC_ARN** environment variable to the **launchSettings.json** file generated by Visual Studio and add the SNS topic ARN value.
+2. **Edit the launchSettings.json file.**
+The launchSettings.json file is can be used to provide environment variables when a project is launched.  Open the file in the in the properties folder of the project and add the  **EVENTHUB_CONNECTIONSTRING** environment variable with the value that you made a note of in step 2.  In the example below, substitute `<CONNECTION-STRING-HERE>` with your connection string.
 
-```json title="src/api/xxENSONOxx.xxSTACKSxx.API/properties/launchSettings.json"
+```json title="src/api/Company.Project.API/properties/launchSettings.json"
 {
   ...
   "profiles": {
     "xxENSONOxx.xxSTACKSxx.API": {
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
-        "TOPIC_ARN": "<TOPIC-ARN-HERE>"
+        "EVENTHUB_CONNECTIONSTRING": "<CONNECTION-STRING-HERE>"
         ...
       }
     }
@@ -333,79 +326,292 @@ You can use `Powershell` with administrator privileges to execute the command be
 }
 ```
 
-## Using VSCode for TOPIC_ARN
+#### Using VSCode
 
-If you're using VSCode that means you'll have a `launch.json` file generated when you try to run the project. In that file there's an `env` section where you can put environment variables for the current session.
+If you are using VSCode you will have a `launch.json` file generated when you try to run the project. In this file there's an `env` section used to provide environment variables when a project is launched.  Open this file and add the **EVENTHUB_CONNECTIONSTRING** environment variable,  substiuting `<CONNECTION-STRING-HERE>` with your connection string.
 
 ```json title="launch.json"
 "env": {
-	...
-    "TOPIC_ARN": "<TOPIC-ARN-HERE>",
-    ...
+   "EVENTHUB_CONNECTIONSTRING": "<CONNECTION-STRING-HERE>",
 }
 ```
-
-:::note Note on usage
-
-The variable is referenced in **appsettings.json**. As mentioned in the beginning section of this page this environment variable name will be substituted with the actual value on startup.
-
-```json title="src/api/xxENSONOxx.xxSTACKSxx.API/appsettings.json"
-"AwsSnsConfiguration": {
-  "TopicArn": {
-		"Identifier": "TOPIC_ARN",
-	...
-	}
-}
-```
-
-:::
 
 </TabItem>
-<TabItem value="unix">
+<TabItem value="mac-and-linux">
 
-There are a couple of different ways to set the environment variable
+Choose one of the following methods to set your environment variable.
 
-## Using terminal for TOPIC_ARN
+#### Using terminal
 
-You can use the `terminal` to execute the command below. Substitute `<TOPIC-ARN-HERE>` with your own key. This will set the environment variable only for the current session of your terminal.
+Use the `terminal` to execute the command below.  Substitute `<CONNECTION-STRING-HERE>` with your own key to set the environment variable only for the current session of your terminal.
 
-```shell title="Run terminal command to add the TOPIC_ARN system variable"
-export TOPIC_ARN=<TOPIC-ARN-HERE>
+```shell title="Run terminal command to add the COSMOSDB_KEY system variable"
+export EVENTHUB_CONNECTIONSTRING=<CONNECTION-STRING-HERE>
 ```
 
 To set the environment variable permanently on your system you'll have to edit your `bash_profile` or `.zshenv` file depending on which shell are you using.
 
 ```shell title="Example for setting env variable in .zchenv"
-echo 'export TOPIC_ARN=<TOPIC-ARN-HERE>' >> ~/.zshenv
+echo 'export EVENTHUB_CONNECTIONSTRING=<CONNECTION-STRING-HERE>' >> ~/.zshenv
 ```
 
-## Using Visual Studio Code for TOPIC_ARN
+#### Using VSCode
 
-If you're using VSCode that means you'll have a `launch.json` file generated when you try to run the project. In that file there's an `env` section where you can put environment variables for the current session.
+If you are using VSCode you will have a `launch.json` file generated when you try to run the project. In this file there's an `env` section used to provide environment variables when a project is launched.  Open this file and add the  **COSMOSDB_KEY** environment variable with the value that you made a note of.  There is an example below.
 
 ```json title="launch.json"
 "env": {
-	...
-    "TOPIC_ARN": "<TOPIC-ARN-HERE>",
-    ...
+    "EVENTHUB_CONNECTIONSTRING": "<CONNECTION-STRING-HERE>",
 }
 ```
-
-:::note Note on usage
-
-The variable is referenced in **appsettings.json**. As mentioned in the beginning section of this page this environment variable name will be substituted with the actual value on startup.
-
-```json title="src/api/xxENSONOxx.xxSTACKSxx.API/appsettings.json"
-"AwsSnsConfiguration": {
-  "TopicArn": {
-		"Identifier": "TOPIC_ARN",
-	...
-	}
-}
-```
-
-:::
 </TabItem>
+
+<TabItem value="docker">
+
+If you are running the application in a docker container, then environment variables are set when you use the `docker run` command with the `-e` switch.  Make a note of your Event Hub Connection String as we will use it in the [Build & Run REST API with CQRS](https://stacks.ensono.com/docs/workloads/azure/backend/netcore/quickstart/web_api_cqrs/build_and_run_project_netcore) section of this guide.
+
+</TabItem>
+
 </Tabs>
 </div>
-</details>
+
+### Configure Service Bus
+
+To use Azure Service Bus as a messaging service, follow the steps below.
+
+1. **Locate the your Service Bus**  
+Login to you Azure account and type _Service Bus_ in the search bar at the top of the page to list all of your Service Bus instances.  From the left hand menu, choose Entities/Topics and make a note of the name of the Service Bus Topic that you wish to send to.
+
+2. **Locate your Service Bus' Connection String.**  
+From the left hand menu, choose Settings/Shared Access Policies.  In the Shared Access Policies blade, choose a policy that has the `send` claim and click it. Make a note of the value in the `Primary Connection String` text box.
+
+3. **Add the Service Bus Topic Name to appsettings.json**  
+Browse to the appsettings.json file in the path shown below and add a `ServiceBusConfiguration` section.  Replace the `<TOPIC-NAME-HERE>` placeholder with the name of your service bus topic.
+
+   ```json title="Service Bus example"
+   "ServiceBusConfiguration": {
+      "Sender": {
+          "Topics": [
+              {
+                  "Name": "<TOPIC-NAME-HERE>",
+                  "ConnectionStringSecret": {
+                      "Identifier": "SERVICEBUS_CONNECTIONSTRING",
+                      "Source": "Environment"
+                  }
+              }
+          ]
+      }
+   },
+   ```
+
+4. **Add the Service Bus connection string as an environment variable.**
+The connection string for the Service Bus is stored in an environment variable specified in the `ServiceBusConfiguration:Sender:Topics:ConnectionStringSecret:Identifier` value.  This guide assumes that we will use the default environment variable name of `SERVICEBUS_CONNECTIONSTRING`, but you may change its name in the appsettting.json file if you wish.
+
+<Tabs
+defaultValue="windows"
+values={[
+{label: 'Windows', value: 'windows'},
+{label: 'Mac and Linux', value: 'mac-and-linux'}
+{label: 'Docker', value: 'docker'}
+]}>
+<TabItem value="windows">
+
+Choose one of the following methods to set your environment variable.
+
+#### Using Powershell
+
+Use `Powershell` with administrator privileges to execute the command below. Substitute `<CONNECTION-STRING-HERE>` with your connection string.
+
+```powershell title="Run PS command to add the COSMOSDB_KEY system variable"
+[Environment]::SetEnvironmentVariable("SERVICEBUS_CONNECTIONSTRING", "<CONNECTION-STRING-HERE>", [EnvironmentVariableTarget]::Machine)
+```
+
+#### Using Visual Studio
+
+1. **Open the project in Visual Studio.**
+The solution file is located in the `src/api/Company.Project.API.sln` folder.  Where Company.Project is the name of you chose when creating the project.  Open this solution in Visual Studio.
+
+2. **Edit the launchSettings.json file.**
+The launchSettings.json file is can be used to provide environment variables when a project is launched.  Open the file in the in the properties folder of the project and add the  **SERVICEBUS_CONNECTIONSTRING** environment variable with the value that you made a note of in step 2.  In the example below, substitute `<CONNECTION-STRING-HERE>` with your connection string.
+
+```json title="src/api/Company.Project.API/properties/launchSettings.json"
+{
+  ...
+  "profiles": {
+    "xxENSONOxx.xxSTACKSxx.API": {
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "SERVICEBUS_CONNECTIONSTRING": "<CONNECTION-STRING-HERE>"
+        ...
+      }
+    }
+  }
+}
+```
+
+#### Using VSCode
+
+If you are using VSCode you will have a `launch.json` file generated when you try to run the project. In this file there's an `env` section used to provide environment variables when a project is launched.  Open this file and add the **SERVICEBUS_CONNECTIONSTRING** environment variable,  substiuting `<CONNECTION-STRING-HERE>` with your connection string.
+
+```json title="launch.json"
+"env": {
+   "SERVICEBUS_CONNECTIONSTRING": "<CONNECTION-STRING-HERE>",
+}
+```
+
+</TabItem>
+<TabItem value="mac-and-linux">
+
+Choose one of the following methods to set your environment variable.
+
+#### Using terminal for COSMOSDB_KEY
+
+Use the `terminal` to execute the command below.  Substitute `<CONNECTION-STRING-HERE>` with your own key to set the environment variable only for the current session of your terminal.
+
+```shell title="Run terminal command to add the COSMOSDB_KEY system variable"
+export SERVICEBUS_CONNECTIONSTRING=<CONNECTION-STRING-HERE>
+```
+
+To set the environment variable permanently on your system you'll have to edit your `bash_profile` or `.zshenv` file depending on which shell are you using.
+
+```shell title="Example for setting env variable in .zchenv"
+echo 'export SERVICEBUS_CONNECTIONSTRING=<CONNECTION-STRING-HERE>' >> ~/.zshenv
+```
+
+#### Using VSCode
+
+If you are using VSCode you will have a `launch.json` file generated when you try to run the project. In this file there's an `env` section used to provide environment variables when a project is launched.  Open this file and add the  **COSMOSDB_KEY** environment variable with the value that you made a note of.  There is an example below.
+
+```json title="launch.json"
+"env": {
+    "SERVICEBUS_CONNECTIONSTRING": "<CONNECTION-STRING-HERE>",
+}
+```
+</TabItem>
+
+<TabItem value="docker">
+
+If you are running the application in a docker container, then environment variables are set when you use the `docker run` command with the `-e` switch.  Make a note of your Service Bus Connection String as we will use it in the [Build & Run REST API with CQRS](https://stacks.ensono.com/docs/workloads/azure/backend/netcore/quickstart/web_api_cqrs/build_and_run_project_netcore) section of this guide.
+
+</TabItem>
+
+</Tabs>
+</div>
+
+### Configuring AWS Simple Notification Service
+
+To use Simple Notification Service as a messaging service, follow the steps below.
+
+1. **Locate the your SNS Topic**  
+Login to you AWS account and type _SNS_ in the search bar at the top of the page.  The chose Topics from the left hand menu to list all of your Topics.  Note, ensure you are in the correct region, shown in the top right hand corner of the screen.
+
+2. **Locate your TopicArn.**  
+From the list of topics on the screen locate the topic that you wish to use and make a note of the TopicArn.
+
+3. **Add the AWS SNS Configuration to appsettings.json**  
+Browse to the appsettings.json file in the path shown below and add a `AwsSnsConfiguration` section and an AWS section.  Replace the `<YOUR-REGION-HERE>` placeholder with the region in which your topic resides, for example `eu-west-2`.
+
+   ```json title="/cqrs/src/api/xxENSONOxx.xxSTACKSxx.API/appsettings.json"
+   "AwsSnsConfiguration": {
+      "TopicArn": {
+        "Identifier": "TOPIC_ARN",
+      }
+    },
+    "AWS": {
+        "Region": "<YOUR-REGION-HERE>"
+    }
+   ```
+
+4. **Add the TOPIC_ARN as an environment variable.**
+The Topic ARN is stored in an environment variable specified in the `AwsSnsConfiguration:Sender:TopicArn:Identifier` value.  This guide assumes that we will use the default environment variable name of `TOPIC_ARN`, but you may change its name in the appsettings.json file if you wish.
+
+<Tabs
+defaultValue="windows"
+values={[
+{label: 'Windows', value: 'windows'},
+{label: 'Mac and Linux', value: 'mac-and-linux'}
+{label: 'Docker', value: 'docker'}
+]}>
+<TabItem value="windows">
+
+Choose one of the following methods to set your environment variable.
+
+#### Using Powershell
+
+Use `Powershell` with administrator privileges to execute the command below. Substitute `<TOPIC-ARN-HERE>` with your connection string.
+
+```powershell title="Run PS command to add the COSMOSDB_KEY system variable"
+[Environment]::SetEnvironmentVariable("TOPIC-ARN", "<TOPIC-ARN-HERE>", [EnvironmentVariableTarget]::Machine)
+```
+
+#### Using Visual Studio
+
+1. **Open the project in Visual Studio.**
+The solution file is located in the `src/api/Company.Project.API.sln` folder.  Where Company.Project is the name of you chose when creating the project.  Open this solution in Visual Studio.
+
+2. **Edit the launchSettings.json file.**
+The launchSettings.json file is can be used to provide environment variables when a project is launched.  Open the file in the in the properties folder of the project and add the  **TOPIC-ARN** environment variable with the value that you made a note of in step 2.  In the example below, substitute `<TOPIC-ARN-HERE>` with your connection string.
+
+```json title="src/api/Company.Project.API/properties/launchSettings.json"
+{
+  ...
+  "profiles": {
+    "xxENSONOxx.xxSTACKSxx.API": {
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "TOPIC-ARN": "<TOPIC-ARN-HERE>"
+        ...
+      }
+    }
+  }
+}
+```
+
+#### Using VSCode
+
+If you are using VSCode you will have a `launch.json` file generated when you try to run the project. In this file there's an `env` section used to provide environment variables when a project is launched.  Open this file and add the **TOPIC-ARN** environment variable,  substiuting `<TOPIC-ARN-HERE>` with your connection string.
+
+```json title="launch.json"
+"env": {
+   "TOPIC-ARN": "<TOPIC-ARN-HERE>",
+}
+```
+
+</TabItem>
+<TabItem value="mac-and-linux">
+
+Choose one of the following methods to set your environment variable.
+
+#### Using terminal
+
+Use the `terminal` to execute the command below.  Substitute `<TOPIC-ARN-HERE>` with your own key to set the environment variable only for the current session of your terminal.
+
+```shell title="Run terminal command to add the COSMOSDB_KEY system variable"
+export TOPIC-ARN=<TOPIC-ARN-HERE>
+```
+
+To set the environment variable permanently on your system you'll have to edit your `bash_profile` or `.zshenv` file depending on which shell are you using.
+
+```shell title="Example for setting env variable in .zchenv"
+echo 'export TOPIC-ARN=<TOPIC-ARN-HERE>' >> ~/.zshenv
+```
+
+#### Using VSCode
+
+If you are using VSCode you will have a `launch.json` file generated when you try to run the project. In this file there's an `env` section used to provide environment variables when a project is launched.  Open this file and add the  **TOPIC-ARN** environment variable with the value that you made a note of.  There is an example below.
+
+```json title="launch.json"
+"env": {
+    "TOPIC-ARN": "<TOPIC-ARN-HERE>",
+}
+```
+</TabItem>
+
+<TabItem value="docker">
+
+If you are running the application in a docker container, then environment variables are set when you use the `docker run` command with the `-e` switch.  Make a note of your Toptic ARN Connection String as we will use it in the [Build & Run REST API with CQRS](https://stacks.ensono.com/docs/workloads/azure/backend/netcore/quickstart/web_api_cqrs/build_and_run_project_netcore) section of this guide.
+
+</TabItem>
+
+</Tabs>
+</div>
