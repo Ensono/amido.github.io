@@ -16,41 +16,26 @@ keywords:
 ---
 
 ```text
-├── build
-│   ├── azDevOps
-│   │   ├── azure
-│   │   └── templates
-│   ├── github
-│   │   ├── aws
-│   │   └── templates
-│   ├── scripts
-│   └── taskctl
-├── deploy
-│   ├── aws
-│   │   └── app
-│   ├── azure
-│   │   └── app
-│   ├── helm
-│   │   └── stacks-dotnet
-│   └── scripts
-├── docs
-├── scripts
-├── src
-│   ├── background-worker
-│   │   └── src
-│   ├── cqrs
-│   │   ├── contracts
-│   │   └── src
-│   ├── func-aeh-listener
-│   │   └── src
-│   ├── func-asb-listener
-│   │   └── src
-│   ├── func-cosmosdb-worker
-│   │   └── src
-│   ├── shared
-│   └── simple-api
-│       ├── contracts
-│       └── src
+├── build: stores build configurations
+│   ├── azDevOps: stores configuration, build steps and scripts used by Azure DevOps
+│   ├── github: stores configuration, build steps and scripts used by GitHub Actions
+│   ├── scripts: stores reusable scripts used by the build pipelines
+│   └── taskctl: stores configuration, build steps and scripts used by TaskCtl
+├── deploy: stores deployment configurations
+│   ├── aws: stores deployment steps and scripts used by AWS
+│   ├── azure: stores deployment steps and scripts used by Azure DevOps
+│   ├── helm: stores Helm charts
+│   └── scripts: stores reusable scripts used by the deployment pipelines
+├── docs: stores documentation
+├── scripts: stores scripts used for testing, development and other purposes
+├── src: stores the source code
+│   ├── background-worker: stores the background worker function template
+│   ├── cqrs: stores the CQRS template
+│   ├── func-aeh-listener: stores the Azure Event Hub listener function template
+│   ├── func-asb-listener: stores the Azure Service Bus listener function template
+│   ├── func-cosmosdb-worker: stores the CosmosDB worker function template
+│   ├── shared: stores the shared code
+│   └── simple-api: stores the simple API template
 ```
 
 There is 1 repository available:
