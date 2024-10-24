@@ -25,23 +25,23 @@ import TabItem from "@theme/TabItem";
 
 # Configure REST API with CQRS Project
 
-All sensitive information that needs to be kept secret in our configuration is stored as environment variables. When the application starts up, the placeholders for these secrets in our configuration files are substitutes with teh values stored in our environment.
+All sensitive information that needs to be kept secret in our configuration is stored as environment variables. When the application starts up, the placeholders for these secrets in our configuration files are substituted with the values stored in our environment.
 
-When we configure the the REST API with CQRS Project, we have two services to configure: a _storage service_ and a _messaging service_.  In the first part of this quick start guide, [Create REST API with CQRS project](https://stacks.ensono.com/docs/workloads/azure/backend/netcore/quickstart/web_api_cqrs/create_project_netcore), when you ran the `dotnet new` command you chose a database and a messaging service.  Now we will configure the services that you chose.
+To configure the REST API with CQRS project, you need to set up two services: a _storage service_ and a _messaging service_. In the first part of this guide, [Create REST API with CQRS project](https://stacks.ensono.com/docs/workloads/azure/backend/netcore/quickstart/web_api_cqrs/create_project_netcore), when you ran the `dotnet new` command, you chose a database and a messaging service. Now we will configure the services that you selected.
 
 ## Configure your Database
 
-When you created your project using the Stacks `dotnet new` command, you had an option to choose a database using either the `-db` or `--database` switch.  Your options were either, Microsoft Azure CosmosDB, Amazon Web Services DynamoDB, of an in memory 'database'.  Depending on the option that you chose, follow one of the guides below to configure your database.
+When you created your project using the Stacks `dotnet new` command, you had the option to choose a database using either the `-db` or `--database` switch. Your options were Microsoft Azure Cosmos DB, Amazon Web Services DynamoDB, or an in-memory database. Follow the relevant guide below based on your choice.
 
 ### Configure an In-Memory Database
 
-The in-memory database requires no additional setup, as it holds all data in memory rather than connecting to an external database service. While it's useful for demonstrating the REST API with the CQRS project, keep in mind that the in-memory database is _not_ suitable for production workloads.
+The in-memory database requires no additional setup since it holds all data in memory without connecting to an external service. While useful for demonstration purposes, it is _not_ suitable for production workloads.
 
-### Step 1: Configure an Azure Cosmos DB Database
+### Configure an Azure Cosmos DB Database
 
-To configure Cosmos DB, first we need to find the Primary Key for the database, and then we need add it to our configuration.  Tofind the primary key, you have another choice to make:  Would you like to run the database locally on your computer or use an existing database in Azure?  Depending on your choice, follow one of the guides below: -
+To configure Cosmos DB, first, we need to find the Primary Key for the database and then add it to our configuration.  You may run the database locally or connect to an existing Cosmos DB instance in Azure. Follow one of the guides below, depending on your choice.
 
-#### Find the Cosmos DB Primary Key
+#### Step 1:  Find your Cosmos Key
 
 <details>
 <summary>Run Cosmos DB locally using the emulator, (Windows only)</summary>
@@ -50,7 +50,7 @@ To configure Cosmos DB, first we need to find the Primary Key for the database, 
 
 1. **Install the Cosmos DB emulator.**  
 Follow the [instructions provided by Microsoft](https://learn.microsoft.com/en-us/azure/cosmos-db/how-to-develop-emulator?tabs=windows%2Ccsharp&pivots=api-nosql) to install and start the emulator.  
-The Cosmos DB emulator is only available for Windows operating system, Mac and Linux users should follow the instructions below to run Cosmos DB emulator in a Docker container.
+The Cosmos DB emulator is only available for the Windows operating system. Mac and Linux users should follow the instructions below to run Cosmos DB emulator in a Docker container.
 
 2. **Browse to the emulator's quick-start page.**  
 After installing the Cosmos DB emulator, browse to the quick-start page in your browser.  
@@ -61,7 +61,7 @@ The screenshot below shows the location of the CosmosDB Primary Key.   Make a no
  ![CosmosDB](/img/cosmosdb_emulator_3.png)
 
 4. **Create the Database and Container**  
-Create a collection called `Stacks`, which corresponds to `DatabaseName` in the `appsettings.json` file below and a container id called `Menu`, which is the name of domain object.  If, when you created your  project, you chose a different domain object name, you should use this name for your container.  Finally choose `/id` for your partition key.
+Create a collection called `Stacks`.  This must match the value of the `CosmosDb:DatabaseName` setting in the `appsettings.json` file, shown below.  Create a container id called `Menu`, which is the name of your domain object.  If, when you created your project, you chose a different domain object name, you should use this name for your container.  Finally choose `/id` for your partition key.
 
 ![CosmosDB](/img/cosmosdb_emulator_1.png)
 
@@ -83,11 +83,11 @@ After installing the Cosmos DB container, browse to the quick-start page in your
 You will find the location of the quick-start page in the _Start the emulator_ section of the documentation.
 
 3. **Find the Cosmos DB Primary Key**  
-The screenshot below shows the location of the CosmosDB Primary Key.  Make a note of this value.
+The screenshot below shows the location of the CosmosDB Primary Key. Make a note of this value.
  ![CosmosDB](/img/cosmosdb_emulator_3.png)
 
 4. **Create the Database and Container**  
-Create a collection called `Stacks`, which corresponds to `DatabaseName` in the `appsettings.json` file below and a container id called `Menu`, which is the name of domain object.  If, when you created your  project, you chose a different domain object name, you should use this name for your container.  Finally choose `/id` for your partition key.
+Create a collection called `Stacks`.  This must match the value of the `CosmosDb:DatabaseName` setting in the `appsettings.json` file.  Create a container id called `Menu`, which is the name of your domain object.  If, when you created your project, you chose a different domain object name, you should use this name for your container.  Finally choose `/id` for your partition key.
 
 ![CosmosDB](/img/cosmosdb_emulator_1.png)
 
@@ -108,24 +108,22 @@ Login to you Azure account and type _Azure Cosmos DB_ in the search bar at the t
 From the left hand menu, choose Settings/Keys.  In the keys blade, click the eye icon next to the Primary Key to reveal its value.  Make a note of the `URI` and the `Primary Key`.
 
 3. **Add the URI to appsettings.json**  
-
 Unlike the option to run Cosmos DB locally, if we wish to connect to an Azure instance, then we need to provide the URL for the database in the `appsettings.json` file.  Browse to the appsettings.json file in the path shown below and update the `DatabaseAccountUri`value with the URL we made a note of in step 2.
 
-```json title="<PROJECT-NAME>/cqrs/src/api/xxENSONOxx.xxSTACKSxx.API/appsettings.json"
-"CosmosDb": {
-	"DatabaseAccountUri": "<Add CosmosDB Account URI here>",
-	"DatabaseName": "Stacks",
-	"SecurityKeySecret": {
-		"Identifier": "COSMOSDB_KEY",
-	...
-	}
-}
-```
+   ```json title="Company.Project/cqrs/src/api/xxENSONOxx.xxSTACKSxx.API/appsettings.json"
+   "CosmosDb": {
+      "DatabaseAccountUri": "<Add CosmosDB Account URI here>",
+      "DatabaseName": "Stacks",
+      "SecurityKeySecret": {
+        "Identifier": "COSMOSDB_KEY",
+      }
+    }
+   ```
 
 </div>
 </details>
 
-### Step 2:  Setting the Cosmos DB environment variable
+#### Step 1:  Set your Cosmos Key
 
 The `CosmosDb:SecurityKeySecret:Identifier` value in the  **appsettings.json** file, shown below, defines the name of the environment variable that we need to set.  The default name for the environment variable is `COSMOSDB_KEY` but you can change it if you wish.  In this guide, we will assume we are working with the default value.
 
@@ -166,7 +164,7 @@ Use `Powershell` with administrator privileges to execute the command below. Sub
 The solution file is located in the `src/api/Company.Project.API.sln` folder.  Where Company.Project is the name of you chose when creating the project.
 
 2. **Edit the launchSettings.json file.**
-The launchSettings.json file is can be used to provide environment variables when a project is launched.  Open the file in the in the properties folder of the project and add the  **COSMOSDB_KEY** environment variable with the value that you made a note of.  There is an example below.
+The launchSettings.json file is can be used to provide environment variables when a project is launched.  Open the file in the in the properties folder of the project and add the  **COSMOSDB_KEY** environment variable with the value that you made a note of in step 1.  There is an example below.
 
 ```json title="src/api/Company.Project.API/properties/launchSettings.json"
 {
@@ -185,7 +183,7 @@ The launchSettings.json file is can be used to provide environment variables whe
 
 #### Using VSCode
 
-If you are using VSCode you will have a `launch.json` file generated when you try to run the project. In this file there's an `env` section used to provide environment variables when a project is launched.  Open this file and add the  **COSMOSDB_KEY** environment variable with the value that you made a note of.  There is an example below.
+If you are using VSCode you will have a `launch.json` file generated when you try to run the project. In this file there's an `env` section used to provide environment variables when a project is launched.  Open this file and add the  **COSMOSDB_KEY** environment variable with the value that you made a note of in step 1.  There is an example below.
 
 ```json title="launch.json"
 "env": {
@@ -234,16 +232,16 @@ If you are running the application in a docker container, then environment varia
 
 ### Configuring DynamoDB
 
-To use Dynamo DB you will need to create a DynamoDB instance in Amazon Web Services.  The following steps describe how to create a Dynamo DB instance and configure you solution.
+To use DynamoDB you will need to create a DynamoDB instance in Amazon Web Services.  The following steps describe how to create a DynamoDB instance and configure you solution.
 
-1. **Create an AWS Dynamo DB Instance**  
-Follow the [AWS Dynamo DB Developers guide to get started with Dynamo DB](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/SettingUp.DynamoWebService.html) to create a Dynamo DB instance.  When you create your instance, you may wish name it the same as your Domain Object when you create the project.  If you did not provide one, the default is _menu_.
+1. **Create an AWS DynamoDB Instance**  
+Follow the [AWS Developers guide to get started with DynamoDB](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/SettingUp.DynamoWebService.html) to create a DynamoDB instance.  When you create your instance, you may wish name it the same as your Domain Object when you create the project.  If you did not provide one, the default is _menu_.
 
 2. **Configure the AWS CLI tools.**  
 The template assumes that you are using the AWS CLI tools and have configured your access keys via the `aws configure` command.  Follow the [AWS CLI configuration guide](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html) and the [AWS named profiles guide](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html) to setup your CLI environment.
 
 3. **Edit the appsettings.json file**  
-To configure the project to use your Dynamo DB instance, adjust the `.../cqrs/src/api/Company.Project.API/appsettings.json` file, where  Company.Project is the name that you chose for your project.  Add the following section to your appsettings.json file where the TableName value is the name of the instance that you created in step 1.
+To configure the project to use your DynamoDB instance, adjust the `.../cqrs/src/api/Company.Project.API/appsettings.json` file, where  Company.Project is the name that you chose for your project.  Add the following section to your appsettings.json file where the TableName value is the name of the instance that you created in step 1.
 
 ```json title="../cqrs/src/api/Company.Project.API/appsettings.json"
 "DynamoDb": {
@@ -254,7 +252,7 @@ To configure the project to use your Dynamo DB instance, adjust the `.../cqrs/sr
 
 ## Configure your Messaging Service
 
-When you created your project using the Stacks `dotnet new` command, you had an option to choose a messaing service using either the `-e` or `--eventPublisher` switch.  Your options were either, Microsoft Azure Event Hub, Microsoft Azure Service Bus or Amazon Web Services Simple Notification Service.  Depending on the option that you chose, follow one of the guides below to configure your database.
+When you created your project using the Stacks `dotnet new` command, you had an option to choose a messaging service using either the `-e` or `--eventPublisher` switch.  Your options were either, Microsoft Azure Event Hub, Microsoft Azure Service Bus or Amazon Web Services Simple Notification Service.  Depending on the option that you chose, follow one of the guides below to configure your database.
 
 ### Configure Azure Event Hub
 
@@ -282,7 +280,7 @@ Browse to the appsettings.json file in the path shown below and update the `Even
    ```
 
 4. **Add the Event Hub connection string as an environment variable.**
-The connection string for the Event Hub is stored in an environment variable specified in the `EventHubConfiguration:Publisher:NamespaceConnectionString:Identifier` value.  This guide assumes that we will use the default environment variable name of `EVENTHUB_CONNECTIONSTRING`, but you may change its name in the appsettting.json file if you wish.
+The connection string for the Event Hub is stored in an environment variable specified in the `EventHubConfiguration:Publisher:NamespaceConnectionString:Identifier` value.  This guide assumes that we will use the default environment variable name of `EVENTHUB_CONNECTIONSTRING`, but you may change its name in the appsettings.json file if you wish.
 
 <Tabs
 defaultValue="windows"
@@ -405,7 +403,7 @@ Browse to the appsettings.json file in the path shown below and add a `ServiceBu
    ```
 
 4. **Add the Service Bus connection string as an environment variable.**
-The connection string for the Service Bus is stored in an environment variable specified in the `ServiceBusConfiguration:Sender:Topics:ConnectionStringSecret:Identifier` value.  This guide assumes that we will use the default environment variable name of `SERVICEBUS_CONNECTIONSTRING`, but you may change its name in the appsettting.json file if you wish.
+The connection string for the Service Bus is stored in an environment variable specified in the `ServiceBusConfiguration:Sender:Topics:ConnectionStringSecret:Identifier` value.  This guide assumes that we will use the default environment variable name of `SERVICEBUS_CONNECTIONSTRING`, but you may change its name in the appsettings.json file if you wish.
 
 <Tabs
 defaultValue="windows"
@@ -602,9 +600,10 @@ If you are using VSCode you will have a `launch.json` file generated when you tr
 
 ```json title="launch.json"
 "env": {
-    "TOPIC-ARN": "<TOPIC-ARN-HERE>",
-}
+  "TOPIC-ARN": "<TOPIC-ARN-HERE>",
+  }
 ```
+
 </TabItem>
 
 <TabItem value="docker">
