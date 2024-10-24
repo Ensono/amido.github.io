@@ -123,7 +123,7 @@ Unlike the option to run Cosmos DB locally, if we wish to connect to an Azure in
 </div>
 </details>
 
-#### Step 1:  Set your Cosmos Key
+#### Step 2:  Set your Cosmos Key
 
 The `CosmosDb:SecurityKeySecret:Identifier` value in the  **appsettings.json** file, shown below, defines the name of the environment variable that we need to set.  The default name for the environment variable is `COSMOSDB_KEY` but you can change it if you wish.  In this guide, we will assume we are working with the default value.
 
@@ -166,20 +166,20 @@ The solution file is located in the `src/api/Company.Project.API.sln` folder.  W
 2. **Edit the launchSettings.json file.**
 The launchSettings.json file is can be used to provide environment variables when a project is launched.  Open the file in the in the properties folder of the project and add the  **COSMOSDB_KEY** environment variable with the value that you made a note of in step 1.  There is an example below.
 
-```json title="src/api/Company.Project.API/properties/launchSettings.json"
-{
-  ...
-  "profiles": {
-    "xxENSONOxx.xxSTACKSxx.API": {
-      "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development",
-        "COSMOSDB_KEY": "<PRIMARY-KEY-HERE>"
-        ...
-      }
-    }
-  }
-}
-```
+   ```json title="src/api/Company.Project.API/properties/launchSettings.json"
+   {
+     ...
+     "profiles": {
+       "xxENSONOxx.xxSTACKSxx.API": {
+         "environmentVariables": {
+           "ASPNETCORE_ENVIRONMENT": "Development",
+           "COSMOSDB_KEY": "<PRIMARY-KEY-HERE>"
+           ...
+         }
+       }
+     }
+   }
+   ```
 
 #### Using VSCode
 
@@ -192,6 +192,7 @@ If you are using VSCode you will have a `launch.json` file generated when you tr
 ```
 
 </TabItem>
+
 <TabItem value="mac-and-linux">
 
 Choose one of the following methods to set your environment variable.
