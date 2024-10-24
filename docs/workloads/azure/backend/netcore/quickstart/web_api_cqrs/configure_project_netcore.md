@@ -39,31 +39,43 @@ The in-memory database requires no additional setup since it holds all data in m
 
 ### Configure an Azure Cosmos DB Database
 
-To configure Cosmos DB, first, we need to find the Primary Key for the database and then add it to our configuration.  You may run the database locally or connect to an existing Cosmos DB instance in Azure. Follow one of the guides below, depending on your choice.
-
-#### Step 1:  Find your Cosmos Key
+To configure Cosmos DB, we need to set the `CosmosDb:DatabaseAccountUri` setting in the `appsettings.json` file and create and environment variable for the datbase's Primary Key.  You may run the database locally or connect to an existing Cosmos DB instance in Azure. Follow one of the guides below, depending on your choice.
 
 <details>
 <summary>Run Cosmos DB locally using the emulator, (Windows only)</summary>
 
 <div>
 
-1. **Install the Cosmos DB emulator.**  
+1. **Use the Cosmos DB emulator.**  
 Follow the [instructions provided by Microsoft](https://learn.microsoft.com/en-us/azure/cosmos-db/how-to-develop-emulator?tabs=windows%2Ccsharp&pivots=api-nosql) to install and start the emulator.  
 The Cosmos DB emulator is only available for the Windows operating system. Mac and Linux users should follow the instructions below to run Cosmos DB emulator in a Docker container.
 
 2. **Browse to the emulator's quick-start page.**  
 After installing the Cosmos DB emulator, browse to the quick-start page in your browser.  
-You will find the location of the quick-start page in the _Start the emulator_ section of the documentation.
+You will find the location of the quick-start page in the _Start the emulator_ section of the documentation, it is usually [https://localhost:8081/_explorer/index.html](https://localhost:8081/_explorer/index.html)
 
-3. **Find the Cosmos DB Primary Key**  
-The screenshot below shows the location of the CosmosDB Primary Key.   Make a note of this value.
- ![CosmosDB](/img/cosmosdb_emulator_3.png)
+3. **Find the Cosmos DB URI and Primary Key**  
+The screenshot below shows the location of the Cosmos DB `URI` and the `Primary Key`.  Make a note of these values.
+
+   ![Cosmos DB URI and Key](/img/cosmosdb_emulator_3.png)
 
 4. **Create the Database and Container**  
-Create a collection called `Stacks`.  This must match the value of the `CosmosDb:DatabaseName` setting in the `appsettings.json` file, shown below.  Create a container id called `Menu`, which is the name of your domain object.  If, when you created your project, you chose a different domain object name, you should use this name for your container.  Finally choose `/id` for your partition key.
+Create a collection called `Stacks`.  This must match the value of the `CosmosDb:DatabaseName` setting in the `appsettings.json` file, an example is shown below.  Create a container id called `Menu`, which is the name of your domain object.  If, when you created your project, you chose a different domain object name, you should use this name for your container.  Finally choose `/id` for your partition key.
 
-![CosmosDB](/img/cosmosdb_emulator_1.png)
+   ![CosmosDB](/img/cosmosdb_emulator_1.png)
+
+5. **Add the URI to appsettings.json**  
+Open the `Company.Project/cqrs/src/api/Company.Project.API/appsettings.json` file, where Company.Project is the name of your project.  Set the `CosmosDb:DatabaseAccountUri` to the URI value that we made a note of in step 2. An example is shown below:
+
+  ```json title="Company.Project/cqrs/src/api/Company.Project.API/appsettings.json"
+  "CosmosDb": {
+    "DatabaseAccountUri": "<Add your Cosmos DB Account URI here>",
+    "DatabaseName": "Stacks",
+    "SecurityKeySecret": {
+      "Identifier": "COSMOSDB_KEY",
+    }
+  }
+  ```
 
 </div>
 </details>
@@ -82,14 +94,28 @@ Follow the [instructions provided by Microsoft](https://learn.microsoft.com/en-u
 After installing the Cosmos DB container, browse to the quick-start page in your browser.  
 You will find the location of the quick-start page in the _Start the emulator_ section of the documentation.
 
-3. **Find the Cosmos DB Primary Key**  
-The screenshot below shows the location of the CosmosDB Primary Key. Make a note of this value.
- ![CosmosDB](/img/cosmosdb_emulator_3.png)
+3. **Find the Cosmos DB URI and Primary Key**  
+The screenshot below shows the location of the Cosmos DB `URI` and the `Primary Key`.  Make a note of these values.
+
+   ![Cosmos DB URI and Key](/img/cosmosdb_emulator_3.png)
 
 4. **Create the Database and Container**  
 Create a collection called `Stacks`.  This must match the value of the `CosmosDb:DatabaseName` setting in the `appsettings.json` file.  Create a container id called `Menu`, which is the name of your domain object.  If, when you created your project, you chose a different domain object name, you should use this name for your container.  Finally choose `/id` for your partition key.
 
-![CosmosDB](/img/cosmosdb_emulator_1.png)
+   ![CosmosDB](/img/cosmosdb_emulator_1.png)
+
+5. **Add the URI to appsettings.json**  
+Open the `Company.Project/cqrs/src/api/Company.Project.API/appsettings.json` file, where Company.Project is the name of your project.  Set the `CosmosDb:DatabaseAccountUri` to the URI value that we made a note of in step 2.An example is shown below.
+
+  ```json title="Company.Project/cqrs/src/api/Company.Project.API/appsettings.json"
+  "CosmosDb": {
+    "DatabaseAccountUri": "<Add your Cosmos DB Account URI here>",
+    "DatabaseName": "Stacks",
+    "SecurityKeySecret": {
+      "Identifier": "COSMOSDB_KEY",
+    }
+  }
+  ```
 
 </div>
 </details>
@@ -108,24 +134,24 @@ Login to you Azure account and type _Azure Cosmos DB_ in the search bar at the t
 From the left hand menu, choose Settings/Keys.  In the keys blade, click the eye icon next to the Primary Key to reveal its value.  Make a note of the `URI` and the `Primary Key`.
 
 3. **Add the URI to appsettings.json**  
-Unlike the option to run Cosmos DB locally, if we wish to connect to an Azure instance, then we need to provide the URL for the database in the `appsettings.json` file.  Browse to the appsettings.json file in the path shown below and update the `DatabaseAccountUri`value with the URL we made a note of in step 2.
+Open the `Company.Project/cqrs/src/api/Company.Project.API/appsettings.json` file, where Company.Project is the name of your project.  Set the `CosmosDb:DatabaseAccountUri` to the URI value that we made a note of in step 2.An example is shown below.
 
-   ```json title="Company.Project/cqrs/src/api/xxENSONOxx.xxSTACKSxx.API/appsettings.json"
-   "CosmosDb": {
-      "DatabaseAccountUri": "<Add CosmosDB Account URI here>",
-      "DatabaseName": "Stacks",
-      "SecurityKeySecret": {
-        "Identifier": "COSMOSDB_KEY",
-      }
+  ```json title="Company.Project/cqrs/src/api/Company.Project.API/appsettings.json"
+  "CosmosDb": {
+    "DatabaseAccountUri": "<Add your Cosmos DB Account URI here>",
+    "DatabaseName": "Stacks",
+    "SecurityKeySecret": {
+      "Identifier": "COSMOSDB_KEY",
     }
-   ```
+  }
+  ```
 
 </div>
 </details>
 
 #### Step 2:  Set your Cosmos Key
 
-The `CosmosDb:SecurityKeySecret:Identifier` value in the  **appsettings.json** file, shown below, defines the name of the environment variable that we need to set.  The default name for the environment variable is `COSMOSDB_KEY` but you can change it if you wish.  In this guide, we will assume we are working with the default value.
+The `CosmosDb:SecurityKeySecret:Identifier` value in the `Company.Project/cqrs/src/api/Company.Project.API/appsettings.json` file, shown below, defines the name of the environment variable that we need to set.  The default name for the environment variable is `COSMOSDB_KEY` but you can change it if you wish.  In this guide, we will assume we are working with the default value.
 
 ```json title="src/api/Company.Project.API/appsettings.json"
 "CosmosDb": {
@@ -170,7 +196,7 @@ The launchSettings.json file is can be used to provide environment variables whe
    {
      ...
      "profiles": {
-       "xxENSONOxx.xxSTACKSxx.API": {
+       "Company.Project.API": {
          "environmentVariables": {
            "ASPNETCORE_ENVIRONMENT": "Development",
            "COSMOSDB_KEY": "<PRIMARY-KEY-HERE>"
@@ -314,7 +340,7 @@ The launchSettings.json file is can be used to provide environment variables whe
 {
   ...
   "profiles": {
-    "xxENSONOxx.xxSTACKSxx.API": {
+    "Company.Project.API": {
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
         "EVENTHUB_CONNECTIONSTRING": "<CONNECTION-STRING-HERE>"
@@ -400,7 +426,7 @@ Browse to the appsettings.json file in the path shown below and add a `ServiceBu
               }
           ]
       }
-   },
+   }
    ```
 
 4. **Add the Service Bus connection string as an environment variable.**
@@ -437,7 +463,7 @@ The launchSettings.json file is can be used to provide environment variables whe
 {
   ...
   "profiles": {
-    "xxENSONOxx.xxSTACKSxx.API": {
+    "Company.Project.API": {
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
         "SERVICEBUS_CONNECTIONSTRING": "<CONNECTION-STRING-HERE>"
@@ -510,7 +536,7 @@ From the list of topics on the screen locate the topic that you wish to use and 
 3. **Add the AWS SNS Configuration to appsettings.json**  
 Browse to the appsettings.json file in the path shown below and add a `AwsSnsConfiguration` section and an AWS section.  Replace the `<YOUR-REGION-HERE>` placeholder with the region in which your topic resides, for example `eu-west-2`.
 
-   ```json title="/cqrs/src/api/xxENSONOxx.xxSTACKSxx.API/appsettings.json"
+   ```json title="/cqrs/src/api/Company.Project.API/appsettings.json"
    "AwsSnsConfiguration": {
       "TopicArn": {
         "Identifier": "TOPIC_ARN",
@@ -555,7 +581,7 @@ The launchSettings.json file is can be used to provide environment variables whe
 {
   ...
   "profiles": {
-    "xxENSONOxx.xxSTACKSxx.API": {
+    "Company.Project.API": {
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
         "TOPIC-ARN": "<TOPIC-ARN-HERE>"
