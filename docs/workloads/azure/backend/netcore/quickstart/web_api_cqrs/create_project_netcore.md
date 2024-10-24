@@ -183,7 +183,7 @@ A description of the parameters used in the examples above are shown below.  Ple
   * Sets the path where the project will be created.
   * If you do not provide this parameter, a new folder will be created.
 
-* **-c | --cloudProvider**
+* **-cp | --cloudProvider**
   * Configures which cloud provider to use.
   * Choices: -
     * `AWS` for Amazon Web Services,
