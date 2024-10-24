@@ -17,19 +17,6 @@ keywords:
 
 ## Solution Structure
 
-
-### Simple Web API
-
-```text
-Solution 'xxENSONOxx.xxSTACKSss.API'
-├── API
-│  ├── xxENSONOxx.xxSTACKSxx.API
-│  ├── xxENSONOxx.xxSTACKSxx.API.Models
-└── Tests
-   ├── xxENSONOxx.xxSTACKSxx.API.UnitTests
-```
-
-
 ### Web API with CQRS
 
 ```text
