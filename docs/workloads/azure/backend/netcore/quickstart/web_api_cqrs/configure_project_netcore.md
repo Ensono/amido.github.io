@@ -169,7 +169,7 @@ The `CosmosDb:SecurityKeySecret:Identifier` value in the `Company.Project/cqrs/s
 defaultValue="windows"
 values={[
 {label: 'Windows', value: 'windows'},
-{label: 'Mac and Linux', value: 'mac-and-linux'}
+{label: 'Mac and Linux', value: 'mac-and-linux'},
 {label: 'Docker', value: 'docker'}
 ]}>
 <TabItem value="windows">
@@ -309,11 +309,12 @@ Browse to the appsettings.json file in the path shown below and update the `Even
 4. **Add the Event Hub connection string as an environment variable.**
 The connection string for the Event Hub is stored in an environment variable specified in the `EventHubConfiguration:Publisher:NamespaceConnectionString:Identifier` value.  This guide assumes that we will use the default environment variable name of `EVENTHUB_CONNECTIONSTRING`, but you may change its name in the appsettings.json file if you wish.
 
+<div>
 <Tabs
 defaultValue="windows"
 values={[
 {label: 'Windows', value: 'windows'},
-{label: 'Mac and Linux', value: 'mac-and-linux'}
+{label: 'Mac and Linux', value: 'mac-and-linux'},
 {label: 'Docker', value: 'docker'}
 ]}>
 <TabItem value="windows">
@@ -432,11 +433,12 @@ Browse to the appsettings.json file in the path shown below and add a `ServiceBu
 4. **Add the Service Bus connection string as an environment variable.**
 The connection string for the Service Bus is stored in an environment variable specified in the `ServiceBusConfiguration:Sender:Topics:ConnectionStringSecret:Identifier` value.  This guide assumes that we will use the default environment variable name of `SERVICEBUS_CONNECTIONSTRING`, but you may change its name in the appsettings.json file if you wish.
 
+<div>
 <Tabs
 defaultValue="windows"
 values={[
 {label: 'Windows', value: 'windows'},
-{label: 'Mac and Linux', value: 'mac-and-linux'}
+{label: 'Mac and Linux', value: 'mac-and-linux'},
 {label: 'Docker', value: 'docker'}
 ]}>
 <TabItem value="windows">
@@ -550,11 +552,12 @@ Browse to the appsettings.json file in the path shown below and add a `AwsSnsCon
 4. **Add the TOPIC_ARN as an environment variable.**
 The Topic ARN is stored in an environment variable specified in the `AwsSnsConfiguration:Sender:TopicArn:Identifier` value.  This guide assumes that we will use the default environment variable name of `TOPIC_ARN`, but you may change its name in the appsettings.json file if you wish.
 
+<div>
 <Tabs
 defaultValue="windows"
 values={[
 {label: 'Windows', value: 'windows'},
-{label: 'Mac and Linux', value: 'mac-and-linux'}
+{label: 'Mac and Linux', value: 'mac-and-linux'},
 {label: 'Docker', value: 'docker'}
 ]}>
 <TabItem value="windows">
