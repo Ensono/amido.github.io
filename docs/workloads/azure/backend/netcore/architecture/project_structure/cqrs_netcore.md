@@ -33,20 +33,84 @@ Solution xxENSONOxx.xxSTACKSss.API
 
 #### xxENSONOxx.xxSTACKSxx.API
 
-The API project contains controllers and OpenAPI documentation. It exposes the application via REST/HTTP endpoints and validates requests using DataAnnotations or FluentValidation (not included). The API is self-hosted, managed by the Program.cs class.
+Contains controllers and OpenAPI documentation. Exposes the application via REST/HTTP endpoints and validates requests. Self-hosted, managed by Program.cs.
 
-#### xxENSONOxx.xxSTACKSxx.Models
+#### xxENSONOxx.xxSTACKSxx.API.Infrastructure
 
-The models have been separated from the API project for reusability. They use DataAnnotations for validation, avoiding dependencies on third-party libraries like FluentValidation unless necessary.
+Handles cross-cutting concerns like logging, caching, and exception handling. Includes middleware and filters.
 
-This separation helps prevent code duplication in API.Models and TestModels, making it easier to package models as NuGet packages for QA Functional Tests.
+#### xxENSONOxx.xxSTACKSxx.Application.CommandHandlers
 
-Additionally, it simplifies creating a Client SDK to communicate with the API without rewriting models whenever the API changes.
+Handles commands that change the application's state. Validates and processes commands.
 
-#### Company.Project.API.ComponentTests
+#### xxENSONOxx.xxSTACKSxx.Application.Integration
+
+Interacts with external services, databases, and other resources. Handles data access and external communication.
+
+#### xxENSONOxx.xxSTACKSxx.Application.QueryHandlers
+
+Handles queries for data from the application. Processes queries and returns data.
+
+#### xxENSONOxx.xxSTACKSxx.Abstractions
+
+Contains interfaces and base classes for common patterns and behaviors.
+
+#### xxENSONOxx.xxSTACKSxx.Common
+
+Contains utility classes, extension methods, and shared code for logging, configuration, serialization, etc.
+
+#### xxENSONOxx.xxSTACKSxx.CQRS
+
+Implements the Command Query Responsibility Segregation (CQRS) pattern. Separates read and write operations.
+
+#### xxENSONOxx.xxSTACKSxx.Domain
+
+Represents the core domain model. Includes entities, value objects, and business rules.
+
+#### xxENSONOxx.xxSTACKSxx.Shared.Messaging.Azure.ServiceBus
+
+Interacts with Azure Service Bus for messaging. Manages queues, topics, and messaging tasks.
+
+#### xxENSONOxx.xxSTACKSxx.Shared.Messaging.Azure.ServiceBus.Tests
+
+Contains unit tests for the messaging classes. Tests message processing, queue management, and other messaging tasks.
+
+#### xxENSONOxx.xxSTACKSxx.API.ComponentTests
 
 **ComponentTests** cover the entire service from the API endpoints to the last service layer before external dependencies. They mock resources like repositories and gateways to simulate various scenarios.
 
 APIs should also be covered by Contract Tests. Component Tests might seem redundant but can skip API coverage and focus on the application layer to the service boundary. This approach requires an extra test to ensure API and Application integration.
 
 Component tests are similar to functional tests but with a key difference. Functional Tests check if an input produces the expected output without caring about the process. Component Tests ensure the input returns the expected output and that certain conditions are met, such as event raising, external service calls, and correct data formatting.
+
+#### xxENSONOxx.xxSTACKSxx.API.UnitTests
+
+**UnitTests** cover the API project, including controllers, services, and repositories. They mock external dependencies like databases and external services to ensure the API behaves as expected.
+
+#### xxENSONOxx.xxSTACKSxx.Common.UnitTests
+
+**UnitTests** cover the Common project, including utility classes, extension methods, and other shared code. They test common tasks like logging, configuration, serialization, and other common tasks.
+
+#### xxENSONOxx.xxSTACKSxx.CQRS.UnitTests
+
+**UnitTests** cover the CQRS project, including classes that implement the Command Query Responsibility Segregation (CQRS) pattern. They test command handlers, query handlers, and other components that separate read and write operations in the application.
+
+#### xxENSONOxx.xxSTACKSxx.Domain.UnitTests
+
+**UnitTests** cover the Domain project, including classes that represent the core domain model of the application. They test entities, value objects, and other domain-specific classes that define the application's data model and business rules.
+
+#### xxENSONOxx.xxSTACKSxx.Infrastructure.IntegrationTests
+
+**IntegrationTests** cover the Integration project, including classes that interact with external services, databases, and other resources. They test repositories, gateways, and other classes that handle data access and external communication.
+
+#### xxENSONOxx.xxSTACKSxx.Infrastructure.UnitTests
+
+**UnitTests** cover the Infrastructure project, including classes that handle cross-cutting concerns like logging, caching, and exception handling. They test middleware, filters, and other components that apply to the entire API.
+
+:::note Further Reading
+
+For more information on CQRS, you can refer to the following resource:
+
+[CQRS Documentation](https://martinfowler.com/bliki/CQRS.html) by Martin Fowler
+
+:::
