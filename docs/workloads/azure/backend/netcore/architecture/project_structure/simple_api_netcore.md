@@ -52,3 +52,9 @@ Component tests are similar to functional tests but with a key difference. Funct
 #### Company.Project.API.UnitTests
 
 **UnitTests** cover the API project, including controllers, services, and repositories. They mock external dependencies like databases and external services to ensure the API behaves as expected.
+
+#### xxENSONOxx.xxSTACKSxx.AppHost
+
+The AppHost project is responsible for hosting the API and uses Aspire. Aspire is a lightweight, high-performance framework for building and hosting .NET applications. It provides essential features like dependency injection, configuration management, and middleware support.
+
+The AppHost project contains the Program.cs class, which configures the API and starts the host. The AppHost project should be kept as simple as possible to avoid adding unnecessary dependencies or logic.
