@@ -119,7 +119,7 @@ a|Add the playwright testing library and much more to your project!
 - Add playwright testing and reporting automatically to your build pipelines
 
 |link:./cypress/plugin-information.md[`@ensono-stacks/cypress`]
-a|**Deprecated: This plugin is no longer supported. Cypress-2.0.7 is the final version and may not be compatible with Nx workspace versions beyond 2.0.7.**
+a|**Deprecated: This plugin is no longer supported. Cypress-2.0.7 is the final release version and may not be compatible with the ensono-stacks/workspace plugin above version 2.0.7.**
 
 Add the cypress testing library and much more to your project!
 
