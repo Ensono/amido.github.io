@@ -54,6 +54,7 @@ module.exports = {
           //"getting_started/azure-react/ensono-stacks-azure-react", Temporarily removed, add back in Cycle 11
           "getting_started/rest-client/ensono-stacks-rest-client",
           "getting_started/playwright/ensono-stacks-playwright",
+          "getting_started/cypress/ensono-stacks-cypress",
           "getting_started/logger/ensono-stacks-logger",
         ],
       },
@@ -334,6 +335,14 @@ module.exports = {
                   "testing/testing_in_nx/playwright_visual_testing_applitools_eyes",
                 ],
               },
+            ],
+          },
+          {
+            type: "category",
+            label: "Cypress Information",
+            items: [
+              "testing/testing_in_nx/testing_with_cypress",
+              "testing/testing_in_nx/cypress_accessibility_testing",
             ],
           },
         ],
