@@ -21,7 +21,7 @@ keywords:
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
-# Build and Run REST API with CQRS
+## Build and Run REST API with CQRS
 
 <br />
 
@@ -32,7 +32,7 @@ Depending on the options selected when creating the CQRS API, additional configu
  before running the project.  It is important to complete the [Configure REST API with CQRS project](https://stacks.ensono.com/docs/workloads/azure/backend/netcore/quickstart/web_api_cqrs/configure_project_netcore) section of this guide before building and running the project.
 :::
 
-## Building and Running
+### Building and Running
 
 <details open>
 <summary>Build and run locally</summary>

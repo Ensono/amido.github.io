@@ -23,21 +23,21 @@ keywords:
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
-# Configure REST API with CQRS Project
+## Configure REST API with CQRS Project
 
 All sensitive information that needs to be kept secret in our configuration is stored as environment variables. When the application starts up, the placeholders for these secrets in our configuration files are substituted with the values stored in our environment.
 
 To configure the REST API with CQRS project, you need to set up two services: a _storage service_ and a _messaging service_. In the first part of this guide, [Create REST API with CQRS project](https://stacks.ensono.com/docs/workloads/azure/backend/netcore/quickstart/web_api_cqrs/create_project_netcore), when you ran the `dotnet new` command, you chose a database and a messaging service. Now we will configure the services that you selected.
 
-## Configure your Database
+### Configure your Database
 
 When you created your project using the Stacks `dotnet new` command, you had the option to choose a database using either the `-db` or `--database` switch. Your options were Microsoft Azure Cosmos DB, Amazon Web Services DynamoDB, or an in-memory database. Follow the relevant guide below based on your choice.
 
-### Configure an In-Memory Database
+#### Configure an In-Memory Database
 
 The in-memory database requires no additional setup since it holds all data in memory without connecting to an external service. While useful for demonstration purposes, it is _not_ suitable for production workloads.
 
-### Configure an Azure Cosmos DB Database
+#### Configure an Azure Cosmos DB Database
 
 To configure Cosmos DB, we need to set the `CosmosDb:DatabaseAccountUri` setting in the `appsettings.json` file and create and environment variable for the datbase's Primary Key.  You may run the database locally or connect to an existing Cosmos DB instance in Azure. Follow one of the guides below, depending on your choice.
 
@@ -149,8 +149,6 @@ Open the `Company.Project/cqrs/src/api/Company.Project.API/appsettings.json` fil
 </div>
 </details>
 
-#### Step 2:  Set your Cosmos Key
-
 The `CosmosDb:SecurityKeySecret:Identifier` value in the `Company.Project/cqrs/src/api/Company.Project.API/appsettings.json` file, shown below, defines the name of the environment variable that we need to set.  The default name for the environment variable is `COSMOSDB_KEY` but you can change it if you wish.  In this guide, we will assume we are working with the default value.
 
 ```json title="src/api/Company.Project.API/appsettings.json"
@@ -176,7 +174,7 @@ values={[
 
 Choose one of the following methods to set your environment variable.
 
-#### Using Powershell
+##### Use Powershell to set the COSMOSDB_KEY
 
 Use `Powershell` with administrator privileges to execute the command below. Substitute `<PRIMARY-KEY-HERE>` with your own key.
 
@@ -184,7 +182,7 @@ Use `Powershell` with administrator privileges to execute the command below. Sub
 [Environment]::SetEnvironmentVariable("COSMOSDB_KEY", "<PRIMARY-KEY-HERE>", [EnvironmentVariableTarget]::Machine)
 ```
 
-#### Using Visual Studio
+##### Using Visual Studio to set the COSMOSDB_KEY
 
 1. **Open the project in Visual Studio.**
 The solution file is located in the `src/api/Company.Project.API.sln` folder.  Where Company.Project is the name of you chose when creating the project.
@@ -207,9 +205,9 @@ The launchSettings.json file is can be used to provide environment variables whe
    }
    ```
 
-#### Using VSCode
+##### Using VS Code to set the COSMOSDB_KEY
 
-If you are using VSCode you will have a `launch.json` file generated when you try to run the project. In this file there's an `env` section used to provide environment variables when a project is launched.  Open this file and add the  **COSMOSDB_KEY** environment variable with the value that you made a note of in step 1.  There is an example below.
+If you are using VS Code you will have a `launch.json` file generated when you try to run the project. In this file there's an `env` section used to provide environment variables when a project is launched.  Open this file and add the  **COSMOSDB_KEY** environment variable with the value that you made a note of in step 1.  There is an example below.
 
 ```json title="launch.json"
 "env": {
@@ -223,7 +221,7 @@ If you are using VSCode you will have a `launch.json` file generated when you tr
 
 Choose one of the following methods to set your environment variable.
 
-#### Using terminal for COSMOSDB_KEY
+##### Using terminal to set the COSMOSDB_KEY
 
 Use the `terminal` to execute the command below.  Substitute `<PRIMARY-KEY-HERE>` with your own key to set the environment variable only for the current session of your terminal.
 
@@ -237,15 +235,16 @@ To set the environment variable permanently on your system you'll have to edit y
 echo 'export COSMOSDB_KEY=<PRIMARY-KEY-HERE>' >> ~/.zshenv
 ```
 
-#### Using VSCode
+##### Using VS Code to set the COSMOSDB_KEY on Mac or Linux
 
-If you are using VSCode you will have a `launch.json` file generated when you try to run the project. In this file there's an `env` section used to provide environment variables when a project is launched.  Open this file and add the  **COSMOSDB_KEY** environment variable with the value that you made a note of.  There is an example below.
+If you are using VS Code you will have a `launch.json` file generated when you try to run the project. In this file there's an `env` section used to provide environment variables when a project is launched.  Open this file and add the  **COSMOSDB_KEY** environment variable with the value that you made a note of.  There is an example below.
 
 ```json title="launch.json"
 "env": {
     "COSMOSDB_KEY": "<PRIMARY-KEY-HERE>",
 }
 ```
+
 </TabItem>
 
 <TabItem value="docker">
@@ -257,7 +256,7 @@ If you are running the application in a docker container, then environment varia
 </Tabs>
 </div>
 
-### Configuring DynamoDB
+#### Configuring DynamoDB
 
 To use DynamoDB you will need to create a DynamoDB instance in Amazon Web Services.  The following steps describe how to create a DynamoDB instance and configure you solution.
 
@@ -277,11 +276,11 @@ To configure the project to use your DynamoDB instance, adjust the `.../cqrs/src
 }
 ```
 
-## Configure your Messaging Service
+### Configure your Messaging Service
 
 When you created your project using the Stacks `dotnet new` command, you had an option to choose a messaging service using either the `-e` or `--eventPublisher` switch.  Your options were either, Microsoft Azure Event Hub, Microsoft Azure Service Bus or Amazon Web Services Simple Notification Service.  Depending on the option that you chose, follow one of the guides below to configure your database.
 
-### Configure Azure Event Hub
+#### Configure Azure Event Hub
 
 To use Azure Event Hubs as a messaging service,follow the steps below.
 
@@ -321,7 +320,7 @@ values={[
 
 Choose one of the following methods to set your environment variable.
 
-#### Using Powershell
+##### Using Powershell to set the Event Hub Connection String
 
 Use `Powershell` with administrator privileges to execute the command below. Substitute `<CONNECTION-STRING-HERE>` with your connection string.
 
@@ -329,7 +328,7 @@ Use `Powershell` with administrator privileges to execute the command below. Sub
 [Environment]::SetEnvironmentVariable("EVENTHUB_CONNECTIONSTRING", "<CONNECTION-STRING-HERE>", [EnvironmentVariableTarget]::Machine)
 ```
 
-#### Using Visual Studio
+##### Using Visual Studio to set the Event Hub Connection String
 
 1. **Open the project in Visual Studio.**
 The solution file is located in the `src/api/Company.Project.API.sln` folder.  Where Company.Project is the name of you chose when creating the project.  Open this solution in Visual Studio.
@@ -352,9 +351,9 @@ The launchSettings.json file is can be used to provide environment variables whe
 }
 ```
 
-#### Using VSCode
+##### Using VS Code to set the Event Hub Connection String
 
-If you are using VSCode you will have a `launch.json` file generated when you try to run the project. In this file there's an `env` section used to provide environment variables when a project is launched.  Open this file and add the **EVENTHUB_CONNECTIONSTRING** environment variable,  substiuting `<CONNECTION-STRING-HERE>` with your connection string.
+If you are using VS Code you will have a `launch.json` file generated when you try to run the project. In this file there's an `env` section used to provide environment variables when a project is launched.  Open this file and add the **EVENTHUB_CONNECTIONSTRING** environment variable,  substiuting `<CONNECTION-STRING-HERE>` with your connection string.
 
 ```json title="launch.json"
 "env": {
@@ -367,7 +366,7 @@ If you are using VSCode you will have a `launch.json` file generated when you tr
 
 Choose one of the following methods to set your environment variable.
 
-#### Using terminal
+##### Using terminal to set the Event Hub Connection String
 
 Use the `terminal` to execute the command below.  Substitute `<CONNECTION-STRING-HERE>` with your own key to set the environment variable only for the current session of your terminal.
 
@@ -381,15 +380,16 @@ To set the environment variable permanently on your system you'll have to edit y
 echo 'export EVENTHUB_CONNECTIONSTRING=<CONNECTION-STRING-HERE>' >> ~/.zshenv
 ```
 
-#### Using VSCode
+##### Using VS Code to set the Event Hub Connection String on Mac or Linux
 
-If you are using VSCode you will have a `launch.json` file generated when you try to run the project. In this file there's an `env` section used to provide environment variables when a project is launched.  Open this file and add the  **COSMOSDB_KEY** environment variable with the value that you made a note of.  There is an example below.
+If you are using VS Code you will have a `launch.json` file generated when you try to run the project. In this file there's an `env` section used to provide environment variables when a project is launched.  Open this file and add the  **COSMOSDB_KEY** environment variable with the value that you made a note of.  There is an example below.
 
 ```json title="launch.json"
 "env": {
     "EVENTHUB_CONNECTIONSTRING": "<CONNECTION-STRING-HERE>",
 }
 ```
+
 </TabItem>
 
 <TabItem value="docker">
@@ -401,7 +401,7 @@ If you are running the application in a docker container, then environment varia
 </Tabs>
 </div>
 
-### Configure Service Bus
+#### Configure Service Bus
 
 To use Azure Service Bus as a messaging service, follow the steps below.
 
@@ -445,7 +445,7 @@ values={[
 
 Choose one of the following methods to set your environment variable.
 
-#### Using Powershell
+##### Using Powershell to set the Service Bus Connection String
 
 Use `Powershell` with administrator privileges to execute the command below. Substitute `<CONNECTION-STRING-HERE>` with your connection string.
 
@@ -453,7 +453,7 @@ Use `Powershell` with administrator privileges to execute the command below. Sub
 [Environment]::SetEnvironmentVariable("SERVICEBUS_CONNECTIONSTRING", "<CONNECTION-STRING-HERE>", [EnvironmentVariableTarget]::Machine)
 ```
 
-#### Using Visual Studio
+##### Using Visual Studio to set the Service Bus Connection String
 
 1. **Open the project in Visual Studio.**
 The solution file is located in the `src/api/Company.Project.API.sln` folder.  Where Company.Project is the name of you chose when creating the project.  Open this solution in Visual Studio.
@@ -476,9 +476,9 @@ The launchSettings.json file is can be used to provide environment variables whe
 }
 ```
 
-#### Using VSCode
+##### Using VS Code to set the Service Bus Connection String
 
-If you are using VSCode you will have a `launch.json` file generated when you try to run the project. In this file there's an `env` section used to provide environment variables when a project is launched.  Open this file and add the **SERVICEBUS_CONNECTIONSTRING** environment variable,  substiuting `<CONNECTION-STRING-HERE>` with your connection string.
+If you are using VS Code you will have a `launch.json` file generated when you try to run the project. In this file there's an `env` section used to provide environment variables when a project is launched.  Open this file and add the **SERVICEBUS_CONNECTIONSTRING** environment variable,  substiuting `<CONNECTION-STRING-HERE>` with your connection string.
 
 ```json title="launch.json"
 "env": {
@@ -491,7 +491,7 @@ If you are using VSCode you will have a `launch.json` file generated when you tr
 
 Choose one of the following methods to set your environment variable.
 
-#### Using terminal for COSMOSDB_KEY
+##### Using terminal to set the Service Bus Connection String
 
 Use the `terminal` to execute the command below.  Substitute `<CONNECTION-STRING-HERE>` with your own key to set the environment variable only for the current session of your terminal.
 
@@ -505,15 +505,16 @@ To set the environment variable permanently on your system you'll have to edit y
 echo 'export SERVICEBUS_CONNECTIONSTRING=<CONNECTION-STRING-HERE>' >> ~/.zshenv
 ```
 
-#### Using VSCode
+##### Using VS Code to set the Service Bus Connection String on Mac or Linux
 
-If you are using VSCode you will have a `launch.json` file generated when you try to run the project. In this file there's an `env` section used to provide environment variables when a project is launched.  Open this file and add the  **COSMOSDB_KEY** environment variable with the value that you made a note of.  There is an example below.
+If you are using VS Code you will have a `launch.json` file generated when you try to run the project. In this file there's an `env` section used to provide environment variables when a project is launched.  Open this file and add the  **COSMOSDB_KEY** environment variable with the value that you made a note of.  There is an example below.
 
 ```json title="launch.json"
 "env": {
     "SERVICEBUS_CONNECTIONSTRING": "<CONNECTION-STRING-HERE>",
 }
 ```
+
 </TabItem>
 
 <TabItem value="docker">
@@ -525,7 +526,7 @@ If you are running the application in a docker container, then environment varia
 </Tabs>
 </div>
 
-### Configuring AWS Simple Notification Service
+#### Configuring AWS Simple Notification Service
 
 To use Simple Notification Service as a messaging service, follow the steps below.
 
@@ -564,7 +565,7 @@ values={[
 
 Choose one of the following methods to set your environment variable.
 
-#### Using Powershell
+##### Using Powershell to set the TOPIC-ARN
 
 Use `Powershell` with administrator privileges to execute the command below. Substitute `<TOPIC-ARN-HERE>` with your connection string.
 
@@ -572,7 +573,7 @@ Use `Powershell` with administrator privileges to execute the command below. Sub
 [Environment]::SetEnvironmentVariable("TOPIC-ARN", "<TOPIC-ARN-HERE>", [EnvironmentVariableTarget]::Machine)
 ```
 
-#### Using Visual Studio
+##### Using Visual Studio to set the TOPIC-ARN
 
 1. **Open the project in Visual Studio.**
 The solution file is located in the `src/api/Company.Project.API.sln` folder.  Where Company.Project is the name of you chose when creating the project.  Open this solution in Visual Studio.
@@ -595,9 +596,9 @@ The launchSettings.json file is can be used to provide environment variables whe
 }
 ```
 
-#### Using VSCode
+##### Using VS Code to set the TOPIC-ARN
 
-If you are using VSCode you will have a `launch.json` file generated when you try to run the project. In this file there's an `env` section used to provide environment variables when a project is launched.  Open this file and add the **TOPIC-ARN** environment variable,  substiuting `<TOPIC-ARN-HERE>` with your connection string.
+If you are using VS Code you will have a `launch.json` file generated when you try to run the project. In this file there's an `env` section used to provide environment variables when a project is launched.  Open this file and add the **TOPIC-ARN** environment variable,  substiuting `<TOPIC-ARN-HERE>` with your connection string.
 
 ```json title="launch.json"
 "env": {
@@ -610,7 +611,7 @@ If you are using VSCode you will have a `launch.json` file generated when you tr
 
 Choose one of the following methods to set your environment variable.
 
-#### Using terminal
+##### Using terminal to set the TOPIC-ARN
 
 Use the `terminal` to execute the command below.  Substitute `<TOPIC-ARN-HERE>` with your own key to set the environment variable only for the current session of your terminal.
 
@@ -624,9 +625,9 @@ To set the environment variable permanently on your system you'll have to edit y
 echo 'export TOPIC-ARN=<TOPIC-ARN-HERE>' >> ~/.zshenv
 ```
 
-#### Using VSCode
+##### Using VS Code to set the TOPIC-ARN on Mac or Linux
 
-If you are using VSCode you will have a `launch.json` file generated when you try to run the project. In this file there's an `env` section used to provide environment variables when a project is launched.  Open this file and add the  **TOPIC-ARN** environment variable with the value that you made a note of.  There is an example below.
+If you are using VS Code you will have a `launch.json` file generated when you try to run the project. In this file there's an `env` section used to provide environment variables when a project is launched.  Open this file and add the  **TOPIC-ARN** environment variable with the value that you made a note of.  There is an example below.
 
 ```json title="launch.json"
 "env": {

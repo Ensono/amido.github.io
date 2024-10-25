@@ -23,7 +23,7 @@ keywords:
   - github
 ---
 
-# Create a project using the NuGet package
+## Create a project using the NuGet package
 
 ## Install the package
 
@@ -35,7 +35,7 @@ keywords:
    dotnet new install Ensono.Stacks.Templates
    ```
 
-## Create a new project
+### Create a new project
 
 Once the Stacks Template package has finished installing, you will have the following templates to use as starting points for your projects: -
 
@@ -48,7 +48,7 @@ Once the Stacks Template package has finished installing, you will have the foll
 
 These templates include automated testing and build pipelines, so they are ready for deployment to cloud providers.  To create a solution from one of these templates, please follow the relevant guide below.
 
-### The Stacks Web API Template
+#### The Stacks Web API Template
 
 This template will create a simple Web API solution that is built with ASP .NET Controllers.  It includes authentication, authorization, middleware for managing exceptions and middleware to assign or preserve correlation IDs.
 
@@ -65,7 +65,7 @@ For a description of each parameter and the options available, please scroll to 
 
    This example command will create a folder and a solution called `Company.Project` with a sample domain object called `menu` and DevOps build pipelines for Microsoft Azure.
 
-### The Stacks Web API with CQRS Template
+#### The Stacks Web API with CQRS Template
 
 This template extends the Stacks Simple Web API template.  It includes all the features of the Simple Web API and has been extended to implement the [Command Query Responsibility Segregation architectural pattern](https://learn.microsoft.com/en-us/azure/architecture/patterns/cqrs).  Example commands and queries are included in the solution to demonstrate how the CQRS pattern works.
 
@@ -82,7 +82,7 @@ For a description of each parameter and the options available, please scroll to 
 
    This example command will create a folder and a solution called `Company.Project` with a sample domain object called `menu`.  The solution will use CosmosDB for its database and publish events to Azure Service Bus.  A DevOps build pipeline will also be created for Microsoft Azure.
 
-### The Stacks Background Worker Template
+#### The Stacks Background Worker Template
 
 This template will create a solution for a Background Worker that monitors an [Azure Service Bus](https://learn.microsoft.com/en-us/azure/service-bus-messaging/).  When an Event is published to the Service Bus that the worker has subscribed to, it will respond by executing the appropriate Event Handler.  The solution contains several events and their handlers to serve as examples.
 
@@ -99,7 +99,7 @@ For a description of each parameter and the options available, please scroll to 
 
    This example command will create a folder and a solution called `Company.Project` with a sample domain object called `menu` and a DevOps build pipeline for Microsoft Azure.
 
-### The Stacks Azure Function: Cosmos DB Worker Template
+#### The Stacks Azure Function: Cosmos DB Worker Template
 
 This template will create a solution for an Azure Function triggered by the [Azure Cosmos DB change feed trigger](https://learn.microsoft.com/en-us/azure/azure-functions/functions-bindings-cosmosdb-v2-trigger). When an item is either created or updated in a Cosmos DB container, the Azure Function will trigger.  The Function will publish a message to an Azure Service Bus to notify subscribers that an item has either been created or updated in the Cosmos DB container.
 
@@ -116,7 +116,7 @@ For a description of each parameter and the options available, please scroll to 
 
    This example command will create a folder and a solution called `Company.Project` and a DevOps build pipeline for Microsoft Azure.
 
-### The Stacks Azure Function:  Event Hub Listener Template
+#### The Stacks Azure Function:  Event Hub Listener Template
 
 This template will create a solution for an Azure Function that uses the [Azure Event Hub Trigger](https://learn.microsoft.com/en-us/azure/azure-functions/functions-bindings-event-hubs-trigger).  When a new event is published to the Event Hub that the function is monitoring, the function will trigger.  The function will receive the event, deserializes it to an object and write a log message that it has received a message.
 
@@ -133,7 +133,7 @@ For a description of each parameter and the options available, please scroll to 
 
    This example command will create a folder and a solution called `Company.Project` and a DevOps build pipeline for Microsoft Azure.
 
-### Stacks Azure Function:  Azure Service Bus Listener
+#### Stacks Azure Function:  Azure Service Bus Listener
 
 This is a template for an Azure Function that uses the [Azure Service Bus Trigger](https://learn.microsoft.com/en-us/azure/azure-functions/functions-bindings-service-bus-trigger).  When a new message is published to an Azure Service Bus that the function has subscribed to, the function will trigger.  The function will receive the message, deserializes it to an object and write a log that it has received a message.
 
@@ -150,55 +150,55 @@ dotnet new stacks-az-func-asb-listener --name Company.Project
 
 This example will create a folder and a repository called `Company.Project`and a DevOps build pipeline for Microsoft Azure.
 
-### Template Parameters
+#### Template Parameters
 
 :::note Template parameter details
 
 A description of the parameters used in the examples above are shown below.  Please note that some templates may only offer a subset of the parameters shown.
 
 * **-n | --name**
-  * Sets the project name.
-  * If you do not provide this parameter, the project name will be the same as the folder where you run the command.
+    * Sets the project name.
+    * If you do not provide this parameter, the project name will be the same as the folder where you run the command.
 
 * **-do | --domain**
-  * Sets the name of the sample domain model's aggregate root object.
-  * Sets the name of the CosmosDB collection if Cosmos DB is chosen for a database.
+    * Sets the name of the sample domain model's aggregate root object.
+    * Sets the name of the CosmosDB collection if Cosmos DB is chosen for a database.
 
 * **-db | --database**
-  * Configures which database provider will be used.
-  * Choices: -
-    * `CosmosDb` for Microsoft Azure CosmosDB,
-    * `DynamoDb` for Amazon Web Services DynamoDB,
-    * `InMemoryDb` for an in memory 'database'.  For demonstration, not suitable for production.
+    * Configures which database provider will be used.
+        * Choices: -
+        * `CosmosDb` for Microsoft Azure CosmosDB,
+        * `DynamoDb` for Amazon Web Services DynamoDB,
+        * `InMemoryDb` for an in memory 'database'.  For demonstration, not suitable for production.
 
 * **-e | --eventPublisher**
-  * Configures which messaging service will be used.
-  * Choices: -
-    * `AwsSns` for Amazon Web Services Simple Notification Service,
-    * `EventHub` for Microsoft Azure Event Hub,
-    * `ServiceBus` for Microsoft Azure Event Hub,
-    * `None` to not include an event publisher.
+    * Configures which messaging service will be used.
+    * Choices: -
+        * `AwsSns` for Amazon Web Services Simple Notification Service,
+        * `EventHub` for Microsoft Azure Event Hub,
+        * `ServiceBus` for Microsoft Azure Event Hub,
+        * `None` to not include an event publisher.
 
 * **-o | --output**
-  * Sets the path where the project will be created.
-  * If you do not provide this parameter, a new folder will be created.
+    * Sets the path where the project will be created.
+    * If you do not provide this parameter, a new folder will be created.
 
 * **-cp | --cloudProvider**
-  * Configures which cloud provider to use.
-  * Choices: -
-    * `AWS` for Amazon Web Services,
-    * `Azure` for Microsoft Azure,
-    * `GCP` for Google Cloud PLatform.
+    * Configures which cloud provider to use.
+    * Choices: -
+        * `AWS` for Amazon Web Services,
+        * `Azure` for Microsoft Azure,
+        * `GCP` for Google Cloud PLatform.
 
 * **-cicd | --cicdProvider**
-  * Configures which CI/CD provider templates to use.
-  * Choices: -
-    * `AZDO` for Microsoft Azure DevOps,
-    * `GHA` for GitHub Actions,
-    * `None` to not include CI/CD pipelines.
+    * Configures which CI/CD provider templates to use.
+    * Choices: -
+        * `AZDO` for Microsoft Azure DevOps,
+        * `GHA` for GitHub Actions,
+        * `None` to not include CI/CD pipelines.
 :::
 
-## Uninstalling the templates
+### Uninstalling the templates
 
 To remove the Stacks templates from your machine, uninstall the NuGet package by running the following command
 
