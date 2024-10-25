@@ -118,6 +118,14 @@ a|Add the playwright testing library and much more to your project!
 - Add visual testing with Applitools eyes
 - Add playwright testing and reporting automatically to your build pipelines
 
+|link:./cypress/plugin-information.md[`@ensono-stacks/cypress`]
+a|**Deprecated: This plugin is no longer supported. Cypress-2.0.7 is the final version and may not be compatible with Nx workspace versions beyond 2.0.7.**
+
+Add the cypress testing library and much more to your project!
+
+- Add accessibility testing to your test project
+- Add cypress testing and reporting automatically to your build pipelines
+
 |link:./logger/plugin-information.md[`@ensono-stacks/logger`]
 a|Add industry standard logging capabilities to your project
 
