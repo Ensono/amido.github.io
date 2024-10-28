@@ -1,3 +1,19 @@
+---
+id: project_structure_netcore_cqrs
+title: CQRS Rest Api Solution Structure
+sidebar_label: CQRS Rest Api Solution Structure
+hide_title: true
+hide_table_of_contents: true
+description: .NET CQRS REST API application - Solution Structure
+keywords:
+  - .net
+  - rest api
+  - example
+  - template
+  - repository
+  - structure
+---
+
 ## Solution Structure
 
 ### Web API with CQRS
@@ -114,3 +130,5 @@ For more information on CQRS, you can refer to the following resource:
 [CQRS Documentation](https://martinfowler.com/bliki/CQRS.html) by Martin Fowler
 
 :::
+
+

@@ -1,5 +1,5 @@
 ---
-id: project_structure_netcore
+id: project_structure_netcore_simple_api
 title: Simple Api Solution Structure
 sidebar_label: Simple Api Solution Structure
 hide_title: true
