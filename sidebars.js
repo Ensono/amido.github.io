@@ -193,7 +193,15 @@ module.exports = {
                     items: [
                       "workloads/azure/backend/netcore/architecture/architecture_overview_netcore",
                       "workloads/azure/backend/netcore/architecture/repository_overview_netcore",
-                      "workloads/azure/backend/netcore/architecture/project_structure_netcore",
+                      {
+                        type: "category",
+                        label: "Solution Structure",
+                        items: [
+                          "workloads/azure/backend/netcore/architecture/project_structure/project_structure_netcore_simple_api",
+                          "workloads/azure/backend/netcore/architecture/project_structure/project_structure_netcore_cqrs",
+                          "workloads/azure/backend/netcore/architecture/project_structure/project_structure_netcore_function_worker"
+                        ],
+                      },
                       "workloads/azure/backend/netcore/architecture/data_storage_cosmosdb_netcore",
                       "workloads/azure/backend/netcore/architecture/operations_events_exceptions_correlation_netcore",
                       {
