@@ -196,9 +196,9 @@ module.exports = {
                         type: "category",
                         label: "Solution Structure",
                         items: [
-                          "workloads/azure/backend/netcore/architecture/project_structure/simple_api_netcore",
-                          "workloads/azure/backend/netcore/architecture/project_structure/cqrs_netcore",
-                          "workloads/azure/backend/netcore/architecture/project_structure/functions_and_worker_netcore"
+                          "workloads/azure/backend/netcore/architecture/project_structure/project_structure_netcore_simple_api",
+                          "workloads/azure/backend/netcore/architecture/project_structure/project_structure_netcore_cqrs",
+                          "workloads/azure/backend/netcore/architecture/project_structure/project_structure_netcore_function_worker"
                         ],
                       },
                       "workloads/azure/backend/netcore/architecture/data_storage_cosmosdb_netcore",
