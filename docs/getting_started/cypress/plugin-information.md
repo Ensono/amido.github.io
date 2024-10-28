@@ -14,7 +14,7 @@ keywords:
 ---
 
 :::caution Deprecated
-This plugin is no longer supported. Cypress-2.0.7 is the final release version and may not be compatible with the ensono-stacks/workspace plugin above version 2.0.7. Existing users can still find information about the deprecated Cypress plugin here.
+This plugin is no longer supported. Ensono-stacks/cypress 2.0.7 is the final release version and may not be compatible with the ensono-stacks/workspace plugin above version 2.0.7. Existing users can still find information about the deprecated Cypress plugin here.
 :::
 
 import InitGenerator from './init.md'
