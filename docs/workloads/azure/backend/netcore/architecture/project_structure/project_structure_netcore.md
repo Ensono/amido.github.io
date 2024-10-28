@@ -15,32 +15,6 @@ keywords:
   - structure
 ---
 
-## Solution Structure
-
-### Web API with CQRS
-
-```text
-Solution 'xxENSONOxx.xxSTACKSss.API'
-├── API
-│  ├── xxENSONOxx.xxSTACKSxx.API
-│  ├── xxENSONOxx.xxSTACKSxx.API.Models
-├── Application
-│  ├── xxENSONOxx.xxSTACKSxx.Application.CommandHandlers
-│  ├── xxENSONOxx.xxSTACKSxx.Application.Integration
-│  ├── xxENSONOxx.xxSTACKSxx.Application.QueryHandlers
-├── Domain
-│  ├── xxENSONOxx.xxSTACKSxx.Domain
-│  └── External
-├── Shared
-│  ├── xxENSONOxx.xxSTACKSxx.Common
-│  └── xxENSONOxx.xxSTACKSxx.CQRS
-└── Tests
-   ├── xxENSONOxx.xxSTACKSxx.API.ComponentTests
-   ├── xxENSONOxx.xxSTACKSxx.Common.UnitTests
-   ├── xxENSONOxx.xxSTACKSxx.Domain.UnitTests
-   └── xxENSONOxx.xxSTACKSxx.Infrastructure.IntegrationTests
-```
-
 ### Functions and Worker Services
 
 ```text
@@ -57,7 +31,6 @@ Solution 'xxENSONOxx.xxSTACKSss.API'
 ├── Worker
 │  └── xxENSONOxx.xxSTACKSxx.BackgroundWorker
 ```
-
 
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
