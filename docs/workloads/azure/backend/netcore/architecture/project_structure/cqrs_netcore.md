@@ -19,7 +19,7 @@ keywords:
 ### Web API with CQRS
 
 ```text
-Solution xxENSONOxx.xxSTACKSss.API
+Solution xxENSONOxx.xxSTACKSxx.API
 ├── API
 │  ├── xxENSONOxx.xxSTACKSxx.API
 │  ├── xxENSONOxx.xxSTACKSxx.API.Infrastructure
@@ -35,7 +35,7 @@ Solution xxENSONOxx.xxSTACKSss.API
 ├── Domain
 │  └── xxENSONOxx.xxSTACKSxx.Domain
 ├── Shared
-│  └── xxENSONOxx.xxSTACKSxx.Shared.Messaging.Azure.ServiceBus
+│  ├── xxENSONOxx.xxSTACKSxx.Shared.Messaging.Azure.ServiceBus
 │  └── xxENSONOxx.xxSTACKSxx.Shared.Messaging.Azure.ServiceBus.Tests
 └── Tests
    ├── xxENSONOxx.xxSTACKSxx.API.ComponentTests
