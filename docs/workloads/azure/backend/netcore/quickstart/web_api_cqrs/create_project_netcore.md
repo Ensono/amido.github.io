@@ -55,11 +55,11 @@ This template will create a simple Web API solution that is built with ASP .NET 
 To create a Stacks Simple Web API solution: -
 
 1. Open your command line or terminal.
-2. Change the directory to where you would like to create your solution.
+2. Change to the directory to where you would like to create your solution.
 3. Run the following command, replacing the parameter values with your choices.  
 For a description of each parameter and the options available, please scroll to the end of this section.
 
-   ```bash title="Run the command to create the project"
+   ```bash title="Run the command to create a Stacks Web API solution"
    dotnet new stacks-webapi --name Company.Project --domain Menu --cloudProvider Azure
    ```
 
@@ -67,17 +67,17 @@ For a description of each parameter and the options available, please scroll to 
 
 #### The Stacks Web API with CQRS Template
 
-This template extends the Stacks Simple Web API template.  It includes all the features of the Simple Web API and has been extended to implement the [Command Query Responsibility Segregation architectural pattern](https://learn.microsoft.com/en-us/azure/architecture/patterns/cqrs).  Example commands and queries are included in the solution to demonstrate how the CQRS pattern works.
+This template extends the Stacks Web API template.  It includes all the features of the Web API template and has been extended to implement the [Command Query Responsibility Segregation architectural pattern](https://learn.microsoft.com/en-us/azure/architecture/patterns/cqrs).  Example commands and queries are included in the solution to demonstrate how the CQRS pattern works.
 
-To create a Stacks CQRS Web API solution: -
+To create a Stacks Web API with CQRS solution: -
 
 1. Open your command line or terminal.
-2. Change the directory to where you would like to create your solution.
+2. Change to the directory to where you would like to create your solution.
 3. Run the following command, replacing the parameter values with your choices.  
 For a description of each parameter and the options available, please scroll to the end of this section.
 
-   ```bash title="Run the command to create the project"
-   dotnet new stacks-cqrs --name Company.Project --domain Menu --eventPublisher ServiceBus --database CosmosDb --cloudProvider Azure
+   ```Run the command to create a Stacks Web API solution"
+   dotnet new stacks-cqrs --name Company.Project --domain Menu --database CosmosDb --eventPublisher ServiceBus --cloudProvider Azure
    ```
 
    This example command will create a folder and a solution called `Company.Project` with a sample domain object called `menu`.  The solution will use CosmosDB for its database and publish events to Azure Service Bus.  A DevOps build pipeline will also be created for Microsoft Azure.
@@ -89,11 +89,11 @@ This template will create a solution for a Background Worker that monitors an [A
 To create a Stacks Background Worker: -
 
 1. Open your command line or terminal.
-2. Change the directory to where you would like to create your solution.
+2. Change to the directory to where you would like to create your solution.
 3. Run the following command, replacing the parameter values with your choices.  
 For a description of each parameter and the options available, please scroll to the end of this section.
 
-   ```bash title="Run the command to create the project"
+   ```bash title="Run the command to create a Stacks Background Worker solution"
    dotnet new stacks-asb-worker --name Company.Project --domain Menu
    ```
 
@@ -106,11 +106,11 @@ This template will create a solution for an Azure Function triggered by the [Azu
 To create an Azure Function Cosmos DB Worker: -
 
 1. Open your command line or terminal.
-2. Change the directory to where you would like to create your solution.
+2. Change to the directory to where you would like to create your solution.
 3. Run the following command, replacing the parameter values with your choices.  
 For a description of each parameter and the options available, please scroll to the end of this section.
 
-   ```bash title="Run the command to create the project"
+   ```bash title="Run the command to create an Azure Function Cosmos DB Worker solution"
    dotnet new stacks-az-func-cosmosdb-worker --name Company.Project
    ```
 
@@ -123,15 +123,15 @@ This template will create a solution for an Azure Function that uses the [Azure 
 To create an Azure Function Event Hub Listener: -
 
 1. Open your command line or terminal.
-2. Change the directory to where you would like to create your solution.
+2. Change to the directory to where you would like to create your solution.
 3. Run the following command, replacing the parameter values with your choices.  
 For a description of each parameter and the options available, please scroll to the end of this section.
 
-   ```bash title="Run the command to create the project"
-   dotnet new stacks-az-func-aeh-listener --name Company.Project
+   ```bash title="Run the command to create an Azure Function Event Hub Listener solution"
+   dotnet new stacks-az-func-aeh-listener --name Company.Project --domain Menu
    ```
 
-   This example command will create a folder and a solution called `Company.Project` and a DevOps build pipeline for Microsoft Azure.
+   This example command will create a folder and a solution called `Company.Project` with a sample event for when a `menu` is created and a DevOps build pipeline for Microsoft Azure.
 
 #### Stacks Azure Function:  Azure Service Bus Listener
 
@@ -140,28 +140,30 @@ This is a template for an Azure Function that uses the [Azure Service Bus Trigge
 To create an Azure Service Bus Listener: -
 
 1. Open your command line or terminal.
-2. Change the directory to where you would like to create your solution.
+2. Change to the directory to where you would like to create your solution.
 3. Run the following command, replacing the parameter values with your choices.  
 For a description of each parameter and the options available, please scroll to the end of this section.
 
-```bash title="Run the command to create the project"
-dotnet new stacks-az-func-asb-listener --name Company.Project
+```bash title="Run the command to create an Azure Function Service Bus Listener solution"
+dotnet new stacks-az-func-asb-listener --name Company.Project  --domain Menu
 ```
 
-This example will create a folder and a repository called `Company.Project`and a DevOps build pipeline for Microsoft Azure.
+   This example command will create a folder and a solution called `Company.Project` with a sample event for when a `menu` is created and a DevOps build pipeline for Microsoft Azure.
 
 #### Template Parameters
 
 :::note Template parameter details
 
-A description of the parameters used in the examples above are shown below.  Please note that some templates may only offer a subset of the parameters shown.
+A description of the parameters used in the examples above are shown below.  
+Please note that some templates may only offer a subset of the parameters shown.
 
 * **-n | --name**
     * Sets the project name.
     * If you do not provide this parameter, the project name will be the same as the folder where you run the command.
 
 * **-do | --domain**
-    * Sets the name of the sample domain model's aggregate root object.
+    * Sets the name of the sample domain model's aggregate root object for API templates.
+    * Sets the name the sample events that are created for for listener templates.
     * Sets the name of the CosmosDB collection if Cosmos DB is chosen for a database.
 
 * **-db | --database**
