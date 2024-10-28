@@ -23,26 +23,26 @@ keywords:
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
-## Configure REST API with CQRS Project
+## Configure REST API with CQRS project
 
 All sensitive information that needs to be kept secret in our configuration is stored as environment variables. When the application starts up, the placeholders for these secrets in our configuration files are substituted with the values stored in our environment.
 
 To configure the REST API with CQRS project, you need to set up two services: a _storage service_ and a _messaging service_. In the first part of this guide, [Create REST API with CQRS project](https://stacks.ensono.com/docs/workloads/azure/backend/netcore/quickstart/web_api_cqrs/create_project_netcore), when you ran the `dotnet new` command, you chose a database and a messaging service. Now we will configure the services that you selected.
 
-### Configure your Database
+### Configure your database
 
 When you created your project using the Stacks `dotnet new` command, you had the option to choose a database using either the `-db` or `--database` switch. Your options were Microsoft Azure Cosmos DB, Amazon Web Services DynamoDB, or an in-memory database. Follow the relevant guide below based on your choice.
 
-#### Configure an In-Memory Database
+#### Configure an in-memory database
 
 The in-memory database requires no additional setup since it holds all data in memory without connecting to an external service. While useful for demonstration purposes, it is _not_ suitable for production workloads.
 
-#### Configure an Azure Cosmos DB Database
+#### Configure an Azure Cosmos DB database
 
 To configure Cosmos DB, we need to set the `CosmosDb:DatabaseAccountUri` setting in the `appsettings.json` file and create and environment variable for the datbase's Primary Key.  You may run the database locally or connect to an existing Cosmos DB instance in Azure. Follow one of the guides below, depending on your choice.
 
 <details>
-<summary>Run Cosmos DB locally using the emulator, (Windows only)</summary>
+<summary>Run Cosmos DB locally using the emulator, (Windows only).</summary>
 
 <div>
 
@@ -54,12 +54,12 @@ The Cosmos DB emulator is only available for the Windows operating system. Mac a
 After installing the Cosmos DB emulator, browse to the quick-start page in your browser.  
 You will find the location of the quick-start page in the _Start the emulator_ section of the documentation, it is usually [https://localhost:8081/_explorer/index.html](https://localhost:8081/_explorer/index.html)
 
-3. **Find the Cosmos DB URI and Primary Key**  
+3. **Find the Cosmos DB URI and primary key**  
 The screenshot below shows the location of the Cosmos DB `URI` and the `Primary Key`.  Make a note of these values.
 
    ![Cosmos DB URI and Key](/img/cosmosdb_emulator_3.png)
 
-4. **Create the Database and Container**  
+4. **Create the database and container**  
 Create a collection called `Stacks`.  This must match the value of the `CosmosDb:DatabaseName` setting in the `appsettings.json` file, an example is shown below.  Create a container id called `Menu`, which is the name of your domain object.  If, when you created your project, you chose a different domain object name, you should use this name for your container.  Finally choose `/id` for your partition key.
 
    ![CosmosDB](/img/cosmosdb_emulator_1.png)
@@ -83,7 +83,7 @@ Open the `Company.Project/cqrs/src/api/Company.Project.API/appsettings.json` fil
 <br />
 
 <details>
-<summary>Run Cosmos DB locally in a container</summary>
+<summary>Run Cosmos DB locally in a container.</summary>
 
 <div>
 
@@ -94,12 +94,12 @@ Follow the [instructions provided by Microsoft](https://learn.microsoft.com/en-u
 After installing the Cosmos DB container, browse to the quick-start page in your browser.  
 You will find the location of the quick-start page in the _Start the emulator_ section of the documentation.
 
-3. **Find the Cosmos DB URI and Primary Key**  
+3. **Find the Cosmos DB URI and primary key**  
 The screenshot below shows the location of the Cosmos DB `URI` and the `Primary Key`.  Make a note of these values.
 
    ![Cosmos DB URI and Key](/img/cosmosdb_emulator_3.png)
 
-4. **Create the Database and Container**  
+4. **Create the database and container**  
 Create a collection called `Stacks`.  This must match the value of the `CosmosDb:DatabaseName` setting in the `appsettings.json` file.  Create a container id called `Menu`, which is the name of your domain object.  If, when you created your project, you chose a different domain object name, you should use this name for your container.  Finally choose `/id` for your partition key.
 
    ![CosmosDB](/img/cosmosdb_emulator_1.png)
@@ -123,14 +123,14 @@ Open the `Company.Project/cqrs/src/api/Company.Project.API/appsettings.json` fil
 <br />
 
 <details>
-<summary>Connecting to a Cosmos DB instance in Azure</summary>
+<summary>Connecting to a Cosmos DB instance in Azure.</summary>
 
 <div>
 
 1. **Locate the your Cosmos DB**  
 Login to you Azure account and type _Azure Cosmos DB_ in the search bar at the top of the page to list all of your Cosmos DB instances.  Then click the one that you wish to use.
 
-2. **Locate your Database URI and Key.**  
+2. **Locate your database URI and primary key.**  
 From the left hand menu, choose Settings/Keys.  In the keys blade, click the eye icon next to the Primary Key to reveal its value.  Make a note of the `URI` and the `Primary Key`.
 
 3. **Add the URI to appsettings.json**  
@@ -176,7 +176,7 @@ values={[
 <TabItem value="windows">
 
 <details>
-<summary>Use Powershell to set the COSMOSDB_KEY environment variable</summary>
+<summary>Use Powershell to set the COSMOSDB_KEY environment variable.</summary>
 
 <div>
 
@@ -190,7 +190,7 @@ Use `Powershell` with administrator privileges to execute the command below. Sub
 </details>
 
 <details>
-<summary>Use Visual Studio to set the COSMOSDB_KEY environment variable</summary>
+<summary>Use Visual Studio to set the COSMOSDB_KEY environment variable.</summary>
   
 <div>
 
@@ -219,7 +219,7 @@ Use `Powershell` with administrator privileges to execute the command below. Sub
 </details>
 
 <details>
-<summary>Use VS Code to set the COSMOSDB_KEY environment variable</summary>
+<summary>Use VS Code to set the COSMOSDB_KEY environment variable.</summary>
   
 <div>
 If you are using VS Code you will have a `launch.json` file generated when you try to run the project. In this file there's an `env` section used to provide environment variables when a project is launched.  Open this file and add the  **COSMOSDB_KEY** environment variable with the value that you made a note of in step 1.  There is an example below.
@@ -238,7 +238,7 @@ If you are using VS Code you will have a `launch.json` file generated when you t
 <TabItem value="mac-and-linux">
 
 <details>
-<summary>Use terminal to set the COSMOSDB_KEY environment variable</summary>
+<summary>Use terminal to set the COSMOSDB_KEY environment variable.</summary>
 
 <div>
 
@@ -258,7 +258,7 @@ echo 'export COSMOSDB_KEY=<PRIMARY-KEY-HERE>' >> ~/.zshenv
 </details>
 
 <details>
-<summary>Use VS Code to set the COSMOSDB_KEY environment variable</summary>
+<summary>Use VS Code to set the COSMOSDB_KEY environment variable.</summary>
 
 <div>
 
@@ -289,7 +289,7 @@ If you are running the application in a docker container, then environment varia
 
 To use DynamoDB you will need to create a DynamoDB instance in Amazon Web Services.  The following steps describe how to create a DynamoDB instance and configure you solution.
 
-1. **Create an AWS DynamoDB Instance**  
+1. **Create an AWS DynamoDB instance**  
 Follow the [AWS Developers guide to get started with DynamoDB](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/SettingUp.DynamoWebService.html) to create a DynamoDB instance.  When you create your instance, you may wish name it the same as your Domain Object when you create the project.  If you did not provide one, the default is _menu_.
 
 2. **Configure the AWS CLI tools.**  
@@ -305,7 +305,7 @@ To configure the project to use your DynamoDB instance, adjust the `.../cqrs/src
 }
 ```
 
-### Configure your Messaging Service
+### Configure your messaging service
 
 When you created your project using the Stacks `dotnet new` command, you had an option to choose a messaging service using either the `-e` or `--eventPublisher` switch.  Your options were either, Microsoft Azure Event Hub, Microsoft Azure Service Bus or Amazon Web Services Simple Notification Service.  Depending on the option that you chose, follow one of the guides below to configure your database.
 
@@ -316,7 +316,7 @@ To use Azure Event Hubs as a messaging service,follow the steps below.
 1. **Locate the your Event Hub**  
 Login to you Azure account and type _Event Hubs_ in the search bar at the top of the page to list all of your Event Hub instances.  Then click the one that you wish to use.  Make a note of the name of the Event Hub.
 
-2. **Locate your Event Hub's Connection String.**  
+2. **Locate your Event Hub's connection string.**  
 From the left hand menu, choose Settings/Shared Access Policies.  In the Shared Access Policies blade, choose a policy that has the `send` claim and click it. Make a note of the value in the `Primary Connection String` text box.
 
 3. **Add the Event Hub Name to appsettings.json**  
@@ -351,7 +351,7 @@ values={[
 <TabItem value="windows">
 
 <details>
-<summary>Use Powershell to set the EVENTHUB_CONNECTIONSTRING environment variable</summary>
+<summary>Use Powershell to set the EVENTHUB_CONNECTIONSTRING environment variable.</summary>
 
 <div>
 Use `Powershell` with administrator privileges to execute the command below. Substitute `<CONNECTION-STRING-HERE>` with your connection string.
@@ -363,7 +363,7 @@ Use `Powershell` with administrator privileges to execute the command below. Sub
 </details>
 
 <details>
-<summary>Use Visual Studio to set the EVENTHUB_CONNECTIONSTRING environment variable</summary>
+<summary>Use Visual Studio to set the EVENTHUB_CONNECTIONSTRING environment variable.</summary>
 
 <div>
 
@@ -392,7 +392,7 @@ The launchSettings.json file is can be used to provide environment variables whe
 </details>
 
 <details>
-<summary>Use VS Code to set the EVENTHUB_CONNECTIONSTRING environment variable</summary>
+<summary>Use VS Code to set the EVENTHUB_CONNECTIONSTRING environment variable.</summary>
 
 <div>
 If you are using VS Code you will have a `launch.json` file generated when you try to run the project. In this file there's an `env` section used to provide environment variables when a project is launched.  Open this file and add the **EVENTHUB_CONNECTIONSTRING** environment variable,  substiuting `<CONNECTION-STRING-HERE>` with your connection string.
@@ -410,7 +410,7 @@ If you are using VS Code you will have a `launch.json` file generated when you t
 <TabItem value="mac-and-linux">
 
 <details>
-<summary>Use terminal to set the EVENTHUB_CONNECTIONSTRING environment variable</summary>
+<summary>Use terminal to set the EVENTHUB_CONNECTIONSTRING environment variable.</summary>
 
 <div>
 Use the `terminal` to execute the command below.  Substitute `<CONNECTION-STRING-HERE>` with your own key to set the environment variable only for the current session of your terminal.
@@ -429,7 +429,7 @@ echo 'export EVENTHUB_CONNECTIONSTRING=<CONNECTION-STRING-HERE>' >> ~/.zshenv
 </details>
 
 <details>
-<summary>Use VS Code to set the EVENTHUB_CONNECTIONSTRING environment variable</summary>
+<summary>Use VS Code to set the EVENTHUB_CONNECTIONSTRING environment variable.</summary>
 
 <div>
 If you are using VS Code you will have a `launch.json` file generated when you try to run the project. In this file there's an `env` section used to provide environment variables when a project is launched.  Open this file and add the  **COSMOSDB_KEY** environment variable with the value that you made a note of.  There is an example below.
@@ -454,17 +454,17 @@ If you are running the application in a docker container, then environment varia
 </div>
 <br/>
 
-#### Configure Service Bus
+#### Configure Azure Service Bus
 
 To use Azure Service Bus as a messaging service, follow the steps below.
 
-1. **Locate the your Service Bus**  
+1. **Locate the your Azure Service Bus**  
 Login to you Azure account and type _Service Bus_ in the search bar at the top of the page to list all of your Service Bus instances.  From the left hand menu, choose Entities/Topics and make a note of the name of the Service Bus Topic that you wish to send to.
 
-2. **Locate your Service Bus' Connection String.**  
+2. **Locate your Azure Service Bus connection string.**  
 From the left hand menu, choose Settings/Shared Access Policies.  In the Shared Access Policies blade, choose a policy that has the `send` claim and click it. Make a note of the value in the `Primary Connection String` text box.
 
-3. **Add the Service Bus Topic Name to appsettings.json**  
+3. **Add your topic name to appsettings.json**  
 Browse to the appsettings.json file in the path shown below and add a `ServiceBusConfiguration` section.  Replace the `<TOPIC-NAME-HERE>` placeholder with the name of your service bus topic.
 
    ```json title="Service Bus example"
@@ -483,7 +483,7 @@ Browse to the appsettings.json file in the path shown below and add a `ServiceBu
    }
    ```
 
-4. **Add the Service Bus connection string as an environment variable.**
+4. **Add your Azure Service Bus connection string as an environment variable.**
 The connection string for the Service Bus is stored in an environment variable specified in the `ServiceBusConfiguration:Sender:Topics:ConnectionStringSecret:Identifier` value.  This guide assumes that we will use the default environment variable name of `SERVICEBUS_CONNECTIONSTRING`, but you may change its name in the appsettings.json file if you wish.
 
 Choose one of the following methods to set the `SERVICEBUS_CONNECTIONSTRING` environment variable.
@@ -500,7 +500,7 @@ values={[
 <TabItem value="windows">
 
 <details>
-<summary>Use Powershell to set the SERVICEBUS_CONNECTIONSTRING environment variable</summary>
+<summary>Use Powershell to set the SERVICEBUS_CONNECTIONSTRING environment variable.</summary>
 
 <div>
 Use `Powershell` with administrator privileges to execute the command below. Substitute `<CONNECTION-STRING-HERE>` with your connection string.
@@ -513,7 +513,7 @@ Use `Powershell` with administrator privileges to execute the command below. Sub
 </details>
 
 <details>
-<summary>Use Visual Studio to set the SERVICEBUS_CONNECTIONSTRING environment variable</summary>
+<summary>Use Visual Studio to set the SERVICEBUS_CONNECTIONSTRING environment variable.</summary>
 
 <div>
 
@@ -542,7 +542,7 @@ The launchSettings.json file is can be used to provide environment variables whe
 </details>
 
 <details>
-<summary>Use VS Code to set the SERVICEBUS_CONNECTIONSTRING environment variable</summary>
+<summary>Use VS Code to set the SERVICEBUS_CONNECTIONSTRING environment variable.</summary>
 
 <div>
 If you are using VS Code you will have a `launch.json` file generated when you try to run the project. In this file there's an `env` section used to provide environment variables when a project is launched.  Open this file and add the **SERVICEBUS_CONNECTIONSTRING** environment variable,  substiuting `<CONNECTION-STRING-HERE>` with your connection string.
@@ -560,7 +560,7 @@ If you are using VS Code you will have a `launch.json` file generated when you t
 <TabItem value="mac-and-linux">
 
 <details>
-<summary>Use terminal to set the SERVICEBUS_CONNECTIONSTRING environment variable</summary>
+<summary>Use terminal to set the SERVICEBUS_CONNECTIONSTRING environment variable.</summary>
 
 <div>
 Use the `terminal` to execute the command below.  Substitute `<CONNECTION-STRING-HERE>` with your own key to set the environment variable only for the current session of your terminal.
@@ -579,7 +579,7 @@ echo 'export SERVICEBUS_CONNECTIONSTRING=<CONNECTION-STRING-HERE>' >> ~/.zshenv
 </details>
 
 <details>
-<summary>Use VS Code to set the SERVICEBUS_CONNECTIONSTRING environment variable</summary>
+<summary>Use VS Code to set the SERVICEBUS_CONNECTIONSTRING environment variable.</summary>
 
 <div>
 If you are using VS Code you will have a `launch.json` file generated when you try to run the project. In this file there's an `env` section used to provide environment variables when a project is launched.  Open this file and add the  **COSMOSDB_KEY** environment variable with the value that you made a note of.  There is an example below.
@@ -611,10 +611,10 @@ To use Simple Notification Service as a messaging service, follow the steps belo
 1. **Locate the your SNS Topic**  
 Login to you AWS account and type _SNS_ in the search bar at the top of the page.  The chose Topics from the left hand menu to list all of your Topics.  Note, ensure you are in the correct region, shown in the top right hand corner of the screen.
 
-2. **Locate your TopicArn.**  
+2. **Locate your Topic Arn.**  
 From the list of topics on the screen locate the topic that you wish to use and make a note of the TopicArn.
 
-3. **Add the AWS SNS Configuration to appsettings.json**  
+3. **Add the AWS SNS configuration to appsettings.json**  
 Browse to the appsettings.json file in the path shown below and add a `AwsSnsConfiguration` section and an AWS section.  Replace the `<YOUR-REGION-HERE>` placeholder with the region in which your topic resides, for example `eu-west-2`.
 
    ```json title="/cqrs/src/api/Company.Project.API/appsettings.json"
@@ -644,11 +644,10 @@ values={[
 ]}>
 <TabItem value="windows">
 
-
 ##### Using Powershell to set the TOPIC-ARN
 
 <details>
-<summary>Use Powershell to set the TOPIC-ARN environment variable</summary>
+<summary>Use Powershell to set the TOPIC-ARN environment variable.</summary>
 
 <div>
 Use `Powershell` with administrator privileges to execute the command below. Substitute `<TOPIC-ARN-HERE>` with your connection string.
@@ -661,9 +660,10 @@ Use `Powershell` with administrator privileges to execute the command below. Sub
 </details>
 
 <details>
-<summary>Use Visual Studio to set the TOPIC-ARN environment variable</summary>
+<summary>Use Visual Studio to set the TOPIC-ARN environment variable.</summary>
 
 <div>
+
 1. **Open the project in Visual Studio.**
 The solution file is located in the `src/api/Company.Project.API.sln` folder.  Where Company.Project is the name of you chose when creating the project.  Open this solution in Visual Studio.
 
@@ -689,7 +689,7 @@ The launchSettings.json file is can be used to provide environment variables whe
 </details>
 
 <details>
-<summary>Use VS Code to set the TOPIC-ARN environment variable</summary>
+<summary>Use VS Code to set the TOPIC-ARN environment variable.</summary>
 
 <div>
 If you are using VS Code you will have a `launch.json` file generated when you try to run the project. In this file there's an `env` section used to provide environment variables when a project is launched.  Open this file and add the **TOPIC-ARN** environment variable,  substiuting `<TOPIC-ARN-HERE>` with your connection string.
@@ -707,7 +707,7 @@ If you are using VS Code you will have a `launch.json` file generated when you t
 <TabItem value="mac-and-linux">
 
 <details>
-<summary>Use terminal to set the TOPIC-ARN environment variable</summary>
+<summary>Use terminal to set the TOPIC-ARN environment variable.</summary>
 
 <div>
 Use the `terminal` to execute the command below.  Substitute `<TOPIC-ARN-HERE>` with your own key to set the environment variable only for the current session of your terminal.
@@ -726,7 +726,7 @@ echo 'export TOPIC-ARN=<TOPIC-ARN-HERE>' >> ~/.zshenv
 </details>
 
 <details>
-<summary>Use VS Code to set the TOPIC-ARN environment variable</summary>
+<summary>Use VS Code to set the TOPIC-ARN environment variable.</summary>
 
 <div>
 Use the `terminal` to execute the command below.  Substitute `<TOPIC-ARN-HERE>` with your own key to set the environment variable only for the current session of your terminal.
