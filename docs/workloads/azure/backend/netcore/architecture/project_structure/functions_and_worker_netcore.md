@@ -17,7 +17,7 @@ keywords:
 
 ### Functions and Worker Services
 
-#### xxENSONOxx.xxSTACKSxx.BackgroundWorker
+#### Background Worker
 
 ```text
 Solution xxENSONOxx.xxSTACKSxx.BackgroundWorker
@@ -44,7 +44,7 @@ The BackgroundWorker project contains the worker service that processes messages
 
 The BackgroundWorker.UnitTests project contains unit tests for the BackgroundWorker project. These tests cover the worker service's functionality, including message processing and business logic execution.
 
-#### xxENSONOxx.xxSTACKSxx.Listener
+#### Listeners
 
 ```text
 Solution xxENSONOxx.xxSTACKSxx.Listener
@@ -52,7 +52,6 @@ Solution xxENSONOxx.xxSTACKSxx.Listener
 ├── xxEnsono.xxStacksxx.Listener
 └── xxEnsono.xxStacksxx.Listener.UnitTests
 ```
-
 
 #### xxENSONOxx.xxSTACKSxx.Application.CQRS.Events
 
