@@ -359,6 +359,7 @@ Use `Powershell` with administrator privileges to execute the command below. Sub
 ```powershell title="Run PS command to add the COSMOSDB_KEY system variable"
 [Environment]::SetEnvironmentVariable("EVENTHUB_CONNECTIONSTRING", "<CONNECTION-STRING-HERE>", [EnvironmentVariableTarget]::Machine)
 ```
+
 </div>
 </details>
 
@@ -439,6 +440,7 @@ If you are using VS Code you will have a `launch.json` file generated when you t
     "EVENTHUB_CONNECTIONSTRING": "<CONNECTION-STRING-HERE>",
 }
 ```
+
 </div>
 </details>
 
