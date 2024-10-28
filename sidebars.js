@@ -54,7 +54,6 @@ module.exports = {
           //"getting_started/azure-react/ensono-stacks-azure-react", Temporarily removed, add back in Cycle 11
           "getting_started/rest-client/ensono-stacks-rest-client",
           "getting_started/playwright/ensono-stacks-playwright",
-          "getting_started/cypress/ensono-stacks-cypress",
           "getting_started/logger/ensono-stacks-logger",
         ],
       },
@@ -193,7 +192,15 @@ module.exports = {
                     items: [
                       "workloads/azure/backend/netcore/architecture/architecture_overview_netcore",
                       "workloads/azure/backend/netcore/architecture/repository_overview_netcore",
-                      "workloads/azure/backend/netcore/architecture/project_structure_netcore",
+                      {
+                        type: "category",
+                        label: "Solution Structure",
+                        items: [
+                          "workloads/azure/backend/netcore/architecture/project_structure/project_structure_netcore_simple_api",
+                          "workloads/azure/backend/netcore/architecture/project_structure/project_structure_netcore_cqrs",
+                          "workloads/azure/backend/netcore/architecture/project_structure/project_structure_netcore_function_worker"
+                        ],
+                      },
                       "workloads/azure/backend/netcore/architecture/data_storage_cosmosdb_netcore",
                       "workloads/azure/backend/netcore/architecture/operations_events_exceptions_correlation_netcore",
                       {
@@ -316,7 +323,6 @@ module.exports = {
       },
     ],
     QA: [
-      "testing/cli_testing_frameworks",
       {
         type: "category",
         label: "NX - Frontend Testing",
@@ -338,22 +344,11 @@ module.exports = {
               },
             ],
           },
-          {
-            type: "category",
-            label: "Cypress Information",
-            items: [
-              "testing/testing_in_nx/testing_with_cypress",
-              "testing/testing_in_nx/cypress_accessibility_testing",
-            ],
-          },
         ],
       },
       "testing/testing_java_serenity_bdd",
       "testing/testing_dotnet_selenium",
-      "testing/cypress_functional_testing",
-      "testing/testcafe_functional_testing",
       "testing/testing_static_analysis",
-      "testing/visual_analysis",
       "testing/contract_testing_pact",
       "testing/accessibility_testing",
       "testing/performance_testing_gatling",
