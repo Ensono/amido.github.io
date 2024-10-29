@@ -8,184 +8,76 @@ keywords:
   - pact
   - consumer
   - provider
-  - pact stub service
   - pact broker
   - example
-  - java
-  - dotnet
+  - javascript
+  - bi-directional
 ---
 
-== Consumer-Driven contract testing with Pact [[contract_testing_pact]]
+== Bi-Directional contract testing with Pact
 
-Consumer-Driven Contract (CDC) Testing is a pattern that allows a consumer (i.e:
-a client) and a provider (i.e. an API provider) to communicate using an agreed
-contract (a pact).
+Bi-Directional Contract Testing is a type of contract testing available within the Pact ecosystem. link:https://docs.pactflow.io/docs/bi-directional-contract-testing[Pact] describe this as:
 
-The following documentation is an overview of the Pact implementation as part of the templated SSR web app.
+[quote, Pact]
+____
+Bi-Directional Contract Testing is a type of static contract testing where two contracts - one representing consumer expectations, and another representing the provider's capability - are compared to ensure they are compatible.
+____
 
+What this means is that the team consuming an API (the Consumer) creates a consumer contract (a Pact) that defines what they expect from the API using functional testing tools and mocks. This is the consumer contract test. The team providing the API service (the Provider) will create contract (I.e. an OpenAPI specification) for their API. Finally, using link:https://pactflow.io/[PactFlow], we are then able to compare the two contracts together to see if they are compatible.
 
-NOTE: The `beforeAll` and `afterAll` hooks in Jest is not before all tests but before each file.
+Within our CI and CD pipelines, we can query PactFlow it to see when it is safe, in the context of the API integration, to deploy to higher environments.
 
-=== Utils
+The following documentation details how Stacks can help teams get started with Bi-Directional Contract Testing.
 
-These are reusable components that can be used for any Javascript consumer setup with pact-js.
+== Consumer Contract Tests NX Plugin
 
-We are using Jest to wrap pact-js to create the interactions and
-generate the Pacts for the web app as a consumer. Following the examples on
-link:https://github.com/pact-foundation/pact-js[pact-js].
+Stacks includes a `@ensono-stacks/pact-contract-tests` plugin which generates users a new contract testing project within an existing NX workspace. This contract testing project includes an example tests and the basic framework for running consumer contract tests.
 
-There is full documentation for how contract testing works available on the
-link:https://docs.pact.io/getting_started/how_pact_works[Pact website].
+=== Setting up @ensono-stacks/pact-contract-tests
 
-A global 'provider' variable is set up in the `pactSetup.ts` file. Then the `pactTestWrapper.ts` ensures each test
-file will have the provider setup for them.
+[TIP]
+====
+Visit the link:../getting_started/setup.adoc[Getting Started] for guides on setting up an NX workspace where this plugin can be installed and executed.
+====
 
-The `pactFileWriteMode` option been set to `update` in the provider that the
-pacts append to. Please see
-link:https://docs.pact.io/implementation_guides/ruby/configuration#pactfile_write_mode[pactFileWriteMode].
+Within your NX workspace, install the `@ensono-stacks/pact-contract-tests` plugin with the following command:
 
-.Export the Consumer and Provider names when running locally, or define in Azure Pipelines Library
+[TABS]
+[TAB npm]
 [source,bash]
 ----
-export PACT_CONSUMER=
-export PACT_PROVIDER=
+npm install --save-dev @ensono-stacks/pact-contract-tests@latest
 ----
-
-.Generate and verify pacts against mock
+[TAB yarn]
 [source,bash]
 ----
-npm run test:pact
+yarn add --dev @ensono-stacks/pact-contract-tests@latest
 ----
+[TABS]
 
-Due to the afterAll hooks in Jest not invoking after all tests, but before each
-file, there is a `pactPublish.ts` script to publish the
-pacts to the configured broker.
+=== Running the generator
 
-.Export broker credentials for running locally, or define in Azure Pipelines Library
-[source,bash]
-----
-export PACT_BROKER=
-export PACT_BEARER_TOKEN=
-----
-
-.Publish the pacts to the configured broker
-[source,bash]
-----
-npm run test:pact-publish
-----
-
-=== Pact stub service
-
-Pact contracts are easily turned into locally running API stubs. They are great
-for use as a simple service to run integration tests against. This ensures that you can test your application without
-hitting the actual endpoint, and ensures the same response every time, without
-duplicating mock definitions.
-
-If gives the consumer confidence that if the contract tests are passing with the
-provider, then the mocks should suffice to test parts of their application
-against.
-
-No more updating stub responses that go out of date. Hooray!
-
-The Pact files (.json) are generated when the Pact tests are run
-(`npm run tests:pact`), and are published to the broker on succeeding. To get the latest pact file to generate the stub service from, you can either:
-
-. Run the tests, which will output the Pact .json files to `[tests/pacts](./__tests__/pacts)`
-. Pull down the latest passing contracts from the broker
-   (`https://PACT_BROKER/pacts/provider/PROVIDER/consumer/CONSUMER/latest`)
-
-Once the files are sourced, it's as simple as starting the stub service either
-from the npm script in CI, or by calling the `pactStubServer.ts` from your test.
-
-.To start the Pact stub server
-[source,bash]
-----
-npm run test:pact-start-stub
-----
-
-.To test that the service is running and returning expected responses
-[source,bash]
-----
-curl -v localhost:8389/v1/menu/e98583ad-0feb-4e48-9d4f-b20b09cb2633 -H "Accept: application/json"
-----
-
-Please remember to always stop your server once done testing.
-
-== 'Can I Deploy'
-
-The link:https://docs.pact.io/pact_broker/can_i_deploy[Can I Deploy] tool ensures you are safe to deploy your application. Before deploying to a new environment, you need to know if the version is compatible with the provider version. Instead of checking the broker, we can poll the broker and check programmatically with the latest versions.
-
-.Run can I deploy using the pact-js SDK
-[source,bash]
-----
-npm run test:pact-can-i-deploy-ci
-----
-
-The above command is called in the pipeline
-
-.Run can I deploy using the pact CLI
-[source,bash]
-----
-npm run test:pact-can-i-deploy-cli
-----
-
-_Example output_:
-This demonstrates that the consumer is safe to deploy, and will return exit code 0 (this means yes!).
+Once the plugin has been installed in your NX workspace, execute the generator using the following command:
 
 [source,bash]
 ----
-INFO: Asking broker at https://amido-stacks.pact.dius.com.au if it is possible to deploy
+nx generate @ensono-stacks/pact-contract-tests:init
 ----
 
-=== Pact working example
+Once executed, enter values into the provided prompts.
 
-We have included a Pact test which will deploy to a PactFlow broker, and verify against the MenuAPI .NET API. This is to ensure that there is an example working test that can be used as a reference.
+=== Using the consumer contract test project
 
-Example ENV_VARS:
+The generator will create a new project folder in your NX workspace. Within the folder, there will be a `./README.adoc` file containing full details on how to customise the contract test project for your current projects' context.
 
-[source,bash]
-----
-export PACT_BEARER_TOKEN=
-export PACT_BROKER=https://amido-stacks.pact.dius.com.au
-export PACT_CONSUMER=GenericMenuConsumer
-export PACT_PROVIDER=MenuAPI
-----
+== Extending Contract Testing
 
-Maintainers and contributors may obtain the `PACT_BEARER_TOKEN` if they request access to the PactFlow instance. Else, this will be run in the Azure DevOps Pipeline.
+This plugin provides just a part of a full contract testing solution. There are 3 entities involved in contract testing:
 
-==== Tests
+1. Consumer (covered in this Plugin)
+2. Provider
+3. Pact Broker
 
-`get-menu-by-id.test.pact.ts` is an example test. This calls the `./mocks/menuService.ts` Menu API when running locally.
+Teams are required to set up their provider to test and publish their Open API specifications as well as creating an instance of PactFlow for their teams.
 
-When the tests pass, the contract will be written to `./pacts/genericmenuconsumer-menuapi.json`, following the naming convention: `<PACT_CONSUMER>-<PACT_PROVIDER>`.
-
-Some good practices:
-✅ Use Pact Matchers to ensure we account for state change, e.g. no hardcoded values for menus in the database, see link:https://docs.pact.io/getting_started/matching[Matching] for more information.
-✅ Ensure that the provider state has been configured by the Provider
-
-It's important to get the `PACT_CONSUMER` and `PACT_PROVIDER` names correct, as these form the key for verify.
-
-[WARNING]
-Pacts: these are checked in for reference only. Please do not change the outputted .json files. They are created on successful test runs by Pact. These will be published to the broker upon successful run in the pipeline, with the corresponding version tags.
-
-== Running "PACT" for Java Application
-
-*Prerequisite*: Please provide the Pact_Broker_URL and Pact_Broker_Token to the provider's pom
-
-----
-    <pactBrokerUrl>Pact_Broker_URL</pactBrokerUrl>
-    <pactBrokerToken>Pact_Broker_Token</pactBrokerToken>
-----
-
-*Steps*:
-
-----
-- Consumer: Creating the contract
-  Run the 'GenericMenuConsumer.java' class from the following path: api-tests/src/test/java/com/xxENSONOxx/xxSTACKSxx/api/pact/GenericMenuConsumer.java
-
-  Note: this step can be skipped in case the pact file already exists in .pact/pacts directory.
-- Execute mvn pact:publish from 'api-tests' directory to publish the consumer pact to broker.
-- Execute mvn pact:verify from the provider (java directory).
-- Execute mvn pact:publish from 'java' directory to publish this pact to broker.
-- Execute mvn pact:can-i-deploy -Dpacticipant=YOUR_CONSUMER_NAME -DpacticipantVersion=CONSUMER_VERSION -Dto=ENV_TO_DEPLOY from 'java' directory including this variables: to check if the versions of consumer and provider are compatible.
-----
+You can see how the whole implementation works in link:https://pactflow.io/bi-directional-contract-testing/[PactFlow Docs].
