@@ -7,6 +7,7 @@ keywords:
   - Nx
   - testing
   - playwright
+  - cypress
   - accessibility testing
   - visual regression testing
   - monorepo
@@ -21,6 +22,8 @@ To leverage Ensono Stacks and accelerate your testing process within your Nx mon
 ### Selecting your test framework
 
 We recommend and currently support Playwright within the Ensono Stacks workflow, with it’s Microsoft backing, extensive feature set and fast cross-browser web automation capability, it is our preferred tooling choice.
+
+However, existing users can still find information about the deprecated Cypress plugin [here](../../getting_started/cypress/plugin-information.md).
 
 :::tip
 
