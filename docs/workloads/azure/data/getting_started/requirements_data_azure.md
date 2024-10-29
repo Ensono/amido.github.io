@@ -1,31 +1,34 @@
 ---
 id: requirements_data_azure
-title: Requirements
-sidebar_label: Requirements
+title: Prerequisites
+sidebar_label: Prerequisites
 hide_title: false
 hide_table_of_contents: false
-description: Requirements
+description: Prerequisites for developing with Ensono Stacks Data Platform
 keywords:
   - requirements
+  - prerequisites 
 ---
 
 ## Local development
 
 The following tools are recommended for developing while using the Ensono Stacks data solution:
 
-| Tool | Notes |
-| ----- | ----- |
-| [Python 3.9+](https://www.python.org/downloads/) | Use of Python 3.12+ is not currently supported. You may wish to use a utility such as [pyenv](https://pypi.org/project/pyenv/) to manage your local versions of Python. |
-| [Poetry](https://python-poetry.org/docs/) | Used for Python dependency management in Stacks. |
-| (Windows users) a Linux distribution, e.g. [WSL](https://docs.microsoft.com/en-us/windows/wsl/install) | A Unix-based environment is recommended for developing the solution (e.g. macOS, or WSL for Windows users). |
-| Java 8/11/17 | Optional: Java is required to develop and run tests using PySpark locally - see [Spark documentation](https://spark.apache.org/docs/latest/). |
-| [Azure CLI](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli) | Optional: Azure CLI allows you to interact with Azure resources locally, including running end-to-end tests. |
+| Tool                                                                                                   | Notes                                                                                                                                                                   |
+|--------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [Python 3.9 - 3.11](https://www.python.org/downloads/)                                                 | Use of Python 3.12+ is not currently supported. You may wish to use a utility such as [pyenv](https://pypi.org/project/pyenv/) to manage your local versions of Python. |
+| [Poetry](https://python-poetry.org/docs/)                                                              | Used for Python dependency management in Stacks.                                                                                                                        |
+| (Windows users) a Linux distribution, e.g. [WSL](https://docs.microsoft.com/en-us/windows/wsl/install) | A Unix-based environment is recommended for developing the solution (e.g. macOS, Linux, or WSL for Windows users).                                                      |
+| Java 8/11/17 runtime                                                                                   | Optional: Java is required to develop and run tests using PySpark locally - see [Spark documentation](https://spark.apache.org/docs/latest/).                           |
+| [Azure CLI](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli)                             | Optional: Azure CLI allows you to interact with Azure resources locally, including running end-to-end tests.                                                            |
 
 See [development quickstart](./dev_quickstart_data_azure.md) for further details on getting start with developing the solution.
 
 ## Git repository
 
-A remote Git repository is required for storing and managing a data project's code. When scaffolding a new data project, you will need the HTTPS URL of the repo.
+A remote Git repository is required for storing and managing a data project's code. This can be in either **GitHub** or **Azure DevOps**. When scaffolding a new data project, you will need the HTTPS URL of the repo.
+
+While Ensono Stacks supports storing code in both GitHub and Azure DevOps, it does not currently support CI/CD pipelines using GitHub Actions. Requirements for Azure DevOps are detailed in the [CI/DC - Azure DevOps](#cicd---azure-devops) section below.
 
 The examples and quickstart documentation assume that `main` is the primary branch in the repo.
 
@@ -34,7 +37,7 @@ The examples and quickstart documentation assume that `main` is the primary bran
 In order to deploy an Ensono Stacks Data Platform into Azure, you will need:
 
 * One or more Azure subscriptions – for deploying the solution into
-* Azure service principal (Application) – with permissions to deploy and configure all required
+* Azure service principal (Application) – must have `Contributor` access to deploy and configure all required
 resources into the target subscription(s)
 
 ### Terraform state storage
@@ -45,9 +48,9 @@ Deployment of Azure resources in Ensono Stacks is done through Terraform. Within
 * Resource group name
 * Container name
 
-## Azure DevOps
+## CI/CD - Azure DevOps
 
-CI/CD processes within the Ensono Stacks Data Platform are designed to be run in Azure DevOps Pipelines[^1]. Therefore, it is a requirement to [create a project in Azure DevOps](https://learn.microsoft.com/en-us/azure/devops/organizations/projects/create-project?view=azure-devops&tabs=browser).
+CI/CD processes within the Ensono Stacks Data Platform are currently designed to be run in Azure DevOps Pipelines[^1]. Therefore, it is a requirement to [create a project in Azure DevOps](https://learn.microsoft.com/en-us/azure/devops/organizations/projects/create-project?view=azure-devops&tabs=browser).
 
 [^1]: More general information on [using Azure Pipelines in Stacks](/docs/infrastructure/azure/pipelines/azure_devops) is also available.
 
@@ -77,22 +80,22 @@ The variables under `amido-stacks-euw-de-env-network` are only required if you w
 <details>
   <summary>amido-stacks-de-pipeline-env</summary>
 
-| Variable Name                    | When Needed      | Description                                 |
-|----------------------------------|------------------|---------------------------------------------|
-| ADLS_DataLake_URL                | After core infra | Azure Data Lake Storage Gen2 URL            |
-| blob_adls_storage                | After core infra | Azure Data Lake Storage Gen2 name           |
-| blob_configStorage               | After core infra | Blob storage name                           |
-| Blob_ConfigStore_serviceEndpoint | After core infra | Blob service URL                            |
-| databricksHost                   | After core infra | Databricks URL                              |
-| databricksWorkspaceResourceId    | After core infra | Databricks workspace resource id            |
-| datafactoryname                  | After core infra | Azure Data Factory name                     |
-| github_token                     | After core infra | GitHub PAT token, see below for more details|
-| integration_runtime_name         | After core infra | Azure Data Factory integration runtime name |
-| KeyVault_baseURL                 | After core infra | Vault URI                                   |
-| keyvault_name                    | After core infra | Key Vault name                              |
-| location                         | Project start    | Azure region                                |
-| resource_group                   | Project start    | Name of the resource group                  |
-| sql_connection                   | After core infra | Connection string to Azure SQL database     |
+| Variable Name                    | When Needed      | Description                                  |
+|----------------------------------|------------------|----------------------------------------------|
+| ADLS_DataLake_URL                | After core infra | Azure Data Lake Storage Gen2 URL             |
+| blob_adls_storage                | After core infra | Azure Data Lake Storage Gen2 name            |
+| blob_configStorage               | After core infra | Blob storage name                            |
+| Blob_ConfigStore_serviceEndpoint | After core infra | Blob service URL                             |
+| databricksHost                   | After core infra | Databricks URL                               |
+| databricksWorkspaceResourceId    | After core infra | Databricks workspace resource id             |
+| datafactoryname                  | After core infra | Azure Data Factory name                      |
+| github_token                     | After core infra | GitHub PAT token, see below for more details |
+| integration_runtime_name         | After core infra | Azure Data Factory integration runtime name  |
+| KeyVault_baseURL                 | After core infra | Vault URI                                    |
+| keyvault_name                    | After core infra | Key Vault name                               |
+| location                         | Project start    | Azure region                                 |
+| resource_group                   | Project start    | Name of the resource group                   |
+| sql_connection                   | After core infra | Connection string to Azure SQL database      |
 
 </details>
 
@@ -135,7 +138,7 @@ You do not require any permissions on this token because GitHub only needs to re
 Service Connections are used in Azure DevOps Pipelines to connect to external services, like Azure and GitHub.
 You must create the following Service Connections:
 
-| Name                  | When Needed   | Description                                           |
-|-----------------------|---------------|-------------------------------------------------------|
-| Stacks.Pipeline.Builds | Project start | The Service Connection to Azure. The service principal or managed identity that is used to create the connection must have contributor access to the Azure Subscription. |
-| GitHubReleases | Project start | The Service Connection to Github for releases. The access token that is used to create the connection must have read/write access to the GitHub repository. |
+| Name                   | When Needed   | Description                                                                                                                                                                                                                                                                                                                  |
+|------------------------|---------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Stacks.Pipeline.Builds | Project start | The Service Connection to Azure. The service principal or managed identity that is used to create the connection must have contributor access to the Azure Subscription. See [here](https://learn.microsoft.com/en-us/azure/devops/pipelines/library/connect-to-azure?view=azure-devops) for more information.               |
+| GitHubReleases         | Project start | The Service Connection to Github for releases. The access token that is used to create the connection must have read/write access to the GitHub repository. See [here](https://learn.microsoft.com/en-us/azure/devops/pipelines/library/service-endpoints?view=azure-devops#github-service-connection) for more information. |
