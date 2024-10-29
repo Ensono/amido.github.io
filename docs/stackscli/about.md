@@ -19,10 +19,10 @@ As the CLI is a single binary, the quickest way to install it is to download it 
 ```bash
 # Download the binary to a location in the PATH
 ## Mac OS
-curl https://github.com/Ensono/stacks-cli/releases/download/v{stackscli_version}/stacks-cli-darwin-amd64-{stackscli_version} -o /usr/local/bin/stacks-cli
+curl -L https://github.com/Ensono/stacks-cli/releases/download/v{stackscli_version}/stacks-cli-darwin-amd64-{stackscli_version} -o /usr/local/bin/stacks-cli
 
 ## Linux
-curl https://github.com/Ensono/stacks-cli/releases/download/v{stackscli_version}/stacks-cli-linux-amd64-{stackscli_version} -o /usr/local/bin/stacks-cli
+curl -L https://github.com/Ensono/stacks-cli/releases/download/v{stackscli_version}/stacks-cli-linux-amd64-{stackscli_version} -o /usr/local/bin/stacks-cli
 
 ## Ensure that the command is executable
 chmod +x /usr/local/bin/stacks-cli
