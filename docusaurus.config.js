@@ -45,6 +45,7 @@ const config = {
       "Gatling",
       "Google Lighthouse",
       "Applitools",
+      "Cypress",
       "OWASP",
     ],
     docSearch: {
