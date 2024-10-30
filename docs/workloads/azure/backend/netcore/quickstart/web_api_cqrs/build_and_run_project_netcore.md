@@ -174,7 +174,7 @@ See the note on Environment Variables below for the adjustments that you should 
    -e EVENTHUB_CONNECTIONSTRING=your-aeh-connection-string ^
    -e SERVICEBUS_CONNECTIONSTRING=your-asb-connection-string ^
    -e STORAGE_CONNECTIONSTRING=your-aeh-storage-connection-string ^
-   -e TOPIC_ARN=your-aws-sns-topic-arn
+   -e TOPIC_ARN=your-aws-sns-topic-arn ^
    dotnet-api:latest
    ```
 
@@ -185,7 +185,7 @@ See the note on Environment Variables below for the adjustments that you should 
    -e EVENTHUB_CONNECTIONSTRING=your-aeh-connection-string `
    -e SERVICEBUS_CONNECTIONSTRING=your-asb-connection-string `
    -e STORAGE_CONNECTIONSTRING=your-aeh-storage-connection-string `
-   -e TOPIC_ARN=your-aws-sns-topic-arn
+   -e TOPIC_ARN=your-aws-sns-topic-arn `
    dotnet-api:latest
    ```
 
