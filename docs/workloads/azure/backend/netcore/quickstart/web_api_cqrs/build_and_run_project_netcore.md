@@ -150,26 +150,25 @@ The following example shows how to build and run the Stacks CQRS API solution. I
    You can use either Command Prompt or PowerShell.
 
 2. **Navigate to the project directory.**  
-Change to the API project directory within the solution. In this example, the solution was created in _c:\dev_ and was named _Company.Project_.
+Change to the project's root directory within the solution. In this example, the solution was created in _c:\dev_ and was named _Company.Project_.
 
    ```bat
-   cd c:\dev\company.project\src\cqrs\src\api
+   cd c:\dev\company.project\
    ```
 
 3. **Build the Docker Image**  
 Use the `docker build` command to build the Docker image from the Dockerfile in this folder.
 
    ```bat
-   docker build -t dotnet-api .
+   docker build -t dotnet-api -f src/cqrs/src/api/Dockerfile --build-arg self_repo_src=src/cqrs/src/api .
    ```
 
 4. **Run the Docker Image.**  
-Use the `docker run` command to start a container from the built image.  
-See the note on Environment Variables below for the adjustments that you should make to this command.
+Use the `docker run` command to start a container from the image that we just built. Use one of the commands below, bt you will need to change the `--mount` switch so that it matches the path to your appsettings.json.  You will also need to provide the values of the environment variables that you made a note of in the previous section and delete the environment variables that you are not using.
 
    ```bat title="Command Line"
-   docker run -p 5000:80 ^
-   --mount type=bind,source=/path/to/PROJECT-NAME/cqrs/src/api/xxENSONOxx.xxSTACKSxx.API/appsettings.json,target=/app/config/appsettings.json ^
+   docker run -p 5000:8080 ^
+   --mount type=bind,source=C:/dev/company.project/src/cqrs/src/api/company.project.API/appsettings.json,target=/app/config/appsettings.json  ^
    -e COSMOSDB_KEY=your-key ^
    -e EVENTHUB_CONNECTIONSTRING=your-aeh-connection-string ^
    -e SERVICEBUS_CONNECTIONSTRING=your-asb-connection-string ^
@@ -179,8 +178,8 @@ See the note on Environment Variables below for the adjustments that you should 
    ```
 
    ```bat title="PowerShell"
-   docker run -p 5000:80 `
-   --mount type=bind,source=/path/to/PROJECT-NAME/cqrs/src/api/xxENSONOxx.xxSTACKSxx.API/appsettings.json,target=/app/config/appsettings.json `
+   docker run -p 5000:8080 `
+   --mount type=bind,source=C:/dev/company.project/src/cqrs/src/api/company.project.API/appsettings.json,target=/app/config/appsettings.json `
    -e COSMOSDB_KEY=your-key `
    -e EVENTHUB_CONNECTIONSTRING=your-aeh-connection-string `
    -e SERVICEBUS_CONNECTIONSTRING=your-asb-connection-string `
@@ -199,23 +198,22 @@ See the note on Environment Variables below for the adjustments that you should 
 Change to the API project directory within the solution. In this example, the solution was created in a folder called _dev_ inside _anneexample_'s home directory and was named _Company.Project_.
 
    ```bash
-   cd ~/users/anneexample/dev/company.project/src/cqrs/src/api
+   cd ~/users/anneexample/dev/company.project
    ```
 
 3. **Build the Docker Image**  
 Use the `docker build` command to build the Docker image from the Dockerfile in this folder.
 
    ```bat
-   docker build -t dotnet-api .
+      docker build -t dotnet-api -f src/cqrs/src/api/Dockerfile --build-arg self_repo_src=src/cqrs/src/api .
    ```
 
 4. **Run the Docker Image.**  
-Use the `docker run` command to start a container from the built image.  
-See the note on Environment Variables below for the adjustments that you should make to this command.
+Use the `docker run` command to start a container from the image that we just built. Use one of the commands below, bt you will need to change the `--mount` switch so that it matches the path to your appsettings.json.  You will also need to provide the values of the environment variables that you made a note of in the previous section and delete the environment variables that you are not using.
 
    ```bash
-   docker run -p 5000:80 \
-   --mount type=bind,source=/path/to/PROJECT-NAME/cqrs/src/api/xxENSONOxx.xxSTACKSxx.API/appsettings.json,target=/app/config/appsettings.json \
+   docker run -p 5000:8080 \
+   --mount type=bind,source=C:/dev/company.project/src/cqrs/src/api/company.project.API/appsettings.json,target=/app/config/appsettings.json\
    -e COSMOSDB_KEY=your-key \
    -e SERVICEBUS_CONNECTIONSTRING=your-asb-connection-string \
    -e EVENTHUB_CONNECTIONSTRING=your-aeh-connection-string \
