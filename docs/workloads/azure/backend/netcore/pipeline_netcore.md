@@ -35,7 +35,7 @@ A variable file located at `build/azDevOps/azure/ci-vars.yml` will contain the m
 
 Variable groups will need creating for storing some sensitive variables to be used by the pipeline. Instructions for creating a variable group can be found [here](https://docs.microsoft.com/en-us/azure/devops/pipelines/library/variable-groups?view=azure-devops&tabs=classic#create-a-variable-group). Two variable groups are used by default, one for Azure credentials and one for any application specific variables.
 
-**Azure Credentials**
+#### Azure Credentials
 
 Create a variable group called `azure-sp-creds`, add a description and make sure the **Allow access to all pipelines** option is checked.
 
@@ -48,7 +48,7 @@ Add the following variables:
 | ARM_SUBSCRIPTION_ID | Azure Subscription ID                 | Terraform and application deployment |
 | ARM_TENANT_ID       | Azure Tenant ID                       | Terraform and application deployment |
 
-**Application Specific**
+#### Application Specific
 
 Create a the variable group, add a description and make sure the **Allow access to all pipelines** option is checked. Update the `- group: replaceme` in the `build/azDevOps/azure/ci-vars.yml` file to match the name of your variable group.
 
