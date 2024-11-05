@@ -217,6 +217,8 @@ module.exports = {
                   "workloads/azure/backend/netcore/testing/functional_testing_netcore",
                   "workloads/azure/backend/netcore/infrastructure_netcore",
                   "workloads/azure/backend/netcore/pipeline_netcore",
+                  "workloads/azure/backend/netcore/infrastructure_aws_netcore",
+                  "workloads/azure/backend/netcore/pipeline_gha_netcore",
                   "workloads/azure/backend/netcore/logging_netcore",
                   "workloads/azure/backend/netcore/security_netcore",
                 ],
@@ -320,6 +322,18 @@ module.exports = {
             items: ["infrastructure/azure/pipelines/azure_devops"],
           },
           "getting_started/azure-container-app/azure-container-apps",
+        ],
+      },
+      {
+        type: "category",
+        label: "Amazon Web Services",
+        items: [
+          "infrastructure/aws/core_infrastructure_aws",
+          {
+            type: "category",
+            label: "Pipelines",
+            items: ["infrastructure/aws/pipelines/github_actions"],
+          },
         ],
       },
     ],
