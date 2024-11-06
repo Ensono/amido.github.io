@@ -1,0 +1,75 @@
+= Testing Overview
+:toc:
+:keywords: testing, QA, Ensono Stacks, automation, performance, accessibility, visual regression, framework
+:description: Overview of testing strategies and tools in Ensono Stacks
+
+== Testing Overview
+
+Building testing frameworks from scratch requires a lot of boilerplate code. It is also hard to know how to get started without examples.
+
+To ensure the quality and reliability of your software projects, Ensono Stacks includes a range of integrated testing frameworks. These frameworks are designed to be easily bootstrapped and customized to fit your specific project needs.
+
+== Types of Testing
+
+This summary outlines key areas of testing included in the Ensono Stacks.
+
+=== Static Code Analysis
+
+Static code analysis helps identify potential issues in your codebase without executing the code. Ensono Stacks integrates with https://sonarcloud.io/[SonarCloud] to provide static analysis and quality gates. Further information can be found link:./testing_static.md[here].
+
+=== Performance Testing
+
+Performance testing ensures that your application can handle the expected load and perform well under stress. Ensono Stacks uses https://gatling.io/[Gatling] for performance testing. Further information can be found link:./performance_testing_gatling.md[here].
+
+=== UI Testing
+
+==== Playwright
+
+Playwright is the preferred tool within the Ensono Stacks. It is a powerful tool for cross-browser web automation. It supports multiple browsers and provides capabilities for both functional and visual regression testing. For more details on how Ensono utilizes Playwright within Ensono Stacks, refer to the following documentation:
+
+- **General Testing**: link:./testing_in_nx/playwright_nx.md[Testing with Playwright]
+- **Visual Regression Testing**: link:./testing_in_nx/playwright_visual_testing.md[Playwright Visual Testing]
+- **Accessibility Testing**: link:./testing_in_nx/playwright_accessibility_testing.md[Accessibility Testing with Playwright]
+- **Applitools Integration**: link:./testing_in_nx/playwright_visual_testing_applitools.md[Playwright with Applitools Eyes]
+
+=== API Testing
+
+==== Ensono Stacks .NET
+
+The Ensono Stacks .NET includes a functional testing framework using xUnit and BDDfy. This framework allows you to write and run tests to ensure that your API behaves correctly. For more details, refer to the link:../workloads/azure/backend/netcore/testing/functional_testing_netcore.md[Functionally Testing the API] documentation.
+
+==== Ensono Stacks JAVA
+
+The Ensono Stacks JAVA includes an API testing framework using Serenity BDD and Rest Assured. This framework allows you to write and run tests to ensure that your API behaves correctly. For more details, refer to the link:../workloads/azure/backend/java/testing/execute_serenity_api_tests.md[Running API tests with Serenity] documentation.
+
+==== Contract Testing with Pact
+
+Contract testing ensures that the interactions between services are working as expected. Ensono Stacks uses https://docs.pact.io/[Pact] for consumer-driven contract testing. For further information please refer to the link:./contract_testing_pact.md[API Contract Testing with Pact] documentation.
+
+=== ServiceBus Testing
+
+Ensono Stacks .NET includes comprehensive tests for ServiceBus operations to ensure proper handling of topics, queues, and messages. Key components include:
+
+- **ServiceBusDriver.cs**: Tests for adding messages, verifying topic existence, reading messages, and clearing topics.
+- **FakeSBClient.cs**: Mocks ServiceBus client behaviors for unit testing.
+
+Details of available tests can be found in the link:../workloads/azure/backend/netcore/architecture/project_structure/functions_and_worker_netcore.md[Functions and Worker Services] documentation.
+
+=== CosmosDB Testing
+
+Ensono Stacks .NET includes unit and integration tests for CosmosDB operations to ensure correct data handling and repository functionality. These include:
+
+- Unit tests for verifying the repository implementation and its functionality using a mock repository.
+- Integration tests for CosmosDB Document Storage, validating communication with CosmosDB, data encoding/decoding, and various search operations, including tests for single/multiple fields, ordering, partition keys, and SQL queries.
+
+The tests come under Infrastructure tests in the Ensono Stacks solution. For more details please refer to the link:../workloads/azure/backend/netcore/architecture/project_structure/cqrs_netcore.md[CQRS Rest Api Solution Structure] documentation.
+
+== Getting Started
+
+To get started with testing in Ensono Stacks, refer to the detailed documentation for each testing tool and framework. Each guide provides setup instructions, configuration details, and example tests to help you integrate testing into your development workflow.
+
+For more information on setting up your workspace, see the link:../getting_started/setup.md[Getting Started] guide.
+
+== Conclusion
+
+Ensono Stacks offers a robust set of tools and frameworks to ensure the quality and reliability of your software projects. By leveraging these tools, you can automate testing, catch issues early, and deliver high-quality software with confidence.
