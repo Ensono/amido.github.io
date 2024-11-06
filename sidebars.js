@@ -152,7 +152,6 @@ module.exports = {
                     items: [
                       "workloads/azure/backend/java/testing/testing_java",
                       "workloads/azure/backend/java/testing/execute_serenity_api_tests",
-                      "workloads/azure/backend/java/testing/execute_karate_api_tests",
                     ],
                   },
                 ],

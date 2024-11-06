@@ -38,7 +38,6 @@ const config = {
       "Serenity",
       "BDD",
       "JUnit",
-      "Karate",
       "REST",
       "Rest Assured",
       "Jest",
