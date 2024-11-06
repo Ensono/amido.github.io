@@ -361,11 +361,7 @@ module.exports = {
           }
         ],
       },
-      "testing/testing_java_serenity_bdd",
-      "testing/testing_dotnet_selenium",
-      "testing/testing_static_analysis",
       "testing/contract_testing_pact",
-      "testing/accessibility_testing",
       "testing/performance_testing_gatling",
     ],
   },

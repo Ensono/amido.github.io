@@ -16,10 +16,6 @@ To ensure the quality and reliability of your software projects, Ensono Stacks i
 
 This summary outlines key areas of testing included in the Ensono Stacks.
 
-=== Static Code Analysis
-
-Static code analysis helps identify potential issues in your codebase without executing the code. Ensono Stacks integrates with https://sonarcloud.io/[SonarCloud] to provide static analysis and quality gates. Further information can be found link:./testing_static.md[here].
-
 === Performance Testing
 
 Performance testing ensures that your application can handle the expected load and perform well under stress. Ensono Stacks uses https://gatling.io/[Gatling] for performance testing. Further information can be found link:./performance_testing_gatling.md[here].
