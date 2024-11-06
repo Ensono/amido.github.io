@@ -324,6 +324,7 @@ module.exports = {
       },
     ],
     QA: [
+      "testing/testing_overview",
       {
         type: "category",
         label: "NX - Frontend Testing",
