@@ -21,6 +21,10 @@
   padding: 2rem;
 }
 
+.feature:first-child {
+  border-bottom: 0;
+}
+
 .feature p {
   display: flex;
   text-align: center;
@@ -32,6 +36,10 @@
 }
 
 @media (min-width: 768px) { 
+  .feature:first-child {
+    border-bottom: 1px solid var(--igm-color-dark-grey);
+  }
+
   .feature {
     flex: 1 1 0;
   }
@@ -85,7 +93,7 @@
     margin: 1.3rem 0;
   }
   .feature .imageWrapper img {
-    width: 4.5rem;
+    width: 10rem;
     height: 4.5rem;
     min-width: 4.5rem;
     min-height: 4.5rem;

@@ -14,7 +14,13 @@ const text = {
           img: '/img/icons/ensono-icon_host-v_0222.png',
           buttonText: 'Show me'
         },
-
+        {
+          title: "Testing",
+          link: "testing/testing_overview",
+          description: "Get Started with Testing - Explore Ensono Stacks' pre-configured frameworks for performance, accessibility, UI, API, and more.",
+          img: '/img/icons/ensono-icon_symbol-checkmark-v_0222.png',
+          buttonText: 'Show me'
+        },
     ]
   }
 const { features } = text;
@@ -49,4 +55,4 @@ export const Features = () => {
         </section>
     )
 }
-   
+
