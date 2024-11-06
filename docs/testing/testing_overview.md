@@ -21,6 +21,7 @@ Building testing frameworks from scratch requires a lot of boilerplate code. It 
 To ensure the quality and reliability of your software projects, Ensono Stacks includes a range of integrated testing frameworks. These frameworks are designed to be easily bootstrapped and customized to fit your specific project needs.  
 
 ## Types of Testing
+This summary outlines key areas of testing included in the Ensono Stacks.
 
 ### Static Code Analysis
 
@@ -54,16 +55,23 @@ The Ensono Stacks JAVA includes an API testing framework using Serenity BDD and 
 Contract testing ensures that the interactions between services are working as expected. Ensono Stacks uses [Pact](https://docs.pact.io/) for consumer-driven contract testing.  For further information please refer to the [API Contract Testing with Pact](./contract_testing_pact.md) documentation.
 
 ### ServiceBus Testing
-Ensono Stacks .NET includes functional and unit tests for ServiceBus operations to ensure correct handling of topics, queues, and messages. Key components include:
+Ensono Stacks .NET includes comprehensive functional and unit tests for ServiceBus operations to ensure the correct handling of topics, queues, and messages. Tests coverage include 
+ - Adding messages to the queue
+ - Checking the existence of topics
+ - Reading messages from the queue
+ - Clearing messages from the queue
 
-- ServiceBusDriver.cs: Tests for adding messages, checking topic existence, reading, and clearing messages.
-- FakeSBClient.cs: Mocks ServiceBus client behaviors for unit testing.
+Details of available tests can be found in the [Functions and Worker Services](../workloads/azure/backend/netcore/architecture/project_structure/functions_and_worker_netcore.md) documentation.
+
 
 ### CosmosDB Testing
-Ensono Stacks .NET includes unit and integration tests for CosmosDB operations to ensure correct data handling and repository functionality. Key components include:
+Ensono Stacks .NET includes unit and integration tests for CosmosDB operations to ensure correct data handling and repository functionality. These include:
 
-- CosmosDbMenuRepositoryTests.cs: Unit tests for CosmosDbMenuRepository, verifying implementation of IMenuRepository, and testing GetByIdAsync, SaveAsync, and DeleteAsync methods using a fake IDocumentStorage.
-- CosmosDbDocumentStorageQueriesIntegrationTests.cs: Integration tests for CosmosDbDocumentStorage, validating communication with CosmosDB, data encoding/decoding, and various search operations, including tests for single/multiple fields, ordering, partition keys, and SQL queries.
+ - Unit tests for verifying the repository implementation and its functionality using a mock repository.
+
+ - Integration tests for CosmosDB Document Storage, validating communication with CosmosDB, data encoding/decoding, and various search operations, including tests for single/multiple fields, ordering, partition keys, and SQL queries.
+
+ The tests come under Infrastructure tests in the Ensono Stacks solution. For more details please refer to the [CQRS Rest Api Solution Structure](../workloads/azure/backend/netcore/architecture/project_structure/cqrs_netcore.md) documentation.
 
 ## Getting Started
 
