@@ -6,8 +6,6 @@ description: Overview of testing strategies and tools in Ensono Stacks
 keywords: testing, QA, Ensono Stacks, automation, performance, accessibility, visual regression, framework
 ---
 
-= Testing Overview
-
 Building testing frameworks from scratch requires a lot of boilerplate code. It is also hard to know how to get started without examples.
 
 To ensure the quality and reliability of your software projects, Ensono Stacks includes a range of integrated testing frameworks. These frameworks are designed to be easily bootstrapped and customized to fit your specific project needs.
