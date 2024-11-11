@@ -15,7 +15,7 @@ keywords:
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-The pipeline will automate provisioning and updating the .NET REST API with CQRS infrastructure in AWS.
+The pipeline will automate provisioning and updating the .NET REST API with CQRS infrastructure in AWS. 
 
 ## Pipeline Diagram
 

@@ -20,6 +20,7 @@ keywords:
 
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
+import ResponsivePlayer  from "../../../../../../../src/components/ResponsivePlayer/ResponsivePlayer";
 
 ## Build and Run REST API with CQRS
 
@@ -33,6 +34,8 @@ Depending on the options selected when creating the CQRS API, additional configu
 :::
 
 ### Building and Running
+
+<ResponsivePlayer url='https://www.youtube.com/watch?v=-kKWzRE6ahQ' />
 
 <details open>
 <summary>Build and run locally</summary>
