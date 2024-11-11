@@ -88,7 +88,7 @@ In this example:
 
 Install the package and have a go:
 
-<ResponsivePlayer url='https://www.youtube.com/watch?v=H6eaa8ukhq4'>
+<ResponsivePlayer url='https://www.youtube.com/watch?v=H6eaa8ukhq4' />
 
 ### Customizing the Template
 

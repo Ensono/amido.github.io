@@ -27,7 +27,7 @@ import ResponsivePlayer  from "../../../../../../../src/components/ResponsivePla
 
 ### Install the package
 
-<ResponsivePlayer url='https://www.youtube.com/watch?v=H6eaa8ukhq4'>
+<ResponsivePlayer url='https://www.youtube.com/watch?v=H6eaa8ukhq4' />
 
 1. Go to the [Ensono.Stacks.Templates package page on Nuget](https://www.nuget.org/packages/Ensono.Stacks.Templates/).
 2. Copy the command displayed on the page to install the latest version of the package.

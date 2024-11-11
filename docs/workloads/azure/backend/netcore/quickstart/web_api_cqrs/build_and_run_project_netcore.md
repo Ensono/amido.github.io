@@ -35,7 +35,7 @@ Depending on the options selected when creating the CQRS API, additional configu
 
 ### Building and Running
 
-<ResponsivePlayer url='https://www.youtube.com/watch?v=-kKWzRE6ahQ'>
+<ResponsivePlayer url='https://www.youtube.com/watch?v=-kKWzRE6ahQ' />
 
 <details open>
 <summary>Build and run locally</summary>

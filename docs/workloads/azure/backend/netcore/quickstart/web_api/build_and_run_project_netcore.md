@@ -21,9 +21,9 @@ import ResponsivePlayer  from "../../../../../../../src/components/ResponsivePla
 
 The API can be configured to run locally or in a Docker container.
 
-<ResponsivePlayer url='https://www.youtube.com/watch?v=jzIm69yiV20'>
+<ResponsivePlayer url='https://www.youtube.com/watch?v=jzIm69yiV20' />
 
-<ResponsivePlayer url='https://www.youtube.com/watch?v=9ehY96znRR0'>
+<ResponsivePlayer url='https://www.youtube.com/watch?v=9ehY96znRR0' />
 
 ### Build and Run Locally
 
