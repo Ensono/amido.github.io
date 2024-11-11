@@ -16,6 +16,7 @@ keywords:
 ---
 
 import HideNavigation  from "../../../../../src/components/HideNavigation/HideNavigation";
+import ResponsivePlayer  from "../../../../../src/components/ResponsivePlayer/ResponsivePlayer";
 
 ## Introduction to the .NET 8 REST API Application
 
@@ -85,7 +86,9 @@ In this example:
 
 ### Try It Yourself
 
-You can try out a demo version of this API [here](<insert-link-here>).
+Install the package and have a go:
+
+<ResponsivePlayer url='https://www.youtube.com/watch?v=H6eaa8ukhq4'>
 
 ### Customizing the Template
 

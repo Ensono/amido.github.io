@@ -16,10 +16,13 @@ keywords:
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import ResponsivePlayer  from "../../../../../src/components/ResponsivePlayer/ResponsivePlayer";
 
 ## Overview
 
 This page present the high level design of the reference implementation of the .NET Ensono Stacks REST API with CQRS.
+
+<ResponsivePlayer url='https://www.youtube.com/watch?v=G8FW-djEDDY'>
 
 <!-- **This page assumes that the core infrastructure has already been provisioned. Instructions and additional information on the core infrastructure can be found [here](../../../../infrastructure/aws/core_infrastructure.md)** -->
 

@@ -15,9 +15,15 @@ keywords:
   - application
 ---
 
+import ResponsivePlayer  from "../../../../../../../src/components/ResponsivePlayer/ResponsivePlayer";
+
 ## Build and Run the Application
 
 The API can be configured to run locally or in a Docker container.
+
+<ResponsivePlayer url='https://www.youtube.com/watch?v=jzIm69yiV20'>
+
+<ResponsivePlayer url='https://www.youtube.com/watch?v=9ehY96znRR0'>
 
 ### Build and Run Locally
 
