@@ -54,7 +54,6 @@ module.exports = {
           //"getting_started/azure-react/ensono-stacks-azure-react", Temporarily removed, add back in Cycle 11
           "getting_started/rest-client/ensono-stacks-rest-client",
           "getting_started/playwright/ensono-stacks-playwright",
-          "getting_started/cypress/ensono-stacks-cypress",
           "getting_started/logger/ensono-stacks-logger",
         ],
       },
@@ -153,7 +152,6 @@ module.exports = {
                     items: [
                       "workloads/azure/backend/java/testing/testing_java",
                       "workloads/azure/backend/java/testing/execute_serenity_api_tests",
-                      "workloads/azure/backend/java/testing/execute_karate_api_tests",
                     ],
                   },
                 ],
@@ -216,8 +214,8 @@ module.exports = {
                   },
                   "workloads/azure/backend/netcore/testing/functional_testing_netcore",
                   "workloads/azure/backend/netcore/infrastructure_netcore",
-                  "workloads/azure/backend/netcore/infrastructure_aws_netcore",
                   "workloads/azure/backend/netcore/pipeline_netcore",
+                  "workloads/azure/backend/netcore/infrastructure_aws_netcore",
                   "workloads/azure/backend/netcore/pipeline_gha_netcore",
                   "workloads/azure/backend/netcore/logging_netcore",
                   "workloads/azure/backend/netcore/security_netcore",
@@ -324,8 +322,21 @@ module.exports = {
           "getting_started/azure-container-app/azure-container-apps",
         ],
       },
+      {
+        type: "category",
+        label: "Amazon Web Services",
+        items: [
+          "infrastructure/aws/core_infrastructure_aws",
+          {
+            type: "category",
+            label: "Pipelines",
+            items: ["infrastructure/aws/pipelines/github_actions"],
+          },
+        ],
+      },
     ],
     QA: [
+      "testing/testing_overview",
       {
         type: "category",
         label: "NX - Frontend Testing",
@@ -346,22 +357,10 @@ module.exports = {
                 ],
               },
             ],
-          },
-          {
-            type: "category",
-            label: "Cypress Information",
-            items: [
-              "testing/testing_in_nx/testing_with_cypress",
-              "testing/testing_in_nx/cypress_accessibility_testing",
-            ],
-          },
+          }
         ],
       },
-      "testing/testing_java_serenity_bdd",
-      "testing/testing_dotnet_selenium",
-      "testing/testing_static_analysis",
       "testing/contract_testing_pact",
-      "testing/accessibility_testing",
       "testing/performance_testing_gatling",
     ],
   },
