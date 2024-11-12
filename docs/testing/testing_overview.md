@@ -23,13 +23,16 @@ To ensure the quality and reliability of your software projects, Ensono Stacks i
 | Component              | ✔    | ✔    | N/A         | X     |
 | Integration            | ✔    | ✔    | N/A         | X     |
 | Contract               | X    | ✔     | X           | N/A   |
+| Data Validation        | N/A  | N/A   | N/A         | ✔     |
 | Functional             | ✔    | ✔    | ✔           | X     |
-| End-to-end             | N/A  | N/A   | ✔           | ✔    |
+| End-to-end             | N/A*| N/A*| ✔           | ✔    |
 | Linting                | ✔    | ✔    | ✔           | ✔    |
 | Vulnerability Scanning | ✔    | ✔    | ✔           | ✔    |
 | Static code analysis   | ✔    | ✔    | ✔           | ✔    |
 | Security               | ✔    | ✔    | ✔           | ✔    |
-| Performance            | X    | X     | X           | X     |
+| Performance*         | X    | X     | X           | X     |
+
+`*` _Tests are available as a standalone solution that can be applied to the Stack._
 
 ## Types of Testing
 
