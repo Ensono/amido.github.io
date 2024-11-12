@@ -36,7 +36,7 @@ To ensure the quality and reliability of your software projects, Ensono Stacks i
 
 ## Types of Testing
 
-This summary outlines key areas of testing included in the Ensono Stacks.
+This summary outlines key areas of testing integrated within Ensono Stacks as well as some standalone solutions for testing Stacks applications.
 
 ### Unit Testing
 All of our Stacks come with Unit testing built in. This ensures that each individual unit (function/method) works in isolation.
