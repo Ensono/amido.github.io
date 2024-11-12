@@ -114,6 +114,9 @@ Ensono Stacks integrates with SonarCloud for our Static Code Analysis. This anal
 - Duplicated code
 - Coding standards
 
+### Infrastructure Testing
+Within the AKS infrastructure, there is a suite of [infrastructure tests](https://github.com/Ensono/stacks-infrastructure-aks/tree/master/deploy/tests) using the tool [InSpec](https://github.com/inspec/inspec). These tests check the expected state of resources deployed into Azure to ensure the quality of the infrastructure that our Stacks applications are deploy to.
+
 ## Getting Started
 
 To get started with testing in Ensono Stacks, refer to the detailed documentation for each testing tool and framework. Each guide provides setup instructions, configuration details, and example tests to help you integrate testing into your development workflow.
