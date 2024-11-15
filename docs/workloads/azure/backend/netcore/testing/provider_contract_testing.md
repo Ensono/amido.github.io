@@ -19,9 +19,11 @@ keywords:
 
 
 ## Contract Testing the API
+
 The [Ensono.Stacks.Templates](../../netcore/introduction_netcore) included templates for a [WebAPI](../../netcore/quickstart/web_api/create_project_netcore) and a [WebAPI with CQRS](../../netcore/quickstart/web_api_cqrs/create_project_netcore). Each of these templates will include a Provider implementation of Bi-Directional Contract Testing to accelerate teams getting started with contract testing.
 
 ### What is Bi-Directional Contract Testing
+
 Bi-Directional Contract Testing is a type of static contract testing where two contracts - one representing consumer expectations, and another representing the provider's capability - are compared to ensure they are compatible.
 
 > Bi-Directional contract testing replaces Consumer-Driven contract testing which is a more complicated but more thorough version of contract testing. Bi-Directional contract testing allows a provider to publish their OpenAPI specification instead of a Pact contract. When the provider and/or the consumer publish their contract, PactFlow will verify that the two contracts (consumer Pact and provider OpenAPI spec) are compatible.
@@ -41,6 +43,7 @@ The following diagram shows an example flow of a Bi-Directional contract testing
 
 
 ### Getting Started
+
 When creating an API project using the [Ensono.Stacks.Templates](../../netcore/introduction_netcore), the created `ci.yml` pipeline will include the steps required for Contract Testing as a provider.
 
 Within the contract testing steps, there are a number of variables that are required. In order for the pipeline to work as expected, the variable values will need to be updated before executing the pipeline.
@@ -67,7 +70,9 @@ In addition to these variables, the pipeline steps require a `PACT_BROKER_TOKEN`
 You can get the value of this from within the Settings of your PactFlow broker instance.
 
 ### Pipeline Overview
+
 #### Publish OpenAPI specification
+
 In order to publish Pacts, we need to first install the Docker image. Once we have the image, we can run the `publish-provider-contract` command.
 
 ```yaml
@@ -110,6 +115,7 @@ In order to publish Pacts, we need to first install the Docker image. Once we ha
 When the pact is being published, attributes including the branch name, version and tags are added to the command. These all help identify contracts within the PactFlow broker. These are essential to allow consumers to target the correct version of the provider contract in PactFlow when running `can-i-deploy`.
 
 #### Execute `can-i-deploy`
+
 `can-i-deploy` is a command provided by PactFlow that checks the state of relationships between consumers and providers registered in PactFlow. If the contracts are compatible, `can-i-deploy` will succeed, otherwise it will return a failure.
 The docker image needs to be pulled here again as this is executed on a new build agent within Azure DevOps.
 
@@ -142,6 +148,7 @@ The docker image needs to be pulled here again as this is executed on a new buil
 Arguments provided identify which provider and version of the contract is being validated against the registered consumer contracts. This will check the against contracts on the environment we are trying to deploy to (set in `--to-environment`).
 
 #### Register a deployment
+
 After we have deployed our API (with a new OpenAPI specification version), we need to let PactFlow know what environment that specification has been deployed to. This is essential when **consumers** are running `can-i-deploy` as they will need to confirm when they deploy to that environment, the contracts are compatible.
 
 ```yaml

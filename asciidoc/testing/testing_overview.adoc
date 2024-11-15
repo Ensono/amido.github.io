@@ -33,14 +33,17 @@ To ensure the quality and reliability of your software projects, Ensono Stacks i
 This summary outlines key areas of testing integrated within Ensono Stacks as well as some standalone solutions for testing Stacks applications.
 
 === Unit Testing
+
 All of our Stacks come with Unit testing built in. This ensures that each individual unit (function/method) works in isolation.
 Examples:
+
 - link:https://github.com/Ensono/stacks-java/blob/master/java/src/test/java/com/amido/stacks/workloads/menu/api/v1/CategoryControllerTest.java[Java stack]
 - link:https://github.com/Ensono/stacks-dotnet/tree/master/src/cqrs/src/api/xxENSONOxx.xxSTACKSxx.API.UnitTests[DotNet stack]
 - link:https://github.com/Ensono/stacks-data/tree/main/tests/unit[Data stack]
-- link:https://github.com/Ensono/stacks-nx-plugins/blob/main/e2e/rest-client-e2e/tests/rest-client.spec.ts[NX plugins]
+- link:https://github.com/Ensono/stacks-nx-plugins/blob/b4487958f41953b92ffc297ae902a4e92fbe2afd/packages/common/test/src/lib/stacks-attributes.spec.ts[NX plugins]
 
 === Component Testing
+
 Our .Net and Java Stacks come with Component testing built in. Components tests take the individual component (I.e. Service bus implementation, API, Function App, etc.) and test it as a whole in a white box format. All external dependencies are mocked.
 This allows us to ensure that, before deployment, our component is functioning as expected in isolation, reducing the risk of deployment and liklihood that post-deployment issues are due to this components functionality.
 Examples:
