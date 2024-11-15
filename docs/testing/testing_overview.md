@@ -19,18 +19,18 @@ Building testing frameworks from scratch requires a lot of boilerplate code. It 
 To ensure the quality and reliability of your software projects, Ensono Stacks includes a range of integrated testing frameworks. These frameworks are designed to be easily bootstrapped and customized to fit your specific project needs. The tests integrated within each stack is summarised in this table:
 | Testing Type           | .Net | Java | Frontend/NX | Data |
 |------------------------|------|------|-------------|------|
-| Unit                   | ✔    | ✔    | ✔           | ✔    |
-| Component              | ✔    | ✔    | N/A         | X     |
-| Integration            | ✔    | ✔    | N/A         | X     |
-| Contract               | X    | ✔     | X           | N/A   |
-| Data Validation        | N/A  | N/A   | N/A         | ✔     |
-| Functional             | ✔    | ✔    | ✔           | X     |
-| End-to-end             | N/A*| N/A*| ✔           | ✔    |
-| Linting                | ✔    | ✔    | ✔           | ✔    |
-| Vulnerability Scanning | ✔    | ✔    | ✔           | ✔    |
-| Static code analysis   | ✔    | ✔    | ✔           | ✔    |
-| Security               | ✔    | ✔    | ✔           | ✔    |
-| Performance*         | X    | X     | X           | X     |
+| Unit                   | ✔    | ✔    | ✔          | ✔    |
+| Component              | ✔    | ✔    | N/A        | ✖     |
+| Integration            | ✔    | ✔    | N/A        | ✖     |
+| Contract               | ✔    | ✔     | ✖         | N/A  |
+| Data Validation        | N/A   | N/A   | N/A       | ✔    |
+| Functional             | ✔    | ✔    | ✔          | ✖    |
+| End-to-end             | N/A*  | N/A*| ✔           | ✔    |
+| Linting                | ✔    | ✔    | ✔          | ✔    |
+| Vulnerability Scanning | ✔    | ✔    | ✔          | ✔    |
+| Static code analysis   | ✔    | ✔    | ✔          | ✔    |
+| Security               | ✔    | ✔    | ✔          | ✔    |
+| Performance*           | ✖    | ✖    | ✖          | ✖    |
 
 `*` _Tests are available as a standalone solution that can be applied to the Stack._
 
@@ -81,7 +81,7 @@ The Ensono Stacks Java includes an API testing framework using Serenity BDD and 
 
 #### Contract Testing with Pact
 
-Contract testing ensures that the interactions between services are working as expected. Ensono Stacks uses [Pact](https://docs.pact.io/) for consumer-driven contract testing.  For further information please refer to the [API Contract Testing with Pact](./contract_testing_pact.md) documentation.
+Contract testing ensures that the interactions between services are working as expected. Ensono Stacks uses [Pact](https://docs.pact.io/) for Bi-Directional contract testing.  For further information please refer to the [API Contract Testing with Pact](./contract_testing_pact.md) documentation.
 
 ### Functional Testing
 #### ServiceBus Testing

@@ -213,6 +213,7 @@ module.exports = {
                     ],
                   },
                   "workloads/azure/backend/netcore/testing/functional_testing_netcore",
+                  "workloads/azure/backend/netcore/testing/provider_contract_testing_dotnet",
                   "workloads/azure/backend/netcore/infrastructure_netcore",
                   "workloads/azure/backend/netcore/pipeline_netcore",
                   "workloads/azure/backend/netcore/infrastructure_aws_netcore",
