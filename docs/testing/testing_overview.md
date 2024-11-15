@@ -45,7 +45,7 @@ Examples:
 - [Java stack](https://github.com/Ensono/stacks-java/blob/master/java/src/test/java/com/amido/stacks/workloads/menu/api/v1/CategoryControllerTest.java)
 - [DotNet stack](https://github.com/Ensono/stacks-dotnet/tree/master/src/cqrs/src/api/xxENSONOxx.xxSTACKSxx.API.UnitTests)
 - [Data stack](https://github.com/Ensono/stacks-data/tree/main/tests/unit)
-- [NX plugins](https://github.com/Ensono/stacks-nx-plugins/blob/b4487958f41953b92ffc297ae902a4e92fbe2afd/packages/common/test/src/lib/stacks-attributes.spec.ts)
+- [NX plugins](https://github.com/Ensono/stacks-nx-plugins/blob/main/packages/common/test/src/lib/stacks-attributes.spec.ts)
 
 ### Component Testing
 
