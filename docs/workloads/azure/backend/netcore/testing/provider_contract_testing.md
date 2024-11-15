@@ -19,7 +19,7 @@ keywords:
 
 
 ## Contract Testing the API
-The [.Net WebAPI](../quickstart/web_api/create_project_netcore.md) Stack includes a Provider implementation of Bi-Directional Contract Testing to accelerate teams getting started with contract testing.
+The [Ensono.Stacks.Templates](../../netcore/introduction_netcore) included templates for a [WebAPI](../../netcore/quickstart/web_api/create_project_netcore) and a [WebAPI with CQRS](../../netcore/quickstart/web_api_cqrs/create_project_netcore). Each of these templates will include a Provider implementation of Bi-Directional Contract Testing to accelerate teams getting started with contract testing.
 
 ### What is Bi-Directional Contract Testing
 Bi-Directional Contract Testing is a type of static contract testing where two contracts - one representing consumer expectations, and another representing the provider's capability - are compared to ensure they are compatible.
@@ -41,7 +41,7 @@ The following diagram shows an example flow of a Bi-Directional contract testing
 
 
 ### Getting Started
-When creating a project using the [WebAPI template](../\quickstart\web_api\create_project_netcore.md), the `ci.yml` pipeline will include the steps required for Contract Testing as a provider.
+When creating an API project using the [Ensono.Stacks.Templates](../../netcore/introduction_netcore), the created `ci.yml` pipeline will include the steps required for Contract Testing as a provider.
 
 Within the contract testing steps, there are a number of variables that are required. In order for the pipeline to work as expected, the variable values will need to be updated before executing the pipeline.
 Variables can be found within `./build/azDevOps/azure/ci-vars.yml`
@@ -54,11 +54,14 @@ Variables can be found within `./build/azDevOps/azure/ci-vars.yml`
     value: 'stacks-provider'
   - name: OAS_FILE
     value: ./src/simple-api/contracts/openapi-v1.yaml
+  - name: run_contract_tests
+    value: flag
 ```
 
 - `PACT_BROKER_BASE_URL` needs to be updated to use a new instance of PactFlow. Details on creating a PactFlow instance can be found [here](https://pactflow.io/pricing/).
 - `PACTICIPANT_NAME` should be the name of your application
 - `OAS_FILE` is the relative path to the generated OpenAPI specification
+- `run_contract_tests` is a flag to enable/disable all contract testing steps. This is false by default and should only be set to true once users have a new PactFlow instance.
 
 In addition to these variables, the pipeline steps require a `PACT_BROKER_TOKEN`. This is a secret value and should be added to your pipeline as a secret environment variable.
 You can get the value of this from within the Settings of your PactFlow broker instance.
@@ -70,6 +73,7 @@ In order to publish Pacts, we need to first install the Docker image. Once we ha
 ```yaml
           - task: Bash@3
             displayName: 'Contract Tests: Pull Pact CLI Docker image'
+            condition: eq(variables.run_contract_test, true)
             inputs:
               targetType: inline
               script: |
@@ -77,6 +81,7 @@ In order to publish Pacts, we need to first install the Docker image. Once we ha
 
           - task: Bash@3
             displayName: 'Contract Tests: Publish OpenAPI spec to PactFlow'
+            condition: eq(variables.run_contract_test, true)
             inputs:
               targetType: inline
               script: |
@@ -106,8 +111,19 @@ When the pact is being published, attributes including the branch name, version 
 
 #### Execute `can-i-deploy`
 `can-i-deploy` is a command provided by PactFlow that checks the state of relationships between consumers and providers registered in PactFlow. If the contracts are compatible, `can-i-deploy` will succeed, otherwise it will return a failure.
+The docker image needs to be pulled here again as this is executed on a new build agent within Azure DevOps.
 
 ```yaml
+      - job: canideploy_dev
+        condition: eq(variables.run_contract_test, true)
+        steps:
+          - task: Bash@3
+            displayName: 'Pull Pact CLI Docker image'
+            inputs:
+              targetType: inline
+              script: |
+                docker pull pactfoundation/pact-cli:latest
+
           - task: Bash@3
             displayName: 'Contract Tests: can-i-deploy to dev'
             inputs:
@@ -131,7 +147,7 @@ After we have deployed our API (with a new OpenAPI specification version), we ne
 ```yaml
                 - task: Bash@3
                   displayName: 'Contract Tests: Record-deployment to dev'
-                  condition: succeeded()
+                  condition: and(succeeded(), eq(variables.run_contract_test, true))
                   inputs:
                     targetType: inline
                     script: |
