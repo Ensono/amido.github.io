@@ -18,7 +18,7 @@ import ResponsivePlayer  from "../../../../../src/components/ResponsivePlayer/Re
 
 The pipeline will automate provisioning and updating the .NET REST API with CQRS infrastructure in Azure.
 
-<ResponsivePlayer url='https://www.youtube.com/watch?v=G8FW-djEDDY' />
+<ResponsivePlayer url='https://www.youtube.com/watch?v=6ND-8YVohT4' />
 
 ## Pipeline Diagram
 
