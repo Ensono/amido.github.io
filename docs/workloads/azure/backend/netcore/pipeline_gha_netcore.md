@@ -14,8 +14,11 @@ keywords:
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import ResponsivePlayer  from "../../../../../src/components/ResponsivePlayer/ResponsivePlayer";
 
 The pipeline will automate provisioning and updating the .NET REST API with CQRS infrastructure in AWS. 
+
+<ResponsivePlayer url='https://www.youtube.com/watch?v=G8FW-djEDDY' />
 
 ## Pipeline Diagram
 
