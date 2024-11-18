@@ -42,6 +42,7 @@ This summary outlines key areas of testing integrated within Ensono Stacks as we
 
 All of our Stacks come with Unit testing built in. This ensures that each individual unit (function/method) works in isolation.
 Examples:
+
 - [Java stack](https://github.com/Ensono/stacks-java/blob/master/java/src/test/java/com/amido/stacks/workloads/menu/api/v1/CategoryControllerTest.java)
 - [DotNet stack](https://github.com/Ensono/stacks-dotnet/tree/master/src/cqrs/src/api/xxENSONOxx.xxSTACKSxx.API.UnitTests)
 - [Data stack](https://github.com/Ensono/stacks-data/tree/main/tests/unit)
@@ -52,6 +53,7 @@ Examples:
 Our .Net and Java Stacks come with Component testing built in. Components tests take the individual component (I.e. Service bus implementation, API, Function App, etc.) and test it as a whole in a white box format. All external dependencies are mocked.
 This allows us to ensure that, before deployment, our component is functioning as expected in isolation, reducing the risk of deployment and liklihood that post-deployment issues are due to this components functionality.
 Examples:
+
 - [Java stack](https://github.com/Ensono/stacks-java/blob/master/java/src/test/java/com/amido/stacks/workloads/actuator/ActuatorTest.java)
 - [DotNet stack](https://github.com/Ensono/stacks-dotnet/tree/master/src/cqrs/src/api/xxENSONOxx.xxSTACKSxx.API.ComponentTests)
 
@@ -111,6 +113,7 @@ Ensono Stacks .NET includes unit and integration tests for CosmosDB operations t
 ### SonarCloud
 
 Ensono Stacks integrates with SonarCloud for our Static Code Analysis. This analysis includes scans for:
+
 - Security
 - Reliability
 - Maintainability
