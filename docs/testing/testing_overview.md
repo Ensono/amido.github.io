@@ -16,11 +16,47 @@ keywords:
 
 Building testing frameworks from scratch requires a lot of boilerplate code. It is also hard to know how to get started without examples.
 
-To ensure the quality and reliability of your software projects, Ensono Stacks includes a range of integrated testing frameworks. These frameworks are designed to be easily bootstrapped and customized to fit your specific project needs.  
+To ensure the quality and reliability of your software projects, Ensono Stacks includes a range of integrated testing frameworks. These frameworks are designed to be easily bootstrapped and customized to fit your specific project needs. The tests integrated within each stack is summarised in this table:
+| Testing Type           | .Net | Java | Frontend/NX | Data |
+|------------------------|------|------|-------------|------|
+| Unit                   | ✔    | ✔    | ✔          | ✔    |
+| Component              | ✔    | ✔    | N/A        | ✖     |
+| Integration            | ✔    | ✔    | N/A        | ✖     |
+| Contract               | ✔    | ✔     | ✖         | N/A  |
+| Data Validation        | N/A   | N/A   | N/A       | ✔    |
+| Functional             | ✔    | ✔    | ✔          | ✖    |
+| End-to-end             | N/A*  | N/A*| ✔           | ✔    |
+| Linting                | ✔    | ✔    | ✔          | ✔    |
+| Vulnerability Scanning | ✔    | ✔    | ✔          | ✔    |
+| Static code analysis   | ✔    | ✔    | ✔          | ✔    |
+| Security               | ✔    | ✔    | ✔          | ✔    |
+| Performance*           | ✖    | ✖    | ✖          | ✖    |
+
+`*` _Tests are available as a standalone solution that can be applied to the Stack._
 
 ## Types of Testing
 
-This summary outlines key areas of testing included in the Ensono Stacks.
+This summary outlines key areas of testing integrated within Ensono Stacks as well as some standalone solutions for testing Stacks applications.
+
+### Unit Testing
+
+All of our Stacks come with Unit testing built in. This ensures that each individual unit (function/method) works in isolation.
+Examples:
+
+- [Java stack](https://github.com/Ensono/stacks-java/blob/master/java/src/test/java/com/amido/stacks/workloads/menu/api/v1/CategoryControllerTest.java)
+- [DotNet stack](https://github.com/Ensono/stacks-dotnet/tree/master/src/cqrs/src/api/xxENSONOxx.xxSTACKSxx.API.UnitTests)
+- [Data stack](https://github.com/Ensono/stacks-data/tree/main/tests/unit)
+- [NX plugins](https://github.com/Ensono/stacks-nx-plugins/blob/main/packages/common/test/src/lib/stacks-attributes.spec.ts)
+
+### Component Testing
+
+Our .Net and Java Stacks come with Component testing built in. Components tests take the individual component (I.e. Service bus implementation, API, Function App, etc.) and test it as a whole in a white box format. All external dependencies are mocked.
+This allows us to ensure that, before deployment, our component is functioning as expected in isolation, reducing the risk of deployment and liklihood that post-deployment issues are due to this components functionality.
+Examples:
+
+- [Java stack](https://github.com/Ensono/stacks-java/blob/master/java/src/test/java/com/amido/stacks/workloads/actuator/ActuatorTest.java)
+- [DotNet stack](https://github.com/Ensono/stacks-dotnet/tree/master/src/cqrs/src/api/xxENSONOxx.xxSTACKSxx.API.ComponentTests)
+
 
 ### Performance Testing
 
@@ -49,9 +85,11 @@ The Ensono Stacks Java includes an API testing framework using Serenity BDD and 
 
 #### Contract Testing with Pact
 
-Contract testing ensures that the interactions between services are working as expected. Ensono Stacks uses [Pact](https://docs.pact.io/) for consumer-driven contract testing.  For further information please refer to the [API Contract Testing with Pact](./contract_testing_pact.md) documentation.
+Contract testing ensures that the interactions between services are working as expected. Ensono Stacks uses [Pact](https://docs.pact.io/) for Bi-Directional contract testing.  For further information please refer to the [API Contract Testing with Pact](./contract_testing_pact.md) documentation.
 
-### ServiceBus Testing
+### Functional Testing
+
+#### ServiceBus Testing
 
 Ensono Stacks .NET includes comprehensive functional and unit tests for ServiceBus operations to ensure the correct handling of topics, queues, and messages.  
 
@@ -64,7 +102,7 @@ Functional tests can be found in the GitHub repository folder [here](https://git
 - Reading messages from the queue
 - Clearing messages from the queue
 
-### CosmosDB Testing
+#### CosmosDB Testing
 
 Ensono Stacks .NET includes unit and integration tests for CosmosDB operations to ensure correct data handling and repository functionality. These include:
 
@@ -72,6 +110,20 @@ Ensono Stacks .NET includes unit and integration tests for CosmosDB operations t
 
 - Integration tests for CosmosDB Document Storage, validating communication with CosmosDB, data encoding/decoding, and various search operations, including tests for single/multiple fields, ordering, partition keys, and SQL queries.  The integration tests are in the repository folder [here](https://github.com/Ensono/stacks-dotnet/tree/master/src/cqrs/src/api/xxENSONOxx.xxSTACKSxx.Infrastructure.IntegrationTests/CosmosDb/Integration). 
 
+### SonarCloud
+
+Ensono Stacks integrates with SonarCloud for our Static Code Analysis. This analysis includes scans for:
+
+- Security
+- Reliability
+- Maintainability
+- Test coverage
+- Duplicated code
+- Coding standards
+
+### Infrastructure Testing
+
+Within the AKS infrastructure, there is a suite of [infrastructure tests](https://github.com/Ensono/stacks-infrastructure-aks/tree/master/deploy/tests) using the tool [InSpec](https://github.com/inspec/inspec). These tests check the expected state of resources deployed into Azure to ensure the quality of the infrastructure that our Stacks applications are deploy to.
 
 ## Getting Started
 
