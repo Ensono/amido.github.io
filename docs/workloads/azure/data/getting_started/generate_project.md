@@ -19,7 +19,11 @@ It assumes the following [pre-requisites](./requirements_data_azure.md) are in p
 * A [remote git repository](./requirements_data_azure.md#git-repository) for hosting the generated project
 * A [storage account](./requirements_data_azure.md#terraform-state-storage) for the Terraform state
 
-For more information on the pre-requisites, see [here](./requirements_data_azure.md).
+:::tip
+
+See more information on the [pre-requisites] for generating Stacks Data Platform.
+
+:::
 
 ## Step 1: Install the Ensono Stacks CLI
 
