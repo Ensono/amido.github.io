@@ -1,20 +1,35 @@
-= Create REST API project
-:description: Create .NET Core REST API application from a template
-:keywords: .net core, rest api, example, template, azure, application insights, build, run, application, configure, docker, tests, github
+---
+id: create_project_netcore
+title: Create REST API project
+linkTitle: Create REST API project
+weight: 1
+keywords:
+  - .net core
+  - rest api
+  - example
+  - template
+  - azure
+  - application insights
+  - build
+  - run
+  - application
+  - configure
+  - docker
+  - tests
+  - github
+---
 
 == Create a project using the Nuget template package
 
 === Install the package
 
-.NET 3.1 templates have been deprecated. If you want to use the 3.1 templates the latest version is https://www.nuget.org/packages/Amido.Stacks.Templates/3.0.232[3.0.232]
-
-Access Amido.Stacks.Templates package page in Nuget https://www.nuget.org/packages/Amido.Stacks.Templates/[here]. Copy and execute the command displayed in the page (if you want to get the latest version). For example:
+Access Ensono.Stacks.Templates package page in Nuget https://www.nuget.org/packages/Amido.Stacks.Templates/[here]. Copy and execute the command displayed in the page (if you want to get the latest version). For example:
 
 
 .Run the command to install the package
 [source, bash]
 ----
-dotnet new --install Amido.Stacks.Templates
+dotnet new install Ensono.Stacks.Templates
 ----
 
 === Create a new  project
@@ -24,7 +39,7 @@ Navigate to the folder where you wish to create a new project in.
 .Run the command to create the project
 [source, bash]
 ----
-dotnet new stacks-webapi -n Company.Project -do YourDomain -cp AzureCloud
+dotnet new stacks-webapi -n Company.Project -do YourDomain --cloudProvider Azure
 ----
 
 The above command will create a folder and a repository called `Company.Project` with DevOps build pipelines ready for Azure DevOps.
@@ -34,7 +49,7 @@ The above command will create a folder and a repository called `Company.Project`
 .To uninstall the template pack you have to execute the following command
 [source, bash]
 ----
-dotnet new --uninstall Amido.Stacks.Templates
+dotnet new uninstall Ensono.Stacks.Templates
 ----
 
 [] 
@@ -52,7 +67,7 @@ Template parameter details
     - Sets the path to where the project is added
     - Omitting the parameter will result in the creation of a new folder
 
-.**-cp|--cloudProvider**
+.**--cloudProvider**
     - Configures which cloud provider to be used
 
 .**-cicd|--cicdProvider**

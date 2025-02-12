@@ -1,10 +1,9 @@
 permissions:
   contents: write
 name: stacks.website
-on: 
+on:
   push:
-    branches: 
-      master
+    branches: master
 jobs:
   build:
     name: Install packages and build application
@@ -15,7 +14,7 @@ jobs:
       - name: Use NodeJS
         uses: actions/setup-node@v3
         with:
-          node-version: 16.14.x
+          node-version: 18.x
       - name: Install Dependencies
         run: npm install
       - name: Build application

@@ -1,4 +1,24 @@
-= Running API tests with Serenity
+---
+id: execute_serenity_api_tests
+title: Running API tests with Serenity
+linkTitle: REST API testing with Serenity
+weight: 2
+keywords:
+  - java
+  - rest 
+  - api
+  - serenity
+  - serenity bdd
+  - rest assured
+  - run serenity tests
+  - serenity test example
+  - test runner
+  - serenity test report
+  - execute parallel tests
+  - framework
+  - testing
+  - test
+---
 
 link:https://serenity-bdd.github.io/theserenitybook/latest/index.html[Serenity BDD] is an open-source library that aims to make the idea of living documentation a reality. It also uses the test results to produce illustrated, narrative reports that document and describe what your application does and how it works.
 

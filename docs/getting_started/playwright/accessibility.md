@@ -1,5 +1,6 @@
 <!-- markdownlint-disable MD041 -->
-### @ensono-stacks/playwright:accessibility
+
+### @ensono-stacks/playwright:accessibility {#ensono-stacks-playwright-accessibility}
 
 <details>
 <summary>Adds axe accessibility tests to your test project</summary>
@@ -16,9 +17,9 @@ nx g @ensono-stacks/playwright:accessibility
 
 The following command line arguments are available:
 
-| Option                | Description                                                       | Type      | 
-| ---------------       | --------------------------------------------------------------    | ---       | 
-| --project -p             | The name of the test project to add accessibility tests to       | string  | 
+| Option       | Description                                                | Type   |
+| ------------ | ---------------------------------------------------------- | ------ |
+| --project -p | The name of the test project to add accessibility tests to | string |
 
 ### Generator Output
 

@@ -10,34 +10,38 @@ keywords:
   - great expectations
 ---
 
-Ensono Stacks data workloads can be deployed with additional Data Quality checks. These checks validate that the outputs of
+Ensono Stacks data workloads can be deployed with additional data quality checks. These checks validate that the outputs of
 a data pipeline meet specified requirements, expressed in a simple, human-readable language. It allows
 you to assert expectations about your data, which can help catch any discrepancies, anomalies, or
 errors in your data as early in the pipeline as possible.
 
-Data Quality checks are executed as Python Databricks jobs with the quality validation logic
-packaged within our [Datastacks](./datastacks.md) library.
-Internally, Datastacks leverages the capabilities of the [Great Expectations](https://greatexpectations.io/)
-library, an open-source Python-based library, to perform these checks.
+Data quality checks are executed as Python Databricks jobs with the quality validation logic
+packaged within the [Stacks Data library](./stacks_data_utilities.md).
+Internally, this leverages the capabilities of the [Great Expectations](https://greatexpectations.io/)
+library, an open-source Python library, to perform these checks.
 
-The design of the Data Quality processing is outlined in the following diagram.
+The design of the data quality processing is outlined in the following diagram.
 
 ![ADF_Ingest_AzureSql_Example_DQ.png](../images/ADF_DataQualityDesign.png)
 
 
-## ADF Pipelines with DQ
+## Data pipelines with quality checks
 
-### Ingest
+Both [data ingest](./ingest_data_azure.md) and [data processing](./data_processing.md) pipelines may be generated with a data quality step - see [generating data workloads](./datastacks.md#generating-data-workloads) for details.
+
+The generated workloads will contain a Python script within `spark_jobs/data_quality.py`. This script will be executed via a Databricks Python activity in Data Factory. The script gets uploaded to DBFS (`dbfs:/FileStore/scripts/pipeline_name/data_quality.py`) as part of the deployment pipeline, so it is accessible to Databricks.
+
+### Ingest pipeline example
 
 ![ADF_Ingest_AzureSql_Example_DQ.png](../images/ADF_Ingest_AzureSql_Example_DQ.png)
 
-### Silver
+### Processing pipeline example
 
 ![ADF_silver_dq.png](../images/ADF_silver_dq.png)
 
-## Usage
+## Interactive usage
 
-To perform data quality checks against a workload interactively, you can use the [Datastacks](./datastacks.md) CLI. Note, this also requires that the [Datastacks PySpark environment variables](./pyspark_utilities.md#prerequisites) are set:
+You can use the [Datastacks CLI](./datastacks.md) to perform data quality checks against a workload interactively. Note, this requires that the [Azure environment variables](./stacks_data_utilities.md#azure-environment-variables) are set:
 
 ```bash
 datastacks dq --help
@@ -50,10 +54,8 @@ datastacks dq --config-path "ingest/ingest_azure_sql_example/data_quality/ingest
 
 ## JSON Configuration File for Great Expectations
 
-This section describes the structure of the JSON configuration file used in our system.
+This section describes the structure of the JSON configuration file used for the data quality process.
 The configuration is defined using Python's Pydantic library for data validation.
-
-Here is the description of the main elements:
 
 1. `gx_directory_path`: Path to the Great Expectations metadata store.
 2. `dataset_name`: Name of the dataset that is being processed.
@@ -79,7 +81,7 @@ Here is the description of the main elements:
 
 ### Using environment variables in configuration files
 
-It is possible to use environment variables in a configuration file for Data Quality.
+It is possible to use environment variables in a configuration file for data quality.
 Placeholders in the form of `{ENV_VAR_NAME}` will be replaced with the corresponding environment
 variable values. For example, you can pass the ADLS name using an environment variable:
 
@@ -121,7 +123,7 @@ Here's a minimal example of a configuration file:
 }
 ```
 
-## Validation Results
+## Validation results
 
 Results of the data quality checks are stored in the `dq_output_path` location in Delta tables. Their names follow the format `{datasource_name}_dq`, e.g. `movies.movies_metadata_dq`. The results contain the following columns:
 

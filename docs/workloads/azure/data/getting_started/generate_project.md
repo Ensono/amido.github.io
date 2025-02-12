@@ -12,12 +12,14 @@ keywords:
   - template
 ---
 
-This section provides an overview of scaffolding and generating a new Data Platform project using the [Ensono Stacks CLI](/docs/stackscli/about).
+This section provides an overview of scaffolding and generating a new data platform project using the [Ensono Stacks CLI](/docs/stackscli/about).
 
-It assumes the following [requirements](./requirements_data_azure.md) are in place:
+It assumes the following [pre-requisites](./requirements_data_azure.md) are in place:
 
 * A [remote git repository](./requirements_data_azure.md#git-repository) for hosting the generated project
-* [Terraform state storage](./requirements_data_azure.md#terraform-state-storage)
+* A [storage account](./requirements_data_azure.md#terraform-state-storage) for the Terraform state
+
+For more information on the pre-requisites, see [here](./requirements_data_azure.md).
 
 ## Step 1: Install the Ensono Stacks CLI
 
@@ -30,20 +32,20 @@ We will be using the `stacks-cli scaffold` command to generate a new data projec
 
 A [sample data project config file](https://github.com/Ensono/stacks-azure-data/blob/main/stacks-cli/data-scaffold-example.yml) is provided. Prepare a copy of this file, and update the following entries as required for your new project:
 
-| Config field | Example value | Description |
-| ----- | ----- | ----- |
-| directory.working | `stacks` | Target directory for the scaffolded project. |
-| directory.export | `~` | Path to your Ensono Stacks CLI installation. |
-| business.company | `mycompany` | Used for resource naming. |
-| business.domain | `mydomain` | Used for environment & Terraform state key naming. |
-| business.component | `data` | Used for resource naming. |
-| project.name | `stacks-data-platform` | Name of project created & used for resource naming. |
-| project.sourcecontrol.type | `github` | Remote repository type. |
-| project.sourcecontrol.url | `https://github.com/mycompany/stacks-data-platform` | Used for setting up the remote repository - see [Git repository](./requirements_data_azure.md#git-repository). |
-| project.cloud.region | `ukwest` | The Azure region you'll be deploying into. Using the Azure CLI, you can use `az account list-locations -o Table` to see available region names. |
-| terraform.backend.storage | `tfstorage` | Storage account name for Terraform state - see [Terraform state storage](./requirements_data_azure.md#terraform-state-storage). |
-| terraform.backend.group | `tfgroup` | Resource group account name for Terraform state. |
-| terraform.backend.container | `tfcontainer` | Container name account name for Terraform state. |
+| Config field                | Example value                                       | Description                                                                                                                                     |
+|-----------------------------|-----------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------|
+| directory.working           | `stacks`                                            | Target directory for the scaffolded project.                                                                                                    |
+| directory.export            | `~`                                                 | Path to your Ensono Stacks CLI installation.                                                                                                    |
+| business.company            | `mycompany`                                         | Used for resource naming.                                                                                                                       |
+| business.domain             | `mydomain`                                          | Used for environment & Terraform state key naming.                                                                                              |
+| business.component          | `data`                                              | Used for resource naming.                                                                                                                       |
+| project.name                | `stacks-data-platform`                              | Name of project created & used for resource naming.                                                                                             |
+| project.sourcecontrol.type  | `github`                                            | Remote repository provider, e.g. GitHub or Azure DevOps.                                                                                        |
+| project.sourcecontrol.url   | `https://github.com/mycompany/stacks-data-platform` | Used for setting up the remote repository - see [Git repository](./requirements_data_azure.md#git-repository).                                  |
+| project.cloud.region        | `ukwest`                                            | The Azure region you'll be deploying into. Using the Azure CLI, you can use `az account list-locations -o Table` to see available region names. |
+| terraform.backend.storage   | `tfstorage`                                         | Storage account name for Terraform state - see [Terraform state storage](./requirements_data_azure.md#terraform-state-storage).                 |
+| terraform.backend.group     | `tfgroup`                                           | Resource group name for Terraform state.                                                                                                        |
+| terraform.backend.container | `tfcontainer`                                       | Storage container name for Terraform state.                                                                                                     |
 
 All other values can be left as they are. For full documentation of all fields in the config file, refer to the Stacks CLI Manual.
 

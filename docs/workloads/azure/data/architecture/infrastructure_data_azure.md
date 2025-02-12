@@ -60,10 +60,10 @@ The `infra` subfolder contains the following definitions:
 
 ## Networking
 
-Using a private network is the default behaviour in Ensono Stacks Azure Data Platform. `networking`
+Using a private network is the default behaviour in the Ensono Stacks Data Azure Platform. The `networking`
 subfolder contains configurations for the created network and subnetworks, at its core using
 [azurerm-hub-spoke](https://github.com/ensono/stacks-terraform/tree/master/azurerm/modules/azurerm-hub-spoke)
-Ensono Stacks Terraform module.  See [Microsoft documentation](https://learn.microsoft.com/en-us/azure/architecture/reference-architectures/hybrid-networking/hub-spoke?tabs=cli) for more details on implementing Hub-spoke network topology in Azure.
+Ensono Stacks Terraform module. See [Microsoft documentation](https://learn.microsoft.com/en-us/azure/architecture/reference-architectures/hybrid-networking/hub-spoke?tabs=cli) for more details on implementing Hub-spoke network topology in Azure.
 
 The following diagram shows network configuration for the two default environments:
 

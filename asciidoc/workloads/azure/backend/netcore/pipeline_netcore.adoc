@@ -1,7 +1,19 @@
-= .NET Core - Azure DevOps Pipeline
-:imagesdir: ../../../../../static/img
-:description: How to configure Azure DevOps Pipeline for .NET Core
-:keywords: .net core, azure devops, configure, pipeline, setting up, template, build
+---
+id: pipeline_netcore
+title: .NET Core - Azure DevOps Pipeline
+linkTitle: Pipeline
+weight: 7
+keywords:
+  - .net core
+  - azure devops
+  - configure
+  - pipeline
+  - setting up
+  - template
+  - build
+---
+
+:imagesdir: ../../../../../images
 
 The pipeline will automate provisioning and updating the .NET Core REST API with CQRS infrastructure in Azure.
 

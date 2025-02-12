@@ -1,6 +1,18 @@
-= Requirements
-:description: Requirements for getting started with the Java Rest API application
-:keywords: java, rest , api, application, spring boot, swagger, settings, get started
+---
+id: requirements_java
+title: Requirements
+linkTitle: Requirements
+weight: 2
+keywords:
+  - java
+  - rest 
+  - api
+  - application
+  - spring boot
+  - swagger
+  - settings
+  - get started
+---
 
 == Requirements for running the API locally
 
@@ -11,7 +23,7 @@
 [discrete]
 ==== Mandatory
 
-- https://adoptopenjdk.net/[Install Java 11] and set JAVA_HOME environment variable to the directory java is installed and make sure MAVEN_HOME environment variable is not set
+- https://cdn.azul.com/zulu/bin/zulu17.52.17-ca-jdk17.0.12-win_x64.zip[Install Java 17] and set JAVA_HOME environment variable to the directory java is installed and make sure MAVEN_HOME environment variable is not set
 
 - https://aka.ms/cosmosdb-emulator[CosmosDB Emulator 2.4.5+]
 
@@ -34,22 +46,22 @@
 
 - homebrew
 - azure-cli: `brew install azure-cli`
-- https://adoptopenjdk.net/releases.html[Install Java 11:] 
+- https://www.azul.com/downloads/?package=jdk#zulu[Install Java 17:]
 
 ----
-$ wget https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.9%2B11.1/OpenJDK11U-jdk_x64_mac_hotspot_11.0.9_11.tar.gz
+$ wget https://cdn.azul.com/zulu/bin/zulu17.52.17-ca-jdk17.0.12-macosx_aarch64.tar.gz
 ----
 
 - Move to the folder where you downloaded the file and extract it:
 
 ----
-$ tar -xf OpenJDK11U-jdk_x64_mac_hotspot_11.0.9_11.tar.gz
+$ tar -xf zulu17.52.17-ca-jdk17.0.12-macosx_aarch64.tar.gz
 ----
 
-- Add JAVA to you path:
+- Add JAVA to your path:
 
 ----
-export PATH=$PWD/OpenJDK11U-jdk_x64/Contents/Home/bin:$PATH
+export PATH=$PWD/zulu17.52.17-ca-jdk17.0.12/Contents/Home/bin:$PATH
 ----
 
 - An IDE
@@ -67,7 +79,7 @@ export PATH=$PWD/OpenJDK11U-jdk_x64/Contents/Home/bin:$PATH
 
 [NOTE]
 ----
-The current version of Ensono Stacks is using Java 11 (Current LTS, recommended).
+The current version of Ensono Stacks is using Java 17 (Current LTS, recommended).
 ----
 
 ====

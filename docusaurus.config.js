@@ -2,7 +2,7 @@
 // Note: type annotations allow type checking and IDEs autocompletion
 
 const remarkImages = require('remark-images');
-const rehypeTruncate = require('rehype-truncate');
+const {themes} = require('prism-react-renderer');
 
 require('dotenv').config();
 /** @type {import('@docusaurus/types').Config} */
@@ -17,7 +17,7 @@ const config = {
   onBrokenLinks: "warn",
   favicon: "img/icons/favicon.ico",
   organizationName: "Ensono", // Usually your GitHub org/user name.
-  projectName: "Ensono Stacks", // Usually your repo name.
+  projectName: "amido.github.io", // Usually your repo name.
   customFields: {
     description: 'Ensono Stacks is a catalogue of workload templates that\n' +
         'instantly scaffold and deploy boilerplate software projects. Slash the time it takes to get productive on your software project.',
@@ -38,15 +38,12 @@ const config = {
       "Serenity",
       "BDD",
       "JUnit",
-      "Karate",
       "REST",
       "Rest Assured",
       "Jest",
       "Gatling",
-      "TestCafe",
       "Google Lighthouse",
       "Applitools",
-      "Cypress",
       "OWASP",
     ],
     docSearch: {
@@ -60,8 +57,8 @@ const config = {
       disableSwitch: true,
     },
     prism: {
-      theme: require('prism-react-renderer/themes/github'),
-      darkTheme: require('prism-react-renderer/themes/vsDark'),
+      theme: themes.github,
+      darkTheme: themes.vsDark,
       additionalLanguages: ['csharp', 'docker', 'powershell', 'java', 'bash', 'json'],
     },
     navbar: {
@@ -137,8 +134,7 @@ const config = {
       {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          remarkPlugins: [remarkImages],
-          rehypePlugins: [rehypeTruncate],
+            remarkPlugins: [remarkImages],
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css")

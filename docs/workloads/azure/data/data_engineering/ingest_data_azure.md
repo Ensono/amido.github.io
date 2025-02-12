@@ -19,7 +19,7 @@ Data ingest workloads in Ensono Stacks are jobs which:
 Data ingest workloads utilise [Azure Data Factory's inbuilt connectors](https://learn.microsoft.com/en-us/azure/data-factory/connector-overview) and [Copy activity](https://learn.microsoft.com/en-us/azure/data-factory/copy-activity-overview), to give the ability to easily ingest data from a wide range of data sources. The ingest process is designed around reusable, metadata-driven pipelines. This means once
 an initial data pipeline is created for a given data source, additional entities from the same data source can be added or modified just by updating a configuration file.
 
-Data ingest workloads may also optionally include a [Data Quality validations](./data_quality_azure.md) step, executed in Databricks.
+Data ingest workloads may also optionally include a [data quality validations](./data_quality_azure.md) step, executed in Databricks.
 
 The solution contains the following example data ingest workload:
 
@@ -130,8 +130,8 @@ The pipelines folder is structured as follows:
 - `Ingest` contains ingest pipelines specific to the given data source. The naming convention for
 these pipelines is `Ingest_{SourceType}_{SourceName}`. These are the parent pipelines that would be
 triggered on a recurring basis to ingest from a data source. All pipelines have their equivalents
-that include Data Quality validations. Depending on your particular needs, you can deploy each of
-the pipelines with or without this additional Data Quality step. [Further information on Data Quality](data_quality_azure.md).
+that include data quality validations. Depending on your particular needs, you can deploy each of
+the pipelines with or without this additional data quality step. [Further information on data quality](data_quality_azure.md).
 - The pipelines within `Utilities` are reusable and referenced by other pipelines. They are not
 meant to be triggered independently. These are defined within the [shared_resources](https://github.com/ensono/stacks-azure-data/tree/main/de_workloads/shared_resources) for the project.
 

@@ -1,7 +1,17 @@
-= Cosmos DB Emulator
-:description: How to set up the Cosmos DB Emulator
-:imagesdir: ../../../../../static/img
-:keywords: cosmos db, emulator , settings, template, certificate
+---
+id: setting_up_cosmos_db_locally_java
+title: Cosmos DB Emulator
+linkTitle: Cosmos DB Emulator
+weight: 3
+keywords:
+  - cosmos db
+  - emulator 
+  - settings
+  - template
+  - certificate
+---
+
+:imagesdir: ../../../../../images
 
 == Set up Cosmos DB Emulator locally
 

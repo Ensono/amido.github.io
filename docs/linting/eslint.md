@@ -21,7 +21,7 @@ By using code linting tools, development teams can catch errors early, maintain 
 
 :::info
 
-Linting tools in Ensono Stacks are setup and configured by the [@ensono-stacks/workspace:init](/docs/getting_started/workspace/ensono-stacks-workspace#ensono-stacksworkspaceinit) generator. Linting in CI/CD is configured by the [@ensono-stacks/workspace:init-deployment](/docs/getting_started/workspace/ensono-stacks-workspace#ensono-stacksworkspaceinit-deployment) generator.
+Linting tools in Ensono Stacks are setup and configured by the [@ensono-stacks/workspace:init](/docs/getting_started/workspace/ensono-stacks-workspace#ensono-stacksworkspace) generator.
 
 :::
 

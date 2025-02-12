@@ -1,8 +1,22 @@
-= Configure Swagger UI
-:imagesdir: ../../../../../../../static/img
-:doctype: book
-:keywords: .net core, stacks, swagger, swagger ui, registration, controller, configuration, dotnet, tests, rest api
+---
+id: configure_swagger_ui_netcore
+title: Configure Swagger UI
+linkTitle: Swagger UI
+weight: 2
+keywords:
+  - .net core
+  - rest api
+  - tests 
+  - stacks
+  - swagger
+  - swagger ui
+  - registration
+  - controller
+  - configuration
+  - dotnet
+---
 
+:imagesdir: ../../../../../../../images
 
 == Configure the Swagger UI.Interface to consume the generated documents
 

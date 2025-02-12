@@ -1,7 +1,24 @@
-= Java Rest API Architecture
-:imagesdir: ../../../../../../../static/img
-:description: Spring Boot Rest API Architecture
-:keywords: java, rest, api, architecture, spring boot, cqrs, event, controller, logs, monitoring, query service, repository ,azure cosmos db, event handler, event listener, event dispatcher, authorisation
+---
+id: structure_java_cqrs
+title: Java Rest API Structure
+linkTitle: Project structure
+weight: 2
+keywords:
+  - java
+  - rest 
+  - api
+  - project
+  - overview
+  - configuration
+  - logging
+  - application insights
+  - swagger
+  - authorisation
+  - settings
+  - cqrs
+---
+
+:imagesdir: ../../../../../../../images
 
 == Spring Boot Rest API Architecture
 

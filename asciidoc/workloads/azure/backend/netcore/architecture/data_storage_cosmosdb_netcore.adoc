@@ -1,4 +1,28 @@
-= Data Storage - CosmosDB
+---
+id: data_storage_cosmosdb_netcore
+title: Data Storage - CosmosDB
+linkTitle: Data Storage - CosmosDB
+weight: 4
+keywords:
+  - .net core
+  - rest api
+  - cqrs
+  - template 
+  - cosmos 
+  - cosmosdb 
+  - data storage 
+  - azure 
+  - storage 
+  - configuration 
+  - cosmosdbkey
+  - documentsearch
+  - sql
+  - api
+  - repository
+  - cosmosdb package
+  - dependency injection
+  - stacks
+---
 
 == Summary
 
@@ -30,11 +54,11 @@ Azure CosmosDB provides a reliable SDK to communicate with the CosmosDB server, 
 
 This package provides a single data access layer implementation that is simple and reusable by multiple services, reducing the amount of boilerplate code and keeping a consistent and well-tested library.
 
-The solution is split into two packages: *Amido.Stacks.Data.Documents* and *Amido.Stacks.Data.Documents.CosmosDB*.
+The solution is split into two packages: *Ensono.Stacks.Data.Documents* and *Ensono.Stacks.Data.Documents.CosmosDB*.
 
 === Document Storage
 
-Package *Amido.Stacks.Data.Documents* contains the interface contracts for data access layers. It defines the operations available and decouples the contracts from the implementation. In the future, if the company decides to use other solutions like MongoDB, Cassandra, or similar, it will be easy to switch between servers without changing the code in services consuming it.
+Package *Ensono.Stacks.Data.Documents* contains the interface contracts for data access layers. It defines the operations available and decouples the contracts from the implementation. In the future, if the company decides to use other solutions like MongoDB, Cassandra, or similar, it will be easy to switch between servers without changing the code in services consuming it.
 
 The contracts are defined by two interfaces: *IDocumentStorage* and *IDocumentSearch*:
 
@@ -69,11 +93,11 @@ The operations were decoupled into two interfaces to:
 
 *It is expected that the implementations of these interfaces are reused between requests; therefore, they will be registered as singletons to improve performance.*
 
-Applications using Document Storage do not need to be aware of the implementations. You should only need the *Amido.Stacks.Data.Documents* namespace where it is being used. Doing so will make it easier to mock DB dependencies when doing unit tests.
+Applications using Document Storage do not need to be aware of the implementations. You should only need the *Ensono.Stacks.Data.Documents* namespace where it is being used. Doing so will make it easier to mock DB dependencies when doing unit tests.
 
 === CosmosDB Package
 
-The CosmosDB implementation of the document storage is called *CosmosDbDocumentStorage* and is available in the package *Amido.Stacks.Data.Documents.CosmosDB*.
+The CosmosDB implementation of the document storage is called *CosmosDbDocumentStorage* and is available in the package *Ensono.Stacks.Data.Documents.CosmosDB*.
 
 The package makes use of the CosmosDB SDK v3, which contains a few improvements compared to the previous version. One notable improvement is the simplicity in the available interfaces. For more details, please check the announcements link:https://azure.microsoft.com/en-gb/blog/azure-cosmos-dotnet-sdk-version-3-0-now-in-public-preview/[here].
 
@@ -135,7 +159,7 @@ Because document stores require a partition key to persist the data, it is requi
 
 === Dependency Injection
 
-In order to use the right implementation, we need to inject the dependencies into the IoC container before the application starts. The CosmosDB implementation provides an extension method called *AddCosmosDB()* from the namespace *Amido.Stacks.Data.Documents.CosmosDB.Extensions*. To use it, you just have to make a call to the extension in the dependency registration method of your application, like below:
+In order to use the right implementation, we need to inject the dependencies into the IoC container before the application starts. The CosmosDB implementation provides an extension method called *AddCosmosDB()* from the namespace *Ensono.Stacks.Data.Documents.CosmosDB.Extensions*. To use it, you just have to make a call to the extension in the dependency registration method of your application, like below:
 
 [source,csharp]
 ----

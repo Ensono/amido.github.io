@@ -1,7 +1,20 @@
-= Configure Swagger
-
-:doctype: book
-:keywords: .net core, stacks, swagger, registration, controller, configuration, dotnet api, tests, rest
+---
+id: configure_swagger_netcore
+title: Configure Swagger
+linkTitle: Swagger
+weight: 1
+keywords:
+  - .net core
+  - rest 
+  - api
+  - tests 
+  - stacks
+  - swagger
+  - registration
+  - controller
+  - configuration
+  - dotnet
+---
 
 The document generation configuration is done in the Startup class of your API, within the ConfigureServices(IServiceCollection services) method. A call to the extension method `AddSwaggerGen(Action<SwaggerGenOptions> setupAction)` is made passing an action to generate the documentation options.
 

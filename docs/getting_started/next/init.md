@@ -1,6 +1,6 @@
 <!-- markdownlint-disable MD041 -->
 
-### @ensono-stacks/next:init
+### @ensono-stacks/next:init {#ensono-stacks-next-init}
 
 <details>
 <summary>Adds custom config and developer tools to an existing next application</summary>
@@ -56,8 +56,5 @@ if (typeof window !== 'undefined' && process.env.NODE_ENV !== 'production') {
 ```
 
 react-axe has been added so your app can be tested for accessibility and results will show in the Chrome DevTools console.
-
-A final message is provided if the developer would like to run the relevant deployment generator that supports this FE.
-`@ensono-stacks/next:init-deployment`.
 
 </details>

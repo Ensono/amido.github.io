@@ -1,8 +1,19 @@
-= Infrastructure & Networking
-:description: Infrastructure & Networking overview
-:imagesdir: ../../../../../static/img
-:keywords: azure, resource group, adf, adls, blob, databricks, key vault
+---
+id: infrastructure_data_azure
+title: Infrastructure & Networking
+linkTitle: Infrastructure & Networking
+weight: 2
+keywords:
+  - azure
+  - resource group
+  - adf
+  - adls
+  - blob
+  - databricks
+  - key vault
+---
 
+:imagesdir: ../../../../../images
 
 Core data platform resources are defined within Terraform templates and grouped inside
 https://github.com/ensono/stacks-azure-data/tree/main/deploy/azure[deploy/azure] directory.

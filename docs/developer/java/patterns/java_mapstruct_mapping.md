@@ -49,7 +49,7 @@ necessary to `mvn compile` after creating any new mappers.
 
 MapStruct is capable of working in many ways, although the approach taken in the Ensono Stacks project is to follow the pattern 
 whereby it uses interfaces to define mapper objects. With the addition of some mapper utility functions it means that a 
-bean-mapper that supports single objects and collections (in addition to other features such as UUID<->String auto-conversion)
+bean-mapper that supports single objects and collections (in addition to other features such as UUID ←→ String auto-conversion)
 can be created very easily.
 
 ### Base Mapper Code

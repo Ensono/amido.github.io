@@ -1,6 +1,17 @@
-= Data Engineering Overview
-:description: Data Engineering in Ensono Stacks
-:keywords: ingest, silver, gold, bronze, databricks, etl, medallion
+---
+id: data_engineering_intro_azure
+title: Data Engineering Overview
+linkTitle: Data Engineering Overview
+weight: 1
+keywords:
+  - ingest
+  - silver
+  - gold
+  - bronze
+  - databricks
+  - etl
+  - medallion
+---
 
 Ensono Stacks accelerates the generation of production-ready data engineering workloads and pipelines for a data lakehouse. New data engineering workloads can be generated through the link:./datastacks.adoc[Datastacks] utility, while a range of example data workloads and pipelines are also provided. These workloads cover all stages from ingesting data from source, applying data transformations across data lake layers, ultimately enabling end-user data visualisations and analytics.
 

@@ -1,4 +1,14 @@
-= Infrastructure Introduction
+---
+id: introduction
+title: Infrastructure Introduction
+linkTitle: Introduction
+weight: 1
+keywords:
+  - terraform
+  - configuration
+  - cloud provider
+  - documentation
+---
 
 All Ensono Stacks workloads require initial configuration of the cloud provider and some core infrastructure.
 

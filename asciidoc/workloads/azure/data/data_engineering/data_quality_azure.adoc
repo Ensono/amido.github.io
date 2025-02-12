@@ -1,6 +1,12 @@
-= Data Quality
-:description: Approach to DQ validations
-:keywords: data quality, great expectations
+---
+id: data_quality_azure
+title: Data Quality
+linkTitle: Data Quality
+weight: 5
+keywords:
+  - data quality
+  - great expectations
+---
 
 Ensono Stacks data workloads can be deployed with additional Data Quality checks. These checks validate that the outputs of
 a data pipeline meet specified requirements, expressed in a simple, human-readable language. It allows
@@ -11,17 +17,17 @@ Data Quality checks are executed as Python Databricks jobs with the quality vali
 packaged within our link:./datastacks.adoc[Datastacks] library.
 Internally, Datastacks leverages the capabilities of the link:https://greatexpectations.io/[Great Expectations] library, an open-source Python-based library, to perform these checks.
 
-image::../images/ADF_DataQualityDesign.png[ADF_DataQualityDesign.png]
+image::../../../../../images/ADF_DataQualityDesign.png[ADF_DataQualityDesign.png]
 
 == ADF Pipelines with DQ
 
 === Ingest
 
-image::../images/ADF_Ingest_AzureSql_Example_DQ.png[ADF_Ingest_AzureSql_Example_DQ.png]
+image::../../../../../images/ADF_Ingest_AzureSql_Example_DQ.png[ADF_Ingest_AzureSql_Example_DQ.png]
 
 === Silver
 
-image::../images/ADF_silver_dq.png[ADF_silver_dq.png]
+image::../../../../../images/ADF_silver_dq.png[ADF_silver_dq.png]
 
 == Usage
 
