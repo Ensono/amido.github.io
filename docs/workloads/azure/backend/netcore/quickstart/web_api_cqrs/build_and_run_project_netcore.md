@@ -18,14 +18,24 @@ keywords:
   - application
 ---
 
-## Build and Run the application
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import ResponsivePlayer  from "../../../../../../../src/components/ResponsivePlayer/ResponsivePlayer";
+
+## Build and Run REST API with CQRS
 
 <br />
 
-The API generated consists of configuration to be run locally or on a docker container.
+You can run the API created by the templates either locally or in a Docker container.
 
-import Tabs from "@theme/Tabs";
-import TabItem from "@theme/TabItem";
+:::note  Project Configuration
+Depending on the options selected when creating the CQRS API, additional configuration may be required.
+ before running the project.  It is important to complete the [Configure REST API with CQRS project](https://stacks.ensono.com/docs/workloads/azure/backend/netcore/quickstart/web_api_cqrs/configure_project_netcore) section of this guide before building and running the project.
+:::
+
+### Building and Running
+
+<ResponsivePlayer url='https://www.youtube.com/watch?v=-kKWzRE6ahQ' />
 
 <details open>
 <summary>Build and run locally</summary>
@@ -37,58 +47,82 @@ groupId="operating-systems"
 defaultValue="windows"
 values={[
 {label: 'Windows', value: 'windows'},
-{label: 'Linux', value: 'linux'},
+{label: 'Mac and Linux', value: 'mac-and-linux'},
 ]}>
+
 <TabItem value="windows">
 
-Move to the `<PROJECT-NAME>/cqrs/src/api` folder and run the next commands in **Command Prompt** or **Powershell**
+The following example shows how to build and run the Stacks CQRS API solution. In this example, the solution is located in the _c:\dev_ directory, and the project is named _Company.Project_.  If you have chose a different directory or project name when creating your solution, adjust the commands accordingly.
 
-```bash
-dotnet build
-```
+1. **Open a terminal.**  
+   You can use either Command Prompt or PowerShell.
 
-```bash
-# Note that the template engine will rename your paths, so change the command accordingly
-dotnet run --project xxENSONOxx.xxSTACKSxx.API/xxENSONOxx.xxSTACKSxx.API.csproj
-```
+2. **Navigate to the project directory.**  
+Change your directory to the API project directory. In this example, the solution was created in the _c:\dev_ folder and was named _Company.Project_.
 
-:::note Potential issue on some Windows installations
-Depending on how deep your folder structure is you might encounter a problem where you cannot build the project. This happens because of our dependency on [Pact](https://docs.pact.io/) for our contract tests.
+   ```bat
+   cd c:\dev\company.project\src\cqrs\src\api
+   ```
 
-The error looks something like this
+3. **Build the solution**  
+Use the `dotnet build` command to build the solution in this directory.
+
+   ```bat
+   dotnet build
+   ```
+
+4. **Run the API project.**  
+Finally, use the `dotnet run` command to start the API project.  
+Replace _Company.Project_ with your project's name.
+
+   ```bat
+   dotnet run --project Company.Project.API/Company.Project.API.csproj
+   ```
+
+:::note Potential issue when running on Windows.
+
+If your folder structure is too deep, you may encounter a build failure. This issue arises due to our dependency on [Pact](https://docs.pact.io/) for contract testing.  The error will looks like this: -
 
 ```shell
 Error MSB3491 Path: File exceeds the OS max path limit. The fully qualified file name must be less than 260 characters.
 ```
 
-There are two fixes possible so far:
+There are two fixes for this issue: -
 
-- You must enable long file paths on Windows by following the instructions [here](https://docs.microsoft.com/en-us/windows/win32/fileio/maximum-file-path-limitation?tabs=powershell#enable-long-paths-in-windows-10-version-1607-and-later)
-- Create your folder on an upper level where the paths won't exceed 260 characters
+* [Enable long file paths on Windows.](https://docs.microsoft.com/en-us/windows/win32/fileio/maximum-file-path-limitation?tabs=powershell#enable-long-paths-in-windows-10-version-1607-and-later)
+* Create your folder at a higher level, so that paths won't exceed 260 characters.
 
 :::
 
 </TabItem>
 
-<TabItem value="linux">
+<TabItem value="mac-and-linux">
 
-Move to the `<PROJECT-NAME>/cqrs/src/api` folder and run the next commands in **terminal**.
+Below is an example of how to build and run the Stacks CQRS API solution. In this example, the solution is located in a folder called _dev_ in the home directory, and the project is named _Company.Project_. If you have used a different directory or project name, adjust the commands accordingly.
 
-```bash
-export COSMOSDB_KEY=<COSMOSDB_KEY value here>
-export SERVICEBUS_CONNECTIONSTRING=<Your Service Bus connection string here>
-export EVENTHUB_CONNECTIONSTRING=<Your Event Hub connection string here>
-export STORAGE_CONNECTIONSTRING=<Your Event Hub storage connection string here>
-```
+1. **Open a terminal.**  
 
-```bash
-dotnet build
-```
+2. **Navigate to the project directory.**  
+Change to the API project directory within the solution. In this example, the solution was created in a folder called _dev_ inside _anneexample_'s home directory and was named _Company.Project_.
 
-```bash
-# Note that the template engine will rename your paths, so change the command accordingly
-dotnet run --project xxENSONOxx.xxSTACKSxx.API/xxENSONOxx.xxSTACKSxx.API.csproj
-```
+   ```bash
+   cd ~/users/anneexample/dev/company.project/src/cqrs/src/api
+   ```
+
+3. **Build the solution**  
+Use the `dotnet build` command to build the solution in this directory.
+
+   ```bash
+   dotnet build
+   ```
+
+4. **Run the API project.**  
+Finally, use the `dotnet run` command to start the API project.  
+Replace _Company.Project_ with your actual project name.
+
+   ```bash
+   dotnet run --project Company.Project.API/Company.Project.API.csproj
+   ```
 
 </TabItem>
 </Tabs>
@@ -99,51 +133,134 @@ dotnet run --project xxENSONOxx.xxSTACKSxx.API/xxENSONOxx.xxSTACKSxx.API.csproj
 <br />
 
 <details>
-<summary>Build and run in docker container</summary>
+<summary>Build and run in a Docker container</summary>
 
 <div>
 
-From the `<PROJECT-NAME>/cqrs/src/api` folder, build a Docker image using e.g. the command below:
+<Tabs
+groupId="operating-systems"
+defaultValue="windows"
+values={[
+{label: 'Windows', value: 'windows'},
+{label: 'Mac and Linux', value: 'mac-and-linux'},
+]}>
 
-```bash title="Build docker image"
-docker build -t dotnet-api .
-```
+<TabItem value="windows">
 
-This uses the **Dockerfile** in this folder to generate the Docker image.
+The following example shows how to build and run the Stacks CQRS API solution. In this example, the solution is located in the _c:\dev_ directory, and the project is named _Company.Project_. If you have used a different directory or project name, adjust the commands accordingly.
 
-After the creation of the Docker image, the Docker container can be run using the command below:
+1. **Open a terminal.**  
+   You can use either Command Prompt or PowerShell.
 
-```bash title="Run docker container"
-docker run -p 5000:80 --mount type=bind,source=/path/to/PROJECT-NAME/cqrs/src/api/xxENSONOxx.xxSTACKSxx.API/appsettings.json,target=/app/config/appsettings.json -e COSMOSDB_KEY=your-key -e SERVICEBUS_CONNECTIONSTRING=your-asb-connection-string -e EVENTHUB_CONNECTIONSTRING=your-aeh-connection-string -e STORAGE_CONNECTIONSTRING=your-aeh-storage-connection-string  dotnet-api:latest`
-```
+2. **Navigate to the project directory.**  
+Change to the project's root directory within the solution. In this example, the solution was created in _c:\dev_ and was named _Company.Project_.
 
-:::note
-The **COSMOSDB_KEY** described in the command above has to be passed when running the container. **SERVICEBUS_CONNECTIONSTRING** OR **EVENTHUB_CONNECTIONSTRING** and **STORAGE_CONNECTIONSTRING** are needed based on the configuration and message service you'll be using. Note that the **appsettings.json** value is mounted here for running locally,
-but not if the full project is deployed to Azure, where the build process will perform the substitution.
+   ```bat
+   cd c:\dev\company.project\
+   ```
+
+3. **Build the Docker Image**  
+Use the `docker build` command to build the Docker image from the Dockerfile in this folder.
+
+   ```bat
+   docker build -t dotnet-api -f src/cqrs/src/api/Dockerfile --build-arg self_repo_src=src/cqrs/src/api .
+   ```
+
+4. **Run the Docker Image.**  
+Use the `docker run` command to start a container from the image that we just built. Use one of the commands below, bt you will need to change the `--mount` switch so that it matches the path to your appsettings.json.  You will also need to provide the values of the environment variables that you made a note of in the previous section and delete the environment variables that you are not using.
+
+   ```bat title="Command Line"
+   docker run -p 5000:8080 ^
+   --mount type=bind,source=C:/dev/company.project/src/cqrs/src/api/company.project.API/appsettings.json,target=/app/config/appsettings.json  ^
+   -e COSMOSDB_KEY=your-key ^
+   -e EVENTHUB_CONNECTIONSTRING=your-aeh-connection-string ^
+   -e SERVICEBUS_CONNECTIONSTRING=your-asb-connection-string ^
+   -e STORAGE_CONNECTIONSTRING=your-aeh-storage-connection-string ^
+   -e TOPIC_ARN=your-aws-sns-topic-arn ^
+   dotnet-api:latest
+   ```
+
+   ```bat title="PowerShell"
+   docker run -p 5000:8080 `
+   --mount type=bind,source=C:/dev/company.project/src/cqrs/src/api/company.project.API/appsettings.json,target=/app/config/appsettings.json `
+   -e COSMOSDB_KEY=your-key `
+   -e EVENTHUB_CONNECTIONSTRING=your-aeh-connection-string `
+   -e SERVICEBUS_CONNECTIONSTRING=your-asb-connection-string `
+   -e STORAGE_CONNECTIONSTRING=your-aeh-storage-connection-string `
+   -e TOPIC_ARN=your-aws-sns-topic-arn `
+   dotnet-api:latest
+   ```
+
+</TabItem>
+
+<TabItem value="mac-and-linux">
+
+1. Open **Terminal**.
+
+2. **Navigate to the project directory.**  
+Change to the API project directory within the solution. In this example, the solution was created in a folder called _dev_ inside _anneexample_'s home directory and was named _Company.Project_.
+
+   ```bash
+   cd ~/users/anneexample/dev/company.project
+   ```
+
+3. **Build the Docker Image**  
+Use the `docker build` command to build the Docker image from the Dockerfile in this folder.
+
+   ```bat
+      docker build -t dotnet-api -f src/cqrs/src/api/Dockerfile --build-arg self_repo_src=src/cqrs/src/api .
+   ```
+
+4. **Run the Docker Image.**  
+Use the `docker run` command to start a container from the image that we just built. Use one of the commands below, bt you will need to change the `--mount` switch so that it matches the path to your appsettings.json.  You will also need to provide the values of the environment variables that you made a note of in the previous section and delete the environment variables that you are not using.
+
+   ```bash
+   docker run -p 5000:8080 \
+   --mount type=bind,source=C:/dev/company.project/src/cqrs/src/api/company.project.API/appsettings.json,target=/app/config/appsettings.json\
+   -e COSMOSDB_KEY=your-key \
+   -e SERVICEBUS_CONNECTIONSTRING=your-asb-connection-string \
+   -e EVENTHUB_CONNECTIONSTRING=your-aeh-connection-string \
+   -e STORAGE_CONNECTIONSTRING=your-aeh-storage-connection-string \
+   dotnet-api:latest
+   ```
+
+</TabItem>
+</Tabs>
+
+:::note Environment Variables
+
+When running the Docker container, you need to pass your environment variables using the `-e` switch. The commands above show every environment variable.  You should replace the placeholders with actual secrets that you made a note of when you followed the [Configure REST API with CQRS project](https://stacks.ensono.com/docs/workloads/azure/backend/netcore/quickstart/web_api_cqrs/configure_project_netcore) step of this guide and remove the environment variables that you are not using.
+
+The table below describes each environment variable.
+
+| Environment Variable name   | Environment Variable required when...               |
+|-----------------------------|-----------------------------------------------------|
+| COSMOSDB_KEY                | When _Cosmos DB_ is your database service.          |
+| EVENTHUB_CONNECTIONSTRING   | When _Azure Event Hubs_ is your messaging service.  |
+| SERVICEBUS_CONNECTIONSTRING | When _Azure Service Bus_ is your messaging service. |
+| TOPIC_ARN                   | When _AWS SNS_ is your messaging service.           |
+
+:::
+
+:::note appsettings.json
+
+Note that we mount the **appsettings.json** file when running locally, but we do not do this when the full project is deployed to Azure.  This is because when the project is deployed to Azure, the build process will perform the substitution.
+
 :::
 
 </div>
 </details>
 
-<br />
-
-<details open>
-<summary>Verify that the application has started</summary>
-
-<div>
+### Verify that the application has started
 
 :::note Relationship between domain and path
 
-Keep in mind that if you've changed the domain (original being `Menu`), the path will reflect that. If your domain is `Foo`. Then the path will be `../v1/foo` instead of `..v1/menu` etc.
+If you changed the domain object name during project creation, the URL path will reflect that change. For example, if your domain object is named `foo`, the path will be `../v1/foo` instead of `../v1/menu`.
 
 :::
 
-Browse to [http://localhost:5000/v1/menu](http://localhost:5000/v1/menu). This should return a valid JSON response.
+Browse to [http://localhost:5000/v1/menu](http://localhost:5000/v1/menu).  
+This should return a valid JSON response.
 
 The application configuration uses Swagger/OAS3 to represent the API endpoints. The Swagger UI can be viewed by directing your
 browser to [http://localhost:5000/swagger/index.html](http://localhost:5000/swagger/index.html).
-
-</div>
-</details>
-
-<br />

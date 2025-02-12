@@ -78,7 +78,7 @@ To accelerate your project development and ensure consistency across those proje
 a|Create an Nx workspace using Ensono Stacks!
 
 - Create an Nx workspace for a Next application with your choice of testing framework!
-- Create a testing project for the generated Next application. Supported: Playwright & Cypress
+- Create a testing project for the generated Next application. Supported: Playwright
 
 |link:./workspace/plugin-information.md[`@ensono-stacks/workspace`]
 a|'Stackify' your existing Nx workspace
@@ -118,11 +118,6 @@ a|Add the playwright testing library and much more to your project!
 - Add visual testing with Applitools eyes
 - Add playwright testing and reporting automatically to your build pipelines
 
-|link:./cypress/plugin-information.md[`@ensono-stacks/cypress`]
-a|Add the cypress testing library and much more to your project!
-
-- Add accessibility testing to your test project
-- Add cypress testing and reporting automatically to your build pipelines
 
 |link:./logger/plugin-information.md[`@ensono-stacks/logger`]
 a|Add industry standard logging capabilities to your project

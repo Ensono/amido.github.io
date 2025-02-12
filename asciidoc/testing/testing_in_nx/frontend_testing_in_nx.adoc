@@ -7,7 +7,6 @@ keywords:
   - Nx
   - testing
   - playwright
-  - cypress
   - accessibility testing
   - visual regression testing
   - monorepo
@@ -21,9 +20,9 @@ To leverage Ensono Stacks and accelerate your testing process within your Nx mon
 
 === Selecting your test framework
 
-We recommend and currently support Playwright within the Ensono Stacks workflow. With its Microsoft backing, extensive feature set, and fast cross-browser web automation capability, it is our preferred tooling choice. Cypress is also a powerful testing framework with a significant user base, and it is also supported by link:../../getting_started/playwright/plugin-information.adoc[Ensono Stacks].
+We recommend and currently support Playwright within the Ensono Stacks workflow. With its Microsoft backing, extensive feature set, and fast cross-browser web automation capability, it is our preferred tooling choice. 
 
-TIP: Visit the link:../../getting_started/playwright/plugin-information.adoc[`Playwright`] or link:../../getting_started/cypress/plugin-information.adoc[`Cypress`] Ensono Stacks plugins to start testing!
+TIP: Visit the link:../../getting_started/playwright/plugin-information.adoc[`Playwright`] Ensono Stacks plugins to start testing!
 
 === Accessibility Testing
 
@@ -37,7 +36,7 @@ This type of testing identifies and addresses any barriers that would make it di
 Automated accessibility tooling can consistently and efficiently check for accessibility issues across different pages and sections of a website or application and identify potential accessibility issues. Integrating into Continuous Integration/Continuous Deployment (CI/CD) pipelines enables accessibility testing to be performed as part of the development process, ensuring that issues are identified and addressed early on.
 ====
 
-The link:../../getting_started/playwright/plugin-information.adoc[`@ensono-stacks/playwright:accessibility`] and link:../../getting_started/cypress/plugin-information.adoc[`@ensono-stacks/cypress:accessibility`] generators enable you to add Axe accessibility tests to your application. If you prefer an alternative to Axe, you can use an alternative plugin within your workspace!
+The link:../../getting_started/playwright/plugin-information.adoc[`@ensono-stacks/playwright:accessibility`] generator enable you to add Axe accessibility tests to your application. If you prefer an alternative to Axe, you can use an alternative plugin within your workspace!
 
 === Visual Regression Testing
 
@@ -55,5 +54,3 @@ If you are considering adding visual regression tests to your application, we pr
   ** A powerful visual regression testing tool that detects visual changes, updates of browsers or OS, and integrates with popular testing frameworks and CI/CD pipelines, making it easy to automate visual regression testing and improve the quality and user-friendliness of digital products. Our community of experts recommends this software as the best approach. To decide if it is right for you, please visit link:https://applitools.com/platform/eyes/[Applitools Eyes!].
 * Native
   ** A free alternative to cloud-based providers that enables developers to perform automated visual regression testing using the latest web platform features in their chosen testing framework.
-
-NOTE: We do not currently support visual testing with Ensono Stacks using our link:../../getting_started/cypress/plugin-information.adoc[`@ensono-stacks/cypress`] plugin
