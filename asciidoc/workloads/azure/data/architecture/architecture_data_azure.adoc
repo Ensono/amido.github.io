@@ -1,7 +1,18 @@
-= Architecture Overview
-:imagesdir: ../../../../../static/img
-:description: Introduction to Ensono Stacks Azure Data Platform
-:keywords: data, python, etl, databricks, azure, adf
+---
+id: architecture_data_azure
+title: Architecture Overview
+linkTitle: Architecture Overview
+weight: 1
+keywords:
+  - data
+  - python
+  - etl
+  - databricks
+  - azure
+  - adf
+---
+
+:imagesdir: ../../../../../images
 
 Ensono Stacks Azure Data Platform serves two primary functions:
 

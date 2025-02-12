@@ -1,5 +1,16 @@
-= Azure DevOps Pipeline
-:imagesdir: ../../../../static/img
+---
+id: azure_devops
+title: Azure DevOps Pipeline
+linkTitle: Azure DevOps
+weight: 1
+keywords:
+  - workload
+  - pipeline
+  - Azure DevOps
+  - pipeline template
+---
+
+:imagesdir: ../../../../images
 
 The pipeline will automate provisioning and updating the core infrastructure in Azure. This page assumes you have already completed the steps on the link:../core_infrastructure.md[core infrastructure page].
 

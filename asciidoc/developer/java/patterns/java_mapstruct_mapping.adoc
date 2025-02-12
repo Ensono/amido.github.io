@@ -1,4 +1,14 @@
-= Reducing Bean Mapping Boilerplate
+---
+id: java_mapstruct_mapping
+title: Reducing Bean Mapping Boilerplate
+linkTitle: Reducing Bean Mapping Boilerplate
+weight: 2
+keywords:
+- development
+- java
+- backend
+- server-side
+---
 
 == Context
 

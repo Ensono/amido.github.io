@@ -1,6 +1,22 @@
-= Architecture Overview
-:imagesdir: ../../../../../../static/img
-:keywords: .netcore, rest api, template, architecture overview, aggregate, AggregateRoot, domain, events, repository, stacks
+---
+id: architecture_overview_netcore
+title: Architecture Overview
+linkTitle: Architecture Overview
+weight: 1
+keywords:
+  - .net core
+  - rest api
+  - template
+  - architecture overview
+  - aggregate
+  - AggregateRoot
+  - domain
+  - events
+  - repository
+  - stacks
+---
+
+:imagesdir: ../../../../../../images
 
 == DDD Architecture Overview
 

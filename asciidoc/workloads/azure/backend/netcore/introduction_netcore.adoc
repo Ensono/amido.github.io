@@ -1,8 +1,19 @@
-= Introduction to .NET 6 REST API application with CQRS
-:description: Introduction to .NET 6 REST API application with CQRS
-:keywords: .net core, rest api, cqrs, showcase, azure, application insights, cosmos db
+---
+id: introduction_netcore
+title: Introduction to the .NET 8 REST API application
+linkTitle: Introduction
+weight: 1
+keywords:
+  - .net core
+  - rest api
+  - cqrs
+  - showcase
+  - azure
+  - application insights
+  - cosmos db
+---
 
-Ensono Stacks is a collection of sample .NET 6 template projects that contain:
+Ensono Stacks is a collection of sample .NET 8 template projects that contain:
 
 - Simple Web API application
 - A Web API application with CQRS functionality

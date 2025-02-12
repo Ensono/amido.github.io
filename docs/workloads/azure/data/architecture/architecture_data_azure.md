@@ -14,10 +14,10 @@ keywords:
   - adf
 ---
 
-Ensono Stacks Azure Data Platform serves two primary functions:
+Ensono Stacks Data Platform serves two primary functions:
 
-* Deployment of a fully integrated, modern Azure Data Platform.
-* A framework for generating new data engineering workloads from configurable templates, and deploying them to the Data Platform.
+* Deployment of a fully integrated, modern Azure data platform.
+* A framework for generating new data engineering workloads from configurable templates, and deploying them to the data platform.
 
 ## Architecture of the deployed solution
 
@@ -25,7 +25,7 @@ Ensono Stacks Azure Data Platform serves two primary functions:
 
 ## Deployment workflow
 
-The following diagrams depict the steps to create a Ensono Stacks Data Platform and data engineering workloads.
+The following diagrams depict the steps to create an Ensono Stacks Data Platform and data engineering workloads.
 
 ### High-level workflow
 

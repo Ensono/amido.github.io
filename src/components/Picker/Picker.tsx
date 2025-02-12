@@ -51,6 +51,12 @@ const text = {
         "Microsoft Azure [Azure]": "nx/nx_stacks",
       },
     },
+     "Python / Spark": {
+        "Data Lakehouse Platform": {
+          "Microsoft Azure [Azure]": 
+            "workloads/azure/data/intro_data_azure",
+        },
+      },
   }
 }
 

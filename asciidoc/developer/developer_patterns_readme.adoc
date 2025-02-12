@@ -1,4 +1,9 @@
-= Development Patterns
+---
+id: development-patterns
+title: Development Patterns
+linkTitle: Development Patterns
+weight: 1
+---
 
 The following pages describe in detail how Ensono Stacks is developed (see relevant sections for .Net or Java).
 

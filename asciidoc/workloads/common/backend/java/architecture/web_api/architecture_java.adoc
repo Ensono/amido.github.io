@@ -1,7 +1,28 @@
-= Java Rest API Architecture
-:imagesdir: ../../../../../../../static/img
-:description: Spring Boot Rest API Architecture
-:keywords: java, rest , api, architecture, spring boot, event, controller, logs, monitoring, query service, repository, azure cosmos db, event handler, event listener, event dispatcher, authorisation
+---
+id: architecture_java
+title: Java Rest API Architecture
+linkTitle: Architecture overview
+weight: 1
+keywords:
+  - java
+  - rest 
+  - api
+  - architecture
+  - spring boot
+  - event
+  - controller
+  - logs
+  - monitoring
+  - query service
+  - repository
+  - azure cosmos db
+  - event handler
+  - event listener
+  - event dispatcher
+  - authorisation
+---
+
+:imagesdir: ../../../../../../../images
 
 == Spring Boot Rest API Architecture
 
@@ -38,4 +59,4 @@ Application Events contain the following basic information:
 |Custom Attribute(s)
 |e.g. menuId
 
-|==
+|===

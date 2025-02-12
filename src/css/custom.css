@@ -89,6 +89,10 @@
   color: var(--ifm-color-primary);
 }
 
+.pagination-nav {
+  display: none;
+}
+
 
 /* Override docusarus theme to match up with Ensono brand */
 .button--primary {

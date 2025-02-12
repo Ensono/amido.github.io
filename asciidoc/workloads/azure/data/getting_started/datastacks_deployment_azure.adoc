@@ -1,6 +1,15 @@
-= Datastacks Build & Deployment
-:description: Build and deployment of Datastacks utilities library
-:keywords: data, infrastructure, databricks, python, cicd
+---
+id: datastacks_deployment_azure
+title: Datastacks Build & Deployment
+linkTitle: 5. Datastacks Build & Deployment
+weight: 7
+keywords:
+  - data
+  - infrastructure
+  - databricks
+  - python
+  - cicd
+---
 
 This section provides an overview of the build and deployment of the link:../data_engineering/pyspark_utilities.adoc[Datastacks Python library].
 

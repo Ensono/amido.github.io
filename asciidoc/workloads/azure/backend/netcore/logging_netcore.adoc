@@ -1,6 +1,17 @@
-= Logging with Serilog and Application Insights
-:description: Logging for .NET Core
-:keywords: .net core, logging, logger, serilog, application insights, standard, serilog configuration
+---
+id: logging_netcore
+title: Logging with Serilog and Application Insights
+linkTitle: Logging
+weight: 8
+keywords:
+  - .net core
+  - logging
+  - logger
+  - serilog
+  - application insights
+  - standard
+  - serilog configuration
+---
 
 pass:[.]NET Core provides a simple logging abstraction with most of the required logging features used by an application. Everywhere in the application, when logging is required, the classes generating logs should receive via dependency injection an instance of `ILogger<>` to use as the logger object. The `ILogger<>` instances are created by Logging Factory registered by each application and will abstract the logging library from the application logging.
 

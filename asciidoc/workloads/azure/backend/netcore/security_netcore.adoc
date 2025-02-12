@@ -1,6 +1,17 @@
-= Application Security
-:description: OAuth for .NET Core
-:keywords: oauth, .net core, authentication, configuration, enable oauth, authorization url, authorization
+---
+id: security_netcore
+title: Application Security
+linkTitle: Security
+weight: 9
+keywords:
+  - oauth
+  - .net core
+  - authentication
+  - configuration
+  - enable oauth
+  - authorization url
+  - authorization
+---
 
 == Overview
 

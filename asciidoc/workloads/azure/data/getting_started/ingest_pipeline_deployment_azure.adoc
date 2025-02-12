@@ -1,7 +1,17 @@
-= Data Ingest Pipeline Deployment
-:description: Data ingest pipelines development & deployment
-:keywords: datastacks, data, python, etl, cli, azure, template
-
+---
+id: ingest_pipeline_deployment_azure
+title: Data Ingest Pipeline Deployment
+linkTitle: 7. Data Ingest Pipeline Deployment
+weight: 9
+keywords:
+  - datastacks
+  - data
+  - python
+  - etl
+  - cli
+  - azure
+  - template
+---
 This section provides an overview of generating a new link:../data_engineering/ingest_data_azure.adoc[data ingest pipeline] workload and deploying it into a Ensono Stacks Data Platform, using the link:../data_engineering/datastacks.adoc[Datastacks CLI].
 
 This guide assumes the following are in place:

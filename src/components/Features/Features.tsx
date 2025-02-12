@@ -15,9 +15,9 @@ const text = {
           buttonText: 'Show me'
         },
         {
-          title: "Test Framework",
-          link: "testing/cli_testing_frameworks",
-          description: "With just one command, discover how to tailor your project with Ensono Stacks’ front-end focused opinionated test frameworks.",
+          title: "Testing",
+          link: "testing/testing_overview",
+          description: "Get Started with Testing - Explore Ensono Stacks' pre-configured frameworks for performance, accessibility, UI, API, and more.",
           img: '/img/icons/ensono-icon_symbol-checkmark-v_0222.png',
           buttonText: 'Show me'
         },
@@ -55,4 +55,4 @@ export const Features = () => {
         </section>
     )
 }
-   
+

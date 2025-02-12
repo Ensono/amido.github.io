@@ -1,103 +1,122 @@
 module.exports = {
   docs: {
-    "Learn about Ensono Stacks": ["index", "contributions", "code_of_conduct"],
-    "Development Support": [
-      "developer/developer_patterns_readme",
+    "What is Ensono Stacks?": [
+      "index",
+      "contributions",
+      "code_of_conduct",
       {
         type: "category",
-        label: "Java Development Patterns",
+        label: "Development Support",
         items: [
-          "developer/java/patterns/java_app_layering",
-          "developer/java/patterns/java_mapstruct_mapping",
-          "developer/java/patterns/java_swagger_annotations",
+          "developer/developer_patterns_readme",
+          {
+            type: "category",
+            label: "Java Development Patterns",
+            items: [
+              "developer/java/patterns/java_app_layering",
+              "developer/java/patterns/java_mapstruct_mapping",
+              "developer/java/patterns/java_swagger_annotations",
+            ],
+          },
+        ],
+      },
+      {
+        type: "category",
+        label: "Ensono Stacks CLI",
+        items: ["stackscli/about"],
+      },
+    ],
+    "User Interface": [
+      "nx/nx_stacks",
+      "getting_started/setup",
+      {
+        type: "category",
+        label: "Next.js",
+        items: [
+          "module_federation/nextjs_plugin",
+          {
+            type: "category",
+            label: "Authentication and Session Management",
+            items: ["nextjs/authentication", "nextjs/infrastructure"],
+          },
+        ],
+      },
+      "linting/eslint",
+      "storybook/storybook_stacks",
+      {
+        type: "category",
+        label: "Ensono Stacks Plugins",
+        items: [
+          "getting_started/create-stacks-workspace/ensono-stacks-create-stacks-workspace",
+          "getting_started/workspace/ensono-stacks-workspace",
+          "getting_started/next/ensono-stacks-next",
+          "getting_started/azure-node/ensono-stacks-azure-node",
+          //"getting_started/azure-react/ensono-stacks-azure-react", Temporarily removed, add back in Cycle 11
+          "getting_started/rest-client/ensono-stacks-rest-client",
+          "getting_started/playwright/ensono-stacks-playwright",
+          "getting_started/logger/ensono-stacks-logger",
         ],
       },
     ],
-    Workloads: [
+    "Backend Services": [
       "workloads/workloads",
       {
         type: "category",
-        label: "Common",
+        label: "Cloud Platforms",
         items: [
           {
             type: "category",
-            label: "Java Spring Boot REST API",
+            label: "All",
             items: [
-              "workloads/common/backend/java/intro_java",
-              "workloads/common/backend/java/scaffolding_java",
-              "workloads/common/backend/java/ide_java",
-              "workloads/common/backend/java/maven_spring_profiles",
               {
                 type: "category",
-                label: "Architecture",
+                label: "Java Spring Boot REST API",
                 items: [
-                  "workloads/common/backend/java/architecture/maven_modules_java",
+                  "workloads/common/backend/java/intro_java",
+                  "workloads/common/backend/java/scaffolding_java",
+                  "workloads/common/backend/java/ide_java",
+                  "workloads/common/backend/java/maven_spring_profiles",
                   {
                     type: "category",
-                    label: "Modules",
+                    label: "Architecture",
                     items: [
-                      "workloads/common/backend/java/architecture/dependency_parent_java",
-                      "workloads/common/backend/java/architecture/dependency_commons_java",
-                      "workloads/common/backend/java/architecture/dependency_api_java",
-                      "workloads/common/backend/java/architecture/dependency_cqrs_java",
-                      "workloads/common/backend/java/architecture/dependency_messaging_java",
-                    ],
-                  },
-                  {
-                    type: "category",
-                    label: "Web API Architecture",
-                    items: [
-                      "workloads/common/backend/java/architecture/web_api/architecture_java",
-                      "workloads/common/backend/java/architecture/web_api/structure_java",
-                    ],
-                  },
-                  {
-                    type: "category",
-                    label: "Web API with CQRS and Events Architecture",
-                    items: [
-                      "workloads/common/backend/java/architecture/java_cqrs/architecture_java_cqrs",
-                      "workloads/common/backend/java/architecture/java_cqrs/structure_java_cqrs",
+                      "workloads/common/backend/java/architecture/maven_modules_java",
+                      {
+                        type: "category",
+                        label: "Modules",
+                        items: [
+                          "workloads/common/backend/java/architecture/dependency_parent_java",
+                          "workloads/common/backend/java/architecture/dependency_commons_java",
+                          "workloads/common/backend/java/architecture/dependency_api_java",
+                          "workloads/common/backend/java/architecture/dependency_cqrs_java",
+                          "workloads/common/backend/java/architecture/dependency_messaging_java",
+                        ],
+                      },
+                      {
+                        type: "category",
+                        label: "Web API Architecture",
+                        items: [
+                          "workloads/common/backend/java/architecture/web_api/architecture_java",
+                          "workloads/common/backend/java/architecture/web_api/structure_java",
+                        ],
+                      },
+                      {
+                        type: "category",
+                        label: "Web API with CQRS and Events Architecture",
+                        items: [
+                          "workloads/common/backend/java/architecture/java_cqrs/architecture_java_cqrs",
+                          "workloads/common/backend/java/architecture/java_cqrs/structure_java_cqrs",
+                        ],
+                      },
                     ],
                   },
                 ],
               },
             ],
           },
-        ],
-      },
-      {
-        type: "category",
-        label: "Azure",
-        items: [
           {
             type: "category",
-            label: "Frontend Web Applications",
-            items: [
-              "nx/nx_stacks",
-              "getting_started/setup",
-              "module_federation/nextjs_plugin",
-              "linting/eslint",
-              "storybook/storybook_stacks",
-              {
-                type: "category",
-                label: "Ensono Stacks Plugins",
-                items: [
-                  "getting_started/create-stacks-workspace/ensono-stacks-create-stacks-workspace",
-                  "getting_started/workspace/ensono-stacks-workspace",
-                  "getting_started/next/ensono-stacks-next",
-                  "getting_started/azure-node/ensono-stacks-azure-node",
-                  //"getting_started/azure-react/ensono-stacks-azure-react", Temporarily removed, add back in Cycle 11
-                  "getting_started/rest-client/ensono-stacks-rest-client",
-                  "getting_started/playwright/ensono-stacks-playwright",
-                  "getting_started/cypress/ensono-stacks-cypress",
-                  "getting_started/logger/ensono-stacks-logger",
-                ],
-              },
-            ],
-          },
-          {
-            type: "category",
-            label: "Backend Services",
+            label: "Azure",
             items: [
               {
                 type: "category",
@@ -133,7 +152,6 @@ module.exports = {
                     items: [
                       "workloads/azure/backend/java/testing/testing_java",
                       "workloads/azure/backend/java/testing/execute_serenity_api_tests",
-                      "workloads/azure/backend/java/testing/execute_karate_api_tests",
                     ],
                   },
                 ],
@@ -173,10 +191,17 @@ module.exports = {
                     items: [
                       "workloads/azure/backend/netcore/architecture/architecture_overview_netcore",
                       "workloads/azure/backend/netcore/architecture/repository_overview_netcore",
-                      "workloads/azure/backend/netcore/architecture/project_structure_netcore",
+                      {
+                        type: "category",
+                        label: "Solution Structure",
+                        items: [
+                          "workloads/azure/backend/netcore/architecture/project_structure/project_structure_netcore_simple_api",
+                          "workloads/azure/backend/netcore/architecture/project_structure/project_structure_netcore_cqrs",
+                          "workloads/azure/backend/netcore/architecture/project_structure/project_structure_netcore_function_worker"
+                        ],
+                      },
                       "workloads/azure/backend/netcore/architecture/data_storage_cosmosdb_netcore",
                       "workloads/azure/backend/netcore/architecture/operations_events_exceptions_correlation_netcore",
-                      "workloads/azure/backend/netcore/architecture/nuget_dependencies",
                       {
                         type: "category",
                         label: "Swagger Configuration",
@@ -188,75 +213,25 @@ module.exports = {
                     ],
                   },
                   "workloads/azure/backend/netcore/testing/functional_testing_netcore",
+                  "workloads/azure/backend/netcore/testing/provider_contract_testing_dotnet",
                   "workloads/azure/backend/netcore/infrastructure_netcore",
                   "workloads/azure/backend/netcore/pipeline_netcore",
+                  "workloads/azure/backend/netcore/infrastructure_aws_netcore",
+                  "workloads/azure/backend/netcore/pipeline_gha_netcore",
                   "workloads/azure/backend/netcore/logging_netcore",
                   "workloads/azure/backend/netcore/security_netcore",
                 ],
               },
             ],
           },
+          // {
+          //   type: "category",
+          //   label: "Google Cloud Platform",
+          //   items: ["workloads/gcp/workloads_gcp_readme"],
+          // },
           {
             type: "category",
-            label: "Data Platform",
-            items: [
-              "workloads/azure/data/intro_data_azure",
-              {
-                type: "category",
-                label: "Architecture",
-                items: [
-                  "workloads/azure/data/architecture/architecture_data_azure",
-                  "workloads/azure/data/architecture/infrastructure_data_azure",
-                  "workloads/azure/data/architecture/security_data_azure",
-                ],
-              },
-              
-              {
-                type: "category",
-                label: "Data Engineering",
-                items: [
-                  "workloads/azure/data/data_engineering/data_engineering_intro_azure",
-                  "workloads/azure/data/data_engineering/datastacks",
-                  "workloads/azure/data/data_engineering/ingest_data_azure",
-                  "workloads/azure/data/data_engineering/data_processing",
-                  "workloads/azure/data/data_engineering/data_quality_azure",
-                  "workloads/azure/data/data_engineering/pyspark_utilities",
-                  "workloads/azure/data/data_engineering/testing_data_azure",
-                ],
-              },
-              {
-                type: "category",
-                label: "Getting Started",
-                items: [
-                  "workloads/azure/data/getting_started/requirements_data_azure",
-                  "workloads/azure/data/getting_started/getting_started",
-                  "workloads/azure/data/getting_started/generate_project",
-                  "workloads/azure/data/getting_started/core_data_platform_deployment_azure",
-                  "workloads/azure/data/getting_started/dev_quickstart_data_azure",
-                  "workloads/azure/data/getting_started/shared_resources_deployment_azure",
-                  "workloads/azure/data/getting_started/datastacks_deployment_azure",
-                  "workloads/azure/data/getting_started/example_data_source",
-                  "workloads/azure/data/getting_started/ingest_pipeline_deployment_azure",
-                  "workloads/azure/data/getting_started/processing_pipeline_deployment_azure",
-                  "workloads/azure/data/getting_started/fabric_deployment_guide",
-                ],
-              },
-            ],
-          },
-        ],
-      },
-      {
-        type: "category",
-        label: "Google Cloud Platform",
-        items: ["workloads/gcp/workloads_gcp_readme"],
-      },
-      {
-        type: "category",
-        label: "Amazon Web Services",
-        items: [
-          {
-            type: "category",
-            label: "Backend Services",
+            label: "Amazon Web Services",
             items: [
               {
                 type: "category",
@@ -291,6 +266,48 @@ module.exports = {
         ],
       },
     ],
+    "Data Platform": [
+      "workloads/azure/data/intro_data_azure",
+      {
+        type: "category",
+        label: "Architecture",
+        items: [
+          "workloads/azure/data/architecture/architecture_data_azure",
+          "workloads/azure/data/architecture/infrastructure_data_azure",
+          "workloads/azure/data/architecture/security_data_azure",
+        ],
+      },
+
+      {
+        type: "category",
+        label: "Data Engineering",
+        items: [
+          "workloads/azure/data/data_engineering/data_engineering_intro_azure",
+          "workloads/azure/data/data_engineering/stacks_data_utilities",
+          "workloads/azure/data/data_engineering/datastacks",
+          "workloads/azure/data/data_engineering/ingest_data_azure",
+          "workloads/azure/data/data_engineering/data_processing",
+          "workloads/azure/data/data_engineering/data_quality_azure",
+          "workloads/azure/data/data_engineering/testing_data_azure",
+        ],
+      },
+      {
+        type: "category",
+        label: "Getting Started",
+        items: [
+          "workloads/azure/data/getting_started/getting_started",
+          "workloads/azure/data/getting_started/requirements_data_azure",
+          "workloads/azure/data/getting_started/generate_project",
+          "workloads/azure/data/getting_started/core_data_platform_deployment_azure",
+          "workloads/azure/data/getting_started/dev_quickstart_data_azure",
+          "workloads/azure/data/getting_started/shared_resources_deployment_azure",
+          "workloads/azure/data/getting_started/example_data_source",
+          "workloads/azure/data/getting_started/ingest_pipeline_deployment_azure",
+          "workloads/azure/data/getting_started/processing_pipeline_deployment_azure",
+          "workloads/azure/data/getting_started/fabric_deployment_guide",
+        ],
+      },
+    ],
     Infrastructure: [
       "infrastructure/introduction",
       {
@@ -303,11 +320,24 @@ module.exports = {
             label: "Pipelines",
             items: ["infrastructure/azure/pipelines/azure_devops"],
           },
+          "getting_started/azure-container-app/azure-container-apps",
+        ],
+      },
+      {
+        type: "category",
+        label: "Amazon Web Services",
+        items: [
+          "infrastructure/aws/core_infrastructure_aws",
+          {
+            type: "category",
+            label: "Pipelines",
+            items: ["infrastructure/aws/pipelines/github_actions"],
+          },
         ],
       },
     ],
-    "Quality Assurance": [
-      "testing/cli_testing_frameworks",
+    QA: [
+      "testing/testing_overview",
       {
         type: "category",
         label: "NX - Frontend Testing",
@@ -328,34 +358,11 @@ module.exports = {
                 ],
               },
             ],
-          },
-          {
-            type: "category",
-            label: "Cypress Information",
-            items: [
-              "testing/testing_in_nx/testing_with_cypress",
-              "testing/testing_in_nx/cypress_accessibility_testing",
-            ],
-          },
+          }
         ],
       },
-      "testing/testing_java_serenity_bdd",
-      "testing/testing_dotnet_selenium",
-      "testing/cypress_functional_testing",
-      "testing/testcafe_functional_testing",
-      "testing/testing_static_analysis",
-      "testing/visual_analysis",
       "testing/contract_testing_pact",
-      "testing/accessibility_testing",
       "testing/performance_testing_gatling",
-    ],
-    "Ensono Stacks CLI": [
-      "stackscli/about"
-      // "stackscli/usage",
-      // "stackscli/runtime_config",
-      // "stackscli/project_settings",
-      // "stackscli/examples",
-      // "stackscli/troubleshooting",
     ],
   },
 };

@@ -1,7 +1,21 @@
-= API Contract Testing With Pact [[contract_testing_pact]]
-:keywords: contract testing, pact, consumer, provider, pact stub service, pact broker, example, java, dotnet
+---
+id: contract_testing_pact
+title: API Contract Testing With Pact
+linkTitle: API Contract Testing With Pact
+weight: 9
+keywords:
+  - contract testing
+  - pact
+  - consumer
+  - provider
+  - pact stub service
+  - pact broker
+  - example
+  - java
+  - dotnet
+---
 
-== Consumer-Driven contract testing with Pact
+== Consumer-Driven contract testing with Pact [[contract_testing_pact]]
 
 Consumer-Driven Contract (CDC) Testing is a pattern that allows a consumer (i.e:
 a client) and a provider (i.e. an API provider) to communicate using an agreed
@@ -63,8 +77,7 @@ npm run test:pact-publish
 === Pact stub service
 
 Pact contracts are easily turned into locally running API stubs. They are great
-for use as a simple service to run integration tests against, whether with
-Jest, or with Cypress. This ensures that you can test your application without
+for use as a simple service to run integration tests against. This ensures that you can test your application without
 hitting the actual endpoint, and ensures the same response every time, without
 duplicating mock definitions.
 
