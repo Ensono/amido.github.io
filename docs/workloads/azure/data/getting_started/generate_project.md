@@ -19,7 +19,11 @@ It assumes the following [pre-requisites](./requirements_data_azure.md) are in p
 * A [remote git repository](./requirements_data_azure.md#git-repository) for hosting the generated project
 * A [storage account](./requirements_data_azure.md#terraform-state-storage) for the Terraform state
 
-For more information on the pre-requisites, see [here](./requirements_data_azure.md).
+:::tip
+
+See more information on the [pre-requisites] for generating Stacks Data Platform.
+
+:::
 
 ## Step 1: Install the Ensono Stacks CLI
 
@@ -77,10 +81,20 @@ git remote show origin
 # If required, set your local branch to main
 git branch -M main
 
+# Add and commit all created project files
+git add .
+git commit -m "Initial commit"
+
 # Push your scaffolded project to the remote repository
 git push -u origin main
 
 ```
+
+:::tip
+
+It is highly recommended after your initial commit that you add branch protection rules to the remote `main` branch: see guidance for [GitHub](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/managing-a-branch-protection-rule) or [Azure DevOps Repos](https://learn.microsoft.com/en-us/azure/devops/repos/git/branch-policies?view=azure-devops).
+
+:::
 
 ## Next steps
 
