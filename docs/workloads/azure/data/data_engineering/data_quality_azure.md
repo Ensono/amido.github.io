@@ -50,7 +50,7 @@ datastacks dq --help
 datastacks dq --config-path "ingest/ingest_azure_sql_example/data_quality/ingest_dq.json" --container config
 ```
 
-`config-path` is a path to a JSON config inside the Azure Blob container, `container` is name of the container. The storage account used will be based upon the `BLOB_ACCOUNT` environment variable.
+`config-path` is a path to a JSON config inside the Azure Blob container, `container` is name of the container. The storage account used will be based upon the `CONFIG_BLOB_ACCOUNT` environment variable.
 
 ## JSON Configuration File for Great Expectations
 
