@@ -50,6 +50,10 @@ const config = {
       appId: process.env.ALGOLIA_APP_ID,
       apiKey: process.env.ALGOLIA_API_KEY,
       indexName: process.env.ALGOLIA_INDEX_NAME,
+    },
+    appVersions: {
+      stacksCli: "v0.4.33",
+      taskCtl: "2.0.3"
     }
   },
   themeConfig: {
@@ -59,7 +63,11 @@ const config = {
     prism: {
       theme: themes.github,
       darkTheme: themes.vsDark,
+      showLineNumbers: true,
       additionalLanguages: ['csharp', 'docker', 'powershell', 'java', 'bash', 'json'],
+      clipboard: {
+        copyMessage: "Copied code to clipboard"
+      },
     },
     navbar: {
       title: "",

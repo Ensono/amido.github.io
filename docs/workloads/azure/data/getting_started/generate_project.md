@@ -27,14 +27,35 @@ See more information on the [pre-requisites] for generating Stacks Data Platform
 
 ## Step 1: Install the Ensono Stacks CLI
 
+import StackscliInstallPowershell from "../snippets/powershell/_install_stackscli.mdx"
+import StackscliInstallBash from "../snippets/bash/_install_stackscli.mdx"
+
 Download and install the [Ensono Stacks CLI](/docs/stackscli/about).
-Please refer to the **Stacks.CLI.Manual** in the latest [stacks-cli release](https://github.com/ensono/stacks-cli/releases) for detailed instructions.
+Please refer to the [**Stacks.CLI.Manual**](https://github.com/Ensono/stacks-cli/releases/download/v0.4.40/Stacks.CLI.Manual.-.0.4.40.pdf) for detailed instructions.
+
+The following command lines, for PowerShell and Bash, show how to quickly install the tools.
+
+| Shell | Command |
+|---|---|
+| <img src={require('../images/powershell.png').default} width="20"></img> | <StackscliInstallPowershell /> |
+| <img src={require('../images/bash.png').default} width="20"></img> | <StackscliInstallBash /> |
+
 
 ## Step 2: Prepare the project config
 
+import DownloadScaffoldPowershell from "../snippets/powershell/_download_scaffold.mdx"
+import DownloadScaffoldBash from "../snippets/bash/_download_scaffold.mdx"
+
+
 We will be using the `stacks-cli scaffold` command to generate a new data project. The scaffold command takes a YAML configuration file, defining the project.
 
-A [sample data project config file](https://github.com/Ensono/stacks-azure-data/blob/main/stacks-cli/data-scaffold-example.yml) is provided. Prepare a copy of this file, and update the following entries as required for your new project:
+A [sample data project config file](https://raw.githubusercontent.com/ensono/stacks-azure-data/refs/heads/main/stacks-cli/data-scaffold-example.yml) is provided. Use the following commands to download an example of this file, and then update accordingly.
+
+| Shell | Command |
+|---|---|
+| <img src={require('../images/powershell.png').default} width="20"></img> | <DownloadScaffoldPowershell /> |
+| <img src={require('../images/bash.png').default} width="20"></img> | <DownloadScaffoldBash /> |
+
 
 | Config field                | Example value                                       | Description                                                                                                                                     |
 |-----------------------------|-----------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -61,11 +82,13 @@ Alternatively, you can use the `stacks-cli interactive` command to generate a YA
 
 ## Step 3: Scaffold the project
 
+import ScaffoldProject from "../snippets/_scaffold_project.mdx"
+
 You will now pass the prepared config file to the Ensono Stacks scaffold command, and your project will be generated. Run the following, replacing `./data-scaffold-config.yml` with the path to your config file:
 
-```bash
-stacks-cli scaffold -c ./data-scaffold-config.yml
-```
+| Shell | Command |
+|---|---|
+| <img src={require('../images/powershell.png').default} width="20"></img> <br /> <img src={require('../images/bash.png').default} width="20"></img> | <ScaffoldProject /> |
 
 If successful, the new project will now be available in the directory provided in the `directory.working` field. Navigate to the generated project's directory and review the contents.
 
@@ -98,4 +121,4 @@ It is highly recommended after your initial commit that you add branch protectio
 
 ## Next steps
 
-Now you have generated a new data project, [deploy the core infrastructure](./core_data_platform_deployment_azure.md).
+Now you have generated a new data project, [deploy the networking](./private_network.mdx).
