@@ -95,4 +95,4 @@ Enabling public workspace access only opens access to the UI via public internet
 
 The following diagram depicts the Databricks network configuration.
 
-image::network_databricks.png[Network Databricks]
+![Network Databricks](../images/network_databricks.png)
