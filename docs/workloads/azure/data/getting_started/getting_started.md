@@ -21,7 +21,7 @@ A more [detailed workflow diagram](../architecture/architecture_data_azure.md#de
 
 1. [Prerequisites](./requirements_data_azure.md) - Ensure you have the necessary tools and resources to get started.
 2. [Generate a Data Project](./generate_project.md) - Generate a new data project.
-3. [Infrastructure Deployment](./core_data_platform_deployment_azure.md) - Deploy the data platform infrastructure into your cloud environment.
+3. [Infrastructure Deployment](./core_data_platform_deployment_azure.mdx) - Deploy the data platform infrastructure into your cloud environment.
 4. [Local Development Quickstart](./dev_quickstart_data_azure.md) - Once your project has been generated, setup your local environment to start developing.
 5. [Shared Resources Deployment](./shared_resources_deployment_azure.md) - Deploy common resources to be shared across data pipelines.
 6. (Optional) [Example Data Source](./example_data_source.md) - To assist with the 'Getting Started' steps, you may wish to setup the Example Data Source.

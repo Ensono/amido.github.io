@@ -1,7 +1,7 @@
 ---
 id: processing_pipeline_deployment_azure
 title: Data Processing Pipeline Deployment
-sidebar_label: 7. Data Processing Pipeline Deployment
+sidebar_label: 9. Data Processing Pipeline Deployment
 hide_title: false
 hide_table_of_contents: false
 description: Data processing pipelines development & deployment

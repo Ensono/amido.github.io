@@ -23,6 +23,8 @@ The following tools are recommended for developing while using the Ensono Stacks
 | [Azure CLI](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli)                             | Optional: Azure CLI allows you to interact with Azure resources locally, including running end-to-end tests.                                                            |
 | [Stacks CLI](https://github.com/Ensono/stacks-cli) | Used to scaffold the new data project |
 | [VSCode](https://code.visualstudio.com/Download) | IDE for editing the configuration required for the deployment of the platform. |
+| [Docker Desktop](https://www.docker.com/products/docker-desktop/) <br /> [Rancher Desktop](https://rancherdesktop.io/) | Docker engine so that the Ensono Independent Runner can be used, <br /> (Only one of these engines is required) |
+| [Terraform](https://www.terraform.io) | Terraform is only required for local testing or if not using Ensono Independent Runner | 
 
 See [development quickstart](./dev_quickstart_data_azure.md) for further details on getting start with developing the solution.
 
@@ -61,10 +63,19 @@ CI/CD processes within the Ensono Stacks Data Platform are currently designed to
 
 ### Azure Pipelines variable groups
 
-In order for an ADO pipeline to use Terraform to deploy the resources into Azure, a variable group containing the Service Principal for the Entra ID Application is required. This should be called:
+So that ADO can deploy the resource into Azure, credentials need to be supplied for each of the subscriptions that need to be deployed to. It is envisaged that there will be up to two subscriptions:
 
-<details>
-  <summary>azure-sp-creds</summary>
+| Description | Name | Environments |
+|-------------|------|--------------|
+| Non production subscription | `nonprod` | `dev`, `qa` |
+| Production subscription | `prod` | `uat`, `prod` |
+
+The expected names of the variable groups are:
+
+* azure-sp-creds
+* azure-sp-creds-prod
+
+The following table details the information that should be in each group.
 
 | Variable Name                    | Description                                  |
 |----------------------------------|----------------------------------------------|
@@ -73,7 +84,7 @@ In order for an ADO pipeline to use Terraform to deploy the resources into Azure
 | ARM_SUBSCRIPTION_ID               | ID of the subscription that the Service Principal has access to                            |
 | ARM_TENANT_ID | Azure tenant that the specific subscription belongs to                             |
 | AZDO_PERSONAL_ACCESS_TOKEN                   | Azure DevOps PAT token so that Terraform can create the the variable groups                               |
-</details>
+
 
 <p />
 

@@ -1,7 +1,7 @@
 ---
 id: ingest_pipeline_deployment_azure
 title: Data Ingest Pipeline Deployment
-sidebar_label: 6. Data Ingest Pipeline Deployment
+sidebar_label: 8. Data Ingest Pipeline Deployment
 hide_title: false
 hide_table_of_contents: false
 description: Data ingest pipelines development & deployment
