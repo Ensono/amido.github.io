@@ -10,21 +10,30 @@ keywords:
   - prerequisites 
 ---
 
+## Infrastructure Deployment
+
+The following tools are required for deploying the infrastructure needed for supporting the Ensono Stacks Data platform.
+
+| Tool | Notes | Required in CI/CD |
+|---|---|---|
+| [Stacks CLI](https://github.com/Ensono/stacks-cli) | Used to scaffold the new data project | N |
+| [TaskCTL](https://github.com/Ensono/tastctl) | Runs the tasks and pipelines as defined in the project. Uses the Ensono Independent Runner. | 
+| [VSCode](https://code.visualstudio.com/Download) | IDE for editing the configuration required for the deployment of the platform. | N |
+| [Docker Desktop](https://www.docker.com/products/docker-desktop/) <br /> [Rancher Desktop](https://rancherdesktop.io/) | Docker engine so that the Ensono Independent Runner can be used, <br /> (Only one of these engines is required) | Y (Docker engine)
+| [Terraform](https://www.terraform.io) | Terraform is only required for local testing or if not using Ensono Independent Runner | Y |
+
 ## Local development
 
-The following tools are recommended for developing while using the Ensono Stacks data solution:
+The following tools are required for developing the data pipelines 
 
-| Tool                                                                                                   | Notes                                                                                                                                                                   |
-|--------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Tool | Notes |
+|---|---|
 | [Python 3.9 - 3.11](https://www.python.org/downloads/)                                                 | Use of Python 3.12+ is not currently supported. You may wish to use a utility such as [pyenv](https://pypi.org/project/pyenv/) to manage your local versions of Python. |
 | [Poetry](https://python-poetry.org/docs/)                                                              | Used for Python dependency management in Stacks.                                                                                                                        |
 | (Windows users) a Linux distribution, e.g. [WSL](https://docs.microsoft.com/en-us/windows/wsl/install) | A Unix-based environment is recommended for developing the solution (e.g. macOS, Linux, or WSL for Windows users).                                                      |
 | Java 8/11/17 runtime                                                                                   | Optional: Java is required to develop and run tests using PySpark locally - see [Spark documentation](https://spark.apache.org/docs/latest/).                           |
 | [Azure CLI](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli)                             | Optional: Azure CLI allows you to interact with Azure resources locally, including running end-to-end tests.                                                            |
-| [Stacks CLI](https://github.com/Ensono/stacks-cli) | Used to scaffold the new data project |
-| [VSCode](https://code.visualstudio.com/Download) | IDE for editing the configuration required for the deployment of the platform. |
-| [Docker Desktop](https://www.docker.com/products/docker-desktop/) <br /> [Rancher Desktop](https://rancherdesktop.io/) | Docker engine so that the Ensono Independent Runner can be used, <br /> (Only one of these engines is required) |
-| [Terraform](https://www.terraform.io) | Terraform is only required for local testing or if not using Ensono Independent Runner | 
+
 
 See [development quickstart](./dev_quickstart_data_azure.md) for further details on getting start with developing the solution.
 

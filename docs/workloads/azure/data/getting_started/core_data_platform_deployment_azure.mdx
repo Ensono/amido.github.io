@@ -14,14 +14,66 @@ keywords:
   - template
 ---
 
+import TerraformDeployTasks from "../snippets/_terraform_plan_deploy_tasks.mdx"
+import TerraformDeployPipeline from "../snippets/_terraform_plan_deploy_pipeline.mdx"
+
 This section provides an overview of configuring and deploying the core data platform infrastructure in Azure.
 
-It assumes you have [generated a new data project using Ensono Stacks](./generate_project.md), and that the following [requirements](./requirements_data_azure.md) are in place:
+It assumes you have [generated a new data project using Ensono Stacks](./generate_project.mdx), and that the following [requirements](./requirements_data_azure.md) are in place:
 
 * [Azure subscription and service principal](./requirements_data_azure.md#azure-subscription)
     * If you want to provision the infrastructure within a private network, this can be done as part of a [Hub-Spoke network topology](../architecture/infrastructure_data_azure#networking). Spoke virtual network and subnet for private endpoints must be provisioned for each environment. The hub network must contain a self-hosted agent. See [Microsoft documentation](https://learn.microsoft.com/en-us/azure/architecture/reference-architectures/hybrid-networking/hub-spoke?tabs=cli) for more details on implementing Hub-spoke network topology in Azure.
 
-## Step 1: Add Infrastructure pipeline in Azure DevOps
+## Workstation Deployment
+
+### Step 1: Source Environment Files
+
+:::note
+This step assumes that the previous steps for deploying the networking as defined here has been deployed. If this is not the case then please follow the steps here.
+:::
+
+As before, the environment files for the base configuration have been created already. The one pertaining to the infrastructure deployment needs to be sourced. In addition the networking setup created more environment files that are based on the outputs of the Terraform. This means that the settings for the next stage are easily referenced.
+
+import SourceInfraEnvsPowershell from "../snippets/powershell/_source_envfile_infra.mdx"
+import SourceInfraEnvsBash from "../snippets/bash/_source_envfile_infra.mdx"
+
+| Shell | Command |
+|---|---|
+| <img src={require('../images/powershell.png').default} width="20"></img> | <SourceInfraEnvsPowershell /> |
+| <img src={require('../images/bash.png').default} width="20"></img> | <SourceInfraEnvsBash /> |
+
+The first file, `envfile_infra.bash` configures the necessary variables which state the files that should be deployed (via the STAGE variable) as well as sourcing the credentials file again. This is done in case a different shell has been started after deployment.
+
+The second file, `dev-networking-envvars.bash` contains the outputs from the networking stage which relate to the variables required for the inputs of the data infrastructure.
+
+### Step 2: Deploy the Data infrastructure components
+
+Now that everything is setup the data platform infrastructure can be deployed. As before the `STAGE` being run can be confirmed by reading the environment variable in the session, after sourcing the environment variables.
+
+| Shell | Command |
+|---|---|
+| <img src={require('../images/powershell.png').default} width="20"></img> | `$env:STAGE` |
+| <img src={require('../images/bash.png').default} width="20"></img> | `echo $STAGE` |
+
+<img src={require('../images/check_env_vars_infra.png').default}></img>
+<figcaption>Check the environment variables</figcaption>
+
+After the local environment has been configured, run the following commands.
+
+| Shell | Command |
+|---|---|
+| <img src={require('../images/powershell.png').default} width="20"></img> <br /> <img src={require('../images/bash.png').default} width="20"></img> | <TerraformDeployTasks /> |
+
+Alternatively the EIR pipeline run be run which will bundle all of the above tasks together.
+
+| Shell | Command |
+|---|---|
+| <img src={require('../images/powershell.png').default} width="20"></img> <br /> <img src={require('../images/bash.png').default} width="20"></img> | <TerraformDeployPipeline /> |
+
+
+## Azure DevOps Pipeline
+
+### Step 1: Add Infrastructure pipeline in Azure DevOps
 
 A YAML file containing a template Azure DevOps CI/CD pipeline for building and deploying the core infrastructure is provided in `build/azdo/azure/pipeline-infra-private.yml` - this should be added as the definition for a new pipeline in Azure DevOps.
 
@@ -32,7 +84,7 @@ A YAML file containing a template Azure DevOps CI/CD pipeline for building and d
 5. The new pipeline will require access to any Azure DevOps pipeline variable groups specified in the pipeline YAML. Under each variable group, go to 'Pipeline permissions' and add the pipeline.
 
 
-## Step 2: Deploy Infrastructure in non-production environment
+### Step 2: Deploy Infrastructure in non-production environment
 
 Run the pipeline configured in Step 1 to commence the build and deployment process.
 
@@ -77,7 +129,7 @@ The resource group `databricks-rg-ensono-data-euw-data-dev` is an automatic reso
 
 Once the resources have been deployed a new variable group will have been created in Azure DevOps for the specified environment. In this example, and for the `dev` enviornment, the variable group will be called `ensono-data-data-dev-infra`.
 
-## Step 3: Deploy Infrastructure in further environments
+### Step 3: Deploy Infrastructure in further environments
 
 By default Ensono Stacks provides a framework for managing the platform across 4 environments - dev, qa, uat, prod in 2 envrionment groups nonprod, prod.
 The template CI/CD pipelines provided are based upon these names - but these may be amended depending upon the specific requirements of your project and organisation.

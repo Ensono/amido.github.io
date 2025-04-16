@@ -141,8 +141,9 @@ const config = {
       "@docusaurus/preset-classic",
       {
         docs: {
+
           sidebarPath: require.resolve('./sidebars.js'),
-            remarkPlugins: [remarkImages],
+          // remarkPlugins: [remarkImages],
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css")

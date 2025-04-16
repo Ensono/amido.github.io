@@ -11,9 +11,58 @@ keywords:
   - configuration
 ---
 
+import TerraformDeployTasks from "../snippets/_terraform_plan_deploy_tasks.mdx"
+import TerraformDeployPipeline from "../snippets/_terraform_plan_deploy_pipeline.mdx"
+
 This section provides details on how to run the last stage of the deployment. This creates the Databricks token and adds it to the key vault. This is a seperate stage because of the way in which the resources are deployed and the token cannot be created at the same time as the Databricks resource is.
 
-## Step 1: Add Infrastructure pipeline in Azure DevOps
+## Workstation Deployment
+
+### Step 1: Source Environment Files
+
+As before, the environment files for the base configuration have been created already. The one pertaining to the databricks configuration needs to be sourced. In addition the networking setup created more environment files that are based on the outputs of the Terraform. This means that the settings for the next stage are easily referenced.
+
+import SourceInfraEnvsPowershell from "../snippets/powershell/_source_envfile_infra.mdx"
+import SourceInfraEnvsBash from "../snippets/bash/_source_envfile_infra.mdx"
+
+| Shell | Command |
+|---|---|
+| <img src={require('../images/powershell.png').default} width="20"></img> | <SourceInfraEnvsPowershell /> |
+| <img src={require('../images/bash.png').default} width="20"></img> | <SourceInfraEnvsBash /> |
+
+The first file, `envfile_databricks.bash` configures the necessary variables which state the files that should be deployed (via the STAGE variable) as well as sourcing the credentials file again. This is done in case a different shell has been started after deployment.
+
+The second file, `dev-infra-envvars.bash` contains the outputs from the infrastructure stage which relate to the variables required for the inputs of the data infrastructure.
+
+### Step 2: Deploy the Databricks configuration
+
+Now that everything is setup the data platform infrastructure can be deployed. As before the `STAGE` being run can be confirmed by reading the environment variable in the session, after sourcing the environment variables.
+
+| Shell | Command |
+|---|---|
+| <img src={require('../images/powershell.png').default} width="20"></img> | `$env:STAGE` |
+| <img src={require('../images/bash.png').default} width="20"></img> | `echo $STAGE` |
+
+<img src={require('../images/check_env_vars_databricks.png').default}></img>
+<figcaption>Check the environment variables</figcaption>
+
+After the local environment has been configured, run the following commands.
+
+| Shell | Command |
+|---|---|
+| <img src={require('../images/powershell.png').default} width="20"></img> <br /> <img src={require('../images/bash.png').default} width="20"></img> | <TerraformDeployTasks /> |
+
+Alternatively the EIR pipeline run be run which will bundle all of the above tasks together.
+
+| Shell | Command |
+|---|---|
+| <img src={require('../images/powershell.png').default} width="20"></img> <br /> <img src={require('../images/bash.png').default} width="20"></img> | <TerraformDeployPipeline /> |
+
+
+
+## Azure Devops Pipeline
+
+### Step 1: Add Infrastructure pipeline in Azure DevOps
 
 A YAML file containing a template Azure DevOps CI/CD pipeline for building and deploying the core infrastructure is provided in `build/azdo/azure/pipeline-infra-private.yml` - this should be added as the definition for a new pipeline in Azure DevOps.
 
