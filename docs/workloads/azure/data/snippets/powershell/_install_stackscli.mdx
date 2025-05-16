@@ -1,0 +1,7 @@
+```powershell
+New-Item -Type Directory -Path $env:HOME/tools
+Invoke-RestMethod
+    -Uri https://github.com/Ensono/stacks-cli/releases/download/v0.4.33/stacks-cli-windows-amd64-0.4.33.exe
+    -Out $env:HOME/tools/stacks-cli.exe
+$env:PATH += ";$env:HOME/tools"
+```

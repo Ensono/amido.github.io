@@ -1,0 +1,7 @@
+```powershell
+$ New-Item -Type Directory -Path $env:HOME/tools
+$ Invoke-RestMethod `
+    -Uri https://github.com/Ensono/taskctl/releases/download/2.0.3/taskctl-windows-amd64.exe 1
+    -Out $env:HOME/tools/taskctl.exe
+$ $env:PATH += ";$env:HOME/tools"
+```

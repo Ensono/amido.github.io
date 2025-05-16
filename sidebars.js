@@ -297,8 +297,11 @@ module.exports = {
         items: [
           "workloads/azure/data/getting_started/getting_started",
           "workloads/azure/data/getting_started/requirements_data_azure",
+          "workloads/azure/data/getting_started/tldr",
           "workloads/azure/data/getting_started/generate_project",
+          "workloads/azure/data/getting_started/private_network",
           "workloads/azure/data/getting_started/core_data_platform_deployment_azure",
+          "workloads/azure/data/getting_started/databricks_config",
           "workloads/azure/data/getting_started/dev_quickstart_data_azure",
           "workloads/azure/data/getting_started/shared_resources_deployment_azure",
           "workloads/azure/data/getting_started/example_data_source",

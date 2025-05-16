@@ -1,7 +1,7 @@
 ---
 id: dev_quickstart_data_azure
 title: Local Development Quickstart
-sidebar_label: 3. Local Development Quickstart
+sidebar_label: 5. Local Development Quickstart
 hide_title: false
 hide_table_of_contents: false
 description: Quickstart for local development

@@ -1,0 +1,242 @@
+---
+id: tldr
+title: TL;DR Platform Deployment
+sidebar_label: TL;DR Platform Deployment
+hide_title: false
+hide_table_of_contents: false
+description: Too Long; Didn't Read
+keywords:
+  - quickstart
+  - terraform
+  - azure
+---
+
+import TerraformDeployTasks from "../snippets/_terraform_plan_deploy_tasks.mdx"
+import TerraformDeployPipeline from "../snippets/_terraform_plan_deploy_pipeline.mdx"
+
+This section provides a list of all the commands that need to be run to deploy the project into Azure, without any explanation.  More details of each step can be found in the subsequent sections.
+
+:::note
+All of the following steps are meant to be run on a local machine. This will create the necessary project and infrastructure required to run the data project.
+:::
+
+Please ensure that the [prerequisites](./requirements_data_azure#git-repository) have been met, this must include:
+
+- [Git repository](./requirements_data_azure#git-repository)
+- [Azure Subscription](./requirements_data_azure#azure-subscription)
+  - Service Principal with Contributor role on the above subscription
+- [Azure DevOps tenant](./requirements_data_azure#cicd---azure-devops)
+  - Azure DevOps Personal Access Token (PAT)
+- [Tools](./requirements_data_azure#infrastructure-deployment)
+  - Docker Engine
+  - Taskctl
+
+## Step 1 - Install Taskctl
+
+import TaskctlInstallPowershell from "../snippets/powershell/_install_taskctl.mdx"
+import TaskctlInstallBash from "../snippets/bash/_install_taskctl.mdx"
+
+Install the `Taskctl` command line tool
+
+| Shell | Command |
+|---|---|
+| <img src={require('../images/powershell.png').default} width="20"></img> | <TaskctlInstallPowershell /> |
+| <img src={require('../images/bash.png').default} width="20"></img> | <TaskctlInstallBash /> |
+
+For more information please refer to [Step 1: Install Taskctl](./generate_project#step-1-install-the-ensono-taskctl-tool) in the [Generate a data project](./generate_project) section.
+
+## Step 2 - Install StacksCLI
+
+import StackscliInstallPowershell from "../snippets/powershell/_install_stackscli.mdx"
+import StackscliInstallBash from "../snippets/bash/_install_stackscli.mdx"
+
+Install the `stacks-cli` command line tool
+
+| Shell | Command |
+|---|---|
+| <img src={require('../images/powershell.png').default} width="20"></img> | <StackscliInstallPowershell /> |
+| <img src={require('../images/bash.png').default} width="20"></img> | <StackscliInstallBash /> |
+
+For more information please refer to [Step 2: Install StacksCLI](./generate_project#step-2-install-the-ensono-stacks-cli) in the [Generate a data project](./generate_project) section.
+
+## Step 3 - Update StacksCLI Internal Config
+
+import StacksCliUpdate from "../snippets/_stackscli_update_config.mdx"
+
+Update the internal configuration file for Stacks-CLI
+
+| Shell | Command |
+|---|---|
+| <img src={require('../images/powershell.png').default} width="20"></img> <br /> <img src={require('../images/bash.png').default} width="20"></img> | <StacksCliUpdate /> |
+
+For more information please refer to [Step 3: Prepare the project config](./generate_project#step-3-prepare-the-project-config) in the [Generate a data project](./generate_project) section.
+
+## Step 4 - Create Working Directory
+
+import CreateWDPowershell from "../snippets/powershell/_create_wd.mdx"
+import CreateWDBash from "../snippets/bash/_create_wd.mdx"
+
+Create directory from which to run editor and create scaffold configuration file
+
+| Shell | Command |
+|---|---|
+| <img src={require('../images/powershell.png').default} width="20"></img> | <CreateWDPowershell /> |
+| <img src={require('../images/bash.png').default} width="20"></img> | <CreateWDBash /> |
+
+For more information please refer to [Step 4: Create working directory](./generate_project#step-4-create-working-directory) in the [Generate a data project](./generate_project) section.
+
+## Step 5 - Download the scaffold config file
+
+import DownloadScaffoldPowershell from "../snippets/powershell/_download_scaffold.mdx"
+import DownloadScaffoldBash from "../snippets/bash/_download_scaffold.mdx"
+
+Download and edit the scaffold configuration file. This file will inform the `stacks-cli` tool what project to scaffold and how to configure it.
+
+| Shell | Command |
+|---|---|
+| <img src={require('../images/powershell.png').default} width="20"></img> | <DownloadScaffoldPowershell /> |
+| <img src={require('../images/bash.png').default} width="20"></img> | <DownloadScaffoldBash /> |
+
+:::note
+The downloaded file must be updated to match the requirements of the deployment. The values contained in the file are only examples and will not work out of the box. The file must be updated to match the requirements of the project.
+:::
+
+For more information please refer to [Step 5: Prepare the project config](./generate_project#step-5-prepare-the-project-config) in the [Generate a data project](./generate_project) section.
+
+## Step 6 - Scaffold the project
+
+import ScaffoldProject from "../snippets/_scaffold_project.mdx"
+
+Create the new data project based on the configuration file
+
+| Shell | Command |
+|---|---|
+| <img src={require('../images/powershell.png').default} width="20"></img> <br /> <img src={require('../images/bash.png').default} width="20"></img> | <ScaffoldProject /> |
+
+For more information please refer to [Step 6: Scaffold the project](./generate_project#step-6-scaffold-the-project) in the [Generate a data project](./generate_project) section.
+
+## Step 7 - Change Directory and push project to remote repository
+
+import ChangeWD from "../snippets/_change_wd.mdx"
+import GitPush from "../snippets/_git_push.mdx"
+
+Change directory to the newly scaffolded project and then push the repo to the remote repository.
+
+| Shell | Command |
+|---|---|
+| <img src={require('../images/powershell.png').default} width="20"></img> <br /> <img src={require('../images/bash.png').default} width="20"></img> | <ChangeWD /> |
+| <img src={require('../images/powershell.png').default} width="20"></img> <br /> <img src={require('../images/bash.png').default} width="20"></img> | <GitPush /> |
+
+For more information please refer to [Step 7: Push the project to remote repository](./generate_project#step-7-push-the-project-to-remote-repository) in the [Generate a data project](./generate_project) section.
+
+## Step 8 - Create Environment files
+
+import CreateEnvfilePowershell from "../snippets/powershell/_generate_envfile.mdx"
+import CreateEnvfileBash from "../snippets/bash/_generate_envfile.mdx"
+
+Create local environment variables for the deployment
+
+| Shell | Command |
+|---|---|
+| <img src={require('../images/powershell.png').default} width="20"></img> | <CreateEnvfilePowershell /> |
+| <img src={require('../images/bash.png').default} width="20"></img> | <CreateEnvfileBash /> |
+
+Update the credentials file with the Azure Service Principal and the Azure DevOps PAT.
+
+For more information please refer to [Step 1: Generate Environment Files](./private_network#step-1-generate-environment-files) in the [private network deployment](./private_network) section.
+
+## Step 9 - Source Networking environment variables
+
+import SourceNetEnvsPowershell from "../snippets/powershell/_source_envfile_networking.mdx"
+import SourceNetEnvsBash from "../snippets/bash/_source_envfile_networking.mdx"
+
+Source the `networking` stage envrionment variables
+
+| Shell | Command |
+|---|---|
+| <img src={require('../images/powershell.png').default} width="20"></img> | <SourceNetEnvsPowershell /> |
+| <img src={require('../images/bash.png').default} width="20"></img> | <SourceNetEnvsBash /> |
+
+For more information please refer to [Step 2: Source the networking environment variables](./private_network#step-2-source-the-networking-environment-variables) in the [private network deployment](./private_network) section.
+
+## Step 10 - Deploy the networking infrastructure
+
+Initialise Terraform, plan the resources and deploy the networking.
+
+| Shell | Command |
+|---|---|
+| <img src={require('../images/powershell.png').default} width="20"></img> <br /> <img src={require('../images/bash.png').default} width="20"></img> | <TerraformDeployTasks /> |
+
+Alternatively the EIR pipeline run be run which will bundle all of the above tasks together.
+
+| Shell | Command |
+|---|---|
+| <img src={require('../images/powershell.png').default} width="20"></img> <br /> <img src={require('../images/bash.png').default} width="20"></img> | <TerraformDeployPipeline /> |
+
+For more information please refer to [Step 3: Deploy the Networking Components](./private_network#step-3-deploy-the-networking-components) in the [private network deployment](./private_network) section.
+
+## Step 11 - Source variables for data infrastructure
+
+The next stage is to deploy the infrastructure. This again is configured using environment variables, which are provided from two script files.
+
+import SourceInfraEnvsPowershell from "../snippets/powershell/_source_envfile_infra.mdx"
+import SourceInfraEnvsBash from "../snippets/bash/_source_envfile_infra.mdx"
+
+Source the `networking` stage envrionment variables
+
+| Shell | Command |
+|---|---|
+| <img src={require('../images/powershell.png').default} width="20"></img> | <SourceInfraEnvsPowershell /> |
+| <img src={require('../images/bash.png').default} width="20"></img> | <SourceInfraEnvsBash /> |
+
+For more information please refer to [Step 1: Source Environment Files](./core_data_platform_deployment_azure#step-1-source-environment-files) in the [private network deployment](./core_data_platform_deployment_azure) section.
+
+## Step 12 - Deploy the data infrastructure
+
+Initialise Terraform, plan the resources and deploy the data infrastructure.
+
+| Shell | Command |
+|---|---|
+| <img src={require('../images/powershell.png').default} width="20"></img> <br /> <img src={require('../images/bash.png').default} width="20"></img> | <TerraformDeployTasks /> |
+
+Alternatively the EIR pipeline run be run which will bundle all of the above tasks together.
+
+<TerraformDeployPipeline />
+
+For more information please refer to [Step 2: Deploy the Data Infrastructure Components](./core_data_platform_deployment_azure#step-2-deploy-the-data-infrastructure-components) in the [private network deployment](./core_data_platform_deployment_azure) section.
+
+
+## Step 13 - Source variables for Databricks configuration
+
+The next stage is to deploy the infrastructure. This again is configured using environment variables, which are provided from two script files.
+
+import SourceADBEnvsPowershell from "../snippets/powershell/_source_envfile_databricks.mdx"
+import SourceADBEnvsBash from "../snippets/bash/_source_envfile_databricks.mdx"
+
+Source the `networking` stage envrionment variables
+
+| Shell | Command |
+|---|---|
+| <img src={require('../images/powershell.png').default} width="20"></img> | <SourceADBEnvsPowershell /> |
+| <img src={require('../images/bash.png').default} width="20"></img> | <SourceADBEnvsBash /> |
+
+For more information please refer to [Step 1: Source Environment Files](./databricks_config#step-1-source-environment-files) in the [private network deployment](./databricks_config) section.
+
+
+## Step 14 - Deploy the Databricks configuration
+
+Initialise Terraform, plan the resources and deploy the Databricks configuration.
+
+| Shell | Command |
+|---|---|
+| <img src={require('../images/powershell.png').default} width="20"></img> <br /> <img src={require('../images/bash.png').default} width="20"></img> | <TerraformDeployTasks /> |
+
+Alternatively the EIR pipeline run be run which will bundle all of the above tasks together.
+
+<TerraformDeployPipeline />
+
+For more information please refer to [Step 2: Deploy the Databricks configuration](./databricks_config#step-2-deploy-the-databricks-configuration) in the [private network deployment](./databricks_config) section.
+
+## Next Steps
+
+Now you have generated and deployed a new Ensono Stacks Data Platform, [setup your local development environment](./dev_quickstart_data_azure.md).

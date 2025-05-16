@@ -16,15 +16,31 @@ keywords:
 ---
 
 Core data platform resources are defined within Terraform templates and grouped inside
-[deploy/azure](https://github.com/ensono/stacks-azure-data/tree/main/deploy/azure) directory.
+https://github.com/ensono/stacks-azure-data/tree/main/deploy/azure[deploy/azure] directory.
 There are two subfolders in this directory:
 
-* `infra`
 * `networking`
+* `infra`
+* `databricks`
 
-## Infrastructure
+## Networking
 
-The `infra` subfolder contains the following definitions:
+Using a private network is the default behaviour in Ensono Stacks Azure Data Platform. `networking`
+subfolder contains configurations for the created network and subnetworks, at its core using
+https://github.com/ensono/stacks-terraform/tree/master/azurerm/modules/azurerm-hub-spoke[azurerm-hub-spoke]
+Ensono Stacks Terraform module.  See https://learn.microsoft.com/en-us/azure/architecture/reference-architectures/hybrid-networking/hub-spoke?tabs=cli[Microsoft documentation] for more details on implementing Hub-spoke network topology in Azure.
+
+The following diagram shows network configuration for the two default environments:
+
+* Hub network (`is_hub: true`)
+* Nonprod (`is_hub: false`)
+* Prod (`is_hub: false`)
+
+image::network_hub_spoke.png[Network Hub Spoke]
+
+## Infra
+
+`infra` subfolder contains the following definitions:
 
 1. **Resource Group**
 2. **Azure SQL Database** sample instance with database schemas
@@ -58,41 +74,25 @@ The `infra` subfolder contains the following definitions:
    the private endpoints.
 11. **Log Analytics Workspace**
 
-## Networking
+## Databricks
 
-Using a private network is the default behaviour in the Ensono Stacks Data Azure Platform. The `networking`
-subfolder contains configurations for the created network and subnetworks, at its core using
-[azurerm-hub-spoke](https://github.com/ensono/stacks-terraform/tree/master/azurerm/modules/azurerm-hub-spoke)
-Ensono Stacks Terraform module. See [Microsoft documentation](https://learn.microsoft.com/en-us/azure/architecture/reference-architectures/hybrid-networking/hub-spoke?tabs=cli) for more details on implementing Hub-spoke network topology in Azure.
+Due to the way that Databricks is deployed into Azure, a seperate stage to finalise the configuration is required. This folder conatins the following resource definitions.
 
-The following diagram shows network configuration for the two default environments:
-
-* Hub network (`is_hub: true`)
-* Nonprod (`is_hub: false`)
-* Prod (`is_hub: false`)
-
-![network_hub_spoke.png](../images/network_hub_spoke.png)
+1. **Azure Databricks Secrets Scope**
+2. **Azure Databricks Token** 
+3. **Azure Databricks Workspace**
+4. **Azure Key Vault Screts** adds the Databricks token to Key Vault
 
 ### Databricks secure cluster connectivity
 
 Ensono Stacks Azure Data Platform uses VNet injection to deploy Databricks into a custom virtual network.
 
-In most scenarios, we recommend that Azure Databricks is deployed in a fully secure manner, using
-secure cluster connectivity and disabling public workspace access. This means that Databricks
-can only be accessed over a private endpoint from within the private network. This also means that
-projects would need to have networking prerequisites such as ExpressRoute or VPNs in order to access
-the workspace. If this is not possible, then a virtual machine will need to be set up within the
-transit subnet. Users will then need to RDP into the VM and access the workspace via that.
+In most scenarios, we recommend that Azure Databricks is deployed in a fully secure manner, using secure cluster connectivity and disabling public workspace access. This means that Databricks can only be accessed over a private endpoint from within the private network. This also means that projects would need to have networking prerequisites such as ExpressRoute or VPNs in order to access the workspace. If this is not possible, then a virtual machine will need to be set up within the transit subnet. Users will then need to RDP into the VM and access the workspace via that.
 
-Even without public IPs and with the data plane deployed into our VNet, there is still the option
-to toggle access to the Workspace UI via public networks. The default configuration disallows access
-to the Databricks workspace over the public internet in production environments, while leaving it
-open in development environments. This approach enhances the developer experience in case there is
-no properly configured networking/VPN set up in the target subscription.
+Even without public IPs and with the data plane deployed into our VNet, there is still the option to toggle access to the Workspace UI via public networks. The default configuration disallows access to the Databricks workspace over the public internet in production environments, while leaving it open in development environments. This approach enhances the developer experience in case there is no properly configured networking/VPN set up in the target subscription.
 
-Enabling public workspace access only opens access to the UI via public internet. Access is still
-restricted based on the IAM policy.
+Enabling public workspace access only opens access to the UI via public internet. Access is still restricted based on the IAM policy.
 
 The following diagram depicts the Databricks network configuration.
 
-![network_databricks.png](../images/network_databricks.png)
+![Network Databricks](../images/network_databricks.png)
