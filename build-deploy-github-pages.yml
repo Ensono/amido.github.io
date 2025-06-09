@@ -22,7 +22,7 @@ resources:
 
 variables:
   - name: pool_vm_image
-    value: ubuntu-20.04
+    value: ubuntu-24.04
   - name: version_spec
     value: 18.x
   - name: self_repo
