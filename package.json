@@ -25,7 +25,7 @@
     "@docusaurus/core": "^3.8.1",
     "@docusaurus/mdx-loader": "^3.8.1",
     "@docusaurus/plugin-google-analytics": "^3.8.1",
-    "@docusaurus/plugin-google-gtag": "^3.5.2",
+    "@docusaurus/plugin-google-gtag": "^3.8.1",
     "@docusaurus/plugin-sitemap": "^3.8.1",
     "@docusaurus/preset-classic": "^3.8.1",
     "@mdx-js/react": "^3.1.0",
