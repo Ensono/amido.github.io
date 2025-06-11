@@ -134,7 +134,7 @@ const config = {
       {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-            remarkPlugins: [remarkImages],
+            remarkPlugins: [remarkImages.default || remarkImages],
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css")

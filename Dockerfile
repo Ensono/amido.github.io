@@ -6,12 +6,12 @@
 # run:
 # docker run --rm -it -p 3000:3000 amido.github.io
 
-FROM node:16 AS build-env
+FROM node:20 AS build-env
 WORKDIR /app
 COPY . /app/
 RUN npm install
 
-FROM gcr.io/distroless/nodejs:16
+FROM gcr.io/distroless/nodejs:20
 COPY --from=build-env /app /app
 WORKDIR /app
 EXPOSE 3000
