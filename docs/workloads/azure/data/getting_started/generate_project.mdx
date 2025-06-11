@@ -1,0 +1,164 @@
+---
+id: generate_project
+title: Generate a data project
+sidebar_label: 1. Generate a data project
+hide_title: false
+hide_table_of_contents: false
+description: Generate a new data project using Ensono Stacks
+keywords:
+  - stacks cli
+  - data
+  - azure
+  - template
+---
+
+This section provides an overview of scaffolding and generating a new data platform project using the [Ensono Stacks CLI](/docs/stackscli/about).
+
+It assumes the following [pre-requisites](./requirements_data_azure.md) are in place:
+
+* A [remote git repository](./requirements_data_azure.md#git-repository) for hosting the generated project
+* A [storage account](./requirements_data_azure.md#terraform-state-storage) for the Terraform state
+
+:::tip
+
+See more information on the [pre-requisites](./requirements_data_azure) for generating Stacks Data Platform.
+
+:::
+
+## Step 1: Install the Ensono TaskCTL tool
+
+:::tip
+The Ensono TaskCTL tool only needs to be installed if deploying the platform infrastructure, if this is not the case then please proceed to step 2.
+:::
+
+The TaskCTl tool is used to run and manage the pipeline tasks as part of the Ensono Independent Runner. This allows the exact same commands to be run locally as would be in a CI/CD tool, such as GitHub Actions or Azure DevOps.
+
+This command utilises the Docker images that Ensono maintain to isolate tasks from the local workstation. All of the required tools are included in the Docker image, so there is no need to install them locally.
+
+import TaskctlInstallPowershell from "../snippets/powershell/_install_taskctl.mdx"
+import TaskctlInstallBash from "../snippets/bash/_install_taskctl.mdx"
+
+The following command lines, for PowerShell and Bash, show how to quickly install the tools.
+
+| Shell | Command |
+|---|---|
+| <img src={require('../images/powershell.png').default} width="20"></img> | <TaskctlInstallPowershell /> |
+| <img src={require('../images/bash.png').default} width="20"></img> | <TaskctlInstallBash /> |
+
+## Step 2: Install the Ensono Stacks CLI
+
+import StackscliInstallPowershell from "../snippets/powershell/_install_stackscli.mdx"
+import StackscliInstallBash from "../snippets/bash/_install_stackscli.mdx"
+
+Download and install the [Ensono Stacks CLI](/docs/stackscli/about).
+Please refer to the [**Stacks.CLI.Manual**](https://github.com/Ensono/stacks-cli/releases/download/v0.4.40/Stacks.CLI.Manual.-.0.4.40.pdf) for detailed instructions.
+
+The following command lines, for PowerShell and Bash, show how to quickly install the tools.
+
+| Shell | Command |
+|---|---|
+| <img src={require('../images/powershell.png').default} width="20"></img> | <StackscliInstallPowershell /> |
+| <img src={require('../images/bash.png').default} width="20"></img> | <StackscliInstallBash /> |
+
+## Step 3: Update the StacksCLI config
+
+The StacksCLI CLI tool comes with an internal configuration file which details the templates from which it can create projects. This makes it easy to ship the application as it is a single file, however it means that occasionally the internal configuration files need to be updated to accommodate for new templates.
+
+The tool has the ability to pull down updated files from a central location. Ensono maintain a configuration file in a central location that the tool will pull down from.
+
+import StacksCliUpdate from "../snippets/_stackscli_update_config.mdx"
+
+| Shell | Command |
+|---|---|
+| <img src={require('../images/powershell.png').default} width="20"></img> <br /> <img src={require('../images/bash.png').default} width="20"></img> | <StacksCliUpdate /> |
+
+
+## Step 4: Create working directory
+
+The working directory is where the all operations from the command will be performed. The `scaffold` file and the resultant project directories will all be created in this directory. By creating a working directory for all the scaffolded projects it keeps all of the components for the overall  project in one place.
+
+:::tip
+This directory can be created on a network share, or a USB key but be aware that the paths to the files maybe incorrect when transferred to another machine.
+:::
+
+import CreateWDPowershell from "../snippets/powershell/_create_wd.mdx"
+import CreateWDBash from "../snippets/bash/_create_wd.mdx"
+
+| Shell | Command |
+|---|---|
+| <img src={require('../images/powershell.png').default} width="20"></img> | <CreateWDPowershell /> |
+| <img src={require('../images/bash.png').default} width="20"></img> | <CreateWDBash /> |
+
+## Step 5: Prepare the project config
+
+import DownloadScaffoldPowershell from "../snippets/powershell/_download_scaffold.mdx"
+import DownloadScaffoldBash from "../snippets/bash/_download_scaffold.mdx"
+
+We will be using the `stacks-cli scaffold` command to generate a new data project. The scaffold command takes a YAML configuration file, defining the project.
+
+A [sample data project config file](https://raw.githubusercontent.com/ensono/stacks-azure-data/refs/heads/main/stacks-cli/data-scaffold-example.yml) is provided. Use the following commands to download an example of this file, and then update accordingly.
+
+| Shell | Command |
+|---|---|
+| <img src={require('../images/powershell.png').default} width="20"></img> | <DownloadScaffoldPowershell /> |
+| <img src={require('../images/bash.png').default} width="20"></img> | <DownloadScaffoldBash /> |
+
+
+| Config field                | Example value                                       | Description                                                                                                                                     |
+|-----------------------------|-----------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------|
+| directory.working           | `stacks`                                            | Target directory for the scaffolded project.                                                                                                    |
+| directory.export            | `~`                                                 | Path to your Ensono Stacks CLI installation.                                                                                                    |
+| business.company            | `mycompany`                                         | Used for resource naming.                                                                                                                       |
+| business.domain             | `mydomain`                                          | Used for environment & Terraform state key naming.                                                                                              |
+| business.component          | `data`                                              | Used for resource naming.                                                                                                                       |
+| project.name                | `stacks-data-platform`                              | Name of project created & used for resource naming.                                                                                             |
+| project.sourcecontrol.type  | `github`                                            | Remote repository provider, e.g. GitHub or Azure DevOps.                                                                                        |
+| project.sourcecontrol.url   | `https://github.com/mycompany/stacks-data-platform` | Used for setting up the remote repository - see [Git repository](./requirements_data_azure.md#git-repository).                                  |
+| project.cloud.region        | `ukwest`                                            | The Azure region you'll be deploying into. Using the Azure CLI, you can use `az account list-locations -o Table` to see available region names. |
+| terraform.backend.storage   | `tfstorage`                                         | Storage account name for Terraform state - see [Terraform state storage](./requirements_data_azure.md#terraform-state-storage).                 |
+| terraform.backend.group     | `tfgroup`                                           | Resource group name for Terraform state.                                                                                                        |
+| terraform.backend.container | `tfcontainer`                                       | Storage container name for Terraform state.                                                                                                     |
+
+All other values can be left as they are. For full documentation of all fields in the config file, refer to the Stacks CLI Manual.
+
+:::tip
+
+Alternatively, you can use the `stacks-cli interactive` command to generate a YAML configuration file by answering a series of questions. See the Stacks CLI Manual for further information.
+
+:::
+
+## Step 6: Scaffold the project
+
+import ScaffoldProject from "../snippets/_scaffold_project.mdx"
+
+You will now pass the prepared config file to the Ensono Stacks scaffold command, and your project will be generated. Run the following, replacing `./data-scaffold-config.yml` with the path to your config file:
+
+| Shell | Command |
+|---|---|
+| <img src={require('../images/powershell.png').default} width="20"></img> <br /> <img src={require('../images/bash.png').default} width="20"></img> | <ScaffoldProject /> |
+
+If successful, the new project will now be available in the directory provided in the `directory.working` field. Navigate to the generated project's directory and review the contents.
+
+## Step 7: Push the project to remote repository
+
+To allow collaboration on the the project, and to run pipelines using CI/CD the project needs to be pushed to the remote repository that has been setup. As the projects have been created in a working directory, the git commands need to be run in the repository repo.
+
+import ChangeWD from "../snippets/_change_wd.mdx"
+import GitPush from "../snippets/_git_push.mdx"
+
+Change directory to the newly scaffolded project and then push the repo to the remote repository.
+
+| Shell | Command |
+|---|---|
+| <img src={require('../images/powershell.png').default} width="20"></img> <br /> <img src={require('../images/bash.png').default} width="20"></img> | <ChangeWD /> |
+| <img src={require('../images/powershell.png').default} width="20"></img> <br /> <img src={require('../images/bash.png').default} width="20"></img> | <GitPush /> |
+
+:::tip
+
+It is highly recommended after your initial commit that you add branch protection rules to the remote `main` branch: see guidance for [GitHub](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/managing-a-branch-protection-rule) or [Azure DevOps Repos](https://learn.microsoft.com/en-us/azure/devops/repos/git/branch-policies?view=azure-devops).
+
+:::
+
+## Next steps
+
+Now you have generated a new data project, [deploy the networking](./private_network.mdx).

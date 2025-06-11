@@ -1,7 +1,7 @@
 ---
 id: example_data_source
 title: Example Data Source
-sidebar_label: 5. Example Data Source
+sidebar_label: 7. Example Data Source
 hide_title: false
 hide_table_of_contents: false
 description: Setting up and using the example data source
@@ -14,7 +14,7 @@ keywords:
 
 When deploying an Ensono Stacks Data Platform, an Azure SQL database will be deployed. This database is intended to be used for experimenting and testing ingest processes within the platform. The database will be deployed into the same resource groups as the core data platform resources, named for example:
 
-* **SQL server name:** amidostacksdeveuwdesql.database.windows.net
+* **SQL server name:** ensonodataeuwdatatbynsql.database.windows.net
 * **SQL database name:** sqldbtest
 
 :::note Accessing the Azure SQL database

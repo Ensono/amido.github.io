@@ -1,7 +1,7 @@
 ---
 id: shared_resources_deployment_azure
 title: Shared Resources Deployment
-sidebar_label: 4. Shared Resources Deployment
+sidebar_label: 6. Shared Resources Deployment
 hide_title: false
 hide_table_of_contents: false
 description: Deployment of common Azure Data Factory resources shared by data pipelines
@@ -32,7 +32,7 @@ For details of how these resources are used in ingest pipelines, see [data inges
 
 This guide assumes the following are in place:
 
-* A [deployed Ensono Stacks Data Platform](./core_data_platform_deployment_azure.md)
+* A [deployed Ensono Stacks Data Platform](./core_data_platform_deployment_azure.mdx)
 * [Development environment set up](./dev_quickstart_data_azure.md)
 
 ## Step 1: Create feature branch

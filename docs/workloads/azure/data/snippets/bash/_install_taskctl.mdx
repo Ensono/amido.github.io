@@ -1,0 +1,6 @@
+```bash
+mkdir -p $HOME/tools
+curl -L https://github.com/Ensono/taskctl/releases/download/2.0.3/taskctl-$(uname | tr 'A-Z' 'a-z')-amd64 -o $HOME/tools/taskctl
+chmod +x $HOME/tools/taskctl
+export PATH=$HOME/tools:$PATH
+```

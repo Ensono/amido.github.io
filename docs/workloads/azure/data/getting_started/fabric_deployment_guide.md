@@ -1,7 +1,7 @@
 ---
 id: fabric_deployment_guide
 title: Fabric Lakehouse Deployment
-sidebar_label: 8. Fabric Lakehouse Deployment
+sidebar_label: 10. Fabric Lakehouse Deployment
 hide_title: false
 hide_table_of_contents: false
 description: Deployment of Microsoft Fabric Lakehouse through Azure Portal

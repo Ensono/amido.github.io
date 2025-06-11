@@ -1,7 +1,7 @@
 ---
 id: ingest_pipeline_deployment_azure
 title: Data Ingest Pipeline Deployment
-sidebar_label: 6. Data Ingest Pipeline Deployment
+sidebar_label: 8. Data Ingest Pipeline Deployment
 hide_title: false
 hide_table_of_contents: false
 description: Data ingest pipelines development & deployment
@@ -19,7 +19,7 @@ This section provides an overview of generating a new [data ingest pipeline](../
 
 This guide assumes the following are in place:
 
-- A [deployed Ensono Stacks Data Platform](./core_data_platform_deployment_azure.md)
+- A [deployed Ensono Stacks Data Platform](./core_data_platform_deployment_azure.mdx)
 - [Development environment set up](./dev_quickstart_data_azure.md)
 - [Deployed shared resources](./shared_resources_deployment_azure.md)
 - A data source to ingest from. The steps below are based on using the [Azure SQL example data source](example_data_source.md)

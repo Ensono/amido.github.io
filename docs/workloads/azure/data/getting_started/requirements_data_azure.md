@@ -10,17 +10,30 @@ keywords:
   - prerequisites 
 ---
 
+## Infrastructure Deployment
+
+The following tools are required for deploying the infrastructure needed for supporting the Ensono Stacks Data platform.
+
+| Tool | Notes | Required in CI/CD |
+|---|---|---|
+| [Stacks CLI](https://github.com/Ensono/stacks-cli) | Used to scaffold the new data project | N |
+| [TaskCTL](https://github.com/Ensono/tastctl) | Runs the tasks and pipelines as defined in the project. Uses the Ensono Independent Runner. | 
+| [VSCode](https://code.visualstudio.com/Download) | IDE for editing the configuration required for the deployment of the platform. | N |
+| [Docker Desktop](https://www.docker.com/products/docker-desktop/) <br /> [Rancher Desktop](https://rancherdesktop.io/) | Docker engine so that the Ensono Independent Runner can be used, <br /> (Only one of these engines is required) | Y (Docker engine)
+| [Terraform](https://www.terraform.io) | Terraform is only required for local testing or if not using Ensono Independent Runner | Y |
+
 ## Local development
 
-The following tools are recommended for developing while using the Ensono Stacks data solution:
+The following tools are required for developing the data pipelines 
 
-| Tool                                                                                                   | Notes                                                                                                                                                                   |
-|--------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Tool | Notes |
+|---|---|
 | [Python 3.9 - 3.11](https://www.python.org/downloads/)                                                 | Use of Python 3.12+ is not currently supported. You may wish to use a utility such as [pyenv](https://pypi.org/project/pyenv/) to manage your local versions of Python. |
 | [Poetry](https://python-poetry.org/docs/)                                                              | Used for Python dependency management in Stacks.                                                                                                                        |
 | (Windows users) a Linux distribution, e.g. [WSL](https://docs.microsoft.com/en-us/windows/wsl/install) | A Unix-based environment is recommended for developing the solution (e.g. macOS, Linux, or WSL for Windows users).                                                      |
 | Java 8/11/17 runtime                                                                                   | Optional: Java is required to develop and run tests using PySpark locally - see [Spark documentation](https://spark.apache.org/docs/latest/).                           |
 | [Azure CLI](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli)                             | Optional: Azure CLI allows you to interact with Azure resources locally, including running end-to-end tests.                                                            |
+
 
 See [development quickstart](./dev_quickstart_data_azure.md) for further details on getting start with developing the solution.
 
@@ -37,8 +50,11 @@ The examples and quickstart documentation assume that `main` is the primary bran
 In order to deploy an Ensono Stacks Data Platform into Azure, you will need:
 
 * One or more Azure subscriptions – for deploying the solution into
-* Azure service principal (Application) – must have `Contributor` access to deploy and configure all required
-resources into the target subscription(s)
+* Azure service principal (Application) – must have `Contributor` access to deploy and configure all required resources into the target subscription(s)
+  * Client ID
+  * Client Secret
+  * Subscription ID
+  * Tenant ID
 
 ### Terraform state storage
 
@@ -56,74 +72,110 @@ CI/CD processes within the Ensono Stacks Data Platform are currently designed to
 
 ### Azure Pipelines variable groups
 
-Our blueprint solution expects the following [variable groups](https://learn.microsoft.com/en-us/azure/devops/pipelines/library/variable-groups?view=azure-devops&tabs=yaml)
-to exist in your Azure DevOps project's Pipelines Library:
+So that ADO can deploy the resource into Azure, credentials need to be supplied for each of the subscriptions that need to be deployed to. It is envisaged that there will be up to two subscriptions:
 
-* amido-stacks-de-pipeline-_env_
-* amido-stacks-euw-de-_env_-network
-* stacks-credentials-_env_-kv
+| Description | Name | Environments |
+|-------------|------|--------------|
+| Non production subscription | `nonprod` | `dev`, `qa` |
+| Production subscription | `prod` | `uat`, `prod` |
 
-Where _env_ can be either `nonprod` or `prod`.
+The expected names of the variable groups are:
 
-Please refer to the following lists to identify the necessary variables for your project.
-The specifics regarding when each variable is required have also been provided. Generally,
-the variables fall into one of two categories based on the time of requirement: 'Project Start',
-denoting variables required at the very outset of the project, and 'After Core Infrastructure
-Deployment', referring to variables required after the fundamental infrastructure has been deployed.
+* azure-sp-creds
+* azure-sp-creds-prod
+
+The following table details the information that should be in each group.
+
+| Variable Name                    | Description                                  |
+|----------------------------------|----------------------------------------------|
+| ARM_CLIENT_ID               | Client ID of the service princiapl             |
+| ARM_CLIENT_SECRET               | Secret associated with the specific Client ID            |
+| ARM_SUBSCRIPTION_ID               | ID of the subscription that the Service Principal has access to                            |
+| ARM_TENANT_ID | Azure tenant that the specific subscription belongs to                             |
+| AZDO_PERSONAL_ACCESS_TOKEN                   | Azure DevOps PAT token so that Terraform can create the the variable groups                               |
+
+
+<p />
+
+The Terraform for the project now creates Azure DevOps variable groups from the outputs. This means that the values in the group are always current date because they are updated on each run of Terraform.
+
+The variable groups will be automatically created based on the name of the company, project, component, stage and environment. The following shows examples of what will be in each type of group.
+
+:::note Company name details
+To illustrate the names of the variable groups the following is used as an example
+
+* Company: `ensono`
+* Project: `analytics`
+* Component: `data`
+* Environment: `dev`
+:::
+
+The name of the resource groups is built up using the following standard:
+
+```
+<company>-<project>-<component>-<stage>-<environment>
+```
+
+* ensono-analytics-data-networking-dev
+* ensono-analytics-data-infra-dev
+
+This allows the name to be predictable so when the project is scaffolded the names are correctly set in the Azure DevOps pipeline file.
 
 :::note Networking variables
 
-The variables under `amido-stacks-euw-de-env-network` are only required if you want to provision the infrastructure within a private network.
+The variable group for networking, `ensono-analytics-data-networking-dev` is only created of the networking stage is deployed to create a private network.
 
 :::
 
 <details>
-  <summary>amido-stacks-de-pipeline-env</summary>
+  <summary>ensono-analytics-data-networking-dev</summary>
 
-| Variable Name                    | When Needed      | Description                                  |
-|----------------------------------|------------------|----------------------------------------------|
-| ADLS_DataLake_URL                | After core infra | Azure Data Lake Storage Gen2 URL             |
-| blob_adls_storage                | After core infra | Azure Data Lake Storage Gen2 name            |
-| blob_configStorage               | After core infra | Blob storage name                            |
-| Blob_ConfigStore_serviceEndpoint | After core infra | Blob service URL                             |
-| databricksHost                   | After core infra | Databricks URL                               |
-| databricksWorkspaceResourceId    | After core infra | Databricks workspace resource id             |
-| datafactoryname                  | After core infra | Azure Data Factory name                      |
-| github_token                     | After core infra | GitHub PAT token, see below for more details |
-| integration_runtime_name         | After core infra | Azure Data Factory integration runtime name  |
-| KeyVault_baseURL                 | After core infra | Vault URI                                    |
-| keyvault_name                    | After core infra | Key Vault name                               |
-| location                         | Project start    | Azure region                                 |
-| resource_group                   | Project start    | Name of the resource group                   |
-| sql_connection                   | After core infra | Connection string to Azure SQL database      |
-
-</details>
-
-<details>
-  <summary>amido-stacks-euw-de-env-network</summary>
-
-| Variable Name                  | When Needed   | Description                                             |
-|--------------------------------|---------------|---------------------------------------------------------|
-| databricks_private_subnet_name | Project start | Name of the private databricks subnet                   |
-| databricks_public_subnet_name  | Project start | Name of the public databricks subnet                    |
-| pe_resource_group_name         | Project start | Name of the resource group to provision private VNet to |
-| pe_subnet_name                 | Project start | Name of the subnet to provision private endpoints into  |
-| pe_subnet_prefix               | Project start | Subnet CIDR, e.g. ["10.3.1.0/24"]                       |
-| pe_vnet_name                   | Project start | Private VNet name                                       |
-| private_subnet_prefix          | Project start | Subnet CIDR, e.g. ["10.3.4.0/24"]                       |
-| public_subnet_prefix           | Project start | Subnet CIDR, e.g. ["10.3.3.0/24"]                       |
+| Variable Name | Description | Example |
+|---------------|-------------|---------|
+| adf_private_nsg_subnet_association_id | ID of the subnet association for private NSG | /subscriptions/36ad8b14-a636-4c43-9278-7905d8af8f17/resourceGroups/ensono-data-euw-data-dev-network/providers/Microsoft.Network/virtualNetworks/ensono-data-euw-data-dev/subnets/ensono-data-euw-data-dev-adf-priv |
+| adf_public_nsg_subnet_association_id | ID of the subnet association for public NSG | /subscriptions/36ad8b14-a636-4c43-9278-7905d8af8f17/resourceGroups/ensono-data-euw-data-dev-network/providers/Microsoft.Network/virtualNetworks/ensono-data-euw-data-dev/subnets/ensono-data-euw-data-dev-adf-pub |
+| ado_agent_pool_name | Name of the agent pool that has been created in ADO | ensono-data-euw-hub-agent-pool |
+| ado_create_variable_group | Whether variable groups have been created | true |
+| ado_org_url | URL of the ADO organisation | https://dev.azure.com/ensonodigitaluk |
+| ado_project_id | Name of the project in ADO that vbariable groups and agent pools have been aligned to | Stacks |
+| build_agent_subnet_name | Name of the build agent subnet | build-agent |
+| dns_zone_resource_group_name | Name of the resource group for the DNS zone | ensono-data-euw-hub |
+| enable_private_networks | Whether private networks have been enabled | true |
+| hub_resource_group_name | Name of the hub resource group | ensono-data-euw-hub |
+| hub_vnet_name | Name of the hub resource group | ensono-data-euw-hub |
+| name_company | Name of the company | ensono |
+| nat_gateway_id | Resource ID of the NAT gatewaty | /subscriptions/36ad8b14-a636-4c43-9278-7905d8af8f17/resourceGroups/ensono-data-euw-data-dev-network/providers/Microsoft.Network/natGateways/ensono-data-euw-data-dev |
+| nat_gateway_pip_id | Resource ID of the NAT gateway public IP address | /subscriptions/36ad8b14-a636-4c43-9278-7905d8af8f17/resourceGroups/ensono-data-euw-data-dev-network/providers/Microsoft.Network/publicIPAddresses/ensono-data-euw-data-dev |
+| pe_subnet_id | Resource ID of the private endpoint subnet | /subscriptions/36ad8b14-a636-4c43-9278-7905d8af8f17/resourceGroups/ensono-data-euw-data-dev-network/providers/Microsoft.Network/virtualNetworks/ensono-data-euw-data-dev/subnets/ensono-data-euw-data-dev-pe |
+| pe_subnet_name | Name of the private endpoint subnet | ensono-data-euw-data-dev-pe |
+| pe_subnet_prefix | Network prefix of the private endpoint subnet | ["10.3.1.0/24"] |
+| private_subnet_name | Name of the ADF private subnet  | ensono-data-euw-data-dev-adf-priv |
+| private_subnet_prefix | Subnet prefix of the ADF private subnet | ["10.3.3.0/24"] |
+| public_subnet_name | Name of the public ADF network | ensono-data-euw-data-dev-adf-pub |
+| public_subnet_prefix | Subnet prefix of the ADF public network | ["10.3.4.0/24"] |
+| vnet_name | Name of the main virtual network | ensono-data-euw-data-dev |
+| vnet_resource_group_name | Name of the virtual network resource group | ensono-data-euw-data-dev-network |
 
 </details>
 
 <details>
-  <summary>stacks-credentials-env-kv</summary>
+  <summary>ensono-analytics-data-infra-dev</summary>
 
-| Variable Name         | When Needed   | Description                                           |
-|-----------------------|---------------|-------------------------------------------------------|
-| azure-client-id       | Project start | Application ID for Azure Active Directory application |
-| azure-client-secret   | Project start | Service principal secret                              |
-| azure-subscription-id | Project start | Subscription ID                                       |
-| azure-tenant-id       | Project start | Directory ID for Azure Active Directory application   |
+| Variable Name | Description | Example |
+|---------------|-------------|---------|
+| adb_databricks_hosturl | Azure Databricks host url | https://adb-1145164413853524.4.azuredatabricks.net/ |
+| adb_databricks_id | Resource ID of the Azure Databricks | /subscriptions/36ad8b14-a636-4c43-9278-7905d8af8f17/resourceGroups/ensono-data-euw-data-dev/providers/Microsoft.Databricks/workspaces/ensono-data-euw-data |
+| adf_integration_runtime_name | Name of the Azure Datafactory runtime | adf-managed-vnet-runtime |
+| adf_name | Name of the Azure Datafactory | "ensono-data-euw-data" |
+| adls_dfs_endpoints | Endpoints of the Azure Data Lake Storage distriubuted file system | ["https://ensodatadeveuwdatatbynco.dfs.core.windows.net/","https://ensodatadeveuwdatatbynad.dfs.core.windows.net/"] |
+| adls_storage_account_endpoints | Endpoints of the Azure Data Lake Storage account endpoints| ["https://ensodatadeveuwdatatbynco.blob.core.windows.net/","https://ensodatadeveuwdatatbynad.blob.core.windows.net/"] |
+| adls_storage_accounts | List of the Azure Data Lake storage accounts | ["ensodatadeveuwdatatbynco","ensodatadeveuwdatatbynad"] |
+| key_vault_id | Resource ID of the Azure Key Vault | /subscriptions/36ad8b14-a636-4c43-9278-7905d8af8f17/resourceGroups/ensono-data-euw-data-dev/providers/Microsoft.KeyVault/vaults/enso-datadeveuw-datatbyn |
+| key_vault_uri | URl of the deployed key vault | https://enso-datadeveuw-datatbyn.vault.azure.net/ |
+| kv_name | Name of the key vault | enso-datadeveuw-datatbyn |
+| private_endpoint_list | List of the private endpoints | `{"adb":"/subscriptions/36ad8b14-a636-4c43-9278-7905d8af8f17/resourceGroups/ensono-data-euw-data-dev/providers/Microsoft.Databricks/workspaces/ensono-data-euw-data","adls":"/subscriptions/36ad8b14-a636-4c43-9278-7905d8af8f17/resourceGroups/ensono-data-euw-data-dev/providers/Microsoft.Storage/storageAccounts/ensodatadeveuwdatatbynad","blob":"/subscriptions/36ad8b14-a636-4c43-9278-7905d8af8f17/resourceGroups/ensono-data-euw-data-dev/providers/Microsoft.Storage/storageAccounts/ensodatadeveuwdatatbynco","kv":"/subscriptions/36ad8b14-a636-4c43-9278-7905d8af8f17/resourceGroups/ensono-data-euw-data-dev/providers/Microsoft.KeyVault/vaults/enso-datadeveuw-datatbyn","sql":"/subscriptions/36ad8b14-a636-4c43-9278-7905d8af8f17/resourceGroups/ensono-data-euw-data-dev/providers/Microsoft.Sql/servers/ensonodataeuwdatatbynsql"}` |
+| resource_group_name | Name of the resopurce group for this endpoint | ensono-data-euw-data-dev |
+| sql_admin_password | Password for the SQL server | 123456789abcde |
 
 </details>
 
