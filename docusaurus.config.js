@@ -1,10 +1,10 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const remarkImages = require('remark-images');
-const {themes} = require('prism-react-renderer');
+const remarkImages = require("remark-images");
+const { themes } = require("prism-react-renderer");
 
-require('dotenv').config();
+require("dotenv").config();
 /** @type {import('@docusaurus/types').Config} */
 
 const config = {
@@ -19,8 +19,9 @@ const config = {
   organizationName: "Ensono", // Usually your GitHub org/user name.
   projectName: "amido.github.io", // Usually your repo name.
   customFields: {
-    description: 'Ensono Stacks is a catalogue of workload templates that\n' +
-        'instantly scaffold and deploy boilerplate software projects. Slash the time it takes to get productive on your software project.',
+    description:
+      "Ensono Stacks is a catalogue of workload templates that\n" +
+      "instantly scaffold and deploy boilerplate software projects. Slash the time it takes to get productive on your software project.",
     keywords: [
       "Microsoft Azure",
       "Google Cloud Platform",
@@ -53,8 +54,8 @@ const config = {
     },
     appVersions: {
       stacksCli: "v0.4.33",
-      taskCtl: "2.0.3"
-    }
+      taskCtl: "2.0.3",
+    },
   },
   themeConfig: {
     colorMode: {
@@ -64,9 +65,16 @@ const config = {
       theme: themes.github,
       darkTheme: themes.vsDark,
       showLineNumbers: true,
-      additionalLanguages: ['csharp', 'docker', 'powershell', 'java', 'bash', 'json'],
+      additionalLanguages: [
+        "csharp",
+        "docker",
+        "powershell",
+        "java",
+        "bash",
+        "json",
+      ],
       clipboard: {
-        copyMessage: "Copied code to clipboard"
+        copyMessage: "Copied code to clipboard",
       },
     },
     navbar: {
@@ -77,7 +85,7 @@ const config = {
         href: "/",
         width: 150,
         height: 36,
-        className: "custom-navbar-logo-class"
+        className: "custom-navbar-logo-class",
       },
       items: [
         {
@@ -92,11 +100,11 @@ const config = {
         {
           href: "https://www.ensono.com/company/lets-connect/",
           label: "Connect",
-          position: 'right'
+          position: "right",
         },
       ],
     },
-    footer: {      
+    footer: {
       links: [
         {
           title: "Documentation",
@@ -104,7 +112,7 @@ const config = {
             {
               label: "Getting Started",
               to: "docs/",
-            }
+            },
           ],
         },
         {
@@ -141,28 +149,27 @@ const config = {
       "@docusaurus/preset-classic",
       {
         docs: {
-
-          sidebarPath: require.resolve('./sidebars.js'),
-          // remarkPlugins: [remarkImages],
+          sidebarPath: require.resolve("./sidebars.js"),
+          remarkPlugins: [remarkImages.default || remarkImages],
         },
         theme: {
-          customCss: require.resolve("./src/css/custom.css")
+          customCss: require.resolve("./src/css/custom.css"),
         },
         sitemap: {
           changefreq: "weekly",
-          priority: 0.5
+          priority: 0.5,
         },
         gtag: {
-          trackingID: 'G-EKCQBC5CSJ',
+          trackingID: "G-EKCQBC5CSJ",
           anonymizeIP: true, // Should IPs be anonymized? (optional)
         },
         googleAnalytics: {
-          trackingID: 'G-EKCQBC5CSJ',
+          trackingID: "G-EKCQBC5CSJ",
           anonymizeIP: true, // Should IPs be anonymized?
         },
-      }
-    ]
-  ]
+      },
+    ],
+  ],
 };
 
 module.exports = config;

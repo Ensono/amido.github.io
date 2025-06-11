@@ -20,23 +20,26 @@
     "markdownlint-cli": "^0.41.0"
   },
   "dependencies": {
-    "@analytics/google-analytics": "^1.0.7",
-    "@docsearch/react": "^3.7.0",
-    "@docusaurus/core": "^3.7.0",
-    "@docusaurus/mdx-loader": "^3.7.0",
-    "@docusaurus/plugin-google-analytics": "^3.7.0",
-    "@docusaurus/plugin-google-gtag": "^3.7.0",
-    "@docusaurus/plugin-sitemap": "^3.7.0",
-    "@docusaurus/preset-classic": "^3.7.0",
-    "@mdx-js/react": "^3.0.1",
+    "@analytics/google-analytics": "^1.1.0",
+    "@docsearch/react": "^3.6.1",
+    "@docusaurus/core": "^3.8.1",
+    "@docusaurus/mdx-loader": "^3.8.1",
+    "@docusaurus/plugin-google-analytics": "^3.8.1",
+    "@docusaurus/plugin-google-gtag": "^3.8.1",
+    "@docusaurus/plugin-sitemap": "^3.8.1",
+    "@docusaurus/preset-classic": "^3.8.1",
+    "@mdx-js/react": "^3.1.0",
     "clsx": "^2.1.1",
-    "dotenv": "^16.4.5",
-    "prism-react-renderer": "^2.3.1",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
+    "dotenv": "^16.5.0",
+    "prism-react-renderer": "^2.4.1",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
     "react-player": "^2.16.0",
-    "react-select": "^5.8.0",
-    "remark-images": "^4.0.0"
+    "react-select": "^5.10.1",
+    "remark-images": "^4.1.0"
+  },
+  "overrides": {
+    "webpack-dev-server": "5.2.1"
   },
   "browserslist": {
     "production": [
@@ -51,6 +54,7 @@
     ]
   },
   "engines": {
-    "node": ">=16.14"
+    "node": ">=20.19",
+    "npm": ">=11.4"
   }
 }
