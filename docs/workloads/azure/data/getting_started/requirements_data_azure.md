@@ -41,7 +41,7 @@ See [development quickstart](./dev_quickstart_data_azure.md) for further details
 
 A remote Git repository is required for storing and managing a data project's code. This can be in either **GitHub** or **Azure DevOps**. When scaffolding a new data project, you will need the HTTPS URL of the repo.
 
-While Ensono Stacks supports storing code in both GitHub and Azure DevOps, it does not currently support CI/CD pipelines using GitHub Actions. Requirements for Azure DevOps are detailed in the [CI/DC - Azure DevOps](#cicd---azure-devops) section below.
+While Ensono Stacks supports storing code in both GitHub and Azure DevOps, it does not currently support CI/CD pipelines using GitHub Actions. Requirements for Azure DevOps are detailed in the [CI/CD - Azure DevOps](#cicd---azure-devops) section below.
 
 The examples and quickstart documentation assume that `main` is the primary branch in the repo.
 
