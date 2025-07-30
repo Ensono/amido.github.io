@@ -17,7 +17,7 @@
   "devDependencies": {
     "cspell": "^9.2.0",
     "markdownlint": "^0.34.0",
-    "markdownlint-cli": "^0.41.0"
+    "markdownlint-cli": "^0.45.0"
   },
   "dependencies": {
     "@analytics/google-analytics": "^1.1.0",

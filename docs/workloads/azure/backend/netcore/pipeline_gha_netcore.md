@@ -36,7 +36,7 @@ The pipeline will automate provisioning and updating the .NET REST API with CQRS
 
 A variable file located at `.github/workflows/ci-env.yml` will contain the majority of the variables required for the pipeline. **This file should be manually checked and updated where required before first deployment**. If the project was generated using the Stacks CLI then the file will be updated with the information provided.
 
-Environment secrets will need creating for storing some sensitive variables to be used by the pipeline. Instructions for creating a environment secrets can be found [here](https://docs.github.com/en/actions/managing-workflow-runs-and-deployments/managing-deployments/managing-environments-for-deployment#environment-secrets).
+Environment secrets will need creating for storing some sensitive variables to be used by the pipeline. Instructions for [creating a environment secrets](https://docs.github.com/en/actions/managing-workflow-runs-and-deployments/managing-deployments/managing-environments-for-deployment#environment-secrets).
 
 Add the following secrets:
 
@@ -53,4 +53,4 @@ Add the following secrets:
 
 ### Creating the pipeline
 
-Stacks generates the GitHub Actions workflow file in the directory expected by GitHub Actions, `.github/workflows`. Committing this file to the `main` branch of a GitHub repository will "create" the pipeline. Instructions for viewing the results can be found [here](https://docs.github.com/en/actions/writing-workflows/quickstart#viewing-your-workflow-results)
+Stacks generates the GitHub Actions workflow file in the directory expected by GitHub Actions, `.github/workflows`. Committing this file to the `main` branch of a GitHub repository will "create" the pipeline. Instructions for [viewing the results](https://docs.github.com/en/actions/writing-workflows/quickstart#viewing-your-workflow-results)

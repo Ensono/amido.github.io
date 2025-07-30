@@ -129,6 +129,6 @@ For more information on log level severity please refer to the [log levels](http
 
 ### Other resources
 
-Documentation for Winston can be found [here](https://github.com/winstonjs/winston).
+[Documentation for Winston](https://github.com/winstonjs/winston).
 
 </details>

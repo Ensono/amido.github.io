@@ -77,7 +77,7 @@ Open Application.java file and right click and choose run Application.![Run Java
 
 #### Formatter
 
-Install the `intellij-java-google-style.xml` formatter configuration file into the IDE from [here](https://github.com/Ensono/stacks-java/blob/master/tools/formatter/intellij-java-google-style.xml).
+Install the [`intellij-java-google-style.xml` formatter configuration file into the IDE](https://github.com/Ensono/stacks-java/blob/master/tools/formatter/intellij-java-google-style.xml).
 
 The Java source code will automatically be reformatted to comply with the [Google Java Style](https://google.github.io/styleguide/javaguide.html).
 

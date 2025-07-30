@@ -28,7 +28,7 @@ Where possible, we are creating reusable steps ([stacks-pipeline-templates](http
 
 ### Variable group
 
-A variable group will need creating for storing application variables to be used with the pipeline. Instructions for creating a variable group can be found [here](https://docs.microsoft.com/en-us/azure/devops/pipelines/library/variable-groups?view=azure-devops&tabs=classic#create-a-variable-group). Give the variable group a name and description and make sure the **Allow access to all pipelines** option is checked.
+A variable group will need creating for storing application variables to be used with the pipeline. Instructions for creating a [variable group](https://docs.microsoft.com/en-us/azure/devops/pipelines/library/variable-groups?view=azure-devops&tabs=classic#create-a-variable-group). Give the variable group a name and description and make sure the **Allow access to all pipelines** option is checked.
 
 Add the following variables:
 

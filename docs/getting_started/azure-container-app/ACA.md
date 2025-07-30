@@ -167,7 +167,7 @@ Con's
 We recommend implementing Option 2: Container App Environment deployment via Infrastructure pipeline and Container App deployment via Application pipeline. This approach provides the flexibility to manage infrastructure and application deployments separately while optimizing the deployment process for Azure Container Apps.
 This recommendation will result in a more streamlined deployment process, eliminating unnecessary Container App revisions and allowing for tighter integration between application builds and deployments.
 
-However, it's important to note that this approach will require additional effort in managing separate Terraform configurations for each Container App. To mitigate this challenge, we will utilize the existing Azure Container Apps Terraform module developed by Ensono, which is available [here](https://registry.terraform.io/modules/Ensono/aca/azurerm/latest).
+However, it's important to note that this approach will require additional effort in managing separate Terraform configurations for each Container App. To mitigate this challenge, we will utilize the existing Azure Container Apps [Terraform module developed by Ensono](https://registry.terraform.io/modules/Ensono/aca/azurerm/latest).
 
 This pre-built module will help reduce duplication and ease maintenance across multiple Container Apps, standardizing our Container App deployments and reducing the overhead of managing individual Terraform configurations.
 By leveraging this existing module in our recommended approach, we can achieve a more efficient and manageable deployment strategy for our Azure Container Apps while maintaining the flexibility to evolve both infrastructure and applications independently.
