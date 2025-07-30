@@ -36,7 +36,7 @@ The pipeline will automate provisioning and updating the .NET REST API with CQRS
 
 A variable file located at `build/azDevOps/azure/ci-vars.yml` will contain the majority of the variables required for the pipeline. **This file should be manually checked and updated where required before first deployment**. If the project was generated using the Stacks CLI then the file will be updated with the information provided.
 
-Variable groups will need creating for storing some sensitive variables to be used by the pipeline. Instructions for creating a variable group can be found [here](https://docs.microsoft.com/en-us/azure/devops/pipelines/library/variable-groups?view=azure-devops&tabs=classic#create-a-variable-group). Two variable groups are used by default, one for Azure credentials and one for any application specific variables.
+Variable groups will need creating for storing some sensitive variables to be used by the pipeline. Instructions for [creating a variable group](https://docs.microsoft.com/en-us/azure/devops/pipelines/library/variable-groups?view=azure-devops&tabs=classic#create-a-variable-group). Two variable groups are used by default, one for Azure credentials and one for any application specific variables.
 
 #### Azure Credentials
 

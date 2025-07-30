@@ -61,7 +61,7 @@ Variables can be found within `./build/azDevOps/azure/ci-vars.yml`
     value: flag
 ```
 
-- `PACT_BROKER_BASE_URL` needs to be updated to use a new instance of PactFlow. Details on creating a PactFlow instance can be found [here](https://pactflow.io/pricing/).
+- `PACT_BROKER_BASE_URL` needs to be updated to use a new instance of PactFlow. Details on creating a [PactFlow instance](https://pactflow.io/pricing/).
 - `PACTICIPANT_NAME` should be the name of your application
 - `OAS_FILE` is the relative path to the generated OpenAPI specification
 - `run_contract_tests` is a flag to enable/disable all contract testing steps. This is false by default and should only be set to true once users have a new PactFlow instance.

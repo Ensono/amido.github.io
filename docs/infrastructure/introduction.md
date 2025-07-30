@@ -20,7 +20,7 @@ All Ensono Stacks workloads require initial configuration of the cloud provider 
 
 All infrastructure tooling is done with [Terraform](https://www.terraform.io/), as a method for implementing infrastructure as code. Terraform uses workspaces as the main mechanism of segregating states.
 
-All the modules used by Ensono Stacks are documented and maintained [here](https://github.com/Ensono/stacks-terraform)
+All the modules used by Ensono Stacks are [documented and maintained](https://github.com/Ensono/stacks-terraform)
 
 <HideNavigation next />
 <HideNavigation prev />

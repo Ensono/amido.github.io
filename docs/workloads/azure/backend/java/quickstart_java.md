@@ -42,7 +42,7 @@ It uses an Azure **CosmosDB** database to store the example application data. So
 
 :::note
 For running on a local environment you can use the [Cosmos DB emulator](/docs/workloads/azure/backend/java/setting_up_cosmos_db_locally_java) (CosmosDB Emulator has a known fixed key). There is no need for CosmosDB for the simple web API implementation (1.i above) as there is no persistence layer in it.
-For further info please follow the [link](https://docs.microsoft.com/en-us/azure/cosmos-db/local-emulator?tabs=ssl-netstd21).
+[Further information is available from Microsoft directly](<https://docs.microsoft.com/en-us/azure/cosmos-db/local-emulator?tabs=ssl-netstd21>).
 :::
 
 Set the cosmosdb URI, databaseName and key in main application configuration file (`application.yml`) using the values coming from the CosmosDB Emulator UI.

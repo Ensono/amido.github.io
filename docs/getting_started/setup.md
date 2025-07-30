@@ -40,7 +40,7 @@ yarn global add nx
 
 #### Node
 
-We recommend using the latest LTS version of Node, you can find the latest LTS version [here](https://nodejs.org/en/).
+We recommend using the latest [LTS version of Node](https://nodejs.org/en/).
 
 ### Get Started
 

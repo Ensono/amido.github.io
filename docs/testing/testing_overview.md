@@ -17,6 +17,7 @@ keywords:
 Building testing frameworks from scratch requires a lot of boilerplate code. It is also hard to know how to get started without examples.
 
 To ensure the quality and reliability of your software projects, Ensono Stacks includes a range of integrated testing frameworks. These frameworks are designed to be easily bootstrapped and customized to fit your specific project needs. The tests integrated within each stack is summarised in this table:
+
 | Testing Type           | .Net | Java | Frontend/NX | Data |
 |------------------------|------|------|-------------|------|
 | Unit                   | ✔    | ✔    | ✔          | ✔    |
@@ -60,7 +61,7 @@ Examples:
 
 ### Performance Testing
 
-Performance testing ensures that your application can handle the expected load and perform well under stress. Ensono Stacks uses [Gatling](https://gatling.io/) for performance testing.  Further information can be found [here.](./performance_testing_gatling.md)
+Performance testing ensures that your application can handle the expected load and perform well under stress. Ensono Stacks uses [Gatling](https://gatling.io/) for [performance testing](./performance_testing_gatling.md).
 
 ### UI Testing
 
@@ -93,9 +94,9 @@ Contract testing ensures that the interactions between services are working as e
 
 Ensono Stacks .NET includes comprehensive functional and unit tests for ServiceBus operations to ensure the correct handling of topics, queues, and messages.  
 
-The GitHub repository folder containing the ServiceBus unit tests can be found [here](https://github.com/Ensono/stacks-dotnet/tree/master/src/shared/xxENSONOxx.xxSTACKSxx.Shared.Messaging.Azure.ServiceBus.Tests).  These tests ensure that the various components of the ServiceBus, such as validators, serializers, routers, listeners, and custom processors, function correctly and handle different scenarios as expected.
+The GitHub repository folder containing the [ServiceBus unit tests](https://github.com/Ensono/stacks-dotnet/tree/master/src/shared/xxENSONOxx.xxSTACKSxx.Shared.Messaging.Azure.ServiceBus.Tests).  These tests ensure that the various components of the ServiceBus, such as validators, serializers, routers, listeners, and custom processors, function correctly and handle different scenarios as expected.
 
-Functional tests can be found in the GitHub repository folder [here](https://github.com/Ensono/stacks-dotnet/tree/master/src/func-cosmosdb-worker/src/tests/Functional/xxENSONOxx.xxSTACKSxx.Worker.FunctionalTests/Tests).  Key areas of coverage include:
+Functional tests can be found in the [GitHub repository folder](https://github.com/Ensono/stacks-dotnet/tree/master/src/func-cosmosdb-worker/src/tests/Functional/xxENSONOxx.xxSTACKSxx.Worker.FunctionalTests/Tests).  Key areas of coverage include:
 
 - Adding messages to the queue
 - Checking the existence of topics
@@ -108,7 +109,7 @@ Ensono Stacks .NET includes unit and integration tests for CosmosDB operations t
 
 - Unit tests for verifying the repository implementation and its functionality using a mock repository.  The unit test example are in the CosmosDbMenuRepositoryTests.cs in this repository [folder](https://github.com/Ensono/stacks-dotnet/blob/master/src/cqrs/src/api/xxENSONOxx.xxSTACKSxx.Infrastructure.UnitTests/). 
 
-- Integration tests for CosmosDB Document Storage, validating communication with CosmosDB, data encoding/decoding, and various search operations, including tests for single/multiple fields, ordering, partition keys, and SQL queries.  The integration tests are in the repository folder [here](https://github.com/Ensono/stacks-dotnet/tree/master/src/cqrs/src/api/xxENSONOxx.xxSTACKSxx.Infrastructure.IntegrationTests/CosmosDb/Integration). 
+- Integration tests for CosmosDB Document Storage, validating communication with CosmosDB, data encoding/decoding, and various search operations, including tests for single/multiple fields, ordering, partition keys, and SQL queries.  The integration tests are in the [repository folder](https://github.com/Ensono/stacks-dotnet/tree/master/src/cqrs/src/api/xxENSONOxx.xxSTACKSxx.Infrastructure.IntegrationTests/CosmosDb/Integration). 
 
 ### SonarCloud
 

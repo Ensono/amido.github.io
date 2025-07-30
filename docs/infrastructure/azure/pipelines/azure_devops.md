@@ -15,7 +15,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The pipeline will automate provisioning and updating the core infrastructure in Azure. This page assumes you have already completed the steps on the [core infrastructure page](../core_infrastructure.md).
 
-The Azure infrastructure source code can be found [here](https://github.com/Ensono/stacks-infrastructure-aks).
+The Azure [infrastructure source code](https://github.com/Ensono/stacks-infrastructure-aks).
 
 ## Pipeline Diagram
 
@@ -31,7 +31,7 @@ The Azure infrastructure source code can be found [here](https://github.com/Enso
 
 ### Variable groups
 
-Variable groups will need creating for storing Azure Credentials to be used with the pipeline. Instructions for creating a variable group can be found [here](https://docs.microsoft.com/en-us/azure/devops/pipelines/library/variable-groups?view=azure-devops&tabs=classic#create-a-variable-group).
+Variable groups will need creating for storing Azure Credentials to be used with the pipeline. Instructions for creating a [variable group](https://docs.microsoft.com/en-us/azure/devops/pipelines/library/variable-groups?view=azure-devops&tabs=classic#create-a-variable-group).
 
 Create a variable group called `azure-sp-creds`, add a description and make sure the **Allow access to all pipelines** option is checked. Add the following variables using the Service Connection details from [bootstrapping the Azure tenant](../core_infrastructure.md#bootstrap-the-azure-tenant):
 
