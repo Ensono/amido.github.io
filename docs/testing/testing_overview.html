@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://www.googletagmanager.com">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-EKCQBC5CSJ"></script>
 <script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-EKCQBC5CSJ",{anonymize_ip:!0})</script><link rel="stylesheet" href="/assets/css/styles.1e8117c5.css">
-<script src="/assets/js/runtime~main.9303d1de.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.c8c213da.js" defer="defer"></script>
 <script src="/assets/js/main.5986c05d.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -41,7 +41,7 @@ Examples:</p>
 <li><a href="https://github.com/Ensono/stacks-dotnet/tree/master/src/cqrs/src/api/xxENSONOxx.xxSTACKSxx.API.ComponentTests" target="_blank" rel="noopener noreferrer">DotNet stack</a></li>
 </ul>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="performance-testing">Performance Testing<a href="#performance-testing" class="hash-link" aria-label="Direct link to Performance Testing" title="Direct link to Performance Testing">​</a></h3>
-<p>Performance testing ensures that your application can handle the expected load and perform well under stress. Ensono Stacks uses <a href="https://gatling.io/" target="_blank" rel="noopener noreferrer">Gatling</a> for performance testing.  Further information can be found <a href="/docs/testing/performance_testing_gatling">here.</a></p>
+<p>Performance testing ensures that your application can handle the expected load and perform well under stress. Ensono Stacks uses <a href="https://gatling.io/" target="_blank" rel="noopener noreferrer">Gatling</a> for <a href="/docs/testing/performance_testing_gatling">performance testing</a>.</p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="ui-testing">UI Testing<a href="#ui-testing" class="hash-link" aria-label="Direct link to UI Testing" title="Direct link to UI Testing">​</a></h3>
 <h4 class="anchor anchorWithStickyNavbar_LWe7" id="playwright">Playwright<a href="#playwright" class="hash-link" aria-label="Direct link to Playwright" title="Direct link to Playwright">​</a></h4>
 <p>Playwright is the preferred tool within the Ensono Stacks.  It is a powerful tool for cross-browser web automation. It supports multiple browsers and provides capabilities for both functional and visual regression testing.  For more details on how Ensono utilizes Playwright within Ensono Stacks, refer to the following documentation:</p>
@@ -61,8 +61,8 @@ Examples:</p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="functional-testing">Functional Testing<a href="#functional-testing" class="hash-link" aria-label="Direct link to Functional Testing" title="Direct link to Functional Testing">​</a></h3>
 <h4 class="anchor anchorWithStickyNavbar_LWe7" id="servicebus-testing">ServiceBus Testing<a href="#servicebus-testing" class="hash-link" aria-label="Direct link to ServiceBus Testing" title="Direct link to ServiceBus Testing">​</a></h4>
 <p>Ensono Stacks .NET includes comprehensive functional and unit tests for ServiceBus operations to ensure the correct handling of topics, queues, and messages.</p>
-<p>The GitHub repository folder containing the ServiceBus unit tests can be found <a href="https://github.com/Ensono/stacks-dotnet/tree/master/src/shared/xxENSONOxx.xxSTACKSxx.Shared.Messaging.Azure.ServiceBus.Tests" target="_blank" rel="noopener noreferrer">here</a>.  These tests ensure that the various components of the ServiceBus, such as validators, serializers, routers, listeners, and custom processors, function correctly and handle different scenarios as expected.</p>
-<p>Functional tests can be found in the GitHub repository folder <a href="https://github.com/Ensono/stacks-dotnet/tree/master/src/func-cosmosdb-worker/src/tests/Functional/xxENSONOxx.xxSTACKSxx.Worker.FunctionalTests/Tests" target="_blank" rel="noopener noreferrer">here</a>.  Key areas of coverage include:</p>
+<p>The GitHub repository folder containing the <a href="https://github.com/Ensono/stacks-dotnet/tree/master/src/shared/xxENSONOxx.xxSTACKSxx.Shared.Messaging.Azure.ServiceBus.Tests" target="_blank" rel="noopener noreferrer">ServiceBus unit tests</a>.  These tests ensure that the various components of the ServiceBus, such as validators, serializers, routers, listeners, and custom processors, function correctly and handle different scenarios as expected.</p>
+<p>Functional tests can be found in the <a href="https://github.com/Ensono/stacks-dotnet/tree/master/src/func-cosmosdb-worker/src/tests/Functional/xxENSONOxx.xxSTACKSxx.Worker.FunctionalTests/Tests" target="_blank" rel="noopener noreferrer">GitHub repository folder</a>.  Key areas of coverage include:</p>
 <ul>
 <li>Adding messages to the queue</li>
 <li>Checking the existence of topics</li>
@@ -76,7 +76,7 @@ Examples:</p>
 <p>Unit tests for verifying the repository implementation and its functionality using a mock repository.  The unit test example are in the CosmosDbMenuRepositoryTests.cs in this repository <a href="https://github.com/Ensono/stacks-dotnet/blob/master/src/cqrs/src/api/xxENSONOxx.xxSTACKSxx.Infrastructure.UnitTests/" target="_blank" rel="noopener noreferrer">folder</a>.</p>
 </li>
 <li>
-<p>Integration tests for CosmosDB Document Storage, validating communication with CosmosDB, data encoding/decoding, and various search operations, including tests for single/multiple fields, ordering, partition keys, and SQL queries.  The integration tests are in the repository folder <a href="https://github.com/Ensono/stacks-dotnet/tree/master/src/cqrs/src/api/xxENSONOxx.xxSTACKSxx.Infrastructure.IntegrationTests/CosmosDb/Integration" target="_blank" rel="noopener noreferrer">here</a>.</p>
+<p>Integration tests for CosmosDB Document Storage, validating communication with CosmosDB, data encoding/decoding, and various search operations, including tests for single/multiple fields, ordering, partition keys, and SQL queries.  The integration tests are in the <a href="https://github.com/Ensono/stacks-dotnet/tree/master/src/cqrs/src/api/xxENSONOxx.xxSTACKSxx.Infrastructure.IntegrationTests/CosmosDb/Integration" target="_blank" rel="noopener noreferrer">repository folder</a>.</p>
 </li>
 </ul>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="sonarcloud">SonarCloud<a href="#sonarcloud" class="hash-link" aria-label="Direct link to SonarCloud" title="Direct link to SonarCloud">​</a></h3>

@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://www.googletagmanager.com">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-EKCQBC5CSJ"></script>
 <script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-EKCQBC5CSJ",{anonymize_ip:!0})</script><link rel="stylesheet" href="/assets/css/styles.1e8117c5.css">
-<script src="/assets/js/runtime~main.9303d1de.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.c8c213da.js" defer="defer"></script>
 <script src="/assets/js/main.5986c05d.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -161,7 +161,7 @@
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="recommendation">Recommendation<a href="#recommendation" class="hash-link" aria-label="Direct link to Recommendation" title="Direct link to Recommendation">​</a></h3>
 <p>We recommend implementing Option 2: Container App Environment deployment via Infrastructure pipeline and Container App deployment via Application pipeline. This approach provides the flexibility to manage infrastructure and application deployments separately while optimizing the deployment process for Azure Container Apps.
 This recommendation will result in a more streamlined deployment process, eliminating unnecessary Container App revisions and allowing for tighter integration between application builds and deployments.</p>
-<p>However, it&#x27;s important to note that this approach will require additional effort in managing separate Terraform configurations for each Container App. To mitigate this challenge, we will utilize the existing Azure Container Apps Terraform module developed by Ensono, which is available <a href="https://registry.terraform.io/modules/Ensono/aca/azurerm/latest" target="_blank" rel="noopener noreferrer">here</a>.</p>
+<p>However, it&#x27;s important to note that this approach will require additional effort in managing separate Terraform configurations for each Container App. To mitigate this challenge, we will utilize the existing Azure Container Apps <a href="https://registry.terraform.io/modules/Ensono/aca/azurerm/latest" target="_blank" rel="noopener noreferrer">Terraform module developed by Ensono</a>.</p>
 <p>This pre-built module will help reduce duplication and ease maintenance across multiple Container Apps, standardizing our Container App deployments and reducing the overhead of managing individual Terraform configurations.
 By leveraging this existing module in our recommended approach, we can achieve a more efficient and manageable deployment strategy for our Azure Container Apps while maintaining the flexibility to evolve both infrastructure and applications independently.</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="aca-vs-aks-a-comparative-analysis">ACA vs AKS: A Comparative Analysis<a href="#aca-vs-aks-a-comparative-analysis" class="hash-link" aria-label="Direct link to ACA vs AKS: A Comparative Analysis" title="Direct link to ACA vs AKS: A Comparative Analysis">​</a></h2>
