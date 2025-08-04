@@ -25,7 +25,7 @@ This page present the high level design of the reference implementation of the .
 
 <ResponsivePlayer url='https://www.youtube.com/watch?v=6ND-8YVohT4' />
 
-**This page assumes that the core infrastructure has already been provisioned. Instructions and additional information on the core infrastructure can be found [here](../../../../infrastructure/azure/core_infrastructure.md)**
+**This page assumes that the core infrastructure has already been provisioned. Instructions and additional information on the [core infrastructure](../../../../infrastructure/azure/core_infrastructure.md)**
 
 Both the diagram and resource list below are for a single environment.
 

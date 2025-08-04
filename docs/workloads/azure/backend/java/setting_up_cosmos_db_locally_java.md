@@ -21,7 +21,7 @@ import TabItem from '@theme/TabItem';
 The Azure CosmosDB Emulator provides a local environment that emulates the Azure Cosmos DB
 service for development purposes. Using the Azure CosmosDB Emulator, you can develop and test
 your application locally, without creating an Azure subscription or incurring any costs.
-Latest instruction can be found in [here](https://docs.microsoft.com/en-us/azure/cosmos-db/local-emulator?tabs=cli%2Cssl-netstd21)
+[Latest instruction](https://docs.microsoft.com/en-us/azure/cosmos-db/local-emulator?tabs=cli%2Cssl-netstd21)
 
 ### Using the Cosmos DB Emulator to run the database locally
 

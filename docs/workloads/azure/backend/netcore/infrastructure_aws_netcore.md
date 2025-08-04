@@ -24,8 +24,6 @@ This page present the high level design of the reference implementation of the .
 
 <ResponsivePlayer url='https://www.youtube.com/watch?v=G8FW-djEDDY' />
 
-<!-- **This page assumes that the core infrastructure has already been provisioned. Instructions and additional information on the core infrastructure can be found [here](../../../../infrastructure/aws/core_infrastructure.md)** -->
-
 Both the diagram and resource list below are for a single environment.
 
 ### Diagram

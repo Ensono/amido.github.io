@@ -15,7 +15,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The pipeline will automate provisioning and updating the core infrastructure in AWS. This page assumes you have already completed the steps on the [core infrastructure page](../core_infrastructure.md).
 
-The AWS infrastructure source code can be found [here](https://github.com/Ensono/stacks-infrastructure-eks).
+The AWS infrastructure [source code](https://github.com/Ensono/stacks-infrastructure-eks).
 
 ## Pipeline Diagram
 
@@ -31,7 +31,7 @@ The AWS infrastructure source code can be found [here](https://github.com/Ensono
 
 ### Environment Secrets
 
-Environment secrets will need creating for storing some sensitive variables to be used by the pipeline. Instructions for creating a environment secrets can be found [here](https://docs.github.com/en/actions/managing-workflow-runs-and-deployments/managing-deployments/managing-environments-for-deployment#environment-secrets).
+Environment secrets will need creating for storing some sensitive variables to be used by the pipeline. Instructions for creating a [environment secrets](https://docs.github.com/en/actions/managing-workflow-runs-and-deployments/managing-deployments/managing-environments-for-deployment#environment-secrets).
 
 Add the following secrets:
 
@@ -52,6 +52,6 @@ Where possible, the Stacks CLI will have populated the correct values in the pip
 
 ### Create the pipeline
 
-Stacks generates the GitHub Actions workflow file in the directory expected by GitHub Actions, `.github/workflows`. Committing this file to the `main` branch of a GitHub repository will "create" the pipeline. Instructions for viewing the results can be found [here](https://docs.github.com/en/actions/writing-workflows/quickstart#viewing-your-workflow-results)
+Stacks generates the GitHub Actions workflow file in the directory expected by GitHub Actions, `.github/workflows`. Committing this file to the `main` branch of a GitHub repository will "create" the pipeline. Instructions for viewing [the results](https://docs.github.com/en/actions/writing-workflows/quickstart#viewing-your-workflow-results)
 
 <HideNavigation next />
