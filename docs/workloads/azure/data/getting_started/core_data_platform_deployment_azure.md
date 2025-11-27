@@ -20,7 +20,7 @@ It assumes you have [generated a new data project using Ensono Stacks](./generat
 
 * [Azure subscription and service principal](./requirements_data_azure.md#azure-subscription)
     * If you want to provision the infrastructure within a private network, this can be done as part of a [Hub-Spoke network topology](../architecture/infrastructure_data_azure#networking). Spoke virtual network and subnet for private endpoints must be provisioned for each environment. The hub network must contain a self-hosted agent. See [Microsoft documentation](https://learn.microsoft.com/en-us/azure/architecture/reference-architectures/hybrid-networking/hub-spoke?tabs=cli) for more details on implementing Hub-spoke network topology in Azure.
-* [Azure DevOps project with Pipelines variable groups](./requirements_data_azure.md#azure-devops).
+* [Azure DevOps project with Pipelines variable groups](./requirements_data_azure.md#cicd---azure-devops).
 
 ## Step 1: Create branch and set networking option
 

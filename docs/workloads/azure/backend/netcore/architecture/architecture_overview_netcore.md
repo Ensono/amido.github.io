@@ -18,11 +18,11 @@ keywords:
   - stacks
 ---
 
-### Domain-Driven Design (DDD) Overview
+## Domain-Driven Design (DDD) Overview
 
 For a comprehensive understanding of Domain-Driven Design, refer to Martin Fowler's notes on [Domain-Driven Design](https://martinfowler.com/bliki/DomainDrivenDesign.html).
 
-#### Bounded Context
+### Bounded Context
 
 In Domain-Driven Design (DDD), we start by mapping the business domain into objects and identifying their relationships. Initially, we view them as a big, indivisible context. Then, we identify the smallest cohesive scope where they fit together, called a bounded context.
 
@@ -31,18 +31,18 @@ A domain object might belong to multiple bounded contexts but will have differen
 **Example:**
 In a property management business, a person might be a customer in one context but a tenant in the rental department context.
 
-#### Entities
+### Entities
 
 An entity is a domain object with a unique identity, even if its attributes are the same as another object. The identity makes the object unique, meaning two objects with the same attributes are not considered the same.
 
 **Example:**
 Two people named John Smith, born on the same day, have the same attributes but are independent domain objects. If a person changes their name after marriage, their identity remains the same.
 
-#### Value Objects
+### Value Objects
 
 Value objects are domain objects without a conceptual identity. They are defined by their attributes, and two objects with the same attributes are considered the same. Value objects can represent entities in other contexts but are not primary objects within the bounded context.
 
-#### Aggregates
+### Aggregates
 
 An aggregate is an entity that groups a set of objects bound together by the same parent. The aggregate controls the accessibility and lifetime of these objects.
 
@@ -67,3 +67,4 @@ If an employee raises a purchase order above a certain limit, the domain raises 
 #### Repository
 
 The repository is a component that prepares the domain object to its last known state before executing an operation. It loads aggregate roots from the database or materializes the domain from a chain of events when using EventSourcing. It also persists changes and events that occurred to an AggregateRoot after an operation.
+

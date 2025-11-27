@@ -1,0 +1,126 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Install Dependencies",
+      "type": "shell",
+      "command": "npm install",
+      "group": "build",
+      "problemMatcher": [],
+      "detail": "Install npm dependencies"
+    },
+    {
+      "label": "Start Dev Server",
+      "type": "shell",
+      "command": "npm start",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "isBackground": true,
+      "problemMatcher": {
+        "pattern": {
+          "regexp": "^(.*)$",
+          "file": 1,
+          "line": 2,
+          "message": 3
+        },
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": "Starting the development server",
+          "endsPattern": "Docusaurus website is running at"
+        }
+      },
+      "detail": "Start Docusaurus dev server at localhost:3000"
+    },
+    {
+      "label": "Build Production",
+      "type": "shell",
+      "command": "npm run build",
+      "group": "build",
+      "problemMatcher": [],
+      "detail": "Build production site to ./build"
+    },
+    {
+      "label": "Serve Production Build",
+      "type": "shell",
+      "command": "npm run serve",
+      "group": "build",
+      "isBackground": true,
+      "problemMatcher": [],
+      "detail": "Preview production build locally"
+    },
+    {
+      "label": "Lint Markdown",
+      "type": "shell",
+      "command": "npm run lint",
+      "group": "test",
+      "problemMatcher": {
+        "owner": "markdownlint",
+        "fileLocation": ["relative", "${workspaceFolder}"],
+        "pattern": {
+          "regexp": "^(.+):(\\d+)(?::(\\d+))?\\s+(.+)$",
+          "file": 1,
+          "line": 2,
+          "column": 3,
+          "message": 4
+        }
+      },
+      "detail": "Run markdownlint on docs/"
+    },
+    {
+      "label": "Fix Markdown Issues",
+      "type": "shell",
+      "command": "npm run validate",
+      "group": "test",
+      "problemMatcher": [],
+      "detail": "Auto-fix markdown issues with markdownlint"
+    },
+    {
+      "label": "Spell Check",
+      "type": "shell",
+      "command": "npm run lint:spell",
+      "group": "test",
+      "problemMatcher": [],
+      "detail": "Run CSpell check with British English"
+    },
+    {
+      "label": "Run All Checks",
+      "type": "shell",
+      "command": "npm run lint && npm run lint:spell",
+      "group": {
+        "kind": "test",
+        "isDefault": true
+      },
+      "problemMatcher": [],
+      "detail": "Run markdown lint and spell check",
+      "dependsOrder": "sequence"
+    },
+    {
+      "label": "Docker: Build Image",
+      "type": "shell",
+      "command": "docker build . -t amido.github.io",
+      "group": "build",
+      "problemMatcher": [],
+      "detail": "Build Docker image for local development"
+    },
+    {
+      "label": "Docker: Run Container",
+      "type": "shell",
+      "command": "docker run --rm -it -p 3000:3000 amido.github.io",
+      "group": "build",
+      "isBackground": true,
+      "problemMatcher": [],
+      "detail": "Run Docker container on port 3000",
+      "dependsOn": "Docker: Build Image"
+    },
+    {
+      "label": "Security: npm audit",
+      "type": "shell",
+      "command": "npm audit",
+      "group": "test",
+      "problemMatcher": [],
+      "detail": "Check for known CVEs in dependencies"
+    }
+  ]
+}

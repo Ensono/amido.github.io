@@ -39,7 +39,7 @@ The solution utilises the [Stacks Data Python library](./data_engineering/stacks
 - Frameworks for [data quality validations](./data_engineering/data_quality_azure.md) and [automated testing](./data_engineering/testing_data_azure.md).
 - The [Datastacks CLI](./data_engineering/datastacks.md) - a tool enabling developers to quickly generate new data workloads.
 
-### High-level architecture
+## High-level architecture
 
 ![High-level architecture](./images/Stacks_Azure_Data_Platform-HLD.png)
 

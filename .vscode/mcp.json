@@ -1,0 +1,41 @@
+{
+  "inputs": [
+    {
+      "id": "github_token",
+      "password": true,
+      "type": "promptString",
+      "description": "GitHub Personal Access Token with minimum scopes"
+    },
+    {
+      "id": "ado_org",
+      "type": "promptString",
+      "default": "ensonodigitaluk",
+      "description": "Azure DevOps organization name  (e.g. 'contoso')"
+    }
+  ],
+  "servers": {
+    "github": {
+      "command": "docker",
+      "args": [
+        "run",
+        "-i",
+        "--rm",
+        "-e",
+        "GITHUB_PERSONAL_ACCESS_TOKEN",
+        "ghcr.io/github/github-mcp-server"
+      ],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "${input:github_token}"
+      }
+    },
+    "ado": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@azure-devops/mcp", "${input:ado_org}"]
+    },
+    "chrome-devtools": {
+      "command": "npx",
+      "args": ["-y", "chrome-devtools-mcp@latest", "-e", "/usr/bin/chromium"]
+    }
+  }
+}
