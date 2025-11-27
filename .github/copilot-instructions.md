@@ -5,7 +5,7 @@
 
 ## Project Overview
 
-This is the **Ensono Stacks documentation microsite** built with Docusaurus 3.8.1. It documents workload templates, plugins, and infrastructure patterns for multi-cloud development (Azure, AWS, GCP) across .NET, Java, Node.js, and React stacks.
+This is the **Ensono Stacks documentation microsite** built with Docusaurus 3.9.2. It documents workload templates, plugins, and infrastructure patterns for multi-cloud development (Azure, AWS, GCP) across .NET, Java, Node.js, and React stacks.
 
 **Live site:** https://stacks.ensono.com  
 **Repository:** https://github.com/Ensono/amido.github.io
