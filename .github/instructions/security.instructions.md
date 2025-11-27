@@ -76,7 +76,7 @@ When changes need to be made to protected branches, Copilot MUST:
 
 ```bash
 git checkout -b feature/descriptive-name
-# or
+# Alternatively, for a fix branch:
 git checkout -b fix/issue-description
 ```
 
