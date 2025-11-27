@@ -5,6 +5,12 @@
       "password": true,
       "type": "promptString",
       "description": "GitHub Personal Access Token with minimum scopes"
+    },
+    {
+      "id": "ado_org",
+      "type": "promptString",
+      "default": "ensonodigtaluk",
+      "description": "Azure DevOps organization name  (e.g. 'contoso')"
     }
   ],
   "servers": {
@@ -22,9 +28,10 @@
         "GITHUB_PERSONAL_ACCESS_TOKEN": "${input:github_token}"
       }
     },
-    "playwright": {
+    "ado": {
+      "type": "stdio",
       "command": "npx",
-      "args": ["@playwright/mcp@latest"]
+      "args": ["-y", "@azure-devops/mcp", "${input:ado_org}"]
     },
     "chrome-devtools": {
       "command": "npx",

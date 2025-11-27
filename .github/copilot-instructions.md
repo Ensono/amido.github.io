@@ -184,3 +184,15 @@ git push origin feature/your-change-description
 ```
 
 If GPG signing fails, do NOT bypass—resolve the configuration issue first. See security instructions for diagnostic commands.
+
+## Using MCP Server for Azure DevOps
+
+When getting work items using MCP Server for Azure DevOps, always try to use batch tools for updates instead of many individual single updates. For updates, try and update up to 200 updates in a single batch. When getting work items, once you get the list of IDs, use the tool `get_work_items_batch_by_ids` to get the work item details. By default, show fields ID, Type, Title, State. Show work item results in a rendered markdown table.
+
+## Using MCP Server for GitHub
+
+When investigating Issues, Pull Request, Builds and Alerts (Dependabot / Security) always use the GitHub MCP server to fetch information before answering queries or using the `gh` CLI tool.
+
+## Using MCP Server for Exploratory Testing
+
+The Chrome DevTools MCP server is configured for this repository, when you are asked to do exploratory testing use the Chrome DevTools MCP server to help automate access to a browser and perform the exploratory testing tasks.
