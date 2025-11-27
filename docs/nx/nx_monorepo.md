@@ -36,7 +36,7 @@ For the reasons listed above we have chosen to use Nx within Ensono Stacks for C
     <p>Nx executors, on the other hand, are scripts that can be used to automate common tasks, such as building, testing, and deploying code. Developers can use these executors to automate repetitive tasks and to streamline their workflow. Executors can also be customized to suit the specific needs of a project, making them a highly versatile tool.</p>
 </details>
 
-#### Why should you use the Nx build system
+## Why should you use the Nx build system
 
 Nx makes scaling easy. Modern techniques such as distributed task execution and computation caching make sure your CI times remain fast, even as you keep adding projects to your workspace.
 

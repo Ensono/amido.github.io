@@ -15,9 +15,9 @@ keywords:
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-### Prerequisites
+## Prerequisites
 
-#### Nx
+### Nx
 
 We recommend installing Nx globally, all Nx based commands in this guide are based upon a globally installed Nx package.
 

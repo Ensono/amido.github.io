@@ -21,19 +21,18 @@ The primary purpose of Storybook is to facilitate the development and documentat
 
 Some of the benefits of Storybook include:
 
-#### Component Isolation
+## Component Isolation
 
 Storybook allows developers to work on a single UI component in isolation, without the need to navigate through the whole application. This isolation helps in quicker development, debugging, and testing of components.
 
-#### Visual Testing
+## Visual Testing
 
 Storybook provides a way to visually test components, making it simpler to catch UI-related bugs and regressions during development.
 
-#### Interactive Documentation
+## Interactive Documentation
 
 Documentation, usage examples, and interactive demos can be added for each component, which helps in onboarding new team members and maintaining a comprehensive living style guide.
 
 ## Storybook with Ensono Stacks
 
 Storybook can be added to Ensono Stacks using the __[Stacks Storybook generator](../getting_started/next/storybook)__.
-

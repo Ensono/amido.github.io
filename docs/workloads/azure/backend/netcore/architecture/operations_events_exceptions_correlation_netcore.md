@@ -23,7 +23,7 @@ This document clarifies concepts implemented in the platform to facilitate the m
 
 Having a clear understanding of these concepts is crucial to make the platform consistent and simple for maintenance purposes.
 
-### Triggers
+## Triggers
 
 A trigger mechanism initiates an operation. The trigger is the event received from external systems or triggered internally to notify that something has happened or is about to happen.
 

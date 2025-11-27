@@ -2,6 +2,7 @@
   "default": true,
   "MD003": { "style": "atx" },
   "MD007": { "indent": 4 },
+  "MD060": false,
   "no-hard-tabs": false,
   "whitespace": false,
   "line-length": false,

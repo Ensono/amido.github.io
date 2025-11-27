@@ -407,7 +407,7 @@ The follow table shows the values that can be assigned to the pipeline list.
 
 > **Note**
 >
-> If no template is specified for the `variable` then the static version built into the CLI will be used. This can be seen in [???](#azdo_variable_template).
+> If no template is specified for the `variable` then the static version built into the CLI will be used.
 
 | Parameter | Description                                                    | Example       |
 | --------- | -------------------------------------------------------------- | ------------- |
@@ -502,6 +502,6 @@ The following listing shows a snippet of the project settings file for a project
   args: new stacks-cqrs-events-app -n {{ .Input.Business.Company }}.{{ .Input.Business.Domain }} -o {{ .Project.Directory.WorkingDir }} -e {{ or .Project.Framework.Properties.Prop1 "servicebus"}}
 ```
 
-In this example all of the values for the parameters come from the `.Input` or `.Project` object (as detailed in the [???](#_templating) section).
+In this example all of the values for the parameters come from the `.Input` or `.Project` object (as detailed in the [Structure](#structure) section).
 
 The last parameter to be set is defined as `{{ or .Project.Framework.Properties.Prop1 "servicebus" }}`. This will set the `-e` parameter to the value set in the property if that is set or default to "servicebus".

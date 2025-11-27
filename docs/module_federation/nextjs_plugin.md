@@ -17,7 +17,7 @@ import TabItem from '@theme/TabItem';
 
 Microfrontends are an architectural pattern for building frontend applications by breaking them down into smaller, loosely coupled, and independently deployable parts called "micro-frontends." Each microfrontend corresponds to a distinct feature or functionality of the application and is developed and deployed independently of the others.
 
-#### Module Federation with NextJs
+## Module Federation with NextJs
 
 Module Federation is a feature introduced in Webpack 5, it enables developers to share code dynamically across different applications at runtime. This feature is particularly beneficial when building microfrontends or decoupled frontend architectures.
 
@@ -278,5 +278,3 @@ nx run-many --target=serve
 We can then visit [localhost:4200](http://localhost:4200/) and see the <b>header</b> module running inside the <b>host</b> application.
 Or we can visit [localhost:4300](http://localhost:4300/) and see the <b>header</b> module hosted independently.
  
-
-

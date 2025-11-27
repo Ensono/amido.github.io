@@ -20,7 +20,7 @@ keywords:
 
 import HideNavigation  from "../../../../../../../src/components/HideNavigation/HideNavigation";
 
-### Configure OpenApi UI
+## Configure OpenApi UI
 
 To configure the OpenApi UI, the spec path along with the name of the spec must be passed in the `SwaggerEndpoint()` method within the `UseSwaggerUI()` extension.
 

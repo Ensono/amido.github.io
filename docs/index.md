@@ -40,7 +40,7 @@ Your tech choices in these six areas are what Ensono Stacks calls a _Workload_. 
 - and GitLab as the CI/CD pipeline
 - and Alpine for the compute
 
-When you run Ensono Stacks, it presents you with options in each of these six areas. Then, it instantly generates your chosen workload, complete with sample applications and cloud provisioning, if that's what you've selected. Ensono Stacks covers all the technical overhead, so you're ready to start coding. Ensono Stacks currently offers 15 unique workload variations with another 40 planned. Explore [What can you do with Ensono Stacks?](/#stacks-selector) to find out more.
+When you run Ensono Stacks, it presents you with options in each of these six areas. Then, it instantly generates your chosen workload, complete with sample applications and cloud provisioning, if that's what you've selected. Ensono Stacks covers all the technical overhead, so you're ready to start coding. Ensono Stacks currently offers 15 unique workload variations with another 40 planned. Explore [What can you do with Ensono Stacks?](pathname:///#stacks-selector) to find out more.
 
 ## Why use Ensono Stacks
 
