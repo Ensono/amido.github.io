@@ -125,7 +125,7 @@ Many docs link to external Ensono Stacks repositories:
 
 - **Docker local dev**: Build image with `docker build . -t amido.github.io` and run on port 3000
 - **Docusaurus CLI**: Direct access via `npm run docusaurus -- <command>`
-- **Node version**: Requires Node >=20.19 and npm >=11.4 (see `package.json` engines)
+- **Node version**: Requires Node >=24 and npm >=11.6 (see `package.json` engines)
 
 ## Testing Strategy
 
