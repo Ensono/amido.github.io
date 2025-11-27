@@ -65,7 +65,7 @@ GitHub Actions workflow (`.github/workflows/deployment.yml`) triggers on `master
 
 1. Builds with Algolia secrets (search indexing)
 2. Deploys to `gh-pages` branch via JamesIves action
-3. Uses Node 18.x (package.json requires >=20.19 for local dev)
+3. Uses Node 24.x (package.json requires >=24 for local dev)
 
 ## Key Patterns & Conventions
 
