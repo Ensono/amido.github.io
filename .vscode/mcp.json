@@ -9,7 +9,7 @@
     {
       "id": "ado_org",
       "type": "promptString",
-      "default": "ensonodigtaluk",
+      "default": "ensonodigitaluk",
       "description": "Azure DevOps organization name  (e.g. 'contoso')"
     }
   ],
