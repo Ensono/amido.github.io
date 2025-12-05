@@ -8,7 +8,7 @@ require('dotenv').config();
 /** @type {import('@docusaurus/types').Config} */
 
 // Content Security Policy directives for GitHub Pages (meta tag based)
-// Note: Report-Only mode is not supported via meta tags, only via HTTP headers
+// Note: Report-Only mode and frame-ancestors are not supported via meta tags, only via HTTP headers
 // This policy is enforced directly - test thoroughly before deployment
 const cspDirectives = [
   "default-src 'self'",
