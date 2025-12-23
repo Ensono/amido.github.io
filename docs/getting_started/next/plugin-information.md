@@ -80,4 +80,5 @@ nx g @ensono-stacks/next:[generator-executor-name] --help
 <!-- markdownlint-disable MD033 -->
 <Init />
 <NextAuth />
+<ReactQuery />
 <Storybook />
