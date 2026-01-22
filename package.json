@@ -17,7 +17,7 @@
   },
   "devDependencies": {
     "cspell": "^9.6.0",
-    "markdownlint": "^0.39.0",
+    "markdownlint": "^0.40.0",
     "markdownlint-cli": "^0.47.0"
   },
   "dependencies": {
@@ -33,8 +33,8 @@
     "clsx": "^2.1.1",
     "dotenv": "^17.2.3",
     "prism-react-renderer": "^2.4.1",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
     "react-player": "^2.16.0",
     "react-select": "^5.10.1",
     "remark-images": "^4.1.0"
