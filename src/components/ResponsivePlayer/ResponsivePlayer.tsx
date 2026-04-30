@@ -8,13 +8,10 @@ export function ResponsivePlayer({url}) {
         <div className={styles.playerSection}>
             <div className={styles.playerWrapper}>
                 <ReactPlayer className={styles.player}
-                             url={url}
+                             src={url}
                              controls={true}
                              width='100%'
                              height='100%'
-                             config={{
-                                
-                              }}
                 />
             </div>
         </div>
