@@ -16,20 +16,18 @@
     "validate": "node_modules/.bin/markdownlint ./docs --fix"
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "3.10.0",
-    "cspell": "^9.7.0",
+    "@docusaurus/module-type-aliases": "3.10.1",
+    "cspell": "^10.0.0",
     "markdownlint": "^0.40.0",
     "markdownlint-cli": "^0.48.0"
   },
   "dependencies": {
-    "@analytics/google-analytics": "^1.1.0",
     "@docsearch/react": "^4.6.3",
-    "@docusaurus/core": "3.10.0",
-    "@docusaurus/mdx-loader": "3.10.0",
-    "@docusaurus/plugin-google-analytics": "3.10.0",
-    "@docusaurus/plugin-google-gtag": "3.10.0",
-    "@docusaurus/plugin-sitemap": "3.10.0",
-    "@docusaurus/preset-classic": "3.10.0",
+    "@docusaurus/core": "3.10.1",
+    "@docusaurus/mdx-loader": "3.10.1",
+    "@docusaurus/plugin-google-gtag": "3.10.1",
+    "@docusaurus/plugin-sitemap": "3.10.1",
+    "@docusaurus/preset-classic": "3.10.1",
     "@mdx-js/react": "^3.1.1",
     "clsx": "^2.1.1",
     "dotenv": "^17.4.2",
@@ -41,6 +39,7 @@
     "remark-images": "^4.1.0"
   },
   "overrides": {
+    "uuid": "14.0.0",
     "picomatch": "^4.0.4",
     "serialize-javascript": "^7.0.5",
     "smol-toml": "^1.6.1",
