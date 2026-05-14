@@ -32,13 +32,14 @@
     "clsx": "^2.1.1",
     "dotenv": "^17.4.2",
     "prism-react-renderer": "^2.4.1",
-    "react": "^19.2.5",
-    "react-dom": "^19.2.5",
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6",
     "react-player": "^3.4.0",
     "react-select": "^5.10.2",
     "remark-images": "^4.1.0"
   },
   "overrides": {
+    "@babel/plugin-transform-modules-systemjs": "7.29.4",
     "uuid": "14.0.0",
     "picomatch": "^4.0.4",
     "serialize-javascript": "^7.0.5",
